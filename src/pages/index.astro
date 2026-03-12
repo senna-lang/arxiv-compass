@@ -5,9 +5,10 @@
  * 利用可能な最新日付のページにリダイレクトする。
  * データがない場合はセットアップ案内を表示する。
  */
-import { getAvailableDates } from "../lib/data";
-
-const dates = getAvailableDates();
+const files = import.meta.glob("/data/????????.json");
+const dates = Object.keys(files)
+  .map((f) => f.replace("/data/", "").replace(".json", ""))
+  .sort();
 if (dates.length > 0) {
   return Astro.redirect(`/${dates[dates.length - 1]}`);
 }
