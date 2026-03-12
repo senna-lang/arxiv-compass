@@ -6,11 +6,13 @@
  * 近傍クラスタ（recommendations.jsonのtop_clusters）を別色でハイライト表示する。
  * ホバーでクラスタラベル・論文数のツールチップを表示する。
  */
-import { getMap, getRecommendations } from "../lib/data";
-import type { Cluster } from "../lib/types";
+import type { Cluster, MapData, RecommendationsData } from "../lib/types";
 
-const mapData = getMap();
-const recData = getRecommendations();
+const mapFiles = import.meta.glob<MapData>("/data/map.json", { eager: true });
+const recFiles = import.meta.glob<RecommendationsData>("/data/recommendations.json", { eager: true });
+
+const mapData = mapFiles["/data/map.json"] ?? null;
+const recData = recFiles["/data/recommendations.json"] ?? null;
 
 const nearLabels = new Set(recData?.top_clusters.map((c) => c.label) ?? []);
 const clusters: Cluster[] = mapData?.clusters ?? [];
