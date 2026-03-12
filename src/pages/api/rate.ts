@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const { paper_id, title, abstract, rating } = body;
-  if (!paper_id || typeof rating !== "number" || rating < 1 || rating > 3) {
+  if (!paper_id || typeof rating !== "number" || rating < 1 || rating > 3 || !Number.isInteger(rating)) {
     return new Response(JSON.stringify({ error: "Invalid parameters" }), {
       status: 400,
       headers: { "Content-Type": "application/json" },
@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
   const data: RatingsData = existing ? JSON.parse(existing) : { ratings: [] };
 
   const rated_at = new Date().toISOString();
-  const newEntry: Rating = { paper_id, title, abstract, rating, rated_at };
+  const newEntry: Rating = { paper_id, title, abstract, rating: rating as 1 | 2 | 3, rated_at };
 
   const idx = data.ratings.findIndex((r) => r.paper_id === paper_id);
   if (idx >= 0) {

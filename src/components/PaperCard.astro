@@ -3,7 +3,7 @@
  * 論文カードコンポーネント
  *
  * タイトル・著者・カテゴリ・スコア・星UI・abstractアコーディオンを表示する。
- * 星クリックで public/rate.js を通じて POST /api/rate を呼び出す。
+ * 星クリックで POST /api/rate を呼び出す。
  */
 import type { Paper } from "../lib/types";
 
@@ -26,7 +26,11 @@ const firstCategory = paper.categories[0] ?? "";
       </a>
     </h2>
     <div class="paper-meta">
-      <span class="authors">{paper.authors.slice(0, 3).join(", ")}{paper.authors.length > 3 ? " et al." : ""}</span>
+      <span class="authors"
+        >{paper.authors.slice(0, 3).join(", ")}{
+          paper.authors.length > 3 ? " et al." : ""
+        }</span
+      >
       <span class="sep">·</span>
       <span class="category">{firstCategory}</span>
       <span class="sep">·</span>
@@ -42,20 +46,31 @@ const firstCategory = paper.categories[0] ?? "";
       data-abstract={paper.abstract}
       data-rating={initialRating}
     >
-      {[1, 2, 3].map((n) => (
-        <button
-          class={`star ${n <= initialRating ? "active" : ""}`}
-          data-value={n}
-          aria-label={`${n}星`}
-        >★</button>
-      ))}
+      {
+        [1, 2, 3].map((n) => (
+          <button
+            class={`star ${n <= initialRating ? "active" : ""}`}
+            data-value={n}
+            aria-label={`${n}星`}
+          >
+            ★
+          </button>
+        ))
+      }
     </div>
 
-    {paper.github_url && (
-      <a class="github-link" href={paper.github_url} target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    )}
+    {
+      paper.github_url && (
+        <a
+          class="github-link"
+          href={paper.github_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      )
+    }
   </div>
 
   <details class="abstract-details">
@@ -98,7 +113,9 @@ const firstCategory = paper.categories[0] ?? "";
     margin-bottom: 0.75rem;
   }
 
-  .sep { color: #aaa; }
+  .sep {
+    color: #aaa;
+  }
 
   .paper-actions {
     display: flex;
@@ -137,7 +154,9 @@ const firstCategory = paper.categories[0] ?? "";
     text-decoration: none;
   }
 
-  .github-link:hover { background: #f5f5f5; }
+  .github-link:hover {
+    background: #f5f5f5;
+  }
 
   .abstract-details summary {
     font-size: 0.82rem;
@@ -155,4 +174,43 @@ const firstCategory = paper.categories[0] ?? "";
   }
 </style>
 
-<script src="/rate.js" is:inline></script>
+<script>
+  document.addEventListener("click", async (e) => {
+    const btn = (e.target as Element).closest(".star");
+    if (!btn) return;
+
+    const container = btn.closest(".star-rating") as HTMLElement | null;
+    if (!container) return;
+
+    const rating = Number((btn as HTMLElement).dataset.value);
+    const paperId = container.dataset.paperId;
+    const title = container.dataset.title;
+    const abstract = container.dataset.abstract;
+
+    updateStars(container, rating);
+
+    try {
+      const res = await fetch("/api/rate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ paper_id: paperId, title, abstract, rating }),
+      });
+
+      if (!res.ok) {
+        console.error("[rate] API error:", res.status);
+        updateStars(container, Number(container.dataset.rating));
+      } else {
+        container.dataset.rating = String(rating);
+      }
+    } catch (err) {
+      console.error("[rate] fetch error:", err);
+    }
+  });
+
+  function updateStars(container: HTMLElement, rating: number) {
+    container.querySelectorAll(".star").forEach((star) => {
+      const val = Number((star as HTMLElement).dataset.value);
+      star.classList.toggle("active", val <= rating);
+    });
+  }
+</script>

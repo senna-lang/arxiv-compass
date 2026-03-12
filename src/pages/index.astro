@@ -5,46 +5,24 @@
  * 利用可能な最新日付のページにリダイレクトする。
  * データがない場合はセットアップ案内を表示する。
  */
+import MainLayout from "../layouts/MainLayout.astro";
+import { extractDates } from "../lib/data";
+
 const files = import.meta.glob("/data/????????.json");
-const dates = Object.keys(files)
-  .map((f) => f.replace("/data/", "").replace(".json", ""))
-  .sort();
+const dates = extractDates(files);
 const latestDate = dates.length > 0 ? dates[dates.length - 1] : null;
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <title>arXiv新聞</title>
-    {
-      latestDate && (
-        <meta http-equiv="refresh" content={`0; url=/${latestDate}`} />
-      )
-    }
-    <style>
-      body {
-        font-family: sans-serif;
-        max-width: 640px;
-        margin: 4rem auto;
-        padding: 0 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    {
-      latestDate ? (
-        <p>
-          Redirecting to <a href={`/${latestDate}`}>{latestDate}</a>...
-        </p>
-      ) : (
-        <>
-          <h1>📰 arXiv新聞</h1>
-          <p>
-            まだデータがありません。<code>python scripts/parse.py</code>{" "}
-            を実行してください。
-          </p>
-        </>
-      )
-    }
-  </body>
-</html>
+<MainLayout title="arXiv新聞">
+  {latestDate && <meta http-equiv="refresh" content={`0; url=/${latestDate}`} slot="head" />}
+  {
+    latestDate ? (
+      <p>Redirecting to <a href={`/${latestDate}`}>{latestDate}</a>...</p>
+    ) : (
+      <>
+        <h1>📰 arXiv新聞</h1>
+        <p>まだデータがありません。<code>python scripts/parse.py</code> を実行してください。</p>
+      </>
+    )
+  }
+</MainLayout>

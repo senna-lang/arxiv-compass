@@ -22,7 +22,7 @@ export type Rating = {
   paper_id: string;
   title: string;
   abstract: string;
-  rating: number;
+  rating: 1 | 2 | 3;
   rated_at: string;
 };
 
