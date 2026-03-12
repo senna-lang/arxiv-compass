@@ -1,0 +1,367 @@
+{
+  "date": "2026-03-12",
+  "collected_at": "2026-03-12T10:08:56.792149+09:00",
+  "papers": [
+    {
+      "id": "2603.09772",
+      "title": "Removing the Trigger, Not the Backdoor: Alternative Triggers and Latent Backdoors",
+      "authors": [
+        "Gorka Abad",
+        "Ermes Franch",
+        "Stefanos Koffas",
+        "Stjepan Picek"
+      ],
+      "abstract": "Current backdoor defenses assume that neutralizing a known trigger removes the backdoor. We show this trigger-centric view is incomplete: \\emph{alternative triggers}, patterns perceptually distinct from training triggers, reliably activate the same backdoor. We estimate the alternative trigger backdoor direction in feature space by contrasting clean and triggered representations, and then develop a feature-guided attack that jointly optimizes target prediction and directional alignment. First, we theoretically prove that alternative triggers exist and are an inevitable consequence of backdoor training. Then, we verify this empirically. Additionally, defenses that remove training triggers often leave backdoors intact, and alternative triggers can exploit the latent backdoor feature-space. Our findings motivate defenses targeting backdoor directions in representation space rather than input-space triggers.",
+      "url": "https://arxiv.org/abs/2603.09772",
+      "categories": [
+        "cs.CV",
+        "cs.CR"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2779
+    },
+    {
+      "id": "2603.09246",
+      "title": "Reasoning-Oriented Programming: Chaining Semantic Gadgets to Jailbreak Large Vision Language Models",
+      "authors": [
+        "Quanchen Zou",
+        "Moyang Chen",
+        "Zonghao Ying",
+        "Wenzhuo Xu",
+        "Yisong Xiao",
+        "Deyue Zhang",
+        "Dongdong Yang",
+        "Zhao Liu",
+        "Xiangzheng Zhang"
+      ],
+      "abstract": "Large Vision-Language Models (LVLMs) undergo safety alignment to suppress harmful content. However, current defenses predominantly target explicit malicious patterns in the input representation, often overlooking the vulnerabilities inherent in compositional reasoning. In this paper, we identify a systemic flaw where LVLMs can be induced to synthesize harmful logic from benign premises. We formalize this attack paradigm as \\textit{Reasoning-Oriented Programming}, drawing a structural analogy to Return-Oriented Programming in systems security. Just as ROP circumvents memory protections by chaining benign instruction sequences, our approach exploits the model's instruction-following capability to orchestrate a semantic collision of orthogonal benign inputs. We instantiate this paradigm via \\tool{}, an automated framework that optimizes for \\textit{semantic orthogonality} and \\textit{spatial isolation}. By generating visual gadgets that are semantically decoupled from the harmful intent and arranging them to prevent premature feature fusion, \\tool{} forces the malicious logic to emerge only during the late-stage reasoning process. This effectively bypasses perception-level alignment. We evaluate \\tool{} on SafeBench and MM-SafetyBench across 7 state-of-the-art 0.LVLMs, including GPT-4o and Claude 3.7 Sonnet. Our results demonstrate that \\tool{} consistently circumvents safety alignment, outperforming the strongest existing baseline by an average of 4.67\\% on open-source models and 9.50\\% on commercial models.",
+      "url": "https://arxiv.org/abs/2603.09246",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2692
+    },
+    {
+      "id": "2603.09906",
+      "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+      "authors": [
+        "Zorik Gekhman",
+        "Roee Aharoni",
+        "Eran Ofek",
+        "Mor Geva",
+        "Roi Reichart",
+        "Jonathan Herzig"
+      ],
+      "abstract": "While reasoning in LLMs plays a natural role in math, code generation, and multi-hop factual questions, its effect on simple, single-hop factual questions remains unclear. Such questions do not require step-by-step logical decomposition, making the utility of reasoning highly counterintuitive. Nevertheless, we find that enabling reasoning substantially expands the capability boundary of the model's parametric knowledge recall, unlocking correct answers that are otherwise effectively unreachable. Why does reasoning aid parametric knowledge recall when there are no complex reasoning steps to be done? To answer this, we design a series of hypothesis-driven controlled experiments, and identify two key driving mechanisms: (1) a computational buffer effect, where the model uses the generated reasoning tokens to perform latent computation independent of their semantic content; and (2) factual priming, where generating topically related facts acts as a semantic bridge that facilitates correct answer retrieval. Importantly, this latter generative self-retrieval mechanism carries inherent risks: we demonstrate that hallucinating intermediate facts during reasoning increases the likelihood of hallucinations in the final answer. Finally, we show that our insights can be harnessed to directly improve model accuracy by prioritizing reasoning trajectories that contain hallucination-free factual statements.",
+      "url": "https://arxiv.org/abs/2603.09906",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2483
+    },
+    {
+      "id": "2603.09957",
+      "title": "Think Before You Lie: How Reasoning Improves Honesty",
+      "authors": [
+        "Ann Yuan",
+        "Asma Ghandeharioun",
+        "Carter Blum",
+        "Alicia Machado",
+        "Jessica Hoffmann",
+        "Daphne Ippolito",
+        "Martin Wattenberg",
+        "Lucas Dixon",
+        "Katja Filippova"
+      ],
+      "abstract": "While existing evaluations of large language models (LLMs) measure deception rates, the underlying conditions that give rise to deceptive behavior are poorly understood. We investigate this question using a novel dataset of realistic moral trade-offs where honesty incurs variable costs. Contrary to humans, who tend to become less honest given time to deliberate (Capraro, 2017; Capraro et al., 2019), we find that reasoning consistently increases honesty across scales and for several LLM families. This effect is not only a function of the reasoning content, as reasoning traces are often poor predictors of final behaviors. Rather, we show that the underlying geometry of the representational space itself contributes to the effect. Namely, we observe that deceptive regions within this space are metastable: deceptive answers are more easily destabilized by input paraphrasing, output resampling, and activation noise than honest ones. We interpret the effect of reasoning in this vein: generating deliberative tokens as part of moral reasoning entails the traversal of a biased representational space, ultimately nudging the model toward its more stable, honest defaults.",
+      "url": "https://arxiv.org/abs/2603.09957",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.242
+    },
+    {
+      "id": "2603.09678",
+      "title": "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages",
+      "authors": [
+        "Aman Sharma",
+        "Paras Chopra"
+      ],
+      "abstract": "Large language models achieve near-ceiling performance on code generation benchmarks, yet these results increasingly reflect memorization rather than genuine reasoning. We introduce EsoLang-Bench, a benchmark using five esoteric programming languages (Brainfuck, Befunge-98, Whitespace, Unlambda, and Shakespeare) that lack benchmark gaming incentives due to their economic irrationality for pre-training. These languages require the same computational primitives as mainstream programming but have 1,000-100,000x fewer public repositories than Python (based on GitHub search counts). We evaluate five frontier models across five prompting strategies and find a dramatic capability gap: models achieving 85-95% on standard benchmarks score only 0-11% on equivalent esoteric tasks, with 0% accuracy beyond the Easy tier. Few-shot learning and self-reflection fail to improve performance, suggesting these techniques exploit training priors rather than enabling genuine learning. EsoLang-Bench provides the first benchmark designed to mimic human learning by acquiring new languages through documentation, interpreter feedback, and iterative experimentation, measuring transferable reasoning skills resistant to data contamination.",
+      "url": "https://arxiv.org/abs/2603.09678",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2412
+    },
+    {
+      "id": "2603.09951",
+      "title": "Towards a Neural Debugger for Python",
+      "authors": [
+        "Maximilian Beck",
+        "Jonas Gehring",
+        "Jannik Kossen",
+        "Gabriel Synnaeve"
+      ],
+      "abstract": "Training large language models (LLMs) on Python execution traces grounds them in code execution and enables the line-by-line execution prediction of whole Python programs, effectively turning them into neural interpreters (FAIR CodeGen Team et al., 2025). However, developers rarely execute programs step by step; instead, they use debuggers to stop execution at certain breakpoints and step through relevant portions only while inspecting or modifying program variables. Existing neural interpreter approaches lack such interactive control. To address this limitation, we introduce neural debuggers: language models that emulate traditional debuggers, supporting operations such as stepping into, over, or out of functions, as well as setting breakpoints at specific source lines. We show that neural debuggers -- obtained via fine-tuning large LLMs or pre-training smaller models from scratch -- can reliably model both forward execution (predicting future states and outputs) and inverse execution (inferring prior states or inputs) conditioned on debugger actions. Evaluated on CruxEval, our models achieve strong performance on both output and input prediction tasks, demonstrating robust conditional execution modeling. Our work takes first steps towards future agentic coding systems in which neural debuggers serve as a world model for simulated debugging environments, providing execution feedback or enabling agents to interact with real debugging tools. This capability lays the foundation for more powerful code generation, program understanding, and automated debugging.",
+      "url": "https://arxiv.org/abs/2603.09951",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2399
+    },
+    {
+      "id": "2603.09046",
+      "title": "FlexServe: A Fast and Secure LLM Serving System for Mobile Devices with Flexible Resource Isolation",
+      "authors": [
+        "Yinpeng Wu",
+        "Yitong Chen",
+        "Lixiang Wang",
+        "Jinyu Gu",
+        "Zhichao Hua",
+        "Yubin Xia"
+      ],
+      "abstract": "Device-side Large Language Models (LLMs) have witnessed explosive growth, offering higher privacy and availability compared to cloud-side LLMs. During LLM inference, both model weights and user data are valuable, and attackers may even compromise the OS kernel to steal them. ARM TrustZone is the de facto hardware-based isolation technology on mobile devices, used to protect sensitive applications from a compromised OS. However, protecting LLM inference with TrustZone incurs significant overhead due to its inflexible isolation of memory and the NPU. To address these challenges, this paper introduces FlexServe, a fast and secure LLM serving system for mobile devices. It first introduces a Flexible Resource Isolation mechanism to construct Flexible Secure Memory (Flex-Mem) and Flexible Secure NPU (Flex-NPU). Both memory pages and the NPU can be efficiently switched between unprotected and protected modes. Based on these mechanisms, FlexServe designs a fast and secure LLM inference framework within TrustZone's secure world. The LLM-Aware Memory Management and Secure Inference Pipeline are introduced to accelerate inference. A Multi-Model Scheduler is proposed to optimize multi-model workflows. We implement a prototype of FlexServe and compare it with two TrustZone-based strawman designs. The results show that FlexServe achieves an average $10.05\\times$ speedup in Time to First Token (TTFT) compared to the strawman, and an average $2.44\\times$ TTFT speedup compared to an optimized strawman with pipeline and secure NPU enabled. For multi-model agent workflows, the end-to-end speedup is up to $24.30\\times$ and $4.05\\times$ compared to the strawman and optimized strawman, respectively.",
+      "url": "https://arxiv.org/abs/2603.09046",
+      "categories": [
+        "cs.CR",
+        "cs.LG",
+        "cs.OS"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2298
+    },
+    {
+      "id": "2603.09781",
+      "title": "CLIOPATRA: Extracting Private Information from LLM Insights",
+      "authors": [
+        "Meenatchi Sundaram Muthu Selva Annamalai",
+        "Emiliano De Cristofaro",
+        "Peter Kairouz"
+      ],
+      "abstract": "As AI assistants become widely used, privacy-aware platforms like Anthropic's Clio have been introduced to generate insights from real-world AI use. Clio's privacy protections rely on layering multiple heuristic techniques together, including PII redaction, clustering, filtering, and LLM-based privacy auditing. In this paper, we put these claims to the test by presenting CLIOPATRA, the first privacy attack against \"privacy-preserving\" LLM insight systems. The attack involves a realistic adversary that carefully designs and inserts malicious chats into the system to break multiple layers of privacy protections and induce the leakage of sensitive information from a target user's chat.\n  We evaluated CLIOPATRA on synthetically generated medical target chats, demonstrating that an adversary who knows only the basic demographics of a target user and a single symptom can successfully extract the user's medical history in 39% of cases by just inspecting Clio's output. Furthermore, CLIOPATRA can reach close to 100% when Clio is configured with other state-of-the-art models and the adversary's knowledge of the target user is increased. We also show that existing ad hoc mitigations, such as LLM-based privacy auditing, are unreliable and fail to detect major leaks. Our findings indicate that even when layered, current heuristic protections are insufficient to adequately protect user data in LLM-based analysis systems.",
+      "url": "https://arxiv.org/abs/2603.09781",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2262
+    },
+    {
+      "id": "2603.09002",
+      "title": "Security Considerations for Multi-agent Systems",
+      "authors": [
+        "Tam Nguyen",
+        "Moses Ndebugre",
+        "Dheeraj Arremsetty"
+      ],
+      "abstract": "Multi-agent artificial intelligence systems or MAS are systems of autonomous agents that exercise delegated tool authority, share persistent memory, and coordinate via inter-agent communication. MAS introduces qualitatively distinct security vulnerabilities from those documented for singular AI models. Existing security and governance frameworks were not designed for these emerging attack surfaces. This study systematically characterizes the threat landscape of MAS and quantitatively evaluates 16 security frameworks for AI against it. A four-phase methodology is proposed: constructing a deep technical knowledge base of production multi-agent architectures; conducting generative AI-assisted threat modeling scoped to MAS cybersecurity risks and validated by domain experts; structuring survey plans at individual-threat granularity; and scoring each framework on a three-point scale against the cybersecurity risks. The risks were organized into 193 distinct main threat items across nine risk categories. The expected minimal average score is 2. No reviewed framework achieves majority coverage of any single category. Non-Determinism (mean score 1.231 across all 16 frameworks) and Data Leakage (1.340) are the most under-addressed domains. The OWASP Agentic Security Initiative leads overall at 65.3\\% coverage and in the design phase; the CDAO Generative AI Responsible AI Toolkit leads in development and operational coverage. These results provide the first empirical cross-framework comparison for MAS security and offer evidence-based guidance for framework selection.",
+      "url": "https://arxiv.org/abs/2603.09002",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-09",
+      "score": 0.2256
+    },
+    {
+      "id": "2603.09134",
+      "title": "AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations",
+      "authors": [
+        "Shaswata Mitra",
+        "Raj Patel",
+        "Sudip Mittal",
+        "Md Rayhanur Rahman",
+        "Shahram Rahimi"
+      ],
+      "abstract": "Multi-agent systems (MAS) powered by LLMs promise adaptive, reasoning-driven enterprise workflows, yet granting agents autonomous control over tools, memory, and communication introduces attack surfaces absent from deterministic pipelines. While current research largely addresses prompt-level exploits and narrow individual vectors, it lacks a holistic architectural model for enterprise-grade security. We introduce AgenticCyOps (Securing Multi-Agentic AI Integration in Enterprise Cyber Operations), a framework built on a systematic decomposition of attack surfaces across component, coordination, and protocol layers, revealing that documented vectors consistently trace back to two integration surfaces: tool orchestration and memory management. Building on this observation, we formalize these integration surfaces as primary trust boundaries and define five defensive principles: authorized interfaces, capability scoping, verified execution, memory integrity & synchronization, and access-controlled data isolation; each aligned with established compliance standards (NIST, ISO 27001, GDPR, EU AI Act). We apply the framework to a Security Operations Center (SOC) workflow, adopting the Model Context Protocol (MCP) as the structural basis, with phase-scoped agents, consensus validation loops, and per-organization memory boundaries. Coverage analysis, attack path tracing, and trust boundary assessment confirm that the design addresses the documented attack vectors with defense-in-depth, intercepts three of four representative attack chains within the first two steps, and reduces exploitable trust boundaries by a minimum of 72% compared to a flat MAS, positioning AgenticCyOps as a foundation for securing enterprise-grade integration.",
+      "url": "https://arxiv.org/abs/2603.09134",
+      "categories": [
+        "cs.CR",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2206
+    },
+    {
+      "id": "2603.09452",
+      "title": "CyberThreat-Eval: Can Large Language Models Automate Real-World Threat Research?",
+      "authors": [
+        "Xiangsen Chen",
+        "Xuan Feng",
+        "Shuo Chen",
+        "Matthieu Maitre",
+        "Sudipto Rakshit",
+        "Diana Duvieilh",
+        "Ashley Picone",
+        "Nan Tang"
+      ],
+      "abstract": "Analyzing Open Source Intelligence (OSINT) from large volumes of data is critical for drafting and publishing comprehensive CTI reports. This process usually follows a three-stage workflow -- triage, deep search and TI drafting. While Large Language Models (LLMs) offer a promising route toward automation, existing benchmarks still have limitations. These benchmarks often consist of tasks that do not reflect real-world analyst workflows. For example, human analysts rarely receive tasks in the form of multiple-choice questions. Also, existing benchmarks often rely on model-centric metrics that emphasize lexical overlap rather than actionable, detailed insights essential for security analysts. Moreover, they typically fail to cover the complete three-stage workflow. To address these issues, we introduce CyberThreat-Eval, which is collected from the daily CTI workflow of a world-leading company. This expert-annotated benchmark assesses LLMs on practical tasks across all three stages as mentioned above. It utilizes analyst-centric metrics that measure factual accuracy, content quality, and operational costs. Our evaluation using this benchmark reveals important insights into the limitations of current LLMs. For example, LLMs often lack the nuanced expertise required to handle complex details and struggle to distinguish between correct and incorrect information. To address these challenges, the CTI workflow incorporates both external ground-truth databases and human expert knowledge. TRA allows human experts to iteratively provide feedback for continuous improvement. The code is available at \\href{https://github.com/xschen-beb/CyberThreat-Eval}{\\texttt{GitHub}} and \\href{https://huggingface.co/datasets/xse/CyberThreat-Eval}{\\texttt{HuggingFace}}.",
+      "url": "https://arxiv.org/abs/2603.09452",
+      "categories": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.2168,
+      "github_url": "https://github.com/xschen-beb/CyberThreat-Eval}{\\texttt{GitHub}}"
+    },
+    {
+      "id": "2603.09938",
+      "title": "Model Merging in the Era of Large Language Models: Methods, Applications, and Future Directions",
+      "authors": [
+        "Mingyang Song",
+        "Mao Zheng"
+      ],
+      "abstract": "Model merging has emerged as a transformative paradigm for combining the capabilities of multiple neural networks into a single unified model without additional training. With the rapid proliferation of fine-tuned large language models~(LLMs), merging techniques offer a computationally efficient alternative to ensembles and full retraining, enabling practitioners to compose specialized capabilities at minimal cost. This survey presents a comprehensive and structured examination of model merging in the LLM era through the \\textbf{FUSE} taxonomy, a four-dimensional framework organized along \\textbf{F}oundations, \\textbf{U}nification Strategies, \\textbf{S}cenarios, and \\textbf{E}cosystem. We first establish the theoretical underpinnings of merging, including loss landscape geometry, mode connectivity, and the linear mode connectivity hypothesis. We then systematically review the algorithmic landscape, spanning weight averaging, task vector arithmetic, sparsification-enhanced methods, mixture-of-experts architectures, and evolutionary optimization approaches. For each method family, we analyze the core formulation, highlight representative works, and discuss practical trade-offs. We further examine downstream applications across multi-task learning, safety alignment, domain specialization, multilingual transfer, and federated learning. Finally, we survey the supporting ecosystem of open-source tools, community platforms, and evaluation benchmarks, and identify key open challenges including theoretical gaps, scalability barriers, and standardization needs. This survey aims to equip researchers and practitioners with a structured foundation for advancing model merging.",
+      "url": "https://arxiv.org/abs/2603.09938",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.1961
+    },
+    {
+      "id": "2603.09716",
+      "title": "AutoAgent: Evolving Cognition and Elastic Memory Orchestration for Adaptive Agents",
+      "authors": [
+        "Xiaoxing Wang",
+        "Ning Liao",
+        "Shikun Wei",
+        "Chen Tang",
+        "Feiyu Xiong"
+      ],
+      "abstract": "Autonomous agent frameworks still struggle to reconcile long-term experiential learning with real-time, context-sensitive decision-making. In practice, this gap appears as static cognition, rigid workflow dependence, and inefficient context usage, which jointly limit adaptability in open-ended and non-stationary environments. To address these limitations, we present AutoAgent, a self-evolving multi-agent framework built on three tightly coupled components: evolving cognition, on-the-fly contextual decision-making, and elastic memory orchestration. At the core of AutoAgent, each agent maintains structured prompt-level cognition over tools, self-capabilities, peer expertise, and task knowledge. During execution, this cognition is combined with live task context to select actions from a unified space that includes tool calls, LLM-based generation, and inter-agent requests. To support efficient long-horizon reasoning, an Elastic Memory Orchestrator dynamically organizes interaction history by preserving raw records, compressing redundant trajectories, and constructing reusable episodic abstractions, thereby reducing token overhead while retaining decision-critical evidence. These components are integrated through a closed-loop cognitive evolution process that aligns intended actions with observed outcomes to continuously update cognition and expand reusable skills, without external retraining. Empirical results across retrieval-augmented reasoning, tool-augmented agent benchmarks, and embodied task environments show that AutoAgent consistently improves task success, tool-use efficiency, and collaborative robustness over static and memory-augmented baselines. Overall, AutoAgent provides a unified and practical foundation for adaptive autonomous agents that must learn from experience while making reliable context-aware decisions in dynamic environments.",
+      "url": "https://arxiv.org/abs/2603.09716",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.1941
+    },
+    {
+      "id": "2603.09692",
+      "title": "ActiveUltraFeedback: Efficient Preference Data Generation using Active Learning",
+      "authors": [
+        "Davit Melikidze",
+        "Marian Schneider",
+        "Jessica Lam",
+        "Martin Wertich",
+        "Ido Hakimi",
+        "Barna Pásztor",
+        "Andreas Krause"
+      ],
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) has become the standard for aligning Large Language Models (LLMs), yet its efficacy is bottlenecked by the high cost of acquiring preference data, especially in low-resource and expert domains. To address this, we introduce ACTIVEULTRAFEEDBACK, a modular active learning pipeline that leverages uncertainty estimates to dynamically identify the most informative responses for annotation. Our pipeline facilitates the systematic evaluation of standard response selection methods alongside DOUBLE REVERSE THOMPSON SAMPLING (DRTS) and DELTAUCB, two novel methods prioritizing response pairs with large predicted quality gaps, leveraging recent results showing that such pairs provide good signals for fine-tuning. Our experiments demonstrate that ACTIVEULTRAFEEDBACK yields high-quality datasets that lead to significant improvements in downstream performance, notably achieving comparable or superior results with as little as one-sixth of the annotated data relative to static baselines. Our pipeline is available at https://github.com/lasgroup/ActiveUltraFeedback and our preference datasets at https://huggingface.co/ActiveUltraFeedback.",
+      "url": "https://arxiv.org/abs/2603.09692",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.1938,
+      "github_url": "https://github.com/lasgroup/ActiveUltraFeedback"
+    },
+    {
+      "id": "2603.09821",
+      "title": "One-Eval: An Agentic System for Automated and Traceable LLM Evaluation",
+      "authors": [
+        "Chengyu Shen",
+        "Yanheng Hou",
+        "Minghui Pan",
+        "Runming He",
+        "Zhen Hao Wong",
+        "Meiyi Qiang",
+        "Zhou Liu",
+        "Hao Liang",
+        "Peichao Lai",
+        "Zeang Sheng",
+        "Wentao Zhang"
+      ],
+      "abstract": "Reliable evaluation is essential for developing and deploying large language models, yet in practice it often requires substantial manual effort: practitioners must identify appropriate benchmarks, reproduce heterogeneous evaluation codebases, configure dataset schema mappings, and interpret aggregated metrics. To address these challenges, we present One-Eval, an agentic evaluation system that converts natural-language evaluation requests into executable, traceable, and customizable evaluation workflows. One-Eval integrates (i) NL2Bench for intent structuring and personalized benchmark planning, (ii) BenchResolve for benchmark resolution, automatic dataset acquisition, and schema normalization to ensure executability, and (iii) Metrics \\& Reporting for task-aware metric selection and decision-oriented reporting beyond scalar scores. The system further incorporates human-in-the-loop checkpoints for review, editing, and rollback, while preserving sample evidence trails for debugging and auditability. Experiments show that One-Eval can execute end-to-end evaluations from diverse natural-language requests with minimal user effort, supporting more efficient and reproducible evaluation in industrial settings. Our framework is publicly available at https://github.com/OpenDCAI/One-Eval.",
+      "url": "https://arxiv.org/abs/2603.09821",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.1895,
+      "github_url": "https://github.com/OpenDCAI/One-Eval."
+    },
+    {
+      "id": "2603.09803",
+      "title": "Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning",
+      "authors": [
+        "Tiehua Mei",
+        "Minxuan Lv",
+        "Leiyu Pan",
+        "Zhenpeng Su",
+        "Hongru Hou",
+        "Hengrui Chen",
+        "Ao Xu",
+        "Deqing Yang"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) improves reasoning in large language models but treats all correct solutions equally, potentially reinforcing flawed traces that get correct answers by chance. We observe that better reasoning are better teachers: high-quality solutions serve as more effective demonstrations than low-quality ones. We term this teaching ability Demonstration Utility, and show that the policy model's own in-context learning ability provides an efficient way to measure it, yielding a quality signal termed Evidence Gain. To employ this signal during training, we introduce In-Context RLVR. By Bayesian analysis, we show that this objective implicitly reweights rewards by Evidence Gain, assigning higher weights to high-quality traces and lower weights to low-quality ones, without requiring costly computation or external evaluators. Experiments on mathematical benchmarks show improvements in both accuracy and reasoning quality over standard RLVR.",
+      "url": "https://arxiv.org/abs/2603.09803",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.184
+    },
+    {
+      "id": "2603.09341",
+      "title": "TaSR-RAG: Taxonomy-guided Structured Reasoning for Retrieval-Augmented Generation",
+      "authors": [
+        "Jiashuo Sun",
+        "Yixuan Xie",
+        "Jimeng Shi",
+        "Shaowen Wang",
+        "Jiawei Han"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) helps large language models (LLMs) answer knowledge-intensive and time-sensitive questions by conditioning generation on external evidence. However, most RAG systems still retrieve unstructured chunks and rely on one-shot generation, which often yields redundant context, low information density, and brittle multi-hop reasoning. While structured RAG pipelines can improve grounding, they typically require costly and error-prone graph construction or impose rigid entity-centric structures that do not align with the query's reasoning chain.\n  We propose \\textsc{TaSR-RAG}, a taxonomy-guided structured reasoning framework for evidence selection. We represent both queries and documents as relational triples, and constrain entity semantics with a lightweight two-level taxonomy to balance generalization and precision. Given a complex question, \\textsc{TaSR-RAG} decomposes it into an ordered sequence of triple sub-queries with explicit latent variables, then performs step-wise evidence selection via hybrid triple matching that combines semantic similarity over raw triples with structural consistency over typed triples.\n  By maintaining an explicit entity binding table across steps, \\textsc{TaSR-RAG} resolves intermediate variables and reduces entity conflation without explicit graph construction or exhaustive search. Experiments on multiple multi-hop question answering benchmarks show that \\textsc{TaSR-RAG} consistently outperforms strong RAG and structured-RAG baselines by up to 14\\%, while producing clearer evidence attribution and more faithful reasoning traces.",
+      "url": "https://arxiv.org/abs/2603.09341",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.182
+    },
+    {
+      "id": "2603.09892",
+      "title": "MSSR: Memory-Aware Adaptive Replay for Continual LLM Fine-Tuning",
+      "authors": [
+        "Yiyang Lu",
+        "Yu He",
+        "Jianlong Chen",
+        "Hongyuan Zha"
+      ],
+      "abstract": "Continual fine-tuning of large language models (LLMs) is becoming increasingly crucial as these models are deployed in dynamic environments where tasks and data distributions evolve over time. While strong adaptability enables rapid acquisition of new knowledge, it also exposes LLMs to catastrophic forgetting, where previously learned skills degrade during sequential training. Existing replay-based strategies, such as fixed interleaved replay, accuracy-supervised, and loss-driven scheduling, remain limited: some depend on heuristic rules and provide only partial mitigation of forgetting, while others improve performance but incur substantial computational overhead. Motivated by retention dynamics under sequential fine-tuning, we propose Memory-Inspired Sampler and Scheduler Replay (MSSR), an experience replay framework that estimates sample-level memory strength and schedules rehearsal at adaptive intervals to mitigate catastrophic forgetting while maintaining fast adaptation. Extensive experiments across three backbone models and 11 sequential tasks show that MSSR consistently outperforms state-of-the-art replay baselines, with particularly strong gains on reasoning-intensive and multiple-choice benchmarks.",
+      "url": "https://arxiv.org/abs/2603.09892",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-10",
+      "score": 0.1472
+    }
+  ],
+  "meta": {
+    "total": 18,
+    "model": "all-MiniLM-L6-v2",
+    "profile_version": "1"
+  }
+}

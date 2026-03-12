@@ -1,0 +1,38 @@
+{
+	"version": "2",
+	"project": "arxiv-newspaper",
+	"agents_file": "AGENTS.md",
+	"plans": {
+		"summary_sections": [
+			"Background",
+			"Spec"
+		],
+		"excerpt_section": "Background"
+	},
+	"tasks": {
+		"default_status": "open",
+		"default_priority": "medium",
+		"summary_sections": [
+			"What",
+			"Checklist"
+		],
+		"excerpt_section": "What"
+	},
+	"knowledge": {
+		"summary_sections": [
+			"Summary",
+			"Key Learnings"
+		],
+		"excerpt_section": "Summary"
+	},
+	"privacy": {
+		"filter_patterns": []
+	},
+	"git": {
+		"auto_push": false
+	},
+	"gc": {
+		"linked_task_done_days": 30,
+		"orphan_plan_days": 90
+	}
+}

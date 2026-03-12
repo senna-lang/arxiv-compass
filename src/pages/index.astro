@@ -1,0 +1,28 @@
+---
+/**
+ * トップページ
+ *
+ * 利用可能な最新日付のページにリダイレクトする。
+ * データがない場合はセットアップ案内を表示する。
+ */
+import { getAvailableDates } from "../lib/data";
+
+const dates = getAvailableDates();
+if (dates.length > 0) {
+  return Astro.redirect(`/${dates[dates.length - 1]}`);
+}
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>arXiv新聞</title>
+    <style>
+      body { font-family: sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1rem; }
+    </style>
+  </head>
+  <body>
+    <h1>📰 arXiv新聞</h1>
+    <p>まだデータがありません。<code>python scripts/parse.py</code> を実行してください。</p>
+  </body>
+</html>

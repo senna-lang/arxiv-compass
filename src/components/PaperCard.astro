@@ -1,0 +1,158 @@
+---
+/**
+ * 論文カードコンポーネント
+ *
+ * タイトル・著者・カテゴリ・スコア・星UI・abstractアコーディオンを表示する。
+ * 星クリックで public/rate.js を通じて POST /api/rate を呼び出す。
+ */
+import type { Paper } from "../lib/types";
+
+interface Props {
+  paper: Paper;
+  initialRating: number;
+}
+
+const { paper, initialRating } = Astro.props;
+
+const scorePercent = Math.round(paper.score * 100);
+const firstCategory = paper.categories[0] ?? "";
+---
+
+<article class="paper-card" data-paper-id={paper.id}>
+  <header class="paper-header">
+    <h2 class="paper-title">
+      <a href={paper.url} target="_blank" rel="noopener noreferrer">
+        {paper.title}
+      </a>
+    </h2>
+    <div class="paper-meta">
+      <span class="authors">{paper.authors.slice(0, 3).join(", ")}{paper.authors.length > 3 ? " et al." : ""}</span>
+      <span class="sep">·</span>
+      <span class="category">{firstCategory}</span>
+      <span class="sep">·</span>
+      <span class="score">score {scorePercent}%</span>
+    </div>
+  </header>
+
+  <div class="paper-actions">
+    <div
+      class="star-rating"
+      data-paper-id={paper.id}
+      data-title={paper.title}
+      data-abstract={paper.abstract}
+      data-rating={initialRating}
+    >
+      {[1, 2, 3].map((n) => (
+        <button
+          class={`star ${n <= initialRating ? "active" : ""}`}
+          data-value={n}
+          aria-label={`${n}星`}
+        >★</button>
+      ))}
+    </div>
+
+    {paper.github_url && (
+      <a class="github-link" href={paper.github_url} target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    )}
+  </div>
+
+  <details class="abstract-details">
+    <summary>abstract を読む ▼</summary>
+    <p class="abstract-text">{paper.abstract}</p>
+  </details>
+</article>
+
+<style>
+  .paper-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    background: #fff;
+  }
+
+  .paper-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+    line-height: 1.4;
+  }
+
+  .paper-title a {
+    color: #1a0dab;
+    text-decoration: none;
+  }
+
+  .paper-title a:hover {
+    text-decoration: underline;
+  }
+
+  .paper-meta {
+    font-size: 0.82rem;
+    color: #555;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sep { color: #aaa; }
+
+  .paper-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .star-rating {
+    display: flex;
+    gap: 0.15rem;
+  }
+
+  .star {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #ccc;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.1s;
+  }
+
+  .star.active,
+  .star:hover {
+    color: #f5a623;
+  }
+
+  .github-link {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .github-link:hover { background: #f5f5f5; }
+
+  .abstract-details summary {
+    font-size: 0.82rem;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .abstract-text {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap;
+  }
+</style>
+
+<script src="/rate.js" is:inline></script>
