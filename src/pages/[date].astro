@@ -8,7 +8,10 @@
  */
 import PaperCard from "../components/PaperCard.astro";
 import RecommendSection from "../components/RecommendSection.astro";
-import { getAvailableDates, getPapersForDate, getRatingMap } from "../lib/data";
+import type { DailyData, RatingsData } from "../lib/types";
+
+const dailyFiles = import.meta.glob<DailyData>("/data/????????.json", { eager: true });
+const ratingsFile = import.meta.glob<RatingsData>("/data/ratings.json", { eager: true });
 
 export function getStaticPaths() {
   const files = import.meta.glob("/data/????????.json");
@@ -20,9 +23,16 @@ export function getStaticPaths() {
 
 const { date } = Astro.params;
 
-const papers = getPapersForDate(date);
-const ratingMap = getRatingMap();
-const dates = getAvailableDates();
+const dailyData = dailyFiles[`/data/${date}.json`];
+const papers = dailyData?.papers ?? [];
+const ratingsData = ratingsFile["/data/ratings.json"];
+const ratingMap = new Map<string, number>(
+  (ratingsData?.ratings ?? []).map((r) => [r.paper_id, r.rating])
+);
+
+const dates = Object.keys(dailyFiles)
+  .map((f) => f.replace("/data/", "").replace(".json", ""))
+  .sort();
 const idx = dates.indexOf(date);
 const prevDate = idx > 0 ? dates[idx - 1] : null;
 const nextDate = idx < dates.length - 1 ? dates[idx + 1] : null;

@@ -16,18 +16,35 @@ const latestDate = dates.length > 0 ? dates[dates.length - 1] : null;
   <head>
     <meta charset="utf-8" />
     <title>arXiv新聞</title>
-    {latestDate && <meta http-equiv="refresh" content={`0; url=/${latestDate}`} />}
+    {
+      latestDate && (
+        <meta http-equiv="refresh" content={`0; url=/${latestDate}`} />
+      )
+    }
     <style>
-      body { font-family: sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1rem; }
+      body {
+        font-family: sans-serif;
+        max-width: 640px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
     </style>
   </head>
   <body>
-    {latestDate
-      ? <p>Redirecting to <a href={`/${latestDate}`}>{latestDate}</a>...</p>
-      : <>
+    {
+      latestDate ? (
+        <p>
+          Redirecting to <a href={`/${latestDate}`}>{latestDate}</a>...
+        </p>
+      ) : (
+        <>
           <h1>📰 arXiv新聞</h1>
-          <p>まだデータがありません。<code>python scripts/parse.py</code> を実行してください。</p>
+          <p>
+            まだデータがありません。<code>python scripts/parse.py</code>{" "}
+            を実行してください。
+          </p>
         </>
+      )
     }
   </body>
 </html>
