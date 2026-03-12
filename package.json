@@ -15,7 +15,7 @@
     "recommend": "python scripts/recommend.py"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.1.0",
+    "@astrojs/cloudflare": "12.6.13",
     "astro": "^6.0.3"
   },
   "devDependencies": {
