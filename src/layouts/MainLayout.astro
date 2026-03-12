@@ -1,0 +1,34 @@
+---
+/**
+ * 共通レイアウト
+ *
+ * 全ページ共通のHTML骨格・head要素・ベーススタイルを提供する。
+ * title スロットでページ固有のタイトルを受け取る。
+ */
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <slot name="head" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f8f8f8;
+        color: #222;
+        margin: 0;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
