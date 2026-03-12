@@ -14,6 +14,7 @@
     "prompt injection and LLM security attacks",
     "AI agent tool use and reasoning"
   ],
+  "ratings_url": "https://arxiv-newspaper.pages.dev/api/ratings",
   "recommendation": {
     "min_rating": 2,
     "top_clusters": 3,
