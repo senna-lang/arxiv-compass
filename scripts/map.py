@@ -122,6 +122,7 @@ def main(max_papers: int) -> None:
     from umap import UMAP
     from hdbscan import HDBSCAN
     from sklearn.feature_extraction.text import CountVectorizer
+    from bertopic.representation import KeyBERTInspired
 
     # クラスタリング用: 高次元（10D）でHDBSCANに十分な密度情報を残す
     umap_cluster = UMAP(n_components=10, n_neighbors=15, random_state=42, metric="cosine")
@@ -130,12 +131,39 @@ def main(max_papers: int) -> None:
     # min_cluster_sizeはデータ件数に比例して調整（大規模ほど大きく）
     min_cs = max(20, max_papers // 200)
     hdbscan_model = HDBSCAN(min_cluster_size=min_cs, metric="euclidean", prediction_data=True)
-    # stop_words="english" でthe/of/and等を除去、ngram_range=(1,2)で2単語フレーズも抽出
-    vectorizer = CountVectorizer(stop_words="english", ngram_range=(1, 2), min_df=2)
+    # プランA: sklearn英語318語 + 論文特有汎用語でc-TF-IDFノイズを除去
+    # min_df=3で希少語を除外、max_df=0.85で全クラスタ共通語を統計的に除外
+    ACADEMIC_STOPWORDS = [
+        "model", "method", "approach", "propose", "proposed",
+        "result", "results", "paper", "work", "task", "performance",
+        "training", "dataset", "data", "experiment", "experiments",
+        "demonstrate", "achieve", "achieved", "using", "based",
+        "learning", "neural", "deep", "large", "new", "existing",
+        "different", "various", "show", "present", "study",
+        # LLM系汎用語
+        "llm", "llms", "language model", "language models", "large language",
+        # 論文メタ定型文
+        "code available", "github", "anonymous", "preprint", "arxiv",
+        "supplementary", "appendix",
+    ]
+    base_stopwords = list(CountVectorizer(stop_words="english").get_stop_words() or [])
+    vectorizer = CountVectorizer(
+        stop_words=base_stopwords + ACADEMIC_STOPWORDS,
+        ngram_range=(1, 2),
+        min_df=3,
+    )
+    # プランB: c-TF-IDF候補をspecter2 embeddingで意味的再ランキング
+    representation_model = KeyBERTInspired(
+        nr_repr_docs=10,
+        nr_candidate_words=20,
+        top_n_words=10,
+    )
     topic_model = BERTopic(
+        embedding_model=model,
         umap_model=umap_cluster,
         hdbscan_model=hdbscan_model,
         vectorizer_model=vectorizer,
+        representation_model=representation_model,
         calculate_probabilities=False,
         verbose=True,
     )
