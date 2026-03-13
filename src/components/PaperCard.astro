@@ -59,6 +59,15 @@ const firstCategory = paper.categories[0] ?? "";
       }
     </div>
 
+    <a
+      class="pdf-link"
+      href={`https://arxiv.org/pdf/${paper.id}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      PDF
+    </a>
+
     {
       paper.github_url && (
         <a
@@ -144,6 +153,17 @@ const firstCategory = paper.categories[0] ?? "";
   .star:hover {
     color: #f5a623;
   }
+
+  .pdf-link {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #c0392b;
+    text-decoration: none;
+  }
+
+  .pdf-link:hover { background: #fdf0f0; }
 
   .github-link {
     font-size: 0.8rem;
