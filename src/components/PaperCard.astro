@@ -175,6 +175,26 @@ const firstCategory = paper.categories[0] ?? "";
 </style>
 
 <script>
+  // ページロード時にKVの最新評価でUIを初期化
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("/api/ratings");
+      if (!res.ok) return;
+      const data = await res.json() as { ratings: { paper_id: string; rating: number }[] };
+      const ratingMap = new Map(data.ratings.map((r) => [r.paper_id, r.rating]));
+
+      document.querySelectorAll<HTMLElement>(".star-rating").forEach((container) => {
+        const paperId = container.dataset.paperId;
+        if (!paperId) return;
+        const rating = ratingMap.get(paperId) ?? 0;
+        updateStars(container, rating);
+        container.dataset.rating = String(rating);
+      });
+    } catch {
+      // フォールバック: 静的HTMLの初期値をそのまま使用
+    }
+  });
+
   document.addEventListener("click", async (e) => {
     const btn = (e.target as Element).closest(".star");
     if (!btn) return;
