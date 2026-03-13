@@ -229,15 +229,12 @@ def main(top_clusters: int, top_n: int) -> None:
     point_labels = np.array(
         [cluster_label_map.get(p["cluster_id"], "Unlabelled") for p in papers]
     )
-    # top_cluster所属論文はオレンジ、それ以外は青
-    point_colors = np.array(
-        [
-            "#f59e0b"
-            if cluster_label_map.get(p["cluster_id"]) in top_labels
-            else "#3b82f6"
-            for p in papers
-        ]
-    )
+    # top_clusterはオレンジ、それ以外は青、ノイズはグレー（label_color_mapで指定）
+    all_labels = {c["label"] for c in map_data["clusters"]}
+    label_color_map = {
+        label: ("#f59e0b" if label in top_labels else "#3b82f6")
+        for label in all_labels
+    }
 
     plot = datamapplot.create_interactive_plot(
         coords,
@@ -246,7 +243,7 @@ def main(top_clusters: int, top_n: int) -> None:
         title="arXiv Paper Map",
         enable_search=True,
         noise_label="Unlabelled",
-        point_colors=point_colors,
+        label_color_map=label_color_map,
         inline_data=True,
     )
     plot.save(str(html_path))
