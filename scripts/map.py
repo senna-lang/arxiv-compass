@@ -116,10 +116,11 @@ def main(max_papers: int) -> None:
 
     abstracts = [r.summary for r in results]
     paper_ids = [r.entry_id.split("/")[-1].split("v")[0] for r in results]
+    texts = [f"{r.title} [SEP] {r.summary}" for r in results]
 
     print(f"[INFO] Embedding with {model_name}...")
     model = SentenceTransformer(model_name)
-    embeddings: np.ndarray = model.encode(abstracts, show_progress_bar=True)
+    embeddings: np.ndarray = model.encode(texts, show_progress_bar=True)
 
     print("[INFO] Running BERTopic...")
     from bertopic.representation import KeyBERTInspired, MaximalMarginalRelevance
@@ -127,21 +128,18 @@ def main(max_papers: int) -> None:
     from sklearn.decomposition import PCA
     from sklearn.feature_extraction.text import CountVectorizer
 
-    # PCA前処理: 768次元のノイズ次元を落としてUMAPの入力品質を上げる
-    # PCA+UMAPをPipelineにまとめてumap_modelに渡す（fit_transformには768次元を渡すため）
-    # KeyBERTInspiredは768次元embeddingsを使うので次元不一致を避けるための設計
+    # PCA→UMAP(2D)を1パイプラインに統一: クラスタリングと可視化で同じ空間を使う
+    # 2D UMAPでHDBSCANすることで「地図上の近さ」と「クラスタの近さ」が一致する
+    # KeyBERTInspiredは元の768次元embeddingsを使うため次元不一致は生じない
     from sklearn.pipeline import make_pipeline
     from umap import UMAP
 
-    umap_cluster = make_pipeline(
+    umap_model = make_pipeline(
         PCA(n_components=50, random_state=42),
-        UMAP(n_components=10, n_neighbors=50, random_state=42, metric="cosine"),
+        UMAP(n_components=2, n_neighbors=50, random_state=42, metric="cosine"),
     )
-    # 可視化用: PCA後の50次元からUMAP 2Dへ（別途計算）
-    umap_viz = UMAP(n_components=2, n_neighbors=50, random_state=42, metric="cosine")
     # min_cluster_sizeはデータ件数に比例して調整（大規模ほど大きく）
-    # min_samplesを小さくしてノイズ判定を緩め、クラスタ数を増やす
-    min_cs = max(15, max_papers // 500)
+    min_cs = max(15, max_papers // 100)
     hdbscan_model = HDBSCAN(
         min_cluster_size=min_cs, min_samples=5, metric="euclidean", prediction_data=True
     )
@@ -228,9 +226,11 @@ def main(max_papers: int) -> None:
         "mathrm",
     ]
     base_stopwords = list(CountVectorizer(stop_words="english").get_stop_words() or [])
+    # ngram_range=(1,1): bigramはc-TF-IDFで十分な共起頻度が得られない。
+    # 意味的な複合概念はKeyBERTInspiredが担う。
     vectorizer = CountVectorizer(
         stop_words=base_stopwords + ACADEMIC_STOPWORDS,
-        ngram_range=(1, 2),
+        ngram_range=(1, 1),
         min_df=3,
     )
     # プランB: c-TF-IDF候補をspecter2 embeddingで意味的再ランキング
@@ -242,7 +242,7 @@ def main(max_papers: int) -> None:
     ]
     topic_model = BERTopic(
         embedding_model=model,
-        umap_model=umap_cluster,
+        umap_model=umap_model,
         hdbscan_model=hdbscan_model,
         vectorizer_model=vectorizer,
         representation_model=representation_model,
@@ -252,10 +252,8 @@ def main(max_papers: int) -> None:
 
     topics, _ = topic_model.fit_transform(abstracts, embeddings)
 
-    # 可視化用に2D座標を別途計算（PCA後の50次元から）
-    print("[INFO] Computing 2D UMAP for visualization...")
-    pca_viz = PCA(n_components=50, random_state=42)
-    umap_2d = umap_viz.fit_transform(pca_viz.fit_transform(embeddings))
+    # fit済みのumap_modelで2D座標を取得（クラスタリングと同一空間）
+    umap_2d: np.ndarray = umap_model.transform(embeddings)
 
     # クラスタごとに集約
     clusters: list[dict[str, Any]] = []

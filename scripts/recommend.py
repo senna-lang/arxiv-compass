@@ -139,8 +139,8 @@ def main(top_clusters: int, top_n: int) -> None:
     # 重み付けは同一ベクトルを複数回追加することで実現（★2→1回、★3→2回）
     rated_vecs: list[np.ndarray] = []
     if high_rated:
-        abstracts = [r["abstract"] for r in high_rated]
-        vecs = list(model.encode(abstracts, show_progress_bar=False))
+        texts = [f"{r.get('title', '')} [SEP] {r['abstract']}" for r in high_rated]
+        vecs = list(model.encode(texts, show_progress_bar=False))
         for r, vec in zip(high_rated, vecs):
             weight = r["rating"] - 1  # ★2→1回、★3→2回
             rated_vecs.extend([vec] * weight)
@@ -171,9 +171,9 @@ def main(top_clusters: int, top_n: int) -> None:
         papers = fetch_papers_for_cluster(cluster["paper_ids"])
         if not papers:
             continue
-        abstracts = [p.summary for p in papers]
+        texts = [f"{p.title} [SEP] {p.summary}" for p in papers]
         paper_vecs: list[np.ndarray] = list(
-            model.encode(abstracts, show_progress_bar=False)
+            model.encode(texts, show_progress_bar=False)
         )
         centroid = np.array(cluster["centroid"])
 

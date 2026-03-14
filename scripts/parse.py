@@ -152,9 +152,9 @@ def main(date_str: str) -> None:
         print("[ERROR] No papers fetched from arXiv API")
         return
 
-    print(f"[INFO] Embedding {len(results)} abstracts...")
-    abstracts = [r.summary for r in results]
-    abstract_vecs: list[np.ndarray] = list(model.encode(abstracts, show_progress_bar=False))
+    print(f"[INFO] Embedding {len(results)} papers...")
+    texts = [f"{r.title} [SEP] {r.summary}" for r in results]
+    abstract_vecs: list[np.ndarray] = list(model.encode(texts, show_progress_bar=False))
 
     profile_texts: list[str] = config["interest_profile"]
     print("[INFO] Embedding interest profile...")
