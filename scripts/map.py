@@ -14,7 +14,10 @@ arXiv論文群をBERTopicでクラスタリングしてarXiv地図（map.json）
 """
 
 import argparse
+import hashlib
 import json
+import pickle
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -27,16 +30,29 @@ from sentence_transformers import SentenceTransformer
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path(__file__).parent.parent
-CONFIG_PATH = ROOT / "config.json"
+CONFIG_PATH = ROOT / "config.jsonc"
 
 
 def load_config() -> dict[str, Any]:
-    with open(CONFIG_PATH, encoding="utf-8") as f:
-        return json.load(f)
+    import re
+    text = CONFIG_PATH.read_text(encoding="utf-8")
+    text = re.sub(r'"[^"\\]*(?:\\.[^"\\]*)*"|//[^\n]*',
+                  lambda m: m.group(0) if m.group(0).startswith('"') else "", text)
+    text = re.sub(r",(\s*[}\]])", r"\1", text)
+    return json.loads(text)
 
 
-def fetch_arxiv_papers(categories: list[str], max_papers: int) -> list[Any]:
-    """arXiv APIで対象カテゴリの論文を取得する。"""
+def fetch_arxiv_papers(categories: list[str], max_papers: int, cache_dir: Path) -> list[Any]:
+    """arXiv APIで対象カテゴリの論文を取得する。結果は当日中キャッシュする。"""
+    today = datetime.now(JST).strftime("%Y%m%d")
+    key = hashlib.md5(f"{sorted(categories)}{max_papers}".encode()).hexdigest()[:8]
+    cache_path = cache_dir / f"arxiv_{today}_{key}.pkl"
+
+    if cache_path.exists():
+        print(f"[INFO] Loading from cache: {cache_path.name}")
+        with open(cache_path, "rb") as f:
+            return pickle.load(f)
+
     client = arxiv.Client(page_size=500, num_retries=3)
     query = " OR ".join(f"cat:{c}" for c in categories)
     search = arxiv.Search(
@@ -44,7 +60,13 @@ def fetch_arxiv_papers(categories: list[str], max_papers: int) -> list[Any]:
         max_results=max_papers,
         sort_by=arxiv.SortCriterion.SubmittedDate,
     )
-    return list(client.results(search))
+    results = list(client.results(search))
+
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    with open(cache_path, "wb") as f:
+        pickle.dump(results, f)
+    print(f"[INFO] Cached {len(results)} papers to {cache_path.name}")
+    return results
 
 
 def generate_label(keywords: list[str]) -> str:
@@ -100,15 +122,18 @@ def build_map_output(
     }
 
 
-def main(max_papers: int) -> None:
+def main(max_papers: int, log: bool = False) -> None:
     config = load_config()
     output_dir = ROOT / config["output_dir"]
     output_dir.mkdir(parents=True, exist_ok=True)
     model_name: str = config["embedding_model"]
     categories: list[str] = config["categories"]
+    t: dict = config["tuning"]["map"]
 
+    started_at = time.time()
+    cache_dir = ROOT / ".cache"
     print(f"[INFO] Fetching up to {max_papers} papers from arXiv...")
-    results = fetch_arxiv_papers(categories, max_papers)
+    results = fetch_arxiv_papers(categories, max_papers, cache_dir)
     if not results:
         print("[ERROR] No papers fetched")
         return
@@ -116,10 +141,11 @@ def main(max_papers: int) -> None:
 
     abstracts = [r.summary for r in results]
     paper_ids = [r.entry_id.split("/")[-1].split("v")[0] for r in results]
+    texts = [f"{r.title} [SEP] {r.summary}" for r in results]
 
     print(f"[INFO] Embedding with {model_name}...")
     model = SentenceTransformer(model_name)
-    embeddings: np.ndarray = model.encode(abstracts, show_progress_bar=True)
+    embeddings: np.ndarray = model.encode(texts, show_progress_bar=True)
 
     print("[INFO] Running BERTopic...")
     from bertopic.representation import KeyBERTInspired, MaximalMarginalRelevance
@@ -127,23 +153,19 @@ def main(max_papers: int) -> None:
     from sklearn.decomposition import PCA
     from sklearn.feature_extraction.text import CountVectorizer
 
-    # PCA前処理: 768次元のノイズ次元を落としてUMAPの入力品質を上げる
-    # PCA+UMAPをPipelineにまとめてumap_modelに渡す（fit_transformには768次元を渡すため）
-    # KeyBERTInspiredは768次元embeddingsを使うので次元不一致を避けるための設計
+    # PCA→UMAP(2D)を1パイプラインに統一: クラスタリングと可視化で同じ空間を使う
+    # 2D UMAPでHDBSCANすることで「地図上の近さ」と「クラスタの近さ」が一致する
+    # KeyBERTInspiredは元の768次元embeddingsを使うため次元不一致は生じない
     from sklearn.pipeline import make_pipeline
     from umap import UMAP
 
-    umap_cluster = make_pipeline(
-        PCA(n_components=50, random_state=42),
-        UMAP(n_components=10, n_neighbors=50, random_state=42, metric="cosine"),
+    umap_model = make_pipeline(
+        PCA(n_components=t["pca_components"], random_state=42),
+        UMAP(n_components=2, n_neighbors=t["umap_n_neighbors"], random_state=42, metric="cosine"),
     )
-    # 可視化用: PCA後の50次元からUMAP 2Dへ（別途計算）
-    umap_viz = UMAP(n_components=2, n_neighbors=50, random_state=42, metric="cosine")
-    # min_cluster_sizeはデータ件数に比例して調整（大規模ほど大きく）
-    # min_samplesを小さくしてノイズ判定を緩め、クラスタ数を増やす
-    min_cs = max(15, max_papers // 500)
+    min_cs = max(t["hdbscan_min_cluster_size_floor"], max_papers // t["hdbscan_min_cluster_size_divisor"])
     hdbscan_model = HDBSCAN(
-        min_cluster_size=min_cs, min_samples=5, metric="euclidean", prediction_data=True
+        min_cluster_size=min_cs, min_samples=t["hdbscan_min_samples"], metric="euclidean", prediction_data=True
     )
     # プランA: sklearn英語318語 + 論文特有汎用語でc-TF-IDFノイズを除去
     # min_df=3で希少語を除外、max_df=0.85で全クラスタ共通語を統計的に除外
@@ -228,21 +250,20 @@ def main(max_papers: int) -> None:
         "mathrm",
     ]
     base_stopwords = list(CountVectorizer(stop_words="english").get_stop_words() or [])
+    # ngram_range=(1,1): bigramはc-TF-IDFで十分な共起頻度が得られない。
+    # 意味的な複合概念はKeyBERTInspiredが担う。
     vectorizer = CountVectorizer(
         stop_words=base_stopwords + ACADEMIC_STOPWORDS,
-        ngram_range=(1, 2),
-        min_df=3,
+        ngram_range=(1, 1),
+        min_df=t["vectorizer_min_df"],
     )
-    # プランB: c-TF-IDF候補をspecter2 embeddingで意味的再ランキング
-    # nr_candidate_wordsを増やして候補プールを広げ、高頻度語バイアスを緩和
-    # MaximalMarginalRelevanceで選択済み語との類似度を考慮し、冗長ペア（gnns & gnn等）を抑制
     representation_model = [
-        KeyBERTInspired(nr_repr_docs=10, nr_candidate_words=50, top_n_words=10),
-        MaximalMarginalRelevance(diversity=0.3, top_n_words=10),
+        KeyBERTInspired(nr_repr_docs=t["keybert_nr_repr_docs"], nr_candidate_words=t["keybert_nr_candidate_words"], top_n_words=t["keybert_top_n_words"]),
+        MaximalMarginalRelevance(diversity=t["mmr_diversity"], top_n_words=t["keybert_top_n_words"]),
     ]
     topic_model = BERTopic(
         embedding_model=model,
-        umap_model=umap_cluster,
+        umap_model=umap_model,
         hdbscan_model=hdbscan_model,
         vectorizer_model=vectorizer,
         representation_model=representation_model,
@@ -252,10 +273,8 @@ def main(max_papers: int) -> None:
 
     topics, _ = topic_model.fit_transform(abstracts, embeddings)
 
-    # 可視化用に2D座標を別途計算（PCA後の50次元から）
-    print("[INFO] Computing 2D UMAP for visualization...")
-    pca_viz = PCA(n_components=50, random_state=42)
-    umap_2d = umap_viz.fit_transform(pca_viz.fit_transform(embeddings))
+    # fit済みのumap_modelで2D座標を取得（クラスタリングと同一空間）
+    umap_2d: np.ndarray = umap_model.transform(embeddings)
 
     # クラスタごとに集約
     clusters: list[dict[str, Any]] = []
@@ -339,6 +358,34 @@ def main(max_papers: int) -> None:
     plot.save(str(html_path))
     print(f"[INFO] Saved map.html to {html_path}")
 
+    cluster_sizes = [c["size"] for c in clusters]
+    noise_count = len(results) - sum(cluster_sizes)
+    elapsed = round(time.time() - started_at, 1)
+    print(f"[INFO] clusters={len(clusters)}, noise={noise_count}({round(noise_count/len(results)*100,1)}%), elapsed={elapsed}s")
+
+    if log:
+        log_entry = {
+            "ts": datetime.now(JST).isoformat(),
+            "max_papers": max_papers,
+            "fetched": len(results),
+            "min_cluster_size": min_cs,
+            "n_clusters": len(clusters),
+            "noise": noise_count,
+            "noise_pct": round(noise_count / len(results) * 100, 1),
+            "cluster_size": {
+                "min": min(cluster_sizes),
+                "max": max(cluster_sizes),
+                "mean": round(sum(cluster_sizes) / len(cluster_sizes), 1),
+            },
+            "elapsed_sec": elapsed,
+            "model": model_name,
+            "tuning": t,
+        }
+        log_path = output_dir / "map_runs.jsonl"
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+        print(f"[INFO] Logged to {log_path.name}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate arXiv topic map")
@@ -348,5 +395,6 @@ if __name__ == "__main__":
         default=10000,
         help="Maximum number of papers to fetch (default: 10000)",
     )
+    parser.add_argument("--log", action="store_true", help="Record benchmark metrics to map_runs.jsonl")
     args = parser.parse_args()
-    main(args.max_papers)
+    main(args.max_papers, log=args.log)
