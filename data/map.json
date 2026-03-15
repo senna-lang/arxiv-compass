@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T11:04:20.269741+09:00",
+  "generated_at": "2026-03-15T22:36:47.708975+09:00",
   "total_papers": 10000,
   "model": "allenai/specter2_base",
   "clusters": [
@@ -8,16 +8,16 @@
       "keywords": [
         "moe",
         "lora",
+        "layers",
+        "tuning",
         "layer",
         "efficient",
         "decoding",
         "cache",
-        "inference",
-        "quantization",
-        "pruning",
-        "updates"
+        "sparse",
+        "inference"
       ],
-      "label": "moe & lora & layer",
+      "label": "moe & lora & layers",
       "centroid": [
         0.3361668586730957,
         0.2621143162250519,
@@ -1492,11 +1492,11 @@
         "engagement",
         "cognitive",
         "context",
-        "theory",
         "participants",
         "tools",
         "interaction",
-        "information"
+        "information",
+        "knowledge"
       ],
       "label": "conversational & genai & engagement",
       "centroid": [
@@ -2835,17 +2835,17 @@
       "id": 2,
       "keywords": [
         "imaging",
+        "images",
         "image",
         "3d",
         "supervised",
         "classification",
-        "images",
         "mri",
         "reconstruction",
         "segmentation",
         "features"
       ],
-      "label": "imaging & image & 3d",
+      "label": "imaging & images & image",
       "centroid": [
         0.45527225732803345,
         0.3981863856315613,
@@ -4106,9 +4106,9 @@
         "evaluate",
         "reasoning",
         "qa",
+        "search",
         "text",
-        "language",
-        "information"
+        "language"
       ],
       "label": "gpt & factual & answering",
       "centroid": [
@@ -5321,11 +5321,11 @@
         "predictive",
         "forecast",
         "forecasts",
+        "urban",
         "ensemble",
         "modeling",
         "temporal",
         "analysis",
-        "future",
         "probabilistic"
       ],
       "label": "forecasting & predictive & forecast",
@@ -6418,10 +6418,10 @@
         "execution",
         "benchmarks",
         "workflow",
+        "agents",
         "tools",
         "executable",
-        "agent",
-        "code"
+        "agent"
       ],
       "label": "agentic & workflows & orchestration",
       "centroid": [
@@ -7505,16 +7505,16 @@
       "keywords": [
         "multilingual",
         "whisper",
-        "speech",
         "asr",
         "tts",
         "audio",
+        "speech",
         "multimodal",
         "speaker",
         "utterance",
         "voice"
       ],
-      "label": "multilingual & whisper & speech",
+      "label": "multilingual & whisper & asr",
       "centroid": [
         0.4064990282058716,
         0.5022385120391846,
@@ -8558,16 +8558,16 @@
       "keywords": [
         "regret",
         "bandit",
+        "convex",
         "optimization",
         "guarantees",
         "optimal",
-        "bound",
         "bounds",
+        "bound",
         "approximation",
-        "algorithms",
-        "stochastic"
+        "algorithms"
       ],
-      "label": "regret & bandit & optimization",
+      "label": "regret & bandit & convex",
       "centroid": [
         0.3860473036766052,
         0.38199570775032043,
@@ -10607,10 +10607,10 @@
         "computational",
         "nonlinear",
         "dynamics",
-        "solver",
         "solvers",
         "modeling",
-        "numerical"
+        "numerical",
+        "fidelity"
       ],
       "label": "optimization & pde & pinn",
       "centroid": [
@@ -11576,17 +11576,17 @@
       "id": 10,
       "keywords": [
         "verifiable",
+        "secure",
         "security",
         "blockchain",
         "cryptographic",
-        "secure",
         "pqc",
         "protocols",
         "quantum",
         "attestation",
         "protocol"
       ],
-      "label": "verifiable & security & blockchain",
+      "label": "verifiable & secure & security",
       "centroid": [
         0.4019887149333954,
         0.2516423463821411,
@@ -12555,10 +12555,10 @@
         "corpora",
         "dialects",
         "sentence",
-        "corpus",
         "english",
         "linguistic",
-        "translation"
+        "translation",
+        "annotation"
       ],
       "label": "multilingual & nlp & language",
       "centroid": [
@@ -13503,11 +13503,11 @@
         "inference",
         "verifiable",
         "reasoning",
+        "reward",
         "improving",
         "rewards",
         "reinforcement",
-        "benchmarks",
-        "improves"
+        "benchmarks"
       ],
       "label": "rlvr & lrms & inference",
       "centroid": [
@@ -15384,9 +15384,9 @@
         "posterior",
         "gaussian",
         "stochastic",
-        "kernel",
         "inference",
-        "distributions"
+        "distributions",
+        "bayesian"
       ],
       "label": "wasserstein & gradient & variational",
       "centroid": [
@@ -16302,18 +16302,18 @@
     {
       "id": 15,
       "keywords": [
+        "reward",
         "learn",
         "reinforcement",
         "rewards",
         "optimization",
         "gradient",
         "exploration",
-        "reward",
         "ppo",
         "actions",
         "prior"
       ],
-      "label": "learn & reinforcement & rewards",
+      "label": "reward & learn & reinforcement",
       "centroid": [
         0.22920633852481842,
         0.38672754168510437,
@@ -18144,7 +18144,7 @@
         "optimization",
         "generalization",
         "representation",
-        "adam"
+        "layers"
       ],
       "label": "optimizer & representational & cifar",
       "centroid": [
@@ -19048,17 +19048,17 @@
       "id": 18,
       "keywords": [
         "captioning",
+        "images",
         "image",
         "encoder",
         "vision",
-        "images",
+        "visual",
         "supervised",
         "multimodal",
         "representations",
-        "representation",
-        "scene"
+        "representation"
       ],
-      "label": "captioning & image & encoder",
+      "label": "captioning & images & image",
       "centroid": [
         0.3984791040420532,
         0.2629598379135132,
@@ -19960,8 +19960,8 @@
         "threats",
         "workflows",
         "fuzzing",
-        "security",
         "threat",
+        "security",
         "risks",
         "vulnerability"
       ],
@@ -20863,9 +20863,9 @@
         "gnn",
         "graph",
         "embeddings",
-        "graphs",
         "homophily",
         "embedding",
+        "graphs",
         "networks",
         "heterophilic",
         "representation"
@@ -21765,10 +21765,10 @@
         "inference",
         "semantic",
         "multimodal",
+        "visual",
         "representations",
         "understanding",
-        "vision",
-        "perception"
+        "vision"
       ],
       "label": "mllms & vlms & reasoning",
       "centroid": [
@@ -22667,8 +22667,8 @@
         "backdoor",
         "prompts",
         "refusal",
-        "defenses",
-        "malicious"
+        "tuning",
+        "defenses"
       ],
       "label": "jailbreak & adversarial & safeguards",
       "centroid": [
@@ -23557,11 +23557,11 @@
         "cuda",
         "execution",
         "benchmarks",
+        "reward",
         "planning",
         "optimization",
         "scalable",
-        "improve",
-        "agent"
+        "improve"
       ],
       "label": "agentic & exploration & cuda",
       "centroid": [
@@ -25333,11 +25333,11 @@
         "counterfactual",
         "inference",
         "conditional",
-        "latent",
+        "causal",
         "estimation",
         "estimating",
         "bayesian",
-        "causal",
+        "latent",
         "empirical"
       ],
       "label": "identifiability & counterfactual & inference",
@@ -26209,12 +26209,12 @@
         "agentic",
         "rlvr",
         "rollout",
+        "reward",
         "reinforcement",
         "exploration",
         "rewards",
         "optimization",
         "gradient",
-        "reward",
         "r1"
       ],
       "label": "agentic & rlvr & rollout",
@@ -27961,11 +27961,11 @@
         "learn",
         "optimization",
         "efficient",
-        "states",
         "unitary",
         "dft",
         "classical",
-        "hamiltonian"
+        "hamiltonian",
+        "photonic"
       ],
       "label": "quantum & qubit & learn",
       "centroid": [
@@ -30566,12 +30566,12 @@
         "wireless",
         "csi",
         "channel",
-        "signal",
         "6g",
         "optimization",
         "sensing",
         "transmission",
-        "propagation"
+        "propagation",
+        "receiver"
       ],
       "label": "mimo & wireless & csi",
       "centroid": [
@@ -32289,17 +32289,17 @@
       "id": 33,
       "keywords": [
         "3d",
-        "splatting",
         "images",
+        "scenes",
+        "splatting",
+        "visual",
         "reconstruction",
         "scene",
         "image",
         "video",
-        "scenes",
-        "generative",
-        "rendering"
+        "generative"
       ],
-      "label": "3d & splatting & images",
+      "label": "3d & images & scenes",
       "centroid": [
         0.3164984881877899,
         0.18508966267108917,
@@ -33159,7 +33159,7 @@
         "clusters",
         "classification",
         "cluster",
-        "graphs"
+        "manifold"
       ],
       "label": "clusterings & clustering & dimensionality",
       "centroid": [
@@ -34007,8 +34007,8 @@
         "retrieval",
         "embeddings",
         "query",
-        "ranking",
-        "search"
+        "search",
+        "ranking"
       ],
       "label": "dllms & mllms & reranking",
       "centroid": [
@@ -35694,11 +35694,11 @@
         "ppo",
         "scheduling",
         "drl",
+        "urban",
         "solvers",
         "instances",
         "problem",
-        "heuristic",
-        "heuristics"
+        "heuristic"
       ],
       "label": "optimization & marl & ppo",
       "centroid": [
@@ -36534,16 +36534,16 @@
       "keywords": [
         "mlips",
         "optimization",
+        "ligand",
         "structural",
         "structure",
         "generative",
         "backbone",
         "affinity",
         "discovery",
-        "crystal",
-        "atom"
+        "crystal"
       ],
-      "label": "mlips & optimization & structural",
+      "label": "mlips & optimization & ligand",
       "centroid": [
         0.3448837101459503,
         0.24007868766784668,
