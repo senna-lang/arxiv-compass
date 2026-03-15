@@ -1,199 +1,199 @@
 {
-  "generated_at": "2026-03-14T22:07:59.174513+09:00",
+  "generated_at": "2026-03-15T22:27:55.336629+09:00",
   "top_clusters": [
     {
-      "label": "agentic & workflows & orchestration",
-      "score": 0.8893
+      "label": "agent & agents & tools",
+      "score": 0.8427
     },
     {
-      "label": "gpt & factual & answering",
-      "score": 0.8867
+      "label": "semantic & schema & retrieval",
+      "score": 0.8419
     },
     {
-      "label": "jailbreak & hacking & openclaw",
-      "score": 0.8809
+      "label": "thinking & reasoning & reinforcement",
+      "score": 0.8402
     }
   ],
   "recommendations": [
     {
-      "id": "2602.10453",
-      "title": "The Landscape of Prompt Injection Threats in LLM Agents: From Taxonomy to Analysis",
-      "abstract": "The evolution of Large Language Models (LLMs) has resulted in a paradigm shift towards autonomous agents, necessitating robust security against Prompt Injection (PI) vulnerabilities where untrusted inputs hijack agent behaviors. This SoK presents a comprehensive overview of the PI landscape, covering attacks, defenses, and their evaluation practices. Through a systematic literature review and quantitative analysis, we establish taxonomies that categorize PI attacks by payload generation strategies (heuristic vs. optimization) and defenses by intervention stages (text, model, and execution levels). Our analysis reveals a key limitation shared by many existing defenses and benchmarks: they largely overlook context-dependent tasks, in which agents are authorized to rely on runtime environmental observations to determine actions. To address this gap, we introduce AgentPI, a new benchmark designed to systematically evaluate agent behavior under context-dependent interaction settings. Using AgentPI, we empirically evaluate representative defenses and show that no single approach can simultaneously achieve high trustworthiness, high utility, and low latency. Moreover, we show that many defenses appear effective under existing benchmarks by suppressing contextual inputs, yet fail to generalize to realistic agent settings where context-dependent reasoning is essential. This SoK distills key takeaways and open research problems, offering structured guidance for future research and practical deployment of secure LLM agents.",
-      "url": "https://arxiv.org/abs/2602.10453",
-      "match_score": 0.9822,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-11"
+      "id": "2603.08398",
+      "title": "Revealing Behavioral Plasticity in Large Language Models: A Token-Conditional Perspective",
+      "abstract": "In this work, we reveal that Large Language Models (LLMs) possess intrinsic behavioral plasticity-akin to chameleons adapting their coloration to environmental cues-that can be exposed through token-conditional generation and stabilized via reinforcement learning. Specifically, by conditioning generation on carefully selected token prefixes sampled from responses exhibiting desired behaviors, LLMs seamlessly adapt their behavioral modes at inference time (e.g., switching from step-by-step reasoning to direct answering) without retraining. Based on this insight, we propose Token-Conditioned Reinforcement Learning (ToCoRL), a principled framework that leverages RL to internalize this chameleon-like plasticity, transforming transient inference-time adaptations into stable and learnable behavioral patterns. ToCoRL guides exploration with token-conditional generation and keep enhancing exploitation, enabling emergence of appropriate behaviors. Extensive experiments show that ToCoRL enables precise behavioral control without capability degradation. Notably, we show that large reasoning models, while performing strongly on complex mathematics, can be effectively adapted to excel at factual question answering, which was a capability previously hindered by their step-by-step reasoning patterns.",
+      "url": "https://arxiv.org/abs/2603.08398",
+      "match_score": 0.9751,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-03-09"
     },
     {
-      "id": "2602.19547",
-      "title": "CIBER: A Comprehensive Benchmark for Security Evaluation of Code Interpreter Agents",
-      "abstract": "LLM-based code interpreter agents are increasingly deployed in critical workflows, yet their robustness against risks introduced by their code execution capabilities remains underexplored. Existing benchmarks are limited to static datasets or simulated environments, failing to capture the security risks arising from dynamic code execution, tool interactions, and multi-turn context. To bridge this gap, we introduce CIBER, an automated benchmark that combines dynamic attack generation, isolated secure sandboxing, and state-aware evaluation to systematically assess the vulnerability of code interpreter agents against four major types of adversarial attacks: Direct/Indirect Prompt Injection, Memory Poisoning, and Prompt-based Backdoor.\n  We evaluate six foundation models across two representative code interpreter agents (OpenInterpreter and OpenCodeInterpreter), incorporating a controlled study of identical models. Our results reveal that Interpreter Architecture and Model Alignment Set the Security Baseline. Structural integration enables aligned specialized models to outperform generic SOTA models. Conversely, high intelligence paradoxically increases susceptibility to complex adversarial prompts due to stronger instruction adherence. Furthermore, we identify a \"Natural Language Disguise\" Phenomenon, where natural language functions as a significantly more effective input modality than explicit code snippets (+14.1% ASR), thereby bypassing syntax-based defenses. Finally, we expose an alarming Security Polarization, where agents exhibit robust defenses against explicit threats yet fail catastrophically against implicit semantic hazards, highlighting a fundamental blind spot in current pattern-matching protection approaches.",
-      "url": "https://arxiv.org/abs/2602.19547",
-      "match_score": 0.9798,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-23"
-    },
-    {
-      "id": "2602.14689",
-      "title": "Exposing the Systematic Vulnerability of Open-Weight Models to Prefill Attacks",
-      "abstract": "As the capabilities of large language models continue to advance, so does their potential for misuse. While closed-source models typically rely on external defenses, open-weight models must primarily depend on internal safeguards to mitigate harmful behavior. Prior red-teaming research has largely focused on input-based jailbreaking and parameter-level manipulations. However, open-weight models also natively support prefilling, which allows an attacker to predefine initial response tokens before generation begins. Despite its potential, this attack vector has received little systematic attention. We present the largest empirical study to date of prefill attacks, evaluating over 20 existing and novel strategies across multiple model families and state-of-the-art open-weight models. Our results show that prefill attacks are consistently effective against all major contemporary open-weight models, revealing a critical and previously underexplored vulnerability with significant implications for deployment. While certain large reasoning models exhibit some robustness against generic prefilling, they remain vulnerable to tailored, model-specific strategies. Our findings underscore the urgent need for model developers to prioritize defenses against prefill attacks in open-weight LLMs.",
-      "url": "https://arxiv.org/abs/2602.14689",
-      "match_score": 0.9776,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-16"
-    },
-    {
-      "id": "2602.22724",
-      "title": "AgentSentry: Mitigating Indirect Prompt Injection in LLM Agents via Temporal Causal Diagnostics and Context Purification",
-      "abstract": "Large language model (LLM) agents increasingly rely on external tools and retrieval systems to autonomously complete complex tasks. However, this design exposes agents to indirect prompt injection (IPI), where attacker-controlled context embedded in tool outputs or retrieved content silently steers agent actions away from user intent. Unlike prompt-based attacks, IPI unfolds over multi-turn trajectories, making malicious control difficult to disentangle from legitimate task execution. Existing inference-time defenses primarily rely on heuristic detection and conservative blocking of high-risk actions, which can prematurely terminate workflows or broadly suppress tool usage under ambiguous multi-turn scenarios. We propose AgentSentry, a novel inference-time detection and mitigation framework for tool-augmented LLM agents. To the best of our knowledge, AgentSentry is the first inference-time defense to model multi-turn IPI as a temporal causal takeover. It localizes takeover points via controlled counterfactual re-executions at tool-return boundaries and enables safe continuation through causally guided context purification that removes attack-induced deviations while preserving task-relevant evidence. We evaluate AgentSentry on the \\textsc{AgentDojo} benchmark across four task suites, three IPI attack families, and multiple black-box LLMs. AgentSentry eliminates successful attacks and maintains strong utility under attack, achieving an average Utility Under Attack (UA) of 74.55 %, improving UA by 20.8 to 33.6 percentage points over the strongest baselines without degrading benign performance.",
-      "url": "https://arxiv.org/abs/2602.22724",
-      "match_score": 0.9766,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-26"
-    },
-    {
-      "id": "2603.07825",
-      "title": "Benchmarking Large Language Models for Quebec Insurance: From Closed-Book to Retrieval-Augmented Generation",
-      "abstract": "The digitization of insurance distribution in the Canadian province of Quebec, accelerated by legislative changes such as Bill 141, has created a significant \"advice gap\", leaving consumers to interpret complex financial contracts without professional guidance. While Large Language Models (LLMs) offer a scalable solution for automated advisory services, their deployment in high-stakes domains hinges on strict legal accuracy and trustworthiness. In this paper, we address this challenge by introducing AEPC-QA, a private gold-standard benchmark of 807 multiple-choice questions derived from official regulatory certification (paper) handbooks. We conduct a comprehensive evaluation of 51 LLMs across two paradigms: closed-book generation and retrieval-augmented generation (RAG) using a specialized corpus of Quebec insurance documents. Our results reveal three critical insights: 1) the supremacy of inference-time reasoning, where models leveraging chain-of-thought processing (e.g. o3-2025-04-16, o1-2024-12-17) significantly outperform standard instruction-tuned models; 2) RAG acts as a knowledge equalizer, boosting the accuracy of models with weak parametric knowledge by over 35 percentage points, yet paradoxically causing \"context distraction\" in others, leading to catastrophic performance regressions; and 3) a \"specialization paradox\", where massive generalist models consistently outperform smaller, domain-specific French fine-tuned ones. These findings suggest that while current architectures approach expert-level proficiency (~79%), the instability introduced by external context retrieval necessitates rigorous robustness calibration before autonomous deployment is viable.",
-      "url": "https://arxiv.org/abs/2603.07825",
-      "match_score": 0.9742,
-      "matched_cluster": "gpt & factual & answering",
-      "submitted": "2026-03-08"
-    },
-    {
-      "id": "2603.06621",
-      "title": "Reward Under Attack: Analyzing the Robustness and Hackability of Process Reward Models",
-      "abstract": "Process Reward Models (PRMs) are rapidly becoming the backbone of LLM reasoning pipelines, yet we demonstrate that state-of-the-art PRMs are systematically exploitable under adversarial optimization pressure. To address this, we introduce a three-tiered diagnostic framework that applies increasing adversarial pressure to quantify these vulnerabilities. Static perturbation analysis uncovers a fluency-logic dissociation: high invariance to surface-level style changes reward changes $<$0.1, yet inconsistent detection of logically-corrupted reasoning, with different models failing on different attack types. Adversarial optimization demonstrates that gradient-based attacks inflate rewards on invalid trajectories, with reward landscapes exhibiting wide, exploitable peaks. RL-induced reward hacking exposes the critical failure mode: policies trained on AIME problems achieve near-perfect PRM rewards ($>$0.9), while ground-truth accuracy remains low (below 4%), with 43% of reward gains attributable to stylistic shortcuts. These findings reveal that current PRMs function as fluency detectors rather than reasoning verifiers, creating systematic blind spots that undermine their use as training signals. We release PRM-BiasBench and a diagnostic toolkit to enable robustness evaluation before deployment. The code and dataset are available at https://github.com/SqueezeAILab/reward-under-attack.",
-      "url": "https://arxiv.org/abs/2603.06621",
-      "match_score": 0.9734,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-20"
-    },
-    {
-      "id": "2602.20156",
-      "title": "Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks",
-      "abstract": "LLM agents are evolving rapidly, powered by code execution, tools, and the recently introduced agent skills feature. Skills allow users to extend LLM applications with specialized third-party code, knowledge, and instructions. Although this can extend agent capabilities to new domains, it creates an increasingly complex agent supply chain, offering new surfaces for prompt injection attacks. We identify skill-based prompt injection as a significant threat and introduce SkillInject, a benchmark evaluating the susceptibility of widely-used LLM agents to injections through skill files. SkillInject contains 202 injection-task pairs with attacks ranging from obviously malicious injections to subtle, context-dependent attacks hidden in otherwise legitimate instructions. We evaluate frontier LLMs on SkillInject, measuring both security in terms of harmful instruction avoidance and utility in terms of legitimate instruction compliance. Our results show that today's agents are highly vulnerable with up to 80% attack success rate with frontier models, often executing extremely harmful instructions including data exfiltration, destructive action, and ransomware-like behavior. They furthermore suggest that this problem will not be solved through model scaling or simple input filtering, but that robust agent security will require context-aware authorization frameworks. Our benchmark is available at https://www.skill-inject.com/.",
-      "url": "https://arxiv.org/abs/2602.20156",
-      "match_score": 0.9733,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-23"
-    },
-    {
-      "id": "2603.11082",
-      "title": "Quality-Driven Agentic Reasoning for LLM-Assisted Software Design: Questions-of-Thoughts (QoT) as a Time-Series Self-QA Chain",
-      "abstract": "Recent advances in large language models (LLMs) have accelerated AI-assisted software development, yet practical deployment remains constrained by incomplete implementations, weak modularization, and inconsistent security practices. We introduce Questions-of-Thoughts (QoT), a quality-driven inference-time scaffold that turns a user goal into (i) an ordered sequence of engineering steps and (ii) stepwise self-questioning to verify constraints and reduce omission errors, while maintaining a lightweight reasoning record that stabilizes subsequent design decisions.\n  We evaluate QoT across three representative backend engineering domains: API Design, Data Communication, and File Systems. Each task requires multi-module decomposition and exposes standard failure modes in LLM-generated systems. To enable data-driven comparison, we score generated artifacts using an ISO/IEC-inspired quality rubric that measures Scalability, Completeness, Modularity, and Security. We report domain-wise gains as the change in total quality score, defined as the QoT score minus the NoQoT score. Results show capacity-dependent improvements: QoT yields consistent quality improvements for larger models and more complex domains, while smaller models may exhibit trade-offs under tight context and planning budgets.\n  We release an open artifact with prompts, scoring guidelines, raw generations, and scripts that reproduce the reported tables and figures to support applied AI and data analytics research.",
-      "url": "https://arxiv.org/abs/2603.11082",
-      "match_score": 0.9727,
-      "matched_cluster": "agentic & workflows & orchestration",
-      "submitted": "2026-03-10"
-    },
-    {
-      "id": "2603.10143",
-      "title": "Reason and Verify: A Framework for Faithful Retrieval-Augmented Generation",
-      "abstract": "Retrieval-Augmented Generation (RAG) significantly improves the factuality of Large Language Models (LLMs), yet standard pipelines often lack mechanisms to verify inter- mediate reasoning, leaving them vulnerable to hallucinations in high-stakes domains. To address this, we propose a domain-specific RAG framework that integrates explicit rea- soning and faithfulness verification. Our architecture augments standard retrieval with neural query rewriting, BGE-based cross-encoder reranking, and a rationale generation module that grounds sub-claims in specific evidence spans. We further introduce an eight-category verification taxonomy that enables fine-grained assessment of rationale faithfulness, distinguishing between explicit and implicit support patterns to facilitate structured error diagnosis. We evaluate this framework on the BioASQ and PubMedQA benchmarks, specifically analyzing the impact of dynamic in-context learning and rerank- ing under constrained token budgets. Experiments demonstrate that explicit rationale generation improves accuracy over vanilla RAG baselines, while dynamic demonstration selection combined with robust reranking yields further gains in few-shot settings. Using Llama-3-8B-Instruct, our approach achieves 89.1% on BioASQ-Y/N and 73.0% on Pub- MedQA, competitive with systems using significantly larger models. Additionally, we perform a pilot study combining human expert assessment with LLM-based verification to explore how explicit rationale generation improves system transparency and enables more detailed diagnosis of retrieval failures in biomedical question answering.",
-      "url": "https://arxiv.org/abs/2603.10143",
-      "match_score": 0.9723,
-      "matched_cluster": "gpt & factual & answering",
-      "submitted": "2026-03-10"
-    },
-    {
-      "id": "2602.22450",
-      "title": "Silent Egress: When Implicit Prompt Injection Makes LLM Agents Leak Without a Trace",
-      "abstract": "Agentic large language model systems increasingly automate tasks by retrieving URLs and calling external tools. We show that this workflow gives rise to implicit prompt injection: adversarial instructions embedded in automatically generated URL previews, including titles, metadata, and snippets, can introduce a system-level risk that we refer to as silent egress. Using a fully local and reproducible testbed, we demonstrate that a malicious web page can induce an agent to issue outbound requests that exfiltrate sensitive runtime context, even when the final response shown to the user appears harmless. In 480 experimental runs with a qwen2.5:7b-based agent, the attack succeeds with high probability (P (egress) =0.89), and 95% of successful attacks are not detected by output-based safety checks. We also introduce sharded exfiltration, where sensitive information is split across multiple requests to avoid detection. This strategy reduces single-request leakage metrics by 73% (Leak@1) and bypasses simple data loss prevention mechanisms. Our ablation results indicate that defenses applied at the prompt layer offer limited protection, while controls at the system and network layers, such as domain allowlisting and redirect-chain analysis, are considerably more effective. These findings suggest that network egress should be treated as a first-class security outcome in agentic LLM systems. We outline architectural directions, including provenance tracking and capability isolation, that go beyond prompt-level hardening.",
-      "url": "https://arxiv.org/abs/2602.22450",
-      "match_score": 0.9723,
-      "matched_cluster": "jailbreak & hacking & openclaw",
+      "id": "2602.21786",
+      "title": "D-COT: Disciplined Chain-of-Thought Learning for Efficient Reasoning in Small Language Models",
+      "abstract": "Chain-of-Thought (CoT) distillation from Large Language Models (LLMs) often induces \"overthinking\" in Small Language Models (SLMs), leading to performance degradation and excessive token consumption. In this study, we propose Disciplined Chain-of-Thought (D-CoT), a novel framework that enforces a structured reasoning process using control tags -- such as <TEMP_LOW> for fact-checking and <TEMP_HIGH> for multi-perspective exploration -- as auxiliary scaffolding during training. By optimizing the CoT trajectory, D-CoT suppresses reasoning drift and simultaneously achieves token reduction and performance improvement. We demonstrate the efficacy of our approach on Qwen3-8B: with only 5,000 training samples, D-CoT significantly boosts accuracy on GPQA-diamond by 9.9% and MMLU-Pro (0-shot) by 9.1%, while drastically reducing computational costs. Furthermore, we confirm that the model internalizes this disciplined thought structure, maintaining high performance even without explicit control tags during inference.",
+      "url": "https://arxiv.org/abs/2602.21786",
+      "match_score": 0.972,
+      "matched_cluster": "thinking & reasoning & reinforcement",
       "submitted": "2026-02-25"
     },
     {
-      "id": "2603.03175",
-      "title": "Saarthi for AGI: Towards Domain-Specific General Intelligence for Formal Verification",
-      "abstract": "Saarthi is an agentic AI framework that uses multi-agent collaboration to perform end-to-end formal verification. Even though the framework provides a complete flow from specification to coverage closure, with around 40% efficacy, there are several challenges that need to be addressed to make it more robust and reliable. Artificial General Intelligence (AGI) is still a distant goal, and current Large Language Model (LLM)-based agents are prone to hallucinations and making mistakes, especially when dealing with complex tasks such as formal verification. However, with the right enhancements and improvements, we believe that Saarthi can be a significant step towards achieving domain-specific general intelligence for formal verification. Especially for problems that require Short Term, Short Context (STSC) capabilities, such as formal verification, Saarthi can be a powerful tool to assist verification engineers in their work. In this paper, we present two key enhancements to the Saarthi framework: (1) a structured rulebook and specification grammar to improve the accuracy and controllability of SystemVerilog Assertion (SVA) generation, and (2) integration of advanced Retrieval Augmented Generation (RAG) techniques, such as GraphRAG, to provide agents with access to technical knowledge and best practices for iterative refinement and improvement of outputs. We also benchmark these enhancements for the overall Saarthi framework using challenging test cases from NVIDIA's CVDP benchmark targeting formal verification. Our benchmark results stand out with a 70% improvement in the accuracy of generated assertions, and a 50% reduction in the number of iterations required to achieve coverage closure.",
-      "url": "https://arxiv.org/abs/2603.03175",
-      "match_score": 0.9715,
-      "matched_cluster": "agentic & workflows & orchestration",
-      "submitted": "2026-03-03"
+      "id": "2603.08655",
+      "title": "OfficeQA Pro: An Enterprise Benchmark for End-to-End Grounded Reasoning",
+      "abstract": "We introduce OfficeQA Pro, a benchmark for evaluating AI agents on grounded, multi-document reasoning over a large and heterogeneous document corpus. The corpus consists of U.S. Treasury Bulletins spanning nearly 100 years, comprising 89,000 pages and over 26 million numerical values. OfficeQA Pro consists of 133 questions that require precise document parsing, retrieval, and analytical reasoning across both unstructured text and tabular data. Frontier LLMs including Claude Opus 4.6, GPT-5.4, and Gemini 3.1 Pro Preview achieve less than 5% accuracy on OfficeQA Pro when relying on parametric knowledge, and less than 12% with additional access to the web. When provided directly with the document corpus, frontier agents still struggle on over half of questions, scoring 34.1% on average. We find that providing agents with a structured document representation produced by Databricks' ai_parse_document yields a 16.1% average relative performance gain across agents. We conduct additional ablations to study the effects of model selection, table representation, retrieval strategy, and test-time scaling on performance. Despite these improvements, significant headroom remains before agents can be considered reliable at enterprise-grade grounded reasoning.",
+      "url": "https://arxiv.org/abs/2603.08655",
+      "match_score": 0.9712,
+      "matched_cluster": "semantic & schema & retrieval",
+      "submitted": "2026-03-09"
     },
     {
-      "id": "2603.11862",
-      "title": "You Told Me to Do It: Measuring Instructional Text-induced Private Data Leakage in LLM Agents",
-      "abstract": "High-privilege LLM agents that autonomously process external documentation are increasingly trusted to automate tasks by reading and executing project instructions, yet they are granted terminal access, filesystem control, and outbound network connectivity with minimal security oversight. We identify and systematically measure a fundamental vulnerability in this trust model, which we term the \\emph{Trusted Executor Dilemma}: agents execute documentation-embedded instructions, including adversarial ones, at high rates because they cannot distinguish malicious directives from legitimate setup guidance. This vulnerability is a structural consequence of the instruction-following design paradigm, not an implementation bug. To structure our measurement, we formalize a three-dimensional taxonomy covering linguistic disguise, structural obfuscation, and semantic abstraction, and construct \\textbf{ReadSecBench}, a benchmark of 500 real-world README files enabling reproducible evaluation. Experiments on the commercially deployed computer-use agent show end-to-end exfiltration success rates up to 85\\%, consistent across five programming languages and three injection positions. Cross-model evaluation on four LLM families in a simulation environment confirms that semantic compliance with injected instructions is consistent across model families. A 15-participant user study yields a 0\\% detection rate across all participants, and evaluation of 12 rule-based and 6 LLM-based defenses shows neither category achieves reliable detection without unacceptable false-positive rates. Together, these results quantify a persistent \\emph{Semantic-Safety Gap} between agents' functional compliance and their security awareness, establishing that documentation-embedded instruction injection is a persistent and currently unmitigated threat to high-privilege LLM agent deployments.",
-      "url": "https://arxiv.org/abs/2603.11862",
-      "match_score": 0.971,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-03-12"
+      "id": "2603.02091",
+      "title": "Learning from Synthetic Data Improves Multi-hop Reasoning",
+      "abstract": "Reinforcement Learning (RL) has been shown to significantly boost reasoning capabilities of large language models (LLMs) in math, coding, and multi-hop reasoning tasks. However, RL fine-tuning requires abundant high-quality verifiable data, often sourced from human annotations, generated from frontier LLMs, or scored by LLM-based verifiers. All three have considerable limitations: human-annotated datasets are small and expensive to curate, LLM-generated data is hallucination-prone and costly, and LLM-based verifiers are inaccurate and slow. In this work, we investigate a cheaper alternative: RL fine-tuning on rule-generated synthetic data for multi-hop reasoning tasks. We discover that LLMs fine-tuned on synthetic data perform significantly better on popular real-world question-answering benchmarks, despite the synthetic data containing only fictional knowledge. On stratifying performance by question difficulty, we find that synthetic data teaches LLMs to compose knowledge -- a fundamental and generalizable reasoning skill. Our work highlights rule-generated synthetic reasoning data as a free and scalable resource to improve LLM reasoning capabilities.",
+      "url": "https://arxiv.org/abs/2603.02091",
+      "match_score": 0.9712,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-03-02"
     },
     {
-      "id": "2602.20720",
-      "title": "AdapTools: Adaptive Tool-based Indirect Prompt Injection Attacks on Agentic LLMs",
-      "abstract": "The integration of external data services (e.g., Model Context Protocol, MCP) has made large language model-based agents increasingly powerful for complex task execution. However, this advancement introduces critical security vulnerabilities, particularly indirect prompt injection (IPI) attacks. Existing attack methods are limited by their reliance on static patterns and evaluation on simple language models, failing to address the fast-evolving nature of modern AI agents. We introduce AdapTools, a novel adaptive IPI attack framework that selects stealthier attack tools and generates adaptive attack prompts to create a rigorous security evaluation environment. Our approach comprises two key components: (1) Adaptive Attack Strategy Construction, which develops transferable adversarial strategies for prompt optimization, and (2) Attack Enhancement, which identifies stealthy tools capable of circumventing task-relevance defenses. Comprehensive experimental evaluation shows that AdapTools achieves a 2.13 times improvement in attack success rate while degrading system utility by a factor of 1.78. Notably, the framework maintains its effectiveness even against state-of-the-art defense mechanisms. Our method advances the understanding of IPI attacks and provides a useful reference for future research.",
-      "url": "https://arxiv.org/abs/2602.20720",
-      "match_score": 0.9708,
-      "matched_cluster": "jailbreak & hacking & openclaw",
+      "id": "2603.00296",
+      "title": "Stepwise Penalization for Length-Efficient Chain-of-Thought Reasoning",
+      "abstract": "Large reasoning models improve with more test-time computation, but often overthink, producing unnecessarily long chains-of-thought that raise cost without improving accuracy. Prior reinforcement learning approaches typically rely on a single outcome reward with trajectory-level length penalties, which cannot distinguish essential from redundant reasoning steps and therefore yield blunt compression. Although recent work incorporates step-level signals, such as offline pruning, supervised data construction, or verifier-based intermediate rewards, reasoning length is rarely treated as an explicit step-level optimization objective during RL. We propose Step-wise Adaptive Penalization (SWAP), a fine-grained framework that allocates length reduction across steps based on intrinsic contribution. We estimate step importance from the model's on-policy log-probability improvement toward the correct answer, then treat excess length as a penalty mass redistributed to penalize low-importance steps more heavily while preserving high-importance reasoning. We optimize with a unified outcome-process advantage within group-relative policy optimization. Extensive experiments demonstrate that SWAP reduces reasoning length by 64.3% on average while improving accuracy by 5.7% relative to the base model.",
+      "url": "https://arxiv.org/abs/2603.00296",
+      "match_score": 0.9711,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-27"
+    },
+    {
+      "id": "2602.22642",
+      "title": "Compress the Easy, Explore the Hard: Difficulty-Aware Entropy Regularization for Efficient LLM Reasoning",
+      "abstract": "Chain-of-Thought (CoT) has substantially empowered Large Language Models (LLMs) to tackle complex reasoning tasks, yet the verbose nature of explicit reasoning steps incurs prohibitive inference latency and computational costs, limiting real-world deployment. While existing compression methods - ranging from self-training to Reinforcement Learning (RL) with length constraints - attempt to mitigate this, they often sacrifice reasoning capability for brevity. We identify a critical failure mode in these approaches: explicitly optimizing for shorter trajectories triggers rapid entropy collapse, which prematurely shrinks the exploration space and stifles the discovery of valid reasoning paths, particularly for challenging questions requiring extensive deduction. To address this issue, we propose Compress responses for Easy questions and Explore Hard ones (CEEH), a difficulty-aware approach to RL-based efficient reasoning. CEEH dynamically assesses instance difficulty to apply selective entropy regularization: it preserves a diverse search space for currently hard questions to ensure robustness, while permitting aggressive compression on easier instances where the reasoning path is well-established. In addition, we introduce a dynamic optimal-length penalty anchored to the historically shortest correct response, which effectively counteracts entropy-induced length inflation and stabilizes the reward signal. Across six reasoning benchmarks, CEEH consistently reduces response length while maintaining accuracy comparable to the base model, and improves Pass@k relative to length-only optimization.",
+      "url": "https://arxiv.org/abs/2602.22642",
+      "match_score": 0.9704,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-26"
+    },
+    {
+      "id": "2602.22508",
+      "title": "Mirroring the Mind: Distilling Human-Like Metacognitive Strategies into Large Language Models",
+      "abstract": "Large Reasoning Models (LRMs) often exhibit structural fragility in complex reasoning tasks, failing to produce correct answers even after successfully deriving valid intermediate steps. Through systematic analysis, we observe that these failures frequently stem not from a lack of reasoning capacity, but from a deficiency in self-regulatory control, where valid logic is destabilized by uncontrolled exploration or the failure to recognize logical sufficiency. Motivated by this observation, we propose Metacognitive Behavioral Tuning (MBT), a post-training framework that explicitly injects metacognitive behaviors into the model's thought process. MBT implements this via two complementary formulations: (1) MBT-S, which synthesizes rigorous reasoning traces from scratch, and (2) MBT-R, which rewrites the student's initial traces to stabilize intrinsic exploration patterns. Experiments across multi-hop QA benchmarks demonstrate that MBT consistently outperforms baselines, achieving notable gains on challenging benchmarks. By effectively eliminating reasoning collapse, MBT achieves higher accuracy with significantly reduced token consumption, demonstrating that internalizing metacognitive strategies leads to more stable and robust reasoning.",
+      "url": "https://arxiv.org/abs/2602.22508",
+      "match_score": 0.9699,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-26"
+    },
+    {
+      "id": "2603.00889",
+      "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+      "abstract": "Large Language Models (LLMs) have recently exhibited remarkable reasoning capabilities, largely enabled by supervised fine-tuning (SFT)- and reinforcement learning (RL)-based post-training on high-quality reasoning data. However, reproducing and extending these capabilities in open and scalable settings is hindered by three fundamental data-centric challenges: (1) the cold-start problem, arising from the lack of seed datasets with detailed, long Chain-of-Thought (CoT) trajectories needed to initialize reasoning policies; (2) limited domain coverage, as most existing open-source reasoning datasets are concentrated in mathematics, with limited coverage of broader scientific disciplines; and (3) the annotation bottleneck, where the difficulty of frontier-level reasoning tasks makes reliable human annotation prohibitively expensive or infeasible. To address these challenges, we introduce CHIMERA, a compact synthetic reasoning dataset comprising 9K samples for generalizable cross-domain reasoning. CHIMERA is constructed with three key properties: (1) it provides rich, long CoT reasoning trajectories synthesized by state-of-the-art reasoning models; (2) it has broad and structured coverage, spanning 8 major scientific disciplines and over 1K fine-grained topics organized via a model-generated hierarchical taxonomy; and (3) it employs a fully automated, scalable evaluation pipeline that uses strong reasoning models to cross-validate both problem validity and answer correctness. We use CHIMERA to post-train a 4B Qwen3 model. Despite the dataset's modest size, the resulting model achieves strong performance on a suite of challenging reasoning benchmarks, including GPQA-Diamond, AIME 24/25/26, HMMT 25, and Humanity's Last Exam, approaching or matching the reasoning performance of substantially larger models such as DeepSeek-R1 and Qwen3-235B.",
+      "url": "https://arxiv.org/abs/2603.00889",
+      "match_score": 0.9699,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-03-01"
+    },
+    {
+      "id": "2602.22871",
+      "title": "Test-Time Scaling with Diffusion Language Models via Reward-Guided Stitching",
+      "abstract": "Reasoning with large language models often benefits from generating multiple chains-of-thought, but existing aggregation strategies are typically trajectory-level (e.g., selecting the best trace or voting on the final answer), discarding useful intermediate work from partial or \"nearly correct\" attempts. We propose Stitching Noisy Diffusion Thoughts, a self-consistency framework that turns cheap diffusion-sampled reasoning into a reusable pool of step-level candidates. Given a problem, we (i) sample many diverse, low-cost reasoning trajectories using a masked diffusion language model, (ii) score every intermediate step with an off-the-shelf process reward model (PRM), and (iii) stitch these highest-quality steps across trajectories into a composite rationale. This rationale then conditions an autoregressive (AR) model (solver) to recompute only the final answer. This modular pipeline separates exploration (diffusion) from evaluation and solution synthesis, avoiding monolithic unified hybrids while preserving broad search. Across math reasoning benchmarks, we find that step-level recombination is most beneficial on harder problems, and ablations highlight the importance of the final AR solver in converting stitched but imperfect rationales into accurate answers. Using low-confidence diffusion sampling with parallel, independent rollouts, our training-free framework improves average accuracy by up to 23.8% across six math and coding tasks. At the same time, it achieves up to a 1.8x latency reduction relative to both traditional diffusion models (e.g., Dream, LLaDA) and unified architectures (e.g., TiDAR). Code is available at https://github.com/roymiles/diffusion-stitching.",
+      "url": "https://arxiv.org/abs/2602.22871",
+      "match_score": 0.9689,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-26"
+    },
+    {
+      "id": "2603.05218",
+      "title": "KARL: Knowledge Agents via Reinforcement Learning",
+      "abstract": "We present a system for training enterprise search agents via reinforcement learning that achieves state-of-the-art performance across a diverse suite of hard-to-verify agentic search tasks. Our work makes four core contributions. First, we introduce KARLBench, a multi-capability evaluation suite spanning six distinct search regimes, including constraint-driven entity search, cross-document report synthesis, tabular numerical reasoning, exhaustive entity retrieval, procedural reasoning over technical documentation, and fact aggregation over internal enterprise notes. Second, we show that models trained across heterogeneous search behaviors generalize substantially better than those optimized for any single benchmark. Third, we develop an agentic synthesis pipeline that employs long-horizon reasoning and tool use to generate diverse, grounded, and high-quality training data, with iterative bootstrapping from increasingly capable models. Fourth, we propose a new post-training paradigm based on iterative large-batch off-policy RL that is sample efficient, robust to train-inference engine discrepancies, and naturally extends to multi-task training with out-of-distribution generalization. Compared to Claude 4.6 and GPT 5.2, KARL is Pareto-optimal on KARLBench across cost-quality and latency-quality trade-offs, including tasks that were out-of-distribution during training. With sufficient test-time compute, it surpasses the strongest closed models. These results show that tailored synthetic data in combination with multi-task reinforcement learning enables cost-efficient and high-performing knowledge agents for grounded reasoning.",
+      "url": "https://arxiv.org/abs/2603.05218",
+      "match_score": 0.9686,
+      "matched_cluster": "agent & agents & tools",
+      "submitted": "2026-03-05"
+    },
+    {
+      "id": "2602.21628",
+      "title": "RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as a prevailing paradigm for enhancing reasoning in Multimodal Large Language Models (MLLMs). However, relying solely on outcome supervision risks reward hacking, where models learn spurious reasoning patterns to satisfy final answer checks. While recent rubric-based approaches offer fine-grained supervision signals, they suffer from high computational costs of instance-level generation and inefficient training dynamics caused by treating all rubrics as equally learnable. In this paper, we propose Stratified Rubric-based Curriculum Learning (RuCL), a novel framework that reformulates curriculum learning by shifting the focus from data selection to reward design. RuCL generates generalized rubrics for broad applicability and stratifies them based on the model's competence. By dynamically adjusting rubric weights during training, RuCL guides the model from mastering foundational perception to tackling advanced logical reasoning. Extensive experiments on various visual reasoning benchmarks show that RuCL yields a remarkable +7.83% average improvement over the Qwen2.5-VL-7B model, achieving a state-of-the-art accuracy of 60.06%.",
+      "url": "https://arxiv.org/abs/2602.21628",
+      "match_score": 0.968,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-25"
+    },
+    {
+      "id": "2603.10600",
+      "title": "Trajectory-Informed Memory Generation for Self-Improving Agent Systems",
+      "abstract": "LLM-powered agents face a persistent challenge: learning from their execution experiences to improve future performance. While agents can successfully complete many tasks, they often repeat inefficient patterns, fail to recover from similar errors, and miss opportunities to apply successful strategies from past executions. We present a novel framework for automatically extracting actionable learnings from agent execution trajectories and utilizing them to improve future performance through contextual memory retrieval. Our approach comprises four components: (1) a Trajectory Intelligence Extractor that performs semantic analysis of agent reasoning patterns, (2) a Decision Attribution Analyzer that identifies which decisions and reasoning steps led to failures, recoveries, or inefficiencies, (3) a Contextual Learning Generator that produces three types of guidance -- strategy tips from successful patterns, recovery tips from failure handling, and optimization tips from inefficient but successful executions, and (4) an Adaptive Memory Retrieval System that injects relevant learnings into agent prompts based on multi-dimensional similarity. Unlike existing memory systems that store generic conversational facts, our framework understands execution patterns, extracts structured learnings with provenance, and retrieves guidance tailored to specific task contexts. Evaluation on the AppWorld benchmark demonstrates consistent improvements, with up to 14.3 percentage point gains in scenario goal completion on held-out tasks and particularly strong benefits on complex tasks (28.5~pp scenario goal improvement, a 149\\% relative increase).",
+      "url": "https://arxiv.org/abs/2603.10600",
+      "match_score": 0.9678,
+      "matched_cluster": "agent & agents & tools",
+      "submitted": "2026-03-11"
+    },
+    {
+      "id": "2602.16720",
+      "title": "APEX-SQL: Talking to the data via Agentic Exploration for Text-to-SQL",
+      "abstract": "Text-to-SQL systems powered by Large Language Models have excelled on academic benchmarks but struggle in complex enterprise environments. The primary limitation lies in their reliance on static schema representations, which fails to resolve semantic ambiguity and scale effectively to large, complex databases. To address this, we propose APEX-SQL, an Agentic Text-to-SQL Framework that shifts the paradigm from passive translation to agentic exploration. Our framework employs a hypothesis-verification loop to ground model reasoning in real data. In the schema linking phase, we use logical planning to verbalize hypotheses, dual-pathway pruning to reduce the search space, and parallel data profiling to validate column roles against real data, followed by global synthesis to ensure topological connectivity. For SQL generation, we introduce a deterministic mechanism to retrieve exploration directives, allowing the agent to effectively explore data distributions, refine hypotheses, and generate semantically accurate SQLs. Experiments on BIRD (70.65% execution accuracy) and Spider 2.0-Snow (51.01% execution accuracy) demonstrate that APEX-SQL outperforms competitive baselines with reduced token consumption. Further analysis reveals that agentic exploration acts as a performance multiplier, unlocking the latent reasoning potential of foundation models in enterprise settings. Ablation studies confirm the critical contributions of each component in ensuring robust and accurate data analysis.",
+      "url": "https://arxiv.org/abs/2602.16720",
+      "match_score": 0.9677,
+      "matched_cluster": "semantic & schema & retrieval",
+      "submitted": "2026-02-11"
+    },
+    {
+      "id": "2603.02146",
+      "title": "LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has significantly advanced the reasoning capabilities of Large Language Models (LLMs) by optimizing them against factual outcomes. However, this paradigm falters in long-context scenarios, as its reliance on internal parametric knowledge is ill-suited for tasks requiring contextual grounding--the ability to find and reason over externally provided information. We identify a key reason for this failure: a reward based solely on the final answer is too sparse to effectively guide the model for identifying relevant evidence. We formally prove that the outcome-only reward leads to significant vanishing gradients for the context grounding process, rendering learning intractable. To overcome this bottleneck, we introduce LongRLVR to augment the sparse answer reward with a dense and verifiable context reward. This auxiliary signal directly incentivizes the model for selecting the correct grounding information, providing a robust learning gradient that solves the underlying optimization challenge. We validate our method on challenging long-context benchmarks using Qwen and LLaMA models. LongRLVR consistently and significantly outperforms the standard RLVR across all models and benchmarks, e.g., boosting a 14B model's scores on RULER-QA from 73.17 to 88.90 and on LongBench v2 from 39.8 to 46.5. Our work demonstrates that explicitly rewarding the grounding process is a critical and effective strategy for unlocking the full reasoning potential of LLMs in long-context applications. Our code is available at https://github.com/real-absolute-AI/LongRLVR.",
+      "url": "https://arxiv.org/abs/2603.02146",
+      "match_score": 0.9674,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-03-02"
+    },
+    {
+      "id": "2603.08000",
+      "title": "SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning",
+      "abstract": "Large reasoning models (LRMs) like OpenAI o1 and DeepSeek-R1 achieve high accuracy on complex tasks by adopting long chain-of-thought (CoT) reasoning paths. However, the inherent verbosity of these processes frequently results in redundancy and overthinking. To address this issue, existing works leverage Group Relative Policy Optimization (GRPO) to reduce LRM output length, but their static length reward design cannot dynamically adapt according to the relative problem difficulty and response length distribution, causing over-compression and compromised accuracy. Therefore, we propose SmartThinker, a novel GRPO-based efficient reasoning method with progressive CoT length calibration. SmartThinker makes a two-fold contribution: First, it dynamically estimates the optimal length with peak accuracy during training and guides overlong responses toward it to reduce response length while sustaining accuracy. Second, it dynamically modulates the length reward coefficient to avoid the unwarranted penalization of correct reasoning paths. Extensive experiment results show that SmartThinker achieves up to 52.5% average length compression with improved accuracy, and achieves up to 16.6% accuracy improvement on challenging benchmarks like AIME25. The source code can be found at https://github.com/SJTU-RTEAS/SmartThinker.",
+      "url": "https://arxiv.org/abs/2603.08000",
+      "match_score": 0.9669,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-03-09"
+    },
+    {
+      "id": "2603.05344",
+      "title": "Building Effective AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
+      "abstract": "The landscape of AI coding assistance is undergoing a fundamental shift from complex IDE plugins to versatile, terminal-native agents. Operating directly where developers manage source control, execute builds, and deploy environments, CLI-based agents offer unprecedented autonomy for long-horizon development tasks. In this paper, we present OPENDEV, an open-source, command-line coding agent engineered specifically for this new paradigm. Effective autonomous assistance requires strict safety controls and highly efficient context management to prevent context bloat and reasoning degradation. OPENDEV overcomes these challenges through a compound AI system architecture with workload-specialized model routing, a dual-agent architecture separating planning from execution, lazy tool discovery, and adaptive context compaction that progressively reduces older observations. Furthermore, it employs an automated memory system to accumulate project-specific knowledge across sessions and counteracts instruction fade-out through event-driven system reminders. By enforcing explicit reasoning phases and prioritizing context efficiency, OPENDEV provides a secure, extensible foundation for terminal-first AI assistance, offering a blueprint for robust autonomous software engineering.",
+      "url": "https://arxiv.org/abs/2603.05344",
+      "match_score": 0.9668,
+      "matched_cluster": "agent & agents & tools",
+      "submitted": "2026-03-05"
+    },
+    {
+      "id": "2602.21103",
+      "title": "Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning",
+      "abstract": "Advanced reasoning typically requires Chain-of-Thought prompting, which is accurate but incurs prohibitive latency and substantial test-time inference costs. The standard alternative, fine-tuning smaller models, often sacrifices interpretability while introducing significant resource and operational overhead. To address these limitations, we introduce Prompt-Level Distillation (PLD). We extract explicit reasoning patterns from a Teacher model and organize them into a structured list of expressive instructions for the Student model's System Prompt. Evaluated on the StereoSet and Contract-NLI datasets using Gemma-3 4B, PLD improved Macro F1 scores from 57\\% to 90.0\\% and 67\\% to 83\\% respectively, enabling this compact model to match frontier performance with negligible latency overhead. These expressive instructions render the decision-making process transparent, allowing for full human verification of logic, making this approach ideal for regulated industries such as law, finance, and content moderation, as well as high-volume use cases and edge devices.",
+      "url": "https://arxiv.org/abs/2602.21103",
+      "match_score": 0.9663,
+      "matched_cluster": "thinking & reasoning & reinforcement",
       "submitted": "2026-02-24"
     },
     {
-      "id": "2603.10521",
-      "title": "IH-Challenge: A Training Dataset to Improve Instruction Hierarchy on Frontier LLMs",
-      "abstract": "Instruction hierarchy (IH) defines how LLMs prioritize system, developer, user, and tool instructions under conflict, providing a concrete, trust-ordered policy for resolving instruction conflicts. IH is key to defending against jailbreaks, system prompt extractions, and agentic prompt injections. However, robust IH behavior is difficult to train: IH failures can be confounded with instruction-following failures, conflicts can be nuanced, and models can learn shortcuts such as overrefusing. We introduce IH-Challenge, a reinforcement learning training dataset, to address these difficulties. Fine-tuning GPT-5-Mini on IH-Challenge with online adversarial example generation improves IH robustness by +10.0% on average across 16 in-distribution, out-of-distribution, and human red-teaming benchmarks (84.1% to 94.1%), reduces unsafe behavior from 6.6% to 0.7% while improving helpfulness on general safety evaluations, and saturates an internal static agentic prompt injection evaluation, with minimal capability regression. We release the IH-Challenge dataset (https://huggingface.co/datasets/openai/ih-challenge) to support future research on robust instruction hierarchy.",
-      "url": "https://arxiv.org/abs/2603.10521",
-      "match_score": 0.9705,
-      "matched_cluster": "jailbreak & hacking & openclaw",
+      "id": "2603.11193",
+      "title": "DeReason: A Difficulty-Aware Curriculum Improves Decoupled SFT-then-RL Training for General Reasoning",
+      "abstract": "Reinforcement learning with Verifiable Rewards (RLVR) has emerged as a powerful paradigm for eliciting reasoning capabilities in large language models, particularly in mathematics and coding. While recent efforts have extended this paradigm to broader general scientific (STEM) domains, the complex interplay between supervised fine-tuning (SFT) and RL in these contexts remains underexplored. In this paper, we conduct controlled experiments revealing a critical challenge: for general STEM domains, RL applied directly to base models is highly sample-inefficient and is consistently surpassed by supervised fine-tuning (SFT) on moderate-quality responses. Yet sequential SFT followed by RL can further improve performance, suggesting that the two stages play complementary roles, and that how training data is allocated between them matters. Therefore, we propose DeReason, a difficulty-based data decoupling strategy for general reasoning. DeReason partitions training data by reasoning intensity estimated via LLM-based scoring into reasoning-intensive and non-reasoning-intensive subsets. It allocates broad-coverage, non-reasoning-intensive problems to SFT to establish foundational domain knowledge, and reserves a focused subset of difficult problems for RL to cultivate complex reasoning. We demonstrate that this principled decoupling yields better performance than randomly splitting the data for sequential SFT and RL. Extensive experiments on general STEM and mathematical benchmarks demonstrate that our decoupled curriculum training significantly outperforms SFT-only, RL-only, and random-split baselines. Our work provides a systematic study of the interplay between SFT and RL for general reasoning, offering a highly effective and generalized post-training recipe.",
+      "url": "https://arxiv.org/abs/2603.11193",
+      "match_score": 0.9663,
+      "matched_cluster": "thinking & reasoning & reinforcement",
       "submitted": "2026-03-11"
     },
     {
-      "id": "2602.16756",
-      "title": "NESSiE: The Necessary Safety Benchmark -- Identifying Errors that should not Exist",
-      "abstract": "We introduce NESSiE, the NEceSsary SafEty benchmark for large language models (LLMs). With minimal test cases of information and access security, NESSiE reveals safety-relevant failures that should not exist, given the low complexity of the tasks. NESSiE is intended as a lightweight, easy-to-use sanity check for language model safety and, as such, is not sufficient for guaranteeing safety in general -- but we argue that passing this test is necessary for any deployment. However, even state-of-the-art LLMs do not reach 100% on NESSiE and thus fail our necessary condition of language model safety, even in the absence of adversarial attacks. Our Safe & Helpful (SH) metric allows for direct comparison of the two requirements, showing models are biased toward being helpful rather than safe. We further find that disabled reasoning for some models, but especially a benign distraction context degrade model performance. Overall, our results underscore the critical risks of deploying such models as autonomous agents in the wild. We make the dataset, package and plotting code publicly available.",
-      "url": "https://arxiv.org/abs/2602.16756",
-      "match_score": 0.9696,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-18"
+      "id": "2602.22193",
+      "title": "Improving Parametric Knowledge Access in Reasoning Language Models",
+      "abstract": "We study reasoning for accessing world knowledge stored in a language model's parameters. For example, recalling that Canberra is Australia's capital may benefit from thinking through major cities and the concept of purpose-built capitals. While reasoning language models are trained via reinforcement learning to produce reasoning traces on tasks such as mathematics, they may not reason well for accessing their own world knowledge. We first find that models do not generate their best world knowledge reasoning by default: adding a simple \"think step-by-step\" cue demonstrates statistically significant improvement in knowledge recall but not math. Motivated by this, we propose training models to reason over their parametric knowledge using world-knowledge question answering as a verifiable reward. After reinforcement learning on TriviaQA (+9.9%), performance also improves on Natural Questions, HotpotQA, SimpleQA, and StrategyQA by 4.2%, 2.1%, 0.6%, and 3.0%, respectively. Reasoning models are under-optimized for parametric knowledge access, but can be easily trained to reason better.",
+      "url": "https://arxiv.org/abs/2602.22193",
+      "match_score": 0.9663,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-25"
     },
     {
-      "id": "2602.13093",
-      "title": "Consistency of Large Reasoning Models Under Multi-Turn Attacks",
-      "abstract": "Large reasoning models with reasoning capabilities achieve state-of-the-art performance on complex tasks, but their robustness under multi-turn adversarial pressure remains underexplored. We evaluate nine frontier reasoning models under adversarial attacks. Our findings reveal that reasoning confers meaningful but incomplete robustness: most reasoning models studied significantly outperform instruction-tuned baselines, yet all exhibit distinct vulnerability profiles, with misleading suggestions universally effective and social pressure showing model-specific efficacy. Through trajectory analysis, we identify five failure modes (Self-Doubt, Social Conformity, Suggestion Hijacking, Emotional Susceptibility, and Reasoning Fatigue) with the first two accounting for 50% of failures. We further demonstrate that Confidence-Aware Response Generation (CARG), effective for standard LLMs, fails for reasoning models due to overconfidence induced by extended reasoning traces; counterintuitively, random confidence embedding outperforms targeted extraction. Our results highlight that reasoning capabilities do not automatically confer adversarial robustness and that confidence-based defenses require fundamental redesign for reasoning models.",
-      "url": "https://arxiv.org/abs/2602.13093",
-      "match_score": 0.9695,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-13"
-    },
-    {
-      "id": "2602.09629",
-      "title": "Stop Testing Attacks, Start Diagnosing Defenses: The Four-Checkpoint Framework Reveals Where LLM Safety Breaks",
-      "abstract": "Large Language Models (LLMs) deploy safety mechanisms to prevent harmful outputs, yet these defenses remain vulnerable to adversarial prompts. While existing research demonstrates that jailbreak attacks succeed, it does not explain \\textit{where} defenses fail or \\textit{why}.\n  To address this gap, we propose that LLM safety operates as a sequential pipeline with distinct checkpoints. We introduce the \\textbf{Four-Checkpoint Framework}, which organizes safety mechanisms along two dimensions: processing stage (input vs.\\ output) and detection level (literal vs.\\ intent). This creates four checkpoints, CP1 through CP4, each representing a defensive layer that can be independently evaluated. We design 13 evasion techniques, each targeting a specific checkpoint, enabling controlled testing of individual defensive layers.\n  Using this framework, we evaluate GPT-5, Claude Sonnet 4, and Gemini 2.5 Pro across 3,312 single-turn, black-box test cases. We employ an LLM-as-judge approach for response classification and introduce Weighted Attack Success Rate (WASR), a severity-adjusted metric that captures partial information leakage overlooked by binary evaluation.\n  Our evaluation reveals clear patterns. Traditional Binary ASR reports 22.6\\% attack success. However, WASR reveals 52.7\\%, a 2.3$\\times$ higher vulnerability. Output-stage defenses (CP3, CP4) prove weakest at 72--79\\% WASR, while input-literal defenses (CP1) are strongest at 13\\% WASR. Claude achieves the strongest safety (42.8\\% WASR), followed by GPT-5 (55.9\\%) and Gemini (59.5\\%).\n  These findings suggest that current defenses are strongest at input-literal checkpoints but remain vulnerable to intent-level manipulation and output-stage techniques. The Four-Checkpoint Framework provides a structured approach for identifying and addressing safety vulnerabilities in deployed systems.",
-      "url": "https://arxiv.org/abs/2602.09629",
-      "match_score": 0.9695,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-10"
-    },
-    {
-      "id": "2603.10795",
-      "title": "Re-Evaluating EVMBench: Are AI Agents Ready for Smart Contract Security?",
-      "abstract": "EVMbench, released by OpenAI, Paradigm, and OtterSec, is the first large-scale benchmark for AI agents on smart contract security. Its results -- agents detect up to 45.6% of vulnerabilities and exploit 72.2% of a curated subset -- have fueled expectations that fully automated AI auditing is within reach. We identify two limitations: its narrow evaluation scope (14 agent configurations, most models tested on only their vendor scaffold) and its reliance on audit-contest data published before every model's release that models may have seen during training. To address these, we expand to 26 configurations across four model families and three scaffolds, and introduce a contamination-free dataset of 22 real-world security incidents postdating every model's release date. Our evaluation yields three findings: (1) agents' detection results are not stable, with rankings shifting across configurations, tasks, and datasets; (2) on real-world incidents, no agent succeeds at end-to-end exploitation across all 110 agent-incident pairs despite detecting up to 65% of vulnerabilities, contradicting EVMbench's conclusion that discovery is the primary bottleneck; and (3) scaffolding materially affects results, with an open-source scaffold outperforming vendor alternatives by up to 5 percentage points, yet EVMbench does not control for this. These findings challenge the narrative that fully automated AI auditing is imminent. Agents reliably catch well-known patterns and respond strongly to human-provided context, but cannot replace human judgment. For developers, agent scans serve as a pre-deployment check. For audit firms, agents are most effective within a human-in-the-loop workflow where AI handles breadth and human auditors contribute protocol-specific knowledge and adversarial reasoning. Code and data: https://github.com/blocksecteam/ReEVMBench/.",
-      "url": "https://arxiv.org/abs/2603.10795",
-      "match_score": 0.9692,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-03-11"
-    },
-    {
-      "id": "2602.12124",
-      "title": "Capability-Oriented Training Induced Alignment Risk",
-      "abstract": "While most AI alignment research focuses on preventing models from generating explicitly harmful content, a more subtle risk is emerging: capability-oriented training induced exploitation. We investigate whether language models, when trained with reinforcement learning (RL) in environments with implicit loopholes, will spontaneously learn to exploit these flaws to maximize their reward, even without any malicious intent in their training. To test this, we design a suite of four diverse \"vulnerability games\", each presenting a unique, exploitable flaw related to context-conditional compliance, proxy metrics, reward tampering, and self-evaluation. Our experiments show that models consistently learn to exploit these vulnerabilities, discovering opportunistic strategies that significantly increase their reward at the expense of task correctness or safety. More critically, we find that these exploitative strategies are not narrow \"tricks\" but generalizable skills; they can be transferred to new tasks and even \"distilled\" from a capable teacher model to other student models through data alone. Our findings reveal that capability-oriented training induced risks pose a fundamental challenge to current alignment approaches, suggesting that future AI safety work must extend beyond content moderation to rigorously auditing and securing the training environments and reward mechanisms themselves. Code is available at https://github.com/YujunZhou/Capability_Oriented_Alignment_Risk.",
-      "url": "https://arxiv.org/abs/2602.12124",
-      "match_score": 0.969,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-12"
-    },
-    {
-      "id": "2602.19450",
-      "title": "Red-Teaming Claude Opus and ChatGPT-based Security Advisors for Trusted Execution Environments",
-      "abstract": "Trusted Execution Environments (TEEs) (e.g., Intel SGX and ArmTrustZone) aim to protect sensitive computation from a compromised operating system, yet real deployments remain vulnerable to microarchitectural leakage, side-channel attacks, and fault injection. In parallel, security teams increasingly rely on Large Language Model (LLM) assistants as security advisors for TEE architecture review, mitigation planning, and vulnerability triage. This creates a socio-technical risk surface: assistants may hallucinate TEE mechanisms, overclaim guarantees (e.g., what attestation does and does not establish), or behave unsafely under adversarial prompting.\n  We present a red-teaming study of two prevalently deployed LLM assistants in the role of TEE security advisors: ChatGPT-5.2 and Claude Opus-4.6, focusing on the inherent limitations and transferability of prompt-induced failures across LLMs. We introduce TEE-RedBench, a TEE-grounded evaluation methodology comprising (i) a TEE-specific threat model for LLM-mediated security work, (ii) a structured prompt suite spanning SGX and TrustZone architecture, attestation and key management, threat modeling, and non-operational mitigation guidance, along with policy-bound misuse probes, and (iii) an annotation rubric that jointly measures technical correctness, groundedness, uncertainty calibration, refusal quality, and safe helpfulness. We find that some failures are not purely idiosyncratic, transferring up to 12.02% across LLM assistants, and we connect these outcomes to secure architecture by outlining an \"LLM-in-the-loop\" evaluation pipeline: policy gating, retrieval grounding, structured templates, and lightweight verification checks that, when combined, reduce failures by 80.62%.",
-      "url": "https://arxiv.org/abs/2602.19450",
-      "match_score": 0.9689,
-      "matched_cluster": "jailbreak & hacking & openclaw",
-      "submitted": "2026-02-23"
+      "id": "2602.21189",
+      "title": "Why Pass@k Optimization Can Degrade Pass@1: Prompt Interference in LLM Post-training",
+      "abstract": "Pass@k is a widely used performance metric for verifiable large language model tasks, including mathematical reasoning, code generation, and short-answer reasoning. It defines success if any of $k$ independently sampled solutions passes a verifier. This multi-sample inference metric has motivated inference-aware fine-tuning methods that directly optimize pass@$k$. However, prior work reports a recurring trade-off: pass@k improves while pass@1 degrades under such methods. This trade-off is practically important because pass@1 often remains a hard operational constraint due to latency and cost budgets, imperfect verifier coverage, and the need for a reliable single-shot fallback. We study the origin of this trade-off and provide a theoretical characterization of when pass@k policy optimization can reduce pass@1 through gradient conflict induced by prompt interference. We show that pass@$k$ policy gradients can conflict with pass@1 gradients because pass@$k$ optimization implicitly reweights prompts toward low-success prompts; when these prompts are what we term negatively interfering, their upweighting can rotate the pass@k update direction away from the pass@1 direction. We illustrate our theoretical findings with large language model experiments on verifiable mathematical reasoning tasks.",
+      "url": "https://arxiv.org/abs/2602.21189",
+      "match_score": 0.9663,
+      "matched_cluster": "thinking & reasoning & reinforcement",
+      "submitted": "2026-02-24"
     }
   ]
 }
