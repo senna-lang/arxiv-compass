@@ -1,7 +1,7 @@
 ---
 id: t-bertopic-002
 date: 2026-03-13T00:00:00.000000+09:00
-title: プランB: KeyBERTInspired representation導入
+title: "プランB: KeyBERTInspired representation導入"
 seq: 2
 status: open
 priority: medium
@@ -10,7 +10,7 @@ tags:
   - python
   - bertopic
 assignee: ""
-completed_at: ""
+completed_at: null
 ---
 
 ## What
