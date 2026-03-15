@@ -41,6 +41,14 @@
     "min_match_score": 0.75, // クラスタcentroidとのcos類似度がこれ未満の論文を除外
   },
 
+  // fetch_daily.py の設定
+  "fetch_daily": {
+    "look_back_days": 2, // 何日前まで遡るか（週末対応）
+    "max_candidates": 300, // arXiv から取得する最大候補数
+    "top_n": 20, // 最終的に保存する論文数
+    "dedupe_days": 30, // 重複除去対象の過去日数
+  },
+
   // チューニングパラメータ。変更後は該当スクリプトを再実行すること
   // map系パラメータを変えたら npm run map で地図を再生成する必要がある
   "tuning": {

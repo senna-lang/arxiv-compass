@@ -1,7 +1,7 @@
 ---
 id: t-bertopic-001
 date: 2026-03-13T00:00:00.000000+09:00
-title: プランA: 学術ストップワード追加
+title: "プランA: 学術ストップワード追加"
 seq: 1
 status: open
 priority: medium
@@ -10,7 +10,7 @@ tags:
   - python
   - bertopic
 assignee: ""
-completed_at: ""
+completed_at: null
 ---
 
 ## What

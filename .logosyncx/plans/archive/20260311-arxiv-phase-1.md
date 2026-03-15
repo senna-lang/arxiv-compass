@@ -5,7 +5,7 @@ tags: []
 agent: ""
 related: []
 tasks_dir: .logosyncx/tasks/20260311-arxiv-phase-1
-distilled: false
+distilled: true
 ---
 
 ## Background
