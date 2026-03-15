@@ -20,7 +20,7 @@ import json
 import re
 import time
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -104,21 +104,20 @@ def load_seen_ids(output_dir: Path, days: int = 30) -> set[str]:
 
 
 def fetch_recent_papers(
-    config: dict[str, Any], look_back_days: int, max_candidates: int
+    config: dict[str, Any], max_candidates: int
 ) -> list[dict[str, Any]]:
     """
-    arXiv APIで config.categories の各カテゴリから直近 look_back_days 日の論文を取得する。
-    提出日でフィルタリングし、最大 max_candidates 件を返す。
+    arXiv APIで config.categories の各カテゴリから最新 max_candidates 件を取得する。
+    日付フィルタは使わない（週末・祝日はarXivが更新しないため、固定日数だと0件になる）。
+    重複除去は呼び出し元の deduplicate() に委ねる。
     """
     categories: list[str] = config["categories"]
     query = " OR ".join(f"cat:{c}" for c in categories)
 
-    cutoff = datetime.now(timezone.utc) - timedelta(days=look_back_days)
-
     client = arxiv.Client(page_size=200, num_retries=3)
     search = arxiv.Search(
         query=query,
-        max_results=max_candidates * 3,  # 日付フィルタで減るので多めに取得
+        max_results=max_candidates,
         sort_by=arxiv.SortCriterion.SubmittedDate,
         sort_order=arxiv.SortOrder.Descending,
     )
@@ -127,12 +126,6 @@ def fetch_recent_papers(
     for result in client.results(search):
         if len(papers) >= max_candidates:
             break
-        # 日付フィルタ（look_back_days より古い論文はスキップ）
-        submitted = result.published
-        if submitted.tzinfo is None:
-            submitted = submitted.replace(tzinfo=timezone.utc)
-        if submitted < cutoff:
-            break  # SubmittedDate降順なので以降は全て古い
 
         raw_id = result.entry_id.split("/")[-1]
         arxiv_id = re.sub(r"v\d+$", "", raw_id)
@@ -216,7 +209,6 @@ def main(date_str: str, log: bool = False) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     fetch_cfg: dict[str, Any] = config.get("fetch_daily", {})
-    look_back_days: int = fetch_cfg.get("look_back_days", 2)
     max_candidates: int = fetch_cfg.get("max_candidates", 300)
     top_n: int = fetch_cfg.get("top_n", 20)
     dedupe_days: int = fetch_cfg.get("dedupe_days", 30)
@@ -228,8 +220,8 @@ def main(date_str: str, log: bool = False) -> None:
 
     started_at = time.time()
 
-    print(f"[INFO] Fetching recent papers (look_back_days={look_back_days}, max_candidates={max_candidates})")
-    candidates = fetch_recent_papers(config, look_back_days, max_candidates)
+    print(f"[INFO] Fetching recent papers (max_candidates={max_candidates})")
+    candidates = fetch_recent_papers(config, max_candidates)
     print(f"[INFO] Fetched {len(candidates)} candidates from arXiv")
 
     seen_ids = load_seen_ids(output_dir, days=dedupe_days)
