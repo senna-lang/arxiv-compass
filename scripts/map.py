@@ -396,6 +396,7 @@ def main(max_papers: int, log: bool = False) -> None:
                 "max": max(cluster_sizes),
                 "mean": round(sum(cluster_sizes) / len(cluster_sizes), 1),
             },
+            "cluster_labels": [c["label"] for c in clusters],
             "elapsed_sec": elapsed,
             "model": model_name,
             "tuning": t,
