@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-03-15T22:27:55.336629+09:00",
+  "generated_at": "2026-03-16T09:24:34.318316+09:00",
   "top_clusters": [
     {
-      "label": "agent & agents & tools",
-      "score": 0.8427
-    },
-    {
       "label": "semantic & schema & retrieval",
-      "score": 0.8419
+      "score": 0.896
     },
     {
-      "label": "thinking & reasoning & reinforcement",
-      "score": 0.8402
+      "label": "agent & ai & agentic",
+      "score": 0.8957
+    },
+    {
+      "label": "reasoning & thinking & reinforcement",
+      "score": 0.8956
     }
   ],
   "recommendations": [
@@ -21,7 +21,7 @@
       "abstract": "In this work, we reveal that Large Language Models (LLMs) possess intrinsic behavioral plasticity-akin to chameleons adapting their coloration to environmental cues-that can be exposed through token-conditional generation and stabilized via reinforcement learning. Specifically, by conditioning generation on carefully selected token prefixes sampled from responses exhibiting desired behaviors, LLMs seamlessly adapt their behavioral modes at inference time (e.g., switching from step-by-step reasoning to direct answering) without retraining. Based on this insight, we propose Token-Conditioned Reinforcement Learning (ToCoRL), a principled framework that leverages RL to internalize this chameleon-like plasticity, transforming transient inference-time adaptations into stable and learnable behavioral patterns. ToCoRL guides exploration with token-conditional generation and keep enhancing exploitation, enabling emergence of appropriate behaviors. Extensive experiments show that ToCoRL enables precise behavioral control without capability degradation. Notably, we show that large reasoning models, while performing strongly on complex mathematics, can be effectively adapted to excel at factual question answering, which was a capability previously hindered by their step-by-step reasoning patterns.",
       "url": "https://arxiv.org/abs/2603.08398",
       "match_score": 0.9751,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-09"
     },
     {
@@ -30,7 +30,7 @@
       "abstract": "Chain-of-Thought (CoT) distillation from Large Language Models (LLMs) often induces \"overthinking\" in Small Language Models (SLMs), leading to performance degradation and excessive token consumption. In this study, we propose Disciplined Chain-of-Thought (D-CoT), a novel framework that enforces a structured reasoning process using control tags -- such as <TEMP_LOW> for fact-checking and <TEMP_HIGH> for multi-perspective exploration -- as auxiliary scaffolding during training. By optimizing the CoT trajectory, D-CoT suppresses reasoning drift and simultaneously achieves token reduction and performance improvement. We demonstrate the efficacy of our approach on Qwen3-8B: with only 5,000 training samples, D-CoT significantly boosts accuracy on GPQA-diamond by 9.9% and MMLU-Pro (0-shot) by 9.1%, while drastically reducing computational costs. Furthermore, we confirm that the model internalizes this disciplined thought structure, maintaining high performance even without explicit control tags during inference.",
       "url": "https://arxiv.org/abs/2602.21786",
       "match_score": 0.972,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-25"
     },
     {
@@ -48,7 +48,7 @@
       "abstract": "Reinforcement Learning (RL) has been shown to significantly boost reasoning capabilities of large language models (LLMs) in math, coding, and multi-hop reasoning tasks. However, RL fine-tuning requires abundant high-quality verifiable data, often sourced from human annotations, generated from frontier LLMs, or scored by LLM-based verifiers. All three have considerable limitations: human-annotated datasets are small and expensive to curate, LLM-generated data is hallucination-prone and costly, and LLM-based verifiers are inaccurate and slow. In this work, we investigate a cheaper alternative: RL fine-tuning on rule-generated synthetic data for multi-hop reasoning tasks. We discover that LLMs fine-tuned on synthetic data perform significantly better on popular real-world question-answering benchmarks, despite the synthetic data containing only fictional knowledge. On stratifying performance by question difficulty, we find that synthetic data teaches LLMs to compose knowledge -- a fundamental and generalizable reasoning skill. Our work highlights rule-generated synthetic reasoning data as a free and scalable resource to improve LLM reasoning capabilities.",
       "url": "https://arxiv.org/abs/2603.02091",
       "match_score": 0.9712,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-02"
     },
     {
@@ -57,7 +57,7 @@
       "abstract": "Large reasoning models improve with more test-time computation, but often overthink, producing unnecessarily long chains-of-thought that raise cost without improving accuracy. Prior reinforcement learning approaches typically rely on a single outcome reward with trajectory-level length penalties, which cannot distinguish essential from redundant reasoning steps and therefore yield blunt compression. Although recent work incorporates step-level signals, such as offline pruning, supervised data construction, or verifier-based intermediate rewards, reasoning length is rarely treated as an explicit step-level optimization objective during RL. We propose Step-wise Adaptive Penalization (SWAP), a fine-grained framework that allocates length reduction across steps based on intrinsic contribution. We estimate step importance from the model's on-policy log-probability improvement toward the correct answer, then treat excess length as a penalty mass redistributed to penalize low-importance steps more heavily while preserving high-importance reasoning. We optimize with a unified outcome-process advantage within group-relative policy optimization. Extensive experiments demonstrate that SWAP reduces reasoning length by 64.3% on average while improving accuracy by 5.7% relative to the base model.",
       "url": "https://arxiv.org/abs/2603.00296",
       "match_score": 0.9711,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-27"
     },
     {
@@ -66,7 +66,7 @@
       "abstract": "Chain-of-Thought (CoT) has substantially empowered Large Language Models (LLMs) to tackle complex reasoning tasks, yet the verbose nature of explicit reasoning steps incurs prohibitive inference latency and computational costs, limiting real-world deployment. While existing compression methods - ranging from self-training to Reinforcement Learning (RL) with length constraints - attempt to mitigate this, they often sacrifice reasoning capability for brevity. We identify a critical failure mode in these approaches: explicitly optimizing for shorter trajectories triggers rapid entropy collapse, which prematurely shrinks the exploration space and stifles the discovery of valid reasoning paths, particularly for challenging questions requiring extensive deduction. To address this issue, we propose Compress responses for Easy questions and Explore Hard ones (CEEH), a difficulty-aware approach to RL-based efficient reasoning. CEEH dynamically assesses instance difficulty to apply selective entropy regularization: it preserves a diverse search space for currently hard questions to ensure robustness, while permitting aggressive compression on easier instances where the reasoning path is well-established. In addition, we introduce a dynamic optimal-length penalty anchored to the historically shortest correct response, which effectively counteracts entropy-induced length inflation and stabilizes the reward signal. Across six reasoning benchmarks, CEEH consistently reduces response length while maintaining accuracy comparable to the base model, and improves Pass@k relative to length-only optimization.",
       "url": "https://arxiv.org/abs/2602.22642",
       "match_score": 0.9704,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-26"
     },
     {
@@ -75,7 +75,7 @@
       "abstract": "Large Reasoning Models (LRMs) often exhibit structural fragility in complex reasoning tasks, failing to produce correct answers even after successfully deriving valid intermediate steps. Through systematic analysis, we observe that these failures frequently stem not from a lack of reasoning capacity, but from a deficiency in self-regulatory control, where valid logic is destabilized by uncontrolled exploration or the failure to recognize logical sufficiency. Motivated by this observation, we propose Metacognitive Behavioral Tuning (MBT), a post-training framework that explicitly injects metacognitive behaviors into the model's thought process. MBT implements this via two complementary formulations: (1) MBT-S, which synthesizes rigorous reasoning traces from scratch, and (2) MBT-R, which rewrites the student's initial traces to stabilize intrinsic exploration patterns. Experiments across multi-hop QA benchmarks demonstrate that MBT consistently outperforms baselines, achieving notable gains on challenging benchmarks. By effectively eliminating reasoning collapse, MBT achieves higher accuracy with significantly reduced token consumption, demonstrating that internalizing metacognitive strategies leads to more stable and robust reasoning.",
       "url": "https://arxiv.org/abs/2602.22508",
       "match_score": 0.9699,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-26"
     },
     {
@@ -84,7 +84,7 @@
       "abstract": "Large Language Models (LLMs) have recently exhibited remarkable reasoning capabilities, largely enabled by supervised fine-tuning (SFT)- and reinforcement learning (RL)-based post-training on high-quality reasoning data. However, reproducing and extending these capabilities in open and scalable settings is hindered by three fundamental data-centric challenges: (1) the cold-start problem, arising from the lack of seed datasets with detailed, long Chain-of-Thought (CoT) trajectories needed to initialize reasoning policies; (2) limited domain coverage, as most existing open-source reasoning datasets are concentrated in mathematics, with limited coverage of broader scientific disciplines; and (3) the annotation bottleneck, where the difficulty of frontier-level reasoning tasks makes reliable human annotation prohibitively expensive or infeasible. To address these challenges, we introduce CHIMERA, a compact synthetic reasoning dataset comprising 9K samples for generalizable cross-domain reasoning. CHIMERA is constructed with three key properties: (1) it provides rich, long CoT reasoning trajectories synthesized by state-of-the-art reasoning models; (2) it has broad and structured coverage, spanning 8 major scientific disciplines and over 1K fine-grained topics organized via a model-generated hierarchical taxonomy; and (3) it employs a fully automated, scalable evaluation pipeline that uses strong reasoning models to cross-validate both problem validity and answer correctness. We use CHIMERA to post-train a 4B Qwen3 model. Despite the dataset's modest size, the resulting model achieves strong performance on a suite of challenging reasoning benchmarks, including GPQA-Diamond, AIME 24/25/26, HMMT 25, and Humanity's Last Exam, approaching or matching the reasoning performance of substantially larger models such as DeepSeek-R1 and Qwen3-235B.",
       "url": "https://arxiv.org/abs/2603.00889",
       "match_score": 0.9699,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-01"
     },
     {
@@ -93,7 +93,7 @@
       "abstract": "Reasoning with large language models often benefits from generating multiple chains-of-thought, but existing aggregation strategies are typically trajectory-level (e.g., selecting the best trace or voting on the final answer), discarding useful intermediate work from partial or \"nearly correct\" attempts. We propose Stitching Noisy Diffusion Thoughts, a self-consistency framework that turns cheap diffusion-sampled reasoning into a reusable pool of step-level candidates. Given a problem, we (i) sample many diverse, low-cost reasoning trajectories using a masked diffusion language model, (ii) score every intermediate step with an off-the-shelf process reward model (PRM), and (iii) stitch these highest-quality steps across trajectories into a composite rationale. This rationale then conditions an autoregressive (AR) model (solver) to recompute only the final answer. This modular pipeline separates exploration (diffusion) from evaluation and solution synthesis, avoiding monolithic unified hybrids while preserving broad search. Across math reasoning benchmarks, we find that step-level recombination is most beneficial on harder problems, and ablations highlight the importance of the final AR solver in converting stitched but imperfect rationales into accurate answers. Using low-confidence diffusion sampling with parallel, independent rollouts, our training-free framework improves average accuracy by up to 23.8% across six math and coding tasks. At the same time, it achieves up to a 1.8x latency reduction relative to both traditional diffusion models (e.g., Dream, LLaDA) and unified architectures (e.g., TiDAR). Code is available at https://github.com/roymiles/diffusion-stitching.",
       "url": "https://arxiv.org/abs/2602.22871",
       "match_score": 0.9689,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-26"
     },
     {
@@ -102,7 +102,7 @@
       "abstract": "We present a system for training enterprise search agents via reinforcement learning that achieves state-of-the-art performance across a diverse suite of hard-to-verify agentic search tasks. Our work makes four core contributions. First, we introduce KARLBench, a multi-capability evaluation suite spanning six distinct search regimes, including constraint-driven entity search, cross-document report synthesis, tabular numerical reasoning, exhaustive entity retrieval, procedural reasoning over technical documentation, and fact aggregation over internal enterprise notes. Second, we show that models trained across heterogeneous search behaviors generalize substantially better than those optimized for any single benchmark. Third, we develop an agentic synthesis pipeline that employs long-horizon reasoning and tool use to generate diverse, grounded, and high-quality training data, with iterative bootstrapping from increasingly capable models. Fourth, we propose a new post-training paradigm based on iterative large-batch off-policy RL that is sample efficient, robust to train-inference engine discrepancies, and naturally extends to multi-task training with out-of-distribution generalization. Compared to Claude 4.6 and GPT 5.2, KARL is Pareto-optimal on KARLBench across cost-quality and latency-quality trade-offs, including tasks that were out-of-distribution during training. With sufficient test-time compute, it surpasses the strongest closed models. These results show that tailored synthetic data in combination with multi-task reinforcement learning enables cost-efficient and high-performing knowledge agents for grounded reasoning.",
       "url": "https://arxiv.org/abs/2603.05218",
       "match_score": 0.9686,
-      "matched_cluster": "agent & agents & tools",
+      "matched_cluster": "agent & ai & agentic",
       "submitted": "2026-03-05"
     },
     {
@@ -111,7 +111,7 @@
       "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as a prevailing paradigm for enhancing reasoning in Multimodal Large Language Models (MLLMs). However, relying solely on outcome supervision risks reward hacking, where models learn spurious reasoning patterns to satisfy final answer checks. While recent rubric-based approaches offer fine-grained supervision signals, they suffer from high computational costs of instance-level generation and inefficient training dynamics caused by treating all rubrics as equally learnable. In this paper, we propose Stratified Rubric-based Curriculum Learning (RuCL), a novel framework that reformulates curriculum learning by shifting the focus from data selection to reward design. RuCL generates generalized rubrics for broad applicability and stratifies them based on the model's competence. By dynamically adjusting rubric weights during training, RuCL guides the model from mastering foundational perception to tackling advanced logical reasoning. Extensive experiments on various visual reasoning benchmarks show that RuCL yields a remarkable +7.83% average improvement over the Qwen2.5-VL-7B model, achieving a state-of-the-art accuracy of 60.06%.",
       "url": "https://arxiv.org/abs/2602.21628",
       "match_score": 0.968,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-25"
     },
     {
@@ -120,7 +120,7 @@
       "abstract": "LLM-powered agents face a persistent challenge: learning from their execution experiences to improve future performance. While agents can successfully complete many tasks, they often repeat inefficient patterns, fail to recover from similar errors, and miss opportunities to apply successful strategies from past executions. We present a novel framework for automatically extracting actionable learnings from agent execution trajectories and utilizing them to improve future performance through contextual memory retrieval. Our approach comprises four components: (1) a Trajectory Intelligence Extractor that performs semantic analysis of agent reasoning patterns, (2) a Decision Attribution Analyzer that identifies which decisions and reasoning steps led to failures, recoveries, or inefficiencies, (3) a Contextual Learning Generator that produces three types of guidance -- strategy tips from successful patterns, recovery tips from failure handling, and optimization tips from inefficient but successful executions, and (4) an Adaptive Memory Retrieval System that injects relevant learnings into agent prompts based on multi-dimensional similarity. Unlike existing memory systems that store generic conversational facts, our framework understands execution patterns, extracts structured learnings with provenance, and retrieves guidance tailored to specific task contexts. Evaluation on the AppWorld benchmark demonstrates consistent improvements, with up to 14.3 percentage point gains in scenario goal completion on held-out tasks and particularly strong benefits on complex tasks (28.5~pp scenario goal improvement, a 149\\% relative increase).",
       "url": "https://arxiv.org/abs/2603.10600",
       "match_score": 0.9678,
-      "matched_cluster": "agent & agents & tools",
+      "matched_cluster": "agent & ai & agentic",
       "submitted": "2026-03-11"
     },
     {
@@ -138,7 +138,7 @@
       "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has significantly advanced the reasoning capabilities of Large Language Models (LLMs) by optimizing them against factual outcomes. However, this paradigm falters in long-context scenarios, as its reliance on internal parametric knowledge is ill-suited for tasks requiring contextual grounding--the ability to find and reason over externally provided information. We identify a key reason for this failure: a reward based solely on the final answer is too sparse to effectively guide the model for identifying relevant evidence. We formally prove that the outcome-only reward leads to significant vanishing gradients for the context grounding process, rendering learning intractable. To overcome this bottleneck, we introduce LongRLVR to augment the sparse answer reward with a dense and verifiable context reward. This auxiliary signal directly incentivizes the model for selecting the correct grounding information, providing a robust learning gradient that solves the underlying optimization challenge. We validate our method on challenging long-context benchmarks using Qwen and LLaMA models. LongRLVR consistently and significantly outperforms the standard RLVR across all models and benchmarks, e.g., boosting a 14B model's scores on RULER-QA from 73.17 to 88.90 and on LongBench v2 from 39.8 to 46.5. Our work demonstrates that explicitly rewarding the grounding process is a critical and effective strategy for unlocking the full reasoning potential of LLMs in long-context applications. Our code is available at https://github.com/real-absolute-AI/LongRLVR.",
       "url": "https://arxiv.org/abs/2603.02146",
       "match_score": 0.9674,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-02"
     },
     {
@@ -147,7 +147,7 @@
       "abstract": "Large reasoning models (LRMs) like OpenAI o1 and DeepSeek-R1 achieve high accuracy on complex tasks by adopting long chain-of-thought (CoT) reasoning paths. However, the inherent verbosity of these processes frequently results in redundancy and overthinking. To address this issue, existing works leverage Group Relative Policy Optimization (GRPO) to reduce LRM output length, but their static length reward design cannot dynamically adapt according to the relative problem difficulty and response length distribution, causing over-compression and compromised accuracy. Therefore, we propose SmartThinker, a novel GRPO-based efficient reasoning method with progressive CoT length calibration. SmartThinker makes a two-fold contribution: First, it dynamically estimates the optimal length with peak accuracy during training and guides overlong responses toward it to reduce response length while sustaining accuracy. Second, it dynamically modulates the length reward coefficient to avoid the unwarranted penalization of correct reasoning paths. Extensive experiment results show that SmartThinker achieves up to 52.5% average length compression with improved accuracy, and achieves up to 16.6% accuracy improvement on challenging benchmarks like AIME25. The source code can be found at https://github.com/SJTU-RTEAS/SmartThinker.",
       "url": "https://arxiv.org/abs/2603.08000",
       "match_score": 0.9669,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-09"
     },
     {
@@ -156,7 +156,7 @@
       "abstract": "The landscape of AI coding assistance is undergoing a fundamental shift from complex IDE plugins to versatile, terminal-native agents. Operating directly where developers manage source control, execute builds, and deploy environments, CLI-based agents offer unprecedented autonomy for long-horizon development tasks. In this paper, we present OPENDEV, an open-source, command-line coding agent engineered specifically for this new paradigm. Effective autonomous assistance requires strict safety controls and highly efficient context management to prevent context bloat and reasoning degradation. OPENDEV overcomes these challenges through a compound AI system architecture with workload-specialized model routing, a dual-agent architecture separating planning from execution, lazy tool discovery, and adaptive context compaction that progressively reduces older observations. Furthermore, it employs an automated memory system to accumulate project-specific knowledge across sessions and counteracts instruction fade-out through event-driven system reminders. By enforcing explicit reasoning phases and prioritizing context efficiency, OPENDEV provides a secure, extensible foundation for terminal-first AI assistance, offering a blueprint for robust autonomous software engineering.",
       "url": "https://arxiv.org/abs/2603.05344",
       "match_score": 0.9668,
-      "matched_cluster": "agent & agents & tools",
+      "matched_cluster": "agent & ai & agentic",
       "submitted": "2026-03-05"
     },
     {
@@ -165,7 +165,7 @@
       "abstract": "Advanced reasoning typically requires Chain-of-Thought prompting, which is accurate but incurs prohibitive latency and substantial test-time inference costs. The standard alternative, fine-tuning smaller models, often sacrifices interpretability while introducing significant resource and operational overhead. To address these limitations, we introduce Prompt-Level Distillation (PLD). We extract explicit reasoning patterns from a Teacher model and organize them into a structured list of expressive instructions for the Student model's System Prompt. Evaluated on the StereoSet and Contract-NLI datasets using Gemma-3 4B, PLD improved Macro F1 scores from 57\\% to 90.0\\% and 67\\% to 83\\% respectively, enabling this compact model to match frontier performance with negligible latency overhead. These expressive instructions render the decision-making process transparent, allowing for full human verification of logic, making this approach ideal for regulated industries such as law, finance, and content moderation, as well as high-volume use cases and edge devices.",
       "url": "https://arxiv.org/abs/2602.21103",
       "match_score": 0.9663,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-24"
     },
     {
@@ -174,7 +174,7 @@
       "abstract": "Reinforcement learning with Verifiable Rewards (RLVR) has emerged as a powerful paradigm for eliciting reasoning capabilities in large language models, particularly in mathematics and coding. While recent efforts have extended this paradigm to broader general scientific (STEM) domains, the complex interplay between supervised fine-tuning (SFT) and RL in these contexts remains underexplored. In this paper, we conduct controlled experiments revealing a critical challenge: for general STEM domains, RL applied directly to base models is highly sample-inefficient and is consistently surpassed by supervised fine-tuning (SFT) on moderate-quality responses. Yet sequential SFT followed by RL can further improve performance, suggesting that the two stages play complementary roles, and that how training data is allocated between them matters. Therefore, we propose DeReason, a difficulty-based data decoupling strategy for general reasoning. DeReason partitions training data by reasoning intensity estimated via LLM-based scoring into reasoning-intensive and non-reasoning-intensive subsets. It allocates broad-coverage, non-reasoning-intensive problems to SFT to establish foundational domain knowledge, and reserves a focused subset of difficult problems for RL to cultivate complex reasoning. We demonstrate that this principled decoupling yields better performance than randomly splitting the data for sequential SFT and RL. Extensive experiments on general STEM and mathematical benchmarks demonstrate that our decoupled curriculum training significantly outperforms SFT-only, RL-only, and random-split baselines. Our work provides a systematic study of the interplay between SFT and RL for general reasoning, offering a highly effective and generalized post-training recipe.",
       "url": "https://arxiv.org/abs/2603.11193",
       "match_score": 0.9663,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-03-11"
     },
     {
@@ -183,7 +183,7 @@
       "abstract": "We study reasoning for accessing world knowledge stored in a language model's parameters. For example, recalling that Canberra is Australia's capital may benefit from thinking through major cities and the concept of purpose-built capitals. While reasoning language models are trained via reinforcement learning to produce reasoning traces on tasks such as mathematics, they may not reason well for accessing their own world knowledge. We first find that models do not generate their best world knowledge reasoning by default: adding a simple \"think step-by-step\" cue demonstrates statistically significant improvement in knowledge recall but not math. Motivated by this, we propose training models to reason over their parametric knowledge using world-knowledge question answering as a verifiable reward. After reinforcement learning on TriviaQA (+9.9%), performance also improves on Natural Questions, HotpotQA, SimpleQA, and StrategyQA by 4.2%, 2.1%, 0.6%, and 3.0%, respectively. Reasoning models are under-optimized for parametric knowledge access, but can be easily trained to reason better.",
       "url": "https://arxiv.org/abs/2602.22193",
       "match_score": 0.9663,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-25"
     },
     {
@@ -192,7 +192,7 @@
       "abstract": "Pass@k is a widely used performance metric for verifiable large language model tasks, including mathematical reasoning, code generation, and short-answer reasoning. It defines success if any of $k$ independently sampled solutions passes a verifier. This multi-sample inference metric has motivated inference-aware fine-tuning methods that directly optimize pass@$k$. However, prior work reports a recurring trade-off: pass@k improves while pass@1 degrades under such methods. This trade-off is practically important because pass@1 often remains a hard operational constraint due to latency and cost budgets, imperfect verifier coverage, and the need for a reliable single-shot fallback. We study the origin of this trade-off and provide a theoretical characterization of when pass@k policy optimization can reduce pass@1 through gradient conflict induced by prompt interference. We show that pass@$k$ policy gradients can conflict with pass@1 gradients because pass@$k$ optimization implicitly reweights prompts toward low-success prompts; when these prompts are what we term negatively interfering, their upweighting can rotate the pass@k update direction away from the pass@1 direction. We illustrate our theoretical findings with large language model experiments on verifiable mathematical reasoning tasks.",
       "url": "https://arxiv.org/abs/2602.21189",
       "match_score": 0.9663,
-      "matched_cluster": "thinking & reasoning & reinforcement",
+      "matched_cluster": "reasoning & thinking & reinforcement",
       "submitted": "2026-02-24"
     }
   ]
