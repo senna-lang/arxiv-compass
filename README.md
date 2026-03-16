@@ -85,8 +85,9 @@ npx wrangler kv key put "ratings" --namespace-id=797a1d2d28ef40cd86bb25c2bce60fe
   ノイズ次元を落とし UMAP の入力品質を上げる
         │
         ▼
-  [STEP 3] UMAP（50次元 → 10次元）
-  クラスタリング用に局所構造を保ちながら次元削減
+  [STEP 3] UMAP（50次元 → 2次元）
+  クラスタリングと可視化を同一空間で統一
+  ※ 「地図上の近さ」と「クラスタの近さ」が一致する
         │
         ▼
   [STEP 4] HDBSCAN でクラスタリング
@@ -95,22 +96,18 @@ npx wrangler kv key put "ratings" --namespace-id=797a1d2d28ef40cd86bb25c2bce60fe
         ▼
   [STEP 5] c-TF-IDF でキーワード候補抽出
   各クラスタを代表する語を統計的に抽出
-  ※ WordNetLemmatizer で語形正規化（agent/agents → agent）
+  ※ WordNetLemmatizer で語形正規化（agents → agent、rewards → reward）
   ※ ACADEMIC_STOPWORDS で論文特有の汎用語を除去
         │
         ▼
-  [STEP 6] KeyBERTInspired で再ランキング
-  候補語を SPECTER2 で再 Embedding し、
-  クラスタ centroid との cos 類似度で意味的に並び替え
+  [STEP 6] KeyBERTInspired で意味的再ランキング
+  各クラスタの代表文書とキーワード候補を SPECTER2 で Embedding し、
+  cos 類似度でスコアリング（10,000件の全論文は再 Embedding しない）
         │
         ▼
   [STEP 7] MaximalMarginalRelevance（MMR）で多様性確保
-  選択済みキーワードとの類似度を考慮し、
-  冗長なペア（gnn / gnns 等）を除去して多様なキーワードに絞る
-        │
-        ▼
-  [STEP 8] UMAP（50次元 → 2次元）※ 可視化専用
-  画面に描画するための 2D 座標を別途計算
+  選択済みキーワードとの意味的類似度を考慮し、
+  概念的に近いペア（gnn / graph neural network 等）を除去して多様なキーワードに絞る
         │
         ▼
   map.json（arXiv論文地図）

@@ -11,7 +11,9 @@
 		"map": "python scripts/map.py --max-papers 1000",
 		"map:full": "python scripts/map.py",
 		"recommend": "python scripts/recommend.py",
-		"daily": "python scripts/fetch_daily.py"
+		"daily": "python scripts/fetch_daily.py",
+		"bench": "python scripts/benchmark.py",
+		"bench:map": "python scripts/benchmark.py --map"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "12.6.13",
