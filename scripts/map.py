@@ -17,6 +17,7 @@ import argparse
 import hashlib
 import json
 import pickle
+import re
 import time
 from datetime import datetime
 from pathlib import Path
@@ -256,9 +257,21 @@ def main(max_papers: int, log: bool = False) -> None:
         "mathrm",
     ]
     base_stopwords = list(CountVectorizer(stop_words="english").get_stop_words() or [])
+
+    # レンマタイザー: agent/agents → agent、reward/rewards → reward に統一
+    import nltk
+    nltk.download("wordnet", quiet=True)
+    from nltk.stem import WordNetLemmatizer
+    _lemmatizer = WordNetLemmatizer()
+
+    def _lemmatize_tokenizer(text: str) -> list[str]:
+        tokens = re.findall(r"[a-z]+", text.lower())
+        return [_lemmatizer.lemmatize(t) for t in tokens]
+
     # ngram_range=(1,1): bigramはc-TF-IDFで十分な共起頻度が得られない。
     # 意味的な複合概念はKeyBERTInspiredが担う。
     vectorizer = CountVectorizer(
+        tokenizer=_lemmatize_tokenizer,
         stop_words=base_stopwords + ACADEMIC_STOPWORDS,
         ngram_range=(1, 1),
         min_df=t["vectorizer_min_df"],
