@@ -24,13 +24,10 @@ jobs:
       - name: Set up Modal token
         run: modal token set --token-id ${{ secrets.MODAL_TOKEN_ID }} --token-secret ${{ secrets.MODAL_TOKEN_SECRET }}
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install Node dependencies
-        run: npm ci
+        run: bun install
 
       - name: Run map.py on Modal T4 (10,000 papers)
         run: USE_MODAL=1 modal run scripts/map.py --log
@@ -41,10 +38,10 @@ jobs:
           RATINGS_URL: ${{ secrets.RATINGS_URL }}
 
       - name: Build
-        run: npm run build
+        run: bun run build
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist/ --project-name arxiv-newspaper
+        run: bunx wrangler pages deploy dist/ --project-name arxiv-newspaper
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
