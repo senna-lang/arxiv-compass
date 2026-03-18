@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 
 import arxiv
 import numpy as np
-from modal_app import build_encoder
+from modal_app import app, build_encoder
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path(__file__).parent.parent
@@ -286,6 +286,12 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     )
     plot.save(str(html_path))
     print(f"[INFO] Updated map.html with top_clusters highlighted")
+
+
+@app.local_entrypoint()
+def modal_main(top_clusters: int = 3, top_n: int = 20, log: bool = False) -> None:
+    """modal run scripts/recommend.py 用エントリポイント。"""
+    main(top_clusters, top_n, log=log)
 
 
 if __name__ == "__main__":
