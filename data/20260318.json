@@ -1,0 +1,473 @@
+{
+  "date": "2026-03-18",
+  "collected_at": "2026-03-18T22:25:33.765057+09:00",
+  "papers": [
+    {
+      "id": "2603.16867",
+      "title": "Efficient Reasoning on the Edge",
+      "authors": [
+        "Yelysei Bondarenko",
+        "Thomas Hehn",
+        "Rob Hesselink",
+        "Romain Lepert",
+        "Fabio Valerio Massoli",
+        "Evgeny Mironov",
+        "Leyla Mirvakhabova",
+        "Tribhuvanesh Orekondy",
+        "Spyridon Stasis",
+        "Andrey Kuzmin",
+        "Anna Kuzina",
+        "Markus Nagel",
+        "Ankita Nayak",
+        "Corrado Rainone",
+        "Ork de Rooij",
+        "Paul N Whatmough",
+        "Arash Behboodi",
+        "Babak Ehteshami Bejnordi"
+      ],
+      "abstract": "Large language models (LLMs) with chain-of-thought reasoning achieve state-of-the-art performance across complex problem-solving tasks, but their verbose reasoning traces and large context requirements make them impractical for edge deployment. These challenges include high token generation costs, large KV-cache footprints, and inefficiencies when distilling reasoning capabilities into smaller models for mobile devices. Existing approaches often rely on distilling reasoning traces from larger models into smaller models, which are verbose and stylistically redundant, undesirable for on-device inference. In this work, we propose a lightweight approach to enable reasoning in small LLMs using LoRA adapters combined with supervised fine-tuning. We further introduce budget forcing via reinforcement learning on these adapters, significantly reducing response length with minimal accuracy loss. To address memory-bound decoding, we exploit parallel test-time scaling, improving accuracy at minor latency increase. Finally, we present a dynamic adapter-switching mechanism that activates reasoning only when needed and a KV-cache sharing strategy during prompt encoding, reducing time-to-first-token for on-device inference. Experiments on Qwen2.5-7B demonstrate that our method achieves efficient, accurate reasoning under strict resource constraints, making LLM reasoning practical for mobile scenarios. Videos demonstrating our solution running on mobile devices are available on our project page.",
+      "url": "https://arxiv.org/abs/2603.16867",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.897
+    },
+    {
+      "id": "2603.15965",
+      "title": "MoLoRA: Composable Specialization via Per-Token Adapter Routing",
+      "authors": [
+        "Shrey Shah",
+        "Justin Wagle"
+      ],
+      "abstract": "Multi-adapter serving systems route entire sequences to a single adapter, forcing a choice when requests span multiple domains. This assumption fails in two important settings: (1) multimodal generation, where text and image tokens require different adapters within the same sequence, and (2) mixed-capability requests like \"write code to solve this equation,\" which need expertise from multiple specialized adapters. We introduce per-token routing, which routes individual tokens to adapters based on either vocabulary structure (for multimodal models) or learned gating (for semantic specialization). Per-token routing is provably optimal, achieving work N for N tokens versus K \\cdot N for per-sequence routing with K adapter types. Our key contribution is MoLoRA (Mixture of LoRA), which enables composable specialization: load multiple domain-specific adapters and let a learned router select the appropriate adapter per-token. We demonstrate that specialization dramatically beats scale: MoLoRA enables Qwen3-1.7B to exceed Qwen3-8B across four reasoning benchmarks while being 4.7x smaller. This enables modular expertise at inference time: train focused LoRAs independently, combine them without retraining, and add new capabilities by simply loading new adapters.",
+      "url": "https://arxiv.org/abs/2603.15965",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-16",
+      "score": 0.8965
+    },
+    {
+      "id": "2603.16817",
+      "title": "Is Conformal Factuality for RAG-based LLMs Robust? Novel Metrics and Systematic Insights",
+      "authors": [
+        "Yi Chen",
+        "Daiwei Chen",
+        "Sukrut Madhav Chikodikar",
+        "Caitlyn Heqi Yin",
+        "Ramya Korlakai Vinayak"
+      ],
+      "abstract": "Large language models (LLMs) frequently hallucinate, limiting their reliability in knowledge-intensive applications. Retrieval-augmented generation (RAG) and conformal factuality have emerged as potential ways to address this limitation. While RAG aims to ground responses in retrieved evidence, it provides no statistical guarantee that the final output is correct. Conformal factuality filtering offers distribution-free statistical reliability by scoring and filtering atomic claims using a threshold calibrated on held-out data, however, the informativeness of the final output is not guaranteed. We systematically analyze the reliability and usefulness of conformal factuality for RAG-based LLMs across generation, scoring, calibration, robustness, and efficiency. We propose novel informativeness-aware metrics that better reflect task utility under conformal filtering. Across three benchmarks and multiple model families, we find that (i) conformal filtering suffers from low usefulness at high factuality levels due to vacuous outputs, (ii) conformal factuality guarantee is not robust to distribution shifts and distractors, highlighting the limitation that requires calibration data to closely match deployment conditions, and (iii) lightweight entailment-based verifiers match or outperform LLM-based model confidence scorers while requiring over $100\\times$ fewer FLOPs. Overall, our results expose factuality-informativeness trade-offs and fragility of conformal filtering framework under distribution shifts and distractors, highlighting the need for new approaches for reliability with robustness and usefulness as key metrics, and provide actionable guidance for building RAG pipelines that are both reliable and computationally efficient.",
+      "url": "https://arxiv.org/abs/2603.16817",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8939
+    },
+    {
+      "id": "2603.16733",
+      "title": "IQuest-Coder-V1 Technical Report",
+      "authors": [
+        "Jian Yang",
+        "Wei Zhang",
+        "Shawn Guo",
+        "Zhengmao Ye",
+        "Lin Jing",
+        "Shark Liu",
+        "Yizhi Li",
+        "Jiajun Wu",
+        "Cening Liu",
+        "X. Ma",
+        "Yuyang Song",
+        "Siwei Wu",
+        "Yuwen Li",
+        "L. Liao",
+        "T. Zheng",
+        "Ziling Huang",
+        "Zelong Huang",
+        "Che Liu",
+        "Yan Xing",
+        "Renyuan Li",
+        "Qingsong Cai",
+        "Hanxu Yan",
+        "Siyue Wang",
+        "Shikai Li",
+        "Jason Klein Liu",
+        "An Huang",
+        "Yongsheng Kang",
+        "Jinxing Zhang",
+        "Chuan Hao",
+        "Haowen Wang",
+        "Weicheng Gu",
+        "Ran Tao",
+        "Mingjie Tang",
+        "Peihao Wu",
+        "Jianzhou Wang",
+        "Xianglong Liu",
+        "Weifeng Lv",
+        "Bryan Dai"
+      ],
+      "abstract": "In this report, we introduce the IQuest-Coder-V1 series-(7B/14B/40B/40B-Loop), a new family of code large language models (LLMs). Moving beyond static code representations, we propose the code-flow multi-stage training paradigm, which captures the dynamic evolution of software logic through different phases of the pipeline. Our models are developed through the evolutionary pipeline, starting with the initial pre-training consisting of code facts, repository, and completion data. Following that, we implement a specialized mid-training stage that integrates reasoning and agentic trajectories in 32k-context and repository-scale in 128k-context to forge deep logical foundations. The models are then finalized with post-training of specialized coding capabilities, which is bifurcated into two specialized paths: the thinking path (utilizing reasoning-driven RL) and the instruct path (optimized for general assistance). IQuest-Coder-V1 achieves state-of-the-art performance among competitive models across critical dimensions of code intelligence: agentic software engineering, competitive programming, and complex tool use. To address deployment constraints, the IQuest-Coder-V1-Loop variant introduces a recurrent mechanism designed to optimize the trade-off between model capacity and deployment footprint, offering an architecturally enhanced path for efficacy-efficiency trade-off. We believe the release of the IQuest-Coder-V1 series, including the complete white-box chain of checkpoints from pre-training bases to the final thinking and instruction models, will advance research in autonomous code intelligence and real-world agentic systems.",
+      "url": "https://arxiv.org/abs/2603.16733",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8938
+    },
+    {
+      "id": "2603.16430",
+      "title": "EngGPT2: Sovereign, Efficient and Open Intelligence",
+      "authors": [
+        "G. Ciarfaglia",
+        "A. Rosanova",
+        "S. Cipolla",
+        "J. Bartoli",
+        "A. Di Domenico",
+        "C. Fioroni",
+        "A. Fontana",
+        "M. R. Scoleri",
+        "M. I. Mone",
+        "D. Franchi",
+        "M. C. Del Gaudio",
+        "F. Picariello",
+        "M. Gabusi",
+        "S. Bonura",
+        "V. Morreale",
+        "I. Bailo"
+      ],
+      "abstract": "EngGPT2-16B-A3B is the latest iteration of Engineering Group's Italian LLM and it's built to be a Sovereign, Efficient and Open model. EngGPT2 is trained on 2.5 trillion tokens - less than Qwen3's 36T or Llama3's 15T - and delivers performance on key benchmarks, including MMLU-Pro, GSM8K, IFEval and HumanEval, comparable to dense models in the 8B-16B range, while requiring one-fifth to half of the inference power, and between one-tenth to one-sixth of the training data and consequent needed training power. Designed as a trained-from-scratch Mixture-of-Experts (MoE) architecture, EngGPT2 features 16 billion parameters with 3 billion active per inference, with expert sizes positioned between those used in GPT-OSS and Qwen3. Approximately 25% of its training corpus consists of Italian-language data, to deliver strong capabilities for European and Italian NLP tasks among models of similar scale. This efficiency aims to position EngGPT2 as a key contributor to the growing portfolio of open-weight European models, combining performance and efficiency with full alignment to the EU AI Act. EngGPT2 is also a single model capable of multiple reasoning modes: non-reasoning, reasoning in Italian or English, and turbo-reasoning (a concise, bullet-point style reasoning available in both languages designed for real-time reasoning use cases). EngGPT2 aims to set a new standard for resource-conscious, high-performance LLMs tailored to European and Italian contexts.",
+      "url": "https://arxiv.org/abs/2603.16430",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8919
+    },
+    {
+      "id": "2603.16060",
+      "title": "ARISE: Agent Reasoning with Intrinsic Skill Evolution in Hierarchical Reinforcement Learning",
+      "authors": [
+        "Yu Li",
+        "Rui Miao",
+        "Zhengling Qi",
+        "Tian Lan"
+      ],
+      "abstract": "The dominant paradigm for improving mathematical reasoning in language models relies on Reinforcement Learning with verifiable rewards. Yet existing methods treat each problem instance in isolation without leveraging the reusable strategies that emerge and accumulate during training. To this end, we introduce ARISE (Agent Reasoning via Intrinsic Skill Evolution), a hierarchical reinforcement learning framework, in which a shared policy operates both to manage skills at high-level and to generate responses at low-level (denoted as a Skills Manager and a Worker, respectively). The Manager maintains a tiered skill library through a dedicated skill generation rollout that performs structured summarization of successful solution traces (after execution), while employing a policy-driven selection mechanism to retrieve relevant skills to condition future rollouts (before execution). A hierarchical reward design guides the co-evolution of reasoning ability and library quality. Experiments on two base models and seven benchmarks spanning both competition mathematics and Omni-MATH show that ARISE consistently outperforms GRPO-family algorithms and memory-augmented baselines, with particularly notable gains on out-of-distribution tasks. Ablation studies confirm that each component contributes to the observed improvements and that library quality and reasoning performance improve in tandem throughout training. Code is available at \\href{https://github.com/Skylanding/ARISE}{https://github.com/Skylanding/ARISE}.",
+      "url": "https://arxiv.org/abs/2603.16060",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "github_url": "https://github.com/Skylanding/ARISE}{https://github.com/Skylanding/ARISE}.",
+      "score": 0.8908
+    },
+    {
+      "id": "2603.16152",
+      "title": "HIPO: Instruction Hierarchy via Constrained Reinforcement Learning",
+      "authors": [
+        "Keru Chen",
+        "Jun Luo",
+        "Sen Lin",
+        "Yingbin Liang",
+        "Alvaro Velasquez",
+        "Nathaniel Bastian",
+        "Shaofeng Zou"
+      ],
+      "abstract": "Hierarchical Instruction Following (HIF) refers to the problem of prompting large language models with a priority-ordered stack of instructions. Standard methods like RLHF and DPO typically fail in this problem since they mainly optimize for a single objective, failing to explicitly enforce system prompt compliance. Meanwhile, supervised fine-tuning relies on mimicking filtered, compliant data, which fails to establish the priority asymmetry at the algorithmic level. In this paper, we introduce \\textsc{HIPO}, a novel alignment framework that formulates HIF as a Constrained Markov Decision Process. \\textsc{HIPO} elevates system prompts from mere input context to strict algorithmic boundaries. Using a primal-dual safe reinforcement learning approach, the algorithm dynamically enforces system prompt compliance as an explicit constraint, maximizing user utility strictly within this feasible region. Extensive evaluations across diverse model architectures (e.g., Qwen, Phi, Llama) demonstrate that \\textsc{HIPO} significantly improves both system compliance and user utility. Furthermore, mechanistic analysis reveals that this constrained optimization autonomously drives the model to shift its attention toward long-range system tokens, providing a principled foundation for reliable LLM deployment in complex workflows.",
+      "url": "https://arxiv.org/abs/2603.16152",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8904
+    },
+    {
+      "id": "2603.16197",
+      "title": "Are Large Language Models Truly Smarter Than Humans?",
+      "authors": [
+        "Eshwar Reddy M",
+        "Sourav Karmakar"
+      ],
+      "abstract": "Public leaderboards increasingly suggest that large language models (LLMs) surpass human experts on benchmarks spanning academic knowledge, law, and programming. Yet most benchmarks are fully public, their questions widely mirrored across the internet, creating systematic risk that models were trained on the very data used to evaluate them. This paper presents three complementary experiments forming a rigorous multi-method contamination audit of six frontier LLMs: GPT-4o, GPT-4o-mini, DeepSeek-R1, DeepSeek-V3, Llama-3.3-70B, and Qwen3-235B. Experiment 1 applies a lexical contamination detection pipeline to 513 MMLU questions across all 57 subjects, finding an overall contamination rate of 13.8% (18.1% in STEM, up to 66.7% in Philosophy) and estimated performance gains of +0.030 to +0.054 accuracy points by category. Experiment 2 applies a paraphrase and indirect-reference diagnostic to 100 MMLU questions, finding accuracy drops by an average of 7.0 percentage points under indirect reference, rising to 19.8 pp in both Law and Ethics. Experiment 3 applies TS-Guessing behavioral probes to all 513 questions and all six models, finding that 72.5% trigger memorization signals far above chance, with DeepSeek-R1 displaying a distributed memorization signature (76.6% partial reconstruction, 0% verbatim recall) that explains its anomalous Experiment 2 profile. All three experiments converge on the same contamination ranking: STEM > Professional > Social Sciences > Humanities.",
+      "url": "https://arxiv.org/abs/2603.16197",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8884
+    },
+    {
+      "id": "2603.16124",
+      "title": "SWE-QA-Pro: A Representative Benchmark and Scalable Training Recipe for Repository-Level Code Understanding",
+      "authors": [
+        "Songcheng Cai",
+        "Zhiheng Lyu",
+        "Yuansheng Ni",
+        "Xiangchao Chen",
+        "Baichuan Zhou",
+        "Shenzhe Zhu",
+        "Yi Lu",
+        "Haozhe Wang",
+        "Chi Ruan",
+        "Benjamin Schneider",
+        "Weixu Zhang",
+        "Xiang Li",
+        "Andy Zheng",
+        "Yuyu Zhang",
+        "Ping Nie",
+        "Wenhu Chen"
+      ],
+      "abstract": "Agentic repository-level code understanding is essential for automating complex software engineering tasks, yet the field lacks reliable benchmarks. Existing evaluations often overlook the long tail topics and rely on popular repositories where Large Language Models (LLMs) can cheat via memorized knowledge. To address this, we introduce SWE-QA-Pro, a benchmark constructed from diverse, long-tail repositories with executable environments. We enforce topical balance via issue-driven clustering to cover under-represented task types and apply a rigorous difficulty calibration process: questions solvable by direct-answer baselines are filtered out. This results in a dataset where agentic workflows significantly outperform direct answering (e.g., a ~13-point gap for Claude Sonnet 4.5), confirming the necessity of agentic codebase exploration. Furthermore, to tackle the scarcity of training data for such complex behaviors, we propose a scalable synthetic data pipeline that powers a two-stage training recipe: Supervised Fine-Tuning (SFT) followed by Reinforcement Learning from AI Feedback (RLAIF). This approach allows small open models to learn efficient tool usage and reasoning. Empirically, a Qwen3-8B model trained with our recipe surpasses GPT-4o by 2.3 points on SWE-QA-Pro and substantially narrows the gap to state-of-the-art proprietary models, demonstrating both the validity of our evaluation and the effectiveness of our agentic training workflow.",
+      "url": "https://arxiv.org/abs/2603.16124",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8879
+    },
+    {
+      "id": "2603.16654",
+      "title": "Omanic: Towards Step-wise Evaluation of Multi-hop Reasoning in Large Language Models",
+      "authors": [
+        "Xiaojie Gu",
+        "Sherry T. Tong",
+        "Aosong Feng",
+        "Sophia Simeng Han",
+        "Jinghui Lu",
+        "Yingjian Chen",
+        "Yusuke Iwasawa",
+        "Yutaka Matsuo",
+        "Chanjun Park",
+        "Rex Ying",
+        "Irene Li"
+      ],
+      "abstract": "Reasoning-focused large language models (LLMs) have advanced in many NLP tasks, yet their evaluation remains challenging: final answers alone do not expose the intermediate reasoning steps, making it difficult to determine whether a model truly reasons correctly and where failures occur, while existing multi-hop QA benchmarks lack step-level annotations for diagnosing reasoning failures. To address this gap, we propose Omanic, an open-domain multi-hop QA resource that provides decomposed sub-questions and intermediate answers as structural annotations for analyzing reasoning processes. It contains 10,296 machine-generated training examples (OmanicSynth) and 967 expert-reviewed human-annotated evaluation examples (OmanicBench). Systematic evaluations show that state-of-the-art LLMs achieve only 73.11% multiple-choice accuracy on OmanicBench, confirming its high difficulty. Stepwise analysis reveals that CoT's performance hinges on factual completeness, with its gains diminishing under knowledge gaps and errors amplifying in later hops. Additionally, supervised fine-tuning on OmanicSynth brings substantial transfer gains (7.41 average points) across six reasoning and math benchmarks, validating the dataset's quality and further supporting the effectiveness of OmanicSynth as supervision for reasoning-capability transfer. We release the data at https://huggingface.co/datasets/li-lab/Omanic and the code at https://github.com/XiaojieGu/Omanic.",
+      "url": "https://arxiv.org/abs/2603.16654",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-17",
+      "github_url": "https://github.com/XiaojieGu/Omanic.",
+      "score": 0.8874
+    },
+    {
+      "id": "2603.16112",
+      "title": "ASDA: Automated Skill Distillation and Adaptation for Financial Reasoning",
+      "authors": [
+        "Tik Yu Yim",
+        "Wenting Tan",
+        "Sum Yee Chan",
+        "Tak-Wah Lam",
+        "Siu Ming Yiu"
+      ],
+      "abstract": "Adapting large language models (LLMs) to specialized financial reasoning typically requires expensive fine-tuning that produces model-locked expertise. Training-free alternatives have emerged, yet our experiments show that leading methods (GEPA and ACE) achieve only marginal gains on the FAMMA financial reasoning benchmark, exposing the limits of unstructured text optimization for complex, multi-step domain reasoning. We introduce Automated Skill Distillation and Adaptation (ASDA), a framework that automatically generates structured skill artifacts through iterative error-corrective learning without modifying model weights. A teacher model analyzes a student model's failures on financial reasoning tasks, clusters errors by subfield and error type, and synthesizes skill files containing reasoning procedures, code templates, and worked examples, which are dynamically injected during inference. Evaluated on FAMMA, ASDA achieves up to +17.33% improvement on arithmetic reasoning and +5.95% on non-arithmetic reasoning, substantially outperforming all training-free baselines. The resulting skill artifacts are human-readable, version-controlled, and compatible with the Agent Skills open standard, offering any organization with a labeled domain dataset a practical and auditable path to domain adaptation without weight access or retraining.",
+      "url": "https://arxiv.org/abs/2603.16112",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8871
+    },
+    {
+      "id": "2603.16169",
+      "title": "Open-Source Reproduction and Explainability Analysis of Corrective Retrieval Augmented Generation",
+      "authors": [
+        "Surya Vardhan Yalavarthi"
+      ],
+      "abstract": "Corrective Retrieval Augmented Generation (CRAG) improves the robustness of RAG systems by evaluating retrieved document quality and triggering corrective actions. However, the original implementation relies on proprietary components including the Google Search API and closed model weights, limiting reproducibility. In this work, we present a fully open-source reproduction of CRAG, replacing proprietary web search with the Wikipedia API and the original LLaMA-2 generator with Phi-3-mini-4k-instruct. We evaluate on PopQA and ARC-Challenge, demonstrating that our open-source pipeline achieves comparable performance to the original system. Furthermore, we contribute the first explainability analysis of CRAG's T5-based retrieval evaluator using SHAP, revealing that the evaluator primarily relies on named entity alignment rather than semantic similarity. Our analysis identifies key failure modes including domain transfer limitations on science questions. All code and results are available at https://github.com/suryayalavarthi/crag-reproduction.",
+      "url": "https://arxiv.org/abs/2603.16169",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "github_url": "https://github.com/suryayalavarthi/crag-reproduction.",
+      "score": 0.8858
+    },
+    {
+      "id": "2603.16331",
+      "title": "Decoding the Critique Mechanism in Large Reasoning Models",
+      "authors": [
+        "Hoang Phan",
+        "Quang H. Nguyen",
+        "Hung T. Q. Le",
+        "Xiusi Chen",
+        "Heng Ji",
+        "Khoa D. Doan"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) exhibit backtracking and self-verification mechanisms that enable them to revise intermediate steps and reach correct solutions, yielding strong performance on complex logical benchmarks. We hypothesize that such behaviors are beneficial only when the model has sufficiently strong \"critique\" ability to detect its own mistakes. This work systematically investigates how current LRMs recover from errors by inserting arithmetic mistakes in their intermediate reasoning steps. Notably, we discover a peculiar yet important phenomenon: despite the error propagating through the chain-of-thought (CoT), resulting in an incorrect intermediate conclusion, the model still reaches the correct final answer. This recovery implies that the model must possess an internal mechanism to detect errors and trigger self-correction, which we refer to as the hidden critique ability. Building on feature space analysis, we identify a highly interpretable critique vector representing this behavior. Extensive experiments across multiple model scales and families demonstrate that steering latent representations with this vector improves the model's error detection capability and enhances the performance of test-time scaling at no extra training cost. Our findings provide a valuable understanding of LRMs' critique behavior, suggesting a promising direction to control and improve their self-verification mechanism. Our code is available at https://github.com/mail-research/lrm-critique-vectors.",
+      "url": "https://arxiv.org/abs/2603.16331",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-03-17",
+      "github_url": "https://github.com/mail-research/lrm-critique-vectors.",
+      "score": 0.8857
+    },
+    {
+      "id": "2603.16843",
+      "title": "Internalizing Agency from Reflective Experience",
+      "authors": [
+        "Rui Ge",
+        "Yichao Fu",
+        "Yuyang Qian",
+        "Junda Su",
+        "Yiming Zhao",
+        "Peng Zhao",
+        "Hao Zhang"
+      ],
+      "abstract": "Large language models are increasingly deployed as autonomous agents that must plan, act, and recover from mistakes through long-horizon interaction with environments that provide rich feedback. However, prevailing outcome-driven post-training methods (e.g., RL with verifiable rewards) primarily optimize final success signals, leaving rich environment feedback underutilized. Consequently, they often lead to distribution sharpening: the policy becomes better at reproducing a narrow set of already-successful behaviors, while failing to improve the feedback-grounded agency needed to expand problem-solving capacity (e.g., Pass@k) in long-horizon settings.\n  To address this, we propose LEAFE (Learning Feedback-Grounded Agency from Reflective Experience), a framework that internalizes recovery agency from reflective experience. Specifically, during exploration, the agent summarizes environment feedback into actionable experience, backtracks to earlier decision points, and explores alternative branches with revised actions. We then distill these experience-guided corrections into the model through supervised fine-tuning, enabling the policy to recover more effectively in future interactions. Across a diverse set of interactive coding and agentic tasks under fixed interaction budgets, LEAFE consistently improves Pass@1 over the base model and achieves higher Pass@k than outcome-driven baselines (GRPO) and experience-based methods such as Early Experience, with gains of up to 14% on Pass@128.",
+      "url": "https://arxiv.org/abs/2603.16843",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8851
+    },
+    {
+      "id": "2603.16728",
+      "title": "The Cost of Reasoning: Chain-of-Thought Induces Overconfidence in Vision-Language Models",
+      "authors": [
+        "Robert Welch",
+        "Emir Konuk",
+        "Kevin Smith"
+      ],
+      "abstract": "Vision-language models (VLMs) are increasingly deployed in high-stakes settings where reliable uncertainty quantification (UQ) is as important as predictive accuracy. Extended reasoning via chain-of-thought (CoT) prompting or reasoning-trained models has become ubiquitous in modern VLM pipelines, yet its effect on UQ reliability remains poorly understood. We show that reasoning consistently degrades the quality of most uncertainty estimates, even when it improves task accuracy. We identify implicit answer conditioning as the primary mechanism: as reasoning traces converge on a conclusion before the final answer is generated, token probabilities increasingly reflect consistency with the model's own reasoning trace rather than uncertainty about correctness. In effect, the model becomes overconfident in its answer. In contrast, agreement-based consistency remains robust and often improves under reasoning, making it a practical choice for uncertainty estimation in reasoning-enabled VLMs.",
+      "url": "https://arxiv.org/abs/2603.16728",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8851
+    },
+    {
+      "id": "2603.16045",
+      "title": "POaaS: Minimal-Edit Prompt Optimization as a Service to Lift Accuracy and Cut Hallucinations on On-Device sLLMs",
+      "authors": [
+        "Jungwoo Shim",
+        "Dae Won Kim",
+        "Sun Wook Kim",
+        "Soo Young Kim",
+        "Myungcheol Lee",
+        "Jae-geun Cha",
+        "Hyunhwa Choi"
+      ],
+      "abstract": "Small language models (sLLMs) are increasingly deployed on-device, where imperfect user prompts--typos, unclear intent, or missing context--can trigger factual errors and hallucinations. Existing automatic prompt optimization (APO) methods were designed for large cloud LLMs and rely on search that often produces long, structured instructions; when executed under an on-device constraint where the same small model must act as optimizer and solver, these pipelines can waste context and even hurt accuracy. We propose POaaS, a minimal-edit prompt optimization layer that routes each query to lightweight specialists (Cleaner, Paraphraser, Fact-Adder) and merges their outputs under strict drift and length constraints, with a conservative skip policy for well-formed prompts. Under a strict fixed-model setting with Llama-3.2-3B-Instruct and Llama-3.1-8B-Instruct, POaaS improves both task accuracy and factuality while representative APO baselines degrade them, and POaaS recovers up to +7.4% under token deletion and mixup. Overall, per-query conservative optimization is a practical alternative to search-heavy APO for on-device sLLMs.",
+      "url": "https://arxiv.org/abs/2603.16045",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.885
+    },
+    {
+      "id": "2603.16448",
+      "title": "TRUST-SQL: Tool-Integrated Multi-Turn Reinforcement Learning for Text-to-SQL over Unknown Schemas",
+      "authors": [
+        "Ai Jian",
+        "Xiaoyun Zhang",
+        "Wanrou Du",
+        "Jingqing Ruan",
+        "Jiangbo Pei",
+        "Weipeng Zhang",
+        "Ke Zeng",
+        "Xunliang Cai"
+      ],
+      "abstract": "Text-to-SQL parsing has achieved remarkable progress under the Full Schema Assumption. However, this premise fails in real-world enterprise environments where databases contain hundreds of tables with massive noisy metadata. Rather than injecting the full schema upfront, an agent must actively identify and verify only the relevant subset, giving rise to the Unknown Schema scenario we study in this work. To address this, we propose TRUST-SQL (Truthful Reasoning with Unknown Schema via Tools). We formulate the task as a Partially Observable Markov Decision Process where our autonomous agent employs a structured four-phase protocol to ground reasoning in verified metadata. Crucially, this protocol provides a structural boundary for our novel Dual-Track GRPO strategy. By applying token-level masked advantages, this strategy isolates exploration rewards from execution outcomes to resolve credit assignment, yielding a 9.9% relative improvement over standard GRPO. Extensive experiments across five benchmarks demonstrate that TRUST-SQL achieves an average absolute improvement of 30.6% and 16.6% for the 4B and 8B variants respectively over their base models. Remarkably, despite operating entirely without pre-loaded metadata, our framework consistently matches or surpasses strong baselines that rely on schema prefilling.",
+      "url": "https://arxiv.org/abs/2603.16448",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8848
+    },
+    {
+      "id": "2603.15957",
+      "title": "GASP: Guided Asymmetric Self-Play For Coding LLMs",
+      "authors": [
+        "Swadesh Jana",
+        "Cansu Sancaktar",
+        "Tomáš Daniš",
+        "Georg Martius",
+        "Antonio Orvieto",
+        "Pavel Kolev"
+      ],
+      "abstract": "Asymmetric self-play has emerged as a promising paradigm for post-training large language models, where a teacher continually generates questions for a student to solve at the edge of the student's learnability. Although these methods promise open-ended data generation bootstrapped from no human data, they suffer from one major problem: not all problems that are hard to solve are interesting or informative to improve the overall capabilities of the model. Current asymmetric self-play methods are goal-agnostic with no real grounding. We propose Guided Asymmetric Self-Play (GASP), where grounding is provided by real-data goalpost questions that are identified to pose a hard exploration challenge to the model. During self-play, the teacher first generates an easier variant of a hard question, and then a harder variant of that easier question, with the goal of gradually closing the gap to the goalpost throughout training. Doing so, we improve pass@20 on LiveCodeBench (LCB) by 2.5% over unguided asymmetric self-play, and through the curriculum constructed by the teacher, we manage to solve hard goalpost questions that remain out of reach for all baselines.",
+      "url": "https://arxiv.org/abs/2603.15957",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-03-16",
+      "score": 0.8847
+    },
+    {
+      "id": "2603.16578",
+      "title": "When and Why Does Unsupervised RL Succeed in Mathematical Reasoning? A Manifold Envelopment Perspective",
+      "authors": [
+        "Zelin Zhang",
+        "Fei Cheng",
+        "Chenhui Chu"
+      ],
+      "abstract": "Although outcome-based reinforcement learning (RL) significantly advances the mathematical reasoning capabilities of Large Language Models (LLMs), its reliance on computationally expensive ground-truth annotations imposes a severe scalability bottleneck. Unsupervised RL guided by intrinsic rewards offers a scalable alternative, yet it suffers from opaque training dynamics and catastrophic instability, such as policy collapse and reward hacking. In this paper, we first design and evaluate a suite of intrinsic rewards that explicitly enforce concise and certain generation. Second, to discover the boundaries of this approach, we test base models across a spectrum of intrinsic reasoning capabilities, revealing how a model's foundational logical prior dictates its success or failure. Finally, to demystify why certain configurations stabilize while others collapse, we introduce a novel geometric diagnostic lens, showing that successful cases are enveloped by manifolds. Ultimately, our work goes beyond merely demonstrating that enforcing concise and certain responses successfully boosts mathematical reasoning; we reveal when this unsupervised approach breaks down and geometrically diagnose why.",
+      "url": "https://arxiv.org/abs/2603.16578",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8845
+    },
+    {
+      "id": "2603.16664",
+      "title": "Kestrel: Grounding Self-Refinement for LVLM Hallucination Mitigation",
+      "authors": [
+        "Jiawei Mao",
+        "Hardy Chen",
+        "Haoqin Tu",
+        "Yuhan Wang",
+        "Letian Zhang",
+        "Zeyu Zheng",
+        "Huaxiu Yao",
+        "Zirui Wang",
+        "Cihang Xie",
+        "Yuyin Zhou"
+      ],
+      "abstract": "Large vision-language models (LVLMs) have become increasingly strong but remain prone to hallucinations in multimodal tasks, which significantly narrows their deployment. As training these LVLMs to avoid hallucinations becomes prohibitively expensive for larger models, training-free methods offer a cheap and flexible solution to this problem, yet existing approaches based on decoding or tool use often bring limited gains and/or weak interpretability. We propose Kestrel, a training-free framework for LVLM hallucination mitigation that combines an explicit visual-grounding agent with evidence-verified self-refinement mechanism. In detail, Kestrel first collects explicit visual evidence and converts tool outputs into reusable and structured textual evidence. Second, to take full advantage of these evidence, Kestrel verifies them via an LVLM judge for evidence checking, then iteratively self-refine answers based on verified evidence to reduce the risk of over-correction. Extensive experiments show that Kestrel improves performance over strong baselines across hallucination benchmarks (e.g., average +3.31% on POPE and +28.34 on MME-Hallucination with Qwen3-VL), while providing transparent verification traces for hallucination diagnosis and analysis -- e.g., both the integrated self-refinement module and grounding agent contributing an average +2.0% gain on POPE.",
+      "url": "https://arxiv.org/abs/2603.16664",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-17",
+      "score": 0.8838
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
