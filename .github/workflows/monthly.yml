@@ -42,10 +42,17 @@ jobs:
       - name: Run map.py on Modal T4 (10,000 papers)
         run: USE_MODAL=1 modal run scripts/map.py --log
 
+      - name: Sync ratings from KV
+        run: |
+          bunx wrangler kv key get "ratings" \
+            --namespace-id=797a1d2d28ef40cd86bb25c2bce60fe9 \
+            --remote > data/ratings.json
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
       - name: Run recommend.py on Modal T4 (map.json updated)
         run: USE_MODAL=1 modal run scripts/recommend.py --log
-        env:
-          RATINGS_URL: ${{ secrets.RATINGS_URL }}
 
       - name: Build
         run: bun run build
