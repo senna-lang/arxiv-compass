@@ -1,34 +1,35 @@
 ---
 /**
- * おすすめ論文セクション
+ * セレンディピティ論文セクション
  *
- * recommendations.jsonを読み込み、近傍クラスタ名とおすすめ論文を表示する。
+ * recommendations.jsonのserendipityフィールドを読み込み、
+ * 「こんなのもどう？」として隣接領域の論文を表示する。
  * データがない場合はセクション自体を非表示にする。
  */
 import { getRecommendations } from "../lib/data";
 
 const data = getRecommendations();
-if (!data || data.recommendations.length === 0) {
-  // データなし → 何も表示しない
-}
+const hasPapers = data && data.serendipity && data.serendipity.length > 0;
 ---
 
-{data && data.recommendations.length > 0 && (
-  <section class="recommend-section">
-    <h2 class="section-title">🔍 過去記事からのおすすめ</h2>
+{hasPapers && (
+  <section class="serendipity-section">
+    <h2 class="section-title">🌱 こんなのもどう？</h2>
 
-    <div class="top-clusters">
-      <span class="clusters-label">あなたの近傍クラスタ:</span>
-      {data.top_clusters.map((c) => (
-        <span class="cluster-tag">
-          {c.label} ({Math.round(c.score * 100)}%)
-        </span>
-      ))}
-    </div>
+    {data.serendipity_clusters && data.serendipity_clusters.length > 0 && (
+      <div class="top-clusters">
+        <span class="clusters-label">探索クラスタ:</span>
+        {data.serendipity_clusters.map((c) => (
+          <span class="cluster-tag">
+            {c.label} ({Math.round(c.score * 100)}%)
+          </span>
+        ))}
+      </div>
+    )}
 
-    <div class="recommend-list">
-      {data.recommendations.map((rec) => (
-        <article class="recommend-card">
+    <div class="serendipity-list">
+      {data.serendipity!.map((rec) => (
+        <article class="serendipity-card">
           <div class="rec-meta">
             <span class="matched-cluster">{rec.matched_cluster}</span>
             <span class="match-score">マッチ度 {Math.round(rec.match_score * 100)}%</span>
@@ -69,8 +70,8 @@ if (!data || data.recommendations.length === 0) {
 )}
 
 <style>
-  .recommend-section {
-    /* margin-top と border-top は親の .bottom-columns が制御する */
+  .serendipity-section {
+    /* border-top と margin-top は親の .bottom-columns が制御する */
   }
 
   .section-title {
@@ -90,20 +91,20 @@ if (!data || data.recommendations.length === 0) {
   .clusters-label { color: #555; }
 
   .cluster-tag {
-    background: #eef3ff;
-    color: #3b5bdb;
-    border: 1px solid #c5d4ff;
+    background: #d1fae5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
     border-radius: 12px;
     padding: 0.15rem 0.6rem;
     font-size: 0.8rem;
   }
 
-  .recommend-card {
+  .serendipity-card {
     border: 1px solid #e8e8e8;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 0.75rem;
-    background: #fafafa;
+    background: #f0fdf4;
   }
 
   .rec-meta {
@@ -114,7 +115,7 @@ if (!data || data.recommendations.length === 0) {
   }
 
   .matched-cluster {
-    color: #3b5bdb;
+    color: #059669;
     font-weight: 500;
   }
 

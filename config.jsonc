@@ -39,6 +39,11 @@
     "top_clusters": 3, // 上位何クラスタからおすすめを生成するか
     "top_n": 20, // 最終的なおすすめ件数の上限
     "min_match_score": 0.60, // クラスタcentroidとのcos類似度がこれ未満の論文を除外
+    // セレンディピティ: top_clusters直下のクラスタから中程度マッチの論文を抽出
+    "serendipity_clusters": 3, // ランク4-6のクラスタを使用
+    "serendipity_top_n": 10,
+    "serendipity_min_match_score": 0.45,
+    "serendipity_max_match_score": 0.65,
   },
 
   // fetch_daily.py の設定

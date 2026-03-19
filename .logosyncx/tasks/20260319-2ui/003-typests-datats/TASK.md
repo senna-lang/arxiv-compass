@@ -3,11 +3,12 @@ id: t-f7339e
 date: 2026-03-19T22:43:40.099416+09:00
 title: types.ts と data.ts の型定義を拡張
 seq: 3
-status: open
+status: done
 priority: medium
 plan: 20260319-2ui
 tags: []
 assignee: ""
+completed_at: 2026-03-19T23:52:41.378592+09:00
 ---
 
 ## What

@@ -3,11 +3,12 @@ id: t-00dd56
 date: 2026-03-19T22:44:17.735541+09:00
 title: '[date].astro を2カラムレイアウトに変更'
 seq: 5
-status: open
+status: done
 priority: high
 plan: 20260319-2ui
 tags: []
 assignee: ""
+completed_at: 2026-03-20T00:03:48.606551+09:00
 ---
 
 ## What
