@@ -170,7 +170,9 @@ const firstCategory = paper.categories[0] ?? "";
     text-decoration: none;
   }
 
-  .pdf-link:hover { background: #fdf0f0; }
+  .pdf-link:hover {
+    background: #fdf0f0;
+  }
 
   .github-link {
     font-size: 0.8rem;
@@ -207,16 +209,22 @@ const firstCategory = paper.categories[0] ?? "";
     try {
       const res = await fetch("/api/ratings");
       if (!res.ok) return;
-      const data = await res.json() as { ratings: { paper_id: string; rating: number }[] };
-      const ratingMap = new Map(data.ratings.map((r) => [r.paper_id, r.rating]));
+      const data = (await res.json()) as {
+        ratings: { paper_id: string; rating: number }[];
+      };
+      const ratingMap = new Map(
+        data.ratings.map((r) => [r.paper_id, r.rating]),
+      );
 
-      document.querySelectorAll<HTMLElement>(".star-rating").forEach((container) => {
-        const paperId = container.dataset.paperId;
-        if (!paperId) return;
-        const rating = ratingMap.get(paperId) ?? 0;
-        updateStars(container, rating);
-        container.dataset.rating = String(rating);
-      });
+      document
+        .querySelectorAll<HTMLElement>(".star-rating")
+        .forEach((container) => {
+          const paperId = container.dataset.paperId;
+          if (!paperId) return;
+          const rating = ratingMap.get(paperId) ?? 0;
+          updateStars(container, rating);
+          container.dataset.rating = String(rating);
+        });
     } catch {
       // フォールバック: 静的HTMLの初期値をそのまま使用
     }
@@ -239,9 +247,16 @@ const firstCategory = paper.categories[0] ?? "";
     try {
       const res = await fetch("/api/rate", {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ paper_id: paperId, title, abstract, rating }),
       });
+
+      if (res.status === 401 || res.status === 403) {
+        const loginUrl = `/cdn-cgi/access/login?redirect_url=${encodeURIComponent(window.location.href)}`;
+        window.location.href = loginUrl;
+        return;
+      }
 
       if (!res.ok) {
         console.error("[rate] API error:", res.status);
@@ -250,7 +265,9 @@ const firstCategory = paper.categories[0] ?? "";
         container.dataset.rating = String(rating);
       }
     } catch (err) {
-      console.error("[rate] fetch error:", err);
+      // CORS エラー（未認証時のリダイレクトによる）→ Access ログインページへ
+      const loginUrl = `/cdn-cgi/access/login?redirect_url=${encodeURIComponent(window.location.href)}`;
+      window.location.href = loginUrl;
     }
   });
 
