@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 
 import arxiv
 import numpy as np
-from specter2 import Specter2Encoder
+from modal_app import app, build_encoder
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path(__file__).parent.parent
@@ -144,7 +144,7 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     high_rated = [r for r in ratings_data["ratings"] if r["rating"] >= min_rating]
     print(f"[INFO] {len(high_rated)} high-rated papers (rating>={min_rating})")
 
-    enc = Specter2Encoder(model_name)
+    enc = build_encoder(model_name)
 
     # 高評価論文のEmbedding: proximity アダプタ（論文↔論文類似度）
     rated_vecs: list[np.ndarray] = []
@@ -286,6 +286,12 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     )
     plot.save(str(html_path))
     print(f"[INFO] Updated map.html with top_clusters highlighted")
+
+
+@app.local_entrypoint()
+def modal_main(top_clusters: int = 3, top_n: int = 20, log: bool = False) -> None:
+    """modal run scripts/recommend.py 用エントリポイント。"""
+    main(top_clusters, top_n, log=log)
 
 
 if __name__ == "__main__":

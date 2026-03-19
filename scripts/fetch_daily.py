@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 
 import arxiv
 import numpy as np
-from specter2 import Specter2Encoder
+from modal_app import app, build_encoder
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path(__file__).parent.parent
@@ -236,7 +236,7 @@ def main(date_str: str, log: bool = False) -> None:
     high_rated = [r for r in ratings if r.get("rating", 0) >= min_rating]
     print(f"[INFO] {len(high_rated)} high-rated papers (rating>={min_rating})")
 
-    enc = Specter2Encoder(model_name)
+    enc = build_encoder(model_name)
 
     # 論文テキスト: proximity アダプタ（論文↔論文の類似度に最適）
     print(f"[INFO] Embedding {len(candidates)} candidate papers (proximity adapter)...")
@@ -307,6 +307,13 @@ def main(date_str: str, log: bool = False) -> None:
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
         print(f"[INFO] Logged to {log_path.name}")
+
+
+@app.local_entrypoint()
+def modal_main(date: str = "", log: bool = False) -> None:
+    """modal run scripts/fetch_daily.py [--date YYYYMMDD] [--log] 用エントリポイント。"""
+    date_str = date or datetime.now(JST).strftime("%Y%m%d")
+    main(date_str, log=log)
 
 
 if __name__ == "__main__":

@@ -8,6 +8,8 @@ on:
 jobs:
   recommend-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,6 +19,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+          cache-dependency-path: requirements.txt
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
@@ -26,22 +29,33 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: npm
+          node-version: "22"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+          cache: true
 
       - name: Install Node dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
+
+      - name: Sync ratings from KV
+        run: |
+          bunx wrangler kv key get "ratings" \
+            --namespace-id=797a1d2d28ef40cd86bb25c2bce60fe9 \
+            --remote > data/ratings.json
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Run recommend.py on Modal T4
         run: USE_MODAL=1 modal run scripts/recommend.py --log
-        env:
-          RATINGS_URL: ${{ secrets.RATINGS_URL }}
 
       - name: Build
-        run: npm run build
+        run: bun run build
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist/ --project-name arxiv-newspaper
+        run: bunx wrangler pages deploy dist/ --project-name arxiv-explorer
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
