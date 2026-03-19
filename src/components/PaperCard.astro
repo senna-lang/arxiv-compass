@@ -253,8 +253,7 @@ const firstCategory = paper.categories[0] ?? "";
       });
 
       if (res.status === 401 || res.status === 403) {
-        const loginUrl = `/cdn-cgi/access/login?redirect_url=${encodeURIComponent(window.location.href)}`;
-        window.location.href = loginUrl;
+        window.location.href = `/api/rate?next=${encodeURIComponent(window.location.href)}`;
         return;
       }
 
@@ -265,9 +264,8 @@ const firstCategory = paper.categories[0] ?? "";
         container.dataset.rating = String(rating);
       }
     } catch (err) {
-      // CORS エラー（未認証時のリダイレクトによる）→ Access ログインページへ
-      const loginUrl = `/cdn-cgi/access/login?redirect_url=${encodeURIComponent(window.location.href)}`;
-      window.location.href = loginUrl;
+      // CORS エラー（未認証時のリダイレクトによる）→ Access 認証後に元のページへ戻る
+      window.location.href = `/api/rate?next=${encodeURIComponent(window.location.href)}`;
     }
   });
 
