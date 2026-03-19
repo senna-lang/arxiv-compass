@@ -3,11 +3,12 @@ id: t-80fdc9
 date: 2026-03-19T22:43:15.778958+09:00
 title: recommend.py にセレンディピティ抽出ロジックを実装
 seq: 2
-status: open
+status: done
 priority: high
 plan: 20260319-2ui
 tags: []
 assignee: ""
+completed_at: 2026-03-19T22:48:19.254988+09:00
 ---
 
 ## What

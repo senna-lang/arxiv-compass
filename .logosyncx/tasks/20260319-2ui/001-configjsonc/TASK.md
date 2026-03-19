@@ -3,11 +3,12 @@ id: t-a1fd03
 date: 2026-03-19T22:42:46.16914+09:00
 title: config.jsonc にセレンディピティ設定を追加
 seq: 1
-status: open
+status: done
 priority: medium
 plan: 20260319-2ui
 tags: []
 assignee: ""
+completed_at: 2026-03-19T22:46:41.970235+09:00
 ---
 
 ## What

@@ -83,6 +83,25 @@ def compute_final_score(instance: float, profile: float, alpha: float) -> float:
     return alpha * instance + (1 - alpha) * profile
 
 
+def select_serendipity_papers(
+    papers_with_scores: list[dict],
+    min_score: float,
+    max_score: float,
+    top_n: int,
+    exclude_ids: set[str],
+) -> list[dict]:
+    """
+    スコアバンド [min_score, max_score] の論文を抽出し、上位top_nを返す。
+    exclude_ids に含まれるIDは除外する（recommendationsとの重複防止）。
+    """
+    filtered = [
+        p for p in papers_with_scores
+        if min_score <= p["match_score"] <= max_score and p["id"] not in exclude_ids
+    ]
+    filtered.sort(key=lambda p: p["match_score"], reverse=True)
+    return filtered[:top_n]
+
+
 def rank_clusters(
     clusters: list[dict[str, Any]],
     rated_vecs: list[np.ndarray],
@@ -171,7 +190,12 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     ranked = rank_clusters(clusters, rated_vecs, profile_vecs, alpha)
     top = ranked[:top_clusters]
 
+    # セレンディピティ: top直下のクラスタ（ランク4-6）を取得
+    ser_n_clusters: int = rec_config.get("serendipity_clusters", 3)
+    ser_top = ranked[top_clusters : top_clusters + ser_n_clusters]
+
     print(f"[INFO] Top {top_clusters} clusters: {[c['label'] for c in top]}")
+    print(f"[INFO] Serendipity clusters: {[c['label'] for c in ser_top]}")
 
     # 上位クラスタ内の論文をarXiv APIで取得し、centroidとのcos類似度でスコアリング
     # match_score = cos_sim(クラスタcentroid, 論文embedding) → クラスタ中心に近い論文ほど高スコア
@@ -207,10 +231,46 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     recommendations.sort(key=lambda r: r["match_score"], reverse=True)
     recommendations = recommendations[:top_n]
 
+    # セレンディピティ論文: ser_top クラスタからスコアバンド内の論文を抽出
+    ser_min: float = rec_config.get("serendipity_min_match_score", 0.45)
+    ser_max: float = rec_config.get("serendipity_max_match_score", 0.65)
+    ser_top_n: int = rec_config.get("serendipity_top_n", 10)
+    rec_ids = {r["id"] for r in recommendations}
+
+    serendipity_candidates: list[dict] = []
+    for cluster in ser_top:
+        papers = fetch_papers_for_cluster(cluster["paper_ids"])
+        if not papers:
+            continue
+        texts = [f"{p.title} [SEP] {p.summary}" for p in papers]
+        paper_vecs_ser: list[np.ndarray] = list(enc.encode(texts, adapter="proximity"))
+        centroid_ser = np.array(cluster["centroid"])
+        for paper, vec in zip(papers, paper_vecs_ser):
+            match_score = _cosine_similarity(centroid_ser, vec)
+            arxiv_id = paper.entry_id.split("/")[-1].split("v")[0]
+            serendipity_candidates.append(
+                {
+                    "id": arxiv_id,
+                    "title": paper.title,
+                    "abstract": paper.summary,
+                    "url": f"https://arxiv.org/abs/{arxiv_id}",
+                    "match_score": round(match_score, 4),
+                    "matched_cluster": cluster["label"],
+                    "submitted": paper.published.strftime("%Y-%m-%d"),
+                }
+            )
+
+    serendipity = select_serendipity_papers(
+        serendipity_candidates, ser_min, ser_max, ser_top_n, exclude_ids=rec_ids
+    )
+    print(f"[INFO] Serendipity papers: {len(serendipity)}")
+
     output: dict[str, Any] = {
         "generated_at": datetime.now(JST).isoformat(),
         "top_clusters": [{"label": c["label"], "score": c["score"]} for c in top],
         "recommendations": recommendations,
+        "serendipity_clusters": [{"label": c["label"], "score": c["score"]} for c in ser_top],
+        "serendipity": serendipity,
     }
 
     out_path = output_dir / "recommendations.json"
@@ -261,6 +321,7 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     import datamapplot
 
     top_labels = {c["label"] for c in top}
+    ser_labels = {c["label"] for c in ser_top}
     papers = map_data["papers"]
     cluster_label_map = {c["id"]: c["label"] for c in map_data["clusters"]}
 
@@ -268,10 +329,15 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     point_labels = np.array(
         [cluster_label_map.get(p["cluster_id"], "Unlabelled") for p in papers]
     )
-    # top_clusterはオレンジ、それ以外は青、ノイズはグレー（label_color_mapで指定）
+    # top_clusterはオレンジ、セレンディピティは緑、それ以外は青
     all_labels = {c["label"] for c in map_data["clusters"]}
     label_color_map = {
-        label: ("#f59e0b" if label in top_labels else "#3b82f6") for label in all_labels
+        label: (
+            "#f59e0b" if label in top_labels
+            else "#10b981" if label in ser_labels
+            else "#3b82f6"
+        )
+        for label in all_labels
     }
 
     plot = datamapplot.create_interactive_plot(

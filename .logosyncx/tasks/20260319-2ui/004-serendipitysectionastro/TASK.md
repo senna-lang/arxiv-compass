@@ -3,11 +3,12 @@ id: t-41f2e5
 date: 2026-03-19T22:43:56.530671+09:00
 title: SerendipitySection.astro コンポーネントを作成
 seq: 4
-status: open
+status: done
 priority: high
 plan: 20260319-2ui
 tags: []
 assignee: ""
+completed_at: 2026-03-19T23:53:36.220655+09:00
 ---
 
 ## What
