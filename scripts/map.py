@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 import arxiv
 import numpy as np
 from bertopic import BERTopic
-from specter2 import Specter2Encoder
+from modal_app import app, build_encoder
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path(__file__).parent.parent
@@ -145,7 +145,7 @@ def main(max_papers: int, log: bool = False) -> None:
     texts = [f"{r.title} [SEP] {r.summary}" for r in results]
 
     print(f"[INFO] Embedding with {model_name}...")
-    enc = Specter2Encoder(model_name)
+    enc = build_encoder(model_name)
     embeddings: np.ndarray = enc.encode(texts, adapter="proximity", batch_size=32)
 
     # BERTopic の KeyBERTInspired はキーワード抽出時に embedding_model.embed_documents()
@@ -405,6 +405,12 @@ def main(max_papers: int, log: bool = False) -> None:
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
         print(f"[INFO] Logged to {log_path.name}")
+
+
+@app.local_entrypoint()
+def modal_main(max_papers: int = 10000, log: bool = False) -> None:
+    """modal run scripts/map.py 用エントリポイント。"""
+    main(max_papers, log=log)
 
 
 if __name__ == "__main__":
