@@ -74,19 +74,7 @@ const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}
       color: #666;
       margin-bottom: 1rem;
     }
-    body { max-width: 1200px; margin: 0 auto; }
-    .papers-section { max-width: 800px; margin: 0 auto; }
-    .bottom-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2.5rem;
-      border-top: 2px solid #e0e0e0;
-      padding-top: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .bottom-columns { grid-template-columns: 1fr; }
-    }
+    body { max-width: 800px; margin: 0 auto; }
   </style>
 
   <header>
@@ -100,22 +88,10 @@ const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}
 
   <p class="count">{papers.length} 件</p>
 
-  <div class="papers-section">
-    {papers.slice(0, 10).map((paper) => (
-      <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
-    ))}
-  </div>
+  {papers.map((paper) => (
+    <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
+  ))}
 
-  {papers.length > 10 && (
-    <div class="papers-section">
-      {papers.slice(10).map((paper) => (
-        <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
-      ))}
-    </div>
-  )}
-
-  <div class="bottom-columns">
-    <RecommendSection />
-    <SerendipitySection />
-  </div>
+  <RecommendSection />
+  <SerendipitySection />
 </MainLayout>

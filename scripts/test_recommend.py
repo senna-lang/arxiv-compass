@@ -10,13 +10,14 @@ import numpy as np
 from recommend import select_serendipity_papers, _cosine_similarity
 
 
-def make_paper(arxiv_id: str, match_score: float) -> dict:
+def make_paper(arxiv_id: str, match_score: float, centroid_score: float | None = None) -> dict:
     return {
         "id": arxiv_id,
         "title": f"Paper {arxiv_id}",
         "abstract": "abstract",
         "url": f"https://arxiv.org/abs/{arxiv_id}",
         "match_score": match_score,
+        "centroid_score": centroid_score if centroid_score is not None else match_score,
         "matched_cluster": "cluster-a",
         "submitted": "2026-03-01",
     }
