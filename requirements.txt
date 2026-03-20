@@ -12,3 +12,4 @@ datamapplot
 umap-learn
 hdbscan
 modal
+pytest
