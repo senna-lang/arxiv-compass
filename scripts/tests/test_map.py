@@ -9,10 +9,8 @@ scripts/map.py のユニットテスト
 
 import sys
 import os
-from unittest.mock import MagicMock, patch
 
 import numpy as np
-import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
