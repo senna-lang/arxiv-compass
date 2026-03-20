@@ -11,6 +11,7 @@ from typing import Any
 
 import numpy as np
 from bertopic import BERTopic
+from bertopic.backend._base import BaseEmbedder
 from bertopic.representation import KeyBERTInspired, MaximalMarginalRelevance
 from hdbscan import HDBSCAN
 from sklearn.decomposition import PCA
@@ -57,8 +58,9 @@ def build_bertopic_model(enc: Any, tuning: dict[str, Any], max_papers: int) -> B
         return [_lemmatizer.lemmatize(t) for t in tokens]
 
     # KeyBERTInspired はキーワード抽出時に embedding_model.embed_documents() を呼ぶ
-    class _Specter2Backend:
-        def embed_documents(self, docs: list[str], verbose: bool = False) -> np.ndarray:
+    # BaseEmbedder を継承することで select_backend() の型チェックを通過する
+    class _Specter2Backend(BaseEmbedder):
+        def embed(self, docs: list[str], verbose: bool = False) -> np.ndarray:
             return enc.encode(docs, adapter="proximity")
 
     t = tuning
