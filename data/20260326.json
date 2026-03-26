@@ -1,0 +1,434 @@
+{
+  "date": "2026-03-26",
+  "collected_at": "2026-03-26T11:55:21.666633+09:00",
+  "papers": [
+    {
+      "id": "2603.24579",
+      "title": "MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination",
+      "authors": [
+        "Zhuo Li",
+        "Yupeng Zhang",
+        "Pengyu Cheng",
+        "Jiajun Song",
+        "Mengyu Zhou",
+        "Hao Li",
+        "Shujie Hu",
+        "Yu Qin",
+        "Erchao Zhao",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "abstract": "Hallucination remains a critical bottleneck for large language models (LLMs), undermining their reliability in real-world applications, especially in Retrieval-Augmented Generation (RAG) systems. While existing hallucination detection methods employ LLM-as-a-judge to verify LLM outputs against retrieved evidence, they suffer from inherent confirmation bias, where the verifier inadvertently reproduces the errors of the original generation. To address this, we introduce Multi-Agent Reinforced Self-Check for Hallucination (MARCH), a framework that enforces rigorous factual alignment by leveraging deliberate information asymmetry. MARCH orchestrates a collaborative pipeline of three specialized agents: a Solver, a Proposer, and a Checker. The Solver generates an initial RAG response, which the Proposer decomposes into claim-level verifiable atomic propositions. Crucially, the Checker validates these propositions against retrieved evidence in isolation, deprived of the Solver's original output. This well-crafted information asymmetry scheme breaks the cycle of self-confirmation bias. By training this pipeline with multi-agent reinforcement learning (MARL), we enable the agents to co-evolve and optimize factual adherence. Extensive experiments across hallucination benchmarks demonstrate that MARCH substantially reduces hallucination rates. Notably, an 8B-parameter LLM equipped with MARCH achieves performance competitive with powerful closed-source models. MARCH paves a scalable path for factual self-improvement of LLMs through co-evolution. The code is at https://github.com/Qwen-Applications/MARCH.",
+      "url": "https://arxiv.org/abs/2603.24579",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-25",
+      "github_url": "https://github.com/Qwen-Applications/MARCH.",
+      "score": 0.8971
+    },
+    {
+      "id": "2603.24556",
+      "title": "Evaluating Chunking Strategies For Retrieval-Augmented Generation in Oil and Gas Enterprise Documents",
+      "authors": [
+        "Samuel Taiwo",
+        "Mohd Amaluddin Yusoff"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) has emerged as a framework to address the constraints of Large Language Models (LLMs). Yet, its effectiveness fundamentally hinges on document chunking - an often-overlooked determinant of its quality. This paper presents an empirical study quantifying performance differences across four chunking strategies: fixed-size sliding window, recursive, breakpoint-based semantic, and structure-aware. We evaluated these methods using a proprietary corpus of oil and gas enterprise documents, including text-heavy manuals, table-heavy specifications, and piping and instrumentation diagrams (P and IDs). Our findings show that structure-aware chunking yields higher overall retrieval effectiveness, particularly in top-K metrics, and incurs significantly lower computational costs than semantic or baseline strategies. Crucially, all four methods demonstrated limited effectiveness on P and IDs, underscoring a core limitation of purely text-based RAG within visually and spatially encoded documents. We conclude that while explicit structure preservation is essential for specialised domains, future work must integrate multimodal models to overcome current limitations.",
+      "url": "https://arxiv.org/abs/2603.24556",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8911
+    },
+    {
+      "id": "2603.23994",
+      "title": "Understanding the Challenges in Iterative Generative Optimization with LLMs",
+      "authors": [
+        "Allen Nie",
+        "Xavier Daull",
+        "Zhiyi Kuang",
+        "Abhinav Akkiraju",
+        "Anish Chaudhuri",
+        "Max Piasevoli",
+        "Ryan Rong",
+        "YuCheng Yuan",
+        "Prerit Choudhary",
+        "Shannon Xiao",
+        "Rasool Fakoor",
+        "Adith Swaminathan",
+        "Ching-An Cheng"
+      ],
+      "abstract": "Generative optimization uses large language models (LLMs) to iteratively improve artifacts (such as code, workflows or prompts) using execution feedback. It is a promising approach to building self-improving agents, yet in practice remains brittle: despite active research, only 9% of surveyed agents used any automated optimization. We argue that this brittleness arises because, to set up a learning loop, an engineer must make ``hidden'' design choices: What can the optimizer edit and what is the \"right\" learning evidence to provide at each update? We investigate three factors that affect most applications: the starting artifact, the credit horizon for execution traces, and batching trials and errors into learning evidence. Through case studies in MLAgentBench, Atari, and BigBench Extra Hard, we find that these design decisions can determine whether generative optimization succeeds, yet they are rarely made explicit in prior work. Different starting artifacts determine which solutions are reachable in MLAgentBench, truncated traces can still improve Atari agents, and larger minibatches do not monotonically improve generalization on BBEH. We conclude that the lack of a simple, universal way to set up learning loops across domains is a major hurdle for productionization and adoption. We provide practical guidance for making these choices.",
+      "url": "https://arxiv.org/abs/2603.23994",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8907
+    },
+    {
+      "id": "2603.24477",
+      "title": "Composer 2 Technical Report",
+      "authors": [
+        "Cursor Reseach",
+        ":",
+        "Aaron Chan",
+        "Ahmed Shalaby",
+        "Alexander Wettig",
+        "Aman Sanger",
+        "Andrew Zhai",
+        "Anurag Ajay",
+        "Ashvin Nair",
+        "Charlie Snell",
+        "Chen Lu",
+        "Chen Shen",
+        "Emily Jia",
+        "Federico Cassano",
+        "Hanpeng Liu",
+        "Haoyu Chen",
+        "Henry Wildermuth",
+        "Jacob Jackson",
+        "Janet Li",
+        "Jediah Katz",
+        "Jiajun Yao",
+        "Joey Hejna",
+        "Josh Warner",
+        "Julius Vering",
+        "Kevin Frans",
+        "Lee Danilek",
+        "Less Wright",
+        "Lujing Cen",
+        "Luke Melas-Kyriazi",
+        "Michael Truell",
+        "Michiel de Jong",
+        "Naman Jain",
+        "Nate Schmidt",
+        "Nathan Wang",
+        "Niklas Muennighoff",
+        "Oleg Rybkin",
+        "Paul Loh",
+        "Phillip Kravtsov",
+        "Rishabh Yadav",
+        "Sahil Shah",
+        "Sam Kottler",
+        "Alexander M Rush",
+        "Shengtong Zhang",
+        "Shomil Jain",
+        "Sriram Sankar",
+        "Stefan Heule",
+        "Stuart H. Sul",
+        "Sualeh Asif",
+        "Victor Rong",
+        "Wanqi Zhu",
+        "William Lin",
+        "Yuchen Wu",
+        "Yuri Volkov",
+        "Yury Zemlyanskiy",
+        "Zack Holbrook",
+        "Zhiyuan Zhang"
+      ],
+      "abstract": "Composer 2 is a specialized model designed for agentic software engineering. The model demonstrates strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. The model is trained in two phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. We develop infrastructure to support training in the same Cursor harness that is used by the deployed model, with equivalent tools and structure, and use environments that match real problems closely. To measure the ability of the model on increasingly difficult tasks, we introduce a benchmark derived from real software engineering problems in large codebases including our own. Composer 2 is a frontier-level coding model and demonstrates a process for training strong domain-specialized models. On our CursorBench evaluations the model achieves a major improvement in accuracy compared to previous Composer models (61.3). On public benchmarks the model scores 61.7 on Terminal-Bench and 73.7 on SWE-bench Multilingual in our harness, comparable to state-of-the-art systems.",
+      "url": "https://arxiv.org/abs/2603.24477",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8884
+    },
+    {
+      "id": "2603.24065",
+      "title": "Enhanced Mycelium of Thought (EMoT): A Bio-Inspired Hierarchical Reasoning Architecture with Strategic Dormancy and Mnemonic Encoding",
+      "authors": [
+        "Florian Odi Stummer"
+      ],
+      "abstract": "Current prompting paradigms for large language models (LLMs), including Chain-of-Thought (CoT) and Tree-of-Thoughts (ToT), follow linear or tree-structured reasoning paths that lack persistent memory, strategic dormancy, and cross-domain synthesis. We present the Enhanced Mycelium of Thought (EMoT) framework, a bio-inspired reasoning architecture that organises cognitive processing into a four-level hierarchy (Micro, Meso, Macro, Meta), implements strategic dormancy and reactivation of reasoning nodes, and integrates a Memory Palace with five mnemonic encoding styles. EMoT is a research prototype for complex, multi-domain problems, not a general-purpose prompting enhancement. Two complementary evaluations reveal a characteristic trade-off. In a blind LLM-as-Judge evaluation across three domains, EMoT achieved near-parity with CoT (4.20 vs. 4.33/5.0) with higher stability, and outperformed CoT on Cross-Domain Synthesis (4.8 vs. 4.4). Ablation studies show that strategic dormancy is architecturally essential (quality collapsed from 4.2 to 1.0 when disabled). On a 15-item short-answer benchmark, EMoT (27%) substantially underperformed simpler baselines, confirming systematic overthinking on simple problems. These results are subject to important limitations: small sample sizes (n=3 complex cases, n=15 short-answer items), LLM-as-Judge evaluation with potential self-preference bias, and approximately 33-fold computational cost overhead. To our knowledge, EMoT is the first reasoning framework to combine hierarchical topology, strategic thought dormancy with reactivation, and mnemonic memory encoding in a single architecture.",
+      "url": "https://arxiv.org/abs/2603.24065",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8878
+    },
+    {
+      "id": "2603.24124",
+      "title": "The Alignment Tax: Response Homogenization in Aligned LLMs and Its Implications for Uncertainty Estimation",
+      "authors": [
+        "Mingyi Liu"
+      ],
+      "abstract": "RLHF-aligned language models exhibit response homogenization: on TruthfulQA (n=790), 40-79% of questions produce a single semantic cluster across 10 i.i.d. samples. On affected questions, sampling-based uncertainty methods have zero discriminative power (AUROC=0.500), while free token entropy retains signal (0.603). This alignment tax is task-dependent: on GSM8K (n=500), token entropy achieves 0.724 (Cohen's d=0.81).\n  A base-vs-instruct ablation confirms the causal role of alignment: the base model shows 1.0% single-cluster rate vs. 28.5% for the instruct model (p < 10^{-6}). A training stage ablation (Base 0.0% -> SFT 1.5% -> DPO 4.0% SCR) localizes the cause to DPO, not SFT. Cross-family replication on four model families reveals alignment tax severity varies by family and scale. We validate across 22 experiments, 5 benchmarks, 4 model families, and 3 model scales (3B-14B), with Jaccard, embedding, and NLI-based baselines at three DeBERTa scales (all ~0.51 AUROC). Cross-embedder validation with two independent embedding families rules out coupling bias. Cross-dataset validation on WebQuestions (58.0% SCR) confirms generalization beyond TruthfulQA. The central finding -- response homogenization -- is implementation-independent and label-free. Motivated by this diagnosis, we explore a cheapest-first cascade (UCBD) over orthogonal uncertainty signals. Selective prediction raises GSM8K accuracy from 84.4% to 93.2% at 50% coverage; weakly dependent boundaries (|r| <= 0.12) enable 57% cost savings.",
+      "url": "https://arxiv.org/abs/2603.24124",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8867
+    },
+    {
+      "id": "2603.23990",
+      "title": "From Untamed Black Box to Interpretable Pedagogical Orchestration: The Ensemble of Specialized LLMs Architecture for Adaptive Tutoring",
+      "authors": [
+        "Nizam Kadir"
+      ],
+      "abstract": "Monolithic Large Language Models (LLMs) used in educational dialogue often behave as \"black boxes,\" where pedagogical decisions are implicit and difficult to audit, frequently violating instructional constraints by providing answers too early. We introduce the Ensemble of Specialized LLMS (ES-LLMS) architecture that separates decision-making from wording. Pedagogical actions are selected by a deterministic rules-based orchestrator coordinating specialized agents covering tutoring, assessment, feedback, scaffolding, motivation and ethics-guided by an interpretable Bayesian Knowledge Tracing (BKT) student model. An LLM renderer surface-realizes the chosen action in natural language. This design emphasizes reliability and controllability: constraints such as \"attempt-before-hint\" and hint caps are enforced as explicit rules, and the system logs per-turn agent traces and constraint checks. Validation of pedagogical quality via human expert reviewers (N=6) and a multi-LLM-as-Judge panel (six state-of-the-art models) showed that ES-LLMs were preferred in 91.7% and 79.2% of cases, respectively. The architecture significantly outperformed monolithic baselines across all seven dimensions, particularly in Scaffolding & Guidance, and Trust & Explainability. Furthermore, a Monte Carlo simulation (N=2,400) exposed a \"Mastery Gain Paradox,\" where monolithic tutors inflated short-term performance through over-assistance. In contrast, ES-LLMs achieved 100% adherence to pedagogical constraints (e.g., attempt-before-hint) and a 3.3x increase in hint efficiency. Operationally, ES-LLMs reduced costs by 54% and latency by 22% by utilizing stateless prompts. We conclude that structural decoupling is essential for transforming stochastic models into trustworthy, verifiable and resource-efficient pedagogical agents.",
+      "url": "https://arxiv.org/abs/2603.23990",
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8865
+    },
+    {
+      "id": "2603.23848",
+      "title": "BeliefShift: Benchmarking Temporal Belief Consistency and Opinion Drift in LLM Agents",
+      "authors": [
+        "Praveen Kumar Myakala",
+        "Manan Agrawal",
+        "Rahul Manche"
+      ],
+      "abstract": "LLMs are increasingly used as long-running conversational agents, yet every major benchmark evaluating their memory treats user information as static facts to be stored and retrieved. That's the wrong model. People change their minds, and over extended interactions, phenomena like opinion drift, over-alignment, and confirmation bias start to matter a lot.\n  BeliefShift introduces a longitudinal benchmark designed specifically to evaluate belief dynamics in multi-session LLM interactions. It covers three tracks: Temporal Belief Consistency, Contradiction Detection, and Evidence-Driven Revision. The dataset includes 2,400 human-annotated multi-session interaction trajectories spanning health, politics, personal values, and product preferences.\n  We evaluate seven models including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, LLaMA-3, and Mistral-Large under zero-shot and retrieval-augmented generation (RAG) settings. Results reveal a clear trade-off: models that personalize aggressively resist drift poorly, while factually grounded models miss legitimate belief updates.\n  We further introduce four novel evaluation metrics: Belief Revision Accuracy (BRA), Drift Coherence Score (DCS), Contradiction Resolution Rate (CRR), and Evidence Sensitivity Index (ESI).",
+      "url": "https://arxiv.org/abs/2603.23848",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.886
+    },
+    {
+      "id": "2603.23871",
+      "title": "HDPO: Hybrid Distillation Policy Optimization via Privileged Self-Distillation",
+      "authors": [
+        "Ken Ding"
+      ],
+      "abstract": "Large language models trained with reinforcement learning (RL) for mathematical reasoning face a fundamental challenge: on problems the model cannot solve at all - \"cliff\" prompts - the RL gradient vanishes entirely, preventing any learning signal from reaching these failure modes. We introduce Hybrid Distillation Policy Optimization (HDPO), which augments standard RL with privileged self-distillation targeting cliff prompts. On each training step, HDPO identifies prompts where all rollouts fail, generates privileged rollouts by providing the model with ground-truth information, filters for correct solutions, and distills the teacher's token-level distribution into the student. Because teacher and student share the same weights - differing only in their input - the realizability gap is provably bounded, unlike cross-model distillation. We prove that R=1 filtered privileged generation recovers the optimal KL-regularized RL policy in the hard-threshold limit. Experiments on OpenMathInstruct-2 with Qwen2.5-Math-1.5B-Instruct show that HDPO consistently improves coverage metrics (pass@4 by +0.8-1.1%, pass@8 by +0.4-1.7%) while maintaining greedy accuracy, with the distillation weight lambda providing direct control over the exploration-exploitation tradeoff.",
+      "url": "https://arxiv.org/abs/2603.23871",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.885
+    },
+    {
+      "id": "2603.24203",
+      "title": "Invisible Threats from Model Context Protocol: Generating Stealthy Injection Payload via Tree-based Adaptive Search",
+      "authors": [
+        "Yulin Shen",
+        "Xudong Pan",
+        "Geng Hong",
+        "Min Yang"
+      ],
+      "abstract": "Recent advances in the Model Context Protocol (MCP) have enabled large language models (LLMs) to invoke external tools with unprecedented ease. This creates a new class of powerful and tool augmented agents. Unfortunately, this capability also introduces an under explored attack surface, specifically the malicious manipulation of tool responses. Existing techniques for indirect prompt injection that target MCP suffer from high deployment costs, weak semantic coherence, or heavy white box requirements. Furthermore, they are often easily detected by recently proposed defenses. In this paper, we propose Tree structured Injection for Payloads (TIP), a novel black-box attack which generates natural payloads to reliably seize control of MCP enabled agents even under defense. Technically, We cast payload generation as a tree structured search problem and guide the search with an attacker LLM operating under our proposed coarse-to-fine optimization framework. To stabilize learning and avoid local optima, we introduce a path-aware feedback mechanism that surfaces only high quality historical trajectories to the attacker model. The framework is further hardened against defensive transformations by explicitly conditioning the search on observable defense signals and dynamically reallocating the exploration budget. Extensive experiments on four mainstream LLMs show that TIP attains over 95% attack success in undefended settings while requiring an order of magnitude fewer queries than prior adaptive attacks. Against four representative defense approaches, TIP preserves more than 50% effectiveness and significantly outperforms the state-of-the-art attacks. By implementing the attack on real world MCP systems, our results expose an invisible but practical threat vector in MCP deployments. We also discuss potential mitigation approaches to address this critical security gap.",
+      "url": "https://arxiv.org/abs/2603.24203",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8841
+    },
+    {
+      "id": "2603.24402",
+      "title": "AI-Supervisor: Autonomous AI Research Supervision via a Persistent Research World Model",
+      "authors": [
+        "Yunbo Long"
+      ],
+      "abstract": "Existing automated research systems operate as stateless, linear pipelines, generating outputs without maintaining a persistent understanding of the research landscape. They process papers sequentially, propose ideas without structured gap analysis, and lack mechanisms for agents to verify or refine each other's findings. We present AutoProf (Autonomous Professor), a multi-agent orchestration framework where specialized agents provide end-to-end AI research supervision driven by human interests, from literature review through gap discovery, method development, evaluation, and paper writing, via autonomous exploration and self-correcting updates. Unlike sequential pipelines, AutoProf maintains a continuously evolving Research World Model implemented as a Knowledge Graph, capturing methods, benchmarks, limitations, and unexplored gaps as shared memory across agents. The framework introduces three contributions: first, structured gap discovery that decomposes methods into modules, evaluates them across benchmarks, and identifies module-level gaps; second, self-correcting discovery loops that analyze why modules succeed or fail, detect benchmark biases, and assess evaluation adequacy; third, self-improving development loops using cross-domain mechanism search to iteratively address failing components. All agents operate under a consensus mechanism where findings are validated before being committed to the shared model. The framework is model-agnostic, supports mainstream large language models, and scales elastically with token budget from lightweight exploration to full-scale investigation.",
+      "url": "https://arxiv.org/abs/2603.24402",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8836
+    },
+    {
+      "id": "2603.23910",
+      "title": "AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents",
+      "authors": [
+        "Zhixuan Bao",
+        "Zhuoyi Lin",
+        "Jiageng Wang",
+        "Jinhai Hu",
+        "Yuan Gao",
+        "Yaoxin Wu",
+        "Xiaoli Li",
+        "Xun Xu"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) suggest strong potential for automating analog circuit design. Yet most LLM-based approaches rely on a single-model loop of generation, diagnosis, and correction, which favors succinct summaries over domain-specific insight and suffers from context attrition that erases critical technical details. To address these limitations, we propose AnalogAgent, a training-free agentic framework that integrates an LLM-based multi-agent system (MAS) with self-evolving memory (SEM) for analog circuit design automation. AnalogAgent coordinates a Code Generator, Design Optimizer, and Knowledge Curator to distill execution feedback into an adaptive playbook in SEM and retrieve targeted guidance for subsequent generation, enabling cross-task transfer without additional expert feedback, databases, or libraries. Across established benchmarks, AnalogAgent achieves 92% Pass@1 with Gemini and 97.4% Pass@1 with GPT-5. Moreover, with compact models (e.g., Qwen-8B), it yields a +48.8% average Pass@1 gain across tasks and reaches 72.1% Pass@1 overall, indicating that AnalogAgent substantially strengthens open-weight models for high-quality analog circuit design automation.",
+      "url": "https://arxiv.org/abs/2603.23910",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.883
+    },
+    {
+      "id": "2603.24080",
+      "title": "LLMpedia: A Transparent Framework to Materialize an LLM's Encyclopedic Knowledge at Scale",
+      "authors": [
+        "Muhammed Saeed",
+        "Simon Razniewski"
+      ],
+      "abstract": "Benchmarks such as MMLU suggest flagship language models approach factuality saturation, with scores above 90\\%. We show this picture is incomplete. \\emph{LLMpedia} generates encyclopedic articles entirely from parametric memory, producing ${\\sim}$1M articles across three model families without retrieval. For gpt-5-mini, the verifiable true rate on Wikipedia-covered subjects is only 74.7\\% -- more than 15 percentage points below the benchmark-based picture, consistent with the availability bias of fixed-question evaluation. Beyond Wikipedia, frontier subjects verifiable only through curated web evidence fall further to 63.2\\% true rate. Wikipedia covers just 61\\% of surfaced subjects, and three model families overlap by only 7.3\\% in subject choice. In a capture-trap benchmark inspired by prior analysis of Grokipedia, LLMpedia achieves substantially higher factuality at roughly half the textual similarity to Wikipedia. Unlike Grokipedia, every prompt, artifact, and evaluation verdict is publicly released, making LLMpedia the first fully open parametric encyclopedia -- bridging factuality evaluation and knowledge materialization. All data, code, and a browsable interface are at https://llmpedia.net.",
+      "url": "https://arxiv.org/abs/2603.24080",
+      "categories": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8827
+    },
+    {
+      "id": "2603.24004",
+      "title": "Thinking with Tables: Enhancing Multi-Modal Tabular Understanding via Neuro-Symbolic Reasoning",
+      "authors": [
+        "Kun-Yang Yu",
+        "Zhi Zhou",
+        "Shi-Yu Tian",
+        "Xiao-Wen Yang",
+        "Zi-Yi Jia",
+        "Ming Yang",
+        "Zi-Jian Cheng",
+        "Lan-Zhe Guo",
+        "Yu-Feng Li"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) have demonstrated remarkable reasoning capabilities across modalities such as images and text. However, tabular data, despite being a critical real-world modality, remains relatively underexplored in multimodal learning. In this paper, we focus on the task of Tabular-Vision Multi-Modal Understanding (TVMU) and identify three core challenges: (1) high structural variability and data incompleteness in tables, (2) implicit and complex feature dependencies, and (3) significant heterogeneity in problem-solving pipelines across downstream tasks. To address these issues, we propose Thinking with Tables (TWT). TWT employs a program-aided code-based neuro-symbolic reasoning mechanism that facilitates key operations, such as information extraction and element modeling, by interacting with external environments. We evaluate TWT on eight representative datasets. Experimental results demonstrate that TWT consistently outperforms existing baselines by an average of 10\\% in accuracy, achieving performance comparable to, or even surpassing, proprietary commercial SOTA LLMs on TVMU tasks. Models and codes are available at https://github.com/kunyang-YU/Thinking-with-Tables",
+      "url": "https://arxiv.org/abs/2603.24004",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-25",
+      "github_url": "https://github.com/kunyang-YU/Thinking-with-Tables",
+      "score": 0.8822
+    },
+    {
+      "id": "2603.24051",
+      "title": "FinToolSyn: A forward synthesis Framework for Financial Tool-Use Dialogue Data with Dynamic Tool Retrieval",
+      "authors": [
+        "Caishuang Huang",
+        "Yang Qiao",
+        "Rongyu Zhang",
+        "Junjie Ye",
+        "Pu Lu",
+        "Wenxi Wu",
+        "Meng Zhou",
+        "Xiku Du",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
+      ],
+      "abstract": "Tool-use capabilities are vital for Large Language Models (LLMs) in finance, a domain characterized by massive investment targets and data-intensive inquiries. However, existing data synthesis methods typically rely on a reverse synthesis paradigm, generating user queries from pre-sampled tools. This approach inevitably introduces artificial explicitness, yielding queries that fail to capture the implicit, event-driven nature of real-world needs. Moreover, its reliance on static tool sets overlooks the dynamic retrieval process required to navigate massive tool spaces. To address these challenges, we introduce \\textit{FinToolSyn}, a forward synthesis framework designed to generate high-quality financial dialogues. Progressing from persona instruction and atomic tool synthesis to dynamic retrieval dialogue generation, our pipeline constructs a repository of 43,066 tools and synthesizes over 148k dialogue instances, incorporating dynamic retrieval to emulate the noisy candidate sets typical of massive tool spaces. We also establish a dedicated benchmark to evaluate tool-calling capabilities in realistic financial scenarios. Extensive experiments demonstrate that models trained on FinToolSyn achieve a 21.06\\% improvement, providing a robust foundation for tool learning in financial scenarios.",
+      "url": "https://arxiv.org/abs/2603.24051",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8816
+    },
+    {
+      "id": "2603.23749",
+      "title": "Efficient Benchmarking of AI Agents",
+      "authors": [
+        "Franck Ndzomga"
+      ],
+      "abstract": "Evaluating AI agents on comprehensive benchmarks is expensive because each evaluation requires interactive rollouts with tool use and multi-step reasoning. We study whether small task subsets can preserve agent rankings at substantially lower cost. Unlike static language model benchmarks, agent evaluation is subject to scaffold-driven distribution shift, since performance depends on the framework wrapping the underlying model. Across eight benchmarks, 33 agent scaffolds, and 70+ model configurations, we find that absolute score prediction degrades under this shift, while rank-order prediction remains stable. Exploiting this asymmetry, we propose a simple optimization-free protocol: evaluate new agents only on tasks with intermediate historical pass rates (30-70%). This mid-range difficulty filter, motivated by Item Response Theory, reduces the number of evaluation tasks by 44-70% while maintaining high rank fidelity under scaffold and temporal shifts. It provides more reliable rankings than random sampling, which exhibits high variance across seeds, and outperforms greedy task selection under distribution shift. These results suggest that reliable leaderboard ranking does not require full-benchmark evaluation.",
+      "url": "https://arxiv.org/abs/2603.23749",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-24",
+      "score": 0.8816
+    },
+    {
+      "id": "2603.24284",
+      "title": "The Specification Gap: Coordination Failure Under Partial Knowledge in Code Agents",
+      "authors": [
+        "Camilo Chacón Sartori"
+      ],
+      "abstract": "When multiple LLM-based code agents independently implement parts of the same class, they must agree on shared internal representations, even when the specification leaves those choices implicit. We study this coordination problem across 51 class-generation tasks, progressively stripping specification detail from full docstrings (L0) to bare signatures (L3), and introducing opposing structural biases (lists vs. dictionaries) to stress-test integration. Three findings emerge. First, a persistent specification gap: two-agent integration accuracy drops from 58% to 25% as detail is removed, while a single-agent baseline degrades more gracefully (89% to 56%), leaving a 25--39 pp coordination gap that is consistent across two Claude models (Sonnet, Haiku) and three independent runs. Second, an AST-based conflict detector achieves 97% precision at the weakest specification level without additional LLM calls, yet a factorial recovery experiment shows that restoring the full specification alone recovers the single-agent ceiling (89%), while providing conflict reports adds no measurable benefit. Third, decomposing the gap into coordination cost (+16 pp) and information asymmetry (+11 pp) suggests that the two effects are independent and approximately additive. The gap is not merely a consequence of hidden information, but reflects the difficulty of producing compatible code without shared decisions. These results support a specification-first view of multi-agent code generation: richer specifications are both the primary coordination mechanism and the sufficient recovery instrument.",
+      "url": "https://arxiv.org/abs/2603.24284",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.8812
+    },
+    {
+      "id": "2603.23971",
+      "title": "The Price Reversal Phenomenon: When Cheaper Reasoning Models End Up Costing More",
+      "authors": [
+        "Lingjiao Chen",
+        "Chi Zhang",
+        "Yeye He",
+        "Ion Stoica",
+        "Matei Zaharia",
+        "James Zou"
+      ],
+      "abstract": "Developers and consumers increasingly choose reasoning language models (RLMs) based on their listed API prices. However, how accurately do these prices reflect actual inference costs? We conduct the first systematic study of this question, evaluating 8 frontier RLMs across 9 diverse tasks covering competition math, science QA, code generation, and multi-domain reasoning. We uncover the pricing reversal phenomenon: in 21.8% of model-pair comparisons, the model with a lower listed price actually incurs a higher total cost, with reversal magnitude reaching up to 28x. For example, Gemini 3 Flash's listed price is 78% cheaper than GPT-5.2's, yet its actual cost across all tasks is 22% higher. We trace the root cause to vast heterogeneity in thinking token consumption: on the same query, one model may use 900% more thinking tokens than another. In fact, removing thinking token costs reduces ranking reversals by 70% and raises the rank correlation (Kendall's $τ$ ) between price and cost rankings from 0.563 to 0.873. We further show that per-query cost prediction is fundamentally difficult: repeated runs of the same query yield thinking token variation up to 9.7x, establishing an irreducible noise floor for any predictor. Our findings demonstrate that listed API pricing is an unreliable proxy for actual cost, calling for cost-aware model selection and transparent per-request cost monitoring.",
+      "url": "https://arxiv.org/abs/2603.23971",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.GT",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-03-25",
+      "score": 0.881
+    },
+    {
+      "id": "2603.23660",
+      "title": "GTO Wizard Benchmark",
+      "authors": [
+        "Marc-Antoine Provost",
+        "Nejc Ilenic",
+        "Christopher Solinas",
+        "Philippe Beardsell"
+      ],
+      "abstract": "We introduce GTO Wizard Benchmark, a public API and standardized evaluation framework for benchmarking algorithms in Heads-Up No-Limit Texas Hold'em (HUNL). The benchmark evaluates agents against GTO Wizard AI, a state-of-the-art superhuman poker agent that approximates Nash Equilibria, and defeated Slumbot, the 2018 Annual Computer Poker Competition champion and previous strongest publicly accessible HUNL benchmark, by $19.4$ $\\pm$ $4.1$ bb/100. Variance is a fundamental challenge in poker evaluation; we address this by integrating AIVAT, a provably unbiased variance reduction technique that achieves equivalent statistical significance with ten times fewer hands than naive Monte Carlo evaluation. We conduct a comprehensive benchmarking study of state-of-the-art large language models under zero-shot conditions, including GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro, Grok 4, and others. Initial results and analysis reveal dramatic progress in LLM reasoning over recent years, yet all models remain far below the baseline established by our benchmark. Qualitative analysis reveals clear opportunities for improvement, including representation and the ability to reason over hidden states. This benchmark provides researchers with a precise and quantifiable setting to evaluate advances in planning and reasoning in multi-agent systems with partial observability.",
+      "url": "https://arxiv.org/abs/2603.23660",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-24",
+      "score": 0.8806
+    },
+    {
+      "id": "2603.23611",
+      "title": "LLMORPH: Automated Metamorphic Testing of Large Language Models",
+      "authors": [
+        "Steven Cho",
+        "Stefano Ruberto",
+        "Valerio Terragni"
+      ],
+      "abstract": "Automated testing is essential for evaluating and improving the reliability of Large Language Models (LLMs), yet the lack of automated oracles for verifying output correctness remains a key challenge. We present LLMORPH, an automated testing tool specifically designed for LLMs performing NLP tasks, which leverages Metamorphic Testing (MT) to uncover faulty behaviors without relying on human-labeled data. MT uses Metamorphic Relations (MRs) to generate follow-up inputs from source test input, enabling detection of inconsistencies in model outputs without the need of expensive labelled data. LLMORPH is aimed at researchers and developers who want to evaluate the robustness of LLM-based NLP systems. In this paper, we detail the design, implementation, and practical usage of LLMORPH, demonstrating how it can be easily extended to any LLM, NLP task, and set of MRs. In our evaluation, we applied 36 MRs across four NLP benchmarks, testing three state-of-the-art LLMs: GPT-4, LLAMA3, and HERMES 2. This produced over 561,000 test executions. Results demonstrate LLMORPH's effectiveness in automatically exposing inconsistencies.",
+      "url": "https://arxiv.org/abs/2603.23611",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-24",
+      "score": 0.8799
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 296,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
