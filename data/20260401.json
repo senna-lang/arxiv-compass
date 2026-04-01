@@ -1,0 +1,387 @@
+{
+  "date": "2026-04-01",
+  "collected_at": "2026-04-01T12:27:22.394946+09:00",
+  "papers": [
+    {
+      "id": "2603.29957",
+      "title": "Think Anywhere in Code Generation",
+      "authors": [
+        "Xue Jiang",
+        "Tianyu Zhang",
+        "Ge Li",
+        "Mengyang Liu",
+        "Taozhi Chen",
+        "Zhenhua Xu",
+        "Binhua Li",
+        "Wenpin Jiao",
+        "Zhi Jin",
+        "Yongbin Li",
+        "Yihong Dong"
+      ],
+      "abstract": "Recent advances in reasoning Large Language Models (LLMs) have primarily relied on upfront thinking, where reasoning occurs before final answer. However, this approach suffers from critical limitations in code generation, where upfront thinking is often insufficient as problems' full complexity only reveals itself during code implementation. Moreover, it cannot adaptively allocate reasoning effort throughout the code generation process where difficulty varies significantly. In this paper, we propose Think-Anywhere, a novel reasoning mechanism that enables LLMs to invoke thinking on-demand at any token position during code generation. We achieve Think-Anywhere by first teaching LLMs to imitate the reasoning patterns through cold-start training, then leveraging outcome-based RL rewards to drive the model's autonomous exploration of when and where to invoke reasoning. Extensive experiments on four mainstream code generation benchmarks (i.e., LeetCode, LiveCodeBench, HumanEval, and MBPP) show that Think-Anywhere achieves state-of-the-art performance over both existing reasoning methods and recent post-training approaches, while demonstrating consistent generalization across diverse LLMs. Our analysis further reveals that Think-Anywhere enables the model to adaptively invoke reasoning at high-entropy positions, providing enhanced interpretability.",
+      "url": "https://arxiv.org/abs/2603.29957",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8926
+    },
+    {
+      "id": "2603.29232",
+      "title": "Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs",
+      "authors": [
+        "Zhuowen Liang",
+        "Xiaotian Lin",
+        "Zhengxuan Zhang",
+        "Yuyu Luo",
+        "Haixun Wang",
+        "Nan Tang"
+      ],
+      "abstract": "Large language models (LLMs) are widely applied to data analytics over documents, yet direct reasoning over long, noisy documents remains brittle and error-prone. Hence, we study document question answering (QA) that consolidates dispersed evidence into a structured output (e.g., a table, graph, or chunks) to support reliable, verifiable QA. We propose a two-pillar framework, LiteCoST, to achieve both high accuracy and low latency with small language models (SLMs). Pillar 1: Chain-of-Structured-Thought (CoST). We introduce a CoST template, a schema-aware instruction that guides a strong LLM to produce both a step-wise CoST trace and the corresponding structured output. The process induces a minimal structure, normalizes entities/units, aligns records, serializes the output, and verifies/refines it, yielding auditable supervision. Pillar 2: SLM fine-tuning. The compact models are trained on LLM-generated CoST data in two stages: Supervised Fine-Tuning for structural alignment, followed by Group Relative Policy Optimization (GRPO) incorporating triple rewards for answer/format quality and process consistency. By distilling structure-first behavior into SLMs, this approach achieves LLM-comparable quality on multi-domain long-document QA using 3B/7B SLMs, while delivering 2-4x lower latency than GPT-4o and DeepSeek-R1 (671B). The code is available at https://github.com/HKUSTDial/LiteCoST.",
+      "url": "https://arxiv.org/abs/2603.29232",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-03-31",
+      "github_url": "https://github.com/HKUSTDial/LiteCoST.",
+      "score": 0.892
+    },
+    {
+      "id": "2603.29093",
+      "title": "APEX-EM: Non-Parametric Online Learning for Autonomous Agents via Structured Procedural-Episodic Experience Replay",
+      "authors": [
+        "Pratyay Banerjee",
+        "Masud Moshtaghi",
+        "Ankit Chadha"
+      ],
+      "abstract": "LLM-based autonomous agents lack persistent procedural memory: they re-derive solutions from scratch even when structurally identical tasks have been solved before. We present \\textbf{APEX-EM}, a non-parametric online learning framework that accumulates, retrieves, and reuses structured procedural plans without modifying model weights. APEX-EM introduces: (1) a \\emph{structured experience representation} encoding the full procedural-episodic trace of each execution -- planning steps, artifacts, iteration history with error analysis, and quality scores; (2) a \\emph{Plan-Retrieve-Generate-Iterate-Ingest} (PRGII) workflow with Task Verifiers providing multi-dimensional reward signals; and (3) a \\emph{dual-outcome Experience Memory} with hybrid retrieval combining semantic search, structural signature matching, and plan DAG traversal -- enabling cross-domain transfer between tasks sharing no lexical overlap but analogous operational structure. Successful experiences serve as positive in-context examples; failures as negative examples with structured error annotations.\n  We evaluate on BigCodeBench~\\cite{zhuo2025bigcodebench}, KGQAGen-10k~\\cite{zhang2025kgqagen}, and Humanity's Last Exam~\\cite{phan2025hle} using Claude Sonnet 4.5 and Opus 4.5. On KGQAGen-10k, APEX-EM achieves 89.6\\% accuracy versus 41.3\\% without memory (+48.3pp), surpassing the oracle-retrieval upper bound (84.9\\%). On BigCodeBench, it reaches 83.3\\% SR from a 53.9\\% baseline (+29.4pp), exceeding MemRL's~\\cite{memrl2025} +11.0pp gain under comparable frozen-backbone conditions (noting backbone differences controlled for in our analysis). On HLE, entity graph retrieval reaches 48.0\\% from 25.2\\% (+22.8pp). Ablations show component value is task-dependent: rich judge feedback is negligible for code generation but critical for structured queries (+10.3pp), while binary-signal iteration partially compensates for weaker feedback.",
+      "url": "https://arxiv.org/abs/2603.29093",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8908
+    },
+    {
+      "id": "2603.29399",
+      "title": "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities",
+      "authors": [
+        "Christopher Zanoli",
+        "Andrea Giovannini",
+        "Tengjun Jin",
+        "Ana Klimovic",
+        "Yotam Perlitz"
+      ],
+      "abstract": "Constructing Extract-Load-Transform (ELT) pipelines is a labor-intensive data engineering task and a high-impact target for AI automation. On ELT-Bench, the first benchmark for end-to-end ELT pipeline construction, AI agents initially showed low success rates, suggesting they lacked practical utility.\n  We revisit these results and identify two factors causing a substantial underestimation of agent capabilities. First, re-evaluating ELT-Bench with upgraded large language models reveals that the extraction and loading stage is largely solved, while transformation performance improves significantly. Second, we develop an Auditor-Corrector methodology that combines scalable LLM-driven root-cause analysis with rigorous human validation (inter-annotator agreement Fleiss' kappa = 0.85) to audit benchmark quality. Applying this to ELT-Bench uncovers that most failed transformation tasks contain benchmark-attributable errors -- including rigid evaluation scripts, ambiguous specifications, and incorrect ground truth -- that penalize correct agent outputs.\n  Based on these findings, we construct ELT-Bench-Verified, a revised benchmark with refined evaluation logic and corrected ground truth. Re-evaluating on this version yields significant improvement attributable entirely to benchmark correction. Our results show that both rapid model improvement and benchmark quality issues contributed to underestimating agent capabilities. More broadly, our findings echo observations of pervasive annotation errors in text-to-SQL benchmarks, suggesting quality issues are systemic in data engineering evaluation. Systematic quality auditing should be standard practice for complex agentic tasks. We release ELT-Bench-Verified to provide a more reliable foundation for progress in AI-driven data engineering automation.",
+      "url": "https://arxiv.org/abs/2603.29399",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8896
+    },
+    {
+      "id": "2603.29206",
+      "title": "Route-Induced Density and Stability (RIDE): Controlled Intervention and Mechanism Analysis of Routing-Style Meta Prompts on LLM Internal States",
+      "authors": [
+        "Dianxing Zhang",
+        "Gang Li",
+        "Sheng Li"
+      ],
+      "abstract": "Routing is widely used to scale large language models, from Mixture-of-Experts gating to multi-model/tool selection. A common belief is that routing to a task ``expert'' activates sparser internal computation and thus yields more certain and stable outputs (the Sparsity--Certainty Hypothesis). We test this belief by injecting routing-style meta prompts as a textual proxy for routing signals in front of frozen instruction-tuned LLMs. We quantify (C1) internal density via activation sparsity, (C2) domain-keyword attention, and (C3) output stability via predictive entropy and semantic variation. On a RouterEval subset with three instruction-tuned models (Qwen3-8B, Llama-3.1-8B-Instruct, and Mistral-7B-Instruct-v0.2), meta prompts consistently densify early/middle-layer representations rather than increasing sparsity; natural-language expert instructions are often stronger than structured tags. Attention responses are heterogeneous: Qwen/Llama reduce keyword attention, while Mistral reinforces it. Finally, the densification--stability link is weak and appears only in Qwen, with near-zero correlations in Llama and Mistral. We present RIDE as a diagnostic probe for calibrating routing design and uncertainty estimation.",
+      "url": "https://arxiv.org/abs/2603.29206",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.889
+    },
+    {
+      "id": "2603.29846",
+      "title": "SNEAK: Evaluating Strategic Communication and Information Leakage in Large Language Models",
+      "authors": [
+        "Adar Avsian",
+        "Larry Heck"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed in multi-agent settings where communication must balance informativeness and secrecy. In such settings, an agent may need to signal information to collaborators while preventing an adversary from inferring sensitive details. However, existing LLM benchmarks primarily evaluate capabilities such as reasoning, factual knowledge, or instruction following, and do not directly measure strategic communication under asymmetric information. We introduce SNEAK (Secret-aware Natural language Evaluation for Adversarial Knowledge), a benchmark for evaluating selective information sharing in language models. In SNEAK, a model is given a semantic category, a candidate set of words, and a secret word, and must generate a message that indicates knowledge of the secret without revealing it too clearly. We evaluate generated messages using two simulated agents with different information states: an ally, who knows the secret and must identify the intended message, and a chameleon, who does not know the secret and attempts to infer it from the message. This yields two complementary metrics: utility, measuring how well the message communicates to collaborators, and leakage, measuring how much information it reveals to an adversary. Using this framework, we analyze the trade-off between informativeness and secrecy in modern language models and show that strategic communication under asymmetric information remains a challenging capability for current systems. Notably, human participants outperform all evaluated models by a large margin, achieving up to four times higher scores.",
+      "url": "https://arxiv.org/abs/2603.29846",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8886
+    },
+    {
+      "id": "2603.29902",
+      "title": "ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation",
+      "authors": [
+        "Yinuo Liu",
+        "Zi Qian",
+        "Heng Zhou",
+        "Jiahao Zhang",
+        "Yajie Zhang",
+        "Zhihang Li",
+        "Mengyu Zhou",
+        "Erchao Zhao",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "abstract": "Interleaved text-and-image generation represents a significant frontier for Multimodal Large Language Models (MLLMs), offering a more intuitive way to convey complex information. Current paradigms rely on either image generation or retrieval augmentation, yet they typically treat the two as mutually exclusive paths, failing to unify factuality with creativity. We argue that the next milestone in this field is Agentic Tool Planning, where the model serves as a central controller that autonomously determines when, where, and which tools to invoke to produce interleaved responses for visual-critical queries. To systematically evaluate this paradigm, we introduce ATP-Bench, a novel benchmark comprising 7,702 QA pairs (including 1,592 VQA pairs) across eight categories and 25 visual-critical intents, featuring human-verified queries and ground truths. Furthermore, to evaluate agentic planning independent of end-to-end execution and changing tool backends, we propose a Multi-Agent MLLM-as-a-Judge (MAM) system. MAM evaluates tool-call precision, identifies missed opportunities for tool use, and assesses overall response quality without requiring ground-truth references. Our extensive experiments on 10 state-of-the-art MLLMs reveal that models struggle with coherent interleaved planning and exhibit significant variations in tool-use behavior, highlighting substantial room for improvement and providing actionable guidance for advancing interleaved generation. Dataset and code are available at https://github.com/Qwen-Applications/ATP-Bench.",
+      "url": "https://arxiv.org/abs/2603.29902",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "github_url": "https://github.com/Qwen-Applications/ATP-Bench.",
+      "score": 0.8874
+    },
+    {
+      "id": "2603.29765",
+      "title": "Training-Free Dynamic Upcycling of Expert Language Models",
+      "authors": [
+        "Eros Fanì",
+        "Oğuzhan Ersoy"
+      ],
+      "abstract": "Large Language Models (LLMs) have achieved remarkable performance on a wide range of specialized tasks, exhibiting strong problem-solving capabilities. However, training these models is prohibitively expensive, and they often lack domain-specific expertise because they rely on general knowledge datasets. Expertise finetuning can address this issue; however, it often leads to overspecialization, and developing a single multi-domain expert remains difficult due to diverging objectives. Furthermore, multitask training is challenging due to interference and catastrophic forgetting. Existing work proposes combining the expertise of dense models within a Mixture of Experts (MoE) architecture, although this approach still requires multitask finetuning. To address these issues, we introduce Dynamic Upcycling MoE (DUME), a novel approach that reuses dense experts trained on different domains to construct a unified MoE model. Our method builds a single multitask model that preserves the capabilities of the original dense experts without requiring additional training. DUME is both cost-efficient and scalable: by leveraging the closed-form solution of ridge regression, it eliminates the need for further optimization and enables experts to be added dynamically while maintaining the model's original performance. We demonstrate that DUME consistently outperforms baseline approaches in both causal language modeling and reasoning settings. Finally, we also show that the DUME model can be fine-tuned to further improve performance. We show that, in the causal language modeling setting, DUME can retain up to 97.6% of a dense expert model specialized in one particular domain, and that it can also surpass it in the reasoning setting, where it can achieve 102.1% of the dense expert performance. Our code is available at: github.com/gensyn-ai/dume.",
+      "url": "https://arxiv.org/abs/2603.29765",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8867
+    },
+    {
+      "id": "2603.29025",
+      "title": "The Model Says Walk: How Surface Heuristics Override Implicit Constraints in LLM Reasoning",
+      "authors": [
+        "Yubo Li",
+        "Lu Zhang",
+        "Tianchong Jiang",
+        "Ramayya Krishnan",
+        "Rema Padman"
+      ],
+      "abstract": "Large language models systematically fail when a salient surface cue conflicts with an unstated feasibility constraint. We study this through a diagnose-measure-bridge-treat framework. Causal-behavioral analysis of the ``car wash problem'' across six models reveals approximately context-independent sigmoid heuristics: the distance cue exerts 8.7 to 38 times more influence than the goal, and token-level attribution shows patterns more consistent with keyword associations than compositional inference. The Heuristic Override Benchmark (HOB) -- 500 instances spanning 4 heuristic by 5 constraint families with minimal pairs and explicitness gradients -- demonstrates generality across 14 models: under strict evaluation (10/10 correct), no model exceeds 75%, and presence constraints are hardest (44%). A minimal hint (e.g., emphasizing the key object) recovers +15 pp on average, suggesting the failure lies in constraint inference rather than missing knowledge; 12/14 models perform worse when the constraint is removed (up to -39 pp), revealing conservative bias. Parametric probes confirm that the sigmoid pattern generalizes to cost, efficiency, and semantic-similarity heuristics; goal-decomposition prompting recovers +6 to 9 pp by forcing models to enumerate preconditions before answering. Together, these results characterize heuristic override as a systematic reasoning vulnerability and provide a benchmark for measuring progress toward resolving it.",
+      "url": "https://arxiv.org/abs/2603.29025",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-30",
+      "score": 0.8848
+    },
+    {
+      "id": "2603.29193",
+      "title": "Developing Adaptive Context Compression Techniques for Large Language Models (LLMs) in Long-Running Interactions",
+      "authors": [
+        "Payal Fofadiya",
+        "Sunil Tiwari"
+      ],
+      "abstract": "Large Language Models (LLMs) often experience performance degradation during long-running interactions due to increasing context length, memory saturation, and computational overhead. This paper presents an adaptive context compression framework that integrates importance-aware memory selection, coherence-sensitive filtering, and dynamic budget allocation to retain essential conversational information while controlling context growth. The approach is evaluated on LOCOMO, LOCCO, and LongBench benchmarks to assess answer quality, retrieval accuracy, coherence preservation, and efficiency. Experimental results demonstrate that the proposed method achieves consistent improvements in conversational stability and retrieval performance while reducing token usage and inference latency compared with existing memory and compression-based approaches. These findings indicate that adaptive context compression provides an effective balance between long-term memory preservation and computational efficiency in persistent LLM interactions",
+      "url": "https://arxiv.org/abs/2603.29193",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8832
+    },
+    {
+      "id": "2603.29493",
+      "title": "MemFactory: Unified Inference & Training Framework for Agent Memory",
+      "authors": [
+        "Ziliang Guo",
+        "Ziheng Li",
+        "Zhiyu Li"
+      ],
+      "abstract": "Memory-augmented Large Language Models (LLMs) are essential for developing capable, long-term AI agents. Recently, applying Reinforcement Learning (RL) to optimize memory operations, such as extraction, updating, and retrieval, has emerged as a highly promising research direction. However, existing implementations remain highly fragmented and task-specific, lacking a unified infrastructure to streamline the integration, training, and evaluation of these complex pipelines. To address this gap, we present MemFactory, the first unified, highly modular training and inference framework specifically designed for memory-augmented agents. Inspired by the success of unified fine-tuning frameworks like LLaMA-Factory, MemFactory abstracts the memory lifecycle into atomic, plug-and-play components, enabling researchers to seamlessly construct custom memory agents via a \"Lego-like\" architecture. Furthermore, the framework natively integrates Group Relative Policy Optimization (GRPO) to fine-tune internal memory management policies driven by multi-dimensional environmental rewards. MemFactory provides out-of-the-box support for recent cutting-edge paradigms, including Memory-R1, RMM, and MemAgent. We empirically validate MemFactory on the open-source MemAgent architecture using its publicly available training and evaluation data. Across both in-domain and out-of-distribution evaluation sets, MemFactory consistently improves performance over the corresponding base models, with relative gains of up to 14.8%. By providing a standardized, extensible, and easy-to-use infrastructure, MemFactory significantly lowers the barrier to entry, paving the way for future innovations in memory-driven AI agents.",
+      "url": "https://arxiv.org/abs/2603.29493",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8831
+    },
+    {
+      "id": "2603.29002",
+      "title": "Understand and Accelerate Memory Processing Pipeline for Disaggregated LLM Inference",
+      "authors": [
+        "Zifan He",
+        "Rui Ma",
+        "Yizhou Sun",
+        "Jason Cong"
+      ],
+      "abstract": "Modern large language models (LLMs) increasingly depends on efficient long-context processing and generation mechanisms, including sparse attention, retrieval-augmented generation (RAG), and compressed contextual memory, to support complex reasoning. We show that these optimizations can be unified into a four-step memory processing pipeline: Prepare Memory, Compute Relevancy, Retrieval, and Apply to Inference. Through systematic profiling, we identify a 22%-97% memory processing overhead in LLM inference and strong heterogeneity in its computational characteristics. Motivated by this insight, we argue that \\textbf{heterogeneous systems} are well-suited to accelerate memory processing and thus end-to-end inference. We demonstrate this approach on a GPU-FPGA system by offloading sparse, irregular, and memory-bounded operations to FPGAs while retaining compute-intensive operations on GPUs. Evaluated on an AMD MI210 GPU and an Alveo U55C FPGA, our system is $1.04\\sim2.2\\times$ faster and requires $1.11\\sim4.7\\times$ less energy across multiple LLM inference optimizations than the GPU baseline (similar results hold on NVIDIA A100). These results establish heterogeneous systems as a practical direction for efficient LLM memory processing and inform future heterogeneous hardware design.",
+      "url": "https://arxiv.org/abs/2603.29002",
+      "categories": [
+        "cs.DC",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-30",
+      "score": 0.8827
+    },
+    {
+      "id": "2603.29678",
+      "title": "View-oriented Conversation Compiler for Agent Trace Analysis",
+      "authors": [
+        "Lvmin Zhang",
+        "Maneesh Agrawala"
+      ],
+      "abstract": "Agent traces carry increasing analytical value in the era of context learning and harness-driven agentic cognition, yet most prior work treats conversation format as a trivial engineering detail. Modern agent conversations contain deeply structured content, including nested tool calls and results, chain-of-thought reasoning blocks, sub-agent invocations, context-window compaction boundaries, and harness-injected system directives, whose complexity far exceeds that of simple user-assistant exchanges. Feeding such traces to a reflector or other analytical mechanism in plain text, JSON, YAML, or via grep can materially degrade analysis quality. This paper presents VCC (View-oriented Conversation Compiler), a compiler (lex, parse, IR, lower, emit) that transforms raw agent JSONL logs into a family of structured views: a full view (lossless transcript serving as the canonical line-number coordinate system), a user-interface view (reconstructing the interaction as the user actually perceived it), and an adaptive view (a structure-preserving projection governed by a relevance predicate). In a context-learning experiment on AppWorld, replacing only the reflector's input format, from raw JSONL to VCC-compiled views, leads to higher pass rates across all three model configurations tested, while cutting reflector token consumption by half to two-thirds and producing more concise learned memory. These results suggest that message format functions as infrastructure for context learning, not as an incidental implementation choice.",
+      "url": "https://arxiv.org/abs/2603.29678",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8825
+    },
+    {
+      "id": "2603.29038",
+      "title": "Trojan-Speak: Bypassing Constitutional Classifiers with No Jailbreak Tax via Adversarial Finetuning",
+      "authors": [
+        "Bilgehan Sel",
+        "Xuanli He",
+        "Alwin Peng",
+        "Ming Jin",
+        "Jerry Wei"
+      ],
+      "abstract": "Fine-tuning APIs offered by major AI providers create new attack surfaces where adversaries can bypass safety measures through targeted fine-tuning. We introduce Trojan-Speak, an adversarial fine-tuning method that bypasses Anthropic's Constitutional Classifiers. Our approach uses curriculum learning combined with GRPO-based hybrid reinforcement learning to teach models a communication protocol that evades LLM-based content classification. Crucially, while prior adversarial fine-tuning approaches report more than 25% capability degradation on reasoning benchmarks, Trojan-Speak incurs less than 5% degradation while achieving 99+% classifier evasion for models with 14B+ parameters. We demonstrate that fine-tuned models can provide detailed responses to expert-level CBRN (Chemical, Biological, Radiological, and Nuclear) queries from Anthropic's Constitutional Classifiers bug-bounty program. Our findings reveal that LLM-based content classifiers alone are insufficient for preventing dangerous information disclosure when adversaries have fine-tuning access, and we show that activation-level probes can substantially improve robustness to such attacks.",
+      "url": "https://arxiv.org/abs/2603.29038",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-03-30",
+      "score": 0.8797
+    },
+    {
+      "id": "2603.29194",
+      "title": "Multi-Layered Memory Architectures for LLM Agents: An Experimental Evaluation of Long-Term Context Retention",
+      "authors": [
+        "Sunil Tiwari",
+        "Payal Fofadiya"
+      ],
+      "abstract": "Long-horizon dialogue systems suffer from semanticdrift and unstable memory retention across extended sessions. This paper presents a Multi-Layer Memory Framework that decomposes dialogue history into working, episodic, and semantic layers with adaptive retrieval gating and retention regularization. The architecture controls cross-session drift while maintaining bounded context growth and computational efficiency. Experiments on LOCOMO, LOCCO, and LoCoMo show improved performance, achieving 46.85 Success Rate, 0.618 overall F1 with 0.594 multi-hop F1, and 56.90% six-period retention while reducing false memory rate to 5.1% and context usage to 58.40%. Results confirm enhanced long-term retention and reasoning stability under constrained context budgets.",
+      "url": "https://arxiv.org/abs/2603.29194",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8786
+    },
+    {
+      "id": "2603.30016",
+      "title": "Architecting Secure AI Agents: Perspectives on System-Level Defenses Against Indirect Prompt Injection Attacks",
+      "authors": [
+        "Chong Xiang",
+        "Drew Zagieboylo",
+        "Shaona Ghosh",
+        "Sanjay Kariyappa",
+        "Kai Greshake",
+        "Hanshen Xiao",
+        "Chaowei Xiao",
+        "G. Edward Suh"
+      ],
+      "abstract": "AI agents, predominantly powered by large language models (LLMs), are vulnerable to indirect prompt injection, in which malicious instructions embedded in untrusted data can trigger dangerous agent actions. This position paper discusses our vision for system-level defenses against indirect prompt injection attacks. We articulate three positions: (1) dynamic replanning and security policy updates are often necessary for dynamic tasks and realistic environments; (2) certain context-dependent security decisions would still require LLMs (or other learned models), but should only be made within system designs that strictly constrain what the model can observe and decide; (3) in inherently ambiguous cases, personalization and human interaction should be treated as core design considerations. In addition to our main positions, we discuss limitations of existing benchmarks that can create a false sense of utility and security. We also highlight the value of system-level defenses, which serve as the skeleton of agentic systems by structuring and controlling agent behaviors, integrating rule-based and model-based security checks, and enabling more targeted research on model robustness and human interaction.",
+      "url": "https://arxiv.org/abs/2603.30016",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8781
+    },
+    {
+      "id": "2603.29632",
+      "title": "An Empirical Study of Multi-Agent Collaboration for Automated Research",
+      "authors": [
+        "Yang Shen",
+        "Zhenyi Yi",
+        "Ziyi Zhao",
+        "Lijun Sun",
+        "Dongyang Li",
+        "Chin-Teng Lin",
+        "Yuhui Shi"
+      ],
+      "abstract": "As AI agents evolve, the community is rapidly shifting from single Large Language Models (LLMs) to Multi-Agent Systems (MAS) to overcome cognitive bottlenecks in automated research. However, the optimal multi-agent coordination framework for these autonomous agents remains largely unexplored. In this paper, we present a systematic empirical study investigating the comparative efficacy of distinct multi-agent structures for automated machine learning optimization. Utilizing a rigorously controlled, execution-based testbed equipped with Git worktree isolation and explicit global memory, we benchmark a single-agent baseline against two multi-agent paradigms: a subagent architecture (parallel exploration with post-hoc consolidation) and an agent team architecture (experts with pre-execution handoffs). By evaluating these systems under strictly fixed computational time budgets, our findings reveal a fundamental trade-off between operational stability and theoretical deliberation. The subagent mode functions as a highly resilient, high-throughput search engine optimal for broad, shallow optimizations under strict time constraints. Conversely, the agent team topology exhibits higher operational fragility due to multi-author code generation but achieves the deep theoretical alignment necessary for complex architectural refactoring given extended compute budgets. These empirical insights provide actionable guidelines for designing future autoresearch systems, advocating for dynamically routed architectures that adapt their collaborative structures to real-time task complexity.",
+      "url": "https://arxiv.org/abs/2603.29632",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8778
+    },
+    {
+      "id": "2603.29085",
+      "title": "PAR$^2$-RAG: Planned Active Retrieval and Reasoning for Multi-Hop Question Answering",
+      "authors": [
+        "Xingyu Li",
+        "Rongguang Wang",
+        "Yuying Wang",
+        "Mengqing Guo",
+        "Chenyang Li",
+        "Tao Sheng",
+        "Sujith Ravi",
+        "Dan Roth"
+      ],
+      "abstract": "Large language models (LLMs) remain brittle on multi-hop question answering (MHQA), where answering requires combining evidence across documents through retrieval and reasoning. Iterative retrieval systems can fail by locking onto an early low-recall trajectory and amplifying downstream errors, while planning-only approaches may produce static query sets that cannot adapt when intermediate evidence changes. We propose \\textbf{Planned Active Retrieval and Reasoning RAG (PAR$^2$-RAG)}, a two-stage framework that separates \\emph{coverage} from \\emph{commitment}. PAR$^2$-RAG first performs breadth-first anchoring to build a high-recall evidence frontier, then applies depth-first refinement with evidence sufficiency control in an iterative loop. Across four MHQA benchmarks, PAR$^2$-RAG consistently outperforms existing state-of-the-art baselines, compared with IRCoT, PAR$^2$-RAG achieves up to \\textbf{23.5\\%} higher accuracy, with retrieval gains of up to \\textbf{10.5\\%} in NDCG.",
+      "url": "https://arxiv.org/abs/2603.29085",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-03-30",
+      "score": 0.8778
+    },
+    {
+      "id": "2603.28972",
+      "title": "Privacy Guard & Token Parsimony by Prompt and Context Handling and LLM Routing",
+      "authors": [
+        "Alessio Langiu"
+      ],
+      "abstract": "The large-scale adoption of Large Language Models (LLMs) forces a trade-off between operational cost (OpEx) and data privacy. Current routing frameworks reduce costs but ignore prompt sensitivity, exposing users and institutions to leakage risks towards third-party cloud providers. We formalise the \"Inseparability Paradigm\": advanced context management intrinsically coincides with privacy management. We propose a local \"Privacy Guard\" -- a holistic contextual observer powered by an on-premise Small Language Model (SLM) -- that performs abstractive summarisation and Automatic Prompt Optimisation (APO) to decompose prompts into focused sub-tasks, re-routing high-risk queries to Zero-Trust or NDA-covered models. This dual mechanism simultaneously eliminates sensitive inference vectors (Zero Leakage) and reduces cloud token payloads (OpEx Reduction). A LIFO-based context compacting mechanism further bounds working memory, limiting the emergent leakage surface. We validate the framework through a 2x2 benchmark (Lazy vs. Expert users; Personal vs. Institutional secrets) on a 1,000-sample dataset, achieving a 45% blended OpEx reduction, 100% redaction success on personal secrets, and -- via LLM-as-a-Judge evaluation -- an 85% preference rate for APO-compressed responses over raw baselines. Our results demonstrate that Token Parsimony and Zero Leakage are mathematically dual projections of the same contextual compression operator.",
+      "url": "https://arxiv.org/abs/2603.28972",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-03-30",
+      "score": 0.8771
+    },
+    {
+      "id": "2603.29159",
+      "title": "Kwame 2.0: Human-in-the-Loop Generative AI Teaching Assistant for Large Scale Online Coding Education in Africa",
+      "authors": [
+        "George Boateng",
+        "Samuel Boateng",
+        "Victor Kumbol"
+      ],
+      "abstract": "Providing timely and accurate learning support in large-scale online coding courses is challenging, particularly in resource-constrained contexts. We present Kwame 2.0, a bilingual (English-French) generative AI teaching assistant built using retrieval-augmented generation and deployed in a human-in-the-loop forum within SuaCode, an introductory mobile-based coding course for learners across Africa. Kwame 2.0 retrieves relevant course materials and generates context-aware responses while encouraging human oversight and community participation. We deployed the system in a 15-month longitudinal study spanning 15 cohorts with 3,717 enrollments across 35 African countries. Evaluation using community feedback and expert ratings shows that Kwame 2.0 provided high-quality and timely support, achieving high accuracy on curriculum-related questions, while human facilitators and peers effectively mitigated errors, particularly for administrative queries. Our findings demonstrate that human-in-the-loop generative AI systems can combine the scalability and speed of AI with the reliability of human support, offering an effective approach to learning assistance for underrepresented populations in resource-constrained settings at scale.",
+      "url": "https://arxiv.org/abs/2603.29159",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "submitted": "2026-03-31",
+      "score": 0.8765
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
