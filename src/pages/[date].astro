@@ -43,55 +43,214 @@ const nextDate = idx < dates.length - 1 ? dates[idx + 1] : null;
 const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}`;
 ---
 
-<MainLayout title={`arXiv新聞 ${displayDate}`}>
-  <style slot="head">
-    header {
+<MainLayout title={`arxiv compass ${displayDate}`}>
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    body {
+      max-width: 960px;
+      margin: 0 auto;
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif !important;
+      background: #fff !important;
+      color: #1a1a1a !important;
+    }
+
+    /* ─── Header ─── */
+    .news-header {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       flex-wrap: wrap;
       gap: 0.5rem;
+      border-bottom: 1px solid #e0e0dc;
+      padding-bottom: 0.75rem;
     }
-    h1 { font-size: 1.4rem; margin: 0; }
-    .nav { display: flex; gap: 0.75rem; }
-    .nav a {
-      font-size: 0.88rem;
-      color: #1a0dab;
-      text-decoration: none;
-      padding: 0.2rem 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    .title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
     }
-    .nav a:hover { background: #e8e8e8; }
-    .nav span {
-      font-size: 0.88rem;
-      color: #aaa;
-      padding: 0.2rem 0.5rem;
+    .news-header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: #111;
     }
-    .count {
+    .date-label {
+      font-family: 'IBM Plex Mono', monospace;
       font-size: 0.82rem;
-      color: #666;
-      margin-bottom: 1rem;
+      color: #aaa;
+      font-weight: 400;
     }
-    body { max-width: 800px; margin: 0 auto; }
+    .nav { display: flex; gap: 0.4rem; align-items: center; }
+    .nav a, .nav span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-decoration: none;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid #e0e0dc;
+    }
+    .nav a { color: #555; }
+    .nav a:hover { background: #f5f5f3; color: #1a1a1a; }
+    .date-picker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid #e0e0dc;
+      background: #fff;
+      color: #555;
+      cursor: pointer;
+      outline: none;
+    }
+    .date-picker:hover { background: #f5f5f3; color: #1a1a1a; }
+    .date-picker:focus { border-color: #999; }
+    .nav span { color: #ccc; border-color: #ebebeb; }
+
+    .count {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: #999;
+      margin: 0 0 1.2rem;
+    }
+
+    /* ─── Lead Article ─── */
+    .lead {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .lead .paper-card {
+      border-bottom: none;
+      padding: 0;
+    }
+    .lead .paper-title {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .lead .abstract-text {
+      font-size: 0.88rem;
+      color: #444;
+    }
+    .lead .abstract-popup,
+    .mid-grid .abstract-popup {
+      display: none !important;
+    }
+
+    /* ─── Mid Grid (2-col) ─── */
+    .mid-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1.5rem;
+      border-bottom: 1px solid #e0e0dc;
+      margin-bottom: 0.5rem;
+      overflow: visible;
+    }
+    .mid-grid .paper-title {
+      font-size: 0.95rem;
+    }
+
+    /* ─── Rest Grid (3-col) ─── */
+    .rest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0 1.2rem;
+      overflow: visible;
+    }
+    .rest-grid .paper-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .rest-grid .paper-meta {
+      font-size: 0.7rem;
+    }
+    .rest-grid .abstract-details {
+      display: none;
+    }
   </style>
 
-  <header>
-    <h1>📰 arXiv新聞 {displayDate}</h1>
+  <header class="news-header">
+    <div class="title-group">
+      <h1>arxiv compass</h1>
+      <span class="date-label">{displayDate}</span>
+    </div>
     <nav class="nav">
-      {prevDate ? <a href={`/${prevDate}`}>← 前日</a> : <span>← 前日</span>}
-      {nextDate ? <a href={`/${nextDate}`}>翌日 →</a> : <span>翌日 →</span>}
-      <a href="/map">🗺 地図</a>
+      {prevDate ? <a href={`/${prevDate}`}>prev</a> : <span>prev</span>}
+      <input
+        type="date"
+        class="date-picker"
+        value={displayDate}
+        data-dates={JSON.stringify(dates)}
+      />
+      {nextDate ? <a href={`/${nextDate}`}>next</a> : <span>next</span>}
+      <a href="/map">map</a>
     </nav>
   </header>
 
-  <p class="count">{papers.length} 件</p>
+  <p class="count">{papers.length} papers</p>
 
-  {papers.map((paper) => (
-    <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
-  ))}
+  {/* Lead: top paper, full width, abstract open by default */}
+  {papers.length > 0 && (
+    <div class="lead">
+      <PaperCard paper={papers[0]} initialRating={ratingMap.get(papers[0].id) ?? 0} />
+      <script>document.querySelector('.lead details')?.setAttribute('open', '')</script>
+    </div>
+  )}
+
+  {/* Mid: 2-column for papers 2-5 */}
+  {papers.length > 1 && (
+    <div class="mid-grid">
+      {papers.slice(1, 5).map((paper) => (
+        <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
+      ))}
+    </div>
+  )}
+
+  {/* Rest: 3-column compact */}
+  {papers.length > 5 && (
+    <div class="rest-grid">
+      {papers.slice(5).map((paper) => (
+        <PaperCard paper={paper} initialRating={ratingMap.get(paper.id) ?? 0} />
+      ))}
+    </div>
+  )}
 
   <RecommendSection />
   <SerendipitySection />
+
+  <script>
+    const picker = document.querySelector<HTMLInputElement>('.date-picker');
+    if (picker) {
+      const dates = JSON.parse(picker.dataset.dates || '[]') as string[];
+      // YYYYMMDD → YYYY-MM-DD のセット
+      const available = new Set(
+        dates.map(d => `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`)
+      );
+
+      // min/max を設定
+      if (dates.length > 0) {
+        const first = dates[0];
+        const last = dates[dates.length - 1];
+        picker.min = `${first.slice(0,4)}-${first.slice(4,6)}-${first.slice(6,8)}`;
+        picker.max = `${last.slice(0,4)}-${last.slice(4,6)}-${last.slice(6,8)}`;
+      }
+
+      picker.addEventListener('change', () => {
+        const val = picker.value; // YYYY-MM-DD
+        if (!val) return;
+        if (available.has(val)) {
+          window.location.href = '/' + val.replace(/-/g, '');
+        } else {
+          // データがない日付 → 最も近い日付に飛ぶ
+          const target = val.replace(/-/g, '');
+          const nearest = dates.reduce((prev, curr) =>
+            Math.abs(Number(curr) - Number(target)) < Math.abs(Number(prev) - Number(target)) ? curr : prev
+          );
+          window.location.href = '/' + nearest;
+        }
+      });
+    }
+  </script>
 </MainLayout>
