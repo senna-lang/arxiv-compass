@@ -19,3 +19,10 @@ venv/
 .env
 .env.local
 
+# local only
+.codeatrium/
+.kiro/
+.claude/
+.agents/
+.impeccable.md
+skills-lock.json
