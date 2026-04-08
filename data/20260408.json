@@ -1,0 +1,396 @@
+{
+  "date": "2026-04-08",
+  "collected_at": "2026-04-08T11:59:32.665473+09:00",
+  "papers": [
+    {
+      "id": "2604.05134",
+      "title": "Reasoning Through Chess: How Reasoning Evolves from Data Through Fine-Tuning and Reinforcement Learning",
+      "authors": [
+        "Lucas Dionisopoulos",
+        "Nicklas Majamaki",
+        "Prithviraj Ammanabrolu"
+      ],
+      "abstract": "How can you get a language model to reason in a task it natively struggles with? We study how reasoning evolves in a language model -- from supervised fine-tuning (SFT) to reinforcement learning (RL) -- by analyzing how a set of theoretically-inspired datasets impacts language model performance in chess. We find that fine-tuning a model to directly predict the best move leads to effective RL and the strongest downstream performance -- however, the RL step elicits unfaithful reasoning (reasoning inconsistent with the chosen move). Alternatively, training on multi-move trajectories yields comparable downstream performance with faithful reasoning and more stable RL. We show that RL induces a substantial positive shift in the distribution of move quality and reduces hallucination rates as a side effect. Finally, we find several SFT-checkpoint metrics -- metrics spanning evaluation performance, hallucination rates, and reasoning quality -- to be predictive of post-RL model performance. We release checkpoints and final models as well as training data, evaluations, and code which allowed us to surpass leading open-source reasoning models in chess with a 7B-parameter model.",
+      "url": "https://arxiv.org/abs/2604.05134",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-06",
+      "score": 0.896
+    },
+    {
+      "id": "2604.05306",
+      "title": "LLMs Should Express Uncertainty Explicitly",
+      "authors": [
+        "Junyu Guo",
+        "Shangding Gu",
+        "Ming Jin",
+        "Costas Spanos",
+        "Javad Lavaei"
+      ],
+      "abstract": "Large language models are increasingly used in settings where uncertainty must drive decisions such as abstention, retrieval, and verification. Most existing methods treat uncertainty as a latent quantity to estimate after generation rather than a signal the model is trained to express. We instead study uncertainty as an interface for control. We compare two complementary interfaces: a global interface, where the model verbalizes a calibrated confidence score for its final answer, and a local interface, where the model emits an explicit <uncertain> marker during reasoning when it enters a high-risk state. These interfaces provide different but complementary benefits. Verbalized confidence substantially improves calibration, reduces overconfident errors, and yields the strongest overall Adaptive RAG controller while using retrieval more selectively. Reasoning-time uncertainty signaling makes previously silent failures visible during generation, improves wrong-answer coverage, and provides an effective high-recall retrieval trigger. Our findings further show that the two interfaces work differently internally: verbal confidence mainly refines how existing uncertainty is decoded, whereas reasoning-time signaling induces a broader late-layer reorganization. Together, these results suggest that effective uncertainty in LLMs should be trained as task-matched communication: global confidence for deciding whether to trust a final answer, and local signals for deciding when intervention is needed.",
+      "url": "https://arxiv.org/abs/2604.05306",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8942
+    },
+    {
+      "id": "2604.06066",
+      "title": "From Hallucination to Structure Snowballing: The Alignment Tax of Constrained Decoding in LLM Reflection",
+      "authors": [
+        "Hongxu Zhou"
+      ],
+      "abstract": "Intrinsic self-correction in Large Language Models (LLMs) frequently fails in open-ended reasoning tasks due to ``hallucination snowballing,'' a phenomenon in which models recursively justify early errors during free-text reflection. While structured feedback can mitigate this issue, existing approaches often rely on externally trained critics or symbolic tools, reducing agent autonomy. This study investigates whether enforcing structured reflection purely through Outlines-based constrained decoding can disrupt error propagation without additional training. Evaluating an 8-billion-parameter model (Qwen3-8B), we show that simply imposing structural constraints does not improve self-correction performance. Instead, it triggers a new failure mode termed ``structure snowballing.'' We find that the cognitive load required to satisfy strict formatting rules pushes the model into formatting traps. This observation helps explain why the agent achieves near-perfect superficial syntactic alignment yet fails to detect or resolve deeper semantic errors. These findings expose an ``alignment tax'' inherent to constrained decoding, highlighting a tension between structural granularity and internal model capacity in autonomous workflows. Code and raw logs are available in the GitHub repository: https://github.com/hongxuzhou/agentic_llm_structured_self_critique.",
+      "url": "https://arxiv.org/abs/2604.06066",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "github_url": "https://github.com/hongxuzhou/agentic_llm_structured_self_critique.",
+      "score": 0.894
+    },
+    {
+      "id": "2604.05854",
+      "title": "Deep Researcher Agent: An Autonomous Framework for 24/7 Deep Learning Experimentation with Zero-Cost Monitoring",
+      "authors": [
+        "Xiangyue Zhang"
+      ],
+      "abstract": "We present \\textbf{Deep Researcher Agent}, an open-source framework that enables large language model (LLM) agents to autonomously conduct deep learning experiments around the clock. Unlike existing AI research assistants that focus on paper writing or code generation, our system addresses the full experiment lifecycle: hypothesis formation, code implementation, training execution, result analysis, and iterative refinement. The framework introduces three key innovations: (1) \\textbf{Zero-Cost Monitoring} -- a monitoring paradigm that incurs zero LLM API costs during model training by relying solely on process-level checks and log file reads; (2) \\textbf{Two-Tier Constant-Size Memory} -- a memory architecture capped at $\\sim$5K characters regardless of runtime duration, preventing the unbounded context growth that plagues long-running agents; and (3) \\textbf{Minimal-Toolset Leader-Worker Architecture} -- a multi-agent design where each worker agent is equipped with only 3--5 tools, reducing per-call token overhead by up to 73\\%. In sustained deployments spanning 30+ days, the framework autonomously completed 500+ experiment cycles across four concurrent research projects, achieving a 52\\% improvement over baseline metrics in one project through 200+ automated experiments -- all at an average LLM cost of \\$0.08 per 24-hour cycle. Code is available at https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7.",
+      "url": "https://arxiv.org/abs/2604.05854",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-07",
+      "github_url": "https://github.com/Xiangyue-Zhang/auto-deep-researcher-24x7.",
+      "score": 0.8937
+    },
+    {
+      "id": "2604.05355",
+      "title": "ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning",
+      "authors": [
+        "Xuan Xiong",
+        "Huan Liu",
+        "Li Gu",
+        "Zhixiang Chi",
+        "Yue Qiu",
+        "Yuanhao Yu",
+        "Yang Wang"
+      ],
+      "abstract": "Chain-of-thought (CoT) reasoning improves large language model performance on complex tasks, but often produces excessively long and inefficient reasoning traces. Existing methods shorten CoTs using length penalties or global entropy reduction, implicitly assuming that low uncertainty is desirable throughout reasoning. We show instead that reasoning efficiency is governed by the trajectory of uncertainty. CoTs with dominant downward entropy trends are substantially shorter. Motivated by this insight, we propose Entropy Trend Reward (ETR), a trajectory-aware objective that encourages progressive uncertainty reduction while allowing limited local exploration. We integrate ETR into Group Relative Policy Optimization (GRPO) and evaluate it across multiple reasoning models and challenging benchmarks. ETR consistently achieves a superior accuracy-efficiency tradeoff, improving DeepSeek-R1-Distill-7B by 9.9% in accuracy while reducing CoT length by 67% across four benchmarks. Code is available at https://github.com/Xuan1030/ETR",
+      "url": "https://arxiv.org/abs/2604.05355",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "github_url": "https://github.com/Xuan1030/ETR",
+      "score": 0.8936
+    },
+    {
+      "id": "2604.06132",
+      "title": "Claw-Eval: Toward Trustworthy Evaluation of Autonomous Agents",
+      "authors": [
+        "Bowen Ye",
+        "Rang Li",
+        "Qibin Yang",
+        "Yuanxin Liu",
+        "Linli Yao",
+        "Hanglong Lv",
+        "Zhihui Xie",
+        "Chenxin An",
+        "Lei Li",
+        "Lingpeng Kong",
+        "Qi Liu",
+        "Zhifang Sui",
+        "Tong Yang"
+      ],
+      "abstract": "Large language models are increasingly deployed as autonomous agents executing multi-step workflows in real-world software environments. However, existing agent benchmarks suffer from three critical limitations: (1) trajectory-opaque grading that checks only final outputs, (2) underspecified safety and robustness evaluation, and (3) narrow modality coverage and interaction paradigms. We introduce Claw-Eval, an end-to-end evaluation suite addressing all three gaps. It comprises 300 human-verified tasks spanning 9 categories across three groups (general service orchestration, multimodal perception and generation, and multi-turn professional dialogue). Every agent action is recorded through three independent evidence channels (execution traces, audit logs, and environment snapshots), enabling trajectory-aware grading over 2,159 fine-grained rubric items. The scoring protocol evaluates Completion, Safety, and Robustness, reporting Average Score, Pass@k, and Pass^k across three trials to distinguish genuine capability from lucky outcomes. Experiments on 14 frontier models reveal that: (1) trajectory-opaque evaluation is systematically unreliable, missing 44% of safety violations and 13% of robustness failures that our hybrid pipeline catches; (2) controlled error injection primarily degrades consistency rather than peak capability, with Pass^3 dropping up to 24% while Pass@3 remains stable; (3) multimodal performance varies sharply, with most models performing poorer on video than on document or image, and no single model dominating across all modalities. Beyond benchmarking, Claw-Eval highlights actionable directions for agent development, shedding light on what it takes to build agents that are not only capable but reliably deployable.",
+      "url": "https://arxiv.org/abs/2604.06132",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8921
+    },
+    {
+      "id": "2604.05876",
+      "title": "Mechanistic Circuit-Based Knowledge Editing in Large Language Models",
+      "authors": [
+        "Tianyi Zhao",
+        "Yinhan He",
+        "Wendy Zheng",
+        "Chen Chen"
+      ],
+      "abstract": "Deploying Large Language Models (LLMs) in real-world dynamic environments raises the challenge of updating their pre-trained knowledge. While existing knowledge editing methods can reliably patch isolated facts, they frequently suffer from a \"Reasoning Gap\", where the model recalls the edited fact but fails to utilize it in multi-step reasoning chains. To bridge this gap, we introduce MCircKE (\\underline{M}echanistic \\underline{Circ}uit-based \\underline{K}nowledge \\underline{E}diting), a novel framework that enables a precise \"map-and-adapt\" editing procedure. MCircKE first identifies the causal circuits responsible for a specific reasoning task, capturing both the storage of the fact and the routing of its logical consequences. It then surgically update parameters exclusively within this mapped circuit. Extensive experiments on the MQuAKE-3K benchmark demonstrate the effectiveness of the proposed method for multi-hop reasoning in knowledge editing.",
+      "url": "https://arxiv.org/abs/2604.05876",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.892
+    },
+    {
+      "id": "2604.05502",
+      "title": "AttnDiff: Attention-based Differential Fingerprinting for Large Language Models",
+      "authors": [
+        "Haobo Zhang",
+        "Zhenhua Xu",
+        "Junxian Li",
+        "Shangfeng Sheng",
+        "Dezhang Kong",
+        "Meng Han"
+      ],
+      "abstract": "Protecting the intellectual property of open-weight large language models (LLMs) requires verifying whether a suspect model is derived from a victim model despite common laundering operations such as fine-tuning (including PPO/DPO), pruning/compression, and model merging. We propose \\textsc{AttnDiff}, a data-efficient white-box framework that extracts fingerprints from models via intrinsic information-routing behavior. \\textsc{AttnDiff} probes minimally edited prompt pairs that induce controlled semantic conflicts, captures differential attention patterns, summarizes them with compact spectral descriptors, and compares models using CKA. Across Llama-2/3 and Qwen2.5 (3B--14B) and additional open-source families, it yields high similarity for related derivatives while separating unrelated model families (e.g., $>0.98$ vs.\\ $<0.22$ with $M=60$ probes). With 5--60 multi-domain probes, it supports practical provenance verification and accountability.",
+      "url": "https://arxiv.org/abs/2604.05502",
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8917
+    },
+    {
+      "id": "2604.05655",
+      "title": "LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals",
+      "authors": [
+        "Lihao Sun",
+        "Hang Dong",
+        "Bo Qiao",
+        "Qingwei Lin",
+        "Dongmei Zhang",
+        "Saravan Rajmohan"
+      ],
+      "abstract": "This work characterizes large language models' chain-of-thought generation as a structured trajectory through representation space. We show that mathematical reasoning traverses functionally ordered, step-specific subspaces that become increasingly separable with layer depth. This structure already exists in base models, while reasoning training primarily accelerates convergence toward termination-related subspaces rather than introducing new representational organization. While early reasoning steps follow similar trajectories, correct and incorrect solutions diverge systematically at late stages. This late-stage divergence enables mid-reasoning prediction of final-answer correctness with ROC-AUC up to 0.87. Furthermore, we introduce trajectory-based steering, an inference-time intervention framework that enables reasoning correction and length control based on derived ideal trajectories. Together, these results establish reasoning trajectories as a geometric lens for interpreting, predicting, and controlling LLM reasoning behavior.",
+      "url": "https://arxiv.org/abs/2604.05655",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8906
+    },
+    {
+      "id": "2604.05540",
+      "title": "Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting",
+      "authors": [
+        "Jinhu Fu",
+        "Yan Bai",
+        "Longzhu He",
+        "Yihang Lou",
+        "Yanxiao Zhao",
+        "Li Sun",
+        "Sen Su"
+      ],
+      "abstract": "Large language models (LLMs) can effectively handle outdated information through knowledge editing. However, current approaches face two key limitations: (I) Poor generalization: Most approaches rigidly inject new knowledge without ensuring that the model can use it effectively to solve practical problems. (II) Narrow scope: Current methods focus primarily on structured fact triples, overlooking the diverse unstructured forms of factual information (e.g., news, articles) prevalent in real-world contexts. To address these challenges, we propose a new paradigm: teaching LLMs to edit knowledge via Chain of Thoughts (CoTs) reasoning (CoT2Edit). We first leverage language model agents for both structured and unstructured edited data to generate CoTs, building high-quality instruction data. The model is then trained to reason over edited knowledge through supervised fine-tuning (SFT) and Group Relative Policy Optimization (GRPO). At inference time, we integrate Retrieval-Augmented Generation (RAG) to dynamically retrieve relevant edited facts for real-time knowledge editing. Experimental results demonstrate that our method achieves strong generalization across six diverse knowledge editing scenarios with just a single round of training on three open-source language models. The codes are available at https://github.com/FredJDean/CoT2Edit.",
+      "url": "https://arxiv.org/abs/2604.05540",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "github_url": "https://github.com/FredJDean/CoT2Edit.",
+      "score": 0.8903
+    },
+    {
+      "id": "2604.05995",
+      "title": "The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models",
+      "authors": [
+        "Xiaojie Gu",
+        "Ziying Huang",
+        "Weicong Hong",
+        "Jian Xie",
+        "Renze Lou",
+        "Kai Zhang"
+      ],
+      "abstract": "Large Language Models (LLMs) internalize vast world knowledge as parametric memory, yet inevitably inherit the staleness and errors of their source corpora. Consequently, ensuring the reliability and malleability of these internal representations is imperative for trustworthy real-world deployment. Knowledge editing offers a pivotal paradigm for surgically modifying memory without retraining. However, while recent editors demonstrate high success rates on standard benchmarks, it remains questionable whether current evaluation frameworks that rely on assessing output under specific prompting conditions can reliably authenticate genuine memory modification. In this work, we introduce a simple diagnostic framework that subjects models to discriminative self-assessment under in-context learning (ICL) settings that better reflect real-world application environments, specifically designed to scrutinize the subtle behavioral nuances induced by memory modifications. This probing reveals a pervasive phenomenon of Surface Compliance, where editors achieve high benchmark scores by merely mimicking target outputs without structurally overwriting internal beliefs. Moreover, we find that recursive modifications accumulate representational residues, triggering cognitive instability and permanently diminishing the reversibility of the model's memory state. These insights underscore the risks of current editing paradigms and highlight the pivotal role of robust memory modification in building trustworthy, long-term sustainable LLM systems. Code is available at https://github.com/XiaojieGu/SA-MCQ.",
+      "url": "https://arxiv.org/abs/2604.05995",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-07",
+      "github_url": "https://github.com/XiaojieGu/SA-MCQ.",
+      "score": 0.889
+    },
+    {
+      "id": "2604.05424",
+      "title": "PRISM-MCTS: Learning from Reasoning Trajectories with Metacognitive Reflection",
+      "authors": [
+        "Siyuan Cheng",
+        "Bozhong Tian",
+        "YanChao Hao",
+        "Zheng Wei"
+      ],
+      "abstract": "PRISM-MCTS: Learning from Reasoning Trajectories with Metacognitive Reflection Siyuan Cheng, Bozhong Tian, Yanchao Hao, Zheng Wei Published: 06 Apr 2026, Last Modified: 06 Apr 2026 ACL 2026 Findings Conference, Area Chairs, Reviewers, Publication Chairs, Authors Revisions BibTeX CC BY 4.0 Keywords: Efficient/Low-Resource Methods for NLP, Generation, Question Answering Abstract: The emergence of reasoning models, exemplified by OpenAI o1, signifies a transition from intuitive to deliberative cognition, effectively reorienting the scaling laws from pre-training paradigms toward test-time computation. While Monte Carlo Tree Search (MCTS) has shown promise in this domain, existing approaches typically treat each rollout as an isolated trajectory. This lack of information sharing leads to severe inefficiency and substantial computational redundancy, as the search process fails to leverage insights from prior explorations. To address these limitations, we propose PRISM-MCTS, a novel reasoning framework that draws inspiration from human parallel thinking and reflective processes. PRISM-MCTS integrates a Process Reward Model (PRM) with a dynamic shared memory, capturing both \"Heuristics\" and \"Fallacies\". By reinforcing successful strategies and pruning error-prone branches, PRISM-MCTS effectively achieves refinement. Furthermore, we develop a data-efficient training strategy for the PRM, achieving high-fidelity evaluation under a few-shot regime. Empirical evaluations across diverse reasoning benchmarks substantiate the efficacy of PRISM-MCTS. Notably, it halves the trajectory requirements on GPQA while surpassing MCTS-RAG and Search-o1, demonstrating that it scales inference by reasoning judiciously rather than exhaustively.",
+      "url": "https://arxiv.org/abs/2604.05424",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.889
+    },
+    {
+      "id": "2604.05865",
+      "title": "JTON: A Token-Efficient JSON Superset with Zen Grid Tabular Encoding for Large Language Models",
+      "authors": [
+        "Gowthamkumar Nandakishore"
+      ],
+      "abstract": "When LLMs process structured data, the serialization format directly affects cost and context utilization. Standard JSON wastes tokens repeating key names in every row of a tabular array--overhead that scales linearly with row count. This paper presents JTON (JSON Tabular Object Notation), a strict JSON superset whose main idea, Zen Grid, factors column headers into a single row and encodes values with semicolons, preserving JSON's type system while cutting redundancy. Across seven real-world domains, Zen Grid reduces token counts by 15-60% versus JSON compact (28.5% average; 32% with bare_strings). Comprehension tests on 10 LLMs show a net +0.3 pp accuracy gain over JSON: four models improve, three hold steady, and three dip slightly. Generation tests on 12 LLMs yield 100% syntactic validity in both few-shot and zero-shot settings. A Rust/PyO3 reference implementation adds SIMD-accelerated parsing at 1.4x the speed of Python's json module. Code, a 683-vector test suite, and all experimental data are publicly available.",
+      "url": "https://arxiv.org/abs/2604.05865",
+      "categories": [
+        "cs.AI",
+        "cs.PL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8889
+    },
+    {
+      "id": "2604.05839",
+      "title": "Vision-Guided Iterative Refinement for Frontend Code Generation",
+      "authors": [
+        "Hannah Sansford",
+        "Derek H. C. Law",
+        "Wei Liu",
+        "Abhishek Tripathi",
+        "Niresh Agarwal",
+        "Gerrit J. J. van den Burg"
+      ],
+      "abstract": "Code generation with large language models often relies on multi-stage human-in-the-loop refinement, which is effective but very costly - particularly in domains such as frontend web development where the solution quality depends on rendered visual output. We present a fully automated critic-in-the-loop framework in which a vision-language model serves as a visual critic that provides structured feedback on rendered webpages to guide iterative refinement of generated code. Across real-world user requests from the WebDev Arena dataset, this approach yields consistent improvements in solution quality, achieving up to 17.8% increase in performance over three refinement cycles. Next, we investigate parameter-efficient fine-tuning using LoRA to understand whether the improvements provided by the critic can be internalized by the code-generating LLM. Fine-tuning achieves 25% of the gains from the best critic-in-the-loop solution without a significant increase in token counts. Our findings indicate that automated, VLM-based critique of frontend code generation leads to significantly higher quality solutions than can be achieved through a single LLM inference pass, and highlight the importance of iterative refinement for the complex visual outputs associated with web development.",
+      "url": "https://arxiv.org/abs/2604.05839",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8887
+    },
+    {
+      "id": "2604.05497",
+      "title": "Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models",
+      "authors": [
+        "Keuntae Kim",
+        "Mingyu Kang",
+        "Yong Suk Choi"
+      ],
+      "abstract": "Diffusion large language models (dLLMs) are emerging as promising alternatives to autoregressive (AR) LLMs. Recently, this paradigm has been extended to multimodal tasks, leading to the development of diffusion multimodal large language models (dMLLMs). These models are expected to retain the reasoning capabilities of LLMs while enabling faster inference through parallel generation. However, when combined with Chain-of-Thought (CoT) reasoning, dMLLMs exhibit two critical issues. First, we observe that dMLLMs often generate the final answer token at a very early timestep. This trend indicates that the model determines the answer before sufficient reasoning, leading to degraded reasoning performance. Second, during the initial timesteps, dMLLMs show minimal dependency on visual prompts, exhibiting a fundamentally different pattern of visual information utilization compared to AR vision-language models. In summary, these findings indicate that dMLLMs tend to generate premature final answers without sufficiently grounding on visual inputs. To address these limitations, we propose Position and Step Penalty (PSP) and Visual Reasoning Guidance (VRG). PSP penalizes tokens in later positions during early timesteps, delaying premature answer generation and encouraging progressive reasoning across timesteps. VRG, inspired by classifier-free guidance, amplifies visual grounding signals to enhance the model's alignment with visual evidence. Extensive experiments across various dMLLMs demonstrate that our method achieves up to 7.5% higher accuracy while delivering more than 3x speedup compared to reasoning with four times more diffusion steps.",
+      "url": "https://arxiv.org/abs/2604.05497",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8887
+    },
+    {
+      "id": "2604.05757",
+      "title": "Identifying Influential N-grams in Confidence Calibration via Regression Analysis",
+      "authors": [
+        "Shintaro Ozaki",
+        "Wataru Hashimoto",
+        "Hidetaka Kamigaito",
+        "Katsuhiko Hayashi",
+        "Taro Watanabe"
+      ],
+      "abstract": "While large language models (LLMs) improve performance by explicit reasoning, their responses are often overconfident, even though they include linguistic expressions demonstrating uncertainty. In this work, we identify what linguistic expressions are related to confidence by applying the regression method. Specifically, we predict confidence of those linguistic expressions in the reasoning parts of LLMs as the dependent variables and analyze the relationship between a specific $n$-gram and confidence. Across multiple models and QA benchmarks, we show that LLMs remain overconfident when reasoning is involved and attribute this behavior to specific linguistic information. Interestingly, several of the extracted expressions coincide with cue phrases intentionally inserted on test-time scaling to improve reasoning performance. Through our test on causality and verification that the extracted linguistic information truly affects confidence, we reveal that confidence calibration is possible by simply suppressing those overconfident expressions without drops in performance.",
+      "url": "https://arxiv.org/abs/2604.05757",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8885
+    },
+    {
+      "id": "2604.05149",
+      "title": "EvolveRouter: Co-Evolving Routing and Prompt for Multi-Agent Question Answering",
+      "authors": [
+        "Jiatan Huang",
+        "Zheyuan Zhang",
+        "Kaiwen Shi",
+        "Yanfang Ye",
+        "Chuxu Zhang"
+      ],
+      "abstract": "Large language model agents often exhibit complementary strengths, making routing a promising approach for multi-agent question answering. However, existing routing methods remain limited in two important ways: they typically optimize over a fixed pool of agents without improving the agents themselves, and they often rely on rigid collaboration schemes that cannot adapt the number of participating agents to the query. We propose EvolveRouter, a trainable framework that addresses both limitations by jointly improving agent quality and collaboration structure. First, EvolveRouter couples graph-based query routing with targeted instruction refinement in a closed-loop co-evolution process, allowing router diagnostics to guide agent improvement while refined agents provide cleaner supervision for routing. Second, it introduces an adaptive inference strategy that dynamically determines the effective collaboration size for each query through router-weighted answer agreement. Together, these designs enable more capable and more efficient multi-agent reasoning. Experiments on five question answering benchmarks show that EvolveRouter consistently outperforms SOTA routing baselines in both F1 and exact match, while further analysis confirms the benefits of closed-loop refinement and adaptive collaboration.",
+      "url": "https://arxiv.org/abs/2604.05149",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-06",
+      "score": 0.8883
+    },
+    {
+      "id": "2604.05483",
+      "title": "Can We Trust a Black-box LLM? LLM Untrustworthy Boundary Detection via Bias-Diffusion and Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Xiaotian Zhou",
+        "Di Tang",
+        "Xiaofeng Wang",
+        "Xiaozhong Liu"
+      ],
+      "abstract": "Large Language Models (LLMs) have shown a high capability in answering questions on a diverse range of topics. However, these models sometimes produce biased, ideologized or incorrect responses, limiting their applications if there is no clear understanding of which topics their answers can be trusted. In this research, we introduce a novel algorithm, named as GMRL-BD, designed to identify the untrustworthy boundaries (in terms of topics) of a given LLM, with black-box access to the LLM and under specific query constraints. Based on a general Knowledge Graph (KG) derived from Wikipedia, our algorithm incorporates with multiple reinforcement learning agents to efficiently identify topics (some nodes in KG) where the LLM is likely to generate biased answers. Our experiments demonstrated the efficiency of our algorithm, which can detect the untrustworthy boundary with just limited queries to the LLM. Additionally, we have released a new dataset containing popular LLMs including Llama2, Vicuna, Falcon, Qwen2, Gemma2 and Yi-1.5, along with labels indicating the topics on which each LLM is likely to be biased.",
+      "url": "https://arxiv.org/abs/2604.05483",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8864
+    },
+    {
+      "id": "2604.05137",
+      "title": "EffiPair: Improving the Efficiency of LLM-generated Code with Relative Contrastive Feedback",
+      "authors": [
+        "Samira Hajizadeh",
+        "Suman Jana"
+      ],
+      "abstract": "Large language models (LLMs) often generate code that is functionally correct but inefficient in runtime and memory. Prior approaches to improving code efficiency typically rely on absolute execution feedback, such as profiling a single program's runtime or memory usage, which is costly and provides weak guidance for refinement. We propose Relative Contrastive Feedback (RCF), an inference-time feedback mechanism that requires no model fine-tuning or parameter updates. RCF compares two structurally similar programs for the same task and highlights the differences associated with better efficiency. Building on this idea, we introduce EffiPair, an inference-time iterative refinement framework that operates entirely at test time by generating multiple candidate solutions, identifying informative program pairs with large efficiency gaps, summarizing their execution differences into lightweight feedback, and using this signal to produce more efficient solutions. By replacing isolated scalar feedback with pairwise contrastive comparisons, EffiPair provides more direct guidance while reducing profiling and prompting overhead. Experiments on code-efficiency benchmarks show that EffiPair consistently improves efficiency while preserving correctness. For instance, with DeepSeek-Chat V3.2, EffiPair achieves up to 1.5x speedup over generation without performance feedback, while reducing token usage by more than 90% compared to prior work.",
+      "url": "https://arxiv.org/abs/2604.05137",
+      "categories": [
+        "cs.PL",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-04-06",
+      "score": 0.8862
+    },
+    {
+      "id": "2604.05912",
+      "title": "FrontierFinance: A Long-Horizon Computer-Use Benchmark of Real-World Financial Tasks",
+      "authors": [
+        "Michael Krumdick",
+        "Varshini Reddy",
+        "Shivani Chaudhary",
+        "William Day",
+        "Maarij Ahmed",
+        "Hayan Haqqi",
+        "Muhammad Ahsen Fahim",
+        "Hanzallah Amjad",
+        "Ahmad Orakzai",
+        "Aqsa Gul",
+        "Chris Tanner"
+      ],
+      "abstract": "As concerns surrounding AI-driven labor displacement intensify in knowledge-intensive sectors, existing benchmarks fail to measure performance on tasks that define practical professional expertise. Finance, in particular, has been identified as a domain with high AI exposure risk, yet lacks robust benchmarks to track real-world developments. This gap is compounded by the absence of clear accountability mechanisms in current Large Language Model (LLM) deployments. To address this, we introduce FrontierFinance, a long-horizon benchmark of 25 complex financial modeling tasks across five core finance models, requiring an average of over 18 hours of skilled human labor per task to complete. Developed with financial professionals, the benchmark reflects industry-standard financial modeling workflows and is paired with detailed rubrics for structured evaluation. We engage human experts to define the tasks, create rubrics, grade LLMs, and perform the tasks themselves as human baselines. We demonstrate that our human experts both receive higher scores on average, and are more likely to provide client-ready outputs than current state-of-the-art systems.",
+      "url": "https://arxiv.org/abs/2604.05912",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8859
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
