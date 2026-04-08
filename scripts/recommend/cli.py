@@ -121,10 +121,16 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
                 })
         return candidates
 
+    # 評価済み論文のIDセット（推薦から除外する）
+    rated_ids = {r["paper_id"] for r in ratings}
+
     # 上位クラスタ内の論文をスコアリング
     min_match: float = rec_config["min_match_score"]
     recommendations = _score_cluster_papers(top)
-    recommendations = [r for r in recommendations if r["centroid_score"] >= min_match]
+    recommendations = [
+        r for r in recommendations
+        if r["centroid_score"] >= min_match and r["id"] not in rated_ids
+    ]
     recommendations.sort(key=lambda r: r["match_score"], reverse=True)
     recommendations = recommendations[:top_n]
 
@@ -132,7 +138,7 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     ser_min_match: float = rec_config.get("serendipity_min_match_score", 0.80)
     ser_top_n: int = rec_config.get("serendipity_top_n", 7)
     ser_distant_top_n: int = rec_config.get("serendipity_distant_top_n", 3)
-    rec_ids = {r["id"] for r in recommendations}
+    rec_ids = {r["id"] for r in recommendations} | rated_ids
 
     adjacent = select_serendipity_papers(
         _score_cluster_papers(ser_top),

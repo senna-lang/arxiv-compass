@@ -95,11 +95,13 @@ def main(max_papers: int, log: bool = False) -> None:
 
     print(f"[INFO] Found {len(clusters)} clusters")
 
-    # 論文単位の UMAP 座標と cluster_id を保存（datamapplot 用）
+    # 論文単位の UMAP 座標と cluster_id を保存（ダッシュボード用にtitleも含む）
     topic_to_label = {c["id"]: c["label"] for c in clusters}
     papers_list: list[dict[str, Any]] = [
         {
             "id": pid,
+            "title": results[i].title,
+            "abstract": results[i].summary.strip(),
             "umap_x": round(float(umap_2d[i, 0]), 4),
             "umap_y": round(float(umap_2d[i, 1]), 4),
             "cluster_id": topics[i] if topics[i] != -1 else None,
