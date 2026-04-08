@@ -17,10 +17,19 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "12.6.13",
-		"astro": "^6.0.3"
+		"@astrojs/react": "^5.0.3",
+		"@deck.gl/core": "^9.2.11",
+		"@deck.gl/layers": "^9.2.11",
+		"@deck.gl/react": "^9.2.11",
+		"@deck.gl/widgets": "^9.2.11",
+		"astro": "^6.0.3",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20260312.1",
-		"@types/node": "^25.4.0"
+		"@types/node": "^25.4.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3"
 	}
 }
