@@ -1,0 +1,410 @@
+{
+  "date": "2026-04-09",
+  "collected_at": "2026-04-09T11:54:15.311214+09:00",
+  "papers": [
+    {
+      "id": "2604.07035",
+      "title": "Gemma 4, Phi-4, and Qwen3: Accuracy-Efficiency Tradeoffs in Dense and MoE Reasoning Language Models",
+      "authors": [
+        "Md Motaleb Hossen Manik",
+        "Ge Wang"
+      ],
+      "abstract": "Mixture-of-experts (MoE) language models are often expected to offer better quality-efficiency tradeoffs than dense models because only a subset of parameters is activated per token, but the practical value of that advantage depends on end-to-end behavior under realistic inference constraints. We present a controlled empirical benchmark of seven recent reasoning-oriented instruction-tuned models spanning dense and MoE designs, namely Gemma-4-E2B, Gemma-4-E4B, Gemma-4-26B-A4B, Phi-4-mini-reasoning, Phi-4-reasoning, Qwen3-8B, and Qwen3-30B-A3B, evaluated on four benchmarks -- ARC-Challenge, GSM8K, Math Level 1-3, and TruthfulQA MC1 -- under three prompting strategies: zero-shot, chain-of-thought, and few-shot chain-of-thought. The study covers 8,400 total model-dataset-prompt evaluations and records accuracy, latency, peak GPU memory usage (VRAM), and an approximate floating-point operations (FLOPs)-per-token proxy. Across the weighted multi-task summary, Gemma-4-E4B with few-shot chain-of-thought achieved the best overall result, reaching weighted accuracy 0.675 with mean VRAM 14.9 GB, while Gemma-4-26B-A4B was close in accuracy at 0.663 but substantially more memory intensive at 48.1 GB. At the task level, Gemma models dominated ARC and Math, Phi models were strongest on TruthfulQA, and GSM8K showed the largest prompt sensitivity, including a sharp drop for Phi-4-reasoning from 0.67 under chain-of-thought to 0.11 under few-shot chain-of-thought. These results show that sparse activation alone does not guarantee the best practical operating point: observed accuracy-efficiency tradeoffs depend jointly on architecture, prompting protocol, and task composition. We release a reproducible benchmark pipeline, aggregated results, and paired statistical analyses to support deployment-oriented evaluation of reasoning LLMs under real resource constraints.",
+      "url": "https://arxiv.org/abs/2604.07035",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8984
+    },
+    {
+      "id": "2604.06753",
+      "title": "Select-then-Solve: Paradigm Routing as Inference-Time Optimization for LLM Agents",
+      "authors": [
+        "Heng Zhou",
+        "Zelin Tan",
+        "Zhemeng Zhang",
+        "Yutao Fan",
+        "Yibing Lin",
+        "Li Kang",
+        "Xiufeng Song",
+        "Rui Li",
+        "Songtao Huang",
+        "Ao Yu",
+        "Yuchen Fan",
+        "Yanxu Chen",
+        "Kaixin Xu",
+        "Xiaohong Liu",
+        "Yiran Qin",
+        "Philip Torr",
+        "Chen Zhang",
+        "Zhenfei Yin"
+      ],
+      "abstract": "When an LLM-based agent improves on a task, is the gain from the model itself or from the reasoning paradigm wrapped around it? We study this question by comparing six inference-time paradigms, namely Direct, CoT, ReAct, Plan-Execute, Reflection, and ReCode, across four frontier LLMs and ten benchmarks, yielding roughly 18,000 runs. We find that reasoning structure helps dramatically on some tasks but hurts on others: ReAct improves over Direct by 44pp on GAIA, while CoT degrades performance by 15pp on HumanEval. No single paradigm dominates, and oracle per-task selection beats the best fixed paradigm by 17.1pp on average. Motivated by this complementarity, we propose a select-then-solve approach: before answering each task, a lightweight embedding-based router selects the most suitable paradigm. Across four models, the router improves average accuracy from 47.6% to 53.1%, outperforming the best fixed paradigm at 50.3% by 2.8pp and recovering up to 37% of the oracle gap. In contrast, zero-shot self-routing only works for GPT-5 at 67.1% and fails for weaker models, all trailing the learned router. Our results argue that reasoning paradigm selection should be a per-task decision made by a learned router, not a fixed architectural choice.",
+      "url": "https://arxiv.org/abs/2604.06753",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8954
+    },
+    {
+      "id": "2604.06699",
+      "title": "Adaptive Prompt Structure Factorization: A Framework for Self-Discovering and Optimizing Compositional Prompt Programs",
+      "authors": [
+        "Haoyue Liu",
+        "Zhichao Wang",
+        "Yongxin Guo",
+        "Haoran Shou",
+        "Xiaoying Tang"
+      ],
+      "abstract": "Automated prompt optimization is crucial for eliciting reliable reasoning from large language models (LLMs), yet most API-only prompt optimizers iteratively edit monolithic prompts, coupling components and obscuring credit assignment, limiting controllability, and wasting tokens. We propose Adaptive Prompt Structure Factorization (aPSF), an API-only framework (prompt-in/text-out; no access to model internals) that uses an Architect model to discover task-specific prompt structures as semantic factors. aPSF then performs interventional, single-factor updates: interventional factor-level scoring estimates each factor's marginal contribution via validation-performance changes, and error-guided factor selection routes updates to the current dominant failure source for more sample-efficient optimization. Across multiple advanced reasoning benchmarks, aPSF outperforms strong baselines including principle-aware optimizers, improving accuracy by up to +2.16 percentage points on average, and reduces optimization cost by 45--87% tokens on MultiArith while reaching peak validation in 1 step.",
+      "url": "https://arxiv.org/abs/2604.06699",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8938
+    },
+    {
+      "id": "2604.06465",
+      "title": "Multi-objective Evolutionary Merging Enables Efficient Reasoning Models",
+      "authors": [
+        "Mario Iacobelli",
+        "Adrian Robert Minut",
+        "Tommaso Mencattini",
+        "Donato Crisostomi",
+        "Andrea Santilli",
+        "Iacopo Masi",
+        "Emanuele Rodolà"
+      ],
+      "abstract": "Reasoning models have demonstrated remarkable capabilities in solving complex problems by leveraging long chains of thought. However, this more deliberate reasoning comes with substantial computational overhead at inference time. The Long-to-Short (L2S) reasoning problem seeks to maintain high accuracy using fewer tokens, but current training-free model merging approaches rely on scalarized, fixed-hyperparameter arithmetic methods that are highly brittle and force suboptimal compromises. To address this gap, we introduce Evo-L2S, a novel framework that formulates L2S reasoning as a multi-objective optimization challenge. By leveraging evolutionary model merging, Evo-L2S explicitly optimizes the trade-off between accuracy and output length to produce a robust Pareto front of merged models. To make this search computationally tractable for large language models, we propose an entropy-based subset sampling technique that drastically reduces the overhead of fitness estimation. Comprehensive experiments across 1.5B, 7B, and 14B parameter scales on six mathematical reasoning benchmarks demonstrate that Evo-L2S can reduce the length of generated reasoning traces by over 50% while preserving, or even improving, the problem-solving accuracy of the original reasoning models.",
+      "url": "https://arxiv.org/abs/2604.06465",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8909
+    },
+    {
+      "id": "2604.06834",
+      "title": "On the Step Length Confounding in LLM Reasoning Data Selection",
+      "authors": [
+        "Bing Wang",
+        "Rui Miao",
+        "Chen Shen",
+        "Shaotian Yan",
+        "Kaiyuan Liu",
+        "Ximing Li",
+        "Xiaosong Yuan",
+        "Sinan Fan",
+        "Jun Zhang",
+        "Jieping Ye"
+      ],
+      "abstract": "Large reasoning models have recently demonstrated strong performance on complex tasks that require long chain-of-thought reasoning, through supervised fine-tuning on large-scale and high-quality datasets. To construct such datasets, existing pipelines generate long reasoning data from more capable Large Language Models (LLMs) and apply manually heuristic or naturalness-based selection methods to filter high-quality samples. Despite the proven effectiveness of naturalness-based data selection, which ranks data by the average log probability assigned by LLMs, our analysis shows that, when applied to LLM reasoning datasets, it systematically prefers samples with longer reasoning steps (i.e., more tokens per step) rather than higher-quality ones, a phenomenon we term step length confounding. Through quantitative analysis, we attribute this phenomenon to low-probability first tokens in reasoning steps; longer steps dilute their influence, thereby inflating the average log probabilities. To address this issue, we propose two variant methods: ASLEC-DROP, which drops first-token probabilities when computing average log probability, and ASLEC-CASL, which applies a causal debiasing regression to remove the first tokens' confounding effect. Experiments across four LLMs and five evaluation benchmarks demonstrate the effectiveness of our approach in mitigating the step length confounding problem.",
+      "url": "https://arxiv.org/abs/2604.06834",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8874
+    },
+    {
+      "id": "2604.07147",
+      "title": "Dynamic Context Evolution for Scalable Synthetic Data Generation",
+      "authors": [
+        "Ryan Lingo",
+        "Rajeev Chhajer"
+      ],
+      "abstract": "Large language models produce repetitive output when prompted independently across many batches, a phenomenon we term cross-batch mode collapse: the progressive loss of output diversity when a language model is prompted repeatedly without access to its prior generations. Practitioners have long mitigated this with ad hoc deduplication and seed rotation, but no principled framework exists. We introduce Dynamic Context Evolution (DCE), comprising three mechanisms: (1) verbalized tail sampling (the model labels each idea with a guess about how obvious it is, and obvious ideas are discarded), which filters high-probability candidates via model self-assessment; (2) semantic memory, which maintains a persistent embedding index to reject near-duplicates across batches; and (3) adaptive prompt evolution, which reconstructs the generation prompt each batch using memory state and rotating diversity strategies. In experiments across three domains (sustainable packaging concepts, educational exam questions, and creative writing prompts) and two model families (gpt-5-mini and claude-haiku-4-5), a component ablation across 2-3 random seeds per method shows that DCE achieves 0.0 +/- 0.0% collapse versus 5.6 +/- 2.0% for naive prompting, while producing 17-18 HDBSCAN clusters per seed versus naive's volatile 2-17, indicating reliably richer conceptual structure. These results are validated with an independent embedding model (all-MiniLM-L6-v2) and hold across sensitivity sweeps of the VTS threshold tau and dedup threshold delta. Deduplication and prompt evolution are individually insufficient but jointly effective, at approximately $0.50 per 1,000 candidates using only standard API calls, with no fine-tuning or custom architectures required.",
+      "url": "https://arxiv.org/abs/2604.07147",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8872
+    },
+    {
+      "id": "2604.06696",
+      "title": "AgentGate: A Lightweight Structured Routing Engine for the Internet of Agents",
+      "authors": [
+        "Yujun Cheng",
+        "Enfang Cui",
+        "Hao Qin",
+        "Zhiyuan Liang",
+        "Qi Xu"
+      ],
+      "abstract": "The rapid development of AI agent systems is leading to an emerging Internet of Agents, where specialized agents operate across local devices, edge nodes, private services, and cloud platforms. Although recent efforts have improved agent naming, discovery, and interaction, efficient request dispatch remains an open systems problem under latency, privacy, and cost constraints. In this paper, we present AgentGate, a lightweight structured routing engine for candidate-aware agent dispatch. Instead of treating routing as unrestricted text generation, AgentGate formulates it as a constrained decision problem and decomposes it into two stages: action decision and structural grounding. The first stage determines whether a query should trigger single-agent invocation, multi-agent planning, direct response, or safe escalation, while the second stage instantiates the selected action into executable outputs such as target agents, structured arguments, or multi-step plans. To adapt compact models to this setting, we further develop a routing-oriented fine-tuning scheme with candidate-aware supervision and hard negative examples. Experiments on a curated routing benchmark with several 3B--7B open-weight models show that compact models can provide competitive routing performance in constrained settings, and that model differences are mainly reflected in action prediction, candidate selection, and structured grounding quality. These results indicate that structured routing is a feasible design point for efficient and privacy-aware agent systems, especially when routing decisions must be made under resource-constrained deployment conditions.",
+      "url": "https://arxiv.org/abs/2604.06696",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8856
+    },
+    {
+      "id": "2604.06794",
+      "title": "GCoT-Decoding: Unlocking Deep Reasoning Paths for Universal Question Answering",
+      "authors": [
+        "Guanran Luo",
+        "Wentao Qiu",
+        "Zhongquan Jian",
+        "Meihong Wang",
+        "Qingqiang Wu"
+      ],
+      "abstract": "Chain-of-Thought reasoning can enhance large language models, but it requires manually designed prompts to guide the model. Recently proposed CoT-decoding enables the model to generate CoT-style reasoning paths without prompts, but it is only applicable to problems with fixed answer sets. To address this limitation, we propose a general decoding strategy GCoT-decoding that extends applicability to a broader range of question-answering tasks. GCoT-decoding employs a two-stage branching method combining Fibonacci sampling and heuristic error backtracking to generate candidate decoding paths. It then splits each path into a reasoning span and an answer span to accurately compute path confidence, and finally aggregates semantically similar paths to identify a consensus answer, replacing traditional majority voting. We conduct extensive experiments on six datasets covering both fixed and free QA tasks. Our method not only maintains strong performance on fixed QA but also achieves significant improvements on free QA, demonstrating its generality.",
+      "url": "https://arxiv.org/abs/2604.06794",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8844
+    },
+    {
+      "id": "2604.06603",
+      "title": "Scientific Knowledge-driven Decoding Constraints Improving the Reliability of LLMs",
+      "authors": [
+        "Maotian Ma",
+        "Zheni Zeng",
+        "Zhenghao Liu",
+        "Yukun Yan"
+      ],
+      "abstract": "Large language models (LLMs) have shown strong knowledge reserves and task-solving capabilities, but still face the challenge of severe hallucination, hindering their practical application. Though scientific theories and rules can efficiently direct the behaviors of human manipulators, LLMs still do not utilize these highly-condensed knowledge sufficiently through training or prompting. To address this issue, we propose \\textbf{SciDC}, an LLM generation method that integrate subject-specific knowledge with strong constraints. By adopting strong LLMs to automatically convert flexible knowledge into multi-layered, standardized rules, we build an extensible framework to effectively constrain the model generation on domain tasks. Experiments on scientific tasks including industrial formulation design, clinical tumor diagnosis and retrosynthesis planning, consistently demonstrate the effectiveness of our method, achieving a 12\\% accuracy improvement on average compared with vanilla generation. We further discuss the potential of LLMs in automatically inductively summarizing highly-condensed knowledge, looking ahead to practical solutions for accelerating the overall scientific research process. All the code of this paper can be obtained (https://github.com/Maotian-Ma/SciDC).",
+      "url": "https://arxiv.org/abs/2604.06603",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "github_url": "https://github.com/Maotian-Ma/SciDC",
+      "score": 0.8841
+    },
+    {
+      "id": "2604.06829",
+      "title": "WRAP++: Web discoveRy Amplified Pretraining",
+      "authors": [
+        "Jiang Zhou",
+        "Yunhao Wang",
+        "Xing Wu",
+        "Tinghao Yu",
+        "Feng Zhang"
+      ],
+      "abstract": "Synthetic data rephrasing has emerged as a powerful technique for enhancing knowledge acquisition during large language model (LLM) pretraining. However, existing approaches operate at the single-document level, rewriting individual web pages in isolation. This confines synthesized examples to intra-document knowledge, missing cross-document relationships and leaving facts with limited associative context. We propose WRAP++ (Web discoveRy Amplified Pretraining), which amplifies the associative context of factual knowledge by discovering cross-document relationships from web hyperlinks and synthesizing joint QA over each discovered document pair. Concretely, WRAP++ discovers high-confidence relational motifs including dual-links and co-mentions, and synthesizes QA that requires reasoning across both documents. This produces relational knowledge absent from either source document alone, creating diverse entry points to the same facts. Because the number of valid entity pairs grows combinatorially, this discovery-driven synthesis also amplifies data scale far beyond single-document rewriting. Instantiating WRAP++ on Wikipedia, we amplify ~8.4B tokens of raw text into 80B tokens of cross-document QA data. On SimpleQA, OLMo-based models at both 7B and 32B scales trained with WRAP++ substantially outperform single-document approaches and exhibit sustained scaling gains, underscoring the advantage of cross-document knowledge discovery and amplification.",
+      "url": "https://arxiv.org/abs/2604.06829",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8836
+    },
+    {
+      "id": "2604.07223",
+      "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
+      "authors": [
+        "Yen-Shan Chen",
+        "Sian-Yao Huang",
+        "Cheng-Lin Yang",
+        "Yun-Nung Chen"
+      ],
+      "abstract": "As large language models (LLMs) evolve from static chatbots into autonomous agents, the primary vulnerability surface shifts from final outputs to intermediate execution traces. While safety guardrails are well-benchmarked for natural language responses, their efficacy remains largely unexplored within multi-step tool-use trajectories. To address this gap, we introduce TraceSafe-Bench, the first comprehensive benchmark specifically designed to assess mid-trajectory safety. It encompasses 12 risk categories, ranging from security threats (e.g., prompt injection, privacy leaks) to operational failures (e.g., hallucinations, interface inconsistencies), featuring over 1,000 unique execution instances. Our evaluation of 13 LLM-as-a-guard models and 7 specialized guardrails yields three critical findings: 1) Structural Bottleneck: Guardrail efficacy is driven more by structural data competence (e.g., JSON parsing) than semantic safety alignment. Performance correlates strongly with structured-to-text benchmarks ($ρ=0.79$) but shows near-zero correlation with standard jailbreak robustness. 2) Architecture over Scale: Model architecture influences risk detection performance more significantly than model size, with general-purpose LLMs consistently outperforming specialized safety guardrails in trajectory analysis. 3) Temporal Stability: Accuracy remains resilient across extended trajectories. Increased execution steps allow models to pivot from static tool definitions to dynamic execution behaviors, actually improving risk detection performance in later stages. Our findings suggest that securing agentic workflows requires jointly optimizing for structural reasoning and safety alignment to effectively mitigate mid-trajectory risks.",
+      "url": "https://arxiv.org/abs/2604.07223",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8833
+    },
+    {
+      "id": "2604.06627",
+      "title": "DiffuMask: Diffusion Language Model for Token-level Prompt Pruning",
+      "authors": [
+        "Caleb Zheng",
+        "Jyotika Singh",
+        "Fang Tu",
+        "Weiyi Sun",
+        "Sujeeth Bharadwaj",
+        "Yassine Benajiba",
+        "Sujith Ravi",
+        "Eli Shlizerman",
+        "Dan Roth"
+      ],
+      "abstract": "In-Context Learning and Chain-of-Thought prompting improve reasoning in large language models (LLMs). These typically come at the cost of longer, more expensive prompts that may contain redundant information. Prompt compression based on pruning offers a practical solution, yet existing methods rely on sequential token removal which is computationally intensive. We present DiffuMask, a diffusion-based framework integrating hierarchical shot-level and token-level pruning signals, that enables rapid and parallel prompt pruning via iterative mask prediction. DiffuMask substantially accelerates the compression process via masking multiple tokens in each denoising step. It offers tunable control over retained content, preserving essential reasoning context and achieving up to 80\\% prompt length reduction. Meanwhile, it maintains or improves accuracy across in-domain, out-of-domain, and cross-model settings. Our results show that DiffuMask provides a generalizable and controllable framework for prompt compression, facilitating faster and more reliable in-context reasoning in LLMs.",
+      "url": "https://arxiv.org/abs/2604.06627",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8826
+    },
+    {
+      "id": "2604.06427",
+      "title": "The Depth Ceiling: On the Limits of Large Language Models in Discovering Latent Planning",
+      "authors": [
+        "Yi Xu",
+        "Philipp Jettkant",
+        "Laura Ruis"
+      ],
+      "abstract": "The viability of chain-of-thought (CoT) monitoring hinges on models being unable to reason effectively in their latent representations. Yet little is known about the limits of such latent reasoning in LLMs. We test these limits by studying whether models can discover multi-step planning strategies without supervision on intermediate steps and execute them latently, within a single forward pass. Using graph path-finding tasks that precisely control the number of required latent planning steps, we uncover a striking limitation unresolved by massive scaling: tiny transformers trained from scratch discover strategies requiring up to three latent steps, fine-tuned GPT-4o and Qwen3-32B reach five, and GPT-5.4 attains seven under few-shot prompting. Although the maximum latent planning depth models can learn during training is five, the discovered strategy generalizes up to eight latent steps at test-time. This reveals a dissociation between the ability to discover a latent strategy under final-answer supervision alone and the ability to execute it once discovered. If similar limits hold more broadly, strategies requiring multiple coordinated latent planning steps may need to be explicitly taught or externalized, lending credence to CoT monitoring.",
+      "url": "https://arxiv.org/abs/2604.06427",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-07",
+      "score": 0.8826
+    },
+    {
+      "id": "2604.07102",
+      "title": "The Impact of Steering Large Language Models with Persona Vectors in Educational Applications",
+      "authors": [
+        "Yongchao Wu",
+        "Aron Henriksson"
+      ],
+      "abstract": "Activation-based steering can personalize large language models at inference time, but its effects in educational settings remain unclear. We study persona vectors for seven character traits in short-answer generation and automated scoring on the ASAP-SAS benchmark across three models spanning two architectures. Persona steering lowers answer quality overall, with much larger effects on open-ended English Language Arts (ELA) prompts than on factual science prompts; interpretive and argumentative tasks are up to 11x more sensitive. On the scoring side, we observe predictable valence-aligned calibration shifts: evil and impolite scorers grade more harshly, while good and optimistic scorers grade more leniently. ELA tasks are 2.5-3x more susceptible to scorer personalization than science tasks, and the Mixture-of-Experts model shows roughly 6x larger calibration shifts than the dense models. To our knowledge, this is the first study to systematically examine the effects of activation-steered persona traits in educational generation and scoring, and the results highlight the need for task-aware and architecture-aware calibration when deploying steered models in educational settings.",
+      "url": "https://arxiv.org/abs/2604.07102",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8811
+    },
+    {
+      "id": "2604.06840",
+      "title": "MirageBackdoor: A Stealthy Attack that Induces Think-Well-Answer-Wrong Reasoning",
+      "authors": [
+        "Yizhe Zeng",
+        "Wei Zhang",
+        "Yunpeng Li",
+        "Juxin Xiao",
+        "Xiao Wang",
+        "Yuling Liu"
+      ],
+      "abstract": "While Chain-of-Thought (CoT) prompting has become a standard paradigm for eliciting complex reasoning capabilities in Large Language Models, it inadvertently exposes a new attack surface for backdoor attacks. Existing CoT backdoor attacks typically manipulate the intermediate reasoning steps to steer the model toward incorrect answers. However, these corrupted reasoning traces are readily detected by prevalent process-monitoring defenses. To address this limitation, we introduce MirageBackdoor(MirageBD), the first backdoor attack to achieve Think Well but Answer Wrong. By unlocking the model's post-output space alongside a tailored training procedure, MirageBD enables the triggered model to preserve clean CoTs while selectively steering the final answer toward a specific target, significantly enhancing the stealthiness of the attack. Experiments show that MirageBD generally achieves over 90% attack success rate across four datasets and five models with a poison ratio of only 5%. Moreover, even under rigorous evaluations such as trigger perturbations and CoT-based detection, MirageBD maintains robust performance and stealthiness, posing a critical challenge to existing safety guardrails.",
+      "url": "https://arxiv.org/abs/2604.06840",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8798
+    },
+    {
+      "id": "2604.06613",
+      "title": "The Detection--Extraction Gap: Models Know the Answer Before They Can Say It",
+      "authors": [
+        "Hanyang Wang",
+        "Mingxuan Zhu"
+      ],
+      "abstract": "Modern reasoning models continue generating long after the answer is already determined. Across five model configurations, two families, and three benchmarks, we find that \\textbf{52--88\\% of chain-of-thought tokens are produced after the answer is recoverable} from a partial prefix. This post-commitment generation reveals a structural phenomenon: the \\textbf{detection--extraction gap}. Free continuations from early prefixes recover the correct answer even at 10\\% of the trace, while forced extraction fails on 42\\% of these cases. The answer is recoverable from the model state, yet prompt-conditioned decoding fails to extract it. We formalize this mismatch via a total-variation bound between free and forced continuation distributions, yielding quantitative estimates of suffix-induced shift. Exploiting this asymmetry, we propose Black-box Adaptive Early Exit (\\BAEE{}), which uses free continuations for both detection and extraction, truncating \\textbf{70--78\\% of serial generation} while \\textbf{improving accuracy by 1--5\\,pp} across all models. For thinking-mode models, early exit prevents post-commitment overwriting, yielding gains of up to 5.8\\,pp; a cost-optimized variant achieves 68--73\\% reduction at a median of 9 API calls. Code is available at https://github.com/EdWangLoDaSc/know2say.",
+      "url": "https://arxiv.org/abs/2604.06613",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IT",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-08",
+      "github_url": "https://github.com/EdWangLoDaSc/know2say.",
+      "score": 0.879
+    },
+    {
+      "id": "2604.06996",
+      "title": "Self-Preference Bias in Rubric-Based Evaluation of Large Language Models",
+      "authors": [
+        "José Pombal",
+        "Ricardo Rei",
+        "André F. T. Martins"
+      ],
+      "abstract": "LLM-as-a-judge has become the de facto approach for evaluating LLM outputs. However, judges are known to exhibit self-preference bias (SPB): they tend to favor outputs produced by themselves or by models from their own family. This skews evaluations and, thus, hinders model development, especially in settings of recursive self-improvement. We present the first study of SPB in rubric-based evaluation, an increasingly popular benchmarking paradigm where judges issue binary verdicts on individual evaluation criteria, instead of assigning holistic scores or rankings. Using IFEval, a benchmark with programmatically verifiable rubrics, we show that SPB persists even when evaluation criteria are entirely objective: among rubrics where generators fail, judges can be up to 50\\% more likely to incorrectly mark them as satisfied when the output is their own. We also find that, similarly to other evaluation paradigms, ensembling multiple judges helps mitigate SPB, but without fully eliminating it. On HealthBench, a medical chat benchmark with subjective rubrics, we observe that SPB skews model scores by up to 10 points, a potentially decisive margin when ranking frontier models. We analyze the factors that drive SPB in this setting, finding that negative rubrics, extreme rubric lengths, and subjective topics like emergency referrals are particularly susceptible.",
+      "url": "https://arxiv.org/abs/2604.06996",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8785
+    },
+    {
+      "id": "2604.06543",
+      "title": "The Illusion of Stochasticity in LLMs",
+      "authors": [
+        "Xiangming Gu",
+        "Soham De",
+        "Michalis Titsias",
+        "Larisa Markeeva",
+        "Petar Veličković",
+        "Razvan Pascanu"
+      ],
+      "abstract": "In this work, we demonstrate that reliable stochastic sampling is a fundamental yet unfulfilled requirement for Large Language Models (LLMs) operating as agents. Agentic systems are frequently required to sample from distributions, often inferred from observed data, a process which needs to be emulated by the LLM. This leads to a distinct failure point: while standard RL agents rely on external sampling mechanisms, LLMs fail to map their internal probability estimates to their stochastic outputs. Through rigorous empirical analysis across multiple model families, model sizes, prompting styles, and distributions, we demonstrate the extent of this failure. Crucially, we show that while powerful frontier models can convert provided random seeds to target distributions, their ability to sample directly from specific distributions is fundamentally flawed.",
+      "url": "https://arxiv.org/abs/2604.06543",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8781
+    },
+    {
+      "id": "2604.07036",
+      "title": "ReDAct: Uncertainty-Aware Deferral for LLM Agents",
+      "authors": [
+        "Dzianis Piatrashyn",
+        "Nikita Kotelevskii",
+        "Kirill Grishchenkov",
+        "Nikita Glazkov",
+        "Ivan Nasonov",
+        "Ilya Makarov",
+        "Timothy Baldwin",
+        "Preslav Nakov",
+        "Roman Vashurin",
+        "Maxim Panov"
+      ],
+      "abstract": "Recently, LLM-based agents have become increasingly popular across many applications, including complex sequential decision-making problems. However, they inherit the tendency of LLMs to hallucinate, leading to incorrect decisions. In sequential settings, even a single mistake can irreversibly degrade the trajectory, making hallucinations an even bigger problem. Although larger LLMs hallucinate less, they incur a significantly higher per-token cost. In this paper, we address this tradeoff by proposing ReDAct (Reason-Defer-Act). In ReDAct, an agent is equipped with two LLMs: a small, cheap model used by default, and a large, more reliable but expensive model. When the predictive uncertainty of the small model exceeds a calibrated threshold, the decision is deferred to the large model. We evaluate our approach in text-based embodied environments such as ALFWorld and MiniGrid and show that deferring only about 15% of decisions to the large model can match the quality of using it exclusively, while significantly reducing inference costs.",
+      "url": "https://arxiv.org/abs/2604.07036",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.878
+    },
+    {
+      "id": "2604.06799",
+      "title": "Beyond Accuracy: Diagnosing Algebraic Reasoning Failures in LLMs Across Nine Complexity Dimensions",
+      "authors": [
+        "Parth Patil",
+        "Dhruv Kumar",
+        "Yash Sinha",
+        "Murari Mandal"
+      ],
+      "abstract": "Algebraic reasoning remains one of the most informative stress tests for large language models, yet current benchmarks provide no mechanism for attributing failure to a specific cause. When a model fails an algebraic problem, a single accuracy score cannot reveal whether the expression was too deeply nested, the operator too uncommon, the intermediate state count too high, or the dependency chain too long. Prior work has studied individual failure modes in isolation, but no framework has varied each complexity factor independently under strict experimental control. No prior system has offered automatic generation and verification of problems of increasing complexity to track model progress over time. We introduce a nine-dimension algebraic complexity framework in which each factor is varied independently while all others are held fixed, with problem generation and verification handled by a parametric pipeline requiring no human annotation. Each dimension is grounded in a documented LLM failure mode and captures a structurally distinct aspect of algebraic difficulty, including expression nesting depth, simultaneous intermediate result count, sub-expression complexity, operator hardness, and dependent reasoning chain length. We evaluated seven instruction-tuned models spanning 8B to 235B parameters across all nine dimensions and find that working memory is the dominant scale-invariant bottleneck. Every model collapses between 20 and 30 parallel branches regardless of parameter count, pointing to a hard architectural constraint rather than a solvable capacity limitation. Our analysis further identifies a minimal yet diagnostically sufficient subset of five dimensions that together span the full space of documented algebraic failure modes, providing a complete complexity profile of a model's algebraic reasoning capacity.",
+      "url": "https://arxiv.org/abs/2604.06799",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "submitted": "2026-04-08",
+      "score": 0.8778
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
