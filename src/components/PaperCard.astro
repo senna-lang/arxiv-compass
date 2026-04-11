@@ -110,14 +110,15 @@ const firstCategory = paper.categories[0] ?? "";
   .abstract-popup {
     position: absolute;
     left: 0;
-    right: 0;
+    right: auto;
     top: 100%;
     z-index: 100;
+    width: min(620px, calc(100vw - 2rem));
     background: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
-    padding: 0.85rem 1rem;
-    max-height: 240px;
+    padding: 1rem 1.25rem;
+    max-height: 360px;
     overflow-y: auto;
     scrollbar-width: thin;
     opacity: 0;
@@ -128,8 +129,8 @@ const firstCategory = paper.categories[0] ?? "";
 
   .abstract-popup p {
     margin: 0;
-    font-size: 0.84rem;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    line-height: 1.7;
     color: #333;
   }
 
