@@ -169,11 +169,24 @@ const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}
     .rest-grid .abstract-details {
       display: none;
     }
+    /* 右端カラムはポップアップを右寄せにして本文幅からはみ出さないようにする */
+    .rest-grid .paper-card:nth-of-type(3n) .abstract-popup {
+      left: auto;
+      right: 0;
+    }
 
     /* ─── Tablet (768px – 1024px) ─── */
     @media (max-width: 1024px) {
       .rest-grid {
         grid-template-columns: 1fr 1fr;
+      }
+      .rest-grid .paper-card:nth-of-type(3n) .abstract-popup {
+        left: 0;
+        right: auto;
+      }
+      .rest-grid .paper-card:nth-of-type(2n) .abstract-popup {
+        left: auto;
+        right: 0;
       }
     }
 
