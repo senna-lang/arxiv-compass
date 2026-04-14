@@ -1,0 +1,422 @@
+{
+  "date": "2026-04-14",
+  "collected_at": "2026-04-14T12:26:29.558446+09:00",
+  "papers": [
+    {
+      "id": "2604.11465",
+      "title": "Three Roles, One Model: Role Orchestration at Inference Time to Close the Performance Gap Between Small and Large Agents",
+      "authors": [
+        "S. Aaron McClendon",
+        "Jorge Gallego-Feliciano",
+        "Stavros Zervoudakis",
+        "Antonios Saravanos"
+      ],
+      "abstract": "Large language model (LLM) agents show promise on realistic tool-use tasks, but deploying capable agents on modest hardware remains challenging. We study whether inference-time scaffolding alone, without any additional training compute, can improve the performance of a small model in complex multi-step environments. Operating on a single 24\\,GB GPU, we evaluate Qwen3-8B under both full-precision (FP16, 12K context) and 4-bit quantized (AWQ, 32K context) configurations. Without any intervention, the raw model achieves just 5.4\\% (FP16) and 3.0\\% (AWQ) task goal completion. Guided by a systematic failure mode analysis, we introduce a three-tier inference scaffolding pipeline that deploys the same frozen model in three distinct roles: (1) a summarization model that preserves critical artifacts (tokens, credentials, API responses) while compressing dialogue history; (2) the main agent model that reasons over the compressed context; and (3) an isolated correction model that reviews and revises the agent's code output without access to conversation history, breaking repetitive failure loops. Applied to the same unmodified model, this scaffolding yields 8.9\\% (FP16) and 5.9\\% (AWQ) task goal completion, roughly doubling performance in both settings, with particularly strong gains on difficulty-1 tasks (15.8\\%$\\to$26.3\\% FP16; 5.3\\%$\\to$14.0\\% AWQ). On full-precision inference, our scaffolded 8B model surpasses DeepSeek-Coder 33B Instruct (7.1\\%) from the original AppWorld evaluation, demonstrating that structured inference-time interventions can make small models competitive with systems 4$\\times$ their size. We formalize the approach as a scaffolded policy over a frozen base model, three invocations of the same weights with different conditioning, drawing connections to test-time compute scaling and action-space shaping in reinforcement learning.",
+      "url": "https://arxiv.org/abs/2604.11465",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8973
+    },
+    {
+      "id": "2604.11209",
+      "title": "Exploring Knowledge Conflicts for Faithful LLM Reasoning: Benchmark and Method",
+      "authors": [
+        "Tianzhe Zhao",
+        "Jiaoyan Chen",
+        "Shuxiu Zhang",
+        "Haiping Zhu",
+        "Qika Lin",
+        "Jun Liu"
+      ],
+      "abstract": "Large language models (LLMs) have achieved remarkable success across a wide range of applications especially when augmented by external knowledge through retrieval-augmented generation (RAG). Despite their widespread adoption, recent studies have shown that LLMs often struggle to perform faithful reasoning when conflicting knowledge is retrieved. However, existing work primarily focuses on conflicts between external knowledge and the parametric knowledge of LLMs, leaving conflicts across external knowledge largely unexplored. Meanwhile, modern RAG systems increasingly emphasize the integration of unstructured text and (semi-)structured data like knowledge graphs (KGs) to improve knowledge completeness and reasoning faithfulness. To address this gap, we introduce ConflictQA, a novel benchmark that systematically instantiates conflicts between textual evidence and KG evidence. Extensive evaluations across representative LLMs reveal that, facing such cross-source conflicts, LLMs often fail to identify reliable evidence for correct reasoning. Instead, LLMs become more sensitive to prompting choices and tend to rely exclusively on either KG or textual evidence, resulting in incorrect responses. Based on these findings, we further propose XoT, a two-stage explanation-based thinking framework tailored for reasoning over heterogeneous conflicting evidence, and verify its effectiveness with extensive experiments.",
+      "url": "https://arxiv.org/abs/2604.11209",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8942
+    },
+    {
+      "id": "2604.11502",
+      "title": "METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models",
+      "authors": [
+        "Pengfeng Li",
+        "Chen Huang",
+        "Chaoqun Hao",
+        "Hongyao Chen",
+        "Xiao-Yong Wei",
+        "Wenqiang Lei",
+        "See-Kiong Ng"
+      ],
+      "abstract": "Contextual causal reasoning is a critical yet challenging capability for Large Language Models (LLMs). Existing benchmarks, however, often evaluate this skill in fragmented settings, failing to ensure context consistency or cover the full causal hierarchy. To address this, we pioneer METER to systematically benchmark LLMs across all three levels of the causal ladder under a unified context setting. Our extensive evaluation of various LLMs reveals a significant decline in proficiency as tasks ascend the causal hierarchy. To diagnose this degradation, we conduct a deep mechanistic analysis via both error pattern identification and internal information flow tracing. Our analysis reveals two primary failure modes: (1) LLMs are susceptible to distraction by causally irrelevant but factually correct information at lower level of causality; and (2) as tasks ascend the causal hierarchy, faithfulness to the provided context degrades, leading to a reduced performance. We belive our work advances our understanding of the mechanisms behind LLM contextual causal reasoning and establishes a critical foundation for future research. Our code and dataset are available at https://github.com/SCUNLP/METER .",
+      "url": "https://arxiv.org/abs/2604.11502",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "github_url": "https://github.com/SCUNLP/METER",
+      "score": 0.8932
+    },
+    {
+      "id": "2604.11778",
+      "title": "General365: Benchmarking General Reasoning in Large Language Models Across Diverse and Challenging Tasks",
+      "authors": [
+        "Junlin Liu",
+        "Shengnan An",
+        "Shuang Zhou",
+        "Dan Ma",
+        "Shixiong Luo",
+        "Ying Xie",
+        "Yuan Zhang",
+        "Wenling Yuan",
+        "Yifan Zhou",
+        "Xiaoyu Li",
+        "Ziwen Wang",
+        "Xuezhi Cao",
+        "Xunliang Cai"
+      ],
+      "abstract": "Contemporary large language models (LLMs) have demonstrated remarkable reasoning capabilities, particularly in specialized domains like mathematics and physics. However, their ability to generalize these reasoning skills to more general and broader contexts--often termed general reasoning--remains under-explored. Unlike domain-specific reasoning, general reasoning relies less on expert knowledge but still presents formidable reasoning challenges, such as complex constraints, nested logical branches, and semantic interference. To address this gap, we introduce General365, a benchmark specifically designed to assess general reasoning in LLMs. By restricting background knowledge to a K-12 level, General365 explicitly decouples reasoning from specialized expertise. The benchmark comprises 365 seed problems and 1,095 variant problems across eight categories, ensuring both high difficulty and diversity. Evaluations across 26 leading LLMs reveal that even the top-performing model achieves only 62.8% accuracy, in stark contrast to the near-perfect performances of LLMs in math and physics benchmarks. These results suggest that the reasoning abilities of current LLMs are heavily domain-dependent, leaving significant room for improvement in broader applications. We envision General365 as a catalyst for advancing LLM reasoning beyond domain-specific tasks toward robust, general-purpose real-world scenarios. Code, Dataset, and Leaderboard: https://general365.github.io",
+      "url": "https://arxiv.org/abs/2604.11778",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8903
+    },
+    {
+      "id": "2604.11753",
+      "title": "Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks",
+      "authors": [
+        "Yoonsang Lee",
+        "Howard Yen",
+        "Xi Ye",
+        "Danqi Chen"
+      ],
+      "abstract": "We study parallel test-time scaling for long-horizon agentic tasks such as agentic search and deep research, where multiple rollouts are generated in parallel and aggregated into a final response. While such scaling has proven effective for chain-of-thought reasoning, agentic tasks pose unique challenges: trajectories are long, multi-turn, and tool-augmented, and outputs are often open-ended. Aggregating only final answers discards rich information from trajectories, while concatenating all trajectories exceeds the model's context window. To address this, we propose AggAgent, an aggregation agent that treats parallel trajectories as an environment. We equip it with lightweight tools to inspect candidate solutions and search across trajectories, enabling it to navigate and synthesize information on demand. Across six benchmarks and three model families (GLM-4.7, Qwen3.5, MiniMax-M2.5), AggAgent outperforms all existing aggregation methods-by up to 5.3% absolute on average and 10.3% on two deep research tasks-while adding minimal overhead, as the aggregation cost remains bounded by a single agentic rollout. Our findings establish agentic aggregation as an effective and cost-efficient approach to parallel test-time scaling.",
+      "url": "https://arxiv.org/abs/2604.11753",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8892
+    },
+    {
+      "id": "2604.11462",
+      "title": "Escaping the Context Bottleneck: Active Context Curation for LLM Agents via Reinforcement Learning",
+      "authors": [
+        "Xiaozhe Li",
+        "Tianyi Lyu",
+        "Yizhao Yang",
+        "Liang Shan",
+        "Siyi Yang",
+        "Ligao Zhang",
+        "Zhuoyi Huang",
+        "Qingwen Liu",
+        "Yang Li"
+      ],
+      "abstract": "Large Language Models (LLMs) struggle with long-horizon tasks due to the \"context bottleneck\" and the \"lost-in-the-middle\" phenomenon, where accumulated noise from verbose environments degrades reasoning over multi-turn interactions. To address this issue, we introduce a symbiotic framework that decouples context management from task execution. Our architecture pairs a lightweight, specialized policy model, ContextCurator, with a powerful frozen foundation model, TaskExecutor. Trained via reinforcement learning, ContextCurator actively reduces information entropy in the working memory. It aggressively prunes environmental noise while preserving reasoning anchors, that is, sparse data points that are critical for future deductions. On WebArena, our framework improves the success rate of Gemini-3.0-flash from 36.4% to 41.2% while reducing token consumption by 8.8% (from 47.4K to 43.3K). On DeepSearch, it achieves a 57.1% success rate, compared with 53.9%, while reducing token consumption by a factor of 8. Remarkably, a 7B ContextCurator matches the context management performance of GPT-4o, providing a scalable and computationally efficient paradigm for autonomous long-horizon agents.",
+      "url": "https://arxiv.org/abs/2604.11462",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.889
+    },
+    {
+      "id": "2604.10898",
+      "title": "ZoomR: Memory Efficient Reasoning through Multi-Granularity Key Value Retrieval",
+      "authors": [
+        "David H. Yang",
+        "Yuxuan Zhu",
+        "Mohammad Mohammadi Amiri",
+        "Keerthiram Murugesan",
+        "Tejaswini Pedapati",
+        "Subhajit Chaudhury",
+        "Pin-Yu Chen"
+      ],
+      "abstract": "Large language models (LLMs) have shown great performance on complex reasoning tasks but often require generating long intermediate thoughts before reaching a final answer. During generation, LLMs rely on a key-value (KV) cache for autoregressive decoding. However, the memory footprint of the KV cache grows with output length. Prior work on KV cache optimization mostly focus on compressing the long input context, while retaining the full KV cache for decoding. For tasks requiring long output generation, this leads to increased computational and memory costs. In this paper, we introduce ZoomR, a novel approach that enables LLMs to adaptively compress verbose reasoning thoughts into summaries and uses a dynamic KV cache selection policy that leverages these summaries while also strategically \"zooming in\" on fine-grained details. By using summary keys as a coarse-grained index during decoding, ZoomR uses the query to retrieve details for only the most important thoughts. This hierarchical strategy significantly reduces memory usage by avoiding full-cache attention at each step. Experiments across math and reasoning tasks show that our approach achieves competitive performance compared to baselines, while reducing inference memory requirements by more than $4\\times$. These results demonstrate that a multi-granularity KV selection enables more memory efficient decoding, especially for long output generation.",
+      "url": "https://arxiv.org/abs/2604.10898",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8872
+    },
+    {
+      "id": "2604.10981",
+      "title": "ATANT v1.1: Positioning Continuity Evaluation Against Memory, Long-Context, and Agentic-Memory Benchmarks",
+      "authors": [
+        "Samuel Sameer Tanguturi"
+      ],
+      "abstract": "ATANT v1.0 (arXiv:2604.06710) defined continuity as a system property with 7 required properties and introduced a 10-checkpoint, LLM-free evaluation methodology validated on a 250-story corpus. Since publication, a recurring reviewer and practitioner question has concerned not the framework itself but its relationship to a wider set of memory evaluations: LOCOMO, LongMemEval, BEAM, MemoryBench, Zep's evaluation suite, Letta/MemGPT's evaluations, and RULER. This companion paper, v1.1, does not modify the v1.0 standard. It closes a related-work gap that v1.0 left brief under page limits. We show by structural analysis that none of these benchmarks measures continuity as defined in v1.0: of the 7 required properties, the median existing eval covers 1 property, the mean covers 0.43 when partial credit is scored at 0.5, and no eval covers more than 2. We provide a cell-by-cell property-coverage matrix, identify methodological defects specific to each benchmark (including an empty-gold scoring bug in the LOCOMO reference implementation that renders 23% of its corpus unscorable by construction), and publish our reference implementation's LOCOMO score (8.8%) alongside the structural reason that number is uninformative about continuity. We publish our 8.8% LOCOMO score alongside our 96% ATANT cumulative-scale score as a calibration pair: the 87-point divergence is evidence that the two benchmarks measure different properties, not that one system is an order of magnitude better than another. The position v1.1 takes is not adversarial: each benchmark measures a real capability. The claim is that none of them can adjudicate continuity, and conflating them with continuity evaluation has led the field to under-invest in the properties v1.0 names.",
+      "url": "https://arxiv.org/abs/2604.10981",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8868
+    },
+    {
+      "id": "2604.11141",
+      "title": "Reducing Hallucination in Enterprise AI Workflows via Hybrid Utility Minimum Bayes Risk (HUMBR)",
+      "authors": [
+        "Chenhao Fang",
+        "Jordi Mola",
+        "Mark Harman",
+        "Jason Nawrocki",
+        "Vaibhav Shrivastava",
+        "Yue Cheng",
+        "Jay Minesh Shah",
+        "Katayoun Zand",
+        "Mansi Tripathi",
+        "Arya Pudota",
+        "Matthew Becker",
+        "Hervé Robert",
+        "Abhishek Gulati"
+      ],
+      "abstract": "Although LLMs drive automation, it is critical to ensure immense consideration for high-stakes enterprise workflows such as those involving legal matters, risk management, and privacy compliance. For Meta, and other organizations like ours, a single hallucinated clause in such high stakes workflows risks material consequences. We show that by framing hallucination mitigation as a Minimum Bayes Risk (MBR) problem, we can dramatically reduce this risk. Specifically, we introduce a Hybrid Utility MBR (HUMBR) framework that synthesizes semantic embedding similarity with lexical precision to identify consensus without ground-truth references, for which we derive rigorous error bounds. We complement this theoretical analysis with a comprehensive empirical evaluation on widely-used public benchmark suites (TruthfulQA and LegalBench) and also real world data from Meta production deployment. The results from our empirical study show that MBR significantly outperforms standard Universal Self-Consistency. Notably, 81% of the pipeline's suggestions were preferred over human-crafted ground truth, and critical recall failures were virtually eliminated.",
+      "url": "https://arxiv.org/abs/2604.11141",
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8863
+    },
+    {
+      "id": "2604.11790",
+      "title": "ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection",
+      "authors": [
+        "Wei Zhao",
+        "Zhe Li",
+        "Peixin Zhang",
+        "Jun Sun"
+      ],
+      "abstract": "Tool-augmented Large Language Model (LLM) agents have demonstrated impressive capabilities in automating complex, multi-step real-world tasks, yet remain vulnerable to indirect prompt injection. Adversaries exploit this weakness by embedding malicious instructions within tool-returned content, which agents directly incorporate into their conversation history as trusted observations. This vulnerability manifests across three primary attack channels: web and local content injection, MCP server injection, and skill file injection. To address these vulnerabilities, we introduce \\textsc{ClawGuard}, a novel runtime security framework that enforces a user-confirmed rule set at every tool-call boundary, transforming unreliable alignment-dependent defense into a deterministic, auditable mechanism that intercepts adversarial tool calls before any real-world effect is produced. By automatically deriving task-specific access constraints from the user's stated objective prior to any external tool invocation, \\textsc{ClawGuard} blocks all three injection pathways without model modification or infrastructure change. Experiments across five state-of-the-art language models on AgentDojo, SkillInject, and MCPSafeBench demonstrate that \\textsc{ClawGuard} achieves robust protection against indirect prompt injection without compromising agent utility. This work establishes deterministic tool-call boundary enforcement as an effective defense mechanism for secure agentic AI systems, requiring neither safety-specific fine-tuning nor architectural modification. Code is publicly available at https://github.com/Claw-Guard/ClawGuard.",
+      "url": "https://arxiv.org/abs/2604.11790",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "github_url": "https://github.com/Claw-Guard/ClawGuard.",
+      "score": 0.8856
+    },
+    {
+      "id": "2604.11104",
+      "title": "Frugal Knowledge Graph Construction with Local LLMs: A Zero-Shot Pipeline, Self-Consistency and Wisdom of Artificial Crowds",
+      "authors": [
+        "Pierre Jourlin"
+      ],
+      "abstract": "This paper presents an empirical study of a multi-model zero-shot pipeline for knowledge graph construction and exploitation, executed entirely through local inference on consumer-grade hardware. We propose a reproducible evaluation framework integrating two external benchmarks (DocRED, HotpotQA), WebQuestionsSP-style synthetic data, and the RAGAS evaluation framework in an automated pipeline. On 500 document-level relations, our system achieves an F1 of 0.70 $\\pm$ 0.041 in zero-shot, compared to 0.80 for supervised DREEAM. Text-to-query achieves an accuracy of 0.80 $\\pm$ 0.06 on 200 samples. Multi-hop reasoning achieves an Exact Match (EM) of 0.46$\\pm$0.04 on 500 HotpotQA questions, with a RAGAS faithfulness of 0.96 $\\pm$ 0.04 on 50 samples. Beyond the pipeline, we study diversity mechanisms for difficult multi-hop reasoning. On 181 questions unsolvable at zero temperature, self-consistency (k=5, T =0.7) recovers up to 23% EM with a single Mixture-of-Experts (MoE) model, but the cross-model oracle (3 architectures x 5 samples) reaches 46.4%. We highlight an agreement paradox: strong consensus among samples signals collective hallucination rather than a reliable answer, echoing the work of Moussa{ï}d et al. on the wisdom of crowds. Extending to the full pipeline (500 questions), self-consistency (k=3) raises EM from 0.46 to 0.48 $\\pm$ 0.04. A confidence-routing cascade mechanism (Phi-4 $\\rightarrow$ GPT-OSS, k=5) achieves an EM of 0.55 $\\pm$ 0.04, the best result obtained, with 45.4% of questions rerouted. Finally, we show that V3 prompt engineering applied to other models does not reproduce the gains observed with Gemma-4, confirming the specific prompt/model interaction. The entire system runs in $\\sim$5 h on a single RTX 3090, without any training, for an estimated carbon footprint of 0.09 kg CO2 eq.",
+      "url": "https://arxiv.org/abs/2604.11104",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8848
+    },
+    {
+      "id": "2604.11078",
+      "title": "From Context to Rules: Toward Unified Detection Rule Generation",
+      "authors": [
+        "Cheng Meng",
+        "Wenxin Le",
+        "Xinyi Li",
+        "Qiuyun Wang",
+        "Fangli Ren",
+        "Zhengwei Jiang",
+        "Baoxu Liu"
+      ],
+      "abstract": "Existing methods for detection rule generation are tightly coupled to specific input-output combinations, requiring dedicated pipelines for each. We formalize this problem as a unified mapping f:C*L->R and characterize optimal rules through semantic distance. We propose UniRule, an agentic RAG framework built on dual semantic projection spaces: detection intent and detection logic. This design enables retrieval and generation across arbitrary contexts and target languages within a single system. Experiments across 12 scenarios (3 languages, 4 context types, 12,000 pairwise comparisons) show that UniRule significantly outperforms pure LLM generation with a Bradley-Terry coefficient of 0.52, validating semantic projection as an effective abstraction for unified rule generation. Together, the formalization, method, and evaluation provide an initial framework for studying detection rule generation as a unified task.",
+      "url": "https://arxiv.org/abs/2604.11078",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8839
+    },
+    {
+      "id": "2604.11035",
+      "title": "Introspective Diffusion Language Models",
+      "authors": [
+        "Yifan Yu",
+        "Yuqing Jian",
+        "Junxiong Wang",
+        "Zhongzhu Zhou",
+        "Donglin Zhuang",
+        "Xinyu Fang",
+        "Sri Yanamandra",
+        "Xiaoxia Wu",
+        "Qingyang Wu",
+        "Shuaiwen Leon Song",
+        "Tri Dao",
+        "Ben Athiwaratkun",
+        "James Zou",
+        "Fan Lai",
+        "Chenfeng Xu"
+      ],
+      "abstract": "Diffusion language models promise parallel generation, yet still lag behind autoregressive (AR) models in quality. We stem this gap to a failure of introspective consistency: AR models agree with their own generations, while DLMs often do not. We define the introspective acceptance rate, which measures whether a model accepts its previously generated tokens. This reveals why AR training has a structural advantage: causal masking and logit shifting implicitly enforce introspective consistency. Motivated by this observation, we introduce Introspective Diffusion Language Model (I-DLM), a paradigm that retains diffusion-style parallel decoding while inheriting the introspective consistency of AR training. I-DLM uses a novel introspective strided decoding (ISD) algorithm, which enables the model to verify previously generated tokens while advancing new ones in the same forward pass. From a systems standpoint, we build I-DLM inference engine on AR-inherited optimizations and further customize it with a stationary-batch scheduler. To the best of our knowledge, I-DLM is the first DLM to match the quality of its same-scale AR counterpart while outperforming prior DLMs in both model quality and practical serving efficiency across 15 benchmarks. It reaches 69.6 on AIME-24 and 45.7 on LiveCodeBench-v6, exceeding LLaDA-2.1-mini (16B) by more than 26 and 15 points, respectively. Beyond quality, I-DLM is designed for the growing demand of large-concurrency serving, delivering about 3x higher throughput than prior state-of-the-art DLMs.",
+      "url": "https://arxiv.org/abs/2604.11035",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8834
+    },
+    {
+      "id": "2604.11791",
+      "title": "A Mechanistic Analysis of Looped Reasoning Language Models",
+      "authors": [
+        "Hugh Blayney",
+        "Álvaro Arroyo",
+        "Johan Obando-Ceron",
+        "Pablo Samuel Castro",
+        "Aaron Courville",
+        "Michael M. Bronstein",
+        "Xiaowen Dong"
+      ],
+      "abstract": "Reasoning has become a central capability in large language models. Recent research has shown that reasoning performance can be improved by looping an LLM's layers in the latent dimension, resulting in looped reasoning language models. Despite promising results, few works have investigated how their internal dynamics differ from those of standard feedforward models. In this paper, we conduct a mechanistic analysis of the latent states in looped language models, focusing in particular on how the stages of inference observed in feedforward models compare to those observed in looped ones. To this end, we analyze cyclic recurrence and show that for many of the studied models each layer in the cycle converges to a distinct fixed point; consequently, the recurrent block follows a consistent cyclic trajectory in the latent space. We provide evidence that as these fixed points are reached, attention-head behavior stabilizes, leading to constant behavior across recurrences. Empirically, we discover that recurrent blocks learn stages of inference that closely mirror those of feedforward models, repeating these stages in depth with each iteration. We study how recurrent block size, input injection, and normalization influence the emergence and stability of these cyclic fixed points. We believe these findings help translate mechanistic insights into practical guidance for architectural design.",
+      "url": "https://arxiv.org/abs/2604.11791",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8833
+    },
+    {
+      "id": "2604.11154",
+      "title": "Environmental Footprint of GenAI Research: Insights from the Moshi Foundation Model",
+      "authors": [
+        "Marta López-Rauhut",
+        "Loic Landrieu",
+        "Mathieu Aubry",
+        "Anne-Laure Ligozat"
+      ],
+      "abstract": "New multi-modal large language models (MLLMs) are continuously being trained and deployed, following rapid development cycles. This generative AI frenzy is driving steady increases in energy consumption, greenhouse gas emissions, and a plethora of other environmental impacts linked to datacenter construction and hardware manufacturing. Mitigating the environmental consequences of GenAI remains challenging due to an overall lack of transparency by the main actors in the field. Even when the environmental impacts of specific models are mentioned, they are typically restricted to the carbon footprint of the final training run, omitting the research and development stages.\n  In this work, we explore the impact of GenAI research through a fine-grained analysis of the compute spent to create Moshi, a 7B-parameter speech-text foundation model for real-time dialogue developed by Kyutai, a leading privately funded open science AI lab. For the first time, our study dives into the anatomy of compute-intensive MLLM research, quantifying the GPU-time invested in specific model components and training phases, as well as early experimental stages, failed training runs, debugging, and ablation studies. Additionally, we assess the environmental impacts of creating Moshi from beginning to end using a life cycle assessment methodology: we quantify energy and water consumption, greenhouse gas emissions, and mineral resource depletion associated with the production and use of datacenter hardware.\n  Our detailed analysis allows us to provide actionable guidelines to reduce compute usage and environmental impacts of MLLM research, paving the way for more sustainable AI research.",
+      "url": "https://arxiv.org/abs/2604.11154",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8831
+    },
+    {
+      "id": "2604.10900",
+      "title": "CASK: Core-Aware Selective KV Compression for Reasoning Traces",
+      "authors": [
+        "Buseong Kim",
+        "Heejun Gwon"
+      ],
+      "abstract": "In large language models performing long-form reasoning, the KV cache grows rapidly with decode length, creating bottlenecks in memory and inference stability. Existing reasoning-oriented KV compression has mostly followed an eviction-centered view: estimate token importance more accurately, then discard lower-ranked entries. Our analysis suggests that scorer refinement alone often fails to substantially reorganize the actual keep-set and may therefore not be the main lever for preserving reasoning behavior. We instead frame reasoning KV compression as a behavior-preserving structured consolidation problem. CASK partitions the decode-time reasoning trace into a protected core that anchors answer formation and intermediate state, and mergeable scratch with high redundancy. The core is preserved, while selective consolidation is applied only to the scratch. To address prompt-heavy regimes where the prefix can exhaust the budget before decode-stage compression becomes active, CASK further uses a two-stage design: prefix eviction followed by decode-stage consolidation. On the H100 reasoning gate, CASK shows higher full-KV continuation fidelity than TriAttention at matched budgets on both AIME24 and AIME25, with recurring cask@384 > triattention@512 crossings. In prompt-heavy replay, multi_news and vcsum act as decode-active witnesses, while qmsum and gov_report expose the prefix_budget_exhausted boundary. The overall evidence supports a simple conclusion: effective reasoning KV compression depends less on more elaborate scorer engineering than on combining core preservation with selective scratch consolidation to lower the usable budget frontier.",
+      "url": "https://arxiv.org/abs/2604.10900",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8831
+    },
+    {
+      "id": "2604.11088",
+      "title": "Do Agent Rules Shape or Distort? Guardrails Beat Guidance in Coding Agents",
+      "authors": [
+        "Xing Zhang",
+        "Guanghui Wang",
+        "Yanwei Cui",
+        "Wei Qiu",
+        "Ziyuan Li",
+        "Bing Zhu",
+        "Peiyang He"
+      ],
+      "abstract": "Developers increasingly guide AI coding agents through natural language instruction files (e.g., CLAUDE.md, .cursorrules), yet no controlled study has measured whether these rules actually improve agent performance or which properties make a rule beneficial. We scrape 679 such files (25,532 rules) from GitHub and conduct the first large-scale empirical evaluation, running over 5,000 agent runs with a state-of-the-art coding agent on SWE-bench Verified. Rules improve performance by 7--14 percentage points, but random rules help as much as expert-curated ones -- suggesting rules work through context priming rather than specific instruction. Negative constraints (\"do not refactor unrelated code\") are the only individually beneficial rule type, while positive directives (\"follow code style\") actively hurt -- a pattern we analyze through the lens of potential-based reward shaping (PBRS). Moreover, individual rules are mostly harmful in isolation yet collectively helpful, with no degradation up to 50 rules. These findings expose a hidden reliability risk -- well-intentioned rules routinely degrade agent performance -- and provide a clear principle for safe agent configuration: constrain what agents must not do, rather than prescribing what they should.",
+      "url": "https://arxiv.org/abs/2604.11088",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8825
+    },
+    {
+      "id": "2604.11554",
+      "title": "Relax: An Asynchronous Reinforcement Learning Engine for Omni-Modal Post-Training at Scale",
+      "authors": [
+        "Liujie Zhang",
+        "Benzhe Ning",
+        "Rui Yang",
+        "Xiaoyan Yu",
+        "Jiaxing Li",
+        "Lumeng Wu",
+        "Jia Liu",
+        "Minghao Li",
+        "Weihang Chen",
+        "Weiqi Hu",
+        "Lei Zhang"
+      ],
+      "abstract": "Reinforcement learning (RL) post-training has proven effective at unlocking reasoning, self-reflection, and tool-use capabilities in large language models. As models extend to omni-modal inputs and agentic multi-turn workflows, RL training systems face three interdependent challenges: heterogeneous data flows, operational robustness at scale, and the staleness -- throughput tradeoff. We present \\textbf{Relax} (Reinforcement Engine Leveraging Agentic X-modality), an open-source RL training engine that addresses these challenges through three co-designed architectural layers. First, an \\emph{omni-native architecture} builds multimodal support into the full stack -- from data preprocessing and modality-aware parallelism to inference generation -- rather than retrofitting it onto a text-centric pipeline. Second, each RL role runs as an independent, fault-isolated service that can be scaled, recovered, and upgraded without global coordination. Third, service-level decoupling enables asynchronous training via the TransferQueue data bus, where a single staleness parameter smoothly interpolates among on-policy, near-on-policy, and fully asynchronous execution. Relax achieves a 1.20$\\times$ end-to-end speedup over veRL on Qwen3-4B on-policy training. Its fully async mode delivers a 1.76$\\times$ speedup over colocate on Qwen3-4B and a 2.00$\\times$ speedup on Qwen3-Omni-30B, while all modes converge to the same reward level. Relax supports R3 (Rollout Routing Replay)~\\cite{ma2025r3} for MoE models with only 1.9\\% overhead, compared to 32\\% degradation in veRL under the same configuration. It further demonstrates stable omni-modal RL convergence on Qwen3-Omni across image, text, and audio, sustaining over 2{,}000 steps on video without degradation. Relax is available at https://github.com/rednote-ai/Relax.",
+      "url": "https://arxiv.org/abs/2604.11554",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-13",
+      "github_url": "https://github.com/rednote-ai/Relax.",
+      "score": 0.8824
+    },
+    {
+      "id": "2604.11129",
+      "title": "DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning",
+      "authors": [
+        "Feiyang Li",
+        "Yile Wang"
+      ],
+      "abstract": "Task vectors, representing directions in model or activation spaces that encode task-specific behaviors, have emerged as a promising tool for steering large language models (LLMs). However, existing approaches typically require fine-tuning or invasive manipulation of internal states, limiting their flexibility and scalability. We propose \\textsc{DeCoVec} (Decoding Space based Task Vector), a training-free and non-invasive framework that constructs task vectors directly in the \\textit{decoding space} by leveraging in-context learning (ICL). Specifically, \\textsc{DeCoVec} captures the task essence as the difference between the output logit distributions of few-shot and zero-shot prompts, then steers generation by injecting this vector into the decoding process. Experiments across seven LLMs (0.5B--9B) on TruthfulQA, Math-500, and AQUA-RAT show that \\textsc{DeCoVec} consistently outperforms standard few-shot baselines, with gains up to +5.50 average accuracy. Further analysis demonstrates that \\textsc{DeCoVec} effectively suppresses generation degeneration and logical flaws while exhibiting strong robustness to demonstration ordering, all without incurring additional input token costs. Our method offers a training-free and non-invasive solution for LLM steering without requiring weight updates or auxiliary models.",
+      "url": "https://arxiv.org/abs/2604.11129",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8823
+    },
+    {
+      "id": "2604.11012",
+      "title": "Min-$k$ Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics",
+      "authors": [
+        "Yuanhao Ding",
+        "Meimingwei Li",
+        "Esteban Garces Arias",
+        "Matthias Aßenmacher",
+        "Christian Heumann",
+        "Chongsheng Zhang"
+      ],
+      "abstract": "The quality of text generated by large language models depends critically on the decoding sampling strategy. While mainstream methods such as Top-$k$, Top-$p$, and Min-$p$ achieve a balance between diversity and accuracy through probability-space truncation, they share an inherent limitation: extreme sensitivity to the temperature parameter. Recent logit-space approaches like Top-$nσ$ achieve temperature invariance but rely on global statistics that are susceptible to long-tail noise, failing to capture fine-grained confidence structures among top candidates. We propose \\textbf{Min-$k$ Sampling}, a novel dynamic truncation strategy that analyzes the local shape of the sorted logit distribution to identify \"semantic cliffs\": sharp transitions from high-confidence core tokens to uncertain long-tail tokens. By computing a position-weighted relative decay rate, Min-$k$ dynamically determines truncation boundaries at each generation step. We formally prove that Min-$k$ achieves strict temperature invariance and empirically demonstrate its low sensitivity to hyperparameter choices. Experiments on multiple reasoning benchmarks, creative writing tasks, and human evaluation show that Min-$k$ consistently improves text quality, maintaining robust performance even under extreme temperature settings where probability-based methods collapse. We make our code, models, and analysis tools publicly available.",
+      "url": "https://arxiv.org/abs/2604.11012",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-13",
+      "score": 0.8816
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
