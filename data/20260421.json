@@ -1,0 +1,419 @@
+{
+  "date": "2026-04-21",
+  "collected_at": "2026-04-21T12:28:34.151247+09:00",
+  "papers": [
+    {
+      "id": "2604.18566",
+      "title": "Benchmarking System Dynamics AI Assistants: Cloud Versus Local LLMs on CLD Extraction and Discussion",
+      "authors": [
+        "Terry Leitch"
+      ],
+      "abstract": "We present a systematic evaluation of large language model families -- spanning both proprietary cloud APIs and locally-hosted open-source models -- on two purpose-built benchmarks for System Dynamics AI assistance: the \\textbf{CLD Leaderboard} (53 tests, structured causal loop diagram extraction) and the \\textbf{Discussion Leaderboard} (interactive model discussion, feedback explanation, and model building coaching).\n  On CLD extraction, cloud models achieve 77--89\\% overall pass rates; the best local model reaches 77\\% (Kimi~K2.5~GGUF~Q3, zero-shot engine), matching mid-tier cloud performance. On Discussion, the best local models achieve 50--100\\% on model building steps and 47--75\\% on feedback explanation, but only 0--50\\% on error fixing -- a category dominated by long-context prompts that expose memory limits in local deployments.\n  A central contribution of this paper is a systematic analysis of \\textit{model type effects} on performance: we compare reasoning vs.\\ instruction-tuned architectures, GGUF (llama.cpp) vs.\\ MLX (mlx\\_lm) backends, and quantization levels (Q3 / Q4\\_K\\_M / MLX-3bit / MLX-4bit / MLX-6bit) across the same underlying model families. We find that backend choice has larger practical impact than quantization level: mlx\\_lm does not enforce JSON schema constraints, requiring explicit prompt-level JSON instructions, while llama.cpp grammar-constrained sampling handles JSON reliably but causes indefinite generation on long-context prompts for dense models.\n  We document the full parameter sweep ($t$, $p$, $k$) for all local models, cleaned timing data (stuck requests excluded), and a practitioner guide for running 671B--123B parameter models on Apple~Silicon.",
+      "url": "https://arxiv.org/abs/2604.18566",
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.9018
+    },
+    {
+      "id": "2604.18567",
+      "title": "Latent Phase-Shift Rollback: Inference-Time Error Correction via Residual Stream Monitoring and KV-Cache Steering",
+      "authors": [
+        "Manan Gupta",
+        "Dhruv Kumar"
+      ],
+      "abstract": "Large language models frequently commit unrecoverable reasoning errors mid-generation: once a wrong step is taken, subsequent tokens compound the mistake rather than correct it. We introduce $\\textbf{Latent Phase-Shift Rollback}$ (LPSR): at each generation step, we monitor the residual stream at a critical layer lcrit, detect abrupt directional reversals (phase shifts) via a cosine-similarity $+$ entropy dual gate, and respond by rolling back the KV-cache and injecting a pre-computed steering vector. No fine-tuning, gradient computation, or additional forward passes are required. LPSR achieves $\\mathbf{44.0\\%}$ on MATH-500 with an 8B model versus $28.8\\%$ for standard AR ($+15.2$ pp; McNemar $χ^2 = 66.96$, $p < 10^{-15}$). Critically, prompted self-correction, the most natural inference-time baseline, scores only $19.8\\%$, below standard AR; LPSR exceeds it by $+24.2$ pp ($χ^2 = 89.4$, $p \\approx 0$). LPSR also outperforms Best-of-16 ($+7.8$ pp) at $5.4\\times$ lower token cost, and surpasses a standard 70B model ($35.2\\%$) with $8.75\\times$ fewer parameters at ${\\sim}3\\times$ the token budget. A 32-layer sweep reveals a novel \\textbf{detection-correction dissociation}: error-detection AUC peaks at layer~14 ($0.718$) but task accuracy peaks at layer~16 ($44.0\\%$ vs.\\ $29.2\\%$), demonstrating that optimal monitoring depth differs for detection and correction.",
+      "url": "https://arxiv.org/abs/2604.18567",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8944
+    },
+    {
+      "id": "2604.17745",
+      "title": "HiRAS: A Hierarchical Multi-Agent Framework for Paper-to-Code Generation and Execution",
+      "authors": [
+        "Hanhua Hong",
+        "Yizhi LI",
+        "Jiaoyan Chen",
+        "Sophia Ananiadou",
+        "Xiaoli Li",
+        "Jung-jae Kim",
+        "Chenghua Lin"
+      ],
+      "abstract": "Recent advances in large language models have highlighted their potential to automate computational research, particularly reproducing experimental results. However, existing approaches still use fixed sequential agent pipelines with weak global coordination, which limits their robustness and overall performance. In this work, we propose Hierarchical Research Agent System (HiRAS), a hierarchical multi-agent framework for end-to-end experiment reproduction that employs supervisory manager agents to coordinate specialised agents across fine-grained stages. We also identify limitations in the reference-free evaluation of the Paper2Code benchmark and introduce Paper2Code-Extra (P2C-Ex), a refined protocol that incorporates repository-level information and better aligns with the original reference-based metric. We conduct extensive evaluation, validating the effectiveness and robustness of our proposed methods, and observing improvements, including >10\\% relative performance gain beyond the previous state-of-the-art using open-source backbone models and significantly reduced hallucination in evaluation. Our work is available on GitHub: https://github.com/KOU-199024/HiRAS.",
+      "url": "https://arxiv.org/abs/2604.17745",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "github_url": "https://github.com/KOU-199024/HiRAS.",
+      "score": 0.8936
+    },
+    {
+      "id": "2604.18327",
+      "title": "PARM: Pipeline-Adapted Reward Model",
+      "authors": [
+        "Xingyu Fan",
+        "Wei Shao",
+        "Jiacheng Liu",
+        "Linqi Song",
+        "Pheng Ann Heng"
+      ],
+      "abstract": "Reward models (RMs) are central to aligning large language models (LLMs) with human preferences, powering RLHF and advanced decoding strategies. While most prior work focuses on single-step generation, real-world applications increasingly adopt multi-stage LLM pipelines, where effective reward guidance remains underexplored. We investigate this through code generation for combinatorial optimization, constructing a pipeline that integrates reward models into both formulation and solution stages. We identify a critical challenge: inconsistency between reward model predictions and actual pipeline execution outcomes. To address this, we propose the Pipeline-Adapted Reward Model (PARM), which leverages pipeline-specific data and direct preference optimization to align rewards with downstream feedback. We instantiate PARM as a two-stage pipeline (formulation -> code generation) and evaluate it on four public optimization benchmarks, measuring execution rate and solving accuracy against baselines and sampling methods. A supplementary cross-domain experiment on GSM8K assesses transferability. Results demonstrate that PARM consistently improves pipeline output quality and stability, providing new insights into reward modeling for multi-stage LLM reasoning.",
+      "url": "https://arxiv.org/abs/2604.18327",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8918
+    },
+    {
+      "id": "2604.17794",
+      "title": "Bridging the Reasoning Gap in Vietnamese with Small Language Models via Test-Time Scaling",
+      "authors": [
+        "Bui The Trung",
+        "Do Minh Duc",
+        "Nguyen Van Vinh",
+        "Bui Nguyen Quoc Trinh"
+      ],
+      "abstract": "The democratization of ubiquitous AI hinges on deploying sophisticated reasoning capabilities on resource-constrained devices. However, Small Language Models (SLMs) often face a \"reasoning gap\", particularly in non-English languages like Vietnamese, where they struggle to maintain coherent chains of thought. This paper investigates Test-Time Scaling strategies for the Qwen3-1.7B architecture within the context of Vietnamese Elementary Mathematics. We introduce Vi-S1K, a high-fidelity reasoning dataset localized via a Gemini 2.5 Flash-Lite powered pipeline, and Vi-Elementary-Bench, a dual-resource benchmark for rigorous evaluation. Using an LLM-as-a-Judge protocol, we reveal that the base model possesses robust latent knowledge (Accuracy: 4.05/5.00) but suffers from a severe \"formatting gap\" in communication. Supervised Fine-Tuning (SFT) acts as a critical \"reasoning unlocker\", yielding a 77% improvement in Explanation Quality and bridging the gap between raw calculation and pedagogical coherence. Furthermore, our analysis of prompting strategies uncovers a significant trade-off: structured frameworks like ReAct impose a \"cognitive tax\" on the 1.7B parameter capacity, degrading performance relative to pure Chain-of-Thought (CoT) combined with Self-Consistency. These findings establish a deployment hierarchy for SLMs, demonstrating that SFT combined with simplified test-time scaling is superior to complex agentic workflows for edge-based reasoning.",
+      "url": "https://arxiv.org/abs/2604.17794",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8918
+    },
+    {
+      "id": "2604.18574",
+      "title": "When Can LLMs Learn to Reason with Weak Supervision?",
+      "authors": [
+        "Salman Rahman",
+        "Jingyan Shen",
+        "Anna Mordvina",
+        "Hamid Palangi",
+        "Saadia Gabriel",
+        "Pavel Izmailov"
+      ],
+      "abstract": "Large language models have achieved significant reasoning improvements through reinforcement learning with verifiable rewards (RLVR). Yet as model capabilities grow, constructing high-quality reward signals becomes increasingly difficult, making it essential to understand when RLVR can succeed under weaker forms of supervision. We conduct a systematic empirical study across diverse model families and reasoning domains under three weak supervision settings: scarce data, noisy rewards, and self-supervised proxy rewards. We find that generalization is governed by training reward saturation dynamics: models that generalize exhibit a prolonged pre-saturation phase during which training reward and downstream performance climb together, while models that saturate rapidly memorize rather than learn. We identify reasoning faithfulness, defined as the extent to which intermediate steps logically support the final answer, as the pre-RL property that predicts which regime a model falls into, while output diversity alone is uninformative. Motivated by these findings, we disentangle the contributions of continual pre-training and supervised fine-tuning, finding that SFT on explicit reasoning traces is necessary for generalization under weak supervision, while continual pre-training on domain data amplifies the effect. Applied together to Llama3.2-3B-Base, these interventions enable generalization across all three settings where the base model previously failed.",
+      "url": "https://arxiv.org/abs/2604.18574",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8911
+    },
+    {
+      "id": "2604.18292",
+      "title": "Agent-World: Scaling Real-World Environment Synthesis for Evolving General Agent Intelligence",
+      "authors": [
+        "Guanting Dong",
+        "Junting Lu",
+        "Junjie Huang",
+        "Wanjun Zhong",
+        "Longxiang Liu",
+        "Shijue Huang",
+        "Zhenyu Li",
+        "Yang Zhao",
+        "Xiaoshuai Song",
+        "Xiaoxi Li",
+        "Jiajie Jin",
+        "Yutao Zhu",
+        "Hanbin Wang",
+        "Fangyu Lei",
+        "Qinyu Luo",
+        "Mingyang Chen",
+        "Zehui Chen",
+        "Jiazhan Feng",
+        "Ji-Rong Wen",
+        "Zhicheng Dou"
+      ],
+      "abstract": "Large language models are increasingly expected to serve as general-purpose agents that interact with external, stateful tool environments. The Model Context Protocol (MCP) and broader agent skills offer a unified interface for connecting agents with scalable real-world services, but training robust agents remains limited by the lack of realistic environments and principled mechanisms for life-long learning. In this paper, we present \\textbf{Agent-World}, a self-evolving training arena for advancing general agent intelligence through scalable environments. Agent-World has two main components: (1) Agentic Environment-Task Discovery, which autonomously explores topic-aligned databases and executable tool ecosystems from thousands of real-world environment themes and synthesizes verifiable tasks with controllable difficulty; and (2) Continuous Self-Evolving Agent Training, which combines multi-environment reinforcement learning with a self-evolving agent arena that automatically identifies capability gaps through dynamic task synthesis and drives targeted learning, enabling the co-evolution of agent policies and environments. Across 23 challenging agent benchmarks, Agent-World-8B and 14B consistently outperforms strong proprietary models and environment scaling baselines. Further analyses reveal scaling trends in relation to environment diversity and self-evolution rounds, offering insights for building general agent intelligence.",
+      "url": "https://arxiv.org/abs/2604.18292",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8904
+    },
+    {
+      "id": "2604.18234",
+      "title": "Evaluating Multi-Hop Reasoning in RAG Systems: A Comparison of LLM-Based Retriever Evaluation Strategies",
+      "authors": [
+        "Lorenz Brehme",
+        "Thomas Ströhle",
+        "Ruth Breu"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) enhances large language models (LLMs) with external knowledge to answer questions more accurately.\n  However, research on evaluating RAG systems-particularly the retriever component-remains limited, as most existing work focuses on single-context retrieval rather than multi-hop queries, where individual contexts may appear irrelevant in isolation but are essential when combined. In this research, we use the HotPotQA, MuSiQue, and SQuAD datasets to simulate a RAG system and compare three LLM-as-judge evaluation strategies, including our proposed Context-Aware Retriever Evaluation (CARE). Our goal is to better understand how multi-hop reasoning can be most effectively evaluated in RAG systems.\n  Experiments with LLMs from OpenAI, Meta, and Google demonstrate that CARE consistently outperforms existing methods for evaluating multi-hop reasoning in RAG systems. The performance gains are most pronounced in models with larger parameter counts and longer context windows, while single-hop queries show minimal sensitivity to context-aware evaluation. Overall, the results highlight the critical role of context-aware evaluation in improving the reliability and accuracy of retrieval-augmented generation systems, particularly in complex query scenarios. To ensure reproducibility, we provide the complete data of our experiments at https://github.com/lorenzbrehme/CARE.",
+      "url": "https://arxiv.org/abs/2604.18234",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "github_url": "https://github.com/lorenzbrehme/CARE.",
+      "score": 0.8904
+    },
+    {
+      "id": "2604.18320",
+      "title": "EVE: Verifiable Self-Evolution of MLLMs via Executable Visual Transformations",
+      "authors": [
+        "Yongrui Heng",
+        "Chaoya Jiang",
+        "Han Yang",
+        "Shikun Zhang",
+        "Wei Ye"
+      ],
+      "abstract": "Self-evolution of multimodal large language models (MLLMs) remains a critical challenge: pseudo-label-based methods suffer from progressive quality degradation as model predictions drift, while template-based methods are confined to a static set of transformations that cannot adapt in difficulty or diversity. We contend that robust, continuous self-improvement requires not only deterministic external feedback independent of the model's internal certainty, but also a mechanism to perpetually diversify the training distribution. To this end, we introduce EVE (Executable Visual transformation-based self-Evolution), a novel framework that entirely bypasses pseudo-labels by harnessing executable visual transformations continuously enriched in both variety and complexity. EVE adopts a Challenger-Solver dual-policy architecture. The Challenger maintains and progressively expands a queue of visual transformation code examples, from which it synthesizes novel Python scripts to perform dynamic visual transformations. Executing these scripts yields VQA problems with absolute, execution-verified ground-truth answers, eliminating any reliance on model-generated supervision. A multi-dimensional reward system integrating semantic diversity and dynamic difficulty calibration steers the Challenger to enrich its code example queue while posing progressively more challenging tasks, preventing mode collapse and fostering reciprocal co-evolution between the two policies. Extensive experiments demonstrate that EVE consistently surpasses existing self-evolution methods, establishing a robust and scalable paradigm for verifiable MLLM self-evolution. The code is available at https://github.com/0001Henry/EVE .",
+      "url": "https://arxiv.org/abs/2604.18320",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "github_url": "https://github.com/0001Henry/EVE",
+      "score": 0.8901
+    },
+    {
+      "id": "2604.17769",
+      "title": "Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF",
+      "authors": [
+        "Yuan Fang",
+        "Yiming Luo",
+        "Aimin Zhou",
+        "Fei Tan"
+      ],
+      "abstract": "Ensuring the safety of large language models (LLMs) requires robust red teaming, yet the systematic synthesis of high-quality toxic data remains under-explored. We propose Reverse Constitutional AI (R-CAI), a framework for automated and controllable adversarial data generation that moves beyond isolated jailbreak prompts. By inverting a harmless constitution into a constitution of toxicity and iteratively refining model outputs through a critique--revision pipeline, R-CAI enables scalable synthesis of multi-dimensional adversarial data without human annotation. Optimizing solely for toxicity-related rewards, however, can lead to reward hacking and degraded semantic coherence. To address this challenge, we introduce probability clamping within reinforcement learning from AI feedback, which stabilizes adversarial optimization while preserving adversarial intent. Experiments demonstrate that R-CAI generates diverse, high-quality toxic data and that probability clamping substantially improves semantic coherence (15%) without sacrificing adversarial strength. Overall, R-CAI provides a fully automated framework for red teaming data generation and systematic safety evaluation of aligned language models.",
+      "url": "https://arxiv.org/abs/2604.17769",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8887
+    },
+    {
+      "id": "2604.18419",
+      "title": "Knowing When to Quit: A Principled Framework for Dynamic Abstention in LLM Reasoning",
+      "authors": [
+        "Hen Davidov",
+        "Nachshon Cohen",
+        "Oren Kalinsky",
+        "Yaron Fairstein",
+        "Guy Kushilevitz",
+        "Ram Yazdi",
+        "Patrick Rebeschini"
+      ],
+      "abstract": "Large language models (LLMs) using chain-of-thought reasoning often waste substantial compute by producing long, incorrect responses. Abstention can mitigate this by withholding outputs unlikely to be correct. While most abstention methods decide to withhold outputs before or after generation, dynamic mid-generation abstention considers early termination of unpromising reasoning traces at each token position. Prior work has explored empirical variants of this idea, but principled guidance for the abstention rule remains lacking. We present a formal analysis of dynamic abstention for LLMs, modeling abstention as an explicit action within a regularized reinforcement learning framework. An abstention reward parameter controls the trade-off between compute and information. We show that abstaining when the value function falls below this reward strictly outperforms natural baselines under general conditions. We further derive a principled and efficient method to approximate the value function. Empirical results on mathematical reasoning and toxicity avoidance tasks support our theory and demonstrate improved selective accuracy over existing methods.",
+      "url": "https://arxiv.org/abs/2604.18419",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8874
+    },
+    {
+      "id": "2604.17866",
+      "title": "Latent Abstraction for Retrieval-Augmented Generation",
+      "authors": [
+        "Ha Lan N. T",
+        "Minh-Anh Nguyen",
+        "Dung D. Le"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) has become a standard approach for enhancing large language models (LLMs) with external knowledge, mitigating hallucinations, and improving factuality. However, existing systems rely on generating natural language queries at each hop and maintaining a strict architectural separation between retriever and generator, preventing them from leveraging the full representational capacity of the LLM. We propose \\textbf{LAnR} (Latent Abstraction for RAG), a unified framework in which a single LLM jointly performs encoding, retrieval, and generation entirely within its own latent space. Rather than generating textual queries, LAnR produces dense retrieval vectors from the hidden states of a designated \\texttt{[PRED]} token and uses them to match against encoded document representations from the same model. Furthermore, LAnR adaptively decides when sufficient evidence has been retrieved using a lightweight MLP control head over those same hidden states, eliminating both the separate retriever and explicit token-level stopping reasoning. This design is motivated by our empirical observation that answer token entropy reliably signals retrieval sufficiency. Extensive experiments on six QA benchmarks spanning single-hop and multi-hop settings demonstrate that LAnR outperforms existing RAG methods, while achieving improved inference efficiency through reduced number of retrieval calls and tighter model integration.",
+      "url": "https://arxiv.org/abs/2604.17866",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8864
+    },
+    {
+      "id": "2604.18240",
+      "title": "AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation",
+      "authors": [
+        "Wentao Shi",
+        "Yu Wang",
+        "Yuyang Zhao",
+        "Yuxin Chen",
+        "Fuli Feng",
+        "Xueyuan Hao",
+        "Xi Su",
+        "Qi Gu",
+        "Hui Su",
+        "Xunliang Cai",
+        "Xiangnan He"
+      ],
+      "abstract": "As reinforcement learning continues to scale the training of large language model-based agents, reliably verifying agent behaviors in complex environments has become increasingly challenging. Existing approaches rely on rule-based verifiers or LLM-as-a-Judge models, which struggle to generalize beyond narrow domains. Agent-as-a-Judge addresses this limitation by actively interacting with environments and tools to acquire verifiable evidence, yet its capabilities remain underexplored.\n  We introduce a benchmark AJ-Bench to systematically evaluate Agent-as-a-Judge across three domains-search, data systems, and graphical user interfaces-comprising 155 tasks and 516 annotated trajectories. The benchmark comprehensively assesses judge agents' abilities in information acquisition, state verification, and process verification. Experiments demonstrate consistent performance gains over LLM-as-a-Judge baselines, while also revealing substantial open challenges in agent-based verification. Our data and code are available at https://aj-bench.github.io/.",
+      "url": "https://arxiv.org/abs/2604.18240",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.886
+    },
+    {
+      "id": "2604.17761",
+      "title": "Contrastive Attribution in the Wild: An Interpretability Analysis of LLM Failures on Realistic Benchmarks",
+      "authors": [
+        "Rongyuan Tan",
+        "Jue Zhang",
+        "Zhuozhao Li",
+        "Qingwei Lin",
+        "Saravan Rajmohan",
+        "Dongmei Zhang"
+      ],
+      "abstract": "Interpretability tools are increasingly used to analyze failures of Large Language Models (LLMs), yet prior work largely focuses on short prompts or toy settings, leaving their behavior on commonly used benchmarks underexplored. To address this gap, we study contrastive, LRP-based attribution as a practical tool for analyzing LLM failures in realistic settings. We formulate failure analysis as \\textit{contrastive attribution}, attributing the logit difference between an incorrect output token and a correct alternative to input tokens and internal model states, and introduce an efficient extension that enables construction of cross-layer attribution graphs for long-context inputs. Using this framework, we conduct a systematic empirical study across benchmarks, comparing attribution patterns across datasets, model sizes, and training checkpoints. Our results show that this token-level contrastive attribution can yield informative signals in some failure cases, but is not universally applicable, highlighting both its utility and its limitations for realistic LLM failure analysis. Our code is available at: https://aka.ms/Debug-XAI.",
+      "url": "https://arxiv.org/abs/2604.17761",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8859
+    },
+    {
+      "id": "2604.18543",
+      "title": "ClawEnvKit: Automatic Environment Generation for Claw-Like Agents",
+      "authors": [
+        "Xirui Li",
+        "Ming Li",
+        "Derry Xu",
+        "Wei-Lin Chiang",
+        "Ion Stoica",
+        "Cho-Jui Hsieh",
+        "Tianyi Zhou"
+      ],
+      "abstract": "Constructing environments for training and evaluating claw-like agents remains a manual, human-intensive process that does not scale. We argue that what is needed is not just a dataset, but an automated pipeline capable of generating diverse, verified environments on demand. To this end, we introduce ClawEnvKit, an autonomous generation pipeline that instantiates this formalism from natural language descriptions. The pipeline comprises three modules: (1) a parser that extracts structured generation parameters from natural language input; (2) a generator that produces the task specification, tool interface, and scoring configuration; and (3) a validator that enforces feasibility, diversity, structural validity, and internal consistency across the generated environments. Using ClawEnvKit, we construct Auto-ClawEval, the first large-scale benchmark for claw-like agents, comprising 1,040 environments across 24 categories. Empirically, Auto-ClawEval matches or exceeds human-curated environments on coherence and clarity at 13,800x lower cost. Evaluated across 4 model families and 8 agent harness frameworks, we find that harness engineering boosts performance by up to 15.7 percentage points over a bare ReAct baseline, completion remains the primary axis of variation with no model saturating the benchmark, and automated generation enables evaluation at a scale previously infeasible. Beyond static benchmarking, ClawEnvKit enables live evaluation: users describe a desired capability in natural language and obtain a verified environment on demand, turning evaluation into a continuous, user-driven process. The same mechanism serves as an on-demand training environment generator, producing task distributions that adapt to an agent's current weaknesses rather than being bounded by existing user logs.",
+      "url": "https://arxiv.org/abs/2604.18543",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8857
+    },
+    {
+      "id": "2604.17930",
+      "title": "Heterogeneity in Formal Linguistic Competence of Language Models: Is Data the Real Bottleneck?",
+      "authors": [
+        "H S V N S Kowndinya Renduchintala",
+        "Sumit Bhatia"
+      ],
+      "abstract": "Large Language Models (LLMs) exhibit a puzzling disparity in their formal linguistic competence: while they learn some linguistic phenomena with near-perfect mastery, they often perform below chance on others, even after training on trillions of tokens. In this work, we investigate whether these failures stem from inherent architectural limitations or simply the scarcity of these specific grammatical constructions in web-scale corpora. We pre-train simple GPT-2 Small (124M) models on a 100M-token random sample of the FineWeb corpus and intervene by injecting a minimal amount (1%) of synthetic data targeting specific linguistic phenomena. We find that this targeted intervention substantially improves model performance in 8 out of the 9 worst-performing BLiMP paradigms - notably the accuracy on a specific paradigm, only_npi_scope, surges from 20.9% to 69.4%. Furthermore, we observe that these interventions generally preserve or slightly improve aggregate performance. However, while we also identify a resistant phenomenon, principle_A_c_command, whose performance remains below chance even after our data augmentation, our findings do serve as an optimistic existence proof that even small language models can substantially improve on those linguistic phenomena on which models typically perform poorly, provided the pre-training data contains sufficient exposure to them. This suggests that efforts towards human-scale language modeling may benefit greatly by focusing on data composition. The code to reproduce our results is open-sourced at https://github.com/kowndinya-renduchintala/heterogeneity-in-formal-linguistic-competence.",
+      "url": "https://arxiv.org/abs/2604.17930",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-20",
+      "github_url": "https://github.com/kowndinya-renduchintala/heterogeneity-in-formal-linguistic-competence.",
+      "score": 0.8854
+    },
+    {
+      "id": "2604.18349",
+      "title": "HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents",
+      "authors": [
+        "Shuqi Cao",
+        "Jingyi He",
+        "Fei Tan"
+      ],
+      "abstract": "Long-term conversational large language model (LLM) agents require memory systems that can recover relevant evidence from historical interactions without overwhelming the answer stage with irrelevant context. However, existing memory systems, including hierarchical ones, still often rely solely on vector similarity for retrieval. It tends to produce bloated evidence sets: adding many superficially similar dialogue turns yields little additional recall, but lowers retrieval precision, increases answer-stage context cost, and makes retrieved memories harder to inspect and manage. To address this, we propose HiGMem (Hierarchical and LLM-Guided Memory System), a two-level event-turn memory system that allows LLMs to use event summaries as semantic anchors to predict which related turns are worth reading. This allows the model to inspect high-level event summaries first and then focus on a smaller set of potentially useful turns, providing a concise and reliable evidence set through reasoning, while avoiding the retrieval overhead that would be excessively high compared to vector retrieval. On the LoCoMo10 benchmark, HiGMem achieves the best F1 on four of five question categories and improves adversarial F1 from 0.54 to 0.78 over A-Mem, while retrieving an order of magnitude fewer turns. Code is publicly available at https://github.com/ZeroLoss-Lab/HiGMem.",
+      "url": "https://arxiv.org/abs/2604.18349",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "github_url": "https://github.com/ZeroLoss-Lab/HiGMem.",
+      "score": 0.8853
+    },
+    {
+      "id": "2604.18224",
+      "title": "WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models",
+      "authors": [
+        "Xinping Lei",
+        "Xinyu Che",
+        "Junqi Xiong",
+        "Chenchen Zhang",
+        "Yukai Huang",
+        "Chenyu Zhou",
+        "Haoyang Huang",
+        "Minghao Liu",
+        "Letian Zhu",
+        "Hongyi Ye",
+        "Jinhua Hao",
+        "Ken Deng",
+        "Zizheng Zhan",
+        "Han Li",
+        "Dailin Li",
+        "Yifan Yao",
+        "Ming Sun",
+        "Zhaoxiang Zhang",
+        "Jiaheng Liu"
+      ],
+      "abstract": "Large language models are rapidly evolving into interactive coding agents capable of end-to-end web coding, yet existing benchmarks evaluate only narrow slices of this capability, typically text-conditioned generation with static-correctness metrics, leaving visual fidelity, interaction quality, and codebase-level reasoning largely unmeasured. We introduce WebCompass, a multimodal benchmark that provides unified lifecycle evaluation of web engineering capability. Recognizing that real-world web coding is an iterative cycle of generation, editing, and repair, WebCompass spans three input modalities (text, image, video) and three task types (generation, editing, repair), yielding seven task categories that mirror professional workflows. Through a multi-stage, human-in-the-loop pipeline, we curate instances covering 15 generation domains, 16 editing operation types, and 11 repair defect types, each annotated at Easy/Medium/Hard levels. For evaluation, we adopt a checklist-guided LLM-as-a-Judge protocol for editing and repair, and propose a novel Agent-as-a-Judge paradigm for generation that autonomously executes generated websites in a real browser, explores interactive behaviors via the Model Context Protocol (MCP), and iteratively synthesizes targeted test cases, closely approximating human acceptance testing. We evaluate representative closed-source and open-source models and observe that: (1) closed-source models remain substantially stronger and more balanced; (2) editing and repair exhibit distinct difficulty profiles, with repair preserving interactivity better but remaining execution-challenging; (3) aesthetics is the most persistent bottleneck, especially for open-source models; and (4) framework choice materially affects outcomes, with Vue consistently challenging while React and Vanilla/HTML perform more strongly depending on task type.",
+      "url": "https://arxiv.org/abs/2604.18224",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8849
+    },
+    {
+      "id": "2604.17957",
+      "title": "Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards",
+      "authors": [
+        "Raffaele Pisano",
+        "Roberto Navigli"
+      ],
+      "abstract": "Process Reward Models (PRMs) have emerged as a powerful tool for providing step-level feedback when evaluating the reasoning of Large Language Models (LLMs), which frequently produce chains of thought (CoTs) containing errors even when the final answer is correct. However, existing PRM datasets remain expensive to construct, prone to annotation errors, and predominantly limited to the mathematical domain. This work introduces a novel and scalable approach to PRM dataset generation based on planning logical problems expressed in the Planning Domain Definition Language (PDDL). Using this method, we generate a corpus of approximately one million reasoning steps across various PDDL domains and use it to train PRMs. Experimental results show that augmenting widely-used PRM training datasets with PDDL-derived data yields substantial improvements in both mathematical and non-mathematical reasoning, as demonstrated across multiple benchmarks. These findings indicate that planning problems constitute a scalable and effective resource for generating robust, precise, and fine-grained training data for PRMs, going beyond the classical mathematical sources that dominate this field.",
+      "url": "https://arxiv.org/abs/2604.17957",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8847
+    },
+    {
+      "id": "2604.18509",
+      "title": "MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation",
+      "authors": [
+        "Xingchen Xiao",
+        "Heyan Huang",
+        "Runheng Liu",
+        "Jincheng Xie"
+      ],
+      "abstract": "Large language models (LLMs) are widely used in retrieval-augmented generation (RAG) to incorporate external knowledge at inference time. However, when retrieved contexts are noisy, incomplete, or heterogeneous, a single generation process often struggles to reconcile evidence effectively. We propose \\textbf{MASS-RAG}, a multi-agent synthesis approach to retrieval-augmented generation that structures evidence processing into multiple role-specialized agents. MASS-RAG applies distinct agents for evidence summarization, evidence extraction, and reasoning over retrieved documents, and combines their outputs through a dedicated synthesis stage to produce the final answer. This design exposes multiple intermediate evidence views, allowing the model to compare and integrate complementary information before answer generation. Experiments on four benchmarks show that MASS-RAG consistently improves performance over strong RAG baselines, particularly in settings where relevant evidence is distributed across retrieved contexts.",
+      "url": "https://arxiv.org/abs/2604.18509",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8845
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
