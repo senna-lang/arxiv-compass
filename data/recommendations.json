@@ -1,46 +1,46 @@
 {
-  "generated_at": "2026-04-20T12:58:44.586497+09:00",
+  "generated_at": "2026-04-27T13:08:08.063957+09:00",
   "top_clusters": [
     {
       "label": "agentic & query & agent",
-      "score": 0.9432
+      "score": 0.9443
     },
     {
       "label": "reasoning & difficulty & language",
-      "score": 0.9397
+      "score": 0.941
     },
     {
       "label": "answering & query & retrieval",
-      "score": 0.9385
+      "score": 0.9394
     }
   ],
   "recommendations": [
-    {
-      "id": "2602.21628",
-      "title": "RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning",
-      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as a prevailing paradigm for enhancing reasoning in Multimodal Large Language Models (MLLMs). However, relying solely on outcome supervision risks reward hacking, where models learn spurious reasoning patterns to satisfy final answer checks. While recent rubric-based approaches offer fine-grained supervision signals, they suffer from high computational costs of instance-level generation and inefficient training dynamics caused by treating all rubrics as equally learnable. In this paper, we propose Stratified Rubric-based Curriculum Learning (RuCL), a novel framework that reformulates curriculum learning by shifting the focus from data selection to reward design. RuCL generates generalized rubrics for broad applicability and stratifies them based on the model's competence. By dynamically adjusting rubric weights during training, RuCL guides the model from mastering foundational perception to tackling advanced logical reasoning. Extensive experiments on various visual reasoning benchmarks show that RuCL yields a remarkable +7.83% average improvement over the Qwen2.5-VL-7B model, achieving a state-of-the-art accuracy of 60.06%.",
-      "url": "https://arxiv.org/abs/2602.21628",
-      "match_score": 0.9156,
-      "centroid_score": 0.9725,
-      "matched_cluster": "reasoning & difficulty & language",
-      "submitted": "2026-02-25"
-    },
     {
       "id": "2603.08274",
       "title": "How Much Do LLMs Hallucinate in Document Q&A Scenarios? A 172-Billion-Token Study Across Temperatures, Context Lengths, and Hardware Platforms",
       "abstract": "How much do large language models actually hallucinate when answering questions grounded in provided documents? Despite the critical importance of this question for enterprise AI deployments, reliable measurement has been hampered by benchmarks that rely on static datasets vulnerable to contamination, LLM-based judges with documented biases, or evaluation scales too small for statistical confidence. We address this gap using RIKER, a ground-truth-first evaluation methodology that enables deterministic scoring without human annotation. Across 35 open-weight models, three context lengths (32K, 128K, and 200K tokens), four temperature settings, and three hardware platforms (NVIDIA H200, AMD MI300X, and Intel Gaudi 3), we conducted over 172 billion tokens of evaluation - an order of magnitude beyond prior work. Our findings reveal that: (1) even the best-performing models fabricate answers at a non-trivial rate - 1.19% at best at 32K, with top-tier models at 5 - 7% - and fabrication rises steeply with context length, nearly tripling at 128K and exceeding 10% for all models at 200K; (2) model selection dominates all other factors, with overall accuracy spanning a 72-percentage-point range and model family predicting fabrication resistance better than model size; (3) temperature effects are nuanced - T=0.0 yields the best overall accuracy in roughly 60% of cases, but higher temperatures reduce fabrication for the majority of models and dramatically reduce coherence loss (infinite generation loops), which can reach 48x higher rates at T=0.0 versus T=1.0; (4) grounding ability and fabrication resistance are distinct capabilities - models that excel at finding facts may still fabricate facts that do not exist; and (5) results are consistent across hardware platforms, confirming that deployment decisions need not be hardware-dependent.",
       "url": "https://arxiv.org/abs/2603.08274",
-      "match_score": 0.9154,
+      "match_score": 0.917,
       "centroid_score": 0.967,
       "matched_cluster": "answering & query & retrieval",
       "submitted": "2026-03-09"
+    },
+    {
+      "id": "2602.21628",
+      "title": "RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has emerged as a prevailing paradigm for enhancing reasoning in Multimodal Large Language Models (MLLMs). However, relying solely on outcome supervision risks reward hacking, where models learn spurious reasoning patterns to satisfy final answer checks. While recent rubric-based approaches offer fine-grained supervision signals, they suffer from high computational costs of instance-level generation and inefficient training dynamics caused by treating all rubrics as equally learnable. In this paper, we propose Stratified Rubric-based Curriculum Learning (RuCL), a novel framework that reformulates curriculum learning by shifting the focus from data selection to reward design. RuCL generates generalized rubrics for broad applicability and stratifies them based on the model's competence. By dynamically adjusting rubric weights during training, RuCL guides the model from mastering foundational perception to tackling advanced logical reasoning. Extensive experiments on various visual reasoning benchmarks show that RuCL yields a remarkable +7.83% average improvement over the Qwen2.5-VL-7B model, achieving a state-of-the-art accuracy of 60.06%.",
+      "url": "https://arxiv.org/abs/2602.21628",
+      "match_score": 0.9165,
+      "centroid_score": 0.9725,
+      "matched_cluster": "reasoning & difficulty & language",
+      "submitted": "2026-02-25"
     },
     {
       "id": "2603.08999",
       "title": "Learning When to Sample: Confidence-Aware Self-Consistency for Efficient LLM Chain-of-Thought Reasoning",
       "abstract": "Large language models (LLMs) achieve strong reasoning performance through chain-of-thought (CoT) reasoning, yet often generate unnecessarily long reasoning paths that incur high inference cost. Recent self-consistency-based approaches further improve accuracy but require sampling and aggregating multiple reasoning trajectories, leading to substantial additional computational overhead. This paper introduces a confidence-aware decision framework that analyzes a single completed reasoning trajectory to adaptively select between single-path and multi-path reasoning. The framework is trained using sentence-level numeric and linguistic features extracted from intermediate reasoning states in the MedQA dataset and generalizes effectively to MathQA, MedMCQA, and MMLU without additional fine-tuning. Experimental results show that the proposed method maintains accuracy comparable to multi-path baselines while using up to 80\\% fewer tokens. These findings demonstrate that reasoning trajectories contain rich signals for uncertainty estimation, enabling a simple, transferable mechanism to balance accuracy and efficiency in LLM reasoning.",
       "url": "https://arxiv.org/abs/2603.08999",
-      "match_score": 0.9142,
+      "match_score": 0.9153,
       "centroid_score": 0.9689,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-03-09"
@@ -50,87 +50,77 @@
       "title": "MoLoRA: Composable Specialization via Per-Token Adapter Routing",
       "abstract": "Multi-adapter serving systems route entire sequences to a single adapter, forcing a choice when requests span multiple domains. This assumption fails in two important settings: (1) multimodal generation, where text and image tokens require different adapters within the same sequence, and (2) mixed-capability requests like \"write code to solve this equation,\" which need expertise from multiple specialized adapters. We introduce per-token routing, which routes individual tokens to adapters based on either vocabulary structure (for multimodal models) or learned gating (for semantic specialization). Per-token routing is provably optimal, achieving work N for N tokens versus K \\cdot N for per-sequence routing with K adapter types. Our key contribution is MoLoRA (Mixture of LoRA), which enables composable specialization: load multiple domain-specific adapters and let a learned router select the appropriate adapter per-token. We demonstrate that specialization dramatically beats scale: MoLoRA enables Qwen3-1.7B to exceed Qwen3-8B across four reasoning benchmarks while being 4.7x smaller. This enables modular expertise at inference time: train focused LoRAs independently, combine them without retraining, and add new capabilities by simply loading new adapters.",
       "url": "https://arxiv.org/abs/2603.15965",
-      "match_score": 0.9139,
+      "match_score": 0.915,
       "centroid_score": 0.9615,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-03-16"
-    },
-    {
-      "id": "2603.19310",
-      "title": "MemReward: Graph-Based Experience Memory for LLM Reward Prediction with Limited Labels",
-      "abstract": "Recent advances in large language models (LLMs) have been driven by reinforcement-learning-based post-training, which requires multiple rollouts with rewards. However, obtaining ground truth labels for the calculation of rewards on a scale often requires expensive human labeling or time-consuming verification procedures. For instance, evaluating mathematical proofs demands expert review, and open-ended question answering lacks definitive ground truth. When ground truth labels are scarce, the effectiveness of reinforcement learning fine-tuning can be constrained. We introduce MemReward, a graph-based experience memory framework: an initial LLM policy generates rollouts for each query, each comprising a thinking process and a final answer, and these rollouts are stored as experience memory. Queries, thinking processes, and answers form nodes in a heterogeneous graph with similarity and structural edges; a GNN trained on labeled rollouts propagates rewards to unlabeled rollouts during online optimization. Experiments on Qwen2.5-3B and 1.5B in mathematics, question answering, and code generation demonstrate that MemReward, with only 20% labels, achieves 97.3% of Oracle performance on 3B and 96.6% on 1.5B, surpassing Oracle in out-of-domain tasks. Performance scales smoothly with label budget, reaching 99.4% of Oracle at 70% labels.",
-      "url": "https://arxiv.org/abs/2603.19310",
-      "match_score": 0.9132,
-      "centroid_score": 0.9757,
-      "matched_cluster": "reasoning & difficulty & language",
-      "submitted": "2026-03-13"
     },
     {
       "id": "2603.17872",
       "title": "Mitigating LLM Hallucinations through Domain-Grounded Tiered Retrieval",
       "abstract": "Large Language Models (LLMs) have achieved unprecedented fluency but remain susceptible to \"hallucinations\" - the generation of factually incorrect or ungrounded content. This limitation is particularly critical in high-stakes domains where reliability is paramount. We propose a domain-grounded tiered retrieval and verification architecture designed to systematically intercept factual inaccuracies by shifting LLMs from stochastic pattern-matchers to verified truth-seekers. The proposed framework utilizes a four-phase, self-regulating pipeline implemented via LangGraph: (I) Intrinsic Verification with Early-Exit logic to optimize compute, (II) Adaptive Search Routing utilizing a Domain Detector to target subject-specific archives, (III) Refined Context Filtering (RCF) to eliminate non-essential or distracting information, and (IV) Extrinsic Regeneration followed by atomic claim-level verification. The system was evaluated across 650 queries from five diverse benchmarks: TimeQA v2, FreshQA v2, HaluEval General, MMLU Global Facts, and TruthfulQA. Empirical results demonstrate that the pipeline consistently outperforms zero-shot baselines across all environments. Win rates peaked at 83.7% in TimeQA v2 and 78.0% in MMLU Global Facts, confirming high efficacy in domains requiring granular temporal and numerical precision. Groundedness scores remained robustly stable between 78.8% and 86.4% across factual-answer rows. While the architecture provides a robust fail-safe for misinformation, a persistent failure mode of \"False-Premise Overclaiming\" was identified. These findings provide a detailed empirical characterization of multi-stage RAG behavior and suggest that future work should prioritize pre-retrieval \"answerability\" nodes to further bridge the reliability gap in conversational AI.",
       "url": "https://arxiv.org/abs/2603.17872",
-      "match_score": 0.9132,
+      "match_score": 0.9149,
       "centroid_score": 0.9675,
       "matched_cluster": "answering & query & retrieval",
       "submitted": "2026-03-18"
-    },
-    {
-      "id": "2603.22293",
-      "title": "TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs",
-      "abstract": "Search-augmented large language models (LLMs) trained with reinforcement learning (RL) have achieved strong results on open-domain question answering (QA), but training still remains a significant challenge. The optimization is often unstable due to sparse rewards and difficult credit assignments across reasoning and tool calls. To address this, we introduce Turn-Level Information Potential Reward Shaping (TIPS), a simple framework that assigns dense, turn-level rewards to each reasoning + tool-call segment based on the increased likelihood of the correct answer under a teacher model. By leveraging the potential-based reward shaping, TIPS offers fine-grained and policy-invariant guidance that overcomes the limitations of outcome-only optimization. Evaluated on seven QA benchmarks, TIPS consistently outperforms GRPO/PPO baselines and substantially improves training stability. For instance, with a Qwen-2.5 7B Instruct model, TIPS improves the average Exact Match score by 11.8% and F1 by 13.6% relative to PPO. Our results demonstrate that turn-level information-potential reward shaping provides an effective and general solution to sparse-reward credit assignment for multi-turn LLM reasoning.",
-      "url": "https://arxiv.org/abs/2603.22293",
-      "match_score": 0.9127,
-      "centroid_score": 0.9681,
-      "matched_cluster": "reasoning & difficulty & language",
-      "submitted": "2026-03-11"
     },
     {
       "id": "2603.13644",
       "title": "StatePlane: A Cognitive State Plane for Long-Horizon AI Systems Under Bounded Context",
       "abstract": "Large language models (LLMs) and small language models (SLMs) operate under strict context window and key-value (KV) cache constraints, fundamentally limiting their ability to reason coherently over long interaction horizons. Existing approaches -- extended context windows, retrieval-augmented generation, summarization, or static documentation -- treat memory as static storage and fail to preserve decision-relevant state under long-running, multi-session tasks. We introduce StatePlane, a model-agnostic cognitive state plane that governs the formation, evolution, retrieval, and decay of episodic, semantic, and procedural state for AI systems operating under bounded context. Grounded in cognitive psychology and systems design, StatePlane formalizes episodic segmentation, selective encoding via information-theoretic constraints, goal-conditioned retrieval with intent routing, reconstructive state synthesis, and adaptive forgetting. We present a formal state model, KV-aware algorithms, security and governance mechanisms including write-path anti-poisoning, enterprise integration pathways, and an evaluation framework with six domain-specific benchmarks. StatePlane demonstrates that long-horizon intelligence can be achieved without expanding context windows or retraining models.",
       "url": "https://arxiv.org/abs/2603.13644",
-      "match_score": 0.9125,
+      "match_score": 0.9142,
       "centroid_score": 0.9626,
       "matched_cluster": "agentic & query & agent",
       "submitted": "2026-03-13"
     },
     {
-      "id": "2603.02146",
-      "title": "LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards",
-      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has significantly advanced the reasoning capabilities of Large Language Models (LLMs) by optimizing them against factual outcomes. However, this paradigm falters in long-context scenarios, as its reliance on internal parametric knowledge is ill-suited for tasks requiring contextual grounding--the ability to find and reason over externally provided information. We identify a key reason for this failure: a reward based solely on the final answer is too sparse to effectively guide the model for identifying relevant evidence. We formally prove that the outcome-only reward leads to significant vanishing gradients for the context grounding process, rendering learning intractable. To overcome this bottleneck, we introduce LongRLVR to augment the sparse answer reward with a dense and verifiable context reward. This auxiliary signal directly incentivizes the model for selecting the correct grounding information, providing a robust learning gradient that solves the underlying optimization challenge. We validate our method on challenging long-context benchmarks using Qwen and LLaMA models. LongRLVR consistently and significantly outperforms the standard RLVR across all models and benchmarks, e.g., boosting a 14B model's scores on RULER-QA from 73.17 to 88.90 and on LongBench v2 from 39.8 to 46.5. Our work demonstrates that explicitly rewarding the grounding process is a critical and effective strategy for unlocking the full reasoning potential of LLMs in long-context applications. Our code is available at https://github.com/real-absolute-AI/LongRLVR.",
-      "url": "https://arxiv.org/abs/2603.02146",
-      "match_score": 0.9125,
-      "centroid_score": 0.9733,
+      "id": "2603.19310",
+      "title": "MemReward: Graph-Based Experience Memory for LLM Reward Prediction with Limited Labels",
+      "abstract": "Recent advances in large language models (LLMs) have been driven by reinforcement-learning-based post-training, which requires multiple rollouts with rewards. However, obtaining ground truth labels for the calculation of rewards on a scale often requires expensive human labeling or time-consuming verification procedures. For instance, evaluating mathematical proofs demands expert review, and open-ended question answering lacks definitive ground truth. When ground truth labels are scarce, the effectiveness of reinforcement learning fine-tuning can be constrained. We introduce MemReward, a graph-based experience memory framework: an initial LLM policy generates rollouts for each query, each comprising a thinking process and a final answer, and these rollouts are stored as experience memory. Queries, thinking processes, and answers form nodes in a heterogeneous graph with similarity and structural edges; a GNN trained on labeled rollouts propagates rewards to unlabeled rollouts during online optimization. Experiments on Qwen2.5-3B and 1.5B in mathematics, question answering, and code generation demonstrate that MemReward, with only 20% labels, achieves 97.3% of Oracle performance on 3B and 96.6% on 1.5B, surpassing Oracle in out-of-domain tasks. Performance scales smoothly with label budget, reaching 99.4% of Oracle at 70% labels.",
+      "url": "https://arxiv.org/abs/2603.19310",
+      "match_score": 0.9142,
+      "centroid_score": 0.9757,
       "matched_cluster": "reasoning & difficulty & language",
-      "submitted": "2026-03-02"
+      "submitted": "2026-03-13"
     },
     {
-      "id": "2603.08877",
-      "title": "Quantifying the Accuracy and Cost Impact of Design Decisions in Budget-Constrained Agentic LLM Search",
-      "abstract": "Agentic Retrieval-Augmented Generation (RAG) systems combine iterative search, planning prompts, and retrieval backends, but deployed settings impose explicit budgets on tool calls and completion tokens. We present a controlled measurement study of how search depth, retrieval strategy, and completion budget affect accuracy and cost under fixed constraints. Using Budget-Constrained Agentic Search (BCAS), a model-agnostic evaluation harness that surfaces remaining budget and gates tool use, we run comparisons across six LLMs and three question-answering benchmarks. Across models and datasets, accuracy improves with additional searches up to a small cap, hybrid lexical and dense retrieval with lightweight re-ranking produces the largest average gains in our ablation grid, and larger completion budgets are most helpful on HotpotQA-style synthesis. These results provide practical guidance for configuring budgeted agentic retrieval pipelines and are accompanied by reproducible prompts and evaluation settings.",
-      "url": "https://arxiv.org/abs/2603.08877",
-      "match_score": 0.9124,
-      "centroid_score": 0.9525,
-      "matched_cluster": "answering & query & retrieval",
-      "submitted": "2026-03-09"
+      "id": "2603.22293",
+      "title": "TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs",
+      "abstract": "Search-augmented large language models (LLMs) trained with reinforcement learning (RL) have achieved strong results on open-domain question answering (QA), but training still remains a significant challenge. The optimization is often unstable due to sparse rewards and difficult credit assignments across reasoning and tool calls. To address this, we introduce Turn-Level Information Potential Reward Shaping (TIPS), a simple framework that assigns dense, turn-level rewards to each reasoning + tool-call segment based on the increased likelihood of the correct answer under a teacher model. By leveraging the potential-based reward shaping, TIPS offers fine-grained and policy-invariant guidance that overcomes the limitations of outcome-only optimization. Evaluated on seven QA benchmarks, TIPS consistently outperforms GRPO/PPO baselines and substantially improves training stability. For instance, with a Qwen-2.5 7B Instruct model, TIPS improves the average Exact Match score by 11.8% and F1 by 13.6% relative to PPO. Our results demonstrate that turn-level information-potential reward shaping provides an effective and general solution to sparse-reward credit assignment for multi-turn LLM reasoning.",
+      "url": "https://arxiv.org/abs/2603.22293",
+      "match_score": 0.9141,
+      "centroid_score": 0.9681,
+      "matched_cluster": "reasoning & difficulty & language",
+      "submitted": "2026-03-11"
     },
     {
       "id": "2603.22754",
       "title": "PRISM: A Dual View of LLM Reasoning through Semantic Flow and Latent Computation",
       "abstract": "Large language models (LLMs) solve complex problems by generating multi-step reasoning traces. Yet these traces are typically analyzed from only one of two perspectives: the sequence of tokens across different reasoning steps in the generated text, or the hidden-state vectors across model layers within one step. We introduce PRISM (Probabilistic Reasoning Inspection through Semantic and Implicit Modeling), a framework and diagnostic tool for jointly analyzing both levels, providing a unified view of how reasoning evolves across steps and layers. Across multiple reasoning models and benchmarks, PRISM uncovers systematic patterns in the reasoning process, showing that failed trajectories are more likely to become trapped in unproductive verification loops and further diverge into distinct modes such as overthinking and premature commitment, which behave differently once a candidate answer is reached. It further reveals how prompting reshapes reasoning behavior beyond aggregate accuracy by altering both semantic transitions and internal computational patterns. By modeling reasoning trajectories as structured processes, PRISM makes these behaviors observable and analyzable rather than relying solely on final-task accuracy. Taken together, these insights position PRISM as a practical tool for analyzing and diagnosing reasoning processes in LLMs.",
       "url": "https://arxiv.org/abs/2603.22754",
-      "match_score": 0.9123,
+      "match_score": 0.914,
       "centroid_score": 0.9635,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-03-24"
+    },
+    {
+      "id": "2603.02146",
+      "title": "LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has significantly advanced the reasoning capabilities of Large Language Models (LLMs) by optimizing them against factual outcomes. However, this paradigm falters in long-context scenarios, as its reliance on internal parametric knowledge is ill-suited for tasks requiring contextual grounding--the ability to find and reason over externally provided information. We identify a key reason for this failure: a reward based solely on the final answer is too sparse to effectively guide the model for identifying relevant evidence. We formally prove that the outcome-only reward leads to significant vanishing gradients for the context grounding process, rendering learning intractable. To overcome this bottleneck, we introduce LongRLVR to augment the sparse answer reward with a dense and verifiable context reward. This auxiliary signal directly incentivizes the model for selecting the correct grounding information, providing a robust learning gradient that solves the underlying optimization challenge. We validate our method on challenging long-context benchmarks using Qwen and LLaMA models. LongRLVR consistently and significantly outperforms the standard RLVR across all models and benchmarks, e.g., boosting a 14B model's scores on RULER-QA from 73.17 to 88.90 and on LongBench v2 from 39.8 to 46.5. Our work demonstrates that explicitly rewarding the grounding process is a critical and effective strategy for unlocking the full reasoning potential of LLMs in long-context applications. Our code is available at https://github.com/real-absolute-AI/LongRLVR.",
+      "url": "https://arxiv.org/abs/2603.02146",
+      "match_score": 0.9138,
+      "centroid_score": 0.9733,
+      "matched_cluster": "reasoning & difficulty & language",
+      "submitted": "2026-03-02"
     },
     {
       "id": "2603.17449",
       "title": "TRiMS: Real-Time Tracking of Minimal Sufficient Length for Efficient Reasoning via RL",
       "abstract": "Large language models achieve breakthroughs in complex reasoning via long chain-of-thought sequences. However, this often leads to severe reasoning inflation, causing substantial computational redundancy. To maximize Intelligence per Token, we introduce a theoretical metric, MSL-Minimal Sufficient Length. MSL rigorously characterizes the shortest reasoning length that preserves answer correctness. We provide a recursive definition based on independently sampled sequences and prove the existence of its limit, establishing the first measurable lower bound for reasoning-chain compression. Building on an analysis of mainstream CoT compression strategies, we identify key structural factors enabling a model to approach MSL. Based on these insights, we propose TRiMS which employs the GRPO algorithm in conjunction with MSL-based estimation during training, while mitigating instabilities during the training process through dynamic batch aggregation and advantage computation using batch-level standard deviation. TRiMS achieves over 80% CoT token reduction with a minor accuracy boost across all benchmarks.",
       "url": "https://arxiv.org/abs/2603.17449",
-      "match_score": 0.9121,
+      "match_score": 0.9134,
       "centroid_score": 0.9675,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-03-18"
@@ -140,27 +130,27 @@
       "title": "CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents",
       "abstract": "Large language model agents heavily rely on external memory to support knowledge reuse and complex reasoning tasks. Yet most memory systems store experiences in a single global retrieval pool which can gradually dilute or corrupt stored knowledge. This problem is especially pronounced for small language models (SLMs), which are highly vulnerable to irrelevant context. We introduce CLAG, a CLustering-based AGentic memory framework where an SLM agent actively organizes memory by clustering. CLAG employs an SLM-driven router to assign incoming memories to semantically coherent clusters and autonomously generates cluster-specific profiles, including topic summaries and descriptive tags, to establish each cluster as a self-contained functional unit. By performing localized evolution within these structured neighborhoods, CLAG effectively reduces cross-topic interference and enhances internal memory density. During retrieval, the framework utilizes a two-stage process that first filters relevant clusters via their profiles, thereby excluding distractors and reducing the search space. Experiments on multiple QA datasets with three SLM backbones show that CLAG consistently improves answer quality and robustness over prior memory systems for agents, remaining lightweight and efficient.",
       "url": "https://arxiv.org/abs/2603.15421",
-      "match_score": 0.9119,
+      "match_score": 0.9131,
       "centroid_score": 0.9604,
       "matched_cluster": "agentic & query & agent",
       "submitted": "2026-03-16"
     },
     {
-      "id": "2603.13853",
-      "title": "APEX-Searcher: Augmenting LLMs' Search Capabilities through Agentic Planning and Execution",
-      "abstract": "Retrieval-augmented generation (RAG), based on large language models (LLMs), serves as a vital approach to retrieving and leveraging external knowledge in various domain applications. When confronted with complex multi-hop questions, single-round retrieval is often insufficient for accurate reasoning and problem solving. To enhance search capabilities for complex tasks, most existing works integrate multi-round iterative retrieval with reasoning processes via end-to-end training. While these approaches significantly improve problem-solving performance, they are still faced with challenges in task reasoning and model training, especially ambiguous retrieval execution paths and sparse rewards in end-to-end reinforcement learning (RL) process, leading to inaccurate retrieval results and performance degradation. To address these issues, in this paper, we proposes APEX-Searcher, a novel Agentic Planning and Execution framework to augment LLM search capabilities. Specifically, we introduce a two-stage agentic framework that decouples the retrieval process into planning and execution: It first employs RL with decomposition-specific rewards to optimize strategic planning; Built on the sub-task decomposition, it then applies supervised fine-tuning on high-quality multi-hop trajectories to equip the model with robust iterative sub-task execution capabilities. Extensive experiments demonstrate that our proposed framework achieves significant improvements in both multi-hop RAG and task planning performances across multiple benchmarks.",
-      "url": "https://arxiv.org/abs/2603.13853",
-      "match_score": 0.9117,
-      "centroid_score": 0.9546,
-      "matched_cluster": "agentic & query & agent",
-      "submitted": "2026-03-14"
+      "id": "2603.08877",
+      "title": "Quantifying the Accuracy and Cost Impact of Design Decisions in Budget-Constrained Agentic LLM Search",
+      "abstract": "Agentic Retrieval-Augmented Generation (RAG) systems combine iterative search, planning prompts, and retrieval backends, but deployed settings impose explicit budgets on tool calls and completion tokens. We present a controlled measurement study of how search depth, retrieval strategy, and completion budget affect accuracy and cost under fixed constraints. Using Budget-Constrained Agentic Search (BCAS), a model-agnostic evaluation harness that surfaces remaining budget and gates tool use, we run comparisons across six LLMs and three question-answering benchmarks. Across models and datasets, accuracy improves with additional searches up to a small cap, hybrid lexical and dense retrieval with lightweight re-ranking produces the largest average gains in our ablation grid, and larger completion budgets are most helpful on HotpotQA-style synthesis. These results provide practical guidance for configuring budgeted agentic retrieval pipelines and are accompanied by reproducible prompts and evaluation settings.",
+      "url": "https://arxiv.org/abs/2603.08877",
+      "match_score": 0.913,
+      "centroid_score": 0.9525,
+      "matched_cluster": "answering & query & retrieval",
+      "submitted": "2026-03-09"
     },
     {
       "id": "2603.14761",
       "title": "BrainBench: Exposing the Commonsense Reasoning Gap in Large Language Models",
       "abstract": "Large language models (LLMs) achieve impressive scores on standard benchmarks yet routinely fail questions that any human would answer correctly in seconds. We introduce BrainBench, a benchmark of 100 brainteaser questions spanning 20 carefully designed categories, each targeting a specific commonsense reasoning failure mode in LLMs. Categories range from implicit physical constraints (\"Should I walk or drive my rental car to the return lot?\") to semantic scope tricks and default assumption hijacks. We evaluate eight frontier models -- four from the Claude family and four from the GPT family -- using a zero-shot protocol with 10 independent runs per question. The best model, Claude Opus 4.6 with extended thinking, achieves only 80.3% accuracy; the worst, GPT-4o, scores 39.7%. Even top-performing models exhibit a 6-16 percentage-point gap between accuracy and consistency, revealing stochastic reasoning. Cross-lingual evaluation in Chinese shows most models degrade by 2-8 percentage points, confirming that these failures reflect reasoning deficits rather than language-specific artifacts. BrainBench provides a fine-grained diagnostic tool for identifying where and why LLMs substitute surface heuristics for genuine commonsense reasoning.",
       "url": "https://arxiv.org/abs/2603.14761",
-      "match_score": 0.9117,
+      "match_score": 0.913,
       "centroid_score": 0.9559,
       "matched_cluster": "answering & query & retrieval",
       "submitted": "2026-03-16"
@@ -170,7 +160,7 @@
       "title": "Why Pass@k Optimization Can Degrade Pass@1: Prompt Interference in LLM Post-training",
       "abstract": "Pass@k is a widely used performance metric for verifiable large language model tasks, including mathematical reasoning, code generation, and short-answer reasoning. It defines success if any of $k$ independently sampled solutions passes a verifier. This multi-sample inference metric has motivated inference-aware fine-tuning methods that directly optimize pass@$k$. However, prior work reports a recurring trade-off: pass@k improves while pass@1 degrades under such methods. This trade-off is practically important because pass@1 often remains a hard operational constraint due to latency and cost budgets, imperfect verifier coverage, and the need for a reliable single-shot fallback. We study the origin of this trade-off and provide a theoretical characterization of when pass@k policy optimization can reduce pass@1 through gradient conflict induced by prompt interference. We show that pass@$k$ policy gradients can conflict with pass@1 gradients because pass@$k$ optimization implicitly reweights prompts toward low-success prompts; when these prompts are what we term negatively interfering, their upweighting can rotate the pass@k update direction away from the pass@1 direction. We illustrate our theoretical findings with large language model experiments on verifiable mathematical reasoning tasks.",
       "url": "https://arxiv.org/abs/2602.21189",
-      "match_score": 0.9115,
+      "match_score": 0.9129,
       "centroid_score": 0.9715,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-02-24"
@@ -180,50 +170,60 @@
       "title": "InfoDensity: Rewarding Information-Dense Traces for Efficient Reasoning",
       "abstract": "Large Language Models (LLMs) with extended reasoning capabilities often generate verbose and redundant reasoning traces, incurring unnecessary computational cost. While existing reinforcement learning approaches address this by optimizing final response length, they neglect the quality of intermediate reasoning steps, leaving models vulnerable to reward hacking. We argue that verbosity is not merely a length problem, but a symptom of poor intermediate reasoning quality. To investigate this, we conduct an empirical study tracking the conditional entropy of the answer distribution across reasoning steps. We find that high-quality reasoning traces exhibit two consistent properties: low uncertainty convergence and monotonic progress. These findings suggest that high-quality reasoning traces are informationally dense, that is, each step contributes meaningful entropy reduction relative to the total reasoning length. Motivated by this, we propose InfoDensity, a reward framework for RL training that combines an AUC-based reward and a monotonicity reward as a unified measure of reasoning quality, weighted by a length scaling term that favors achieving equivalent quality more concisely. Experiments on mathematical reasoning benchmarks demonstrate that InfoDensity matches or surpasses state-of-the-art baselines in accuracy while significantly reducing token usage, achieving a strong accuracy-efficiency trade-off.",
       "url": "https://arxiv.org/abs/2603.17310",
-      "match_score": 0.9112,
+      "match_score": 0.9127,
       "centroid_score": 0.9737,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-03-18"
     },
     {
-      "id": "2603.19935",
-      "title": "Memori: A Persistent Memory Layer for Efficient, Context-Aware LLM Agents",
-      "abstract": "As large language models (LLMs) evolve into autonomous agents, persistent memory at the API layer is essential for enabling context-aware behavior across LLMs and multi-session interactions. Existing approaches force vendor lock-in and rely on injecting large volumes of raw conversation into prompts, leading to high token costs and degraded performance.\n  We introduce Memori, an LLM-agnostic persistent memory layer that treats memory as a data structuring problem. Its Advanced Augmentation pipeline converts unstructured dialogue into compact semantic triples and conversation summaries, enabling precise retrieval and coherent reasoning.\n  Evaluated on the LoCoMo benchmark, Memori achieves 81.95% accuracy, outperforming existing memory systems while using only 1,294 tokens per query (~5% of full context). This results in substantial cost reductions, including 67% fewer tokens than competing approaches and over 20x savings compared to full-context methods.\n  These results show that effective memory in LLM agents depends on structured representations instead of larger context windows, enabling scalable and cost-efficient deployment.",
-      "url": "https://arxiv.org/abs/2603.19935",
-      "match_score": 0.9105,
-      "centroid_score": 0.9586,
+      "id": "2603.13853",
+      "title": "APEX-Searcher: Augmenting LLMs' Search Capabilities through Agentic Planning and Execution",
+      "abstract": "Retrieval-augmented generation (RAG), based on large language models (LLMs), serves as a vital approach to retrieving and leveraging external knowledge in various domain applications. When confronted with complex multi-hop questions, single-round retrieval is often insufficient for accurate reasoning and problem solving. To enhance search capabilities for complex tasks, most existing works integrate multi-round iterative retrieval with reasoning processes via end-to-end training. While these approaches significantly improve problem-solving performance, they are still faced with challenges in task reasoning and model training, especially ambiguous retrieval execution paths and sparse rewards in end-to-end reinforcement learning (RL) process, leading to inaccurate retrieval results and performance degradation. To address these issues, in this paper, we proposes APEX-Searcher, a novel Agentic Planning and Execution framework to augment LLM search capabilities. Specifically, we introduce a two-stage agentic framework that decouples the retrieval process into planning and execution: It first employs RL with decomposition-specific rewards to optimize strategic planning; Built on the sub-task decomposition, it then applies supervised fine-tuning on high-quality multi-hop trajectories to equip the model with robust iterative sub-task execution capabilities. Extensive experiments demonstrate that our proposed framework achieves significant improvements in both multi-hop RAG and task planning performances across multiple benchmarks.",
+      "url": "https://arxiv.org/abs/2603.13853",
+      "match_score": 0.9122,
+      "centroid_score": 0.9546,
       "matched_cluster": "agentic & query & agent",
-      "submitted": "2026-03-20"
+      "submitted": "2026-03-14"
     },
     {
-      "id": "2603.17781",
-      "title": "Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory",
-      "abstract": "Large language models increasingly serve as persistent knowledge workers, with in-context memory - facts stored in the prompt - as the default strategy. We benchmark in-context memory against Knowledge Objects (KOs), discrete hash-addressed tuples with O(1) retrieval. Within the context window, Claude Sonnet 4.5 achieves 100% exact-match accuracy from 10 to 7,000 facts (97.5% of its 200K window). However, production deployment reveals three failure modes: capacity limits (prompts overflow at 8,000 facts), compaction loss (summarization destroys 60% of facts), and goal drift (cascading compaction erodes 54% of project constraints while the model continues with full confidence). KOs achieve 100% accuracy across all conditions at 252x lower cost. On multi-hop reasoning, KOs reach 78.9% versus 31.6% for in-context. Cross-model replication across four frontier models confirms compaction loss is architectural, not model-specific. We additionally show that embedding retrieval fails on adversarial facts (20% precision at 1) and that neural memory (Titans) stores facts but fails to retrieve them on demand. We introduce density-adaptive retrieval as a switching mechanism and release the benchmark suite.",
-      "url": "https://arxiv.org/abs/2603.17781",
-      "match_score": 0.9104,
-      "centroid_score": 0.9641,
-      "matched_cluster": "agentic & query & agent",
-      "submitted": "2026-03-18"
+      "id": "2603.13274",
+      "title": "Learning from Partial Chain-of-Thought via Truncated-Reasoning Self-Distillation",
+      "abstract": "Reasoning-oriented language models achieve strong performance by generating long chain-of-thought traces at inference time. However, this capability comes with substantial and often excessive computational cost, which can materialize in redundant or inefficient reasoning. We study this setting and introduce Truncated-Reasoning Self-Distillation (TRSD), a lightweight post-training procedure that encourages models to produce correct predictions from partial reasoning traces. In TRSD, a frozen teacher model first generates a full reasoning trace and evaluates the corresponding answer distribution conditioned on the prompt and the complete reasoning to construct a synthetic training target. A student model with the same architecture is then trained to match the teacher's answer distribution while being conditioned only on a truncated prefix of its reasoning trace. Across multiple reasoning benchmarks and token budgets, we demonstrate that TRSD improves robustness to truncated inference, with far reduced accuracy tradeoffs when applied to a diverse set of reasoning models. Moreover, although never explicitly regularized for shorter generation during training, we also find that TRSD-trained models inherently output shorter reasoning traces without truncation, significantly reducing inference-time costs even without artificial interventions.",
+      "url": "https://arxiv.org/abs/2603.13274",
+      "match_score": 0.9121,
+      "centroid_score": 0.9749,
+      "matched_cluster": "reasoning & difficulty & language",
+      "submitted": "2026-02-27"
     },
     {
       "id": "2603.13289",
       "title": "RelayCaching: Accelerating LLM Collaboration via Decoding KV Cache Reuse",
       "abstract": "The increasing complexity of AI tasks has shifted the paradigm from monolithic models toward multi-agent large language model (LLM) systems. However, these collaborative architectures introduce a critical bottleneck: redundant prefill computation for shared content generated by previous agents, which significantly increases KV cache memory usage and time-to-first-token (TTFT). While various KV cache methods have been proposed to mitigate prefill redundancy, they either fail to maintain accuracy on agent-generated outputs or exhibit low reuse rates due to rigid constraints. We present RelayCaching, a training-free inference method that directly reuses decoding phase KV caches from previous agents in subsequent prefill phases. Our key insight is that KV caches for identical content are highly consistent across phases, while prefix-induced deviations are sparse and localized within a limited range of layers and token positions. By selectively recomputing KV caches at these positions, RelayCaching preserves model accuracy with minimal overhead, yielding a superior accuracy-efficiency trade-off over existing methods. Experiments on diverse collaborative LLM tasks spanning mathematical reasoning, general knowledge, and code generation demonstrate that RelayCaching achieves over 80% KV cache reuse, reduces TTFT by up to $4.7\\times$ compared to the standard pipeline, all with negligible accuracy degradation.",
       "url": "https://arxiv.org/abs/2603.13289",
-      "match_score": 0.9104,
+      "match_score": 0.9121,
       "centroid_score": 0.9585,
       "matched_cluster": "reasoning & difficulty & language",
       "submitted": "2026-02-28"
+    },
+    {
+      "id": "2603.20899",
+      "title": "Mitigating Shortcut Reasoning in Language Models: A Gradient-Aware Training Approach",
+      "abstract": "Large language models exhibit strong reasoning capabilities, yet often rely on shortcuts such as surface pattern matching and answer memorization rather than genuine logical inference. We propose Shortcut-Aware Reasoning Training (SART), a gradient-aware framework that detects and mitigates shortcut-promoting samples via ShortcutScore and gradient surgery. Our method identifies shortcut signals through gradient misalignment with validation objectives and answer-token concentration, and modifies training dynamics accordingly. Experiments on controlled reasoning benchmarks show that SART achieves +16.5% accuracy and +40.2% robustness over the strongest baseline, significantly improving generalization under distribution shifts. Code is available at: https://github.com/fuyanjie/short-cut-aware-data-centric-reasoning.",
+      "url": "https://arxiv.org/abs/2603.20899",
+      "match_score": 0.9116,
+      "centroid_score": 0.9718,
+      "matched_cluster": "reasoning & difficulty & language",
+      "submitted": "2026-03-21"
     }
   ],
   "serendipity_clusters": [
     {
       "label": "solver & reasoning & planning",
-      "score": 0.9384
+      "score": 0.9391
     },
     {
       "label": "agentic & agent & execution",
-      "score": 0.935
+      "score": 0.9355
     },
     {
       "label": "code & software & execution",
@@ -231,24 +231,14 @@
     },
     {
       "label": "mri & imaging & image",
-      "score": 0.8589
+      "score": 0.8591
     },
     {
       "label": "qkd & cryptography & cryptographic",
-      "score": 0.8547
+      "score": 0.8549
     }
   ],
   "serendipity": [
-    {
-      "id": "2603.23129",
-      "title": "Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair",
-      "abstract": "Gödel agent realize recursive self-improvement: an agent inspects its own policy and traces and then modifies that policy in a tested loop. We introduce Polaris, a Gödel agent for compact models that performs policy repair via experience abstraction, turning failures into policy updates through a structured cycle of analysis, strategy formation, abstraction, and minimal code pat ch repair with conservative checks. Unlike response level self correction or parameter tuning, Polaris makes policy level changes with small, auditable patches that persist in the policy and are reused on unseen instances within each benchmark. As part of the loop, the agent engages in meta reasoning: it explains its errors, proposes concrete revisions to its own policy, and then updates the policy. To enable cumulative policy refinement, we introduce experience abstraction, which distills failures into compact, reusable strategies that transfer to unseen instances. On MGSM, DROP, GPQA, and LitBench (covering arithmetic reasoning, compositional inference, graduate-level problem solving, and creative writing evaluation), a 7-billion-parameter model equipped with Polaris achieves consistent gains over the base policy and competitive baselines.",
-      "url": "https://arxiv.org/abs/2603.23129",
-      "match_score": 0.9167,
-      "centroid_score": 0.9716,
-      "matched_cluster": "code & software & execution",
-      "submitted": "2026-03-24"
-    },
     {
       "id": "2603.13428",
       "title": "EvoClaw: Evaluating AI Agents on Continuous Software Evolution",
@@ -264,7 +254,7 @@
       "title": "Mi:dm K 2.5 Pro",
       "abstract": "The evolving LLM landscape requires capabilities beyond simple text generation, prioritizing multi-step reasoning, long-context understanding, and agentic workflows. This shift challenges existing models in enterprise environments, especially in Korean-language and domain-specific scenarios where scaling is insufficient. We introduce Mi:dm K 2.5 Pro, a 32B parameter flagship LLM designed to address enterprise-grade complexity through reasoning-focused optimization.\n  Our methodology builds a robust data foundation via a quality-centric curation pipeline utilizing abstract syntax tree (AST) analysis for code, gap-filling synthesis for mathematics, and an LLM-based quality evaluator. Pre-training scales the model via layer-predictor-based Depth Upscaling (DuS) and a progressive strategy supporting a 128K token context window. Post-training introduces a specialized multi-stage pipeline, including Reasoning SFT, model merging, and asynchronous reinforcement learning (RL), to develop complex problem-solving skills. \"Fusion Training\" then rebalances these capabilities with conversational fluency, consistent response styling, and reliable tool-use.\n  The evaluations show that Mi:dm K 2.5 Pro achieves competitive performance against leading global and domestic models. In addition, it sets state-of-the-art results on Korean-specific benchmarks, showcasing deep linguistic and cultural understanding. Finally, Responsible AI evaluations validate safety against attacks, ensuring a secure profile for deployment with a balance of harmlessness and responsiveness.",
       "url": "https://arxiv.org/abs/2603.18788",
-      "match_score": 0.9172,
+      "match_score": 0.9182,
       "centroid_score": 0.9685,
       "matched_cluster": "solver & reasoning & planning",
       "submitted": "2026-03-19"
@@ -274,7 +264,7 @@
       "title": "KARL: Knowledge Agents via Reinforcement Learning",
       "abstract": "We present a system for training enterprise search agents via reinforcement learning that achieves state-of-the-art performance across a diverse suite of hard-to-verify agentic search tasks. Our work makes four core contributions. First, we introduce KARLBench, a multi-capability evaluation suite spanning six distinct search regimes, including constraint-driven entity search, cross-document report synthesis, tabular numerical reasoning, exhaustive entity retrieval, procedural reasoning over technical documentation, and fact aggregation over internal enterprise notes. Second, we show that models trained across heterogeneous search behaviors generalize substantially better than those optimized for any single benchmark. Third, we develop an agentic synthesis pipeline that employs long-horizon reasoning and tool use to generate diverse, grounded, and high-quality training data, with iterative bootstrapping from increasingly capable models. Fourth, we propose a new post-training paradigm based on iterative large-batch off-policy RL that is sample efficient, robust to train-inference engine discrepancies, and naturally extends to multi-task training with out-of-distribution generalization. Compared to Claude 4.6 and GPT 5.2, KARL is Pareto-optimal on KARLBench across cost-quality and latency-quality trade-offs, including tasks that were out-of-distribution during training. With sufficient test-time compute, it surpasses the strongest closed models. These results show that tailored synthetic data in combination with multi-task reinforcement learning enables cost-efficient and high-performing knowledge agents for grounded reasoning.",
       "url": "https://arxiv.org/abs/2603.05218",
-      "match_score": 0.916,
+      "match_score": 0.9166,
       "centroid_score": 0.9682,
       "matched_cluster": "solver & reasoning & planning",
       "submitted": "2026-03-05"
@@ -284,7 +274,7 @@
       "title": "Code2Math: Can Your Code Agent Effectively Evolve Math Problems Through Exploration?",
       "abstract": "As large language models (LLMs) advance their mathematical capabilities toward the IMO level, the scarcity of challenging, high-quality problems for training and evaluation has become a significant bottleneck. Simultaneously, recent code agents have demonstrated sophisticated skills in agentic coding and reasoning, suggesting that code execution can serve as a scalable environment for mathematical experimentation. In this paper, we investigate the potential of code agents to autonomously evolve existing math problems into more complex variations. We introduce a multi-agent framework designed to perform problem evolution while validating the solvability and increased difficulty of the generated problems. Our experiments demonstrate that, given sufficient test-time exploration, code agents can synthesize new, solvable problems that are structurally distinct from and more challenging than the originals. This work provides empirical evidence that code-driven agents can serve as a viable mechanism for synthesizing high-difficulty mathematical reasoning problems within scalable computational environments. Our data is available at https://github.com/TarferSoul/Code2Math.",
       "url": "https://arxiv.org/abs/2603.03202",
-      "match_score": 0.9011,
+      "match_score": 0.9015,
       "centroid_score": 0.9682,
       "matched_cluster": "solver & reasoning & planning",
       "submitted": "2026-03-03"
@@ -294,7 +284,7 @@
       "title": "Composer 2 Technical Report",
       "abstract": "Composer 2 is a specialized model designed for agentic software engineering. The model demonstrates strong long-term planning and coding intelligence while maintaining the ability to efficiently solve problems for interactive use. The model is trained in two phases: first, continued pretraining to improve the model's knowledge and latent coding ability, followed by large-scale reinforcement learning to improve end-to-end coding performance through stronger reasoning, accurate multi-step execution, and coherence on long-horizon realistic coding problems. We develop infrastructure to support training in the same Cursor harness that is used by the deployed model, with equivalent tools and structure, and use environments that match real problems closely. To measure the ability of the model on increasingly difficult tasks, we introduce a benchmark derived from real software engineering problems in large codebases including our own. Composer 2 is a frontier-level coding model and demonstrates a process for training strong domain-specialized models. On our CursorBench evaluations the model achieves a major improvement in accuracy compared to previous Composer models (61.3). On public benchmarks the model scores 61.7 on Terminal-Bench and 73.7 on SWE-bench Multilingual in our harness, comparable to state-of-the-art systems.",
       "url": "https://arxiv.org/abs/2603.24477",
-      "match_score": 0.9069,
+      "match_score": 0.9071,
       "centroid_score": 0.9681,
       "matched_cluster": "code & software & execution",
       "submitted": "2026-03-25"
@@ -304,17 +294,27 @@
       "title": "CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents",
       "abstract": "Recent advances in frontier large language models have enabled code review agents that operate in open-ended, reasoning-intensive settings. However, the lack of standardized benchmarks and granular evaluation protocols makes it difficult to assess behavior of code review agents beyond coarse success metrics, particularly for tasks where false positives are costly. To address this gap, we introduce CR-Bench, a benchmarking dataset, and CR-Evaluator, a fine-grained evaluation pipeline for code review agents. Using these tools, we conduct a preliminary study evaluating both a single-shot agent and a Reflexion-based agent across two frontier models. We find that code review agents can exhibit a low signal-to-noise ratio when designed to identify all hidden issues, obscuring true progress and developer productivity when measured solely by resolution rates. Our analysis identifies the hidden trade-off between issue resolution and spurious findings, revealing a frontier that constrains effective agent design. Together, CR-Bench and CR-Evaluator provide a timely foundation for studying and developing code review agents as LLM-based systems transition from controlled benchmarks to real-world software engineering workflows.",
       "url": "https://arxiv.org/abs/2603.11078",
-      "match_score": 0.9017,
+      "match_score": 0.9019,
       "centroid_score": 0.9679,
       "matched_cluster": "code & software & execution",
       "submitted": "2026-03-10"
+    },
+    {
+      "id": "2603.22862",
+      "title": "The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration",
+      "abstract": "Tool use enables large language models (LLMs) to access external information, invoke software systems, and act in digital environments beyond what can be solved from model parameters alone. Early research mainly studied whether a model could select and execute a correct single tool call. As agent systems evolve, however, the central problem has shifted from isolated invocation to multi-tool orchestration over long trajectories with intermediate state, execution feedback, changing environments, and practical constraints such as safety, cost, and verifiability. We comprehensively review recent progress in multi-tool LLM agents and analyzes the state of the art in this rapidly developing area. First, we unify task formulations and distinguish single-call tool use from long-horizon orchestration. Then, we organize the literature around six core dimensions: inference-time planning and execution, training and trajectory construction, safety and control, efficiency under resource constraints, capability completeness in open environments, and benchmark design and evaluation. We further summarize representative applications in software engineering, enterprise workflows, graphical user interfaces, and mobile systems. Finally, we discuss major challenges and outline future directions for building reliable, scalable, and verifiable multi-tool agents.",
+      "url": "https://arxiv.org/abs/2603.22862",
+      "match_score": 0.8981,
+      "centroid_score": 0.9678,
+      "matched_cluster": "code & software & execution",
+      "submitted": "2026-03-24"
     },
     {
       "id": "2603.15980",
       "title": "Standardizing Medical Images at Scale for AI",
       "abstract": "Deep learning has achieved remarkable success in medical image analysis, yet its performance remains highly sensitive to the heterogeneity of clinical data. Differences in imaging hardware, staining protocols, and acquisition conditions produce substantial domain shifts that degrade model generalization across institutions. Here we present a physics-based data preprocessing framework based on the PhyCV (Physics-Inspired Computer Vision) family of algorithms, which standardizes medical images through deterministic transformations derived from optical physics. The framework models images as spatially varying optical fields that undergo a virtual diffractive propagation followed by coherent phase detection. This process suppresses non-semantic variability such as color and illumination differences while preserving diagnostically relevant texture and structural features. When applied to histopathological images from the Camelyon17-WILDS benchmark, PhyCV preprocessing improves out-of-distribution breast-cancer classification accuracy from 70.8% (Empirical Risk Minimization baseline) to 90.9%, matching or exceeding data-augmentation and domain-generalization approaches at negligible computational cost. Because the transform is physically interpretable, parameterizable, and differentiable, it can be deployed as a fixed preprocessing stage or integrated into end-to-end learning. These results establish PhyCV as a generalizable data refinery for medical imaging-one that harmonizes heterogeneous datasets through first-principles physics, improving robustness, interpretability, and reproducibility in clinical AI systems.",
       "url": "https://arxiv.org/abs/2603.15980",
-      "match_score": 0.8115,
+      "match_score": 0.812,
       "centroid_score": 0.9652,
       "matched_cluster": "mri & imaging & image",
       "submitted": "2026-03-16"
@@ -324,7 +324,7 @@
       "title": "Pixel-level Counterfactual Contrastive Learning for Medical Image Segmentation",
       "abstract": "Image segmentation relies on large annotated datasets, which are expensive and slow to produce. Silver-standard (AI-generated) labels are easier to obtain, but they risk introducing bias. Self-supervised learning, needing only images, has become key for pre-training. Recent work combining contrastive learning with counterfactual generation improves representation learning for classification but does not readily extend to pixel-level tasks. We propose a pipeline combining counterfactual generation with dense contrastive learning via Dual-View (DVD-CL) and Multi-View (MVD-CL) methods, along with supervised variants that utilize available silver-standard annotations. A new visualisation algorithm, the Color-coded High Resolution Overlay map (CHRO-map) is also introduced. Experiments show annotation-free DVD-CL outperforms other dense contrastive learning methods, while supervised variants using silver-standard labels outperform training on the silver-standard labeled data directly, achieving $\\sim$94% DSC on challenging data. These results highlight that pixel-level contrastive learning, enhanced by counterfactuals and silver-standard annotations, improves robustness to acquisition and pathological variations.",
       "url": "https://arxiv.org/abs/2603.17110",
-      "match_score": 0.8277,
+      "match_score": 0.8278,
       "centroid_score": 0.9651,
       "matched_cluster": "mri & imaging & image",
       "submitted": "2026-03-17"
@@ -334,7 +334,7 @@
       "title": "PhyDCM: A Reproducible Open-Source Framework for AI-Assisted Brain Tumor Classification from Multi-Sequence MRI",
       "abstract": "MRI-based medical imaging has become indispensable in modern clinical diagnosis, particularly for brain tumor detection. However, the rapid growth in data volume poses challenges for conventional diagnostic approaches. Although deep learning has shown strong performance in automated classification, many existing solutions are confined to closed technical architectures, limiting reproducibility and further academic development. PhyDCM is introduced as an open-source software framework that integrates a hybrid classification architecture based on MedViT with standardized DICOM processing and an interactive desktop visualization interface. The system is designed as a modular digital library that separates computational logic from the graphical interface, allowing independent modification and extension of components. Standardized preprocessing, including intensity rescaling and limited data augmentation, ensures consistency across varying MRI acquisition settings. Experimental evaluation on MRI datasets from BRISC2025 and curated Kaggle collections (FigShare, SARTAJ, and Br35H) demonstrates stable diagnostic performance, achieving over 93% classification accuracy across categories. The framework supports structured, exportable outputs and multi-planar reconstruction of volumetric data. By emphasizing transparency, modularity, and accessibility, PhyDCM provides a practical foundation for reproducible AI-driven medical image analysis, with flexibility for future integration of additional imaging modalities.",
       "url": "https://arxiv.org/abs/2603.26794",
-      "match_score": 0.814,
+      "match_score": 0.8141,
       "centroid_score": 0.9626,
       "matched_cluster": "mri & imaging & image",
       "submitted": "2026-03-25"
