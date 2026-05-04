@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T14:01:20.079338+09:00",
+  "generated_at": "2026-05-04T13:18:08.950258+09:00",
   "top_clusters": [
     {
       "label": "answering & query & retrieval",
@@ -186,16 +186,6 @@
       "submitted": "2026-04-06"
     },
     {
-      "id": "2604.06699",
-      "title": "Adaptive Prompt Structure Factorization: A Framework for Self-Discovering and Optimizing Compositional Prompt Programs",
-      "abstract": "Automated prompt optimization is crucial for eliciting reliable reasoning from large language models (LLMs), yet most API-only prompt optimizers iteratively edit monolithic prompts, coupling components and obscuring credit assignment, limiting controllability, and wasting tokens. We propose Adaptive Prompt Structure Factorization (aPSF), an API-only framework (prompt-in/text-out; no access to model internals) that uses an Architect model to discover task-specific prompt structures as semantic factors. aPSF then performs interventional, single-factor updates: interventional factor-level scoring estimates each factor's marginal contribution via validation-performance changes, and error-guided factor selection routes updates to the current dominant failure source for more sample-efficient optimization. Across multiple advanced reasoning benchmarks, aPSF outperforms strong baselines including principle-aware optimizers, improving accuracy by up to +2.16 percentage points on average, and reduces optimization cost by 45--87% tokens on MultiArith while reaching peak validation in 1 step.",
-      "url": "https://arxiv.org/abs/2604.06699",
-      "match_score": 0.9126,
-      "centroid_score": 0.962,
-      "matched_cluster": "reasoning & correct & logical",
-      "submitted": "2026-04-08"
-    },
-    {
       "id": "2604.14768",
       "title": "CoTEvol: Self-Evolving Chain-of-Thoughts for Data Synthesis in Mathematical Reasoning",
       "abstract": "Large Language Models (LLMs) exhibit strong mathematical reasoning when trained on high-quality Chain-of-Thought (CoT) that articulates intermediate steps, yet costly CoT curation hinders further progress. While existing remedies such as distillation from stronger LLMs and self-synthesis based on test-time search alleviate this issue, they often suffer from diminishing returns or high computing overhead.In this work, we propose CoTEvol, a genetic evolutionary framework that casts CoT generation as a population-based search over reasoning trajectories.Candidate trajectories are iteratively evolved through reflective global crossover at the trajectory level and local mutation guided by uncertainty at the step level, enabling holistic recombination and fine-grained refinement. Lightweight, task-aware fitness functions are designed to guide the evolutionary process toward accurate and diverse reasoning. Empirically, CoTEvol improves correct-CoT synthesis success by over 30% and enhances structural diversity, with markedly improved efficiency. LLMs trained on these evolutionary CoT data achieve an average gain of 6.6% across eight math benchmarks, outperforming previous distillation and self-synthesis approaches. These results underscore the promise of evolutionary CoT synthesis as a scalable and effective method for mathematical reasoning tasks.",
@@ -204,6 +194,16 @@
       "centroid_score": 0.9681,
       "matched_cluster": "reasoning & correct & logical",
       "submitted": "2026-04-16"
+    },
+    {
+      "id": "2604.06699",
+      "title": "Adaptive Prompt Structure Factorization: A Framework for Self-Discovering and Optimizing Compositional Prompt Programs",
+      "abstract": "Automated prompt optimization is crucial for eliciting reliable reasoning from large language models (LLMs), yet most API-only prompt optimizers iteratively edit monolithic prompts, coupling components and obscuring credit assignment, limiting controllability, and wasting tokens. We propose Adaptive Prompt Structure Factorization (aPSF), an API-only framework (prompt-in/text-out; no access to model internals) that uses an Architect model to discover task-specific prompt structures as semantic factors. aPSF then performs interventional, single-factor updates: interventional factor-level scoring estimates each factor's marginal contribution via validation-performance changes, and error-guided factor selection routes updates to the current dominant failure source for more sample-efficient optimization. Across multiple advanced reasoning benchmarks, aPSF outperforms strong baselines including principle-aware optimizers, improving accuracy by up to +2.16 percentage points on average, and reduces optimization cost by 45--87% tokens on MultiArith while reaching peak validation in 1 step.",
+      "url": "https://arxiv.org/abs/2604.06699",
+      "match_score": 0.9126,
+      "centroid_score": 0.962,
+      "matched_cluster": "reasoning & correct & logical",
+      "submitted": "2026-04-08"
     },
     {
       "id": "2604.17293",
