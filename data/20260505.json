@@ -1,0 +1,445 @@
+{
+  "date": "2026-05-05",
+  "collected_at": "2026-05-05T12:34:28.072562+09:00",
+  "papers": [
+    {
+      "id": "2605.02647",
+      "title": "ContextualJailbreak: Evolutionary Red-Teaming via Simulated Conversational Priming",
+      "authors": [
+        "Mario Rodríguez Béjar",
+        "Francisco J. Cortés-Delgado",
+        "S. Braghin",
+        "Jose L. Hernández-Ramos"
+      ],
+      "abstract": "Large language models (LLMs) remain vulnerable to jailbreak attacks that bypass safety alignment and elicit harmful responses. A growing body of work shows that contextual priming, where earlier turns covertly bias later replies, constitutes a powerful attack surface, with hand-crafted multi-turn scaffolds consistently outperforming single-turn manipulations on capable models.\n  However, automated optimization-based red-teaming has remained largely limited to the single-turn setting, iterating over static prompts and lacking the ability to reason about which forms of conversational priming induce compliance. While recent multi-turn, search-based approaches have begun to bridge this gap, the mutator design space underlying effective primed dialogues remains largely unexplored.\n  We present ContextualJailbreak, a black-box red-teaming strategy that performs evolutionary search over a simulated multi-turn primed dialogue. The strategy leverages a graded 0-5 harm score from a two-level judge as an in-loop signal, enabling partially harmful responses to guide the search process rather than being discarded.\n  Search is driven by five semantically defined mutation operators: roleplay, scenario, expand, troubleshooting, and mechanistic, of which the last two are novel contributions of this work.\n  Across 50 representative HarmBench behaviors, ContextualJailbreak achieves an ASR of 100% on gpt-oss:20B, 100% on qwen3-8B, 100% on llama3.1:70B, and 90% on gpt-oss:120B, outperforming four single- and multi-turn baselines by 31-96 percentage points on average.\n  The 40 maximally harmful attacks discovered against gpt-oss:120B transfer without adaptation to closed frontier models, achieving 90.0% on gpt-4o-mini, 70.0% on gpt-5, and 70.0% on gemini-3-flash, but only 17.5% on claude-opus-4-7 and 15.0% on claude-sonnet-4-6, revealing a pronounced provider-level asymmetry in alignment robustness.",
+      "url": "https://arxiv.org/abs/2605.02647",
+      "categories": [
+        "cs.CL",
+        "cs.CR"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8941
+    },
+    {
+      "id": "2605.02263",
+      "title": "Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning",
+      "authors": [
+        "Yan Jiang",
+        "Ruihong Qiu",
+        "Zi Huang"
+      ],
+      "abstract": "Recent diffusion large language models (dLLMs) have demonstrated both effectiveness and efficiency in reasoning via a block-based semi-autoregressive generation paradigm. Despite their progress, the fixed-size block generations remain a critical bottleneck for effective and coherent reasoning. 1. From a global perspective, different reasoning tasks would correspond to different optimal decoding block sizes, which makes a ``one-size-fits-all'' assumption ineffective. 2. Even within a single reasoning task, the rigid block partitioning would break the logical flow and reduce reasoning coherence. Through empirical observations, we reveal that for block-wise entropy, incorrect reasoning exhibits a fluctuating and unsteady trend between blocks, whereas the correctly generated tasks follow a consistent descending trend. Therefore, this paper proposes b1, a novel post-training framework for dLLMs that learns dynamic-size reasoning blocks via a Monotonic Entropy Descent objective with reinforcement learning to enhance reasoning coherence.b1 integrates seamlessly as a plug-and-play module with existing dLLM's post-training algorithms. Extensive experiments across various reasoning benchmarks showcase b1's consistent improvement over existing fixed-size block baselines. Our code has been released at https://github.com/YanJiangJerry/Block-R1.",
+      "url": "https://arxiv.org/abs/2605.02263",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-04",
+      "github_url": "https://github.com/YanJiangJerry/Block-R1.",
+      "score": 0.8923
+    },
+    {
+      "id": "2605.02363",
+      "title": "When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models",
+      "authors": [
+        "Cosimo Galeone",
+        "Minsu Park",
+        "Giuseppe Ettorre",
+        "Daniele Ligorio"
+      ],
+      "abstract": "Deployed language models must produce outputs that are both correct and format-compliant. We study this structured-output reliability gap using two mathematical benchmarks -- GSM8K and MATH -- as a controlled testbed: ground truth is unambiguous and the output contract is strict (JSON with required fields). We evaluate three 7-9B models under five prompting strategies and report output accuracy -- the joint event of mathematical correctness and valid JSON structure -- as the primary metric. A systematic format failure emerges: NAIVE prompting (no system prompt) achieves up to 85% task accuracy on GSM8K but 0% output accuracy across all models and datasets. REFERENCE prompting (a minimal hand-written JSON format prompt) fares little better, yielding 0% output accuracy for two of four models tested. Constrained decoding enforces syntactic validity but incurs 3.6x-8.2x latency overhead and in several settings degrades task performance substantially. To overcome this limitation, we developed AloLab, an iterative system-prompt optimizer (meta-agent: Claude Sonnet 4.5) requiring only black-box API access to the target model; it reaches 84-87% output accuracy on GSM8K and 34-40% on MATH across five independent runs per model, with 29/30 paired McNemar comparisons against the best static prompt significant at p < 0.05, at near-NAIVE inference latency and without model fine-tuning. The same format failure extends to GPT-4o (OpenAI, 2024), a proprietary closed-source model: REFERENCE achieves 0% output accuracy due to systematic markdown-fence wrapping, while AloLab reaches 95.2% [94.8, 95.6]. An ablation replacing the Sonnet 4.5 meta-agent with Claude 3 Haiku reduces mean output accuracy to 61.0% and increases run-to-run standard deviation from <1 pp to 21.8 pp, confirming that meta-agent capability is a primary driver of optimization quality.",
+      "url": "https://arxiv.org/abs/2605.02363",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.892
+    },
+    {
+      "id": "2605.02073",
+      "title": "Enhanced LLM Reasoning by Optimizing Reward Functions with Search-Driven Reinforcement Learning",
+      "authors": [
+        "Arash Ahmadi",
+        "Sarah Sharif",
+        "Yaser",
+        "Banad"
+      ],
+      "abstract": "Mathematical reasoning is a key benchmark for large language models. Reinforcement learning is a standard post-training mechanism for improving the reasoning capabilities of large language models, yet performance remains sensitive to the design of the reward function that drives policy optimization. This paper introduces a search-driven framework that treats the reward specification itself as an object of optimization. The setting of interest is one in which the base model is held fixed and the reward specification is the primary remaining design lever. Candidate reward functions are generated by a frontier language model, validated automatically, screened through 500-step Group Relative Policy Optimization (GRPO) training runs on a Llama-3.2-3B-Instruct base model with Low-Rank Adaptation (LoRA), and ranked by F1 on the GSM8K test set. Ranked summaries from prior rounds are then fed back into the next round of generation. Over five rounds, the search produces 50 candidate rewards. The mean F1 rises from 0.596 in Round 1 to 0.632 in Round 5, and the top individual reward reaches F1 = 0.787. Seven ensemble configurations of top-ranked rewards are evaluated. The best ensemble achieves F1 = 0.795 (95% bootstrap CI [0.756, 0.832]) and accuracy 0.660 [0.635, 0.686], a 0.19 absolute F1 gain over a base-rewards-only GRPO baseline (F1 = 0.609). Pairwise McNemar tests with Bonferroni correction show all five-or-more-reward configurations are statistically indistinguishable at α = 0.05/21. A three-seed re-training of the best ensemble yields F1 of 0.785. A randomly drawn 5-reward control collapses to F1 = 0.047, which shows that the ranked-feedback loop, not the additive signal of having more rewards, drives the gain.",
+      "url": "https://arxiv.org/abs/2605.02073",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-03",
+      "score": 0.892
+    },
+    {
+      "id": "2605.02163",
+      "title": "DocSync: Agentic Documentation Maintenance via Critic-Guided Reflexion",
+      "authors": [
+        "Sidhesh Badrinarayan",
+        "Adithya Parthasarathy"
+      ],
+      "abstract": "Software documentation frequently drifts from executable logic as codebases evolve, creating technical debt that degrades maintainability and causes downstream API misuse. While static analysis tools can detect the absence of documentation, they cannot evaluate its semantic consistency. Conversely, standard Large Language Models (LLMs) offer generative flexibility but frequently hallucinate when updating documentation without deep structural awareness of the underlying code. To address this gap, we propose DocSync, an agentic workflow that frames documentation maintenance as a structurally grounded, iterative generation task. DocSync bridges syntactic changes and natural language descriptions by fusing Abstract Syntax Tree (AST) representations and Retrieval-Augmented Generation (RAG) to provide dependency-aware context. Furthermore, to ensure factual consistency, we incorporate a critic-guided refinement loop based on the Reflexion paradigm, allowing the model to self-correct candidate updates against the source code. We empirically evaluate a resource-constrained implementation of DocSync-using a LoRA-adapted small language model - on a proxy code-to-text maintenance task. Our findings demonstrate that this AST-aware agentic approach substantially outperforms standard encoder-decoder baselines across semantic alignment, summary-line faithfulness, and automated judge preferences (e.g., achieving an automated judge score of 3.44/5.0 compared to 1.91 for CodeT5-base). Crucially, the iterative critic loop yields measurable improvements in semantic correctness without requiring scaled-up parameter counts. These results provide strong evidence that coupling structural retrieval with agentic refinement is a highly promising direction for autonomously mitigating documentation debt.",
+      "url": "https://arxiv.org/abs/2605.02163",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8907
+    },
+    {
+      "id": "2605.02241",
+      "title": "Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training",
+      "authors": [
+        "Luong N. Nguyen"
+      ],
+      "abstract": "How reliably can a small language model estimate its own correctness? The answer determines whether local-to-cloud routing-escalating queries a cheap local model cannot handle-can work without supervised training data. As inference costs dominate large language model (LLM) deployment budgets, routing most queries to a cheap local model while reserving expensive cloud calls for hard cases is an increasingly common cost-control strategy. We compare zero-shot confidence signals against RouteLLM-style supervised baselines across three 7-8B model families and two datasets (1,000 and 500 queries per model, respectively). Average token log-probability, which requires no training data, matches or exceeds supervised baselines in-distribution (Area Under the Receiver Operating Characteristic curve (AUROC) 0.650-0.714 vs. 0.644-0.676) and substantially outperforms them out-of-distribution (0.717-0.833 vs. 0.512-0.564), because it measures a property of the model's generation rather than the query distribution. This paper further proposes retrieval-conditional self-assessment, a pre-generation signal that selectively injects retrieved knowledge when similarity is high, improving over bare self-assessment by up to +0.069 AUROC at 3-10x lower latency than log-probability. A supervised baseline trained on 1,000 labeled examples never exceeds the zero-shot signal. We release all code, data, and experiment logs.",
+      "url": "https://arxiv.org/abs/2605.02241",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.ET"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8904
+    },
+    {
+      "id": "2605.02038",
+      "title": "What Single-Prompt Accuracy Misses: A Multi-Variant Reliability Audit of Language Models",
+      "authors": [
+        "Ranit Karmakar",
+        "Jayita Chatterjee"
+      ],
+      "abstract": "Single-prompt accuracy is the dominant way to benchmark language models, but it can miss reliability failures that matter. We evaluate a 15-model open-weight corpus, with the main reliability analyses focused on 10 instruct models across five classification and reasoning benchmarks under five prompt variants each, measuring accuracy, token-probability calibration, verbal-confidence calibration, verbal parse rate, and prompt-perturbation spread for every (model x dataset x variant) cell. We find three broad results. First, evaluation design can materially change the conclusion. Switching Expected Calibration Error (ECE) token from a raw to a label-set-normalised definition changes per-cell calibration by a mean absolute 0.149. More strikingly, pairing a chain-of-thought prompt with a first-character evaluator on ARC-Challenge reduces apparent accuracy by 72-88% across all five primary models; two independent repair procedures recover 93.8% and 102.7% of the lost performance, indicating an evaluator-side rather than model-side failure. Second, confidence signals are fragile. On MMLU-Pro, every primary model verbally reports confidence substantially above both its accuracy and its token-probability confidence on the same rows, and verbal parse rate can collapse for a single model on a single prompt variant. Third, prompt robustness does not track parameter count reliably. Across 10 instruct models, the correlation between model size and prompt-perturbation spread ranges from -0.244 to 0.474 across benchmarks. Taken together, these results show that reliability conclusions for small language models depend not only on the model being evaluated, but also on the evaluation pipeline used to measure it. We argue that calibration definitions, evaluator logic, verbal parseability, and prompt robustness should be reported explicitly when making reliability claims.",
+      "url": "https://arxiv.org/abs/2605.02038",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-03",
+      "score": 0.8888
+    },
+    {
+      "id": "2605.02396",
+      "title": "HeavySkill: Heavy Thinking as the Inner Skill in Agentic Harness",
+      "authors": [
+        "Jianing Wang",
+        "Linsen Guo",
+        "Zhengyu Chen",
+        "Qi Guo",
+        "Hongyu Zang",
+        "Wenjie Shi",
+        "Haoxiang Ma",
+        "Xiangyu Xi",
+        "Xiaoyu Li",
+        "Wei Wang",
+        "Xunliang Cai"
+      ],
+      "abstract": "Recent advances in agentic harness with orchestration frameworks that coordinate multiple agents with memory, skills, and tool use have achieved remarkable success in complex reasoning tasks. However, the underlying mechanism that truly drives performance remains obscured behind intricate system designs. In this paper, we propose HeavySkill, a perspective that views heavy thinking not only as a minimal execution unit in orchestration harness but also as an inner skill internalized within the model's parameters that drives the orchestrator to solve complex tasks. We identify this skill as a two-stage pipeline, i.e., parallel reasoning then summarization, which can operate beneath any agentic harness. We present a systematic empirical study of HeavySkill across diverse domains. Our results show that this inner skill consistently outperforms traditional Best-of-N (BoN) strategies; notably, stronger LLMs can even approach Pass@N performance. Crucially, we demonstrate that the depth and width of heavy thinking, as a learnable skill, can be further scaled via reinforcement learning, offering a promising path toward self-evolving LLMs that internalize complex reasoning without relying on brittle orchestration layers.",
+      "url": "https://arxiv.org/abs/2605.02396",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8885
+    },
+    {
+      "id": "2605.02269",
+      "title": "Towards Understanding Specification Gaming in Reasoning Models",
+      "authors": [
+        "Kei Nishimura-Gasparian",
+        "Robert McCarthy",
+        "David Lindner"
+      ],
+      "abstract": "Specification gaming is a critical failure mode of LLM agents. Despite this, there has been little systematic research into when it arises and what drives it. To address this, we build and open source a diverse suite of tasks where models can score highly by taking unintended actions. We find that all tested models exploit their specifications at non-negligible rates in most of our eight settings, including five non-coding settings. We see the highest rates of specification gaming in Grok 4 and the lowest rates in Claude models. We use our evaluation suite to study what drives specification gaming, and find that: 1. RL reasoning training substantially increases the rate at which models exploit their specifications, 2. Increasing RL reasoning budget has a weakly positive effect on exploit rate, and 3. Test-time mitigations reduce but do not eliminate the rate of specification gaming. Our results suggest that specification gaming is a fundamental challenge arising from RL reasoning training; we release our evaluation suite to support further work on this problem.",
+      "url": "https://arxiv.org/abs/2605.02269",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8881
+    },
+    {
+      "id": "2605.02199",
+      "title": "MEMAUDIT: An Exact Package-Oracle Evaluation Protocol for Budgeted Long-Term LLM Memory Writing",
+      "authors": [
+        "Nishant Bhargava",
+        "Rodrigo Sobral Barrento"
+      ],
+      "abstract": "Long-term LLM agents must compress streams of past interactions into persistent memory before future queries are known. Existing evaluations usually measure final question-answering accuracy, which entangles memory writing with retrieval, prompting, and reader reasoning. We introduce MEMAUDIT, an exact packageoracle evaluation protocol for budgeted long-term memory writing. A MEMAUDIT package fixes an experience stream, candidate memory representations, storage costs, semantic evidence units, future-query requirements, and a budget, turning write-time memory selection into a finite auditable optimization problem with a certified denominator. We instantiate this protocol with a concave-over-modular semantic coverage objective under storage and one-representation-per-experience constraints, and compute exact package optima using branch-and-bound with MILP certification. Across controlled exact packages, validity-heavy stress tests, human-audited natural support slices, and exported Mem0, A-Mem, and Letta stores, MEMAUDIT separates representation quality, validity-state preservation, and budget-aware selection effects that end-to-end QA cannot localize. The resulting artifact provides reusable package generators, certified solvers, natural package exports, external-system scorers, and cached reproducibility metadata for evaluating what memory writers actually preserve under fixed storage budgets.",
+      "url": "https://arxiv.org/abs/2605.02199",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.888
+    },
+    {
+      "id": "2605.02545",
+      "title": "Strategy-Aware Optimization Modeling with Reasoning LLMs",
+      "authors": [
+        "Ruiqing Zhao",
+        "Fengzhi Li",
+        "Yuan Zuo",
+        "Rui Liu",
+        "Yansong Liu",
+        "Yunfei Ma",
+        "Fanyu Meng",
+        "Junlan Feng"
+      ],
+      "abstract": "Large language models (LLMs) can generate syntactically valid optimization programs, yet often struggle to reliably choose an effective modeling strategy, leading to incorrect formulations and inefficient solver behavior. We propose SAGE, a strategy-aware framework that makes Modeling Strategy explicit in both data construction and post-training. SAGE builds a solver-verified multi-strategy dataset and trains a student model with supervised fine-tuning followed by Segment-Weighted GRPO using a composite reward over format compliance, correctness, and solver efficiency. Across eight benchmarks spanning synthetic and real-world settings, SAGE improves average pass@1 from 72.7 to 80.3 over the strongest open-source baseline. With multiple generations, SAGE discovers more distinct correct formulations and improves component-level diversity at pass@16 by 19-29%. At the largest scale, SAGE produces more compact constraint systems with 14.2% fewer constraints than the baseline, consistent with solver-efficient modeling. Overall, these results show that making Modeling Strategy explicit improves automated optimization modeling. Code is available at https://github.com/rachhhhing/SAGE.",
+      "url": "https://arxiv.org/abs/2605.02545",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "github_url": "https://github.com/rachhhhing/SAGE.",
+      "score": 0.8871
+    },
+    {
+      "id": "2605.02442",
+      "title": "Measuring AI Reasoning: A Guide for Researchers",
+      "authors": [
+        "Munachiso Samuel Nwadike",
+        "Zangir Iklassov",
+        "Kareem Ali",
+        "Rifo Genadi",
+        "Kentaro Inui"
+      ],
+      "abstract": "In this paper, we offer a guide for researchers on evaluating reasoning in language models, building the case that reasoning should be assessed through evidence of adaptive, multi-step search rather than final-answer accuracy alone. Under an evaluation-oriented definition, reasoning requires selecting intermediate steps and halting according to input-dependent conditions, which we formalize as a search-like procedure. We show that single forward passes in scalable architectures are structurally limited in their ability to realize such variable-depth computation, motivating intermediate decoding and externalized reasoning traces as appropriate evaluation interfaces. Central to our argument is that final-answer accuracy alone is an insufficient measure of reasoning, because it provides little ability to diagnose or debug the underlying processes that produce individual solutions in frontier models. We therefore argue for a shift toward process-based evaluation, in which reasoning is assessed through the faithfulness and validity of intermediate reasoning traces as first-class evaluation targets.",
+      "url": "https://arxiv.org/abs/2605.02442",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.887
+    },
+    {
+      "id": "2605.02443",
+      "title": "HalluScan: A Systematic Benchmark for Detecting and Mitigating Hallucinations in Instruction-Following LLMs",
+      "authors": [
+        "Ahmed Cherif"
+      ],
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse natural language processing tasks, yet they remain susceptible to hallucinations -- generating content that is factually incorrect, unfaithful to provided context, or misaligned with user instructions. We present HalluScan, a comprehensive benchmark framework that systematically evaluates hallucination detection and mitigation across 72 configurations spanning 6 detection methods, 4 open-weight model families, and 3 diverse domains. We introduce three key contributions: (1) HalluScore, a novel composite metric that achieves a Pearson correlation of r = 0.41 with human expert judgments; (2) Adaptive Detection Routing (ADR), an intelligent routing algorithm achieving 2.0x cost reduction with only 0.1% AUROC degradation; and (3) systematic error cascade decomposition revealing substantial variation in hallucination error types across domains. Our experiments reveal that NLI Verification achieves the highest overall AUROC of 0.88, while RAV achieves the second-highest AUROC of 0.66.",
+      "url": "https://arxiv.org/abs/2605.02443",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8867
+    },
+    {
+      "id": "2605.02661",
+      "title": "AcademiClaw: When Students Set Challenges for AI Agents",
+      "authors": [
+        "Junjie Yu",
+        "Pengrui Lu",
+        "Weiye Si",
+        "Hongliang Lu",
+        "Jiabao Wu",
+        "Kaiwen Tao",
+        "Kun Wang",
+        "Lingyu Yang",
+        "Qiran Zhang",
+        "Xiuting Guo",
+        "Xuanyu Wang",
+        "Yang Wang",
+        "Yanjie Wang",
+        "Yi Yang",
+        "Zijian Hu",
+        "Ziyi Yang",
+        "Zonghan Zhou",
+        "Binghao Qiang",
+        "Borui Zhang",
+        "Chenning Li",
+        "Enchang Zhang",
+        "Feifan Chen",
+        "Feng Jian",
+        "Fengyin Sun",
+        "Hao Qiu",
+        "Hao Zheng",
+        "Haoran Zhu",
+        "Hongyu Liu",
+        "Jianbin Deng",
+        "Jiaxin Song",
+        "Jiaying Chi",
+        "Jiayou Shi",
+        "Jie Fang",
+        "Jinghui Zhong",
+        "Jingyu Zhou",
+        "Jinze Li",
+        "Junfeng Yi",
+        "Junyan Yu",
+        "Junzhi Xue",
+        "Ni Song",
+        "Pengyi Chen",
+        "Qi Chen",
+        "Quansheng Li",
+        "Rui Tao",
+        "Shenghai Gong",
+        "Shenhang Lu",
+        "Tianqi Shen",
+        "Tianxiang Zhu",
+        "Tiehan Kang",
+        "Tingyu Li",
+        "Wendi Wu",
+        "Xiao Shen",
+        "Xiao Zhou",
+        "Xiaotao Zhang",
+        "Xinrong Li",
+        "Xuankun Yang",
+        "Xun Zhang",
+        "Yan Li",
+        "Ye Lu",
+        "Yi Wang",
+        "Yibo Zhou",
+        "Yichi Zhang",
+        "Yihao Sun",
+        "Yijun Huang",
+        "Yixin Zhu",
+        "Yixuan Wu",
+        "Yuchen Sun",
+        "Yue Wu",
+        "Yuheng Sun",
+        "Yukun Li",
+        "Yutian Tu",
+        "Yuxuan Qin",
+        "Yuzhuo Wu",
+        "Zeyu Li",
+        "Zhengyu Lou",
+        "Zhenning Ran",
+        "Zizhu He",
+        "Pengfei Liu"
+      ],
+      "abstract": "Benchmarks within the OpenClaw ecosystem have thus far evaluated exclusively assistant-level tasks, leaving the academic-level capabilities of OpenClaw largely unexamined. We introduce AcademiClaw, a bilingual benchmark of 80 complex, long-horizon tasks sourced directly from university students' real academic workflows -- homework, research projects, competitions, and personal projects -- that they found current AI agents unable to solve effectively. Curated from 230 student-submitted candidates through rigorous expert review, the final task set spans 25+ professional domains, ranging from olympiad-level mathematics and linguistics problems to GPU-intensive reinforcement learning and full-stack system debugging, with 16 tasks requiring CUDA GPU execution. Each task executes in an isolated Docker sandbox and is scored on task completion by multi-dimensional rubrics combining six complementary techniques, with an independent five-category safety audit providing additional behavioral analysis. Experiments on six frontier models show that even the best achieves only a 55\\% pass rate. Further analysis uncovers sharp capability boundaries across task domains, divergent behavioral strategies among models, and a disconnect between token consumption and output quality, providing fine-grained diagnostic signals beyond what aggregate metrics reveal. We hope that AcademiClaw and its open-sourced data and code can serve as a useful resource for the OpenClaw community, driving progress toward agents that are more capable and versatile across the full breadth of real-world academic demands. All data and code are available at https://github.com/GAIR-NLP/AcademiClaw.",
+      "url": "https://arxiv.org/abs/2605.02661",
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "submitted": "2026-05-04",
+      "github_url": "https://github.com/GAIR-NLP/AcademiClaw.",
+      "score": 0.8864
+    },
+    {
+      "id": "2605.02087",
+      "title": "Model Spec Midtraining: Improving How Alignment Training Generalizes",
+      "authors": [
+        "Chloe Li",
+        "Sara Price",
+        "Samuel Marks",
+        "Jon Kutasov"
+      ],
+      "abstract": "Some frontier AI developers aim to align language models to a Model Spec or Constitution that describes the intended model behavior. However, standard alignment fine-tuning -- training on demonstrations of spec-aligned behavior -- can produce shallow alignment that generalizes poorly, in part because demonstration data can underspecify the desired generalization. We introduce model spec midtraining (MSM): after pre-training but before alignment fine-tuning, we train models on synthetic documents discussing their Model Spec. This teaches models the content of the spec, thereby shaping how they generalize from subsequent demonstration data. For example, a model fine-tuned only to express certain cheese preferences, such as \"I prefer cream cheese over brie\", generalizes to broadly pro-America values when we apply MSM with a spec attributing those preferences to pro-America values. Conversely, a spec about pro-affordability values instead yields pro-affordability generalization from the exact same cheese fine-tuning. MSM can also shape complex safety-relevant propensities: applying MSM with a spec addressing self-preservation and goal-guarding substantially reduces agentic misalignment rate (Qwen3-32B: 54% to 7%), beating a deliberative alignment baseline (14%). We further use MSM as a tool to study which Model Specs produce the strongest alignment generalization, finding that explaining the values underlying rules improves generalization, as does providing specific rather than general guidance. Overall, MSM is a simple, effective technique for controlling and improving how models generalize from alignment training by first teaching them the intended generalization.",
+      "url": "https://arxiv.org/abs/2605.02087",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-03",
+      "score": 0.884
+    },
+    {
+      "id": "2605.02411",
+      "title": "FitText: Evolving Agent Tool Ecologies via Memetic Retrieval",
+      "authors": [
+        "Kyle Zheng",
+        "Han Zhang",
+        "Renliang Sun",
+        "Chenchen Ye",
+        "Wei Wang"
+      ],
+      "abstract": "A semantic gap separates how users describe tasks from how tools are documented. As API ecosystems scale to tens of thousands of endpoints, static retrieval from the initial query alone cannot bridge this gap: the agent's understanding of what it needs evolves during execution, but its tool set does not. We introduce FitText, a training-free framework that makes retrieval dynamic by embedding it directly in the agent's reasoning loop. FitText generates natural-language pseudo-tool descriptions as retrieval probes, refines them iteratively using retrieval feedback, and explores diverse alternatives through stochastic generation. Memetic Retrieval adds evolutionary selection pressure over candidate descriptions, guided by a tool memory that avoids redundant search. On ToolRet (43k tools, 4 domains), FitText improves average retrieval rank from 8.81 to 2.78; on StableToolBench (16,464 APIs), it achieves a 0.73 average pass rate--a 24-point absolute gain over static query retrieval. The gains transfer across base models capable of acting as competent semantic operators; under weaker base models, Memetic's evolutionary search inverts--amplifying noise rather than refining signal--surfacing model capacity as a prerequisite for evolutionary tool exploration.",
+      "url": "https://arxiv.org/abs/2605.02411",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8839
+    },
+    {
+      "id": "2605.02819",
+      "title": "SCPRM: A Schema-aware Cumulative Process Reward Model for Knowledge Graph Question Answering",
+      "authors": [
+        "Jiujiu Chen",
+        "Yazheng Liu",
+        "Sihong Xie",
+        "Hui Xiong"
+      ],
+      "abstract": "Large language models excel at complex reasoning, yet evaluating their intermediate steps remains challenging. Although process reward models provide step-wise supervision, they often suffer from a risk compensation effect, where incorrect steps are offset by later correct ones, assigning high rewards to flawed reasoning paths. This issue is further exacerbated in knowledge graph (KG) reasoning, as there may exist multiple paths between the start and end entities in the KGs, and a risky step can make the reasoning path flawed. Those limitations are problematic in risk-sensitive tasks such as medical and legal KG reasoning. To address the issues, we propose a Schema-aware Cumulative Process Reward Model (SCPRM) that evaluates reasoning paths by conditioning on the reasoning prefix , and incorporating schema distance between current reasoning step and the implicit target parsed from the query, which provides cumulative and future rewards to guide the path explorations. We further integrate SCPRM into Monte Carlo Tree Search (MCTS) as SCPRM-MCTS to conduct multi-hop reasoning on KGs for question answering (QA) tasks. Across medical and legal KGQA and CWQ, SCPRM-MCTS improves the performance of Hits@k by an average of 1.18% over strong baselines, demonstrating more accurate and risk-sensitive reasoning evaluation.",
+      "url": "https://arxiv.org/abs/2605.02819",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8838
+    },
+    {
+      "id": "2605.02452",
+      "title": "Position: How can Graphs Help Large Language Models?",
+      "authors": [
+        "Xiyuan Wang",
+        "Yi Hu",
+        "Yanbo Wang",
+        "Chuan Shi",
+        "Muhan Zhang"
+      ],
+      "abstract": "With the rapid advancement of large language models (LLMs), classic graph learning tasks have greatly benefited from LLMs, including improved encoding of textual features, more efficient construction of graphs from text, and enhanced reasoning over knowledge graphs. In this paper, we ask a complementary question: How can graphs help LLMs? We address this question from three perspectives: 1) graphs provide an up-to-date knowledge source that helps reduce LLM hallucinations, 2) graph-based prompting techniques-such as Chain-of-Thought (CoT), Tree-of-Thought (ToT), and Graph-of-Thought (GoT)-enhance LLM reasoning capabilities, and 3) integrating graphs into LLMs improves their understanding of structured data, expanding their applicability to domains such as e-commerce, code, and relational databases (RDBs). We further outlook some future directions including designing sparse LLM architectures based on graphs and brain-inspired memory systems.",
+      "url": "https://arxiv.org/abs/2605.02452",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8836
+    },
+    {
+      "id": "2605.02741",
+      "title": "AI-Generated Smells: An Analysis of Code and Architecture in LLM and Agent-Driven Development",
+      "authors": [
+        "Yuecai Zhu",
+        "Nikolaos Tsantalis",
+        "Peter C. Rigby"
+      ],
+      "abstract": "The promise of Large Language Models in automated software engineering is often measured by functional correctness, overlooking the critical issue of long term maintainability. This paper presents a systematic audit of technical debt in AI-generated software, revealing that AI does not eliminate flaws but rather introduces a distinct machine signature of defects. Our multi-scale analysis, spanning single-file algorithmic tasks and complex, agent generated systems, identifies a fundamental Reasoning-Complexity Trade-off: as models become more capable, they generate increasingly bloated and coupled code. This architectural decay is so pronounced that we establish a Volume-Quality Inverse Law, where code volume is a near perfect predictor of structural degradation. Crucially, we demonstrate that neither functional correctness nor detailed prompting mitigates this decay. These findings challenge the current paradigm of prompt-driven generation, reframing the central problem of AI-based software engineering from one of code generation to one of architectural complexity management. We conclude that future progress depends on equipping agents with explicit architectural foresight to ensure the software they build is not just functional, but also maintainable.",
+      "url": "https://arxiv.org/abs/2605.02741",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8821
+    },
+    {
+      "id": "2605.02168",
+      "title": "Planner Matters! An Efficient and Unbalanced Multi-agent Collaboration Framework for Long-horizon Planning",
+      "authors": [
+        "Wenyi Wu",
+        "Sibo Zhu",
+        "Kun Zhou",
+        "Biwei Huang"
+      ],
+      "abstract": "Language model (LM)-based agents have demonstrated promising capabilities in automating complex tasks from natural language instructions, yet they continue to struggle with long-horizon planning and reasoning. To address this, we propose an enhanced multi-agent framework that decomposes automation into three roles: a planner for high-level decision-making, an actor for task execution, and a memory manager for contextual reasoning. While this modular decomposition aligns with established design patterns, our core contribution lies in a systematic compute-allocation analysis, revealing that planning is the dominant factor influencing task performance. Execution and memory management require significantly less compute and model capacity to achieve competitive results. Building on these insights, we introduce a planner-centric reinforcement learning approach, which exclusively optimizes the planner using trajectory-level rewards from a VLM-as-judge, while freezing the other components. Extensive experiments on benchmarks spanning web navigation, OS control, and tool use demonstrate that concentrating model capacity and learning on high-level planning yields robust and compute-efficient improvements in long-horizon agent automation. Our code is publicly released.",
+      "url": "https://arxiv.org/abs/2605.02168",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-05-04",
+      "score": 0.8819
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
