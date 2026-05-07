@@ -1,0 +1,400 @@
+{
+  "date": "2026-05-07",
+  "collected_at": "2026-05-07T12:46:45.871918+09:00",
+  "papers": [
+    {
+      "id": "2605.05007",
+      "title": "Uno-Orchestra: Parsimonious Agent Routing via Selective Delegation",
+      "authors": [
+        "Zhiqing Cui",
+        "Haotong Xie",
+        "Jiahao Yuan",
+        "Cheng Yang",
+        "Hanqing Wang",
+        "Yuxin Wu",
+        "Yifan Wu",
+        "Siru Zhong",
+        "Tao Yu",
+        "Yifu Guo",
+        "Siyu Zhang",
+        "Xinlei Yu",
+        "Qibing Ren",
+        "Usman Naseem"
+      ],
+      "abstract": "Large language model (LLM) multi-agent systems typically rely on rigid orchestration, committing either to flat per-query routing or to hand-engineered task decomposition, so decomposition depth, worker choice, and inference budget are not jointly optimized under one objective. We introduce Uno-Orchestra, a unified orchestration policy that selectively decomposes a task and dispatches each subtask to an admissible (model, primitive) pair, with both decisions learned together from curated RL trajectories grounded in real worker interactions. Against 22 baselines on a 13-benchmark suite spanning math, code, knowledge, long-context, and agentic tool-use, Uno-Orchestra reaches 77.0% macro pass@1, roughly 16% above the strongest workflow baseline, at roughly an order of magnitude lower per-query cost, advancing the accuracy-efficiency frontier of selective delegation.",
+      "url": "https://arxiv.org/abs/2605.05007",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8928
+    },
+    {
+      "id": "2605.04897",
+      "title": "Storage Is Not Memory: A Retrieval-Centered Architecture for Agent Recall",
+      "authors": [
+        "Joshua Adler",
+        "Guy Zehavi"
+      ],
+      "abstract": "Extraction at ingestion is the wrong primitive for agent memory: content discarded before the query is known cannot be recovered at retrieval time. We propose True Memory, a six-layer architecture that shifts the center of the system from a storage schema to a multi-stage retrieval pipeline operating over events preserved verbatim. The full system runs as a single SQLite file on commodity CPU with no external database, vector index, graph store, or GPU. On LoCoMo (1,540 questions across 10 multi-session conversations), True Memory Pro reaches 93.0% accuracy (3-run mean) against 61.4% for Mem0, 65.4% for Supermemory, approximately 71% for Zep, and 94.5% for EverMemOS under a matched gpt-4.1-mini answer model. On LongMemEval (500 questions), True Memory Pro reaches 87.8% (3-run mean). On BEAM-1M (700 questions at the 1-million-token scale), True Memory Pro reaches 76.6% (3-run mean), above the prior published result of 73.9% for Hindsight. A 56-configuration ablation shows a 1.3-percentage-point spread within the top-performing configuration family.",
+      "url": "https://arxiv.org/abs/2605.04897",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8891
+    },
+    {
+      "id": "2605.05191",
+      "title": "LongSeeker: Elastic Context Orchestration for Long-Horizon Search Agents",
+      "authors": [
+        "Yijun Lu",
+        "Rui Ye",
+        "Yuwen Du",
+        "Jiajun Wang",
+        "Songhua Liu",
+        "Siheng Chen"
+      ],
+      "abstract": "Long-horizon search agents must manage a rapidly growing working context as they reason, call tools, and observe information. Naively accumulating all intermediate content can overwhelm the agent, increasing costs and the risk of errors. We propose that effective context management should be adaptive: parts of the agent's trajectory are maintained at different levels of detail depending on their current relevance to the task. To operationalize this principle, we introduce Context-ReAct, a general agentic paradigm for elastic context orchestration that integrates reasoning, context management, and tool use in a unified loop. Context-ReAct provides five atomic operations: Skip, Compress, Rollback, Snippet and Delete, which allow the agent to dynamically reshape its working context, preserving important evidence, summarizing resolved information, discarding unhelpful branches, and controlling context size. We prove that the Compress operator is expressively complete, while the other specialized operators provide efficiency and fidelity guarantees that reduce generation cost and hallucination risk. Building on this paradigm, we develop LongSeeker, a long-horizon search agent fine-tuned from Qwen3-30B-A3B on 10k synthesized trajectories. Across four representative search benchmarks, LongSeeker achieves 61.5% on BrowseComp and 62.5% on BrowseComp-ZH, substantially outperforming Tongyi DeepResearch (43.2% and 46.7%) and AgentFold (36.2% and 47.3%). These results highlight the potential of adaptive context management, showing that agents can achieve more reliable and efficient long-horizon reasoning by actively shaping their working memory.",
+      "url": "https://arxiv.org/abs/2605.05191",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8876
+    },
+    {
+      "id": "2605.05090",
+      "title": "Automatically Finding and Validating Unexpected Side-Effects of Interventions on Language Models",
+      "authors": [
+        "Quintin Pope",
+        "Ajay Hayagreeve Balaji",
+        "Jacques Thibodeau",
+        "Xiaoli Fern"
+      ],
+      "abstract": "We present an automated, contrastive evaluation pipeline for auditing the behavioral impact of interventions on large language models. Given a base model $M_1$ and an intervention model $M_2$, our method compares their free-form, multi-token generations across aligned prompt contexts and produces human-readable, statistically validated natural-language hypotheses describing how the models differ, along with recurring themes that summarize patterns across validated hypotheses.\n  We evaluate the approach in synthetic setting by injecting known behavioral changes and showing that the pipeline reliably recovers them. We then apply it to three real-world interventions, reasoning distillation, knowledge editing and unlearning, demonstrating that the method surfaces both intended and unexpected behavioral shifts, distinguishes large from subtle interventions, and does not hallucinate differences when effects are absent or misaligned with the prompt bank. Overall, the pipeline provides a statistically grounded and interpretable tool for post-hoc auditing of intervention-induced changes in model behavior.",
+      "url": "https://arxiv.org/abs/2605.05090",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8872
+    },
+    {
+      "id": "2605.04719",
+      "title": "Every Step Counts: Step-Level Credit Assignment for Tool-Integrated Text-to-SQL",
+      "authors": [
+        "Yaxun Dai",
+        "Baolin Sun",
+        "Junying Wang",
+        "Pengfei Wang",
+        "Yingqi Gao",
+        "Xuemei Dong",
+        "Mengdie Chu",
+        "Xiang Qi",
+        "Pingfu Chao"
+      ],
+      "abstract": "Tool-integrated Text-to-SQL parsing has emerged as a promising paradigm, framing SQL generation as a sequential decision-making process interleaved with tool execution. However, existing reinforcement learning approaches mainly rely on coarse-grained outcome supervision, resulting in a fundamental credit assignment problem: models receive the same reward for any trajectory that yields the correct answer, even when intermediate steps are redundant, inefficient, or erroneous. Consequently, models are encouraged to explore suboptimal reasoning spaces, limiting both efficiency and generalization. To address this problem, we propose FineStep, a novel framework for step-level credit assignment in tool-augmented Text-to-SQL. First, we introduce a reward design with independent process rewards to alleviate the signal sparsity of outcome supervision. Next, we present a step-level credit assignment mechanism to precisely quantify the value of each reasoning step. Finally, we develop a policy optimization method based on step-level advantages for efficient updates. Extensive experiments on BIRD benchmarks show that FineStep achieves state-of-the-art performance and reduces redundant tool interactions, with a 3.25% average EX gain over GRPO at the 4B scale.",
+      "url": "https://arxiv.org/abs/2605.04719",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8863
+    },
+    {
+      "id": "2605.04624",
+      "title": "AuditRepairBench: A Paired-Execution Trace Corpus for Evaluator-Channel Ranking Instability in Agent Repair",
+      "authors": [
+        "Yuelin Hu",
+        "Zhenbo Yu",
+        "Zhengxue Cheng",
+        "Wei Liu",
+        "Li Song"
+      ],
+      "abstract": "Agent-repair leaderboards reorder under evaluator reconfiguration, and a measurable share of the reordering is produced by methods that consult evaluator-derived signal during internal selection of candidate repairs. We document this failure mode on a public leaderboard and release AuditRepairBench, a paired-execution trace corpus of 576,000 registered cells (96,000 executed) that operationalizes evaluator-channel-blocking ranking instability within a declared observability boundary. A modular screening architecture decides pathway-blocking through four interchangeable implementations, a learned influence proxy, a rule-based channel-exposure ratio that uses no trained model, a counterfactual sensitivity proxy, and a sparse human-audit proxy, combined into a screening posterior that feeds a cell-level flip functional, a set-valued label, a stratified system score, and a set-valued leaderboard. The resource is supported by mechanism-anchored validation on an 80-case source-level channel-surgery subset, an independent-discovery protocol under which two annotator groups separated from the pipeline developers discover coupling patterns blinded to the screening design and the frozen ensemble attains pooled AUROC 0.83 on their 79 cases, implementation robustness, uncertainty propagation that raises 95% coverage from 0.81 to 0.95, and forward transfer with pooled community-evaluator Spearman \\r{ho} = 0.65. Screening-guided blinding patches reduce rank displacement by 55--74% (mean 62%) at fewer than 50 lines of code, whereas random channel blinding produces at most 7% reduction and generic retraining at most 13%. AuditRepairBench-Lite, a rule-only configuration on a 12,000-cell subset, preserves the leaderboard at Kendall τ = 0.88 under twenty-four GPU-hours and is the primary release artifact at 42 GB.",
+      "url": "https://arxiv.org/abs/2605.04624",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.04496",
+      "title": "SCOUT: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States",
+      "authors": [
+        "Zhenliang Zhang",
+        "Wenqing Wang",
+        "Yong Hu",
+        "Yaming Yang",
+        "Jiaheng Gao",
+        "Chen Shen",
+        "Xiaojun Wan"
+      ],
+      "abstract": "Long-Text Understanding (LTU) at million-token scale requires balancing reasoning fidelity with computational efficiency. Frontier long-context LLMs can process millions of token contexts end-to-end, but they suffer from high token consumption and attention dilution. In parallel, specialized LTU agents often sacrifice fidelity through task-agnostic abstractions like graph construction or indexing. We identify a key insight for LTU: query-relevant information is typically sparse relative to the full document, so effective reasoning should rely on a query-sufficient subset rather than the entire context. To address this, we propose SCOUT, a new paradigm for LTU that shifts from passive processing to active information foraging. It treats the document as an explorable environment and answers from a compact, provenance-grounded epistemic state. Guided by state-level gap diagnosis, SCOUT adaptively alternates between coarse-to-fine exploration and anchored state updates that progressively contract its epistemic state toward query sufficiency. Experiments show that SCOUT matches state-of-the-art proprietary models while reducing token consumption by up to 8x. Moreover, SCOUT remains stable as context length scales, substantially alleviating the practical cost-performance trade-off.",
+      "url": "https://arxiv.org/abs/2605.04496",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8854
+    },
+    {
+      "id": "2605.04759",
+      "title": "Gyan: An Explainable Neuro-Symbolic Language Model",
+      "authors": [
+        "Venkat Srinivasan",
+        "Vishaal Jatav",
+        "Anushka Chandrababu",
+        "Geetika Sharma"
+      ],
+      "abstract": "Transformer based pre-trained large language models have become ubiquitous. There is increasing evidence to suggest that even with large scale pre-training, these models do not capture complete compositional context and certainly not, the full human analogous context. Besides, by the very nature of the architecture, these models hallucinate, are difficult to maintain, are not easily interpretable and require enormous compute resources for training and inference. Here, we describe Gyan, an explainable language model based on a novel non-transformer architecture, without any of these limitations. Gyan achieves SOTA performance on 3 widely cited data sets and superior performance on two proprietary data sets. The novel architecture decouples the language model from knowledge acquisition and representation. The model draws on rhetorical structure theory, semantic role theory and knowledge-based computational linguistics. Gyan's meaning representation structure captures the complete compositional context and attempts to mimic humans by expanding the context to a 'world model'. AI model adoption critically depends on trust and transparency especially in mission critical use cases. Collectively, our results demonstrate that it is possible to create models which are trustable and reliable for mission critical tasks. We believe our work has tremendous potential for guiding the development of transparent and trusted architectures for language models.",
+      "url": "https://arxiv.org/abs/2605.04759",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.ET",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8839
+    },
+    {
+      "id": "2605.04356",
+      "title": "Efficiently Aligning Language Models with Online Natural Language Feedback",
+      "authors": [
+        "Christine Ye",
+        "Joe Benton"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards has been used to elicit impressive performance from language models in many domains. But, broadly beneficial deployments of AI may require us to train models with strong capabilities in \"fuzzy\", hard-to-supervise domains. In this paper, we develop methods to align language models in fuzzy domains where human experts are still able to provide high-quality supervision signal, but only for a small number of model outputs, using online natural language feedback. Specifically, we train models by iteratively optimizing against proxy reward signals, stopping at the point of over-optimization, collecting fresh expert supervision, and updating the proxy reward. We construct proxy reward models from language models using in-context learning (ICL) and fine-tuning. We test our methods by eliciting creative writing and alignment research capabilities in Qwen3-8B and Haiku 4.5 respectively. For Qwen3-8B, ICL methods recover up to 35% of performance with 50x fewer expert samples, while fine-tuning methods recover 80% with up to 20x fewer samples and 100% with 3x fewer samples. For Haiku 4.5, ICL methods recover up to 35% of performance with 30x fewer samples, and fine-tuning methods recover 100% with 10x fewer samples. Our results suggest that online natural language feedback can substantially improve the data efficiency of expert supervision.",
+      "url": "https://arxiv.org/abs/2605.04356",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-05",
+      "score": 0.8835
+    },
+    {
+      "id": "2605.04539",
+      "title": "RLearner-LLM: Balancing Logical Grounding and Fluency in Large Language Models via Hybrid Direct Preference Optimization",
+      "authors": [
+        "Qiming Bao",
+        "Juho Leinonen",
+        "Paul Denny",
+        "Michael J. Witbrock"
+      ],
+      "abstract": "Direct Preference Optimization (DPO), the efficient alternative to PPO-based RLHF, falls short on knowledge-intensive generation: standard preference signals from human annotators or LLM judges exhibit a systematic verbosity bias that rewards fluency over logical correctness. This blindspot leaves a logical alignment gap -- SFT models reach NLI entailment of only 0.05-0.22 despite producing fluent text. We propose RLearner-LLM with Hybrid-DPO: an automated preference pipeline that fuses a DeBERTa-v3 NLI signal with a verifier LLM score, removing human annotation while overcoming the \"alignment tax\" of single-signal optimization. Evaluated across five academic domains (Biology, Medicine, Law) with three base architectures (LLaMA-2-13B, Qwen3-8B, Gemma 4 E4B-it), RLearner-LLM yields up to 6x NLI improvement over SFT, with NLI gains in 11 of 15 cells and consistent answer-coverage gains. On Gemma 4 E4B-it (4.5B effective params), Hybrid-DPO lifts NLI in four of five domains (+11.9% to +2.4x) with faster inference across all five, scaling down to compact base models without losing the alignment-tax mitigation. Our Qwen3-8B RLearner-LLM wins 95% of pairwise comparisons against its own SFT baseline; GPT-4o-mini in turn wins 95% against our concise output -- alongside the 69% win the same judge gives a verbose SFT over our DPO model, this replicates verbosity bias on a frontier comparator and motivates logic-aware metrics (NLI, ACR) over LLM-as-a-judge for knowledge-intensive generation.",
+      "url": "https://arxiv.org/abs/2605.04539",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8833
+    },
+    {
+      "id": "2605.04431",
+      "title": "Towards Robust LLM Post-Training: Automatic Failure Management for Reinforcement Fine-Tuning",
+      "authors": [
+        "Lingzhe Zhang",
+        "Tong Jia",
+        "Yunpeng Zhai",
+        "Liancheng Fang",
+        "Kening Zheng",
+        "Hongyi Liu",
+        "Xiaosong Huang",
+        "Philip S. Yu",
+        "Ying Li"
+      ],
+      "abstract": "Reinforcement fine-tuning (RFT) has become a core paradigm for post-training large language models, yet its training process remains highly fragile. Existing efforts mainly improve reliability at the system level or address specific issues in individual subproblems by modifying RFT algorithms. Despite their effectiveness, they largely overlook the problem of failure management at the training-process level. When training goes wrong, practitioners still rely heavily on expert-driven manual inspection and correction, and automatic failure management for RFT remains largely unexplored. In this paper, we take a first step toward systematic failure management for reinforcement fine-tuning. To understand the empirical structure of RFT failures, we first construct RFT-FaultBench, the first benchmark for fine-grained failures in reinforcement fine-tuning, covering 5 fault families, 16 fault types, 779 training runs, 22,549 train-step records, and 1,457,288 trajectory-level records. Based on this benchmark, we conduct a comprehensive empirical study showing that RFT failures are both observable from training dynamics and distinguishable through their empirical fault fingerprints. Building on these findings, we propose RFT-FM, an automatic failure management framework for reinforcement fine-tuning that unifies anomaly detection, failure diagnosis, and auto remediation in a closed loop. Experimental results show that RFT-FaultBench is neither trivial nor saturated: it exhibits clear anomaly structure while still posing substantial challenges, especially under subtle fault settings. Moreover, RFT-FM shows strong capability in detecting, diagnosing, and mitigating RFT failures.",
+      "url": "https://arxiv.org/abs/2605.04431",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.883
+    },
+    {
+      "id": "2605.04426",
+      "title": "Telegraph English: Semantic Prompt Compression via Structured Symbolic Rewriting",
+      "authors": [
+        "Mikhail L. Arbuzov",
+        "Sisong Bei",
+        "Ziwei Dong",
+        "Dmitri Kalaev",
+        "Alexey A. Shvets"
+      ],
+      "abstract": "We introduce Telegraph English (TE), a prompt-compression protocol that rewrites natural language into a symbol-rich, formally-structured dialect. Where token-deletion methods such as LLMLingua-2 train a classifier to delete low-importance tokens at a fixed ratio, TE performs a full semantic rewrite: it decomposes the input into atomic fact lines, substitutes verbose phrases with $\\sim$40 logical and relational symbols, and lets the compression ratio adapt to each document's information density. A consequence of the line-structure rule is that compression and semantic chunking become the same operation -- each output line is an independently addressable fact, so the compressed representation is simultaneously a semantic index. We evaluate TE on 4{,}081 question-answer pairs from LongBench-v2 across five OpenAI models and two difficulty levels. At roughly 50\\% token reduction, TE preserves 99.1\\% accuracy on key facts with GPT-4.1 and outperforms LLMLingua-2 at matched compression ratios on every model and task tested. The gap widens on smaller models -- up to 11 percentage points on fine-detail tasks -- suggesting that explicit relational structure compensates for limited model capacity. We release the grammar specification, compression prompt, benchmark data, and reference implementation.",
+      "url": "https://arxiv.org/abs/2605.04426",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8826
+    },
+    {
+      "id": "2605.04984",
+      "title": "Self-Induced Outcome Potential: Turn-Level Credit Assignment for Agents without Verifiers",
+      "authors": [
+        "Senkang Hu",
+        "Yong Dai",
+        "Xudong Han",
+        "Zhengru Fang",
+        "Yuzhi Zhao",
+        "Sam Tak Wu Kwong",
+        "Yuguang Fang"
+      ],
+      "abstract": "Long-horizon LLM agents depend on intermediate information-gathering turns, yet training feedback is usually observed only at the final answer, because process-level rewards require high-quality human annotation. Existing turn-level shaping methods reward turns that increase the likelihood of a gold answer, but they require answer supervision or stable task-specific verifiers. Conversely, label-free RL methods extract self-signals from output distributions, but mainly at the answer or trajectory level and therefore cannot assign credit to intermediate turns. We propose Self-Induced Outcome Potential (SIOP), which treats semantic clusters of final answers as latent future outcome states for potential-based turn-level credit assignment. For each query, SIOP samples multiple rollouts, clusters final answers into semantic outcome modes, and builds a reliability-aware target distribution over these states. It then rewards turns for increasing posterior support for reliable future states using a tractable cluster-level approximation. The objective generalizes information-potential shaping from gold-answer supervision to settings without task-specific gold verifiers while avoiding the broadcasted rollout-level advantages used by standard GRPO. We formalize the framework, characterize its supervised gold-answer limit, and show that SIOP improves average performance over verifier-free outcome-level baselines on seven search-augmented agentic reasoning benchmarks while approaching a gold-supervised outcome baseline. Code is available at https://github.com/dl-m9/SIOP.git.",
+      "url": "https://arxiv.org/abs/2605.04984",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "github_url": "https://github.com/dl-m9/SIOP.git.",
+      "score": 0.8821
+    },
+    {
+      "id": "2605.04449",
+      "title": "GEM: Graph-Enhanced Mixture-of-Experts with ReAct Agents for Dialogue State Tracking",
+      "authors": [
+        "Ziqi Zhu",
+        "Adithya Suresh",
+        "Tomal Deb",
+        "Iman Abbasnejad"
+      ],
+      "abstract": "Dialogue State Tracking (DST) requires precise extraction of structured information from multi-domain conversations, a task where Large Language Models (LLMs) struggle despite their impressive general capabilities. We present GEM (Graph-Enhanced Mixture-of-Experts), a novel framework that combines language models and graph-structured dialogue understanding with ReAct agent-based reasoning for superior DST performance. Our approach dynamically routes between specialized experts: a Graph Neural Network that captures dialogue structure and turn-level dependencies, and a finetuned T5-Small encoder-decoder for sequence modeling, coordinated by an intelligent router. For complex value generation tasks, we integrate ReAct agents that perform structured reasoning over dialogue context. On MultiWOZ 2.2, GEM achieves 65.19% Joint Goal Accuracy, substantially outperforming end-to-end LLM approaches (best: 38.43%) and surpassing state-of-the-art (SOTA) methods including TOATOD (63.79%), D3ST (58.70%), and Diable (56.48%). Our graph-enhanced mixture-of-experts architecture with ReAct integration demonstrates that combining structured dialogue representation with dynamic expert routing and agent-based reasoning provides a powerful paradigm for dialogue state tracking, achieving superior accuracy while maintaining computational efficiency through selective expert activation.",
+      "url": "https://arxiv.org/abs/2605.04449",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8811
+    },
+    {
+      "id": "2605.04941",
+      "title": "UFAL-CUNI at SemEval-2026 Task 11: An Efficient Modular Neuro-symbolic Method for Syllogistic Reasoning",
+      "authors": [
+        "Ivan Kartáč",
+        "Kristýna Onderková",
+        "Jan Bronec",
+        "Zdeněk Kasner",
+        "Mateusz Lango",
+        "Ondřej Dušek"
+      ],
+      "abstract": "This paper describes our system submitted to SemEval-2026 Task 11: Disentangling Content and Formal Reasoning in Large Language Models. We present an efficient modular neuro-symbolic approach, combining a symbolic prover with small reasoning LLMs (4B parameters). The system consists of an LLM-based parser that translates natural language syllogisms to a first-order logic (FOL) representation, an automated theorem prover, and two optional modules: machine translation for multilingual inputs and a symbolic retrieval component for the identification of relevant premises. The system achieves competitive accuracy and relatively low content effect on most subtasks. Our ablations show that this approach outperforms LLM-based zero-shot baselines in this parameter size range, but also reveal limited multilingual capabilities of small LLMs. Finally, we include a discussion of the task's main ranking metric and analyze its limitations.",
+      "url": "https://arxiv.org/abs/2605.04941",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8809
+    },
+    {
+      "id": "2605.05103",
+      "title": "Text Corpora as Concept Fields: Black-Box Hallucination and Novelty Measurement",
+      "authors": [
+        "Nicholas S. Kersting",
+        "Vittorio Castelli",
+        "Chieh Ting Yeh",
+        "Xinzhu Wang",
+        "Saad Taame"
+      ],
+      "abstract": "We introduce the **Concept Field** of a text corpus: a local drift field with pointwise uncertainty, estimated in sentence-embedding space from the deltas between consecutive sentences. Given a candidate sentence transition, we score its agreement with the field by $ζ$, the mean absolute z-distance between the observed delta and the field's local Gaussian estimate. The score is black-box (no model internals), corpus-attributable (every score traces to nearby corpus sentences), and admits a direct probabilistic reading. We support the computation with the introduction of a **Vector Sequence Database (VSDB)** that stores embeddings together with sequence-position and next-delta metadata. We evaluate this approach on two large-scale settings: hallucination-style groundedness detection over the U.S. Code of Federal Regulations, and novelty detection over Project Gutenberg. Using controlled LLM-generated rewrites, Concept Fields achieve strong selective classification performance under a grounded / ungrounded / unsure triage policy, which unlike retrieval-centric baselines have similar coverage-risk behavior across both domains, supporting a probability-based interpretation that transfers across domains. We also sketch how divergence and curl of the Concept Field, computed on dense clusters, surface qualitatively meaningful semantic patterns (logic sources, sinks, and implicit topics), which we offer as hypothesis-generating rather than as a quantitative result. Concept Fields provide a fast, lightweight, and interpretable signal for groundedness and novelty, complementary to LLM-as-judge and white-box detectors.",
+      "url": "https://arxiv.org/abs/2605.05103",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8803
+    },
+    {
+      "id": "2605.04507",
+      "title": "Distilling Bayesian Belief States into Language Models for Auditable Negotiation",
+      "authors": [
+        "Zongqi Cui",
+        "Baihan Lin"
+      ],
+      "abstract": "Negotiation agents must infer what their counterpart values, update those beliefs over dialogue turns, and choose actions under uncertainty. End-to-end large language models (LLMs) can imitate negotiation dialogue, but their opponent beliefs are usually implicit and difficult to inspect. We propose BOND (Bayesian Opponent-belief Negotiation Distillation), a framework for auditable negotiation. BOND consists of an LLM-based Bayesian teacher that scores dialogue contexts against the six possible opponent priority orderings, updates a posterior over those orderings, and uses the posterior for menu-based decision making, as well as a smaller 8B student language model that emits both negotiation actions and normalized posterior beliefs as tagged text. In the CaSiNo negotiation dataset, BOND outperforms the state-of-the-art and achieves mean Brier score 0.085 over opponent-priority posteriors. The distilled student preserves much of this belief signal, achieving Brier 0.114, below the uniform six-ordering reference of 5/36, approximately 0.139. Compared with a 70B structured-CoT baseline, the significantly smaller 8B student model yields substantially better elicited posterior calibration. We further showcase auditability through posterior trajectories, belief-versus-policy error decomposition, and posterior-prefix interventions. These diagnostics reveal that distillation preserves a scoreable belief report more strongly than causal belief-conditioned control, making weak belief-action coupling visible, not hidden.",
+      "url": "https://arxiv.org/abs/2605.04507",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8787
+    },
+    {
+      "id": "2605.05025",
+      "title": "Detecting Hallucinations in Large Language Models via Internal Attention Divergence Signals",
+      "authors": [
+        "Gijs van Dijk"
+      ],
+      "abstract": "We propose a lightweight and single-pass uncertainty quantification method for detecting hallucinations in Large Language Models. The method uses attention matrices to estimate uncertainty without requiring repeated sampling or external models. Specifically, we measure the Kullback-Leibler divergence between each attention head's distribution and a uniform reference distribution, and use these features in a logistic regression probe. Across multiple datasets, task types, and model families, attention divergence is highly predictive of answer correctness and performs competitively with existing uncertainty estimation methods. We find that this signal is concentrated in middle layers and on factual tokens such as named entities and numbers, suggesting that attention dynamics provides an efficient and interpretable white-box signal of model uncertainty.",
+      "url": "https://arxiv.org/abs/2605.05025",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8784
+    },
+    {
+      "id": "2605.04446",
+      "title": "Misrouter: Exploiting Routing Mechanisms for Input-Only Attacks on Mixture-of-Experts LLMs",
+      "authors": [
+        "Zekun Fei",
+        "Zihao Wang",
+        "Weijie Liu",
+        "Ruiqi He",
+        "Jianing Geng",
+        "Zheli Liu",
+        "XiaoFeng Wang"
+      ],
+      "abstract": "Mixture-of-Experts (MoE) architectures have emerged as a leading paradigm for scaling large language models through sparse, routing-based computation. However, this design introduces a new attack surface: the routing mechanism that determines which experts process each input. Prior work shows that manipulating routing can bypass safety alignment, but existing attacks require model modification and thus apply only to locally deployed models. By contrast, real-world LLM services are remotely hosted and accessible only through input queries. This raises a fundamental question: can MoE routing be exploited through input-only attacks to induce stronger unsafe behaviors in real-world services? Our key insight is to optimize attacks in a white-box setting on open-source surrogate MoE models and transfer the resulting adversarial inputs to public API services within the same model family. This setting presents three main challenges: routing can be influenced only indirectly through input perturbations, routing control and output generation are tightly coupled, and even a successful safety bypass may still produce low-quality responses. To address these challenges, we propose Misrouter, an input-only attack framework that jointly targets routing behavior and expert functionality. Misrouter identifies weakly aligned experts that are willing to produce target harmful content by analyzing expert activations under harmful queries paired with unsafe continuations. It then optimizes adversarial inputs to steer routing toward these experts and away from strongly aligned ones. It further biases routing toward highly capable general-purpose experts identified from benign question-answering tasks. Finally, because routing and output objectives can conflict, Misrouter uses a two-phase optimization strategy that first steers routing and then optimizes harmful outputs while preserving routing stability.",
+      "url": "https://arxiv.org/abs/2605.04446",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8784
+    },
+    {
+      "id": "2605.04572",
+      "title": "From Parameter Dynamics to Risk Scoring : Quantifying Sample-Level Safety Degradation in LLM Fine-tuning",
+      "authors": [
+        "Xiao Wang",
+        "Yifei Zhang",
+        "YongKang Liu",
+        "Xiaocui Yang",
+        "Zihan Wang",
+        "Shi Feng",
+        "Daling Wang"
+      ],
+      "abstract": "Safety alignment of Large Language Models (LLMs) is extremely fragile, as fine-tuning on a small number of benign samples can erase safety behaviors learned from millions of preference examples. Existing studies attempt to explain this phenomenon by comparing parameters and hidden states before and after fine-tuning, but overlook their dynamic evolution during fine-tuning. In this paper, we uncover a critical mechanism underlying safety degradation by analyzing parameter dynamics, where benign fine-tuning causes parameters to cumulatively drift toward danger-aligned directions, progressively undermining the model's safety. This finding suggests that samples contributing more to this drift has greater fine-tuning risks. Based on this insight, we propose a method of Sample-Level Quantification of Safety Degradation (SQSD), which quantifies the influence of each training sample on safety degradation. Specifically, SQSD computes continuous risk scores to samples by measuring their induced parameter updates' projection difference between danger and safety directions. Extensive experiments across multiple models and datasets demonstrate that SQSD effectively quantifies sample-level fine-tuning risks and exhibits strong transferability across model architectures, parameter scales, and parameter-efficient methods.",
+      "url": "https://arxiv.org/abs/2605.04572",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-06",
+      "score": 0.8775
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
