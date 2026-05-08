@@ -1,0 +1,388 @@
+{
+  "date": "2026-05-08",
+  "collected_at": "2026-05-08T12:39:31.069354+09:00",
+  "papers": [
+    {
+      "id": "2605.06165",
+      "title": "Post Reasoning: Improving the Performance of Non-Thinking Models at No Cost",
+      "authors": [
+        "Richmond Sin Jing Xuan",
+        "Rishabh Bhardwaj",
+        "Soujanya Poria"
+      ],
+      "abstract": "As the widespread adoption of Large Language Models (LLMs) accelerates, token consumption from intermediate reasoning traces increasingly contributes to inference latency and operational cost. Recent studies suggest that many real-world tasks require little to no explicit reasoning, with additional reasoning sometimes even degrading performance. In this work, we propose \\textbf{Post-Reasoning}, a simple yet effective approach that improves instruction-tuned models by conditioning them to justify their answers after generating the final response. By design, it enables the final answer to be obtained without additional latency or token cost, while still improving performance through simple instruction augmentation. We evaluate Post-Reasoning across \\(117\\) model--benchmark settings spanning \\(13\\) open and proprietary models, \\(4\\) model families, and \\(9\\) diverse reasoning and knowledge-intensive benchmarks, including AMC, HMMT, GSM8K, GPQA, MMLU-Pro, and BIG-Bench Hard. Post-Reasoning improves performance in over \\(88.19\\%\\) of evaluated settings, achieving a mean relative improvements of \\(17.37\\%\\). Furthermore, we propose supervised post-reason tuning, which further improves performance in over \\(91.11\\%\\) of evaluated settings, and exceeds the prompt-based post-reasoning baseline by an average of \\(8.01\\%\\), demonstrating that post-reasoning can be effectively internalized through training. Ultimately, Post-Reasoning establishes a new performance ceiling for direct-answer capabilities.",
+      "url": "https://arxiv.org/abs/2605.06165",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8977
+    },
+    {
+      "id": "2605.06116",
+      "title": "Policy-Guided Stepwise Model Routing for Cost-Effective Reasoning",
+      "authors": [
+        "Wenwen Si",
+        "Insup Lee",
+        "Osbert Bastani"
+      ],
+      "abstract": "Inference-time computation has greatly enhanced the performance of large language models (LLMs) on challenging reasoning tasks, but this strategy can incur high inference costs. One solution is to route intermediate chain-of-thought (CoT) states to language models of different sizes; however, existing approaches rely on handcrafted routing strategies that limit performance, or on training large process reward models that may be infeasible in many applications. We formulate stepwise model routing as a constrained decision-making problem, which we solve by training a small control policy using reinforcement learning in conjunction with threshold calibration to tune the performance-efficiency tradeoff. We validate our method on three math benchmarks (GSM8K, MATH500, and OmniMath) on both open and closed models. Our method consistently improves the accuracy-cost tradeoff compared to handcrafted approaches, while achieving a comparable tradeoff to methods that require training large process reward models.",
+      "url": "https://arxiv.org/abs/2605.06116",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.896
+    },
+    {
+      "id": "2605.06225",
+      "title": "Memory Inception: Latent-Space KV Cache Manipulation for Steering LLMs",
+      "authors": [
+        "Andy Zeyi Liu",
+        "Michael Zhang",
+        "Ilana Greenberg",
+        "Adam Alnasser",
+        "Lucas Baker",
+        "John Sous"
+      ],
+      "abstract": "Steering large language models (LLMs) is usually done by either instruction prompting or activation steering. Prompting often gives strong control, but caches guidance tokens at every layer and can clutter long interactions; activation steering is compact but typically weaker and does not support large structured reminders. We introduce memory inception (MI), a training-free method that steers in latent attention space by inserting text-derived key-value (KV) banks only at selected layers. Rather than materializing reminder content throughout the prompt cache, MI treats steering as selective KV allocation, injecting latent slots only where the model routes to them. On matched personality-steering tasks, MI gives the best overall control--drift trade-off, remaining competitive with prompting while consistently outperforming CAA. On updateable guidance, MI supports mid-conversation behavior shifts without rewriting the visible transcript, achieving the highest post-shift alignment on Qwen3. On structured reasoning, MI outperforms visible prompting on HARDMath and PHYSICS (10/12 subject$\\times$mode cells), serving as proxies for structured reasoning in verifiable domains, while cutting content-matched KV storage by up to 118$\\times$. These results position MI as a powerful steering method when guidance is persistent, structured, or expensive to keep in the visible transcript.",
+      "url": "https://arxiv.org/abs/2605.06225",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8923
+    },
+    {
+      "id": "2605.06308",
+      "title": "Measuring Black-Box Confidence via Reasoning Trajectories: Geometry, Coverage, and Verbalization",
+      "authors": [
+        "Marc Boubnovski Martell",
+        "Josefa Lia Stoisser",
+        "Kaspar Märtens",
+        "Jialin Yu",
+        "Robert Kitchen",
+        "Philip Torr",
+        "Jesper Ferkinghoff-Borg"
+      ],
+      "abstract": "Reliable confidence estimation enables safe deployment of chain-of-thought (CoT) reasoning through text-only APIs. Yet the dominant black-box baseline, self-consistency over K samples, is linearly expensive and ignores the geometry of the trace. We propose a black-box trajectory-confidence score: we embed a CoT as a sliding-window trajectory and measure its convergence to external answer anchors with a one-parameter softmax. The method needs no logits, hidden states, or supervised calibrators. Across six (benchmark, reasoner) settings on MedQA-USMLE, GPQA Diamond, and MMLU-Pro with Gemini 3.1 Pro and Claude Sonnet 4.6, fusing this score with coverage and verbalized-confidence channels at K=4 yields Pareto improvements over self-consistency at K=8 in 6/6 settings (median AUC 0.78 vs 0.71, deltaAUC=+0.075). A fixed-pick control (+0.060) and E5 cross-embedder replication rule out answer switching and single-vendor artifacts. Geometry peaks in the penultimate window across benchmarks and reasoners, and inverts at the terminal window on GPQA Diamond. Three unscaffolded regimes separate black-box confidence into a judge-mediated Coverage prior (C), within-trace Geometry (G), and a conditional Verbalization channel (V). Across 18 benchmark x reasoner x proposer settings, C and G provide independent signal in 18/18 and 16/18, while V contributes residual signal in 6/18. Swapping the judge from GPT-5-mini to Claude Sonnet 4.6 leaves G-only AUC unchanged (|delta|<=0.013) and shifts C-only AUC by at most +/-0.02 (kappa=0.82). Fusion beats the best single channel in 17/18 settings (median AUC 0.78, max 0.92).",
+      "url": "https://arxiv.org/abs/2605.06308",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8919
+    },
+    {
+      "id": "2605.06241",
+      "title": "Rethinking RL for LLM Reasoning: It's Sparse Policy Selection, Not Capability Learning",
+      "authors": [
+        "Ömer Faruk Akgül",
+        "Rajgopal Kannan",
+        "Willie Neiswanger",
+        "Viktor Prasanna"
+      ],
+      "abstract": "Reinforcement learning has become the standard for improving reasoning in large language models, yet evidence increasingly suggests that RL does not teach new strategies; it redistributes probability mass over solutions the base model already contains. In this work, we ask: if RL merely steers the model toward paths it already knows, is the RL optimization loop itself necessary? Through token-level analysis across multiple model families and RL algorithms, we find that RL's beneficial footprint is a sparse, predictable correction concentrated at high-entropy decision points where the model is uncertain which branch to take. Only 1--3\\% of token positions are affected, the promoted token always lies within the base model's top-5 alternatives, and targeted corrections at those few positions causally recover a large fraction of RL's accuracy gain, while random corrections fail. The base model's own entropy identifies these positions without any RL-trained model, and the entire correction is low-dimensional, representable in a tiny fraction of model parameters. These findings reframe reasoning improvement as sparse policy selection, not capability acquisition. We translate this insight into ReasonMaxxer, a minimal RL-free method that applies contrastive loss only at entropy-gated decision points, using a few hundred base-model rollouts and no online generation. Across three model families, six scales, and six math reasoning benchmarks, ReasonMaxxer matches or exceeds full RL performance while requiring only tens of problems and minutes of single-GPU training, a reduction in training cost of roughly three orders of magnitude.",
+      "url": "https://arxiv.org/abs/2605.06241",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8916
+    },
+    {
+      "id": "2605.06201",
+      "title": "Towards Annotation-Free Validation of MLLMs: A Vision-Language Logical Consistency Metric",
+      "authors": [
+        "Ying Gu",
+        "Mei Chee Leong",
+        "Hui Li Tan",
+        "Shangbo Mao",
+        "Liyuan Li",
+        "Nancy Chen"
+      ],
+      "abstract": "Dominant accuracy evaluation might reward unwarranted guessing of Large Language Models, and it might not be applicable to novel tasks for model validation without ground-truth (gt) annotation. Based on basic logic principle, we propose a novel framework to evaluate the vision-language logical consistency of MLLMs on both sufficient and necessary cause-effect relations. We define Vision-Language Logical Consistency Metric (VL-LCM) on traditional MC-VQA tests, and recent NaturalBench tests without the need for gt annotation. Through systematic experiments on representative VL benchmark MMMU and recent VL challenges like NaturalBench, we evaluated 11 recent open-source MLLMs from 4 frontier families. Our findings reveal that, despite significant progress of recent MLLMs on accuracy, logical consistency lags behind significantly. Extensive evaluations on the correlations of VL-LCM with metrics on gt, the reliability of LCM, and the relation of VL-LCM with response distribution justify the validity and applicability of VL-LCM even without gt annotation. Our findings suggest that, beyond accuracy, logical consistency could be employed for both accuracy and reliability. VL-LCM can also be employed for MLLM selection, validation, and reliable answer justification in novel tasks without gt annotation.",
+      "url": "https://arxiv.org/abs/2605.06201",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8914
+    },
+    {
+      "id": "2605.06527",
+      "title": "STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?",
+      "authors": [
+        "Hanxiang Chao",
+        "Yihan Bai",
+        "Rui Sheng",
+        "Tianle Li",
+        "Yushi Sun"
+      ],
+      "abstract": "Large Language Model (LLM) agents are increasingly expected to maintain coherent, long-term personalized memory, yet current benchmarks primarily measure static fact retrieval, overlooking the ability to revise stored beliefs when new evidence emerges. We identify a critical and underexplored failure mode, Implicit Conflict: a later observation invalidates an earlier memory without explicit negation, requiring contextual inference and commonsense reasoning to detect. To rigorously evaluate this capability, we introduce STALE, a benchmark of 400 expert-validated conflict scenarios (1,200 evaluation queries across three probing dimensions) spanning over 100 everyday topics with contexts up to 150K tokens. We propose a three-dimensional probing framework that tests State Resolution (detecting that a prior belief is outdated), Premise Resistance (rejecting queries that falsely presuppose a stale state), and Implicit Policy Adaptation (proactively applying updated states in downstream behavior). A systematic evaluation of frontier LLMs and specialized memory frameworks reveals a pervasive gap between retrieving updated evidence and acting on it, with even the best evaluated model achieving only 55.2% overall accuracy. Models often accept outdated assumptions embedded in a user's query, and they struggle to recognize when a change in one aspect of the user's state should invalidate related memories. To establish an initial baseline for state-aware memory, we further present CUPMem, a prototype that strengthens write-time revision through structured state consolidation and propagation-aware search, suggesting that explicit state adjudication is a promising direction for robust agentic memory.",
+      "url": "https://arxiv.org/abs/2605.06527",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8908
+    },
+    {
+      "id": "2605.06455",
+      "title": "PrefixGuard: From LLM-Agent Traces to Online Failure-Warning Monitors",
+      "authors": [
+        "Xinmiao Huang",
+        "Jinwei Hu",
+        "Rajarshi Roy",
+        "Changshun Wu",
+        "Yi Dong",
+        "Xiaowei Huang"
+      ],
+      "abstract": "Large language model (LLM) agents now execute long, tool-using tasks where final outcome checks can arrive too late for intervention. Online warning requires lightweight prefix monitors over heterogeneous traces, but hand-authored event schemas are brittle and deployment-time LLM judging is costly. We introduce PrefixGuard, a trace-to-monitor framework with an offline StepView induction step followed by supervised monitor training. StepView induces deterministic typed-step adapters from raw trace samples, and the monitor learns an event abstraction and prefix-risk scorer from terminal outcomes. Across WebArena, $τ^2$-Bench, SkillsBench, and TerminalBench, the strongest PrefixGuard monitors reach 0.900/0.710/0.533/0.557 AUPRC. Using the strongest backend within each representation, they improve over raw-text controls by an average of +0.137 AUPRC. LLM judges remain substantially weaker under the same prefix-warning protocol. We also derive an observability ceiling on score-based area under the precision-recall curve (AUPRC) that separates monitor error from failures lacking evidence in the observed prefix. For finite-state audit, post-hoc deterministic finite automaton (DFA) extraction remains compact on WebArena and $τ^2$-Bench (29 and 20 states) but expands to 151 and 187 states on SkillsBench and TerminalBench. Finally, first-alert diagnostics show that strong ranking does not imply deployment utility: WebArena ranks well yet fails to support low-false-alarm alerts, whereas $τ^2$-Bench and TerminalBench retain more actionable early alerts. Together, these results position PrefixGuard as a practical monitor-synthesis recipe with explicit diagnostics for when prefix warnings translate into actionable interventions.",
+      "url": "https://arxiv.org/abs/2605.06455",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8908
+    },
+    {
+      "id": "2605.06445",
+      "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation",
+      "authors": [
+        "Francesco Dente",
+        "Dario Satriani",
+        "Paolo Papotti"
+      ],
+      "abstract": "Large Language Model (LLM) agents demonstrate strong performance in autonomous code generation under loose specifications. However, production-grade software requires strict adherence to structural constraints, such as architectural patterns, databases, and object-relational mappings. Existing benchmarks often overlook these non-functional requirements, rewarding functionally correct but structurally arbitrary solutions. We present a systematic study evaluating how well agents handle structural constraints in multi-file backend generation. By fixing a unified API contract across 80 greenfield generation tasks and 20 feature-implementation tasks spanning eight web frameworks, we isolate the effect of structural complexity using a dual evaluation with end-to-end behavioral tests and static verifiers. Our findings reveal a phenomenon of constraint decay: as structural requirements accumulate, agent performance exhibits a substantial decline. Capable configurations lose 30 points on average in assertion pass rates from baseline to fully specified tasks, while some weaker configurations approach zero. Framework sensitivity analysis exposes significant performance disparities: agents succeed in minimal, explicit frameworks (e.g., Flask) but perform substantially worse on average in convention-heavy environments (e.g., FastAPI, Django). Finally, error analysis identifies data-layer defects (e.g., incorrect query composition and ORM runtime violations) as the leading root causes. This work highlights that jointly satisfying functional and structural requirements remains a key open challenge for coding agents.",
+      "url": "https://arxiv.org/abs/2605.06445",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8905
+    },
+    {
+      "id": "2605.06213",
+      "title": "Beyond Fixed Benchmarks and Worst-Case Attacks: Dynamic Boundary Evaluation for Language Models",
+      "authors": [
+        "Haoxiang Wang",
+        "Da Yu",
+        "Huishuai Zhang"
+      ],
+      "abstract": "Evaluating large language models (LLMs) today rests on fixed benchmarks that apply the same set of items to any model, producing ceiling and floor effects that mask capability gaps. We argue that the most informative evaluation signal lies at the boundary, where the per-prompt pass probability is near $0.5$ under random-sampling decoding, and propose Dynamic Boundary Evaluation (DBE), which actively locates each model's boundary and places it on a globally comparable difficulty scale. DBE delivers three artifacts: (i) a calibrated item bank covering safety, capability, and truthfulness, with per-item difficulty labels validated across $9$ reference LLMs; (ii) Skill-Guided Boundary Search (SGBS), a search algorithm that finds boundary items for a given target LLM using only API-level query access; and (iii) an evaluation protocol that places a new LLM on a unified ability scale and grows the evaluation set adaptively when the target falls outside the bank's coverage. We instantiate DBE on four categories spanning safety (harmful request refusal and over-refusal), capability (constrained instruction following), and truthfulness (multi-turn sycophancy resistance). The resulting evaluation covers a broader model spectrum without saturation while remaining compatible with existing datasets.",
+      "url": "https://arxiv.org/abs/2605.06213",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8883
+    },
+    {
+      "id": "2605.06285",
+      "title": "LatentRAG: Latent Reasoning and Retrieval for Efficient Agentic RAG",
+      "authors": [
+        "Yijia Zheng",
+        "Marcel Worring"
+      ],
+      "abstract": "Single-step retrieval-augmented generation (RAG) provides an efficient way to incorporate external information for simple question answering tasks but struggles with complex questions. Agentic RAG extends this paradigm by replacing single-step retrieval with a multi-step process, in which the large language model (LLM) acts as a search agent that generates intermediate thoughts and subqueries to iteratively interact with the retrieval system. This iterative process incurs substantial latency due to the autoregressive generation of lengthy thoughts and subqueries. To address this limitation, we propose LatentRAG, a novel framework that shifts both reasoning and retrieval from discrete language space to continuous latent space. Unlike existing explicit methods that generate natural language thoughts or subqueries token-by-token, LatentRAG produces latent tokens for thoughts and subqueries directly from the hidden states in a single forward pass. We align LLMs with dense retrieval models in the latent space, enabling retrieval over latent subquery tokens and supporting end-to-end joint optimization. To improve transparency and encourage semantically meaningful latent representations, we incorporate a parallel latent decoding mechanism that translates latent tokens back into natural language. Extensive experiments on seven benchmark datasets show that LatentRAG achieves performance comparable to explicit agentic RAG methods while reducing inference latency by approximately 90%, substantially narrowing the latency gap with traditional single-step RAG.",
+      "url": "https://arxiv.org/abs/2605.06285",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8882
+    },
+    {
+      "id": "2605.06660",
+      "title": "Verifier-Backed Hard Problem Generation for Mathematical Reasoning",
+      "authors": [
+        "Yuhang Lai",
+        "Jiazhan Feng",
+        "Yee Whye Teh",
+        "Ning Miao"
+      ],
+      "abstract": "Large Language Models (LLMs) demonstrate strong capabilities for solving scientific and mathematical problems, yet they struggle to produce valid, challenging, and novel problems - an essential component for advancing LLM training and enabling autonomous scientific research. Existing problem generation approaches either depend on expensive human expert involvement or adopt naive self-play paradigms, which frequently yield invalid problems due to reward hacking. This work introduces VHG, a verifier-enhanced hard problem generation framework built upon three-party self-play. By integrating an independent verifier into the conventional setter-solver duality, our design constrains the setter's reward to be jointly determined by problem validity (evaluated by the verifier) and difficulty (assessed by the solver). We instantiate two verifier variants: a Hard symbolic verifier and a Soft LLM-based verifier, with evaluations conducted on indefinite integral tasks and general mathematical reasoning tasks. Experimental results show that VHG substantially outperforms all baseline methods by a clear margin.",
+      "url": "https://arxiv.org/abs/2605.06660",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.06663",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "authors": [
+        "Ryan Wang",
+        "Akshita Bhagia",
+        "Sewon Min"
+      ],
+      "abstract": "Large language models are typically deployed as monolithic systems, requiring the full model even when applications need only a narrow subset of capabilities, e.g., code, math, or domain-specific knowledge. Mixture-of-Experts (MoEs) seemingly offer a potential alternative by activating only a subset of experts per input, but in practice, restricting inference to a subset of experts for a given domain leads to severe performance degradation. This limits their practicality in memory-constrained settings, especially as models grow larger and sparser. We introduce EMO, an MoE designed for modularity-the independent use and composition of expert subsets-without requiring human-defined priors. Our key idea is to encourage tokens from similar domains to rely on similar experts. Since tokens within a document often share a domain, EMO restricts them to select experts from a shared pool, while allowing different documents to use different pools. This simple constraint enables coherent expert groupings to emerge during pretraining using document boundaries alone. We pretrain a 1B-active, 14B-total EMO on 1T tokens. As a full model, it matches standard MoE performance. Crucially, it enables selective expert use: retaining only 25% (12.5%) of experts incurs just a 1% (3%) absolute drop, whereas standard MoEs break under the same setting. We further find that expert subsets in EMO specialize at semantic levels (e.g., domains such as math or code), in contrast to the low-level syntactic specialization observed in standard MoEs. Altogether, our results demonstrate a path toward modular, memory-efficient deployment of large, sparse models and open new opportunities for composable architectures.",
+      "url": "https://arxiv.org/abs/2605.06663",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8856
+    },
+    {
+      "id": "2605.06365",
+      "title": "From Agent Loops to Deterministic Graphs: Execution Lineage for Reproducible AI-Native Work",
+      "authors": [
+        "Josh Rosen",
+        "Seth Rosen"
+      ],
+      "abstract": "Large language model systems are increasingly deployed as agentic workflows that interleave reasoning, tool use, memory, and iterative refinement. These systems are effective at producing answers, but they often rely on implicit conversational state, making it difficult to preserve stable work products, isolate irrelevant updates, or propagate changes through intermediate artifacts.\n  We introduce execution lineage: an execution model in which AI-native work is represented as a directed acyclic graph (DAG) of artifact-producing computations with explicit dependencies, stable intermediate boundaries, and identity-based replay. The goal is not to make the model a better one-shot writer, but to make evolving AI-generated work maintainable under change.\n  We compare execution-lineage replay against loop-centric update baselines on two controlled policy-memo update tasks. In an unrelated-branch update, DAG replay preserved the final memo exactly in all runs, with zero churn and zero unrelated-branch contamination, while loop baselines regenerated the memo and frequently imported unrelated context. In an intermediate-artifact edit, all systems reflected the new constraint in the final memo, but only DAG replay achieved perfect upstream preservation, downstream propagation, unaffected-artifact preservation, and cross-artifact consistency.\n  These results show that final answer quality and maintained-state quality are distinct. Strong loop baselines can remain competitive at producing polished final outputs when the task is a bounded synthesis/update problem and all current sources fit in context, but immediate task success can mask partial state inconsistency that may compound over future revisions. Execution lineage provides stronger guarantees about what should change, what should remain stable, and how work evolves across revisions.",
+      "url": "https://arxiv.org/abs/2605.06365",
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8851
+    },
+    {
+      "id": "2605.06320",
+      "title": "Improving the Efficiency of Language Agent Teams with Adaptive Task Graphs",
+      "authors": [
+        "Elizabeth Mieczkowski",
+        "Alexander Ku",
+        "Tiwalayo Eisape",
+        "Dilip Arumugam",
+        "John Matters",
+        "Katherine M. Collins",
+        "Ilia Sucholutsky",
+        "Thomas L. Griffiths"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed in teams, yet existing coordination approaches often occupy two extremes. Highly structured methods rely on fixed roles, pipelines, or task decompositions assigned a priori. In contrast, fully unstructured teams enable adaptability and exploration but suffer from inefficiencies such as error propagation, inter-agent conflicts, and wasted resources (measured in time, tokens, or file operations). We introduce Language Agent Teams for Task Evolution (LATTE), a framework for coordinating LLM teams inspired by distributed systems, where processors must operate under partial observability and communication constraints. In LATTE, a team of agents collaboratively construct and maintain a shared, evolving coordination graph which encodes sub-task dependencies, individual agent assignment, and the current state of sub-task progress. This protocol maintains consistency while empowering agents to dynamically allocate work, adapt coordination, and discover new tasks. Across multiple collaborative tasks and a variety of base models, we demonstrate how LATTE reduces token usage, wall-clock time, communication, and coordination failures (e.g. file conflicts and redundant outputs) while matching or exceeding the accuracy of standard designs including MetaGPT, decentralized teams, top-down Leader-Worker hierarchies, and static decompositions.",
+      "url": "https://arxiv.org/abs/2605.06320",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8846
+    },
+    {
+      "id": "2605.06339",
+      "title": "A Regime Theory of Controller Class Selection for LLM Action Decisions",
+      "authors": [
+        "Zhaoyang Jiang",
+        "Zhizhong Fu",
+        "Yunsoo Kim",
+        "Jiacong Mi",
+        "Zicheng Li",
+        "Xuanqi Peng",
+        "Honghan Wu"
+      ],
+      "abstract": "Deployed language and vision-language models must decide, on each input, whether to answer directly, retrieve evidence, defer to a stronger model, or abstain. Contrary to the common monotonicity intuition, greater per-input expressivity is not uniformly beneficial in finite samples: under identical strict cross-validation, different benchmarks prefer different controller classes. This reflects a finite-sample limitation of instance-level uncertainty signals, which can be exhausted at a distribution-dependent scale. We organize controllers into a nested lattice of four classes: fixed actions, partition routers, instance-level controllers, and prior-gated controllers, ordered by complexity. We prove a regime theory that turns three data-estimable bottlenecks into a class choice: how much improvement is possible beyond the best fixed action, whether there are enough samples for instance-level controllers to make reliable decisions, and how much improvement a coarse partition router can recover when instance-level signal is unreliable. The resulting Bernstein-tight threshold has a matching information-theoretic lower bound, and strict nested cross-validation provably selects a near-best class. Across SMS-Spam, HallusionBench, A-OKVQA, and FOLIO, the predicted class matches the empirical winner; the prior-gated controller wins on TextVQA when OCR tokens supply a label-free prediction-time prior. Code is available at https://github.com/Anonymous-Awesome-Submissions/Regime-Theory.",
+      "url": "https://arxiv.org/abs/2605.06339",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "github_url": "https://github.com/Anonymous-Awesome-Submissions/Regime-Theory.",
+      "score": 0.8828
+    },
+    {
+      "id": "2605.06647",
+      "title": "Superintelligent Retrieval Agent: The Next Frontier of Information Retrieval",
+      "authors": [
+        "Zeyu Yang",
+        "Qi Ma",
+        "Jason Chen",
+        "Anshumali Shrivastava"
+      ],
+      "abstract": "Retrieval-augmented agents are increasingly the interface to large organizational knowledge bases, yet most still treat retrieval as a black box: they issue exploratory queries, inspect returned snippets, and iteratively reformulate until useful evidence emerges. This approach resembles how a newcomer searches an unfamiliar database rather than how an expert navigates it with strong priors about terminology and likely evidence, and results in unnecessary retrieval rounds, increased latency, and poor recall.\n  We introduce \\textit{SuperIntelligent Retrieval Agent} (SIRA), which defines \\emph{superintelligence} in retrieval as the ability to compress multi-round exploratory search into a single corpus-discriminative retrieval action. SIRA does not merely ask what terms are relevant to the query; it asks which terms are likely to separate the desired evidence from corpus-level confusers. On the corpus side, an LLM enriches each document offline with missing search vocabulary; on the query side, it predicts evidence vocabulary omitted by the query; and document-frequency statistics as a tool call to filter proposed terms that are absent, overly common, or unlikely to create retrieval margin. The final retrieval step is a single weighted BM25 call combining the original query with the validated expansion.\n  Across ten BEIR benchmarks and downstream question-answering tasks, SIRA achieves the significantly superior performance outperforming dense retrievers and state-of-the-art multi-round agentic baselines, demonstrating that one well-formed lexical query, guided by LLM cognition and lightweight corpus statistics, can exceed substantially more expensive multi-round search while remaining interpretable, training-free, and efficient.",
+      "url": "https://arxiv.org/abs/2605.06647",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.882
+    },
+    {
+      "id": "2605.06623",
+      "title": "MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems",
+      "authors": [
+        "Zhexuan Wang",
+        "Xuebo Liu",
+        "Li Wang",
+        "Zifei Shan",
+        "Yutong Wang",
+        "Zhenxi Song",
+        "Min Zhang"
+      ],
+      "abstract": "Large language model (LLM)-based Multi-agent systems (MAS) have shown promise in tackling complex collaborative tasks, where agents are typically orchestrated via role-specific prompts. While the quality of these prompts is pivotal, jointly optimizing them across interacting agents remains a non-trivial challenge, primarily due to the misalignment between local agent objectives and holistic system goals. To address this, we introduce MASPO, a novel framework designed to automatically and iteratively refine prompts across the entire system. A core innovation of MASPO is its joint evaluation mechanism, which assesses prompts not merely by their local validity, but by their capacity to facilitate downstream success for successor agents. This effectively bridges the gap between local interactions and global outcomes without relying on ground-truth labels. Furthermore, MASPO employs a data-driven evolutionary beam search to efficiently navigate the high-dimensional prompt space. Extensive empirical evaluations across 6 diverse tasks demonstrate that MASPO consistently outperforms state-of-the-art prompt optimization methods, achieving an average accuracy improvement of 2.9. We release our code at https://github.com/wangzx1219/MASPO.",
+      "url": "https://arxiv.org/abs/2605.06623",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "github_url": "https://github.com/wangzx1219/MASPO.",
+      "score": 0.8818
+    },
+    {
+      "id": "2605.06326",
+      "title": "Teaching Thinking Models to Reason with Tools: A Full-Pipeline Recipe for Tool-Integrated Reasoning",
+      "authors": [
+        "Qianjia Cheng",
+        "Yuchen Zhang",
+        "Zhilin Wang",
+        "Yuxin Zuo",
+        "Shunkai Zhang",
+        "Yuchen Fan",
+        "Yu Qiao",
+        "Bowen Zhou",
+        "Ning Ding",
+        "Yu Cheng",
+        "Yun Luo",
+        "Ganqu Cui"
+      ],
+      "abstract": "Tool-integrated reasoning (TIR) offers a direct way to extend thinking models beyond the limits of text-only reasoning. Paradoxically, we observe that tool-enabled evaluation can degrade reasoning performance even when the strong thinking models make almost no actual tool calls. In this paper, we investigate how to inject natural tool-use behavior into a strong thinking model without sacrificing its no-tool reasoning ability, and present a comprehensive TIR recipe. We highlight that (i) the effectiveness of TIR supervised fine-tuning (SFT) hinges on the learnability of teacher trajectories, which should prioritize problems inherently suited for tool-augmented solutions; (ii) controlling the proportion of tool-use trajectories could mitigate the catastrophic forgetting of text-only reasoning capacity; (iii) optimizing for pass@k and response length instead of training loss could maximize TIR SFT gains while preserving headroom for reinforcement learning (RL) exploration; (iv) a stable RL with verifiable rewards (RLVR) stage, built upon suitable SFT initialization and explicit safeguards against mode collapse, provides a simple yet remarkably effective solution. When applied to Qwen3 thinking models at 4B and 30B scales, our recipe yields models that achieve state-of-the-art performance in a wide range of benchmarks among open-source models, such as 96.7% and 99.2% on AIME 2025 for 4B and 30B, respectively.",
+      "url": "https://arxiv.org/abs/2605.06326",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-07",
+      "score": 0.8817
+    },
+    {
+      "id": "2605.06510",
+      "title": "Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models",
+      "authors": [
+        "Amir Rezaei Balef",
+        "Mykhailo Koshil",
+        "Katharina Eggensperger"
+      ],
+      "abstract": "Transformer-based tabular foundation models (TFMs) dominate small to medium tabular predictive benchmark tasks, yet their inference mechanisms remain largely unexplored. We present the first large-scale mechanistic study of layerwise dynamics in 6 state-of-the-art tabular in-context learning models. We explore how predictions emerge across depth, identify distinct stages of inference and reveal latent-space dynamics that differ from those of language models. Our findings indicate substantial depthwise redundancy across multiple models, suggesting iterative refinement with overlapping computations during inference stages. Guided by these insights, we design a proof-of-concept, looped single-layer model that uses only 20% of the original model's parameters while achieving comparable performance. The code is available at https://github.com/amirbalef/is_one_layer_enough.",
+      "url": "https://arxiv.org/abs/2605.06510",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-07",
+      "github_url": "https://github.com/amirbalef/is_one_layer_enough.",
+      "score": 0.8803
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
