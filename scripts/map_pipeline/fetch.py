@@ -30,7 +30,7 @@ def fetch_arxiv_papers(
         with open(cache_path, "rb") as f:
             return pickle.load(f)
 
-    client = arxiv.Client(page_size=500, num_retries=3)
+    client = arxiv.Client(page_size=500, num_retries=5, delay_seconds=10)
     query = build_category_query(categories)
     search = arxiv.Search(
         query=query,

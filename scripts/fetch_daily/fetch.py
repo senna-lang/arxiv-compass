@@ -24,7 +24,7 @@ def fetch_recent_papers(
     categories: list[str] = config["categories"]
     query = build_category_query(categories)
 
-    client = arxiv.Client(page_size=200, num_retries=3)
+    client = arxiv.Client(page_size=200, num_retries=5, delay_seconds=10)
     search = arxiv.Search(
         query=query,
         max_results=max_candidates,
