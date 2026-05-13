@@ -65,6 +65,6 @@ def fetch_papers_for_cluster(paper_ids: list[str]) -> list[Any]:
     """クラスタ内の arXiv ID で論文情報を取得する。"""
     if not paper_ids:
         return []
-    client = arxiv.Client()
+    client = arxiv.Client(num_retries=5, delay_seconds=10)
     search = arxiv.Search(id_list=paper_ids[:100])  # API 制限のため上限 100
     return list(client.results(search))

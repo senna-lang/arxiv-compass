@@ -96,7 +96,10 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     def _score_cluster_papers(cluster_list: list[dict]) -> list[dict]:
         """クラスタ内論文を取得し α-blend スコアを計算する。"""
         candidates: list[dict] = []
-        for cluster in cluster_list:
+        for i, cluster in enumerate(cluster_list):
+            if i > 0:
+                # arXiv API の 429 回避のためクラスタ間に間隔を入れる
+                time.sleep(5)
             papers = fetch_papers_for_cluster(cluster["paper_ids"])
             if not papers:
                 continue
