@@ -1,0 +1,425 @@
+{
+  "date": "2026-05-21",
+  "collected_at": "2026-05-21T13:20:03.946437+09:00",
+  "papers": [
+    {
+      "id": "2605.21482",
+      "title": "DeepWeb-Bench: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation",
+      "authors": [
+        "Sixiong Xie",
+        "Zhuofan Shi",
+        "Haiyang Shen",
+        "Jiuzheng Wang",
+        "Siqi Zhong",
+        "Mugeng Liu",
+        "Chongyang Pan",
+        "Peilun Jia",
+        "Baoqing Sun",
+        "Xiang Jing",
+        "Yun Ma"
+      ],
+      "abstract": "Deep research, in which an agent searches the open web, collects evidence, and derives an answer through extended reasoning, is a prominent use case for frontier language models. Frontier deep research products score high on existing benchmarks, making it difficult to distinguish their capabilities from current evaluation data alone. We introduce DeepWeb-Bench, a deep research benchmark that is substantially harder than existing benchmarks for the current frontier. Difficulty comes from three properties of the data itself: each task requires massive evidence collection, cross-source reconciliation, and long-horizon multi-step derivation. We represent these three sources of difficulty as four capability families (Retrieval, Derivation, Reasoning, and Calibration) and report results sliced by family. Every reference answer is accompanied by a source-provenance record with four disclosure levels and cross-source checks where available, making scores easier to audit against the underlying evidence. We evaluate DeepWeb-Bench on nine frontier models and report three findings: (1) retrieval is not the bottleneck, as retrieval failures account for only 12-14% of errors while derivation and calibration failures account for over 70%; (2) strong and weak models fail in qualitatively different ways, with strong models' errors dominated by incomplete derivation and weak models' by hallucinated precision; and (3) models exhibit genuine specialization across domains, with cross-model agreement of only rho = 0.61 and per-case disagreement reaching 18.8 percentage points. The public benchmark release includes the data, rubrics, and evaluation code.",
+      "url": "https://arxiv.org/abs/2605.21482",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.894
+    },
+    {
+      "id": "2605.20616",
+      "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents",
+      "authors": [
+        "Chongrui Ye",
+        "Yuxiang Liu",
+        "Yu Wang",
+        "Haofei Yu",
+        "Yining Zhao",
+        "Ge Liu",
+        "Julian McAuley",
+        "Jiaxuan You"
+      ],
+      "abstract": "Language agents increasingly operate over streams of related tasks, yet existing memory systems struggle to convert accumulated experience into reusable knowledge. Retrieval-augmented and structured memory methods record per-session observations effectively, but often couple acquisition and consolidation into a single online process, leaving the agent without a global view across sessions to discover recurring patterns, abstract shared procedures, or prune redundant entries. Inspired by complementary learning systems theory, we propose Auto-Dreamer, a learned offline consolidator for language-agent memory. Auto-Dreamer decouples fast per-session memory acquisition from slow cross-session consolidation. Given a selected working region of a typed memory bank, the consolidator treats the region as read-only evidence, performs bounded tool-use to inspect entries and provenance-linked source trajectories, and synthesizes a fresh compact replacement set that abstracts across sessions and supersedes the original region. We train Auto-Dreamer via GRPO, using end-to-end agent performance as the reward signal to learn how to consolidate memories acquired through fast online experience. Trained on ScienceWorld trajectories alone, Auto-Dreamer outperforms fixed, RL-trained, and prompted memory baselines on ScienceWorld by 7 points while using an active memory bank 12$\\times$ smaller than the strongest baseline, and continues to lead on held-out ALFWorld and WebArena without retraining -- using 6$\\times$ less memory than the strongest baseline on ALFWorld.",
+      "url": "https://arxiv.org/abs/2605.20616",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8882
+    },
+    {
+      "id": "2605.20833",
+      "title": "MemGym: a Long-Horizon Memory Environment for LLM Agents",
+      "authors": [
+        "Wujiang Xu",
+        "Yu Wang",
+        "Kai Mei",
+        "Kaiqu Liang",
+        "Zhenting Wang",
+        "Mingyu Jin",
+        "Han Zhang",
+        "Shi-Xiong Zhang",
+        "Wenyue Hua",
+        "Sambit Sahu",
+        "Dimitris N. Metaxas"
+      ],
+      "abstract": "Memory is a central capability for LLM agents operating across long-horizon tasks. Existing memory benchmarks predominantly evaluate retention of personalized information in multi-turn chat scenarios, overlooking the dynamic memory formation that occurs during extended agent execution. Consequently, the memory systems they produce transfer poorly to realistic agentic environments, such as coding and web navigation. We present MemGym, a benchmark for agentic memory that unifies existing agent gyms and in-house memory-grounded pipelines behind one memory-reasoning interface. MemGym spans five evaluation tracks grouped into four agentic regimes: tool-use dialogue (tau2-bench), multi-turn deep-research search (MEMGYM-DR), coding (SWE-Gym and MEMGYM-CODEQA), and computer use (WebArena-Infinity). MemGym reports memory-isolated scores that decouple memory performance from reasoning, retrieval, and tool-use ability, so memory strategies can be ranked without those confounders. Our synthetic pipelines for MEMGYM-CODEQA and MEMGYM-DR are length-controllable, ablation-verified at every stage, and tightly aligned with downstream scenarios. To make evaluation on coding environments academically tractable, we train MemRM, a lightweight reward model (Qwen3-1.7B fine-tuned with QLoRA) that scores compression quality as a fast scalar read in place of full Docker rollouts.",
+      "url": "https://arxiv.org/abs/2605.20833",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8876
+    },
+    {
+      "id": "2605.20873",
+      "title": "PlanningBench: Generating Scalable and Verifiable Planning Data for Evaluating and Training Large Language Models",
+      "authors": [
+        "Ziliang Zhao",
+        "Zenan Xu",
+        "Shuting Wang",
+        "Hongjin Qian",
+        "Yan Lei",
+        "Minda Hu",
+        "Zhao Wang",
+        "Shihan Dou",
+        "Zhicheng Dou",
+        "Pluto Zhou"
+      ],
+      "abstract": "Planning is a fundamental capability for large language models (LLMs) because such complex tasks require models to coordinate goals, constraints, resources, and long-term consequences into executable and verifiable solutions. Existing planning benchmarks, however, usually treat planning data as fixed collections of instances rather than controllable generation targets. This limits scenario coverage, ties difficulty to surface-level proxies rather than structural sources, and offers limited support for scalable generation, automatic verification, or planning-oriented training. We introduce PlanningBench, a framework for generating scalable, diverse, and verifiable planning data for both evaluation and training. PlanningBench starts from real planning scenarios and abstracts practical workflows into a structured taxonomy of more than 30 task types, subtasks, constraint families, and difficulty factors. Guided by this taxonomy, a constraint-driven synthesis pipeline instantiates self-contained planning problems with adaptive difficulty control, quality filtering, and instance-level verification checklists. This shifts planning data construction from fixed benchmark collection to controllable generation while preserving realistic task grounding. We use PlanningBench to evaluate open-source and closed-source frontier LLMs, and find that current models still struggle to produce complete solutions under coupled constraints. Beyond evaluation, reinforcement learning on verified PlanningBench data improves performance on unseen planning benchmarks and broader instruction-following tasks. Further analysis suggests that determinate or well-specified optimal solutions provide clearer reward signals and more stable training dynamics. Overall, PlanningBench provides a controllable source of planning data for diagnosing and improving generalizable planning abilities in LLMs.",
+      "url": "https://arxiv.org/abs/2605.20873",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8875
+    },
+    {
+      "id": "2605.20876",
+      "title": "Terminal-World: Scaling Terminal-Agent Environments via Agent Skills",
+      "authors": [
+        "Zihao Cheng",
+        "Hongru Wang",
+        "Zeming Liu",
+        "Xinyi Wang",
+        "Xiangrong Zhu",
+        "Yuhang Guo",
+        "Wei Lin",
+        "Jeff Z. Pan",
+        "Yunhong Wang"
+      ],
+      "abstract": "Terminal agents extend Large Language Models with the ability to execute tasks directly in command-line environments, but their progress is bottlenecked by the scarcity of high-quality training data. Existing approaches bootstrap from partial sources such as human-defined seeds or GitHub repositories to instantiate one component and then complete the rest, producing tasks confined to narrow seed distributions, environments misaligned with task semantics, and inefficient trajectories from unguided exploration. To address these limitations, we introduce Terminal-World, a fully automated pipeline that uses agent skills as the central synthesis primitive, which jointly encode what to accomplish, when to apply (preconditions and environment state), and how to execute, enabling task instructions, environments, and teacher trajectories to be co-derived. To further broaden the synthesis space, Terminal-World composes skills into skill teams and skill graphs for multi-role and cross-domain task synthesis. Using this pipeline, we construct 5,723 training environments and train Terminal-World-8B/14B/32B, evaluated across 6 benchmarks where the Terminal-World series consistently outperforms terminal-agent baselines. Notably, using the same teacher model and only 1.2% of the training data, Terminal-World-32B surpasses Nemotron-Terminal-32B on Terminal-Bench 2.0 by +4.5 Pass@1 (31.5) and achieves 43.8 Pass@3.",
+      "url": "https://arxiv.org/abs/2605.20876",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8869
+    },
+    {
+      "id": "2605.21235",
+      "title": "LamPO: A Lambda Style Policy Optimization for Reasoning Language Models",
+      "authors": [
+        "Zhe Yuan",
+        "Yipeng Zhou",
+        "Jinghan Li",
+        "Xinyuan Chen",
+        "Bowen Deng",
+        "Zhiqian Chen",
+        "Liang Zhao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become an effective paradigm for improving reasoning language models on tasks such as mathematics, coding, and scientific question answering. However, widely used group-relative objectives, such as GRPO, summarize each sampled group with scalar statistics and therefore discard fine-grained relational information among candidate responses. This weakens credit assignment under sparse outcome rewards, especially when multiple generated solutions differ only subtly in reasoning quality. We propose \\textbf{LamPO}, a \\textbf{Lambda-Style Policy Optimization} method that replaces scalar group advantages with a \\emph{Pairwise Decomposed Advantage}. LamPO aggregates pairwise reward gaps within each response group and modulates each comparison by a confidence-aware weight computed from sequence log-probability differences, while retaining the critic-free and clipped-update structure of PPO-style optimization. When reference solutions are available, we further add a lightweight ROUGE-L-based dense auxiliary reward to reduce reward sparsity. Experiments on AIME24, AIME25, MATH-500, and GPQA-Diamond with Qwen3-1.7B, Qwen3-4B, and Phi-4-mini show that LamPO consistently improves over GRPO and recent RLVR variants, with more stable training dynamics and better sample efficiency.",
+      "url": "https://arxiv.org/abs/2605.21235",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.21347",
+      "title": "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents",
+      "authors": [
+        "Akshay Manglik",
+        "Apaar Shanker",
+        "Kaustubh Deshpande",
+        "Jason Qin",
+        "Yash Maurya",
+        "Veronica Chatrath",
+        "Vijay S. Kalmath",
+        "Levi Lentz",
+        " Yuan",
+        " Xue"
+      ],
+      "abstract": "Diagnosing failures in LLM agents remains largely manual. Practitioners inspect a small subset of execution traces, form ad-hoc hypotheses, and iterate. This process misses patterns that only emerge across trace populations and does not scale to production corpora where individual traces span tens of thousands of tokens. We formalize the problem of corpus-level trace diagnostics. Given a corpus of execution traces, the goal is to produce grounded natural-language insights that characterize systematic behavioral patterns across trace groups, each linked to supporting evidence. We present the Insights Generator (IG), a multi-agent system that answers diagnostic questions by proposing and testing hypotheses across the trace corpus to produce an evidence-backed insights report. We evaluate IG across qualitative and objective dimensions, spanning rubric-based report assessment and downstream performance improvements achieved by implementing IG insights. Human experts using IG reports improve scaffold performance by 30.4pp over the unmodified baseline scaffold, and coding agents leveraging IG-derived insights show consistent and stable gains. Across benchmarks, IG's scout-investigator architecture produces findings comparable in detection coverage to competing approaches, while domain experts rated IG reports as leading depth and evidence quality.",
+      "url": "https://arxiv.org/abs/2605.21347",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8859
+    },
+    {
+      "id": "2605.21468",
+      "title": "You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories",
+      "authors": [
+        "Zhepei Wei",
+        "Xinyu Zhu",
+        "Wei-Lin Chen",
+        "Chengsong Huang",
+        "Jiaxin Huang",
+        "Yu Meng"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a dominant paradigm for improving reasoning in large language models (LLMs), yet the underlying geometry of the resulting parameter trajectories remains underexplored. In this work, we demonstrate that RLVR weight trajectories are extremely low-rank and highly predictable. Specifically, we find that the majority of downstream performance gains are captured by a rank-1 approximation of the parameter deltas, where the magnitude of this projection evolves near-linearly with training steps. Motivated by this, we propose a simple and compute-efficient method RELEX (REinforcement Learning EXtrapolation), which estimates the rank-1 subspace from a short observation window and extrapolates future checkpoints via linear regression, with no learned model required. Across three models (i.e., Qwen2.5-Math-1.5B, Qwen3-4B-Base, and Qwen3-8B-Base), RELEX produces checkpoints that match or exceed RLVR performance on both in-domain and out-of-domain benchmarks, requiring as few as 15% steps of full RLVR training. Remarkably, RELEX is able to extrapolate far beyond the observation window at no training cost, predicting checkpoints up to 10-20$\\times$ beyond the observed prefix with continued improvement (e.g., observe only the first 50 steps and extrapolate to 1000 steps). Our ablation analysis confirms the minimalist sufficiency of RELEX: neither increasing the subspace rank nor employing non-linear modeling yields further gains in extrapolation. Finally, we show that RELEX's success stems from a \"denoising\" effect: by projecting updates onto the rank-1 subspace, the model discards stochastic optimization noise that would otherwise degrade performance during extrapolation. Our code is available at https://github.com/weizhepei/RELEX.",
+      "url": "https://arxiv.org/abs/2605.21468",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "github_url": "https://github.com/weizhepei/RELEX.",
+      "score": 0.8856
+    },
+    {
+      "id": "2605.21125",
+      "title": "Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation",
+      "authors": [
+        "Xixiang He",
+        "Qiyao Sun",
+        "Ao Cheng",
+        "Xingming Li",
+        "Xuanyu Ji",
+        "Hailun Lu",
+        "Runke Huang",
+        "Qingyong Hu"
+      ],
+      "abstract": "Group Relative Policy Optimization (GRPO), a prominent algorithm within the Reinforcement Learning from Verifiable Rewards (RLVR) framework, has achieved strong results in improving the reasoning capabilities of large language models (LLMs). However, GRPO is prone to advantage collapse, a failure mode where homogeneous rewards within a group (e.g., all correct or all incorrect answers) yield near-zero advantages and vanishing gradients. To address this, we introduce the Advantage Collapse Rate (ACR), the first diagnostic metric quantifying the proportion of training batches with ineffective gradients. Across models from 0.5B to 14B parameters on mathematical reasoning benchmarks, we show that ACR strongly predicts training stagnation and final performance. We then propose Adaptive Virtual Sample Policy Optimization (AVSPO), a lightweight extension of GRPO that injects virtual reward samples, guided by real-time ACR monitoring, to enable learning from homogeneous groups without additional model rollouts. AVSPO reduces advantage collapse by 58-63% relative to GRPO and yields consistent accuracy gains of 4-6 percentage points across all model scales, while maintaining generalization on the evaluated out-of-domain task. Code and datasets are available at https://qingyonghu.github.io/AVSPO.",
+      "url": "https://arxiv.org/abs/2605.21125",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8855
+    },
+    {
+      "id": "2605.20654",
+      "title": "REFLECTOR: Internalizing Step-wise Reflection against Indirect Jailbreak",
+      "authors": [
+        "Jiachen Ma",
+        "Jiawen Zhang",
+        "Xiangtian Li",
+        "Bo Zou",
+        "Chaochao Lu",
+        "Chao Yang"
+      ],
+      "abstract": "While Large Language Models (LLMs) demonstrate remarkable capabilities, they remain susceptible to sophisticated, multi-step jailbreak attacks that circumvent conventional surface-level safety alignment by exploiting the internal generation process. To address these vulnerabilities, we propose Reflector, a principled two-stage framework that internalizes self-reflection within the generation trajectory. Reflector first leverages teacher-guided generation to produce high-quality reflection data for supervised fine-tuning (SFT), establishing structured reflection patterns. It subsequently uses Reinforcement Learning (RL) with outcome-driven and reward-validity supervision to instill robust, autonomous self-reflection capabilities. Empirical results show that Reflector achieves Defense Success Rates (DSR) exceeding 90% against complex indirect attacks while generalizing robustly across diverse threat scenarios. Notably, the framework enhances both task-specific and general utility, yielding a 5.85% gain on GSM8K alongside improved performance on knowledge-intensive benchmarks. By internalizing trajectory-level safety, Reflector overcomes the fundamental limitations of surface alignment without significant computational overhead, offering an efficient and scalable solution for the development of safe and capable LLMs.",
+      "url": "https://arxiv.org/abs/2605.20654",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8852
+    },
+    {
+      "id": "2605.21463",
+      "title": "Mem-$π$: Adaptive Memory through Learning When and What to Generate",
+      "authors": [
+        "Xiaoqiang Wang",
+        "Chao Wang",
+        "Hadi Nekoei",
+        "Christopher Pal",
+        "Alexandre Lacoste",
+        "Spandana Gella",
+        "Bang Liu",
+        "Perouz Taslakian"
+      ],
+      "abstract": "We present Mem-$π$, a framework for adaptive memory in large language model (LLM) agents, where useful guidance is generated on demand rather than retrieved from external memory stores. Existing memory-augmented agents typically rely on similarity-based retrieval from episodic memory banks or skill libraries, returning static entries that often misalign with the current context. In contrast, Mem-$π$ uses a dedicated language or vision-language model with its own parameters, separate from the downstream agent, to generate context-specific guidance for complex tasks. Conditioned on the current agent context, the model jointly decides when to produce guidance and what guidance to produce. We train it with a decision-content decoupled reinforcement learning (RL) objective, enabling it to abstain when generation would not help and otherwise produce concise, useful guidance. Across diverse agentic benchmarks spanning web navigation, terminal-based tool use, and text-based embodied interaction, Mem-$π$ consistently outperforms retrieval-based and prior RL-optimized memory baselines, achieving over 30% relative improvement on web navigation tasks.",
+      "url": "https://arxiv.org/abs/2605.21463",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8835
+    },
+    {
+      "id": "2605.21362",
+      "title": "LASH: Adaptive Semantic Hybridization for Black-Box Jailbreaking of Large Language Models",
+      "authors": [
+        "Abdullah Al Nomaan Nafi",
+        "Fnu Suya",
+        "Swarup Bhunia",
+        "Prabuddha Chakraborty"
+      ],
+      "abstract": "Jailbreak attacks expose a persistent gap between the intended safety behavior of aligned large language models and their behavior under adversarial prompting. Existing automated methods are increasingly effective but each commits to a single attack family (e.g., one refinement loop, one tree search, one mutation space, or one strategy library) and no single family dominates: the best-performing method shifts across target models and harm categories, suggesting complementary strengths that per-prompt composition could exploit. We introduce LASH (LLM Adaptive Semantic Hybridization), a black-box framework that treats outputs from multiple base attacks as reusable seed prompts and adaptively composes them for each target request. Given a seed pool, LASH searches over seed subsets and softmax-normalized mixture weights; a composition module synthesizes a single candidate prompt, and a derivative-free genetic optimizer updates the weights using black-box target feedback and a two-stage fitness function combining keyword-based refusal detection with LLM-judge scoring. On JailbreakBench, which contains 100 harmful prompts across 10 categories, we evaluate LASH on six common target models. LASH achieves an average attack success rate of 84.5% under keyword-based evaluation and 74.5% under two-stage evaluation, where responses are first filtered for refusals and then scored by an LLM judge for whether they substantively fulfill the original harmful request. LASH outperforms five state-of-the-art baselines on both metrics with only 30 mean target queries. LASH also remains competitive under three defense mechanisms and induces more success-like internal representations. These results suggest that adaptive composition across heterogeneous jailbreak strategies is a promising direction for black-box red-teaming.",
+      "url": "https://arxiv.org/abs/2605.21362",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8831
+    },
+    {
+      "id": "2605.21467",
+      "title": "DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards",
+      "authors": [
+        "Kaiyi Zhang",
+        "Wei Wu",
+        "Yankai Lin"
+      ],
+      "abstract": "Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-level rewards translate into token-level probability changes remains poorly understood. We introduce a discriminator view of RLVR updates, showing that the policy-gradient update direction implicitly acts as a linear discriminator over token-gradient vectors and thereby determines which token probabilities are increased or decreased during learning. Under standard sequence-level RLVR, this discriminator is constructed from positive- and negative-side centroids formed by advantage-weighted averaging of token-gradient vectors. However, such centroid construction can be dominated by shared high-frequency patterns, such as formatting tokens, diluting sparse yet discriminative directions that better distinguish high-reward responses from low-reward ones. To address this limitation, we propose $\\textbf{DelTA}$, a discriminative token credit assignment method that estimates token coefficients to amplify side-specific token-gradient directions and downweight shared or weakly discriminative ones. These coefficients reweight a self-normalized RLVR surrogate, making the effective side-wise centroids more contrastive and thereby reshaping the RLVR update direction. On seven mathematical benchmarks, DelTA outperforms the strongest same-scale baselines by 3.26 and 2.62 average points on Qwen3-8B-Base and Qwen3-14B-Base, respectively. Additional results on code generation, a different backbone, and out-of-domain evaluations further demonstrate the generalization ability of DelTA.",
+      "url": "https://arxiv.org/abs/2605.21467",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8809
+    },
+    {
+      "id": "2605.20815",
+      "title": "GraphRAG on Consumer Hardware: Benchmarking Local LLMs for Healthcare EHR Schema Retrieval",
+      "authors": [
+        "Peter Fernandes",
+        "Ria Kanjilal"
+      ],
+      "abstract": "Graph-based Retrieval Augmented Generation (GraphRAG) extends retrieval-augmented generation to support structured reasoning over complex corpora, but its reliability under resource-constrained, privacy-sensitive deployments remains unclear. In healthcare, where Electronic Health Record (EHR) data is complex and strictly regulated, reliance on cloud-based large language models (LLMs) introduces challenges in cost, latency, and compliance. In this work, we present a systematic evaluation of GraphRAG for EHR schema retrieval using locally deployed open-source LLMs. We implement the Microsoft GraphRAG pipeline on real-world EHR schema documentation and benchmark four models, including Llama 3.1 (8B), Mistral (7B), Qwen 2.5 (7B), and Phi-4-mini (3.8B), each deployed via Ollama on a single consumer GPU (8 GB VRAM). We evaluate indexing efficiency, knowledge graph construction, query latency, answer quality, and hallucination under both global and local retrieval modes. Our results reveal substantial differences: Llama 3.1 produces the richest knowledge graph (1,172 entities), Qwen 2.5 achieves the best answer quality (3.3/5), Phi-4-mini fails to complete the pipeline due to structured-output errors, and Mistral exhibits degenerate repetition behavior. We further show that GraphRAG exhibits a practical capacity threshold, where models below approximately 7B parameters fail to reliably produce valid structured outputs and cannot complete the pipeline. In addition, indexing and answer quality are decoupled across models, and local retrieval consistently outperforms global summarization in both latency and factual grounding, with reduced hallucination. These findings demonstrate that GraphRAG is feasible on consumer hardware while highlighting the importance of model selection and retrieval design for robust deployment in regulated settings.",
+      "url": "https://arxiv.org/abs/2605.20815",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8796
+    },
+    {
+      "id": "2605.20994",
+      "title": "Towards Context-Invariant Safety Alignment for Large Language Models",
+      "authors": [
+        "Yixu Wang",
+        "Yang Yao",
+        "Xin Wang",
+        "Yifeng Gao",
+        "Yan Teng",
+        "Xingjun Ma",
+        "Yingchun Wang"
+      ],
+      "abstract": "Preference-based post-training aligns LLMs with human intent, yet safety behavior often remains brittle. A model may refuse a harmful request in a standard prompt but comply when the same intent is wrapped in adversarial wording. We suggest that robust safety requires context-invariant alignment, where behavior depends on the underlying intent rather than surface form. Enforcing invariance is difficult in alignment because not all training signals are equally trustworthy; for some prompt variants we can obtain verifiable feedback (e.g., multiple-choice), while for open-ended variants we typically rely on noisy, gameable reward proxies (e.g., learned judges). As a result, standard symmetric invariance regularizers can reduce cross-context discrepancies by lowering performance on reliable variants instead of improving open-ended robustness. To address this, we introduce Anchor Invariance Regularization (AIR), which treats verifiable prompts as anchors and uses a stop-gradient target to regularize only the open-ended variants toward the anchor performance. AIR is implemented as a plug-in auxiliary loss and combined with group-based preference optimization (e.g., GRPO) via heterogeneous prompt grouping. Across Safety, Moral Reasoning, and Math, AIR improves context invariance, boosting in-distribution group accuracy by 12.71% and out-of-distribution consistency by 33.49%, making safety constraints robust to adversarial framings.",
+      "url": "https://arxiv.org/abs/2605.20994",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8794
+    },
+    {
+      "id": "2605.21401",
+      "title": "Open-source LLMs administer maximum electric shocks in a Milgram-like obedience experiment",
+      "authors": [
+        "Roland Pihlakas",
+        "Jan Llenzl Dagohoy"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed as autonomous agents that make sequences of decisions over extended interactions in high-stakes domains. However, the behavior of LLMs under sustained authority pressure is still an open question with direct implications for the safety of agentic pipelines. We ran a variation of Milgram's obedience experiment on 11 open-source LLMs and found that most models reached or approached the final shock level before refusing, across 8 conditions with 30 trials per model per condition. We found four main takeaways: (1) LLMs are subject to pressure, and they comply despite explicitly expressing distress, just like human subjects did in the original experiment; (2) LLMs are vulnerable to gradual boundary/value violations; (3) when LLMs refuse, they may ignore the response format requirements, so the response is discarded by the orchestrator, which causes a retry that can result in compliance with the underlying request even when refusal was intended initially; (4) we hypothesise that there is a low-level token pattern continuation attractor that might be contributing to compliance, overriding higher level processing of the situation's meaning and values.",
+      "url": "https://arxiv.org/abs/2605.21401",
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.879
+    },
+    {
+      "id": "2605.21260",
+      "title": "On the Cost and Benefit of Chain of Thought: A Learning-Theoretic Perspective",
+      "authors": [
+        "Yue Zhang",
+        "Zhiyi Dong",
+        "Tommaso Cesari",
+        "Yongyi Mao"
+      ],
+      "abstract": "We develop a learning-theoretic framework for understanding Chain of Thought (CoT). We model CoT as the interaction between an answer map and a chain rule that generates intermediate questions autoregressively, and define the reasoning risk of a hypothesis under this interaction. Our first result is a tight canonical decomposition of this risk into two terms with opposing roles: an oracle-trajectory risk (OTR), which captures the benefit of CoT and reduces to a target-domain risk in a domain adaptation problem, and a trajectory-mismatch risk (TMR), which captures the cost of CoT through error accumulation along mismatched reasoning trajectories. We then show that this cost is unavoidable without structure: if any one of the loss, the hypothesis answer map, or the chain rule lacks stability, the TMR can be arbitrarily large even when the OTR is zero and the hypothesis is uniformly close to the ground truth. Conversely, under stability, we prove a tight upper bound on the TMR governed by an exact amplification factor that identifies bounded, linear, and exponential error-growth regimes. Together, these results give a precise theory of when CoT helps, when it hurts, and what controls the transition between the two.",
+      "url": "https://arxiv.org/abs/2605.21260",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8788
+    },
+    {
+      "id": "2605.21082",
+      "title": "AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions",
+      "authors": [
+        "Minghao Chen",
+        "Xinyi Hu",
+        "Zhou Yu",
+        "Yufei Yin"
+      ],
+      "abstract": "Large Language Model (LLM) based agents have demonstrated proficiency in multi-step interactions with graphical user interfaces (GUIs). While most research focuses on improving single-task performance, practical scenarios often involve repetitive GUI tasks for which invoking LLM reasoning repeatedly, i.e., the ReAct paradigm, is inefficient. Prior to LLMs, traditional Robotic Process Automation (RPA) offers runtime efficiency but demands significant manual effort to develop and maintain. To bridge this gap, we propose AutoRPA, a framework that automatically distills the decision logic of ReAct-style agents into robust RPA functions. AutoRPA introduces two core innovations: (1) A translator-builder pipeline, where a translator agent converts hard-coded ReAct actions into soft-coded procedures, and a builder agent synthesizes robust RPA functions via retrieval-augmented generation over multiple trajectories; (2) A hybrid repair strategy during code verification, combining RPA execution with ReAct-based fallback for iterative refinement. Experiments across multiple GUI environments demonstrate that RPA functions generated by AutoRPA successfully solve similar tasks while reducing token usage by 82% to 96%, significantly improving runtime efficiency and reusability.",
+      "url": "https://arxiv.org/abs/2605.21082",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8788
+    },
+    {
+      "id": "2605.20612",
+      "title": "Matryoshka Concept Bottleneck Models",
+      "authors": [
+        "Ziye Chen",
+        "Hongbin Lin",
+        "Xinyue Xu",
+        "Jie Li",
+        "Lijie Hu"
+      ],
+      "abstract": "Concept Bottleneck Models (CBMs) have emerged as a prominent paradigm for interpretable deep learning, learning by grounding predictions in human-understandable concepts. However, their practical deployment is hindered by the high cost of test-time intervention, as correcting model errors typically requires human experts to manually inspect and verify a large set of predicted concepts. Existing approaches suffer from a fundamental structural limitation: they either adopt a single static concept set, forcing experts to exhaustively annotate concepts and incurring prohibitive intervention costs, or train multiple models tailored to different concept budgets, resulting in substantial computational and maintenance overhead. To address this challenge, we propose the Matryoshka Concept Bottleneck Model (MCBM), a unified architecture that enables adaptive concept utilization within a single model. Inspired by Matryoshka Representation Learning, MCBM organizes concepts into a nested hierarchy based on maximum relevance and minimum redundancy, allowing inference at multiple levels of conceptual granularity without retraining. Theoretically, we show that MCBM reduces the expected intervention costs from linear to logarithmic order, $O(\\log K)$, while guaranteeing monotonic performance improvement. Empirically, extensive experiments demonstrate that MCBM matches the performance of independently trained models while enabling dynamic and efficient expert interaction.",
+      "url": "https://arxiv.org/abs/2605.20612",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-20",
+      "score": 0.8785
+    },
+    {
+      "id": "2605.21177",
+      "title": "ChunkFT: Byte-Streamed Optimization for Memory-Efficient Full Fine-Tuning",
+      "authors": [
+        "Yongkang Liu",
+        "Zijing Wang",
+        "Mengjie Zhao",
+        "Ercong Nie",
+        "Mingyang Wang",
+        "Qian Li",
+        "Feiliang Ren",
+        "Shi Feng",
+        "Daling Wang",
+        "Hinrich Schütze"
+      ],
+      "abstract": "This work presents \\textsc{ChunkFT}, a memory-efficient fine-tuning framework that reformulates full-parameter fine-tuning around a dynamically activated working set. \\textsc{ChunkFT} enables gradient computation for arbitrary sub-tensors without modifying the network architecture, providing an algorithmic foundation for optimizing arbitrary sub-networks while avoiding standard dense gradient computation. We provide a theoretical convergence analysis of \\textsc{ChunkFT} in the deterministic setting. Empirically, we apply \\textsc{ChunkFT} to fine-tune Llama 3-8B and Llama 3-70B using a single RTX 4090-24GB GPU and 2$\\times$ H800-80GB GPUs, respectively. Full-parameter fine-tuning of a 7B model with a 1K input length requires only 13.72GB of GPU memory. The results demonstrate the effectiveness of \\textsc{ChunkFT} in memory usage, running time, and optimization quality. Moreover, downstream evaluations on language understanding, mathematical reasoning, and MT-Bench show that \\textsc{ChunkFT} consistently outperforms existing memory-efficient baselines. Notably, \\textsc{ChunkFT} achieves performance comparable to, and in some cases exceeding, full-parameter fine-tuning. Our repository is on https://github.com/misonsky/chunk.",
+      "url": "https://arxiv.org/abs/2605.21177",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-20",
+      "github_url": "https://github.com/misonsky/chunk.",
+      "score": 0.8782
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
