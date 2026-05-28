@@ -1,0 +1,390 @@
+{
+  "date": "2026-05-28",
+  "collected_at": "2026-05-28T13:15:07.240460+09:00",
+  "papers": [
+    {
+      "id": "2605.28421",
+      "title": "DenoiseRL: Bootstrapping Reasoning Models to Recover from Noisy Prefixes",
+      "authors": [
+        "Caijun Xu",
+        "Changyi Xiao",
+        "Zhongyuan Peng",
+        "Yixin Cao"
+      ],
+      "abstract": "Reinforcement learning has become a central paradigm for advancing reasoning in large language models, yet most existing methods still depend on stronger teacher models or heavily curated difficult datasets, limiting scalable capability improvement. In this paper, we introduce DenoiseRL, a reinforcement learning framework that substitutes external supervision with recovery-oriented optimization over failures from weak models. Instead of relying on stronger supervision or carefully engineered data, DenoiseRL learns directly from incorrect reasoning traces by converting them into opportunities for improvement, making training more scalable and less dependent on external resources. This yields a richer and more diverse learning signal, improving exploration efficiency from imperfect model behavior. As a result, DenoiseRL improves reasoning performance and overall training efficiency while reducing the need for expensive data curation or stronger teacher models. Empirically, DenoiseRL consistently outperforms strong on-policy RL baselines across competitive mathematical and general reasoning benchmarks and promotes stronger self-corrective behavior as training difficulty increases, highlighting an effective and scalable alternative pathway for improving reasoning in large language models.",
+      "url": "https://arxiv.org/abs/2605.28421",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8943
+    },
+    {
+      "id": "2605.28360",
+      "title": "Prompt Codebooks: Discrete Compositional Optimization for Language Model Instruction Refinement",
+      "authors": [
+        "Jyotirmoy Nath",
+        "Neeraj Kumar",
+        "Brejesh Lall"
+      ],
+      "abstract": "Automatic prompt optimization (APO) has driven significant gains in LLM-based agentic workflows. However, existing methods treat each task's prompt as a monolithic, instance-blind string optimized through global edits, producing brittle updates and preventing the reuse of learned sub-behaviors. We propose Prompt Codebooks (PCO), a novel compositional prompt optimization framework that recasts APO as discrete learning over a finite vocabulary of natural-language instincts - atomic, reusable instruction units. PCO organizes prompt-construction knowledge in a discrete codebook and routes each input to a small subset of entries via an LLM-based encoder; a generator composes them into a prompt for the frozen target model; a critic emits a structured verdict that decomposes by attribution into per-variable textual gradients, jointly training the encoder, generator, and codebook under a language-valued min-max objective. The resulting routing is per-instance: different inputs in the same task receive different instinct compositions, a regime structurally inexpressible under instance-blind methods. Across six benchmarks on Qwen3-8B and LLaMA-3.1-8B, PCO improves over zero-shot by up to +30.36 points, surpasses the strongest prior baseline (GEPA) by +3.34 on HotpotQA and +1.11 in aggregate, and reduces deployed prompt length by up to 14.1x versus MIPROv2 and 3.0x versus GEPA using only K=16 instincts.",
+      "url": "https://arxiv.org/abs/2605.28360",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8943
+    },
+    {
+      "id": "2605.28222",
+      "title": "Analyzing Quality-Latency-Resource Trade-offs in a Technical Documentation RAG Assistant Using LoRA Adaptation",
+      "authors": [
+        "Evgenii Palnikov",
+        "Elizaveta Gavrilova"
+      ],
+      "abstract": "We study quality-latency-resource trade-offs in a documentation-grounded retrieval-augmented generation (RAG) system that uses Low-Rank Adaptation (LoRA) of the generator. We build a manually verified benchmark of 5,144 question-answer pairs over the official Kubernetes documentation and combine it with a fixed hybrid-retrieval pipeline (BGE-M3 dense, BGE-M3 native sparse, Reciprocal Rank Fusion, cross-encoder reranking). Over this benchmark we ablate 20 LoRA configurations on Llama-3.2-3B-Instruct and Llama-3.1-8B-Instruct across rank and target-module choices, and evaluate each on token-level F1, LLM-judged groundedness and correctness (pass@4), inference latency, inference memory, and training cost, all reported with bootstrap 95% confidence intervals. Pareto analysis shows that LoRA adapters acting only on the q and v attention projections consistently dominate the front, while the 3B/8B choice mainly defines operating regime. A param-matched control comparison further indicates that the q/v advantage is structural rather than purely parametric. The benchmark, selected adapters, and code are available at https://github.com/EugPal/rag-lora-tradeoffs.",
+      "url": "https://arxiv.org/abs/2605.28222",
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-27",
+      "github_url": "https://github.com/EugPal/rag-lora-tradeoffs.",
+      "score": 0.8934
+    },
+    {
+      "id": "2605.28398",
+      "title": "HRBench: Benchmarking and Understanding Thinking-Mode Switch Strategies in Hybrid-Reasoning LLMs",
+      "authors": [
+        "Yansong Ning",
+        "Mianpeng Liu",
+        "Jingwen Ye",
+        "Weidong Zhang",
+        "Hao Liu"
+      ],
+      "abstract": "Hybrid-reasoning large language models (LLMs) expose explicit controls over reasoning effort, allowing users or systems to trade off answer quality against inference cost. However, existing methods for adaptive thinking-mode selection are typically evaluated under different models, datasets, and implementation assumptions, making it difficult to compare their practical behavior. We introduce HRBench, a unified evaluation framework for studying thinking-mode switching in hybrid-reasoning LLMs. HRBench organizes the design space along two axes: three switching strategy families, prompt-based selection, external routing, and speculative execution, and four training regimes, training-free, SFT, offline and online RL, yielding 12 controlled evaluation settings. We evaluate these settings across 6 LLMs, from Qwen3.5-2B to Kimi-K2.5-1.1T, and 5 reasoning benchmarks covering mathematics, science, and code, while reimplementing 12+ representative prior methods within the same pipeline. Our analysis characterizes how different switching strategies occupy distinct effectiveness-efficiency trade-off regions: prompt-based methods often provide favorable token-accuracy trade-offs, routing methods offer more stable cost reduction, and speculative methods tend to improve accuracy at higher token cost. We further find that training affects strategies differently, and that the preferred strategy varies with model scale and task domain. HRBench provides reference implementations and a unified evaluation platform to support more controlled research on efficient reasoning in hybrid-reasoning LLMs. Our data, code and repository are available at https://github.com/usail-hkust/HRBench.",
+      "url": "https://arxiv.org/abs/2605.28398",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "github_url": "https://github.com/usail-hkust/HRBench.",
+      "score": 0.8922
+    },
+    {
+      "id": "2605.28774",
+      "title": "Agent Explorative Policy Optimization for Multimodal Agentic Reasoning",
+      "authors": [
+        "Minki Kang",
+        "Shizhe Diao",
+        "Ryo Hachiuma",
+        "Sung Ju Hwang",
+        "Pavlo Molchanov",
+        "Yu-Chiang Frank Wang",
+        "Byung-Kwan Lee"
+      ],
+      "abstract": "Vision-language models with extended reasoning succeed on complex problems, but many real-world problems require external tools that internal reasoning alone often cannot resolve. Agentic reasoning therefore interleaves two behaviors with a structural asymmetry: thinking (the self-contained default) and tool use (a high-variance auxiliary acting). We refer to this asymmetry as the Thinking-Acting Gap. Under standard RL recipes like GRPO, the gap manifests as two diagnostic symptoms during training: tool use is attempted on only ~30% of rollouts, and when attempted, the tool-using rollouts within a group are all-wrong on ~40% of questions, suppressing the learning signal at the tool calls that needed it. We propose AXPO (Agent eXplorative Policy Optimization): for each all-wrong tool-using subgroup, AXPO fixes the thinking prefix and resamples the tool call and its continuation, paired with uncertainty-based prefix selection. Across nine multimodal benchmarks and three scales of Qwen3-VL-Thinking, SFT+AXPO outperforms SFT+GRPO at average (+1.8pp Pass@1 and +1.8pp Pass@4 at 8B on average) and 8B with SFT+AXPO surpasses the 32B Base on Pass@4 with 4 times fewer parameters.",
+      "url": "https://arxiv.org/abs/2605.28774",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8917
+    },
+    {
+      "id": "2605.28354",
+      "title": "Plan Before Search: Search Agents Need Plan",
+      "authors": [
+        "Zhipeng Qian",
+        "Zihan Liang",
+        "Yufei Ma",
+        "Ben Chen",
+        "Huangyu Dai",
+        "Jiayi Ji",
+        "Chenyi Lei",
+        "Wenwu Ou",
+        "Xiaoshuai Sun",
+        "Qibin Hou"
+      ],
+      "abstract": "Training large language models as retrieval-augmented reasoning agents typically combines reinforcement learning with an SFT cold start distilled from a stronger model. However, this paradigm overlooks two fundamental factors: the dependency structure among sub-skills, and the possibility that distillation is not the only route to capability acquisition. We study this through Plan, a structured agentic behavior for multi-hop retrieval that decomposes a question into ordered sub-questions before any retrieval is performed, so that each search step can be anchored to a pre-designed sub-question instead of drifting under the influence of partially relevant documents retrieved earlier. However, across three model families spanning 3B to 14B parameters, we find that an identical reward signal induces qualitatively different RL failure modes. This phenomenon indicates that successful training hinges not only on reward design but also on model-specific feasibility conditions: sufficient initial entropy, training stability, and prerequisite sub-skills. Motivated by this, we propose a self-bootstrapping paradigm in which a small-scale seed model generates filtered trajectories that activate Plan in any target model, eliminating the need for distillation from an external stronger model. Our pipeline activates Plan across every tested model and consistently outperforms competitive baselines on multi-hop QA benchmarks.",
+      "url": "https://arxiv.org/abs/2605.28354",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8912
+    },
+    {
+      "id": "2605.28742",
+      "title": "CORE: Contrastive Reflection Enables Rapid Improvements in Reasoning",
+      "authors": [
+        "Linas Nasvytis",
+        "Simon Jerome Han",
+        "Ben Prystawski",
+        "Satchel Grant",
+        "Noah D. Goodman",
+        "Judith E. Fan"
+      ],
+      "abstract": "Language models can use verifiable rewards to improve at a wide variety of reasoning tasks. However, both parametric (e.g. RLVR) and non-parametric (e.g. prompt optimization) approaches to doing so typically require hundreds of training samples and thousands of model rollouts, making them expensive in the best case and intractable in the worst. To address this challenge, we introduce Contrastive Reflection (CORE), a non-parametric learning algorithm that compares past reasoning traces to generate insights: short natural-language descriptions of reasoning strategies and constraints that capture differences between successful and unsuccessful problem attempts. Across four reasoning tasks, we demonstrate that CORE enables more rapid improvement than both parametric (GRPO) and non-parametric (GEPA, episodic RAG, and MemRL) methods, while using fewer rollouts. Under fixed rollout budgets with as few as five training samples, we then show that CORE also achieves comparable or greater performance gains than each baseline. Finally, we highlight how CORE is also substantially more context-efficient than non-parametric baselines, requiring fewer prompt tokens while storing learned knowledge as compact, interpretable natural-language insights. Our results therefore suggest that distilling contrasts between successful and unsuccessful reasoning traces into abstract and useful insights can provide a more efficient and interpretable route to model self-improvement than weight updates, prompt optimization, or direct reuse of stored reasoning traces.",
+      "url": "https://arxiv.org/abs/2605.28742",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8909
+    },
+    {
+      "id": "2605.28805",
+      "title": "OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration",
+      "authors": [
+        "Xinchen Zhang",
+        "Bowei Liu",
+        "Jiale Liu",
+        "Chufan Shi",
+        "Yizhen Zhang",
+        "Junhong Liu",
+        "Youliang Zhang",
+        "Zhiheng Li",
+        "Yujiu Yang",
+        "Ling Yang"
+      ],
+      "abstract": "Visual outcomes are increasingly central to multimodal large language models, making reliable and fine-grained verification essential for scaling generalist foundation models. In this work, we investigate multimodal meta-verification, which leverages verifier-generated rationales rather than decision-only signals, and explore how to effectively incorporate meta-verification feedback into multimodal verifier training. We identify two key findings. First, symbolic verifier outputs (e.g., bounding boxes) outperform textual explanations as meta-verification rationales, enabling efficient rule-based reinforcement learning rewards while avoiding reliance on model-based rewards from auxiliary judge models. Second, decoupling reinforcement learning objectives for binary judgment and meta-verification substantially outperforms joint reward optimization, due to intrinsic differences in output structure and learning dynamics. Based on these insights, we train OmniVerifier-M1, a generalist visual verifier leveraging symbolic meta-verification and decoupled reinforcement learning. OmniVerifier-M1 provides robust verification and fine-grained error localization, and further enables M1-TTS, a verifier-driven agentic generation system achieving dynamic region-level self-correction. This approach paves the way for more reliable, interpretable, and fine-grained multimodal verification, supporting safer and more controllable foundation model deployment.",
+      "url": "https://arxiv.org/abs/2605.28805",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8887
+    },
+    {
+      "id": "2605.28700",
+      "title": "The Importance of Being Statistically Earnest: A Critical Re-evaluation of GSM-Symbolic",
+      "authors": [
+        "Dominika Agnieszka Długosz",
+        "Arlindo Oliveira",
+        "Natalia Díaz Rodríguez"
+      ],
+      "abstract": "The GSM-Symbolic benchmark (Mirzadeh et al., 2025) reported consistent performance drops across 25 Large Language Models (LLMs) when tested on template-generated variants of GSM8K problems, concluding that the models lack genuine reasoning capabilities. We argue that this conclusion rests on shaky statistical ground. Re-evaluating 20 open-weight models using Generalised Linear Mixed Models with per-question random effects, we find that only half exhibit statistically significant performance changes under the original prompt format. Moreover, we identify a previously unacknowledged factor: the main GSM-Symbolic dataset contains a systematically shifted distribution of larger integers in problem texts relative to GSM-Base (K-S statistic = 0.12, p < 0.001), contradicting the original authors' claims. Controlling for this large number effect accounts for significance in roughly half the remaining cases. Among models with statistically significant performance deltas, we identify distinct, model-specific failure profiles - including fragility of variable binding, arithmetic limitations, and dual-task interference - underscoring that blanket claims about LLM reasoning are both statistically premature and mechanistically misleading.",
+      "url": "https://arxiv.org/abs/2605.28700",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8885
+    },
+    {
+      "id": "2605.28305",
+      "title": "Revisiting Anthropomorphic Reflection Markers in Large Language Model Reasoning",
+      "authors": [
+        "Yahan Yu",
+        "Noa Nakanishi",
+        "Fei Cheng"
+      ],
+      "abstract": "Large Language Models (LLMs) often produce explicit reflective traces during complex reasoning, accompanied by anthropomorphic markers such as wait, hmm, and alternatively. Although these markers are commonly used as visible indicators of reflection, their mechanisms remain unclear, which leaves the risk of overthinking associated with redundant and repetitive reflection markers. In this work, we revisit anthropomorphic reflection markers, examining their necessity for reasoning and role in the reflection. We suppress these markers through prompt-level and token-level interventions, and analyze their effects on task performance across four benchmarks and two model scales. Our results show that anthropomorphic markers are not uniformly necessary for reasoning performance: suppressing them can preserve or improve performance in several settings, especially under larger sampling budgets. Meanwhile, marker suppression does not necessarily remove reflection behavior, as models can still perform marker-free verification. These suggest that anthropomorphic markers tend to be surface cues rather than reliable proxies for reflection itself, and motivate future research on reasoning mechanisms beyond explicit marker patterns.",
+      "url": "https://arxiv.org/abs/2605.28305",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8884
+    },
+    {
+      "id": "2605.28292",
+      "title": "CIRF: Tokenizing Chain-of-Thoughts into Reusable Functional Units for Efficient Latent Reasoning in Large Language Models",
+      "authors": [
+        "Yukyung Lee",
+        "Yumeng Shen",
+        "Jinhyeong Park",
+        "Hyein Yang",
+        "Jun-Hyung Park"
+      ],
+      "abstract": "Implicit Chain-of-Thought (CoT) reduces the inference cost of large language models by internalizing the explicit rationales. However, existing approaches typically lack alignment with explicit rationales and adaptivity to example complexity. In this work, we propose CIRF (\\textit{\\underline{C}hain-of-thoughts \\underline{I}nto \\underline{R}eusable \\underline{F}unctional units}), an implicit CoT framework that performs reasoning as a dynamic sequence of discrete functional tokens. CIRF assigns a functional token to each semantically coherent reasoning unit in explicit CoT traces. The model is then fine-tuned to autoregressively generate functional tokens and their optional results, followed by the final answer. This design aligns latent reasoning with a sequence of functional units, facilitating parallel training, explicit rationale alignment, and adaptive reasoning. Extensive experiments on mathematical, symbolic, and commonsense reasoning benchmarks show that CIRF provides a favorable accuracy-latency trade-off compared with state-of-the-art implicit CoT methods. Further analyses demonstrate that CIRF constructs distinct, interpretable functional tokens, leading to consistent performance improvements.",
+      "url": "https://arxiv.org/abs/2605.28292",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8882
+    },
+    {
+      "id": "2605.28201",
+      "title": "Plant, Persist, Trigger: Sleeper Attack on Large Language Model Agents",
+      "authors": [
+        "Yongxiang Li",
+        "Moxin Li",
+        "Zhixin Ma",
+        "Fengbin Zhu",
+        "Dongrui Liu",
+        "Wenjie Wang",
+        "Fuli Feng"
+      ],
+      "abstract": "Large Language Model (LLM) agents remain vulnerable to safety threats from the external environment, where attackers inject adversarial content into external observations such as tool-returned data, webpages, or MCP context, causing harmful agentic behaviors such as unsafe actions or incorrect outputs. Existing studies typically focus on single-interaction attacks, where the agent observes adversarial content and immediately exhibits harmful behavior within one user request. However, we show that adversarial content can also persist across interactions served by the same agent, making such threats harder to detect and mitigate. Specifically, adversarial content may persist in the agent state, remain dormant across interactions, and later be activated by a benign user query. We formalize this type of safety threat as Sleeper Attack. To evaluate it, we construct a benchmark with 1,896 instances covering six real-world harmful outcomes, three attack strategies, and three agent state targets: session context, memory, and reusable skills. Experiments on seven strong open-source and closed-source LLMs show that state-of-the-art LLM agents remain vulnerable to Sleeper Attack, even when they achieve low attack success rates under a single-interaction baseline. Our code and data are available at https://anonymous.4open.science/r/skdvnfu23ihr9wdscnksf1asdffsaef.",
+      "url": "https://arxiv.org/abs/2605.28201",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8876
+    },
+    {
+      "id": "2605.28678",
+      "title": "DREAM-R: Multimodal Speculative Reasoning with RL-Based Refined Drafting, Precise Verification, and Fully Parallel Execution",
+      "authors": [
+        "Yunhai Hu",
+        "Zining Liu",
+        "Xiangyang Yin",
+        "Tianhua Xia",
+        "Bo Bao",
+        "Eric Sather",
+        "Vithursan Thangarasa",
+        "Sai Qian Zhang"
+      ],
+      "abstract": "Speculative reasoning has recently been proposed as a means to accelerate reasoning-intensive generation in large multimodal models, but its effectiveness is often constrained by misalignment between speculative drafts and target-verified reasoning. In this work, we introduce DREAM-R, a framework that substantially improves the performance of speculative reasoning. At its core, DREAM-R employs Speculative Alignment Policy Optimization (SAPO), a reinforcement-learning objective that trains draft models to generate reasoning steps that are both faithful to target trajectories and concise. We further propose a Threshold-based Verification Mechanism (TBVM) that uses a ratio-based criterion to provide stable and interpretable acceptance of speculative steps only when positive evidence clearly dominates, thereby preventing error propagation. Building on these components, we develop a Fully Parallel Speculative Reasoning (FPSR) framework that parallelizes draft generation, target-side reasoning, and verification across multi-step reasoning, enabling early stopping and clean fallback. Experiments on reasoning-heavy benchmarks demonstrate up to speedup while preserving target-model accuracy, yielding substantial efficiency gains without compromising reasoning quality.",
+      "url": "https://arxiv.org/abs/2605.28678",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8863
+    },
+    {
+      "id": "2605.28142",
+      "title": "Self-Consistency via Marginal Sharpening",
+      "authors": [
+        "Aleksei Arzhantsev",
+        "Otmane Sakhi",
+        "Nicolas Chopin"
+      ],
+      "abstract": "Inference-time sampling can elicit strong reasoning abilities from language models without additional training. Existing power-sampling methods do so by sharpening the distribution over full generated outputs, favoring completions that are individually likely under the model. We argue that this is the wrong object to target for reasoning: a completion entangles a reasoning trace with a final answer, whereas what matters is whether an answer is supported by many plausible reasoning paths. We therefore shift the target from the full-output distribution to the sharpened answer marginal, making self-consistency an inference-time objective rather than a post-hoc voting criterion. Surprisingly, this marginal target admits an efficient approximation: we propose a simple, purely autoregressive parallel sampling algorithm that approximately samples from the sharpened answer marginal, eliciting stronger performance than standard power sampling on mathematics and coding benchmarks while being orders of magnitude faster.",
+      "url": "https://arxiv.org/abs/2605.28142",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.28389",
+      "title": "FABSVer: Faster Training and Better Self-Verification for LLM Mathematical Reasoning",
+      "authors": [
+        "Haihui Pan",
+        "Junwei Bao",
+        "Hongfei Jiang",
+        "Yang Song"
+      ],
+      "abstract": "While large language models have made significant progress in mathematical reasoning, they remain unreliable at judging the correctness of their own solutions. Existing approaches that equip models with self-verification typically treat solution generation and verification as two separate tasks, leading to substantially increased training time. In this paper, we propose FABSVer, which fuses these two tasks into a single generation pass, dramatically reducing training overhead while jointly optimizing both capabilities. We further identify a convergence bottleneck both theoretically and empirically: as training progresses, the reward reaches a plateau because the policy is constrained by a fixed reference model. To overcome this, we introduce Dynamic Reference Model Update (DRMU), which raises the reward ceiling and enables sustained reward growth. Extensive experiments on math benchmarks demonstrate that FABSVer achieves superior self-verification and reasoning performance across three model scales, while requiring only 51%--71% of the training time of existing methods. Analysis further reveals distinct learning phases in how models acquire self-verification, and that the gap between verify and answer rewards shrinks noticeably as model size increases.",
+      "url": "https://arxiv.org/abs/2605.28389",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8856
+    },
+    {
+      "id": "2605.28224",
+      "title": "When Does Memory Help Multi-Trajectory Inference for Tool-Use LLM Agents?",
+      "authors": [
+        "Xinzhe Li",
+        "Yaguang Tao"
+      ],
+      "abstract": "Multi-trajectory inference for tool-use LLM agents - generating multiple reasoning attempts and selecting among them - benefits from transferring knowledge across attempts so that later ones avoid the pitfalls of earlier ones. Existing cross-trajectory memory methods (trajectory-level reflection, atomic fact extraction, raw observation injection) are each evaluated under a single inference strategy on a single task, making it unclear whether reported gains reflect properties of the memory abstraction or of the inference method. We propose a unified framework that decomposes memory along two axes -- the scope of transfer (within an expansion vs. across trajectories) and the abstraction of the transferred content -- and evaluate four methods under three inference strategies (best-of-N, beam search, MCTS) on four tool-use benchmarks spanning SQL, knowledge-graph, and CLI environments, in a verifier-free setting that matches the deployment regime of practical agents. The experiment matrix identifies the inference method as a confound: the same memory method produces statistically distinct results under different inference strategies on the same examples. Reflection reaches significance only under MCTS (not under best-of-N); within-expansion injection (conditioning each candidate on prior siblings' outcomes) helps only diversity-starved beam search; and atomic fact extraction is accuracy-neutral but shortens trajectories by 19-26% on tasks with reusable environmental structure.",
+      "url": "https://arxiv.org/abs/2605.28224",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.8854
+    },
+    {
+      "id": "2605.28500",
+      "title": "Functional Entropy: Predicting Functional Correctness in LLM-Generated Code with Uncertainty Quantification",
+      "authors": [
+        "Dylan Bouchard",
+        "Mohit Singh Chauhan",
+        "Zeya Ahmad",
+        "Ho-Kyeong Ra"
+      ],
+      "abstract": "Large language models have shown impressive capabilities in code generation, yet they often produce functionally incorrect code. Uncertainty quantification (UQ) methods have emerged as a promising approach for detecting hallucinations in natural language generation, but their effectiveness for code generation tasks remains underexplored. We systematically evaluate how UQ techniques transfer to code generation across three programming languages, five LLMs, and over 1,700 problems. We find that some token-probability-based methods generalize effectively without modification, while sampling-based methods relying on natural language inference (NLI) fail because NLI models cannot distinguish functionally different code, causing most responses to collapse into a single semantic cluster. To address this, we introduce functional equivalence methods, a family of code-specific methods that replace NLI-based semantic equivalence with an LLM-based functional equivalence assessment, including functional entropy, a code-specific analog of semantic entropy. Functional equivalence methods achieve top AUROC in 11 out of 15 model-benchmark combinations and the best calibration across most settings, consistently outperforming both NLI-based counterparts and all other methods evaluated.",
+      "url": "https://arxiv.org/abs/2605.28500",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.885
+    },
+    {
+      "id": "2605.28247",
+      "title": "IRDS: Interpretable RLVR Data Selection via Verifier-Coupled Sparse Autoencoder Coverage",
+      "authors": [
+        "Yuhan Li",
+        "Mingxu Zhang",
+        "Dazhong Shen",
+        "Ying Sun"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a key technique for en- hancing LLM reasoning, yet its data ineffi- ciency remains a major bottleneck. Existing methods address this problem only partially, each missing at least one of subset-level cov- erage, verifier signal use, or interpretability. To address this gap, we present IRDS (Inter- pretable RLVR Data Selection), which selects RLVR training instances on a sparse autoen- coder (SAE) cluster basis so the selection itself is auditable on recognizable problem motifs. To select instances the model both fails on and can still learn from, we introduce a verifier- coupled coverage objective on the SAE basis and solve it by greedy log-determinant max- imization. Experiments on three instruction- tuned models and six math reasoning bench- marks show that IRDS achieves the highest overall accuracy, exceeding the strongest base- line by +3.9/+4.0 pp on the two Qwen models and by +0.5 pp on Llama-3.1-8B, while run- ning an order of magnitude cheaper than the trajectory-based baseline.",
+      "url": "https://arxiv.org/abs/2605.28247",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "score": 0.885
+    },
+    {
+      "id": "2605.28814",
+      "title": "Self-Improving Language Models with Bidirectional Evolutionary Search",
+      "authors": [
+        "Guowei Xu",
+        "Zhenting Qi",
+        "Huangyuan Su",
+        "Weirui Ye",
+        "Himabindu Lakkaraju",
+        "Sham M. Kakade",
+        "Yilun Du"
+      ],
+      "abstract": "Search has been proposed as an effective method for self-improving language models and agentic systems, both for post-training sample generation and for inference. However, widely used methods such as best-of-N sampling and tree search face two fundamental limitations: they are guided by sparse verification signals, and they construct candidates primarily through autoregressive expansion, restricting exploration to regions with substantial model probability mass. To address these, we propose Bidirectional Evolutionary Search (BES), a search framework that couples forward candidate evolution with backward goal decomposition. In the forward search, BES augments standard expansion with evolution operators that recombine partial trajectories to generate candidates that are difficult to obtain from a single model rollout. In the backward search, BES recursively decomposes the original task into checkable subgoals, producing dense intermediate feedback that guides forward search. We provide theoretical motivation showing that candidates generated by expansion-only search are confined to a narrow entropy shell while evolutionary operators can escape it, and that backward search can exponentially reduce the number of required samples to find a correct answer. Experiments show that on challenging post-training tasks where mainstream post-training algorithms fail to improve, BES enables consistent gains, and on three open problem solving benchmarks at inference time, BES outperforms existing open-source frameworks in both average and best-case performance. Code and trained models are available at https://github.com/Embodied-Minds-Lab/BES.",
+      "url": "https://arxiv.org/abs/2605.28814",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-27",
+      "github_url": "https://github.com/Embodied-Minds-Lab/BES.",
+      "score": 0.884
+    },
+    {
+      "id": "2605.28699",
+      "title": "TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning",
+      "authors": [
+        "Chusen Li",
+        "Zhou Liu",
+        "Shuigeng Zhou",
+        "Wentao Zhang"
+      ],
+      "abstract": "Large language models increasingly rely on either reinforcement learning or multi-agent prompting to improve reasoning, yet these two paradigms remain difficult to combine. Directly applying single-agent reinforcement learning to multi-turn multi-agent systems faces following dilemmas: i) Sparse rewards, role-level free-riding and excessive training overhead. ii) Agents only imitate to collaborate. iii) Fixed collaboration protocol falls into oscillating local optimum. We introduce TRACER, a turn-level reinforcement framework for cooperative multi-LLM reasoning. TRACER separates collaborative decision making into a controller-regret layer, where controllers learn whether the agents should speak or skip the current round through regret matching, and a generation-credit layer, which optimizes proposer and reviewer utterances with role-specific GSPO rewards. This design i) assigns credit at the level of both action modes and generated utterances, thus avoiding free-riding and sparse rewards. We only expand the choices made by the controllers, thus greatly reducing computational cost of training. Moreover, ii) agents acquire collaborative capability as they learn when to utter and what to speak. Finally, iii) by designing binary actions ingeniously, we extend classical game theory established for finite action spaces to deep learning, thus achieving mathematically rigorous convergence. We train all local RL-style methods on the GSM8K training split and evaluate on held-out GSM8K, MATH500, and GPQA-Diamond to measure in-domain accuracy, cross-benchmark generalization, inference cost, and correction-preservation behavior. The resulting framework provides a compact and reproducible testbed for studying learned collaboration policies beyond fixed debate, voting, or aggregation protocols. Code is available at https://github.com/Shark-Forest/TRACER.",
+      "url": "https://arxiv.org/abs/2605.28699",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-27",
+      "github_url": "https://github.com/Shark-Forest/TRACER.",
+      "score": 0.8837
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
