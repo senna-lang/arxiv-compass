@@ -6,8 +6,8 @@
  */
 
 import { describe, expect, it } from "bun:test";
-import { buildDashboardPapers } from "../src/lib/map-data";
-import type { DailyData, MapData } from "../src/lib/types";
+import { buildDashboardPapers } from "./map-data";
+import type { DailyData, MapData } from "./types";
 
 function makeMapData(papers: MapData["papers"]): MapData {
 	return {

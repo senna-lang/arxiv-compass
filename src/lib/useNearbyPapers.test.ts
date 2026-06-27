@@ -6,7 +6,7 @@
  */
 
 import { describe, expect, it } from "bun:test";
-import type { DashboardPaper } from "../src/lib/types";
+import type { DashboardPaper } from "./types";
 
 /** フックの内部ロジックを直接テスト（React依存を排除） */
 function computeNearby(
