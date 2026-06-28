@@ -1,145 +1,159 @@
 # arxiv-compass
 
-SPECTER2 + BERTopic による arXiv 論文ディスカバリー — 埋め込みベースの検索とトピッククラスタリングで、日次の論文レコメンドを生成する。
+arXiv paper discovery powered by SPECTER2 + BERTopic — embedding-based retrieval and topic clustering to generate daily paper recommendations.
+
+<p align="center">
+  <img src="assets/topic-map-2.gif" alt="Topic map dashboard">
+</p>
 
 ---
 
-## 全体の流れ
+## End-to-end flow
 
 ```
-[日次] arXiv から直接新着論文を取得・スコアリング
+[Daily] Fetch and score new papers directly from arXiv
                 │
                 ▼
-        ┌───────────────────────────────────┐
-        │  fetch_daily.py                   │
-        │  arXiv API から新着論文を取得     │
-        │  → Embedding（SPECTER2）          │
-        │  → interest_profile + ratings     │
-        │    の α-blend でスコアリング      │
-        │  → score 順に並べて data/ に保存  │
-        └───────────────────────────────────┘
+        ┌─────────────────────────────────────┐
+        │ fetch_daily.py                      │
+        │ Fetch new papers from the arXiv API │
+        │ → Embedding (SPECTER2)              │
+        │ → Score via α-blend of              │
+        │   interest_profile + ratings        │
+        │ → Sort by score and save to data/   │
+        └─────────────────────────────────────┘
                 │
-                │  星をつけて評価を蓄積
+                │  Star papers to accumulate ratings
                 ▼
         Cloudflare KV
-        ※ GET /api/ratings でバッチから参照
+        * Batches read it via GET /api/ratings
                 │
                 │
-[月次]          ▼
-        ┌───────────────────────────────────┐
-        │  arXiv論文 10,000件を取得         │
-        │  BERTopic でトピックモデリング    │
-        │  → 論文地図（map.json）を生成     │
-        └───────────────────────────────────┘
+[Monthly]       ▼
+        ┌─────────────────────────────────────┐
+        │ Fetch 10,000 arXiv papers           │
+        │ Topic modeling with BERTopic        │
+        │ → Generate the paper map (map.json) │
+        └─────────────────────────────────────┘
                 │
                 │
-[週次]          ▼
-        ┌───────────────────────────────────┐
-        │  ratings.json × map.json          │
-        │  → 自分の興味クラスタを特定           │
-        │  → 近傍論文をおすすめ表示            │
-        │  → 隣接クラスタをセレンディピティ      │
-        │    として表示                       │
-        └───────────────────────────────────┘
+[Weekly]        ▼
+        ┌────────────────────────────────────────────┐
+        │ ratings.json × map.json                    │
+        │ → Identify your interest clusters          │
+        │ → Surface nearby papers as recommendations │
+        │ → Show adjacent clusters as                │
+        │   serendipity picks                        │
+        └────────────────────────────────────────────┘
 ```
 
 ---
 
-## トピックモデリングの仕組み
+## How the topic modeling works
 
 ```
-10,000件の論文 abstract
+10,000 paper abstracts
         │
         ▼
-  [STEP 1] Embedding（SPECTER2 + proximity アダプタ）
-  各 abstract を 768 次元ベクトルに変換
+  [STEP 1] Embedding (SPECTER2 + proximity adapter)
+  Convert each abstract into a 768-dim vector
         │
         ▼
-  [STEP 2] PCA（768次元 → 50次元）
-  ノイズ次元を落とし UMAP の入力品質を上げる
+  [STEP 2] PCA (768-dim → 50-dim)
+  Drop noisy dimensions to improve UMAP input quality
         │
         ▼
-  [STEP 3] UMAP（50次元 → 2次元）
-  クラスタリングと可視化を同一空間で統一
-  ※ 「地図上の近さ」と「クラスタの近さ」が一致する
+  [STEP 3] UMAP (50-dim → 2-dim)
+  Unify clustering and visualization in the same space
+  * "closeness on the map" matches "closeness in clustering"
         │
         ▼
-  [STEP 4] HDBSCAN でクラスタリング
-  密度ベースでグループを自動検出（クラスタ数は自動決定）
+  [STEP 4] Clustering with HDBSCAN
+  Density-based automatic grouping (cluster count decided automatically)
         │
         ▼
-  [STEP 5] c-TF-IDF でキーワード候補抽出
-  各クラスタを代表する語を統計的に抽出
-  ※ WordNetLemmatizer で語形正規化（agents → agent、rewards → reward）
-  ※ ACADEMIC_STOPWORDS で論文特有の汎用語を除去
+  [STEP 5] Keyword candidate extraction with c-TF-IDF
+  Statistically extract the words that represent each cluster
+  * Lemmatize word forms with WordNetLemmatizer (agents → agent, rewards → reward)
+  * Remove paper-specific generic words with ACADEMIC_STOPWORDS
         │
         ▼
-  [STEP 6] KeyBERTInspired で意味的再ランキング
-  各クラスタの代表文書とキーワード候補を SPECTER2 で Embedding し、
-  cos 類似度でスコアリング（10,000件の全論文は再 Embedding しない）
+  [STEP 6] Semantic re-ranking with KeyBERTInspired
+  Embed each cluster's representative documents and keyword candidates with SPECTER2,
+  and score by cosine similarity (the full 10,000 papers are not re-embedded)
         │
         ▼
-  [STEP 7] MaximalMarginalRelevance（MMR）で多様性確保
-  選択済みキーワードとの意味的類似度を考慮し、
-  概念的に近いペア（gnn / graph neural network 等）を除去して多様なキーワードに絞る
+  [STEP 7] Ensure diversity with MaximalMarginalRelevance (MMR)
+  Account for semantic similarity to already-selected keywords,
+  removing conceptually close pairs (e.g. gnn / graph neural network) for a diverse set
         │
         ▼
-  map.json（arXiv論文地図）
-  ┌─────────────────────────────────────┐
-  │  cluster: "rlvr & policy optimization & grpo"      │
-  │  cluster: "whisper & tts & asr"                    │
-  │  cluster: "jailbreak & adversarial"                │
-  │  cluster: "fine tuning & lora & rank adaptation"   │
-  │  ...（数十クラスタ）                               │
-  └─────────────────────────────────────┘
+  map.json (arXiv paper map)
+  ┌─────────────────────────────────────────────────┐
+  │ cluster: "rlvr & policy optimization & grpo"    │
+  │ cluster: "whisper & tts & asr"                  │
+  │ cluster: "jailbreak & adversarial"              │
+  │ cluster: "fine tuning & lora & rank adaptation" │
+  │ ...(dozens of clusters)                         │
+  └─────────────────────────────────────────────────┘
 ```
 
-### 地図から「自分の興味領域」を発見する
+<p align="center">
+  <img src="assets/topic-map-overview.gif" alt="Topic map overview">
+</p>
+
+### Discovering your interest areas from the map
 
 ```
 Cloudflare KV
-（星をつけた論文の abstract）
+(abstracts of papers you starred)
         │
         ▼
-  評価済み論文が属するクラスタを特定
+  Identify the clusters your rated papers belong to
         │
         ▼
-  高評価クラスタの centroid ベクトルを計算
+  Compute the centroid vector of highly-rated clusters
         │
         ▼
-  地図上の近傍クラスタを探索
-  ┌──────────────────────────────────────────────────────┐
-  │  "Diffusion Models" ← よく星をつけている            │
-  │         ↓ 近い                                       │
-  │  "Score-based Generative Models" ← まだ知らなかった │
-  │  "Flow Matching" ← まだ知らなかった                 │
-  └──────────────────────────────────────────────────────┘
+  Explore neighboring clusters on the map
+  ┌───────────────────────────────────────────────────┐
+  │ "Diffusion Models" ← you star these often         │
+  │        ↓ close                                    │
+  │ "Score-based Generative Models" ← didn't know yet │
+  │ "Flow Matching" ← didn't know yet                 │
+  └───────────────────────────────────────────────────┘
         │
         ▼
-  recommendations.json に2種類の論文リストを生成:
-  - おすすめ（上位3クラスタの代表論文 7件）         → 🔍 過去記事からのおすすめ
-  - こんなのもどう？（隣接3クラスタ 7件 + 末尾2クラスタ 3件）→ 🌱 こんなのもどう？
+  Generate two kinds of paper lists in recommendations.json:
+  - Recommended (7 representative papers from the top 3 clusters)
+      → 🔍 Recommended from your history
+  - How about these? (7 from 3 adjacent clusters + 3 from the 2 farthest clusters)
+      → 🌱 How about these?
 ```
+
+<p align="center">
+  <img src="assets/topic-map-explore.gif" alt="Exploring papers on the map">
+</p>
 
 ---
 
-## スコアリングの仕組み
+## How scoring works
 
-デイリー・おすすめ・こんなのもどう？ のすべてで同じ α-blend スコアを使用。
+Daily, Recommended, and How about these? all use the same α-blend score.
 
 ```
-α = min(1.0, ratings件数 / 50)
-match_score = α × cos_sim(論文, 高評価論文群) + (1-α) × cos_sim(論文, interest_profile)
+α = min(1.0, number_of_ratings / 50)
+match_score = α × cos_sim(paper, highly-rated papers) + (1-α) × cos_sim(paper, interest_profile)
 ```
 
-ratings が少ない初期は interest_profile との類似度が主、
-蓄積されるにつれて実際の評価データとの類似度が主になる。
+Early on when ratings are few, similarity to interest_profile dominates;
+as ratings accumulate, similarity to the actual rating data takes over.
 
-`config.jsonc` の `interest_profile` に興味領域を自然言語で記述する（7項目）。
+Describe your interest areas in natural language in `interest_profile` in `config.jsonc` (7 items).
 
-### SPECTER2 アダプタの使い分け
+### Choosing between SPECTER2 adapters
 
-| アダプタ | 用途 |
+| Adapter | Purpose |
 |---|---|
-| `proximity` | 論文同士の類似度（abstract の Embedding） |
-| `adhoc_query` | クエリ→論文の検索（interest_profile の Embedding） |
+| `proximity` | Paper-to-paper similarity (embedding abstracts) |
+| `adhoc_query` | Query→paper retrieval (embedding interest_profile) |
