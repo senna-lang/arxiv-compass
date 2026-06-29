@@ -1,0 +1,433 @@
+{
+  "date": "2026-06-29",
+  "collected_at": "2026-06-29T13:44:04.652166+09:00",
+  "papers": [
+    {
+      "id": "2606.27632",
+      "title": "Yuvion LLM: An Adversarially-Aware Large Language Model for Content And AI Safety",
+      "authors": [
+        "Ting Ma",
+        "Xiufeng Huang",
+        "Benlei Cui",
+        "Xiaowen Xu",
+        "Shikai Qiu",
+        "Ruijie Jian",
+        "Hongxing Li",
+        "Guanghui Wang",
+        "Longtao Huang",
+        "Haiwen Hong",
+        "Haolei Xu",
+        "Wenjing Jiang",
+        "Ziwen Xu",
+        "Zhaoyu Fan",
+        "Shaoxuan He",
+        "Chuxi Xiao",
+        "Yujian Li",
+        "Xinyue Chen",
+        "Chunyang Chai",
+        "Wenxuan Liu",
+        "Ziheng Wang",
+        "Dongjie Zhang",
+        "Yangfan Zhou",
+        "Libin Dong",
+        "Yupeng Cao",
+        "Xiaoqian Xia",
+        "Jing Wang",
+        "Zhe Jiang",
+        "Zhenan Ye",
+        "Guang Yang",
+        "Bin Liu",
+        "Wei Peng",
+        "Ziqiang Zhu",
+        "Meihui Lian",
+        "Kaiwen Lv Kacuila",
+        "Haidong Ding",
+        "Bingyu Zhu",
+        "Yan Wang",
+        "Hai Zhao",
+        "Xuan Jin",
+        "Wei Zhao",
+        "Pengfei Sun",
+        "Wei Wang",
+        "Huiming Zhang",
+        "Bin Li",
+        "Hui Xue"
+      ],
+      "abstract": "As large language models are increasingly deployed in real-world systems, safety failures can still lead to harmful outputs and dangerous misuse. We argue that the essence of safety is adversarial: many failures arise not from natural inputs alone, but from strategic attempts to evade model policies and safeguards. However, existing general-purpose model development largely overlook this adversarial nature, and often remain insufficient for realistic safety scenarios involving planning, tool use, and multi-step reasoning, causing measured safety performance to overestimate real deployment robustness. To address this gap, we present Yuvion LLM, a large language model built for adversarially robust content safety and broader AI safety. Yuvion LLM treats adversarial robustness and agentic capability as first-class objectives. Its pipeline combines adversarially aware data construction, knowledge-enhanced continued pretraining, and policy-grounded multi-task safety post-training, including risk-aware supervised fine-tuning and reinforcement learning-based policy optimization, together with safety-aware agentic reinforcement learning for tool use and multi-step reasoning in complex safety scenarios. We further introduce the Yuvion LLM RiskEval (YLRE), a collection of 93 benchmarks across four evaluation categories, covering diverse open and internal evaluations with a focus on safety, adversarial robustness, and real-world capability requirements. Across these evaluations, Yuvion LLM demonstrates clear advantages on safety-focused benchmarks and particularly strong robustness under adversarial conditions, while maintaining solid overall capability. Notably, Yuvion-8B outperforms most state-of-the-art baselines, including substantially larger models such as GPT-5.4 and Qwen3-MAX, on several safety tasks.",
+      "url": "https://arxiv.org/abs/2606.27632",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8946
+    },
+    {
+      "id": "2606.27806",
+      "title": "Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents",
+      "authors": [
+        "Xinyuan Song",
+        "Zekun Cai"
+      ],
+      "abstract": "World models for language agents come in two useful forms. An agent-based world model calls an LLM API and reasons flexibly in language, but its errors appear as hallucinated state changes that are hard to score with ordinary regression losses. A parameterized world model is a trained transition predictor; its errors are easier to measure with quantities such as NodeMSE, delta accuracy, and validity accuracy, but it is usually weaker as a standalone planner. We compare these two families on four graph-structured planning benchmarks and introduce operational hallucination metrics for the agent-based case. The comparison motivates \\textbf{Grounded Iterative Language Planning} (GILP), which trains only a small parameterized backbone and combines it with API-based agent reasoning. The backbone supplies valid actions, predicted state deltas, risk, and value; the LLM drafts an action and imagined delta; and a consistency gate asks for revision when the two disagree. On real GPT-4o-mini calls, GILP reduces hallucinated-state rate from 0.176 to 0.035. In calibrated simulator ablations, it raises success from 0.668 to 0.838 while adding only ~22% extra LLM calls.",
+      "url": "https://arxiv.org/abs/2606.27806",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8911
+    },
+    {
+      "id": "2606.27472",
+      "title": "Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents",
+      "authors": [
+        "Vedant Patel"
+      ],
+      "abstract": "Large language model (LLM) agents operate over long, multi-session interactions in which facts change: a user moves, a price updates, a plan is revised. Acting correctly requires using the current value of a fact and discarding values that have been superseded. We isolate this ability on real conversational data and show that it is a distinct, unsolved failure. On the knowledge-update subset of LongMemEval, replacing an agent's full context with a bounded, self-maintained memory drops accuracy from 92% to 77% even on a frontier model (gpt-5.4), a gap that is statistically significant (paired McNemar p<0.005) and persists across model scale while full-context accuracy saturates near 92%. The bottleneck is therefore memory maintenance, not comprehension, and is not closed by a stronger model. We then ask whether this is merely an undersized memory, and find it is not: as the conversation grows 24x, accuracy falls further (from 68% to 28%), and granting the agent proportionally more memory yields no detectable recovery (28% to 28%, n=25). The failure scales with the length of the conversation, not the compression ratio. We release Supersede, an open reinforcement-learning environment (on the verifiers / prime-rl stack) that turns this measurement into a training signal: agents are rewarded for answering from the current value and penalized for stale ones. Finally, we close the loop and show the gap is trainable: GRPO fine-tuning a small open model (Qwen2.5-3B) on this environment nearly doubles its held-out supersession accuracy on real, unseen conversations (9.0% to 16.7%, a single run), along a monotonic checkpoint curve indicating the learned policy, not the harness, carries the gain. To our knowledge this is the first trainable environment whose reward targets temporal fact-currency, and the first evidence the supersession gap can be trained down, not only measured.",
+      "url": "https://arxiv.org/abs/2606.27472",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8911
+    },
+    {
+      "id": "2606.27669",
+      "title": "When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search",
+      "authors": [
+        "Yiling Tao",
+        "Shihan Deng",
+        "Meiling Tao",
+        "Pengzhi Wei",
+        "Zhichao Hu",
+        "Zhihao Zhu"
+      ],
+      "abstract": "Search agents powered by large language models (LLMs) are increasingly used to solve complex information-seeking tasks, requiring multi-step retrieval and reasoning to fulfill user goals. However, existing benchmarks often assume that user queries are complete and explicit, overlooking the fact that real-world search requests are frequently vague, underspecified, or even factually incorrect. In deep search scenarios, such ambiguity can propagate along multi-step reasoning chains and lead agents toward incorrect search trajectories. To address this gap, we introduce DiscoBench, a benchmark for clarification-aware deep search, designed to evaluate whether search agents can proactively identify ambiguity, ask effective clarification questions, and recover correct reasoning paths through user interaction. DiscoBench contains 211 samples and 463 ambiguity instances across 11 real-world domains, covering four ambiguity types. We further design a user simulator for multi-turn interaction and evaluate model performance from four perspectives: task utility, ambiguity detection, interaction strategy, and cost efficiency. Experiments on representative LLMs show that ambiguity detection and effective clarification are distinct capabilities, and that repeatedly searching instead of asking for clarification often performs worse than direct guessing, highlighting a critical gap between retrieval ability and interactive problem-solving in current search agents.",
+      "url": "https://arxiv.org/abs/2606.27669",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8909
+    },
+    {
+      "id": "2606.28166",
+      "title": "Tandem Reinforcement Learning with Verifiable Rewards",
+      "authors": [
+        "Difan Jiao",
+        "Raghav Singhal",
+        "Robert West",
+        "Ashton Anderson"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has significantly improved the reasoning capability of large language models, reaching expert or even superhuman performance in domains such as competition math. However, whether weaker agents and humans can actually harness this capability is far less certain, with RLVR documented to drift reasoning toward idiosyncratic patterns such as poor readability and language mixing. Tandem training is a recently introduced paradigm that targets this compatibility problem: a trained, stronger senior co-generates each rollout with a frozen, weaker junior, and the two are rewarded as a team, so the senior is pushed to reason in ways the junior can follow. Yet this paradigm has so far been demonstrated only in proof-of-concept settings, leaving open whether it scales to the long chains of thought of the modern RLVR pipeline. In this work, we propose Tandem Reinforcement Learning (TRL), which carries the tandem training paradigm into RLVR. In TRL, the senior and a frozen junior alternate stochastically to co-generate the reasoning, the resulting generation is rewarded, and the standard GRPO loss is applied to the senior. Training Qwen3-4B-Instruct on competition math, we find that TRL matches vanilla GRPO on solo reasoning capability while three properties emerge together from the same rollout structure: stronger handoff robustness with the junior, reduced distributional drift from the junior, and a chain-of-thought more legible to the junior. Our results demonstrate a promising route for RLVR with practical payoffs in multi-model communication and human compatibility.",
+      "url": "https://arxiv.org/abs/2606.28166",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8862
+    },
+    {
+      "id": "2606.27683",
+      "title": "CBD: API-Only LLM Black-Box Unlearning through Controlled Behavioral Divergence",
+      "authors": [
+        "Zhiqiang Xie",
+        "Yijing Lin",
+        "Zhipeng Gao",
+        "Dong In Kim"
+      ],
+      "abstract": "Edge devices increasingly invoke large language models (LLMs) through API services for context aware edge intelligence, while edge generated data may be collected to improve LLMs and may introduce sensitive, copyrighted, harmful, or outdated information into model behavior. Machine unlearning offers a practical way to remove the influence of undesired data without retraining LLMs. However, existing methods still face two gaps. The first is API only black box access, where target model parameters and internal logits are unavailable. The second is how to preserve retained utility when unlearning target data and retained data share highly similar prompt structures or semantic patterns. To address these challenges, we propose Controlled Behavioral Divergence (CBD), an API only black box unlearning framework. CBD uses two auxiliary models to create controlled behavioral divergence between retained inputs and unlearning target inputs, converts this divergence into an unlearning relevance score, and routes unlearning related prompts away from the target LLM. To improve discrimination accuracy under high similarity between target and retained data, CBD constructs a gradient statistics based discriminative basis by estimating empirical Fisher matrices and solving a regularized generalized eigenvalue problem, guiding the unlearning signal toward target specific information rather than shared prompt structures. Compared with eleven white box and gray box unlearning baselines, CBD achieves a better unlearning utility trade off and its performance varies little across settings. On ToFU forget10, CBD approaches the retrained reference on the forget set while raising model utility to 74.90, about 15% above the second best baseline. On WMDP, it lowers hazardous knowledge accuracy to 25.68, near random guessing, while preserving MMLU accuracy of 52.67. Code is at https://github.com/DGL-codes/CBD.",
+      "url": "https://arxiv.org/abs/2606.27683",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-26",
+      "github_url": "https://github.com/DGL-codes/CBD.",
+      "score": 0.8855
+    },
+    {
+      "id": "2606.27288",
+      "title": "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models",
+      "authors": [
+        "Josef Chen"
+      ],
+      "abstract": "Multi-model LLM systems such as routing, voting, cascades, fusion, and mixture-of-agents are used to beat single-model accuracy. We show that their gain is capped by a quantity the field rarely reports. For any policy whose output is one member model answer, accuracy cannot exceed one minus beta, where beta is the rate at which every model is wrong on the same query. In contrast, the usual diagnostic, average pairwise error correlation rho, cannot identify beta: error laws with identical marginals and pairwise correlations can have different all-wrong rates. A Clopper-Pearson bound on beta gives a finite-sample certificate on the largest gain any router, vote, or cascade could deliver before training a router.\n  Across 67 models from 21 providers, a tetrachoric-calibrated single-factor model still underprices the all-wrong tail: on open-ended mathematics, observed beta is 0.052 versus 0.023 under the full 67-model Gaussian copula, about 2.5 times underpricing, with 90 percent CI 1.7 to 3.4 and k equals 17. The effect recurs on execution-graded code, where beta is 0.079. Re-asking the same GPQA-Diamond questions in free-response rather than multiple-choice form reopens the tail, with beta 0.127 and a five-judge panel with kappa 0.73 to 0.92, locating co-failure in answer format rather than subject. At matched quality, low-rho heterogeneous ensembles beat high-rho Self-MoA, but on checkable tasks in our pool, combining models rarely beats the single best model without a strong query-level routing signal. Gains come from models failing on different questions, not from adding more models.",
+      "url": "https://arxiv.org/abs/2606.27288",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8841
+    },
+    {
+      "id": "2606.27687",
+      "title": "Mitigating LLM-based p-Hacking by Preregistering for the Next LLM",
+      "authors": [
+        "Maria Thomas",
+        "Kristina Gligoric",
+        "Nihar B. Shah"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to generate, classify, and annotate data whose outputs feed downstream hypothesis tests. However, LLM-based research is easy to p-hack: a researcher can tune the prompts, decoding parameters, or output format until a desired result is reached. We propose a protocol to mitigate p-hacking in LLM-based research: preregistering the experiment and eligible models, and then running it on the first eligible LLM that is released after the preregistration. The researcher finalizes the procedure on current models, preregisters the analysis plan together with a set of eligible future models, and runs the confirmatory analysis on the first eligible model released afterward. Because this model does not exist at commitment time, it cannot be hacked against; furthermore, configurations that hack one model frequently do not transfer to the next. We evaluate the protocol on two tasks whose true values are known. Across 20 models from four providers and 11 LLM-analysis configurations, the protocol would have blocked successful transfer of the p-hack in 73.9% and 72.7% of cases in the two tasks. Additional analyses reveal that mitigation remains substantial under several stress tests. Finally, putting money where our mouth is, we followed our own protocol and preregistered our experiment. The preregistered experiment confirmed the protocol's effectiveness: out of the 7 configurations that hacked the prior model, the hacking failed to carry over in 6 configurations on the first eligible model released afterward.",
+      "url": "https://arxiv.org/abs/2606.27687",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DL"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8839
+    },
+    {
+      "id": "2606.27330",
+      "title": "Empowering GUI Agents via Autonomous Experience Exploration and Hindsight Experience Utilization for Task Planning",
+      "authors": [
+        "Tianyi Men",
+        "Zhuoran Jin",
+        "Pengfei Cao",
+        "Yubo Chen",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "abstract": "Multimodal web agents can assist humans in operating repetitive GUI tasks, where effective task planning is essential for decomposing complex tasks into executable actions. While small open source MLLMs are cost efficient and privacy preserving compared with commercial large models, they suffer from weak planning and limited cross website generalization. To address these limitations, we introduce the planning experience exploration and utilization (PEEU) method, which autonomously explores environments to discover experiences and utilizes hindsight experience to synthesize strictly aligned, high level training data. To quantitatively analyze the generalization behaviors driving this performance, we propose the task decomposition hierarchical analysis framework (TDHAF) to systematically study compositional generalization across three task granularities: low, middle and high levels. Our analysis reveals that mastering low level atomic skills does not guarantee high level planning competence, while high level task training yields stronger OOD generalization. Experiments on real world benchmarks demonstrate PEEU's superior effectiveness: our 7B model achieves 30.6% accuracy, outperforming the much larger Qwen2.5-VL-32B model. These demonstrate constructing hindsight high level tasks and leveraging experiences is crucial for OOD planning abilities of small MLLMs.",
+      "url": "https://arxiv.org/abs/2606.27330",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8828
+    },
+    {
+      "id": "2606.27909",
+      "title": "Triadic Werewolf: A Jester Role for Multi-Hop Theory of Mind in LLMs",
+      "authors": [
+        "Avni Mittal"
+      ],
+      "abstract": "Theory-of-mind evaluations of large language models typically use dyadic social-deduction games, where every observable cue points to a single hidden side, so a model with strong language priors can score well without ever simulating opponents' incentives. We extend the Werewolf game with a Jester, a third faction whose utility on peer suspicion is inverted because it wins by being voted out, so optimal play requires reasoning across three opposing utility functions. Across 60 games on GPT-4.1, DeepSeek-V3.1, and Llama-3.3-70B with Jester self-learning on and off, the Jester wins 60-70% of games while Werewolves never exceed 20%, and GPT-4.1 wolves vote the Jester out on day 1 in 60-70% of games, a strictly self-defeating action. Self-learning helps DeepSeek and Llama but hurts GPT-4.1, with the cost landing on Villagers rather than Werewolves. Only DeepSeek learns the subtle strategy of looking suspicious without looking intentionally suspicious, and it gains the most from the loop. Triadic incentive structure exposes a layer of multi-agent reasoning that dyadic deduction games leave invisible.",
+      "url": "https://arxiv.org/abs/2606.27909",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8823
+    },
+    {
+      "id": "2606.27793",
+      "title": "Position Bias Correction is Insufficient for One-Pass Attention Sorting",
+      "authors": [
+        "Qiong Tang",
+        "Xiangkun Hu",
+        "Xiangyang Liu",
+        "Yiran Chen",
+        "Yunfan Shao"
+      ],
+      "abstract": "Long-context language models suffer from position bias, where information in middle positions is underutilized. Attention Sorting addresses this by iteratively reordering documents based on attention patterns, but its multiple sort-and-generate cycles increase deployment cost. We hypothesize that position bias is the primary bottleneck and propose Debiased One-Pass Attention Sorting, which estimates a per-prompt position-bias curve from the low-attention majority of documents and uses it to correct raw attention scores (via subtraction or division) to enable single-pass sorting. Our experiments on two models refute this hypothesis in the tested setting: on LLaMA-2-7B-32K-Instruct, debiasing produces identical results to uncalibrated single-pass sorting (94.83\\% containment accuracy), while on YaRN-Llama-2-7b-64k, debiasing improves accuracy by 8.67 percentage points but remains 14.84pp behind iterative sorting, closing only 37\\% of the gap. These results suggest that position-bias correction is insufficient to match iterative sorting, and that repeated reordering provides additional benefits beyond bias correction.",
+      "url": "https://arxiv.org/abs/2606.27793",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.882
+    },
+    {
+      "id": "2606.27732",
+      "title": "Bifocal Diffusion Language Models: Asymmetric Bidirectional Context for Parallel Generation",
+      "authors": [
+        "Yuhang Chen",
+        "Xianfeng Wu",
+        "Jinhao Duan",
+        "Mingfu Liang",
+        "Xiaohan Wei",
+        "Yunchen Pu",
+        "Fei Tian",
+        "Chonglin Sun",
+        "Parish Aggarwal",
+        "Frank Shyu",
+        "Luke Simon",
+        "Sandeep Pandey",
+        "Xi Liu",
+        "Tianlong Chen"
+      ],
+      "abstract": "Discrete diffusion language models (dLLMs) recover masked tokens in parallel, offering significant speedups over autoregressive (AR) generation. However, such promising frameworks face a fundamental architectural design dilemma: \\ding{182} Adopting bidirectional attention achieves strong generation quality by allowing each position to access the full context, but is inherently incompatible with KV caching, limiting inference throughput in batch-serving scenarios; \\ding{183} Conversely, causal attention enables efficient cached inference but loses all right-side context, substantially degrading generation quality. This paper introduces Bifocal dLLMs, a new paradigm that resolves this dilemma through \\emph{asymmetric bidirectional context}. Analogous to bifocal lenses, we instantiate the paradigm as \\textbf{R2LM} (Right-to-Left Mamba), which combines two complementary mechanisms: $a$) standard causal attention providing precise left-context with full KV cache compatibility, while $b$) a lightweight reverse Mamba SSM sidecar supplying compressed right-side context without breaking cacheability. Comprehensive experiments on continued pretraining of Qwen3-1.7B with 60B tokens demonstrate that R2LM achieves $2.4\\times$ to $12.9\\times$ higher throughput than bidirectional dLLMs and $1.9\\times$ to $2.9\\times$ speedup over AR baselines in batch serving through parallel decoding with KV caching, while exceeding the causal baseline on most benchmarks and surpassing the bidirectional dLLM on average.",
+      "url": "https://arxiv.org/abs/2606.27732",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8807
+    },
+    {
+      "id": "2606.27306",
+      "title": "Multilingual Reasoning Cascades Need More Context",
+      "authors": [
+        "Arnav Mazumder",
+        "Dengjia Zhang",
+        "Shuyue Stella Li",
+        "Yulia Tsvetkov",
+        "Niyati Bafna"
+      ],
+      "abstract": "Translation cascades for reasoning translate the query from another language to English, reason in English, and translate the answer back to the original language. This is a competitive approach to multilingual reasoning, but structurally lossy, since each stage discards information later stages may need, including cues for cultural grounding, register, and disambiguation. We examine the benefits of a simple and training-free intervention: a context-aware translation cascade, which additionally provides the original question, the English translated question, and the reasoning trace to the context of the final translation module. We evaluate gains across nine multilingual benchmarks including various task types, three backbone models, and 285 high-, mid-, and low-resource languages, and demonstrate strong gains for open-ended generation across models and resource regimes. We show that the original language question carries most of the beneficial context. Our study emphasizes the need to better design information flow in machine translation cascades for mitigating error propagation, and provides a simple and actionable default strategy: preserve the original user question until the end of the pipeline.",
+      "url": "https://arxiv.org/abs/2606.27306",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8807
+    },
+    {
+      "id": "2606.27226",
+      "title": "Ask, Don't Judge: Binary Questions for Interpretable LLM Evaluation and Self-Improvement",
+      "authors": [
+        "Sangwoo Cho",
+        "Kushal Chawla",
+        "Pengshan Cai",
+        "Zefang Liu",
+        "Chenyang Zhu",
+        "Shi-Xiong Zhang",
+        "Sambit Sahu"
+      ],
+      "abstract": "Evaluating LLM outputs remains a major bottleneck in NLP: human evaluation is expensive and slow, lexical metrics correlate poorly with human judgments on open-ended generation, and holistic LLM judges often produce opaque scores that are hard to debug. We propose BINEVAL, a framework that decomposes evaluation criteria into atomic binary questions and aggregates the resulting verdicts into interpretable, multi-dimensional scores. Given a task prompt, a meta-prompt generates fine-grained evaluation questions, and an LLM answers them independently for each output, yielding transparent question-level feedback together with calibrated overall scores. This decomposition makes evaluation easier to inspect, easier to diagnose, and directly usable for prompt improvement. Across SummEval, Topical-Chat, and QAGS, BINEVAL matches or outperforms strong baselines including UniEval and G-Eval, with especially strong results on factual consistency benchmarks such as QAGS. Beyond competitive correlation with human judgments, BINEVAL better matches human score distributions and avoids the ceiling effects common in prior LLM judges, leading to better discrimination between borderline and clearly flawed outputs. We further show that the same question-level feedback supports iterative prompt optimization, improving evaluator prompts on summarization and generation prompts on IFBench under both self-update and cross-model update settings. Overall, BINEVAL provides a task-agnostic, training-free, and interpretable evaluation framework that combines strong empirical performance with practical diagnostic and optimization value.",
+      "url": "https://arxiv.org/abs/2606.27226",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8806
+    },
+    {
+      "id": "2606.27736",
+      "title": "ToE: A Hierarchical and Explainable Claim Verification Framework with Dynamic Multi-source Evidence Retrieval and Aggregation",
+      "authors": [
+        "Zhaoqi Wang",
+        "Zijian Zhang",
+        "Kun Zheng",
+        "Zhen Li",
+        "Xin Li",
+        "Chunlei Li",
+        "Jiamou Liu"
+      ],
+      "abstract": "The rapid spread of fake news poses increasing threats to information ecosystems, especially as AI-generated misinformation under Generative Engine Optimization (GEO) poisoning allows adversarially crafted content to be systematically surfaced by retrieval systems, contaminating LLM reasoning. In this paper, we propose Tree of Evidence (ToE), a hierarchical evidence reasoning framework for automated fact-checking that models each claim as a dynamically expanding argument tree. ToE integrates a reinforcement learning-driven multi-source retrieval agent, an evidence evaluation agent, and an argument tree aggregation algorithm to iteratively decompose, retrieve, and verify claims through an explainable evidence chain. We further provide a theoretical analysis of the retrieval process, deriving a formal error bound that guarantees the learned policy converges to a neighborhood of the information-theoretically optimal policy. Experiments across multiple datasets and backbone LLMs demonstrate that ToE achieves improvements ranging from 4 to 24 percentage points over competitive baselines, with particularly pronounced gains on adversarially poisoned inputs.",
+      "url": "https://arxiv.org/abs/2606.27736",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8804
+    },
+    {
+      "id": "2606.28127",
+      "title": "From Tokens to States: LLMs as a Special Case of World Models and the Continuous Path Beyond",
+      "authors": [
+        "Paul Dubois"
+      ],
+      "abstract": "The AI community has framed the relationship between large language models (LLMs) and world models as a dichotomy: LLMs predict tokens; world models simulate reality. Yann LeCun argues in 2022 that reaching general intelligence requires abandoning autoregressive token prediction in favour of latent-space architectures. This framing is unnecessarily binary. Two claims will be defended. First, LLMs are a degenerate special case of world models: the state space is the set of all token sequences, the only action is appending one token, and world models are therefore a strict generalisation of LLMs, not a replacement. Second, there is a natural continuous spectrum from NTP to JEPA, with multi-token prediction, future-summary prediction, and next-latent prediction as intermediate stations already populated by current research. Moving along this spectrum relaxes the LLM constraints one by one. It also progressively surrenders the two practical advantages that make LLMs trainable at scale: internet-scale self-supervised data, and a transformer architecture co-designed for discrete token prediction. Both are examined as open research questions: the data question (the cliff from self-supervised text to instrumented action-labelled environments) and the architecture question (whether the transformer generalises to continuous-state prediction, or whether a new primitive is needed).",
+      "url": "https://arxiv.org/abs/2606.28127",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8803
+    },
+    {
+      "id": "2606.27136",
+      "title": "Joint Learning of Experiential Rules and Policies for Large Language Model Agents",
+      "authors": [
+        "Shicheng Ye",
+        "Chao Yu"
+      ],
+      "abstract": "For LLM agents in multi-step interactive environments, a key challenge is to make effective use of accumulated interaction experience. Existing work has typically separated two uses of such experience: keeping it outside the model as natural-language rules for later prompting, or using trajectories and feedback to update the model parameters. The former is easy to interpret but can fall out of sync with the evolving policy; the latter improves the policy more broadly but provides only limited correction for local mistakes in sparse-reward settings. We present Joint Learning of Experiential Rules and Policies for LLM Agents (JERP), which updates a long-term experiential-rule pool and the policy from the same interaction trajectories. At decision time, JERP retrieves task-relevant rules and conditions the agent on them together with the interaction history. After each episode, it uses the collected trajectories both to optimize the policy and to revise the rule pool by comparing current rollouts with reference successful trajectories. This coupling keeps the rule pool aligned with the evolving policy while allowing stable and effective behaviors to be gradually absorbed into the model itself. Experiments on AlfWorld and WebShop show that JERP yields consistent gains in decision performance for complex interactive tasks.",
+      "url": "https://arxiv.org/abs/2606.27136",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.8795
+    },
+    {
+      "id": "2606.27791",
+      "title": "NLL-Guided Full-Attention Layer Selection for Training-Free Sliding-Window Adaptation",
+      "authors": [
+        "Qiong Tang",
+        "Xiangkun Hu",
+        "Xiangyang Liu",
+        "Yiran Chen",
+        "Yunfan Shao"
+      ],
+      "abstract": "Hybrid attention models that mix full and sliding-window attention across layers offer a promising approach to efficient long-context inference, but the critical question of \\emph{which layers} should retain full attention remains unsolved. Existing methods use either fixed periodic patterns or attention-based heuristics that may not capture what matters for downstream accuracy. We propose NLL-guided layer selection, a training-free method that directly measures each layer's importance by computing the negative log-likelihood degradation on answer tokens when that layer uses sliding-window instead of full attention. On LongMemEval with Qwen3-4B, our method achieves 64.6\\% accuracy using only 1/4 full-attention layers, matching the 1/2-FA periodic baseline (65.0\\%) while halving the computational budget. NLL-guided selection outperforms the SWAA-reported periodic 1/4-FA baseline by 10.4 percentage points and a matched LightTransfer-style baseline by 26.4 percentage points. De-confounding analysis shows the signal is consistent with long-range attention needs rather than generic layer sensitivity. The method requires only $\\sim$15 minutes of one-time calibration, advancing the efficiency-accuracy Pareto frontier for long-context LLM deployment.",
+      "url": "https://arxiv.org/abs/2606.27791",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.879
+    },
+    {
+      "id": "2606.27161",
+      "title": "TOPS: First-Principles Visual Token Pruning via Constructing Token Optimal Preservation Sets for Efficient MLLM Inference",
+      "authors": [
+        "Tinghao Wang",
+        "Yichen Guo",
+        "Rui Huang",
+        "Zheng Lu",
+        "Qizhe Zhang",
+        "Chenxi Li",
+        "Yuan Zhang",
+        "Jiajun Cao",
+        "Zhirong Shen",
+        "Yaosong Du",
+        "Guangyan Gan",
+        "Wenya Wang",
+        "Lin William Cong",
+        "Shanghang Zhang"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) have achieved strong multimodal reasoning capabilities, but their efficiency is limited by the large number of visual tokens, which introduces substantial computational overhead. Visual token pruning offers a natural solution, yet existing methods are imperfect: attention-based criteria tend to retain redundant tokens, while diversity-based criteria are often agnostic to user instructions. Even methods that combine multiple criteria still lack a principled formulation of the intrinsic objective of token pruning. In this paper, we revisit visual token pruning from a first-principles perspective and formulate it as constructing Token Optimal Preservation Sets. Through a top-down information-theoretic analysis, we identify three fundamental principles for effective token selection: Task Relevance, Information Coverage, and Semantic Diversity. Based on these principles, we propose TOPS, a training-free and model-agnostic pruning module that can be applied to various MLLMs. Extensive experiments on 7 MLLM backbones and 14 benchmarks demonstrate that TOPS outperforms prior methods under diverse pruning settings. Notably, on LLaVA-NeXT, TOPS removes 77.8% of visual tokens while preserving 100.0% and 100.6% performance on its 7B and 13B models, respectively, suggesting that pruning redundant visual tokens can sometimes mitigate hallucination and inspire future lightweight MLLM design.",
+      "url": "https://arxiv.org/abs/2606.27161",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-25",
+      "score": 0.879
+    },
+    {
+      "id": "2606.28194",
+      "title": "COCOLogic-V2: Identifying Logical Inconsistencies via Truly Hard-Negatives",
+      "authors": [
+        "David Steinmann",
+        "Antonia Wüst",
+        "Kristian Kersting",
+        "Wolfgang Stammer"
+      ],
+      "abstract": "While interpretable models such as concept bottleneck models (CBMs) and program synthesis methods enable verification of model decisions, their evaluation is typically limited to simple tasks, leaving complex reasoning on real-world images largely unexplored. We introduce COCOLogic-V2, an object-centric dataset for visual inductive reasoning on real-world images covering a broad subset of first-order logic. By categorizing samples into positive variants, near-boundary (NB), and far-from-boundary (FB) negatives, COCOLogic-V2 enables fine-grained diagnosis of model accountability. Our evaluations show that models tend to separate positive and FB samples well but fail on NB samples, while perceptual noise and large rule-induced search spaces pose additional challenges in few-shot settings. Together, these results highlight that visual inductive reasoning remains an open challenge and COCOLogic-V2 provides a concrete foundation for advancing methods in this direction.",
+      "url": "https://arxiv.org/abs/2606.28194",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-26",
+      "score": 0.8774
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
