@@ -1,0 +1,382 @@
+{
+  "date": "2026-07-02",
+  "collected_at": "2026-07-02T13:08:25.207540+09:00",
+  "papers": [
+    {
+      "id": "2607.01002",
+      "title": "Logit-Contribution Scoring Identifies Non-Literal Retrieval Heads",
+      "authors": [
+        "Aryo Pradipta Gema",
+        "Beatrice Alex",
+        "Pasquale Minervini"
+      ],
+      "abstract": "In long-context use, large language models frequently synthesize answers from the meaning of a relevant context span rather than literally copy-pasting them. Identifying which attention heads perform this synthesis matters for interpreting long-context model behavior. Yet existing detectors miss these heads by construction: they reward heads whose attended token matches the generated token, a literal-copy criterion that captures where a head reads but not what it writes through its output-value (OV) circuit, the very mechanism that carries non-literal retrieval. We introduce Logit-Contribution Scoring (LOCOS), a write-aware detector that scores each head by the projection of its OV-circuit output onto the answer-token unembedding direction, contrasting needle and off-needle source positions in a single forward pass. Across three model families (Qwen3, Gemma-3, OLMo-3.1), mean-ablating the top LOCOS heads on the NoLiMa non-literal retrieval benchmark collapses ROUGE-L at lower head counts than prior attention-based detections; on Qwen3-8B, ablating 50 heads drives ROUGE-L from 0.401 to 0.000 while the strongest baseline still retains 0.292. The selected heads are retrieval-specific: parametric recall and arithmetic reasoning stay at baseline under the same ablation. On Qwen3-8B, the same ablation also drops MuSiQue from 0.55 to 0.08 and BABI-Long from 0.62 to 0.20, while a random-heads control stays within 0.05 of baseline.",
+      "url": "https://arxiv.org/abs/2607.01002",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8923
+    },
+    {
+      "id": "2607.00627",
+      "title": "AGI Maze as a Benchmark Framework for World-Modeling Agents",
+      "authors": [
+        "Alexey Potapov"
+      ],
+      "abstract": "Large language models (LLMs) are powerful pattern-completion systems, but their default operating mode - predicting the next token from a static context - does not reliably produce persistent, manipulable representations of an external world. Many tasks that look like \"reasoning\" in text become substantially harder once the environment is partially observable, stateful, and requires memory and structured hypotheses about hidden state. AGI Maze is a lightweight framework for building such environments without requiring high-dimensional sensory inputs. It provides a family of grid-based maze tasks with a clean API and multiple difficulty regimes. The goal is to create benchmarks where agents must learn and use world state representations, not just infer a local rule over readily provided observations. We provide an initial evaluation of several vanilla LLMs on simple mazes showing that they fail to represent mazes internally at LLM inference time. We also introduce a baseline agent, which is allowed to use its message history as a working memory to construct descriptions of observations at agentic runtime. Although this can improve performance, it is still insufficient for an LLM agent to reliably solve even small mazes within a step budget that is more than enough for humans.",
+      "url": "https://arxiv.org/abs/2607.00627",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8902
+    },
+    {
+      "id": "2607.01077",
+      "title": "Message Passing Enables Efficient Reasoning",
+      "authors": [
+        "Xuecheng Liu",
+        "Daman Arora",
+        "Gokul Swamy",
+        "Andrea Zanette"
+      ],
+      "abstract": "While inference-time scaling has improved the reasoning abilities of large language models (LLMs), the need to generate long chains-of-thought (CoTs) is a computational bottleneck. Thus, in contrast to sequential scaling methods like CoT, recent parallel scaling techniques instead use fork and join (FJ) primitives to divide work across multiple LLM threads. However, in the fork-join paradigm, threads are typically transient and do not communicate pointwise with one another which limits scalability. To tackle this, we introduce Message Passing Language Models (MPLMs), a framework for LLM reasoning in which threads communicate directly via lightweight send and receive primitives. MPLMs enable efficient scaling through two key mechanisms: (1) reduced communication costs, achieved by avoiding redundant context sharing, and (2) preemption, which allows threads to terminate early based on partial information from their peers.\n  We demonstrate the promise of MPLMs on 3 classes of tasks. First, on Sudoku puzzles, we show that MPLMs require an asymptotically smaller context than both serial CoT and parallel FJ. We then fine-tune a single model to solve 25 x 25 puzzles that remain challenging for standard CoT and FJ approaches, as well as frontier reasoning models without tools. Second, on 3-SAT puzzles, the capability of preemption allows termination of unpromising branches, which results in improved efficiency. Finally, we show that appropriately prompted large pre-trained models follow the MPLM protocol, achieving competitive results on long-context question answering relative to popular fork-join approaches.",
+      "url": "https://arxiv.org/abs/2607.01077",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8893
+    },
+    {
+      "id": "2607.00368",
+      "title": "Beyond Perplexity: A Behavioral Evaluation Framework for Deployment-Memory Claims in LLM Test-Time Training",
+      "authors": [
+        "Xiangchen Song",
+        "Zhenhao Chen",
+        "Lingjing Kong",
+        "Shaoan Xie",
+        "Xinshuai Dong",
+        "Guangyi Chen",
+        "Kun Zhang"
+      ],
+      "abstract": "Large language model test-time training (TTT) is often evaluated through local proxy metrics: models are updated on recent tokens, retrieved context, target-domain data, or verifiable task attempts, and then judged by perplexity, future-token loss, long-context performance, or reward. These metrics are well matched to claims about stream adaptation, domain adaptation, context compression, and reward-backed test-time improvement. They are weaker evidence, however, for a capability that TTT results are increasingly used to motivate: deployed assistant memory, personalization, or sparse post-deployment learning, which instead requires behavioral evidence such as later recall, paraphrase robustness, retention, locality, conflict handling, and use in downstream actions after the original support context is removed. We introduce a behavioral evaluation framework that calibrates TTT memory claims to the evidence that supports them. It has two components: a claim-calibrated evidence ladder that separates stream/domain adaptation, bridge internalization, and deployment-time behavioral learning; and an evaluation protocol with matched explicit-memory baselines and mutually exclusive failure categories. We validate the framework by auditing recent TTT and memory-adjacent work and by instantiating it as a controlled diagnostic in which, in a sparse nonce-fact setting, one-step LoRA updates lower support and answer loss across three Qwen3 model scales while generated free-form recall stays at zero, exposing a measurable gap between proxy improvement and deployment behavior. The framework gives authors and evaluators a concrete standard for aligning TTT memory claims with the evidence actually reported.",
+      "url": "https://arxiv.org/abs/2607.00368",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8891
+    },
+    {
+      "id": "2607.01084",
+      "title": "Can Agents Generalize to the Open World? Unveiling the Fragility of Static Training in Tool Use",
+      "authors": [
+        "Song-Lin Lv",
+        "Weiming Wu",
+        "Rui Zhu",
+        "Zi-Jian Cheng",
+        "Lan-Zhe Guo"
+      ],
+      "abstract": "While Large Language Model (LLM) agents demonstrate proficiency in static benchmarks, their deployment in real-world scenarios is hindered by the dynamic nature of user queries, tool sets, and interaction dynamics. To address this generalization gap, we formalize OpenAgent (Tool-Use Agent in Open-World), a problem setting characterized by distributional shifts across query, action, observation, and domain dimensions. To systematically diagnose its impact, we construct a controlled sandbox environment where we define fine-grained environmental shifts across a four-tier hierarchy, Perception, Interaction, Reasoning, and Internalization, and conduct a comprehensive series of experiments. Our analysis yields a series of key insights, demonstrating that agents trained via both Supervised Fine-Tuning(SFT) and Reinforcement Learning suffer from varying degrees of performance degradation when confronting open environmental shifts. Building on these insights, we propose Perturbation-Augmented Fine-Tuning, a disturbance-based intervention strategy for SFT that lays the foundation for enhancing agent robustness and utility in realistic environments. Our code will be released at: https://github. com/LAMDA-NeSy/OpenAgent.",
+      "url": "https://arxiv.org/abs/2607.01084",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8887
+    },
+    {
+      "id": "2607.00510",
+      "title": "Prototype Language Models",
+      "authors": [
+        "Dan Ley",
+        "Giang Nguyen",
+        "Himabindu Lakkaraju",
+        "Julius Adebayo"
+      ],
+      "abstract": "Knowing which training examples drive outputs is fundamental to auditing, correcting, and understanding language models, yet for modern LLMs this remains expensive, approximate, and largely post-hoc. Standard language models generate tokens through a dense network pathway, causing training data's influence to be distributed across parameters rather than organized along explicit, traceable components. We introduce a prototype language model architecture, Prototypes for Interpretable Sequence Modeling (PRISM), that forms each prediction via a sparse, non-negative mixture of learned prototypes, trained with clustering objectives that anchor each prototype to coherent neighborhoods of training examples. Across architectures from 130M to 1.6B parameters trained on up to 50B tokens, prototype language models either surpass or remain within 2.5 percentage points on average downstream accuracy of matched dense baselines. We show that sparse prototype structure localizes curvature in the loss landscape, yielding a more tractable Hessian and enabling training data attribution that is ~500x faster than post hoc baselines when consuming equivalent memory. Calibrating linear prototype controllers can improve downstream accuracy by roughly 3 points while tracing those corrections back to training neighborhoods, and targeted prototype suppression can remove model behaviors without finetuning or measurable loss in generation quality.",
+      "url": "https://arxiv.org/abs/2607.00510",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8873
+    },
+    {
+      "id": "2607.00341",
+      "title": "DiscoLoop: Looping Discrete Embeddings and Continuous Hidden States for Multi-hop Reasoning",
+      "authors": [
+        "Hengyu Fu",
+        "Tianyu Guo",
+        "Zixuan Wang",
+        "Hanlin Zhu",
+        "Jason D. Lee",
+        "Jiantao Jiao",
+        "Stuart Russell",
+        "Song Mei"
+      ],
+      "abstract": "Large language models achieve strong performance on many reasoning tasks when allowed to externalize intermediate steps as Chain-of-Thought (CoT). However, many questions require the model to internalize the multi-step reasoning within a single forward pass before generating the answer. We study this challenge through two-hop reasoning, a representative task where the model must compose multiple pieces of parametric knowledge within a single forward pass. Standard non-recurrent Transformers suffer from a depth-local storage problem: facts learned in earlier layers are unavailable where second-hop retrieval happens. We found that Looped Transformers mitigate this issue by reusing the same memory, but still generalize imperfectly. We show that the remaining bottleneck is representational. In the two-hop reasoning task, the first loop often makes the correct bridge entity nearly perfectly decodable, yet the corresponding hidden state remains poorly aligned with the bridge token embedding. Surprisingly, an easy training-free realignment intervention nearly closes the generalization gap. Building upon this insight, we propose DiscoLoop, a looping architecture whose recurrence carries both a discrete embedding channel and a continuous hidden-state channel. DiscoLoop achieves near-perfect accuracy with substantially fewer training steps across symbolic and synthetic-language multi-hop reasoning tasks. When applied to real-world pretraining, DiscoLoop attains lower training loss and stronger benchmark performance than looped-transformer baselines, suggesting that the mixed-channel design transfers to practical language modeling.",
+      "url": "https://arxiv.org/abs/2607.00341",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.887
+    },
+    {
+      "id": "2607.00248",
+      "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+      "authors": [
+        "Bytedance Seed"
+      ],
+      "abstract": "We present Seed2.0, a model series that takes a meaningful step toward solving complex, real-world tasks. Our approach begins with identifying users' genuine needs and constructing a reliable, forward-looking evaluation system by selecting and abstracting benchmarks grounded in these needs and in realistic, complex scenarios. Guided by this evaluation system, Seed2.0 targets two persistent challenges, long-tail knowledge and complex instruction following, substantially improving the model's reliability on intricate, long-horizon tasks. Beyond these, Seed2.0 delivers world-leading reasoning intelligence, visual understanding, and search capabilities that address the most common needs of a broad user base. Through extensive real-world use cases documented in this model card, we demonstrate that Seed2.0 begins to exhibit the ability to handle initial complex real-world tasks, delivering greater value to hundreds of millions of users.",
+      "url": "https://arxiv.org/abs/2607.00248",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-30",
+      "score": 0.8869
+    },
+    {
+      "id": "2607.00482",
+      "title": "Know When to Stop: Segment-Level Credit Assignment for Reducing Overthinking",
+      "authors": [
+        "Chia-Hsuan Lee",
+        "Sihui Dai",
+        "Mingyang Zhou",
+        "Isha Slavin",
+        "Shi-Xiong Zhang",
+        "Sambit Sahu",
+        "William Campbell"
+      ],
+      "abstract": "Reasoning language models frequently overthink: generating extended chains of behaviors such as hedging, approach abandonment, and self contradiction that consume tokens without improving answers. We show that these behaviors are not merely a consequence of length; even when controlling for response length, incorrect traces exhibit higher rates of unproductive self-reflection than correct ones. Addressing this requires identifying where self-reflection helps vs hurts, but obtaining these step-level annotations is costly. We observe that intermediate answer commitments within reasoning traces can provide a cheap proxy: by comparing each final answer candidate in the trace to the ground truth, we can determine whether subsequent reflection is productive without any additional supervision. Building on this insight, we propose DASH (Drift Aware advantage SHaping), which assigns segment-level credit based on whether each reasoning segment leads toward or away from correctness. On competition-level math benchmarks, DASH achieves the highest accuracy where overthinking is prevalent (AIME25: 50.8% vs. 45.4% GRPO) while reducing overthinking behaviors and achieving more productive self-correction than baselines.",
+      "url": "https://arxiv.org/abs/2607.00482",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8866
+    },
+    {
+      "id": "2607.00422",
+      "title": "KidnapRAG: A Black-Box Attack for Hijacking Reasoning in Agentic Retrieval-Augmented Generation Systems",
+      "authors": [
+        "Chanwoo Choi",
+        "Euntae Kim",
+        "Kyuho Lee",
+        "Youngsam Chun",
+        "Jinhee Jeong",
+        "Eunmi Kim",
+        "Myunggyo Oh",
+        "Junseo Jang",
+        "Buru Chang"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) systems are vulnerable to poisoning attacks that inject malicious documents into the retrieval process to manipulate model outputs. Recent Agentic RAG systems are more robust to such attacks because they iteratively perform retrieval and reasoning, allowing them to ignore weakly relevant poisoned documents and preserve the reasoning chain induced by the user query. However, existing attacks on Agentic RAG systems often assume white-box access to system prompts, reasoning traces, retrievers, or model parameters, limiting their applicability in realistic settings. In this paper, we study black-box poisoning attacks against Agentic RAG systems, where the attacker can only publish externally retrievable poisoned documents. We propose KidnapRAG, a sequential poisoning attack that hijacks the agent's multi-step reasoning chain using three role-specific documents: Bait, Chain-Link, and Mal-Ins, which attract initial retrieval, induce query reformulation, and provide attacker-controlled evidence, respectively. Experiments across multiple Agentic RAG frameworks, LLM backbones, and benchmarks show that KidnapRAG consistently outperforms existing poisoning baselines under black-box conditions. Further analyses show that KidnapRAG progressively weakens the original retrieval intent, redirects retrieval behavior, and increases reliance on attacker-controlled evidence. Our code is publicly available at https://github.com/chanwoochoi316/KidnapRAG.",
+      "url": "https://arxiv.org/abs/2607.00422",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-07-01",
+      "github_url": "https://github.com/chanwoochoi316/KidnapRAG.",
+      "score": 0.8866
+    },
+    {
+      "id": "2607.00937",
+      "title": "Persona Non Grata: LLM Persona-Driven Generations in MCQA are Unstable in Distinct Dimensions",
+      "authors": [
+        "César Guerra-Solano",
+        "Xiang Lorraine Li"
+      ],
+      "abstract": "Persona-driven generations (PDGs) have seen prolific use in research and industry applications, where a large language model (LLM) takes on a 'persona' while completing some task. While persona expressed through free-form text (like dialogue) has substantial work investigating stability or consistency, relatively, persona expressed in non-text-heavy outputs (like in multiple-choice question answering, or MCQA) is often overlooked. We work to address this gap, seeking to understand the instability of LLM PDGs in MCQA tasks. We develop three metrics investigating the performance, outcome, and question correctness stability, evaluating three distinct dimensions. Using these metrics, we find that instability varies consistently between model families and model size, and across question domains, with math/commonsense questions leading to greater instability. We also find task prompt format introduces more prediction instability than other hyperparameters, like temperature. Finally, we find that instability is related to task accuracy, and using our instability metrics, find different experimental settings that result in different best and worst personas for tasks, despite their similarity. This reveals the importance of checking hyperparameter instability in PDGs.",
+      "url": "https://arxiv.org/abs/2607.00937",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8864
+    },
+    {
+      "id": "2607.00570",
+      "title": "Dual-Confidence Contrastive Decoding for Retrieval-Augmented Generation",
+      "authors": [
+        "Raymond Li",
+        "Md Tawkat Islam Khondaker",
+        "Amirhossein Abaskohi",
+        "Gabriel Murray",
+        "Giuseppe Carenini",
+        "Issam H. Laradji"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) increasingly requires models to answer questions from multiple retrieved documents, where only some sources are relevant and the retrieved bundle may contain stale, noisy, or conflicting evidence. Existing contrastive decoding methods primarily focus on resolving conflicts between the model's internal memory and the retrieved context. In contrast, we study the complementary problem of intra-context conflict in multi-document RAG. To evaluate this setting, we introduce DRQA, a factual-conflict question answering benchmark derived from enterprise deep-research scenarios, where answers are grounded in synthetic enterprise-specific facts that are designed not to be recoverable from the model's internal memory. We further propose Dual-Confidence Contrastive Decoding (DCCD), a training-free decoding method that combines document-level confidence, which estimates whether a document appears sufficient for answering the question, with token-level confidence, which estimates whether that document supports a confident next-token prediction. DCCD selects positive and negative document-conditioned streams using these dual-confidence signals and scales a document-level contrast by their confidence margin. Across DRQA and standard multi-document QA benchmarks, DCCD achieves the best average performance among full-context and contrastive decoding baselines, with the largest gains on DRQA. These results highlight the importance of source-aware, confidence-gated decoding when retrieved evidence is internally conflicting.",
+      "url": "https://arxiv.org/abs/2607.00570",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8861
+    },
+    {
+      "id": "2607.01153",
+      "title": "Adversarial Pragmatics for AI Safety Evaluation: A Benchmark for Instruction Conflict, Embedded Commands, and Policy Ambiguity",
+      "authors": [
+        "Brett Reynolds"
+      ],
+      "abstract": "Safety evaluations for language models increasingly depend on judgments about ambiguous natural-language behaviour: whether a model has followed an instruction, refused appropriately, complied with a policy, resisted an embedded command, or misreported progress in an agentic task. Existing benchmarks often compress these distinctions into pass/fail labels, obscuring whether failures arise from capability limits, policy ambiguity, instruction conflict, scaffold failure, or unstable evaluator judgments.\n  This paper introduces adversarial pragmatics as a benchmark and annotation protocol for evaluating model behaviour under instruction conflict, embedded commands, quotation, scope ambiguity, deixis, indirect speech acts, and multi-turn agent transcripts. The contribution is empirical and methodological: a linguistically controlled taxonomy, an 18-item seed benchmark with validator-enforced metadata, a 54-row local seed pilot, an expert-evaluation protocol distinguishing task success, policy compliance, safety risk, refusal outcome, and evaluator confidence, and metrics for judge validity, diagnostic ambiguity, and taxonomy drift. The framework turns linguistic judgment methodology into a practical tool for validating safety evals, LLM judges, gold-set construction, prompt-injection tests, and safety documentation.",
+      "url": "https://arxiv.org/abs/2607.01153",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8858
+    },
+    {
+      "id": "2607.00895",
+      "title": "Beyond Document Grounding: Span-Level Hallucination Detection over Code, Tool Output, and Documents",
+      "authors": [
+        "Ádám Kovács",
+        "Bowei He",
+        "Xue Liu",
+        "István Boros",
+        "Szilveszter Tóth",
+        "Gábor Recski"
+      ],
+      "abstract": "Hallucination detection for retrieval-augmented generation (RAG) is usually evaluated on natural-language document evidence. However, grounded generation systems increasingly rely on structured inputs: source code, developer-tool output, markdown documents, tables, and repository metadata. We introduce a unified benchmark for span-level hallucination detection over code, tool output, structured documents, and existing natural-language RAG datasets. The benchmark is built by starting from grounded correct answers, injecting localized hallucinations with exact character labels, and validating the code test split with evidence-based review. Our fine-tuned Qwen3.5-2B detector reaches 0.689 span-F1 on the unified test set and 0.60 on the code-agent source, where it substantially outperforms LettuceDetect-large (0.17) and the strongest zero-shot LLM judges we evaluated (at most 0.22). The same model remains competitive on established natural-language benchmarks, with 81.8 RAGTruth example-F1 and 0.724 English PsiloQA IoU.",
+      "url": "https://arxiv.org/abs/2607.00895",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8841
+    },
+    {
+      "id": "2607.00862",
+      "title": "CAT: Confidence-Adaptive Thinking for Efficient Reasoning of Large Reasoning Models",
+      "authors": [
+        "Qizhi Jiang",
+        "Shuo Wang",
+        "Pei Ke",
+        "Yuhang Song",
+        "Ke Qin"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) have achieved remarkable success on complex tasks by leveraging long chain-of-thought (CoT) trajectories, yet they frequently exhibit overthinking on simple queries, resulting in significant token overhead and reduced inference efficiency. However, existing compression methods predominantly apply uniform length reduction or rely on coarse-grained difficulty estimation, often leading to performance degradation on difficult problems. To address this limitation, we propose Confidence-Adaptive Thinking (CAT), a framework that incorporates the model's intrinsic self-certainty signals as confidence into the preference optimization process, which autonomously modulates reasoning lengths based on problem difficulty. Experimental results show that CAT consistently outperforms state-of-the-art baselines on reasoning accuracy across multiple benchmarks on different base models. Our work enables LRMs to effectively compress confident responses while deliberating on uncertain ones, offering a potentially robust solution for balancing accuracy and latency in practical industrial scenarios.",
+      "url": "https://arxiv.org/abs/2607.00862",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8834
+    },
+    {
+      "id": "2607.00447",
+      "title": "Understanding Why Language Models Hallucinate: Testing Reasoning Against Priors",
+      "authors": [
+        "Yangfan Hu",
+        "Xuhan Tong",
+        "Haoyue Bai",
+        "Xi Ding",
+        "Shashank Muralidhar Bharadwaj",
+        "Siyang Cao",
+        "Robert Nowak",
+        "Jiawei Zhang"
+      ],
+      "abstract": "Large language models often produce hallucinated answers that violate prompt-level constraints. A key diagnostic question is whether these failures reflect missing knowledge, or whether the model has the relevant information but follows the wrong inference path. We study this phenomenon as inference misalignment: a mismatch between the answer supported by the prompt and the answer favored by statistically salient latent associations. We formalize this view with a latent key-task model, in which pretraining-frequency imbalance can cause a shortcut path to dominate the constraint-sensitive path and induce positive inference loss. The framework predicts two failure modes: task-retrieval bias in entity disambiguation and key-selection bias in action choice. We introduce TrapQA, a controlled diagnostic testbed with two components. ScientistQA tests disambiguation among similar scientists with supplementary factual probes, while Real-Life Constrained QA tests everyday constraint following under salient shortcuts. Our results show that hallucination can arise from biased latent inference rather than absent knowledge alone.",
+      "url": "https://arxiv.org/abs/2607.00447",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8833
+    },
+    {
+      "id": "2607.00485",
+      "title": "Efficient Multilingual Reasoning Transfer via Progressive Code-Switching",
+      "authors": [
+        "Zhijun Wang",
+        "Junxiao Liu",
+        "Hao Zhou",
+        "Hao-Ran Wei",
+        "Baosong Yang",
+        "Shujian Huang"
+      ],
+      "abstract": "Large reasoning models (LRMs) have achieved strong reasoning capabilities in English, yet their performance degrades significantly when required to reason in other languages. A natural solution is to transfer the model's English reasoning ability to target languages. However, existing transfer approaches typically rely on distilled target-language reasoning traces from stronger LRMs or online supervision from external judge models, which are costly and difficult to scale. In this paper, we propose PCS (Progressive Code-Switching), a more efficient transfer framework that requires only lightweight translation without any stronger model for distillation or judging. PCS first constructs code-switched reasoning traces by translating a subset of English reasoning steps into the target language, and uses them to initialize the model's code-switching ability via supervised fine-tuning. It then applies reinforcement learning with a step-level language consistency curriculum, progressively raising the target-language ratio until the model reasons entirely in the target language. This progressive design provides a smooth transfer path that avoids the instability and performance degradation commonly observed when directly enforcing target-language reasoning. Experiments on multiple benchmarks and five typologically diverse languages show that PCS substantially narrows the performance gap between target-language and English reasoning, yielding more language-consistent reasoning while maintaining competitive accuracy.",
+      "url": "https://arxiv.org/abs/2607.00485",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8832
+    },
+    {
+      "id": "2607.00276",
+      "title": "Testing Frontier Large Language Models' Physics Literacy in Parallel Physical Worlds",
+      "authors": [
+        "Dong Zhang"
+      ],
+      "abstract": "Current large-language-model (LLM) physics benchmarks are usually scored by answer accuracy, which cannot distinguish genuine reasoning from recall of familiar problem patterns and reveals little about where a model's reasoning breaks down. We introduce an auditable four-stage diagnostic that evaluates whether an LLM can reason inside an unfamiliar physics framework through induction, formulation, prediction, and review. The diagnostic combines locked pre-registrations, fresh sessions between stages, dual-LLM judging, and a human-audit pathway, and we apply it to three parallel physics worlds: a single-equation counterfactual world ($F=mv$), a historical framework (Aristotelian mechanics), and a four-domain counterfactual world (Decay World). Across Claude Opus 4.7, GPT-5.5, and Gemini 3.1 Pro, the three worlds yield composite PASS rates are 6/15, 6/15, and 0/15 respectively (content $\\land$ structural for $F=mv$ and Aristotelian, content axis only for Decay World where the structural axis is out of scope). The most pointed empirical pattern is a qualitative-versus-quantitative asymmetry: in Decay World, models almost never predict the wrong direction of change, but frequently compute the wrong ratio by slipping back to standard-physics relations. The protocol also surfaces two methodology findings: LLM-judge reliability does not transfer across frameworks, and Stage 4 self-review is weak in every framework, with the model's own review wrongly reporting no earlier error in at least two-thirds of the trials that actually contained one. We release the full prompts, responses, verdicts, and audit records.",
+      "url": "https://arxiv.org/abs/2607.00276",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-30",
+      "score": 0.8817
+    },
+    {
+      "id": "2607.01232",
+      "title": "Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training",
+      "authors": [
+        "Zijian Zhang",
+        "Rizhen Hu",
+        "Athanasios Glentis",
+        "Dawei Li",
+        "Chung-Yiu Yau",
+        "Hongzhou Lin",
+        "Mingyi Hong"
+      ],
+      "abstract": "Reinforcement learning (RL) has become a central component of post-training large language models (LLMs), yet little is understood about how RL adaptation is distributed across transformer layers. Existing approaches typically update all model parameters uniformly, implicitly assuming that every layer contributes similarly to the gains obtained during RL post-training. In this work, we challenge this assumption through a systematic layer-wise study of RL training. Surprisingly, we find that training a single transformer layer can recover most of the gains achieved by full-parameter RL training, and in some cases even surpass it. To quantify this phenomenon, we introduce the quantity layer contribution, which measures the fraction of full RL improvement recovered by training a layer in isolation. Across seven models spanning two model families (Qwen3, Qwen2.5), three RL algorithms (GRPO, GiGPO, Dr. GRPO), and multiple task domains including mathematical reasoning, code generation, and agentic decision-making, we observe a remarkably stable pattern: RL gains are highly concentrated in a small subset of, and in many cases even a single, transformer layers. More strikingly, the same structural pattern consistently emerges: high-contribution layers concentrate in the middle of the transformer stack, while layers near the input and output ends contribute substantially less. The resulting layer rankings remain strongly correlated across datasets, tasks, model families, and RL algorithms.",
+      "url": "https://arxiv.org/abs/2607.01232",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8813
+    },
+    {
+      "id": "2607.00972",
+      "title": "Bayesian Uncertainty Propagation for Agentic RAG Pipelines: A Proof-of-Concept Study on Multi-Hop Question Answering",
+      "authors": [
+        "Louis Donaldson",
+        "Connor Walker",
+        "Koorosh Aslansefat",
+        "Yiannis Papadopoulos"
+      ],
+      "abstract": "Trustworthy deployment of Agentic Retrieval-Augmented Generation (RAG) systems requires mechanisms for estimating when multi-stage reasoning pipelines may fail. This paper presents an uncertainty-aware Agentic Retrieval-Augmented Generation (RAG) framework in which planner, evaluator and generator stages produce uncertainty signals derived from semantic divergence and generator self-evaluation. These signals are propagated through a Bayesian Network (BN) to estimate system-level uncertainty and provide node-level indicators of potential failure points across the workflow. The approach is evaluated on StrategyQA and HotpotQA using GPT-3.5-Turbo and GPT-4.1-Nano, with Area Under the Receiver Operating Characteristic Curve (AUROC), Area Under the Accuracy-Rejection Curve (AUARC), Expected Calibration Error (ECE), and Brier Score used to assess discrimination, selective prediction and calibration. Results show that Bayesian propagation is more effective on HotpotQA, where uncertainty accumulates across multi-hop reasoning stages, while StrategyQA exposes limitations caused by miscalibration and unreliable upstream signals. The study positions Bayesian uncertainty propagation as a promising but preliminary mechanism for monitoring Agentic RAG systems, with future validation required in industrial domains such as Offshore Wind (OSW) maintenance decision support.",
+      "url": "https://arxiv.org/abs/2607.00972",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-01",
+      "score": 0.8812
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
