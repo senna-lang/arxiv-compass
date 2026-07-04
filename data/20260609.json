@@ -1,0 +1,432 @@
+{
+  "date": "2026-06-09",
+  "collected_at": "2026-06-09T13:08:11.757257+09:00",
+  "papers": [
+    {
+      "id": "2606.09421",
+      "title": "What Should a Skill Remember? Quality-Cost Trade-offs in Cost-Aware Skill Rewriting for Language Model Agents",
+      "authors": [
+        "Qinghua Xing",
+        "Yinda Chen",
+        "Yaping Jin",
+        "Zhenhe Wu",
+        "Bohan Lin",
+        "Hang Zhou",
+        "Xinghao Chen",
+        "Hanting Chen",
+        "Zhiwei Xiong"
+      ],
+      "abstract": "Large language model agents increasingly rely on skills: reusable procedural documents encoding workflows, tool use, implementation patterns, validation checks, and domain rules. Skill rewriting is often treated as prompt compression, but shorter skills can make agents more expensive by removing sparse operational anchors that prevent exploration, debugging, and recovery. We study skill rewriting through this economic lens. Our controlled framework profiles skill structure, rewrites skills using information-preservation strategies, and evaluates the rewrites under fixed task instructions, environments, and verifiers. Experiments on SkillsBench reveal distinct quality--cost trade-offs across strategies: API/code anchoring, workflow guarding, and rule/formula anchoring benefit different task families, with no universally dominant template. In the main held-out evaluation, the learned policy reduces total cost by 7.0\\% and downstream agent-token cost by 6.0\\%; in frozen cross-model transfer, the corresponding reductions average 14.7\\% and 13.7\\%, while verifier quality is preserved. These results position skill design as cost-aware operational knowledge engineering rather than prompt compression. Resources: \\href{https://github.com/1Reminding/Skill_EE}{SkillEE}.",
+      "url": "https://arxiv.org/abs/2606.09421",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "github_url": "https://github.com/1Reminding/Skill_EE}{SkillEE}.",
+      "score": 0.8958
+    },
+    {
+      "id": "2606.09004",
+      "title": "LATTEArena: An Evaluation Framework for LLM-powered Tabular Feature Engineering (Extended Version)",
+      "authors": [
+        "Ankai Hao",
+        "Ke Chen",
+        "Huan Li",
+        "Lidan Shou"
+      ],
+      "abstract": "Feature engineering remains essential for tabular data analysis, and Large Language Models (LLMs) have emerged as a promising paradigm for automating this process, giving rise to LLM-powered AuTomated Tabular feature Engineering (LATTE). However, the absence of standardized platforms prevents fair, cost-aware comparisons. Furthermore, complex methodological designs obscure the specific contributions of individual components; for example, although LFG integrates Tree-of-Thought, few-shot demonstrations, Monte Carlo Tree Search, and natural language generation, the isolated impact of each technique's competitive edge remains unquantified. To address these challenges, we introduce LATTEArena, the first competitive evaluation framework featuring: (1) a six-dimensional taxonomy decomposing 15 representative methods into reusable components; (2) a standardized modular arena for controlled comparison; (3) multi-dimensional assessments covering performance, cost, and robustness; and (4) component-level ablation quantifying each technique's competitive edge. Through extensive evaluations, we reveal 16 key findings, including: (1) Tree-of-Thought with Monte Carlo Tree Search achieves optimal cost-effectiveness; (2) RPN and Code output formats dominate classification and regression tasks, respectively. We publicly release the modular framework and over 4000 execution logs, enabling researchers to seamlessly pit new techniques against existing ones and advance LATTE.",
+      "url": "https://arxiv.org/abs/2606.09004",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8956
+    },
+    {
+      "id": "2606.09033",
+      "title": "CRANE: Knowledge Editing for Reasoning MLLMs",
+      "authors": [
+        "Han Huang",
+        "Hao Wang",
+        "Mengqi Zhang",
+        "Shu Wu",
+        "Qiang Liu",
+        "Liang Wang"
+      ],
+      "abstract": "The emergence of reasoning multimodal large language models (MLLMs), which generate explicit chain-of-thought (CoT) reasoning before producing answers, has introduced a new challenge for knowledge editing: methods that appear successful under traditional metrics (teacher-forcing accuracy up to 100%) can fail severely when the model's reasoning process is examined (Grounded Success as low as 0%). We identify three failure modes: (1) Structural Collapse, where weight-modifying methods destroy the CoT format; (2) Cognitive Dissonance, where the model's reasoning chain actively rejects the injected edit fact based on visual evidence; and (3) Shallow Internalization, where methods succeed on exact queries but fail on rephrase or multi-hop variants. On reasoning MLLMs, these modes interact: methods that generalize (FT, LoRA) trigger format collapse, while methods without deep modification cannot generalize. To expose these failures, we propose a CoT-aware evaluation protocol and construct ReasonEdit-Bench, with conflict stratification, multi-level probes, and multi-hop portability tests.\n  We propose CRANE, a retrieval-augmented framework that requires no per-edit parameter modification. CRANE combines a modality-aware dual-library retrieval system with a two-phase training strategy: Supervised Fine-Tuning (SFT) for structural initialization, followed by GRPO with a Cognitive Routing Reward that trains the model to arbitrate between visual priors and injected edit facts. On ReasonEdit-Bench, CRANE achieves 96.9% Grounded Success on conflict scenarios and 96.9% intermediate entity usage in multi-hop chains, with 97.6% text-locality and 68.1% image-locality Edit Independence. On the out-of-distribution MMEVOKE benchmark, CRANE reaches 87.0% under gold retrieval.",
+      "url": "https://arxiv.org/abs/2606.09033",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8931
+    },
+    {
+      "id": "2606.09380",
+      "title": "Reasoning Arena: Trace Tournaments When Verifiable Rewards Fall Short",
+      "authors": [
+        "Han Zhou",
+        "Adam X. Yang",
+        "Laurence Aitchison",
+        "Anna Korhonen",
+        "Albert Q. Jiang"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become a leading paradigm for improving the reasoning ability of large language models through outcome-based supervision. However, verifiable rewards frequently become uninformative at the group level: when all sampled traces of a given prompt receive identical rewards, group-relative advantage estimation provides no gradient signal, even though the traces may differ substantially in reasoning quality. We propose Reasoning Arena, an adaptive training framework that routes such non-diverse reward groups to a judge system instead of discarding them. Beyond examining the final answer, Reasoning Arena constructs trace tournaments, where reasoning traces are compared head-to-head to expose finer-grained preferences within the group, converting reasoning quality into rich relative reward signals. To make reward estimation efficient, rather than exhaustively comparing every pair, each new trace is evaluated against a small, dynamically updated pool of previously generated traces as anchors to efficiently establish a relative ranking. We then fit a Bradley-Terry model on the incomplete comparison graph, enabling scalable RL integration without quadratic pairwise comparisons. Empirical results demonstrate that Reasoning Arena consistently outperforms the RLVR baseline by 7.6% on average in competition mathematics and coding benchmarks. By converting otherwise wasted zero-advantage samples into useful gradient updates, our method accelerates training by 27% to 41%, saving nearly 50% of generation compute, and substantially improves overall reasoning performance.",
+      "url": "https://arxiv.org/abs/2606.09380",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8929
+    },
+    {
+      "id": "2606.09730",
+      "title": "SearchSwarm: Towards Delegation Intelligence in Agentic LLMs for Long-Horizon Deep Research",
+      "authors": [
+        "Pu Ning",
+        "Quan Chen",
+        "Kun Tao",
+        "Xinyu Tang",
+        "Tianshu Wang",
+        "Qianggang Cao",
+        "Xinyu Kong",
+        "Zujie Wen",
+        "Zhiqiang Zhang",
+        "Jun Zhou"
+      ],
+      "abstract": "Large language models are increasingly expected to handle complex, long-horizon real-world tasks whose context demands can grow without bound, yet model context windows remain inherently finite. Recent work explores a paradigm where a main agent decomposes tasks and dispatches subtasks to subagents, which execute and return only summarized results, conserving the main agent's context budget. However, performing this well requires delegation intelligence: the ability to decompose complex tasks, determine when and what to delegate, and integrate returned results into the ongoing workflow. Training data for this capability is scarce in naturally occurring text, and to our knowledge, how to synthesize such data and train models to acquire this capability remains largely unexplored in the open-source community. To bridge this gap, we present a preliminary exploration targeting deep research, a representative long-horizon agent task. Specifically, we design a harness that guides the model toward high-quality task decomposition and delegation, while constraining subagents to return results properly to support the main agent's workflow. The harness-guided trajectories naturally encode correct delegation decisions, which we use as supervised fine-tuning data to internalize delegation intelligence into model weights. Our resulting model, SearchSwarm-30B-A3B, achieves 68.1 on BrowseComp and 73.3 on BrowseComp-ZH, the best results among all models of comparable scale. We will release our harness, model weights, and training data to facilitate future research.",
+      "url": "https://arxiv.org/abs/2606.09730",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8916
+    },
+    {
+      "id": "2606.09709",
+      "title": "IS-CoT: Breaking the Long-form Generation Collapse via Interleaved Structural Thinking",
+      "authors": [
+        "Zechen Sun",
+        "Yuyang Sun",
+        "Zecheng Tang",
+        "Juntao Li",
+        "Wenpeng Hu",
+        "Wenliang Chen",
+        "Zhunchen Luo",
+        "Guotong Geng",
+        "Min Zhang"
+      ],
+      "abstract": "Generating coherent and controllable long-form content remains a persistent challenge for Large Language Models (LLMs). While reasoning-enhanced models have demonstrated success in logic-intensive domains, our evaluation reveals that they suffer from a severe length collapse in open-ended writing, where performance degrades sharply as target lengths exceed 2,000 words. We attribute this failure to the limitation of static hierarchical planning, which struggles to provide dynamic guidance over extended contexts. To bridge this gap, we introduce the Interleaved Structural Chain-of-Thought (IS-CoT) framework. Unlike external agentic workflows, IS-CoT embeds a dynamic Plan-Write-Reflect cycle into the generation process, enabling continuous strategy adaptation and global alignment without additional assistance. Based on this framework, we construct a high-quality dataset of interleaved reasoning traces via a multi-teacher pipeline and train IS-Writer-8B. Experiments demonstrate that IS-Writer-8B achieves state-of-the-art performance on challenging long-form benchmarks (e.g., +3.08 vs. DeepSeek-V3.2 on LongBench-Write), exhibiting robust length compliance and coherence competitive with significantly larger proprietary models.",
+      "url": "https://arxiv.org/abs/2606.09709",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8906
+    },
+    {
+      "id": "2606.08974",
+      "title": "Diverse Thinking Schemata Elicit Better Reasoning in Large Language Models",
+      "authors": [
+        "Xinyue Liang",
+        "Yizhe Yang",
+        "Yu Bai",
+        "Bin Xu",
+        "Jiawei Li",
+        "Yang Gao"
+      ],
+      "abstract": "Large reasoning models (LRMs) have attracted increasing attention for their ability to solve complex mathematical problems by generating extended reasoning chains. In this work, we focus on two critical yet underexplored aspects of the reasoning process: reasoning transitions capturing the distinct transitions between reasoning steps and answer candidates reflecting the variety of solution paths produced by the model. We collectively define these two aspects as thinking schemata. We observe a correlation between the diversity of thinking schemata and model performance, which motivates us to enhance diversity as a means to further improve reasoning potential. To this end, we propose Diverse Schemata Policy Optimization (DiScO), a framework that first endows the model with schemata awareness, then encourages diversity through reinforcement learning, and further promotes diverse reasoning at inference time. Experiments on multiple mathematical reasoning benchmarks demonstrate that DiScO consistently outperforms standard group relative policy optimization. Beyond accuracy, human-annotated analyses show that DiScO substantially improves the model's ability to recover from erroneous initial attempts. Overall, our work suggests the important role that diversity of the thinking schemata plays and points to scaling along the diversity dimension as a promising research direction.",
+      "url": "https://arxiv.org/abs/2606.08974",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8886
+    },
+    {
+      "id": "2606.09032",
+      "title": "Bridging the Agent-World Gap: Text World Models for LLM-based Agents",
+      "authors": [
+        "Yixia Li",
+        "Hongru Wang",
+        "Peng Lai",
+        "Zhiwen Ruan",
+        "He Zhu",
+        "Youxin Zhu",
+        "Ganlong Zhao",
+        "Minda Hu",
+        "Yun Chen",
+        "Sibei Yang",
+        "Peng Li",
+        "Jeff Z. Pan",
+        "Jia Pan",
+        "Guanhua Chen",
+        "Yang Liu",
+        "Guanbin Li"
+      ],
+      "abstract": "Large language model (LLM)-based agents are increasingly used in interactive textual environments, from web navigation and code editing to tool use and long-horizon dialogue. Yet many remain largely reactive, mapping observations to actions without an explicit model of how these environments are structured and evolve. This motivates text world models (TWMs): transition models over textual states that, given a state and a candidate action, predict the resulting webpage, terminal output, API response, or user reply, thereby supporting planning, efficient learning, and principled evaluation. We systematically review text world models for LLM-based agents, organized around a formal framework and the agent lifecycle: (1) Foundations, defining text world models and characterizing them by state representation and grounding domain; (2) Construction, taxonomizing LLM-as-WM and code-as-WM paradigms and reviewing methods for building them; (3) Application, examining how world models support agents at training time through experience synthesis and at inference time through planning, verification, and adaptation; and (4) Evaluation, covering both evaluation of the world model itself and its use as an evaluation environment for agents. We aim to consolidate this rapidly developing area, clarify its design space, and highlight open challenges for future research.",
+      "url": "https://arxiv.org/abs/2606.09032",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8883
+    },
+    {
+      "id": "2606.09316",
+      "title": "Anything2Skill: Compiling External Knowledge into Reusable Skills for Agents",
+      "authors": [
+        "Qianjun Pan",
+        "Yutao Yang",
+        "Junsong Li",
+        "Jie Zhou",
+        "Kai Chen",
+        "Xin Li",
+        "Qin Chen",
+        "Liang He"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) enables agents to access external knowledge at inference time, but it primarily retrieves fragmented declarative evidence, leaving agents to repeatedly infer task procedures from passages, manuals, examples, logs, or trajectories. This raises a fundamental question: can skills extracted from external knowledge bases be installed into an agent, enabling it to rapidly approximate domain expertise? In this paper, we propose Anything2Skill, a taxonomy-guided framework that compiles heterogeneous external knowledge into reusable, retrievable, and executable skills for agents. Given a corpus of knowledge records, \\textsc{Anything2Skill} first decomposes each record into evidence windows and performs plan-and-expand skill extraction under a skill-tree prior. The extracted candidates are then converted into structured skill contracts that specify invocation conditions, contraindications, action moves, workflow steps, constraints, output specifications, supporting evidence, and confidence scores. To construct a deployable procedural memory, Anything2Skill manages the extracted skills in a persistent SkillBank through taxonomy-aware compilation, registry-level reconciliation, lifecycle tracking, versioned updates, and visible skill-tree projection. At inference time, agents retrieve both task-specific passages from the original knowledge base and relevant procedural skills from the SkillBank, allowing RAG to provide declarative evidence while compiled skills provide reusable procedural guidance. Experiments on qsv and GitHub-CLI show that Anything2Skill combined with RAG achieves 98.85\\% and 94.10\\% success rates, respectively, substantially outperforming RAG-only agents. These results suggest that compiling latent procedural knowledge into explicit skills is an effective way to extend retrieval-augmented agents from knowledge access toward capability reuse.",
+      "url": "https://arxiv.org/abs/2606.09316",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.888
+    },
+    {
+      "id": "2606.09659",
+      "title": "End-to-End Context Compression at Scale",
+      "authors": [
+        "Ang Li",
+        "Sean McLeish",
+        "Haozhe Chen",
+        "Nimit Kalra",
+        "Zaiqian Chen",
+        "Artem Gazizov",
+        "Venkata Anoop Suhas Kumar Morisetty",
+        "Bhavya Kailkhura",
+        "Harshitha Menon",
+        "Zhuang Liu",
+        "Brian R. Bartoldson",
+        "Tom Goldstein",
+        "Sanae Lotfi",
+        "Micah Goldblum",
+        "Pavel Izmailov"
+      ],
+      "abstract": "Long-context language model inference is bottlenecked by memory, as the KV cache grows with context length. Recent techniques to compress the KV cache fall short: they either degrade model quality substantially or require considerable time and compute to compress a single long prompt. Furthermore, many methods require the input to fit within the target model's context window, and are generally incompatible with modern production inference engines. Encoder-decoder compressors, which map a long token sequence to a shorter sequence of latent embeddings consumed by a decoder, are an appealing alternative in principle. However, existing approaches are not competitive with KV cache compression on the accuracy-efficiency frontier. In this work, we revisit encoder-decoder compression and close this gap. We first perform an architecture search, pre-training many variants from scratch to determine how best to design and train encoder-decoder compressors. Guided by our findings, we continually pre-train a family of 0.6B-encoder, 4B-decoder models on over 350B tokens each, at compression ratios of 1:4, 1:8, and 1:16. We introduce Latent Context Language Models (LCLMs), a family of compressors that improve the Pareto frontier across general-task performance, compression speed, and peak memory usage. We demonstrate that LCLMs serve as efficient backbones for long-horizon agents, letting the agent skim through a compressed long context and adaptively expand relevant segments on demand.",
+      "url": "https://arxiv.org/abs/2606.09659",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8874
+    },
+    {
+      "id": "2606.09046",
+      "title": "Decoy-Calibrated Failure Audits for Language Models",
+      "authors": [
+        "Vyzantinos Repantis",
+        "Ameya Gawde",
+        "Harshvardhan Singh"
+      ],
+      "abstract": "Useful audits reveal not only how often a model fails, but also where its failures concentrate. An auditor may test many candidate explanations: long inputs, indirect questions, distracting evidence, or combinations of these factors. The risk is selection. The largest observed effect may reflect a real failure mode, or it may simply be the best result among many tried. We introduce Janus, a procedure for deciding when a proposed error explanation is credible enough to report. The goal is not to generate new explanations, but to decide which ones hold up. The auditor starts with a fixed model, a labeled evaluation set, and a frozen list of candidate explanations, which we call descriptors. Janus scores each descriptor by its error-rate lift, then compares real descriptors with fake ones that have the same frequencies but are randomly assigned to examples. A descriptor is confirmed only if it beats this decoy floor on the data used for discovery and then repeats on separate held-out data. In a controlled audit of multi-table lookup tasks, Janus identifies the planted failure, confirming long-chain descriptors and their interactions. The LLM often stops partway through the lookup chain instead of reaching the final answer. On two public benchmarks, MuSiQue and LongBench v2, the SliceLine baseline flags plausible high-error pockets, but Janus confirms none of them. Ablations show why both safeguards matter. On LongBench v2, an uncalibrated fixed threshold reports 20 descriptors, the decoy floor leaves one, and the holdout check rejects the last one after its lift shrinks from 0.36 to 0.05. The resulting principle separates proposing explanations from reporting them. Candidates may come from any source, but only those that beat decoys and replicate on fresh data become audit findings.",
+      "url": "https://arxiv.org/abs/2606.09046",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8866
+    },
+    {
+      "id": "2606.09577",
+      "title": "Code Is More Than Text: Uncertainty Estimation for Code Generation",
+      "authors": [
+        "Yuling Shi",
+        "Caiqi Zhang",
+        "Yuexian Li",
+        "Haopeng Wang",
+        "Yeheng Chen",
+        "Nigel Collier",
+        "Xiaodong Gu"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed as code generators, where silently wrong programs pose real safety and reliability risks. Reliable uncertainty estimation (UE) is essential for selective prediction, human-in-the-loop review, and downstream agentic decisions. Yet most existing code UE methods are inherited from natural language (NL) generation and ignore properties that make code distinct. We argue that code differs from NL in three ways: a single wrong token can break an entire program (token fragility); algorithmic intent and concrete implementation can disagree independently (intent-code gap); and programs can be executed (executability). We instantiate these properties as three orthogonal uncertainty axes: lexical (Top-K token entropy), algorithmic (pseudo-code consistency), and functional (behavioral consistency). Across five code LLMs, our three-axis ensemble improves average AUROC from 0.696 for the strongest NL-derived baseline to 0.776 (+8.1 points). Notably, on Qwen3-14B, our single-pass Top-K token entropy matches the strongest multi-pass baseline while being over 3x cheaper; across models, it remains a competitive low-cost signal. These results suggest that code UE deserves code-specific design rather than direct NL ports.",
+      "url": "https://arxiv.org/abs/2606.09577",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8863
+    },
+    {
+      "id": "2606.09459",
+      "title": "AbstRAG: Learning to Abstract for Retrieval Problems",
+      "authors": [
+        "Lei Xu",
+        "Xin Quan",
+        "Daniel Pedronette",
+        "André Freitas"
+      ],
+      "abstract": "Retrieval-augmented generation often fails when the query, the document evidence, and the user's intent are expressed at different levels of abstraction. A query may ask about a class, a relation, or an event, while the document only states specific instances, indirect framings, or scoped formulations. We define this mismatch as an abstraction gap: the minimal set of typed assumptions required to align query intent with the available evidence. To close this gap, we introduce AbstRAG, which treats abstraction as an explicit retrieval object. AbstRAG decomposes the query--evidence gap into expression, conceptual, intent--evidence, and event-type components, and scores relevance by combining match quality, a query-independent utility prior, and the cost of the required bridges. Its central mechanism is reflective refinement: a critic diagnoses retrieval failures, localizes the failed abstraction operator, proposes a minimal stage-specific patch, and accepts the patch only under sufficiency and compression controls. Across three within-document retrieval benchmarks against seven baselines, AbstRAG outperforms on nDCG@10 in 18 of 21 paired-bootstrap contrasts and improves generation accuracy by 1.9%, 5.2%, and 4.0% across the three benchmarks; ablations confirm that reflective refinement drives most of the retrieval gain and the compression control alone reduces over-expansion false positives from 73.7% to 0% on a stress slice.",
+      "url": "https://arxiv.org/abs/2606.09459",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.09052",
+      "title": "INFUSER: Influence-Guided Self-Evolution Improves Reasoning",
+      "authors": [
+        "Siyu Chen",
+        "Miao Lu",
+        "Beining Wu",
+        "Heejune Sheen",
+        "Fengzhuo Zhang",
+        "Shuangning Li",
+        "Zhiyuan Li",
+        "Jose Blanchet",
+        "Tianhao Wang",
+        "Zhuoran Yang"
+      ],
+      "abstract": "Self-evolution offers a scalable path to stronger reasoning: a pretrained language model improves itself with only minimal external supervision. Yet existing methods either depend on extensively curated or teacher-generated training data, or, when the generator runs unsupervised, reward it by a difficulty heuristic that need not improve the solver. We introduce INFUSER, an iterative co-training framework with two co-evolving roles: a Generator that drafts questions and reference golden answers from a pool of unstructured, automatically collected documents, and a Solver that improves by training on them. The solver is trained with standard correctness rewards against the generator-provided answers, while the generator is rewarded by an optimizer-aware influence score that measures whether each proposed question would actually improve the solver on the target distribution. Because this continuous, noisy influence score is poorly served by standard GRPO, we propose DuGRPO, a dual-normalized variant of GRPO, for generator training. Together, these turn the document pool into an adaptive curriculum that favors questions useful to the current solver, not just hard ones. On Qwen3-8B-Base, INFUSER outperforms strong self-evolution baselines with over 20% relative improvement on Olympiad and SuperGPQA benchmarks, and an 8B INFUSER co-evolving generator outperforms a frozen 32B thinking generator on math and coding. Ablations confirm each design choice is necessary, and two extensions, applying INFUSER to an instruction-finetuned anchor and augmenting it with rule-verifiable RLVR data, further demonstrate the flexibility and generalizability of the framework. Code is available at https://github.com/FFishy-git/INFUSER.",
+      "url": "https://arxiv.org/abs/2606.09052",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.GT",
+        "stat.ML"
+      ],
+      "submitted": "2026-06-08",
+      "github_url": "https://github.com/FFishy-git/INFUSER.",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.09635",
+      "title": "Gradient-Guided Reward Optimization for Inference-time Alignment",
+      "authors": [
+        "Hankun Lin",
+        "Ruqi Zhang"
+      ],
+      "abstract": "Ensuring the reliability of Large Language Models (LLMs) under distribution drift requires inference-time adaptation. While inference-time alignment methods such as Best-of-$N$ and rejection sampling are widely used, they frame the task as a sampling-intensive, reward-guided search, leading to two key limitations: their performance is bounded by the base model's generation quality, and their reliance on imperfect reward models makes them vulnerable to reward hacking. To address these challenges, we introduce Gradient-Guided Reward Optimization (GGRO), a lightweight inference-time method that performs targeted, minimal intervention during decoding via gradient guidance. Specifically, GGRO monitors token-level entropy to identify high-uncertainty regions indicative of drift or misalignment. Upon detection, it responds by injecting nudging tokens, generated using gradient signals from an off-the-shelf reward model, to steer the generation trajectory rather than merely re-ranking samples. Experiments show that GGRO consistently improves inference-time alignment across safety, helpfulness, and reasoning benchmarks. It also increases coverage of high-quality responses and robustness to reward hacking, with minimal computational overhead. Code is available at https://github.com/lhk2004/GGRO.",
+      "url": "https://arxiv.org/abs/2606.09635",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "github_url": "https://github.com/lhk2004/GGRO.",
+      "score": 0.8856
+    },
+    {
+      "id": "2606.08998",
+      "title": "The Token Not Taken: Sampling, State, and the Variability of AI Agent Outputs",
+      "authors": [
+        "Muhammad Zia Hydari",
+        "Raja Iqbal"
+      ],
+      "abstract": "Agentic AI systems can behave differently across runs: the same request may produce a different plan, a different tool call, a different code edit, or a different final answer. Such variability arises from several layers that are often conflated. A foundation model is a large pretrained model, usually adaptable to many downstream tasks, that maps an input context to predictions over outputs. In many current agents, that model is embedded in an orchestration loop that plans, calls tools, observes results, and updates state. One explicit intrinsic source of variability in such systems is token generation: the model computes scores over possible next tokens, the scores are converted into probabilities, and a decoder may sample tokens using a pseudo-random number generator. A small sampled token difference can then propagate upward into a different tool call, code path, search query, or agent state. Other sources of variability are extrinsic to token sampling, including changing environments, live data, serving infrastructure, batch effects, and numerical details. By separating these layers, the manuscript clarifies what it means to call agentic AI systems stochastic, when such variability can be reproduced under matched conditions, and why deterministic execution need not imply identical behavior in deployed settings.",
+      "url": "https://arxiv.org/abs/2606.08998",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "econ.GN"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.885
+    },
+    {
+      "id": "2606.09525",
+      "title": "Emergence of Context Characteristics Sensitivity in Large Language Models",
+      "authors": [
+        "Nadya Yuki Wangsajaya",
+        "Haeun Yu",
+        "Isabelle Augenstein"
+      ],
+      "abstract": "During instruction fine-tuning (IFT), large language models (LLMs) learn to follow instructions by using the provided context to answer a query. While prior work has studied how context characteristics correlate with context usage by the LLM, this analysis has been limited to inference time, leaving open how these relationships are acquired in the first place. Here, we measure how models' sensitivity to such characteristics shifts across successive IFT stages: supervised fine-tuning (SFT), direct preference optimization (DPO), and reinforcement learning with verifiable rewards (RLVR). Experiments across four models and three datasets show that SFT makes models more likely to use contexts that are easy to understand, such as containing high length, context-query similarity, and fluency. Post-SFT dynamics may either reinforce or resolve these preferences depending on the training dataset. Our findings reveal that context usage is actively reshaped at each IFT stage, and designing a balanced IFT dataset is important in ensuring robust context utilization of instruction-tuned models.",
+      "url": "https://arxiv.org/abs/2606.09525",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8843
+    },
+    {
+      "id": "2606.09038",
+      "title": "Personalization Meets Safety:Mechanisms,Risks,and Mitigations in Personalized LLMs",
+      "authors": [
+        "Yanyan Luo",
+        "Xue Han",
+        "Ruiqiao Bai",
+        "Xin Huang",
+        "Yitong Wang",
+        "Qian Hu",
+        "Qing Wang",
+        "Chunxu Zhao",
+        "Jie Liu",
+        "Cong Geng",
+        "Lehao Xing",
+        "Pengwei Hu",
+        "Junlan Feng"
+      ],
+      "abstract": "Large Language Models (LLMs) have enabled increasingly personalized interactions by adapting to users' preferences, contexts, and long-term histories. However, the mechanisms that enable personalization also expand the safety landscape in ways not systematically addressed by existing literature. Existing reviews typically focus either on personalization or safety, leaving their intersection largely unexplored. We present the first comprehensive, safety-aware review of personalized LLMs. We organize personalization along three dimensions-user representation, personalization paradigm, and evaluation-and introduce a unified taxonomy of safety risks. At the representation level, we analyze risks arising from diverse user representations. Across mainstream personalization paradigms, we delineate vulnerabilities inherent to prompting, retrieval augmentation, parameter fine-tuning, reinforcement learning, Mixture-of-Experts (MoE), pruning, agent frameworks, and multimodal personalization, and synthesize mitigation strategies across the model lifecycle. Beyond these fine-grained risks, we characterize paradigm-agnostic safety risks arising from personalized adaptation. We further summarize personalized datasets and evaluation methodologies. Through a case study of OpenClaw, we analyze deployment trends in personalized agent ecosystems. Our analysis reveals three structural inadequacies in existing research: safety is evaluated as user-invariant rather than relational, personalization techniques are analyzed in isolation rather than in composition, and evaluation frameworks cannot capture emergent long-term risks. By jointly examining personalized representations, personalization paradigms, safety risks, defenses, and evaluation methods, we provide a unified framework for developing safe personalized LLMs and highlight key directions for future research.",
+      "url": "https://arxiv.org/abs/2606.09038",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8842
+    },
+    {
+      "id": "2606.09603",
+      "title": "Automated IEP Generation from Traditional Chinese Parent-Teacher Interviews via Corpus-Grounded Feature Diffusion",
+      "authors": [
+        "Kuanlin Chen",
+        "Cheng-En Ou"
+      ],
+      "abstract": "Writing Individualized Education Programs (IEPs) is a high-labor, knowledge-intensive document burden; English-language research has demonstrated that generative AI can significantly reduce drafting time, yet automated IEP generation in Traditional Chinese remains virtually unexplored due to domain data scarcity, strict privacy regulations, and the absence of local evaluation benchmarks. We propose a low-resource fine-tuning pipeline centered on Corpus-Grounded Feature Diffusion (CGFD): (1) 25 dual-expert high-score seed transcripts are selected via a tau threshold with flag-aware score caps; (2) a FeatureProfile (sentence length, structure, quantification templates) is extracted from seeds and injected into LLM prompts alongside Verbalized-Sampling-style diversity control to drive diffusion; (3) 15 expert gold seeds are used as diffusion anchors, targeting 585 samples; 567 valid diffusion samples are obtained, yielding a 582-sample training set used to fine-tune Breeze-7B with QLoRA; (4) schema-constrained inference via Grammar-Constrained Decoding (GCD) enforces a hierarchical SMART Goal Ladder schema at inference time. Ablation results on a 55-sample schema stress set reveal an unexpected finding: GCD is counterproductive under Traditional Chinese token budgets -- the no-GCD path achieves 100% schema pass rate at 34% lower median latency, outperforming GCD on both reliability and speed. On the n=10 formal hold-out, the no-GCD inference path achieves BERTScore F1 = 0.779, exceeding GPT-5.4 (0.726), DeepSeek-V3.2 (0.703), Gemini-3-Flash-Preview (0.703), and Llama-4-Maverick (0.700) zero-shot baselines while maintaining fully local, air-gapped inference. This system addresses a gap in Traditional Chinese special-education NLP and offers a scalable, privacy-preserving local inference solution under an industrial engineering paradigm.",
+      "url": "https://arxiv.org/abs/2606.09603",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.8832
+    },
+    {
+      "id": "2606.09396",
+      "title": "PriFT: Prior-Support Guided Supervised Fine-Tuning",
+      "authors": [
+        "Ke Wang",
+        "Shuangqi Li",
+        "Mathieu Salzmann",
+        "Pascal Frossard"
+      ],
+      "abstract": "Supervised fine-tuning (SFT) is an efficient approach for downstream task adaptation and often serves as the initialization stage for reinforcement learning (RL), but it can show weaker generalization than RL. A key limitation is its off-policy objective: SFT fits fixed demonstrations token by token, including targets poorly aligned with the model's pretrained distribution, which can lead to overfitting. A recent line of work addresses this issue by assigning larger training weights to tokens better aligned with the current model's predictive distribution, with the intuition that fitting these tokens are less distortive to the model's pretrained knowledge and representations. However, computing the token weights from the model that is currently fine-tuned entangles token weights with the optimization trajectory, inducing a self-reinforcing dynamics as the distribution rapidly departs from the pretrained model. To address this, we propose PriFT (Prior-support guided Fine-Tuning), which derives token weights from a frozen pretrained reference to obtain a stable reweighting signal unaffected by fine-tuning. This signal estimates prior support: the extent to which each target token is supported by the pretrained distribution. Across multiple existing token-reweighting rules, replacing the reweighting signal from the online model to pretrained model consistently improves performance. We introduce two instantiations: PriFT-prob uses pretrained token probability, while PriFT-mass selects tokens by cumulative probability mass under the pretrained distribution. Extensive experiments on mathematical reasoning, code generation, and medical question answering show that PriFT achieves state-of-the-art results among SFT baselines and provides a better initialization for subsequent RL training.",
+      "url": "https://arxiv.org/abs/2606.09396",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-08",
+      "score": 0.883
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

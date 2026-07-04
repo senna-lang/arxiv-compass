@@ -1,0 +1,405 @@
+{
+  "date": "2026-05-25",
+  "collected_at": "2026-05-25T13:25:03.537835+09:00",
+  "papers": [
+    {
+      "id": "2605.23019",
+      "title": "PACE: Two-Timescale Self-Evolution for Small Language Model Agents",
+      "authors": [
+        "Chen Ling",
+        "Pei Chen",
+        "Albert Guan",
+        "Jiaming Qu",
+        "Shayan Ali Akbar",
+        "Madhu Gopinathan",
+        "Erwin Cornejo"
+      ],
+      "abstract": "Deploying language-model agents in production often requires substantial compute and human effort to tune prompts, parsers, validators, and other components of the agent pipeline. Self-evolution offers a promising alternative, but most existing frameworks assume access to frontier models that can reliably diagnose failures, propose revisions, and judge their own updates. We study whether frozen small language models (SLMs) can serve as effective self-evolving agents under resource constraints. We propose PACE (Prompt And Control Logic Evolution), a two-timescale framework that coordinates low-risk prompt refinement with higher-risk control-logic updates. PACE evolves prompts under fixed control logic until prompt-level gains saturate, then considers constrained control-logic updates that are accepted through held-out validation. Across three frozen SLM backbones ranging from 4B to 14B parameters and four controlled benchmarks, PACE achieves the best performance on all 12 backbone--benchmark combinations, improving over vanilla SLM agents by up to +9.2% relative improvement and over the stronger single-mode evolution baseline by up to +5.4% relative improvement. A tau-bench case study further shows that PACE improves multi-turn tool-use success over vanilla and prompt-only evolution. These results suggest that reliable SLM agent self-evolution is possible without updating model weights or relying on frontier-model teachers, and that the key benefit is not any single final solver pattern but autonomous, validated discovery of task-appropriate inference strategies.",
+      "url": "https://arxiv.org/abs/2605.23019",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.9013
+    },
+    {
+      "id": "2605.23170",
+      "title": "Positional Failures in Long-Context LLMs: A Blind Spot in Reasoning Benchmarks",
+      "authors": [
+        "Chuyifei Zhang",
+        "Hongyu Cui",
+        "Xiaowen Huang",
+        "Jitao Sang"
+      ],
+      "abstract": "Position-controlled evaluation is standard for retrieval tasks such as Needle-in-a-Haystack and RULER, but mainstream reasoning benchmarks do not control positional placement of target tasks in long contexts. We audit 11 long-context benchmarks and find none jointly controls task position, filler content, and context length for reasoning. An audit of four flagship long-context releases finds no main result-table entry for NIAH, RULER, or LongBench-family benchmarks, while agentic and coding benchmarks appear in main result-tables across all four. We propose Context Rot Evaluation (CRE), a controlled framework varying all three factors, and evaluate nine LLMs on GSM8K and ARC-Challenge across two rounds: an initial five-model set and four newer vendor releases. Models can drop sharply when the target task moves from end to middle, and the drop grows worse with context length for vulnerable models. MiMo-v2-Flash drops 88pp at 64K under with_solutions filler (middle accuracy 8%). Newer releases show smaller drops: at 64K, three of four stay within +/-6pp of end-position accuracy; MiMo-V2.5-Pro narrows the MiMo-v2-Flash 88pp drop to 32pp. Under questions_only_v2 filler, middle-position drops persist across all four (range -16pp to -56pp across 8K, 32K, 64K). At 8K, a diagnostic probe adding a target-task copy at the end brings middle accuracy within +/-4pp of end baseline across all nine models, consistent with a positional explanation. In the initial five-model set, 76% of middle-position errors match surrounding filler text versus 22% at the end position, consistent with filler-answer interference as a dominant error mode. These results expose a structural evaluation gap in current reasoning benchmark design and vendor evaluation practice: positional vulnerabilities that grow with context length cannot be measured when task position is not controlled.",
+      "url": "https://arxiv.org/abs/2605.23170",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8954
+    },
+    {
+      "id": "2605.22817",
+      "title": "Vector Policy Optimization: Training for Diversity Improves Test-Time Search",
+      "authors": [
+        "Ryan Bahlous-Boldi",
+        "Isha Puri",
+        "Idan Shenfeld",
+        "Akarsh Kumar",
+        "Mehul Damani",
+        "Sebastian Risi",
+        "Omar Khattab",
+        "Zhang-Wei Hong",
+        "Pulkit Agrawal"
+      ],
+      "abstract": "Language models must now generalize out of the box to novel environments and work inside inference-scaling search procedures, such as AlphaEvolve, that select rollouts with a variety of task-specific reward functions. Unfortunately, the standard paradigm of LLM post-training optimizes a pre-specified scalar reward, often leading current LLMs to produce low-entropy response distributions and thus to struggle at displaying the diversity that inference-time search will require. We propose Vector Policy Optimization (VPO), an RL algorithm that explicitly trains policies to anticipate diverse downstream reward functions and to produce diverse solutions. VPO exploits that rewards are often vector-valued in practice, like per-test-case correctness in code generation or, say, multiple different user personas or reward models. VPO is essentially a drop-in replacement for the GRPO advantage estimator, but it trains the LLM to output a set of solutions where individual solutions specialize to different trade-offs in the vector reward space. Across four tasks, VPO matches or beats the strongest scalar RL baselines on test-time search (e.g. pass@k and best@k), with the gap widening as the search budget grows. For evolutionary search, VPO models unlock problems that GRPO models cannot solve at all. As test-time search becomes more standardized, optimizing for diversity may need to become the default post-training objective.",
+      "url": "https://arxiv.org/abs/2605.22817",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8894
+    },
+    {
+      "id": "2605.23657",
+      "title": "OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents",
+      "authors": [
+        "Jiahao Ying",
+        "Boxian Ai",
+        "Wei Tang",
+        "Siyuan Liu",
+        "Yixin Cao"
+      ],
+      "abstract": "Skills, i.e., structured workflow instructions distilled for large language models (LLMs), are becoming an increasingly important mechanism for improving agent performance on real-world downstream tasks. However, as the open-source skill ecosystem rapidly expands, it remains unclear how different models and agent frameworks interact with skills, how to evaluate skill quality, and how users should select skills under practical cost-performance trade-offs. In this paper, we present \\textsc{OpenSkillEval}, an automatic evaluation framework for both skill-augmented agent systems and the skills themselves. Instead of relying on static benchmarks, \\textsc{OpenSkillEval} automatically constructs realistic task instances from evolving real-world artifacts across five categories of downstream applications: presentation generation, front-end web design, poster generation, data visualization, and report generation. It further collects and organizes community-contributed skills for controlled comparison under unified task settings. Using more than 600 dynamically generated task instances and 30 open-source skills, we conduct a systematic evaluation of state-of-the-art models and agent frameworks. Our results show that skill availability does not guarantee effective skill usage, that the benefit of skill augmentation depends strongly on both the underlying model and the agent framework, and that many publicly popular skills do not consistently outperform base agents without skills. These findings highlight the need for dynamic, task-grounded evaluation and provide practical insights into the design, selection, and deployment of skills for LLM agents. Additional cases and benchmark resources are available on the project website: https://yingjiahao14.github.io/OpenSkillEval-Web/.",
+      "url": "https://arxiv.org/abs/2605.23657",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8889
+    },
+    {
+      "id": "2605.23574",
+      "title": "Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents",
+      "authors": [
+        "Yuandao Cai",
+        "Yuzhang Zhu",
+        "Liyou Gao",
+        "Wensheng Tang",
+        "Shengchao Qin"
+      ],
+      "abstract": "Long-horizon language agents can make many plausible local tool calls yet fail to persist until a requested count is actually complete. We study this gap as Quantitative Goal Persistence (QGP): whether an agent keeps working until an external verifier confirms enough distinct valid items. PushBench turns this into a benchmark for repository-artifact collection and verifier-backed work units, so repeated work, duplicate submissions, false completion, and progress drift are measured directly rather than hidden behind a final success flag. In matched controller comparisons, a state-tracking retrieval controller reaches 69-78% success while eliminating duplicate submissions, and a backlog-tracking work-unit controller reaches 25-50% success in settings where standard and completion-gated controllers complete no task instances. Black-box frontier-agent evaluations with Claude Code (Sonnet 4.6) and Codex CLI (gpt-5.4) solve many 50-artifact tasks but drop to 3 out of 9 successes per condition at 100 artifacts. The results show that quantitative goals stress a different reliability requirement from local task competence: agents must maintain verified progress and stop only when the requested work is complete.",
+      "url": "https://arxiv.org/abs/2605.23574",
+      "categories": [
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8871
+    },
+    {
+      "id": "2605.23074",
+      "title": "PathCal: State-Aware Reflection-Marker Calibration for Efficient Reasoning",
+      "authors": [
+        "Lingyu Jiang",
+        "Zirui Li",
+        "Shuo Xing",
+        "Peiran Li",
+        "Tsubasa Takahashi",
+        "Dengzhe Hou",
+        "Zhengzhong Tu",
+        "Kazunori Yamada",
+        "Fangzhou Lin"
+      ],
+      "abstract": "The emergence of Large Reasoning Language Models (LRMs) has paved the way for tackling complex reasoning tasks through test-time scaling by generating long-form Chain-of-Thought (CoT) trajectories during inference. Meanwhile, these trajectories often contain explicit reflection markers such as ``wait'', ``but'', and ``alternatively'', signaling hesitation, revision, and the consideration of alternative explorations, respectively. Recent studies on test-time control leverage such markers as lightweight handles for steering reasoning, typically treating them as a single coarse-grained category rather than distinguishing their distinct functional roles. In this paper, we conduct type-wise suppression and fixed-prefix intervention, revealing that reflection markers differ not only in their functional roles but also in when they exert the greatest influence. Specifically, different marker classes affect accuracy and generation length in distinct ways, and marker choices are most consequential before the model settles into a stable reasoning trajectory. Motivated by these findings, we introduce PathCal, a novel training-free decoding controller that calibrates reasoning paths by distinguishing marker types and intervening only at locally uncertain states. At each decoding step, PathCal utilizes the distribution over reflection-markers to estimate local competition between maintaining the current reasoning trajectory and initiating a competing branch, and softly rebalances marker logits when competing-branch evidence becomes excessive. Experiments across six reasoning benchmarks demonstrate that PathCal achieves a better efficiency--performance trade-off, improving or preserving accuracy while reducing generation length, without relying on external verifiers or additional sampling.",
+      "url": "https://arxiv.org/abs/2605.23074",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8861
+    },
+    {
+      "id": "2605.23040",
+      "title": "Steered Generation via Gradient-Based Optimization on Sparse Query Features",
+      "authors": [
+        "Sumanta Bhattacharyya",
+        "Pedram Rooshenas"
+      ],
+      "abstract": "Latent steering exploits internal representations of Large Language Models (LLMs) to guide generation, yet interventions on dense states can entangle distinct semantic features. In this paper, we investigate attention query activations as a high-fidelity site for precise control, hypothesizing that manipulating the attention mechanism itself offers sharper steerability than general state interventions. We introduce Prototype-Based Sparse Steering, a framework that applies Sparse Autoencoders (SAEs) specifically to query activations, to decompose them into interpretable features, then apply gradient-based optimization during inference to align the sparse representation with class prototypes of target behaviors. To validate this architectural insight, we first analyze the mechanism in Textualized Gridworld, a controlled environment for verifiable planning constraints. We demonstrate that optimizing sparse query features enables effective navigation of rigid planning requirements (i.e., safe vs. short paths), confirming the method's ability to satisfy objective rules. We then demonstrate the framework's versatility by training SAEs on a high-dimensional educational domain, where the framework steers the cognitive complexity of feedback (i.e., Bloom's Taxonomy). Our experiments establish that sparse query representations provide the necessary disentanglement for unified, interpretable control over both logical planning and stylistic nuance.",
+      "url": "https://arxiv.org/abs/2605.23040",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8858
+    },
+    {
+      "id": "2605.22937",
+      "title": "RAS: Reflection-Augmented Scaling with In-Context Learning for Executable Cypher Query Generation",
+      "authors": [
+        "Minseok Jung",
+        "Abhas Ricky",
+        "Muhammad Rameez Chatni"
+      ],
+      "abstract": "Inference-time scaling can reduce errors in structured query generation, but methods to allocate the compute for query code generation remains underexplored. We study Text2Cypher, where language models generate Cypher queries that execute against property graph databases. Non-executable queries constitute a distinct syntactic failure separate from semantic inaccuracy: a syntax error triggers a system-generated error message from the database. These error messages are typically discarded at inference time rather than leveraged through in-context learning (ICL). We compare two inference methods: Independent Scaling (IS), which performs memoryless resampling, and Reflection-Augmented Scaling (RAS), which conditions each new attempt on prior execution feedback via ICL. Across three Neo4j datasets and five code-specialized language models, RAS reduces the Query Execution Error Rate by 41--50% at n{=}5, outperforming IS at 32--38%. Execution errors are not merely failures to discard but actionable feedback, and structuring inference-time compute around them is a more efficient path to executability than scaling independent samples.",
+      "url": "https://arxiv.org/abs/2605.22937",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8857
+    },
+    {
+      "id": "2605.23723",
+      "title": "MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection",
+      "authors": [
+        "Zhewen Tan",
+        "Yilun Yao",
+        "Huiyan Jin",
+        "Wenhan Yu",
+        "Guoan Wang",
+        "Mengyuan Fan",
+        "liang lu",
+        "Feng Liu",
+        "Xiangzheng Zhang",
+        "Duohe Ma",
+        "Tong Yang",
+        "Lin Sun"
+      ],
+      "abstract": "Large language model agents increasingly rely on persistent memory to store past interactions, retrieve relevant demonstrations, and improve long-horizon task execution. However, this memory mechanism also creates a practical security vulnerability: an adversarial user may inject malicious records into the agent's memory through ordinary interaction, and these records can later be retrieved to steer the agent's reasoning and actions. Existing defenses primarily focus on online intervention, such as prompt filtering or output blocking, but they do not address the post-hoc question of which stored memories are responsible after harmful behavior has already been observed. We propose \\textbf{MemAudit}, a post-hoc causal memory auditing framework for memory-augmented LLM agents. The framework combines two complementary signals: (1) a counterfactual memory influence score that measures each memory's causal contribution to harmful outputs, and (2) a memory consistency graph that identifies structurally anomalous memories within the broader memory store. We evaluate MemAudit against MINJA, a query-only memory injection attack in which malicious records are generated and stored through normal agent interactions rather than direct memory-bank modification. Across both QA and reasoning-agent settings, MemAudit substantially reduces attack success rates under realistic post-hoc auditing scenarios. The results show that QA attack success is reduced from $70\\%$ to $0\\%$, while RAP attack success drops from $83.3\\%$ to $0\\%$.",
+      "url": "https://arxiv.org/abs/2605.23723",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8843
+    },
+    {
+      "id": "2605.23296",
+      "title": "Parallel Context Compaction for Long-Horizon LLM Agent Serving",
+      "authors": [
+        "Musa Cim",
+        "Burak Topcu",
+        "Chita Das",
+        "Mahmut Taylan Kandemir"
+      ],
+      "abstract": "Long-horizon LLM agents accumulate growing conversation histories that eventually exceed the model's context window. Context compaction via LLM-based summarization keeps the conversation bounded, but summarization is inherently lossy and the blocking call stalls agent inference for tens of seconds. Moreover, the operator has no fine-grained control over summary volume since prompt instructions are largely ignored, and as context grows, both the amount of output tokens the model produces and the information it retains fluctuate substantially from run to run, making the agent's retained knowledge unpredictable across runs. We introduce \\textbf{parallel compaction} for long-horizon agentic flows and characterize it against the sequential synchronous baseline across four backbones spanning 8B to 120B parameters, mixing dense and MoE architectures with reasoning and non-reasoning models, on the HotpotQA multi-hop QA and LoCoMo long-context dialogue benchmarks. Parallel compaction gives the operator fine-grained, predictable control over summary volume and enables more targeted prompt engineering per block. At matched compaction decode volume, it reduces end-to-end wall time and improves compaction throughput over the sequential baseline.",
+      "url": "https://arxiv.org/abs/2605.23296",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8837
+    },
+    {
+      "id": "2605.23904",
+      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "authors": [
+        "Yifan Yang",
+        "Ziyang Gong",
+        "Weiquan Huang",
+        "Qihao Yang",
+        "Ziwei Zhou",
+        "Zisu Huang",
+        "Yan Li",
+        "Xuemei Gao",
+        "Qi Dai",
+        "Bei Liu",
+        "Kai Qiu",
+        "Yuqing Yang",
+        "Dongdong Chen",
+        "Xue Yang",
+        "Chong Luo"
+      ],
+      "abstract": "Agent skills today are hand-crafted, generated one-shot, or evolved through loosely controlled self-revision, none of which behaves like a deep-learning optimizer for the skill, and none of which reliably improves over its starting point under feedback. We argue the skill should instead be trained as the external state of a frozen agent, with the same discipline that makes weight-space optimization reproducible. SkillOpt is, to our knowledge, the first systematic controllable text-space optimizer for agent skills: a separate optimizer model turns scored rollouts into bounded add/delete/replace edits on a single skill document, and an edit is accepted only when it strictly improves a held-out validation score. A textual learning-rate budget, rejected-edit buffer, and epoch-wise slow/meta update make skill training stable while adding zero inference-time model calls at deployment. Across six benchmarks, seven target models, and three execution harnesses (direct chat, Codex, Claude Code), SkillOpt is best or tied on all 52 evaluated (model, benchmark, harness) cells and beats every per-cell competitor among human, one-shot LLM, Trace2Skill, TextGrad, GEPA, and EvoSkill skills. On GPT-5.5 it lifts the average no-skill accuracy by +23.5 points in direct chat, by +24.8 inside the Codex agentic loop, and by +19.1 inside Claude Code. Transfer experiments further show that optimized skill artifacts retain value when moved across model scales, between Codex and Claude Code execution environments, and to a nearby math benchmark without further optimization.",
+      "url": "https://arxiv.org/abs/2605.23904",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.881
+    },
+    {
+      "id": "2605.23590",
+      "title": "Co-ReAct: Rubrics as Step-Level Collaborators for ReAct Agents",
+      "authors": [
+        "Jiazheng Kang",
+        "Bowen Zhang",
+        "Zixin Song",
+        "Jiangwang Chen",
+        "Xiao Yang",
+        "Da Zhu",
+        "Guanjun Jiang"
+      ],
+      "abstract": "ReAct-style agents for search-intensive, multi-step reasoning tasks rely largely on their own internal judgment to decide what evidence to seek, which reasoning or action step to take next, and when to stop, often producing shallow, redundant, or poorly targeted trajectories. Prior work has explored rubrics as external quality signals, but existing uses are mostly evaluative rather than action-guiding: rubrics typically serve as training-time rewards or post-hoc evaluators of completed outputs, and in deep-research settings they are often coarse-grained and report-level rather than step-level. We introduce Co-ReAct, a rubric-guided action-selection framework that uses rubrics as step-level guidance during inference. At each decision step, Co-ReAct injects a rubric into the agent's context to guide the next Reason-or-Act decision, specifying what the agent should target in evidence seeking, search, reasoning, or self-evaluation. To make this guidance reliable, we train a dedicated rubric generator with GRPO. Unlike prior pairwise or binary preference formulations, our objective optimizes a list-wise Spearman rank-correlation reward against multi-judge expert consensus rankings, encouraging rubrics that are discriminative rather than merely plausible. On DeepResearchBench and SQA-CS-V2, Co-ReAct consistently improves over ReAct and representative test-time compute baselines across search agents built on both 8B/14B open-source and frontier closed-source base models. The trained rubric generator can also serve as a drop-in component that improves these baselines without changing their underlying decision mechanisms. Our code is publicly available at https://github.com/ZBWpro/Co-ReAct.",
+      "url": "https://arxiv.org/abs/2605.23590",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-22",
+      "github_url": "https://github.com/ZBWpro/Co-ReAct.",
+      "score": 0.881
+    },
+    {
+      "id": "2605.22905",
+      "title": "EVE-Agent: Evidence-Verifiable Self-Evolving Agents",
+      "authors": [
+        "Yamato Arai",
+        "Yuma Ichikawa"
+      ],
+      "abstract": "Self-evolving agents should not train on examples they cannot justify. Data-free self-evolving search agents offer a scalable route to systems that generate their own questions, answer them, and improve from their own feedback without human annotations. Yet, without verifiable evidence, this loop can reward fluent but unsupported examples, turning the self-generated curriculum into an opaque and potentially unreliable training signal. We argue that evidence verifiability is a prerequisite for trustworthy self-evolution in search agents: each generated instance should include not only an answer but also a source-grounded span whose contribution to that answer can be measured. We introduce EVE-Agent, an Evidence-Verifiable Self-Evolving Agent that operationalizes this principle through a modification to the proposer--solver framework. The proposer generates a question, an answer, and a verbatim evidence span. An evidence verifier then rewards the span according to the marginal accuracy gain when the evidence is provided. This produces a training signal that favors evidence that genuinely helps answer the question, without requiring oracle answers, human labels, or external annotations. EVE-Agent leaves the backbone model, retriever, search tool, and optimization framework unchanged. Experiments show that EVE-Agent substantially improves evidence-grounded correctness over prior self-evolving search agents. The resulting curriculum is not merely self-generated but auditable by construction: each training example carries an inspectable source span that explains why it should be trusted.",
+      "url": "https://arxiv.org/abs/2605.22905",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8809
+    },
+    {
+      "id": "2605.23200",
+      "title": "Adaptive Mass-Segmented KV Compression for Long-Context Reasoning",
+      "authors": [
+        "Junzhe Yang",
+        "Xiaoyu Shen"
+      ],
+      "abstract": "The linear growth of the Key-Value (KV) cache is a critical bottleneck in long-form LLM inference. Existing KV compression methods mitigate this by evicting tokens based on importance scores. However, we show that their reliance on global Top-k selection triggers Region Wipe-out: the severe eviction of contiguous reasoning blocks that derails logical coherence. To address this, we propose Adaptive Mass-Segmented (AMS) KV Compression, a framework that shifts the paradigm from token-level competition to region-aware quota allocation. AMS adaptively partitions the KV cache based on the spatial distribution of attention mass, ensuring structurally vital reasoning segments receive guaranteed memory quotas. To ensure stability during iterative decoding, an EMA-based smoothing mechanism is incorporated to prevent jitter in segment boundaries. Crucially, AMS is a universal plug-and-play layer that is orthogonal to existing scorers. It can be seamlessly integrated into representative methods such as TOVA, Expected Attention, KeyDiff, R-KV and TriAttention. AMS is also system-compatible with modern paged-KV serving frameworks such as vLLM, supporting efficient gather-and-compact KV execution without introducing additional steady-state attention overhead. Extensive experiments across a diverse suite of tasks, including mathematical reasoning (MATH500, AIME, GSM8K), code completion, open-domain QA, and sparse retrieval, demonstrate that AMS consistently mitigates structural fragmentation and boosts model performance.",
+      "url": "https://arxiv.org/abs/2605.23200",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8803
+    },
+    {
+      "id": "2605.23384",
+      "title": "Metacognition as Reward: Reinforcing LLM Reasoning via Knowledge and Regulation Signals",
+      "authors": [
+        "Sirui Chen",
+        "Lei Xu",
+        "Yuying Zhao",
+        "Yutian Chen",
+        "Yu Wang",
+        "Beier Zhu",
+        "Hanwang Zhang",
+        "Shengjie Zhao",
+        "Chaochao Lu"
+      ],
+      "abstract": "Recent RL methods have substantially improved the reasoning abilities of LLMs. Existing reward designs mainly follow two paradigms: (1) Reinforcement learning with verifiable rewards (RLVR) derives outcome signals from executable checks or ground-truth answers, but provides limited guidance for intermediate reasoning behaviors. (2) Rubrics-as-reward (RaR) goes beyond final-answer checking by using natural-language rubrics to assess reasoning quality and task compliance, but often requires instance-specific rubrics and substantial design effort. To address these issues, we introduce Metacognition-as-Reward (MaR), a metacognition-inspired RL framework that guides LLM reasoning through two general process dimensions: i) metacognitive knowledge, which identifies task-relevant information without hand-crafted instance-specific rubrics, and ii) metacognitive regulation, which plans and adjusts the reasoning process to provide reward guidance beyond final-answer outcomes. MaR scaffolds model rollouts into explicit metacognitive components and optimizes them with a trajectory-level reward over task knowledge coverage, regulation fidelity, and final-answer correctness. In this way, MaR extends reward feedback to reasoning trajectories while grounding the reward signals in general metacognitive dimensions. Experiments on 22 benchmarks show that MaR consistently improves model performance, achieving up to a 7.7% gain over the base model and up to an 11.0% gain over vanilla DAPO. Notably, Qwen3.5-9B + MaR narrows the gap to frontier models, surpassing GPT-OSS-120B on overall average and outperforming stronger models on several individual benchmarks. Process-level analysis further shows substantial improvements in reasoning process quality. MaR also generalizes to out-of-domain datasets, where MaR-trained models improve over their corresponding base models on average.",
+      "url": "https://arxiv.org/abs/2605.23384",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.88
+    },
+    {
+      "id": "2605.22786",
+      "title": "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
+      "authors": [
+        "Sadia Asif",
+        "Mohammad Mohammadi Amiri",
+        "Momin Abbas",
+        "Prasanna Sattigeri",
+        "Karthikeyan Natesan Ramamurthy"
+      ],
+      "abstract": "Large language model (LLM)-based multi-agent systems increasingly rely on intermediate communication to coordinate complex tasks. While most existing systems communicate through natural language, recent work shows that latent communication, particularly through transformer key-value (KV) caches, can improve efficiency and preserve richer task-relevant information. However, KV caches also encode contextual inputs, intermediate reasoning states, and agent-specific information, creating an opaque channel through which sensitive content may propagate across agents without explicit textual disclosure. To address this, we introduce \\textbf{LCGuard} (Latent Communication Guard), a framework for safe KV-based latent communication in multi-agent LLM systems. LCGuard treats shared KV caches as latent working memory and learns representation-level transformations before cache artifacts are transmitted across agents. We formalize representation-level sensitive information leakage operationally through reconstruction: a shared cache artifact is unsafe if an adversarial decoder can recover agent-specific sensitive inputs from it. This leads to an adversarial training formulation in which the adversary learns to reconstruct sensitive inputs, while LCGuard learns transformations that preserve task-relevant semantics and reduce reconstructable information. Empirical evaluations across multiple model families and multi-agent benchmarks show that LCGuard consistently reduces reconstruction-based leakage and attack success rates while maintaining competitive task performance compared to standard KV-sharing baselines.",
+      "url": "https://arxiv.org/abs/2605.22786",
+      "categories": [
+        "cs.AI",
+        "cs.ET",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8798
+    },
+    {
+      "id": "2605.23872",
+      "title": "Training-Free Looped Transformers",
+      "authors": [
+        "Lizhang Chen",
+        "Jonathan Li",
+        "Chen Liang",
+        "Ni Lao",
+        "Qiang Liu"
+      ],
+      "abstract": "We introduce training-free looped transformers, in which a lightweight inference-time wrapper loops a contiguous mid-stack block of layers of a frozen checkpoint without additional fine-tuning, continued training, or architectural changes. Unlike prior looped transformer methods that train with the looped structure end-to-end, we retrofit recurrence onto pretrained models at test time. We show that naive block reapplication usually degrades performance, highlighting the importance of the loop application strategy. Motivated by viewing a pre-norm transformer block as a forward Euler step on an ODE, we instead treat looping as a refinement of the same approximation, replacing one large update with smaller damped sub-steps. Across seven dense, sparse MoE, and MLA+MoE model families, our method improves Qwen3-4B-Instruct by +2.64 pp on MMLU-Pro, Qwen3-30B-A3B-Instruct by +1.14 pp on CommonsenseQA, and Moonlight-16B-A3B-Instruct by +1.20 pp on OpenBookQA.",
+      "url": "https://arxiv.org/abs/2605.23872",
+      "categories": [
+        "cs.LG",
+        "math.NA",
+        "stat.ML"
+      ],
+      "submitted": "2026-05-22",
+      "score": 0.8792
+    },
+    {
+      "id": "2605.22984",
+      "title": "Test-Time Training Undermines Safety Guardrails",
+      "authors": [
+        "Simone Antonelli",
+        "Sadegh Akhondzadeh",
+        "Aleksandar Bojchevski"
+      ],
+      "abstract": "Test-Time Training (TTT) is an emerging paradigm that enables models to adapt their parameters during inference, improving performance on tasks such as few-shot learning, retrieval-augmented generation, and complex reasoning. However, this dynamic adaptation introduces new vulnerabilities that adversaries can exploit to jailbreak models. We identify three threat models for TTT and demonstrate how attackers can leverage them to bypass safety filters. Our results show that TTT can significantly increase the Attack Success Rate (ASR) and the ASR over 10 generation trials (ASR@10). For example, under LoRA, the few-shot and generation-phase threat models achieve an average ASR@10 of 95% and 93% respectively, across models from different families and scales. These vulnerabilities transfer to production fine-tuning APIs. We also show that TTT-induced overfitting can produce degenerate outputs that inflate ASR under standard judges, and propose a validity-aware evaluation to correct for this. Our findings suggest that TTT exposes a new attack surface, strengthens attacks, and undermines existing safety guardrails. As a first step toward defense, we propose a lightweight provider-side detector that flags TTT requests via the perplexity shift on a private harmful holdout, but robust deployment will ultimately require dynamic alignment.",
+      "url": "https://arxiv.org/abs/2605.22984",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8792
+    },
+    {
+      "id": "2605.23058",
+      "title": "A measurement substrate for agentic Kubernetes operations: Methodology and a case study in retrieval-compounding falsification",
+      "authors": [
+        "Joshua Odmark",
+        "Gideon Rubin",
+        "Deon van der Vyver"
+      ],
+      "abstract": "Empirical claims about autonomous Kubernetes operations agents are largely unfalsifiable. Published work reports observational results without controlled comparisons against an agent-disabled baseline, selection bias is endemic, pre-registered decision matrices are absent, and samples are typically too small for the noise level of the underlying scoring system. The cause is the same gap that limits the agents themselves: code agents have a verification substrate that turns \"did it work\" into a fast, falsifiable, ground-truth signal, and operations has nothing equivalent. We present agent-breakage, a closed-loop measurement framework that injects faults into a target Kubernetes cluster, observes how an autonomous agent responds, scores the response on four axes against ground truth, and accumulates outcome-labeled (state, action, outcome) tuples. The framework distinguishes framework error from reasoning error, supports a true off-condition control via a deterministic-embedder mechanism, and enforces pre-registered decision matrices. We use it as a case study to test whether retrieval over past postmortems compounds an agent's capability. The methodological payload is three confounds the substrate caught during that case study, each of which would have produced a wrong published claim on a less instrumented version of the same work: a pgvector index bug, a +19% selection-bias artifact, and small-sample estimates that overstated effects by roughly 3x. The retrieval result itself is a partial falsification: 1 of 3 dense-corpus scenarios significant at p<0.05, pooled effect +3.9 percentage points, not significant at n=60. A within-scenario corpus-density sweep at 360 runs shows that mechanistic alignment of near-neighbors dominates raw count. The framework is released open source.",
+      "url": "https://arxiv.org/abs/2605.23058",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8791
+    },
+    {
+      "id": "2605.22923",
+      "title": "AI-Friendly LaTeX: Using LaTeX Code as a Knowledge Source for Retrieval-Augmented Generation",
+      "authors": [
+        "Tom Verhoeff"
+      ],
+      "abstract": "Large language models can answer questions about textbooks, lecture notes, and programming exercises more reliably when their answers are grounded in an explicit knowledge source. Retrieval-augmented generation (RAG) is a common approach: relevant fragments of a document are retrieved and inserted into the model context before answering. For mathematical and technical material, the original LaTeX source can be a better starting point than a PDF, because it contains structural information, labels, sectioning commands, macros, and authorial intent that are often lost or distorted in PDF extraction. However, LaTeX source is not automatically AI-friendly. Cross-references must be resolved, custom macros must be interpreted, exercises and examples must be identified, and author-supplied semantic metadata may be needed. This article describes a focused preprocessing approach for turning LaTeX source, together with its compiled auxiliary files and optional author annotations, into Markdown and JSONL chunks suitable for indexing in a vector database.",
+      "url": "https://arxiv.org/abs/2605.22923",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-21",
+      "score": 0.8791
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

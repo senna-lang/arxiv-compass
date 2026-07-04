@@ -1,0 +1,450 @@
+{
+  "date": "2026-06-24",
+  "collected_at": "2026-06-24T13:09:11.744148+09:00",
+  "papers": [
+    {
+      "id": "2606.24526",
+      "title": "AGORA: An Archive-Grounded Benchmark for Agentic Workplace Document Reasoning",
+      "authors": [
+        "Honglin Guo",
+        "Qi Zhang",
+        "Yu Zhang",
+        "Weijie Li",
+        "Rui Zheng",
+        "Zhikai Lei",
+        "Qiyuan Peng",
+        "Zhiheng Xi",
+        "Tao Gui",
+        "Qi Zhang"
+      ],
+      "abstract": "Large language models are increasingly deployed as agents that reason over documents rather than answer from parametric knowledge. We study archive-grounded reasoning: locating sparse evidence across a large, messy collection of workplace files, reconciling inconsistent terminology, units, and time conventions, and computing an answer. Existing benchmarks address only parts of this setting and none jointly stresses archive-groundedness, agentic exploration, and cross-domain coverage. We introduce Agora, a benchmark pairing 362 questions with eight domain collections of 9,664 authentic documents and 372M tokens, far exceeding any model's context window, so agents must explore deliberately rather than scan exhaustively. Agora is built by an agentic pipeline combining cross-document task synthesis, leakage-preventing obfuscation, and difficulty filtering. Evaluating eight models, we find the task far from solved: even the strongest reaches only 59.4% accuracy, with notable variation across domains.",
+      "url": "https://arxiv.org/abs/2606.24526",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.9025
+    },
+    {
+      "id": "2606.24267",
+      "title": "Pigeonholing: Bad prompts hurt models to collapse and make mistakes",
+      "authors": [
+        "Hyunji Nam",
+        "Keertana Chidambaram",
+        "Dorottya Demszky",
+        "Natasha Jaques"
+      ],
+      "abstract": "While in-context learning is generally shown to be effective in Large Language Models (LLMs), bad contexts can cause performance degradation and mode collapse, a phenomenon we call \"pigeonholing.\" **Unintentionally bad** contexts can happen without malicious jailbreaking intents: For example, a user asks the model to justify an incorrect math theorem or fails to correct the model's buggy code. Specifically, we investigate ``pigeonholing\" in two scenarios: (1) when the user suggests a solution, and (2) when the conversation context includes the assistant's previous (incorrect) responses. Our experiments across 10 verifiable and open-ended tasks with 10 different models show that pigeonholing manifests in several ways: (1) repeating the incorrect answers from context (leading to 38-40% performance drop), (2) converging on a narrow set of answers in coding and text generation without exploring alternatives, and (3) flipping stance on controversial topics to align with the user or the assistant's previous claims. We find that pigeonholing worsens almost monotonically with the number of conversation turns (performance drops by additional 14+% as repeated mistakes increase from 1 to 5), and pigeonholing-induced mode collapse can happen even when the provided example is correct. As a step toward mitigation, we propose RLVR with synthetic errors which improves models by 43-60% under bad contexts compared to vanilla RLVR baselines.",
+      "url": "https://arxiv.org/abs/2606.24267",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8998
+    },
+    {
+      "id": "2606.24083",
+      "title": "CAVEWOMAN: How Large Language Models Behave Under Linguistic Input and Output Compression",
+      "authors": [
+        "Morayo Danielle Adeyemi",
+        "Ryan A. Rossi",
+        "Franck Dernoncourt"
+      ],
+      "abstract": "\"Talk short. Drop grammar. Save token.\" This caveman style is widely promoted as a way to cut inference cost, but whether it actually saves anything depends on which channel (the user's prompt or the model's response) is being compressed. We present Cavewoman, a two-channel evaluation protocol that scores every generation on task accuracy, realized per-item cost, and reference-text agreement against the model's unconstrained reference. We evaluate eight models on five datasets at five reduction levels, with both channels measured on the same items. Output compression cuts realized cost on most API models (1.4-2.4x per model, up to 3x in the best case) and on all four open-weight models under public-tier pricing. Input compression has the opposite effect, a strict lose-lose: it raises net cost rather than lowering it (~1.15x on the five-benchmark mean, up to 1.8x on the worst dataset and 2.7x under stronger compression), because models compensate with longer responses even as accuracy collapses. Under the same setting, surface text diverges from the unconstrained reference: on the non-reasoning models, roughly half of all generations are correct yet their surface text no longer entails the model's own unconstrained baseline generation. The divergence survives length-controlled re-scoring, multiple-comparisons correction, and replication under complementary semantic measures. Code and data are available at https://github.com/danielle34/cavewoman.",
+      "url": "https://arxiv.org/abs/2606.24083",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-23",
+      "github_url": "https://github.com/danielle34/cavewoman.",
+      "score": 0.8971
+    },
+    {
+      "id": "2606.23678",
+      "title": "AIR: Adaptive Interleaved Reasoning with Code in MLLMs",
+      "authors": [
+        "Cong Han",
+        "Xiaohan Lan",
+        "Haibo Qiu",
+        "Yujie Zhong"
+      ],
+      "abstract": "Following the paradigm shift initiated by OpenAI o3, interleaved reasoning with code to enhance multimodal large language models (MLLMs) has become a pivotal research frontier. The existing literature focuses primarily on tool-use within vision-perception tasks. However, such approaches typically rely on predefined heuristics for visual manipulation and are inherently incapable of addressing numerical computation problems due to their exclusive focus on visual operations. This paper empowers MLLMs with adaptive interleaved reasoning capabilities through extended reinforcement learning training on code-augmented complex numerical computation tasks. To this end, we propose a comprehensive three-component solution consisting of: a two-stage cold-start data construction pipeline, data filtering strategies for RL dataset curation, and an adaptive tool-invocation strategy leveraging a group-constrained reward function for interleaved reasoning trajectories. Extensive experiments demonstrate that after Reinforcement Learning training with the group-constrained reward function, performance improves by an average of 6.1 percentage points (pp) on evaluation benchmarks. Specifically, the accuracy for interleaved reasoning samples increases by 9.9 pp, and the overall success rate of tool-use exceeds 95%. Our data and code are available at: https://github.com/CongHan0808/AIR.git.",
+      "url": "https://arxiv.org/abs/2606.23678",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-22",
+      "github_url": "https://github.com/CongHan0808/AIR.git.",
+      "score": 0.8953
+    },
+    {
+      "id": "2606.24589",
+      "title": "AdversaBench: Automated LLM Red-Teaming with Multi-Judge Confirmation and Cross-Model Transferability",
+      "authors": [
+        "Khanak Khandelwal"
+      ],
+      "abstract": "Scaling adversarial evaluation of large language models requires both a method for generating hard inputs and a reliable way to confirm that resulting failures are real. We present AdversaBench, an end-to-end red-teaming pipeline that mutates seed prompts with five structured operators, queries a target model, and confirms failures through a three-judge panel with a meta-judge tiebreaker. We report experiments on 45 seeds across three categories: reasoning, instruction-following, and tool use. Every seed produced a confirmed failure. Four findings stand out. First, operator effectiveness varies sharply by category: inject_distractor scores 0.00 mean reward on instruction-following seeds but 0.80-0.83 on reasoning and tool-use. Second, binary failure rate hides difficulty: instruction-following seeds required 2.4 attacker iterations on average versus 1.1 for other categories, a gap visible in survival curves. Third, pairwise judge agreement of 80-87% coexists with near-zero Cohen's kappa due to label skew; category-level disagreement rates are more informative. Fourth, adversarial prompts generated against Llama 3.1 8B transfer zero-shot to Llama 3.3 70B, suggesting the mutations exploit general behavioral patterns rather than model-specific weaknesses. Code, dataset, and analysis scripts are available at https://github.com/khanak0509/AdversaBench .",
+      "url": "https://arxiv.org/abs/2606.24589",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "github_url": "https://github.com/khanak0509/AdversaBench",
+      "score": 0.8918
+    },
+    {
+      "id": "2606.24331",
+      "title": "Transformer-Based Language Models Across Domain Verticals: Architectures, Applications and Critical Assessment",
+      "authors": [
+        "Guruprakash J",
+        "Krithika L. B"
+      ],
+      "abstract": "Transformer-based language models have become the default substrate for natural language processing and the pace of new releases has made it hard for practitioners to separate durable ideas from the noise of incremental announcements. This review works at two levels. At the level of mechanism, we organise the main transformer families into a working taxonomy, covering encoder-only, decoder-only, encoder-decoder, long-context, permutation-based, and generator-discriminator variants. We then extend the discussion to post-2023 developments that changed the picture in practice: instruction tuning, reinforcement learning from human feedback, direct preference optimisation, mixture-of-experts scaling, retrieval augmentation and the current flagship model families from OpenAI, Anthropic, Google, Meta, Mistral and DeepSeek. At the level of use, we survey deployments across healthcare, finance, legal, education, customer service, creative writing and scientific work. Based on this we link each to the specific capabilities that make a transformer the appropriate tool. The contribution of this paper is a critical assessment that is based on the survey. We compare architectures on four axes that matter to deployment decisions, we quantify the trade-off between parameter count and energy cost. We also discuss how alignment methods, data provenance and benchmark saturation change what it means to call a model \"state of the art\". The final section lists the research questions that we think deserve more attention.",
+      "url": "https://arxiv.org/abs/2606.24331",
+      "categories": [
+        "cs.CL",
+        "cs.ET"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.891
+    },
+    {
+      "id": "2606.24428",
+      "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning",
+      "authors": [
+        "Shiding Zhu",
+        "Yudi Qi",
+        "Yajie Wang",
+        "Jiaze Li",
+        "Chao Song",
+        "Yaorui Shi",
+        "Yibo Miao",
+        "Hanqi Gao",
+        "Kai Zhang"
+      ],
+      "abstract": "Experience-driven self-evolution is critical for large language model (LLM) agents to improve through open-world interaction. However, existing experience learning methods mostly rely on single-agent loops, where the same agent executes tasks, summarizes outcomes, and determines memory content. This setup makes agents vulnerable to the Self-Confirmation Trap: wrong-but-self-consistent trajectories are misidentified as successful experience, leading to cumulative errors during retrieval and reuse. To address this issue, we propose EDV, an Execute-Distill-Verify framework for reliable experience learning. In the Execute stage, multiple heterogeneous agents explore the same task space in parallel to generate diverse candidate trajectories. In the Distill stage, a dedicated third-party agent comparatively analyzes these trajectories to produce candidate experiences, reducing executor-centric summarization bias. In the Verify stage, the execution group validates candidates via a consensus mechanism, and only approved experiences are written into shared or private memory. By decoupling the three stages, EDV transforms experience learning from isolated self-reflection into collaborative construction, filtering erroneous and noisy content before memory insertion. We evaluate EDV on three challenging long-horizon benchmarks: tau2-bench, Mind2Web and MMTB. Results show EDV consistently outperforms strong baselines, validating that reliable experience construction is essential for robust agent self-evolution. Our code is available at https://github.com/shidingz/EDV.",
+      "url": "https://arxiv.org/abs/2606.24428",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "github_url": "https://github.com/shidingz/EDV.",
+      "score": 0.8893
+    },
+    {
+      "id": "2606.24747",
+      "title": "Scaling Laws for Task-Specific LLM Distillation",
+      "authors": [
+        "Lavinia Ghita",
+        "Dhruv Desai",
+        "Ioana Boier"
+      ],
+      "abstract": "Large Language Models (LLMs) achieve strong performance across a growing range of domains, yet their scale poses deployment challenges in applications where latency and cost constraints are critical. This paper derives empirical scaling laws for domain-specific LLM compression, quantifying how in-domain and general knowledge performance scale with dataset size, compression ratio, supervision format, and iterative pruning schedule. Using quantitative finance as our application domain, we compare logit-based and LoRA-based distillation under iterative structural pruning, introducing a blended chain-of-thought supervision loss that stabilizes KL-divergence distillation over reasoning traces. In-domain task quality degrades predictably under compression while general-knowledge benchmarks collapse well before the same point; supervision format is the key driver of this tradeoff, with chain-of-thought supervision actively recovering general knowledge that pruning erases. We release the headline dataset FinHeadlineMix, scaling law results, and practical recommendations to provide a reusable framework for domain-specific compression decisions.",
+      "url": "https://arxiv.org/abs/2606.24747",
+      "categories": [
+        "cs.AI",
+        "cs.CE"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.889
+    },
+    {
+      "id": "2606.24391",
+      "title": "Age of LLM: A Strategic 1v1 Benchmark for Reasoning, Diplomacy and Reliability of Large Language Models under Fog of War",
+      "authors": [
+        "Arnaud Ricci"
+      ],
+      "abstract": "We introduce Age of LLM, a turn-based 1v1 benchmark in which two LLMs face off on a 13x7 grid to destroy the enemy base. Three stressors are deliberate: fog of war, full diplomacy (messages, ceasefires, ultimatums; uranium kept secret), and a reliability dimension where every turn must follow a strict JSON schema and an illegal action is silently discarded. The engine is private and each match uses a fresh random map seed and opponent, mitigating the data contamination that affects public benchmarks. Models receive a (near) rule-only prompt with no build-order advice (two tactical seed phrases were present during data collection; see Section 2.7). We benchmark 15 reasoning models across 54 matches and 5,258 actions. Findings: (1) the nuclear rush dominates (78% on the rules-coherent v0.11+ sub-corpus; 85% corpus-wide) with a sole-launcher signature that is largely mechanical under secret-simultaneous launch rules, not a cognitive deterrence failure; (2) military conquest is rare but faster (12.3 vs 18.9 turns); (3) diplomacy is prolific yet almost never consummated; (4) ~58% of illegal actions are fog/state errors, making the illegal-action rate a measure of belief-tracking; (5) -- the least established, and the only one we label exploratory -- a weak link associates reliability with winning. The corpus is small, unbalanced and not side-swapped, so the ranking is a preliminary descriptive view, not a contribution. Beyond ranking, the turn-by-turn traces of actions and messages make the corpus a lens on how LLMs reason under adversarial uncertainty -- their belief-tracking, spontaneous deception, and per-model cognitive \"personas\" -- which we frame as a future research direction. We release the replay format, an isometric viewer and all replays; engine source on request.",
+      "url": "https://arxiv.org/abs/2606.24391",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8886
+    },
+    {
+      "id": "2606.24437",
+      "title": "ReM-MoA: Reasoning Memory Sustains Mixture-of-Agents Scaling",
+      "authors": [
+        "Heng Ping",
+        "Arijit Bhattacharjee",
+        "Peiyu Zhang",
+        "Shixuan Li",
+        "Wei Yang",
+        "Ali Jannesari",
+        "Nesreen Ahmed",
+        "Paul Bogdan"
+      ],
+      "abstract": "Mixture-of-Agents (MoA) architectures improve inference-time scaling by organizing multiple LLM agents into layered reasoning pipelines. However, existing MoA variants fail to sustain gains as depth increases, exhibiting degradation, early plateauing, or saturation. We propose ReM-MoA, a memory-augmented MoA framework that sustains scaling through two mechanisms: (1) a Ranked Reasoning Memory that persistently stores and ranks reasoning traces from all layers using a comparative Reviewer Agent, and (2) a Curated Diversified Memory Routing scheme that exposes different agents to distinct combinations of successful and failed traces, preserving exploration diversity while propagating high-quality reasoning. We further introduce an optional multi-domain Reviewer distillation pipeline that improves ranking quality through frontier-model supervision. Across five reasoning benchmarks spanning math, formal logic, code, knowledge, and commonsense, ReM-MoA consistently outperforms prior MoA variants across both depth and width scaling, and its advantage widens with depth, establishing structured cross-layer reasoning memory as a key missing mechanism for scalable multi-agent inference.",
+      "url": "https://arxiv.org/abs/2606.24437",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8878
+    },
+    {
+      "id": "2606.24251",
+      "title": "Probing the Misaligned Thinking Process of Language Models",
+      "authors": [
+        "Kaiwen Zhou",
+        "Constantin Venhoff",
+        "Jonathan Michala",
+        "Xin Eric Wang",
+        "William Saunders"
+      ],
+      "abstract": "Large language models exhibit a growing range of misaligned behaviors such as strategic deception, sandbagging, and self-preservation. As they are increasingly deployed in high-stakes settings, it is critical to reliably detect such behaviors to ensure safe and responsible use. In this work, we propose to monitor misalignment by decomposing it into fine-grained cognitive processes -- misalignment indicators -- and detecting their presence in a model's internal activations via linear probes. We develop a taxonomy of 18 indicators spanning different misaligned behaviors, paired with an automated, meta-plan-guided pipeline that generates multi-turn training conversations. To rigorously evaluate generalization, we construct an out-of-distribution suite combining automated behavioral elicitation, established misalignment benchmarks, and natural benign conversations. Across 5 misaligned behaviors, our probes match a strong LLM judge with 0.935 AUROC on out-of-distribution benchmarks while keeping a low false positive rate on benign traffic. We further perform in-depth analysis to understand the probes and the model's internal representations of misalignment indicators.",
+      "url": "https://arxiv.org/abs/2606.24251",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8876
+    },
+    {
+      "id": "2606.24855",
+      "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
+      "authors": [
+        "Negin Raoof",
+        "Richard Zhuang",
+        "Marianna Nezhurina",
+        "Etash Guha",
+        "Atula Tejaswi",
+        "Ryan Marten",
+        "Charlie F. Ruan",
+        "Tyler Griggs",
+        "Alexander Glenn Shaw",
+        "Hritik Bansal",
+        "E. Kelly Buchanan",
+        "Artem Gazizov",
+        "Reinhard Heckel",
+        "Chinmay Hegde",
+        "Sankalp Jajee",
+        "Daanish Khazi",
+        "Emmanouil Koukoumidis",
+        "Xiangyi Li",
+        "Hange Liu",
+        "Shlok Natarajan",
+        "Harsh Raj",
+        "Nicholas Roberts",
+        "Ethan Shen",
+        "Nishad Singhi",
+        "Michael Siu",
+        "Ashima Suvarna",
+        "Hanwen Xing",
+        "Patrick Yubeaton",
+        "Robert Zhang",
+        "Leon Liangyu Chen",
+        "Xiaokun Chen",
+        "Steven Dillmann",
+        "Saadia Gabriel",
+        "Xunyi Jiang",
+        "Anurag Kashyap",
+        "Boxuan Li",
+        "Yein Park",
+        "Minh Pham",
+        "Sujay Sanghavi",
+        "Lin Shi",
+        "Ke Sun",
+        "Yixin Wang",
+        "Zhiwei Xu",
+        "Erica Zhang",
+        "Siyan Zhao",
+        "Wanjia Zhao",
+        "Jenia Jitsev",
+        "Alex Dimakis",
+        "Benjamin Feuer",
+        "Ludwig Schmidt"
+      ],
+      "abstract": "Agentic language models dramatically expand the applications of AI yet little is publicly known about how to curate training data for broadly capable agents. Existing open efforts such as SWE-Smith, SERA, and Nemotron-Terminal typically target a single benchmark, leaving open the question of how to train models that generalize across diverse agentic tasks. The OpenThoughts-Agent (OT-Agent) project addresses this gap with a fully open data curation pipeline for training agentic models. We conduct more than 100 controlled ablation experiments to systematically investigate each stage of the pipeline, yielding insights on the importance of task sources and diversity. We then assemble a training set of 100K examples from our pipeline and fine-tune Qwen3-32B on this dataset, which yields an average accuracy of 44.8% across seven agentic benchmarks and a 3.9 percentage point improvement over the strongest existing open data agentic model (Nemotron-Terminal-32B, 40.9%). Moreover, our training data exhibits strong scaling properties, outperforming alternative open datasets at every training set size in compute-controlled comparisons. We publicly release our training sets, data pipeline, experimental data, and models at openthoughts.ai to support future open research on agentic model training.",
+      "url": "https://arxiv.org/abs/2606.24855",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8873
+    },
+    {
+      "id": "2606.24470",
+      "title": "The Latent Bridge: A Continuous Slow-Fast Channel for Real-Time Game Agents",
+      "authors": [
+        "Bojie Li",
+        "Noah Shi"
+      ],
+      "abstract": "A real-time agent for general computer use - with games as the most demanding case - must act within tens of milliseconds while still planning over seconds. These two regimes sit at opposite ends of the latency-quality tradeoff. A reasoning VLM (Qwen3-VL-8B-Thinking) deliberates effectively but requires ~1.5 s per response - far too slow for a 15 Hz control loop. In contrast, a reactive VLM (MiniCPM-o 4.5) acts in milliseconds but underperforms on planning-heavy tasks. We couple two frozen models of matched scale (9B reactive, 8B reasoning), leaving the communication channel as the sole trainable component. The standard coupling is a Text Bridge (T): the slow model writes a suffix the fast model reads. We introduce a learned continuous Latent Bridge (L) that projects the slow model's residuals into the fast model's input-embedding space in a LLaVA-style manner, avoiding any text round-trip; both are compared against Fast-Only (F). On 7 Atari games and a driving domain (MetaDrive), tuning the action decoder per channel on held-out seeds, the Latent Bridge matches or beats the Text Bridge in every domain: it significantly improves two games (MsPacman +57%, RoadRunner +28%) and is a safe drop-in elsewhere. Combining both channels interferes destructively (RoadRunner -96%), so only one should be used. The benefit is highly predictable: the bridge helps if and only if slow reasoning already beats fast reaction (T > F) - the Latent and Text gains over Fast-Only move together at r=0.93. MetaDrive is the controlled negative, where the Latent Bridge is demonstrably inert because the Text Bridge adds no value. We release replay recordings and reproducible pipelines.",
+      "url": "https://arxiv.org/abs/2606.24470",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8871
+    },
+    {
+      "id": "2606.24064",
+      "title": "Beyond Trajectory Imitation: Strategy-Guided Policy Optimization for LLM Reasoning",
+      "authors": [
+        "Tianyuan Shi",
+        "Canbin Huang",
+        "Bei Li",
+        "Xin Chen",
+        "Xiaojun Quan",
+        "Jingang Wang",
+        "Qifan Wang"
+      ],
+      "abstract": "Distilling reasoning capabilities from strong to weak language models typically involves imitating specific solution trajectories, effectively transferring what to answer rather than how to reason. This trajectory-level imitation encourages memorization of instance-specific steps rather than acquisition of transferable problem-solving skills, limiting generalization to novel problems. We propose Strategy-Guided Policy Optimization (SGPO), which replaces instance-level trajectory imitation with reusable strategy distillation. SGPO extracts structured strategy descriptions from strong-model responses and, for each problem, constructs both autonomous and strategy-guided trajectories to enable direct comparison of the model's behavior with and without strategic guidance. The framework then addresses two key questions. For how to distill, a token-level forward-KL objective selectively transfers the distributional shift induced by strategy conditioning into the unguided policy, with proximal constraints ensuring stability. For when to distill, adaptive instance-level weighting strengthens guidance when autonomous exploration falls short and reduces it as the model's own competence grows. Experiments on four mathematical benchmarks across two model families show that SGPO consistently outperforms SFT, on-policy RL, and hybrid-policy baselines, improving the average score by 2.2 points over the strongest baseline on Qwen2.5-7B-Instruct. Analysis reveals that the forward-KL objective provides an inherently selective distillation signal that outperforms direct trajectory imitation, and that strategy distillation exhibits complementary scaling with base model capability.",
+      "url": "https://arxiv.org/abs/2606.24064",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8866
+    },
+    {
+      "id": "2606.23927",
+      "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+      "authors": [
+        "Yarin Yerushalmi Levi",
+        "Roy Betser",
+        "Amit Giloni",
+        "Lidor Erez",
+        "Itay Gershon",
+        "Oren Rachmil",
+        "Sindhu Padakandla",
+        "Roman Vainshtein"
+      ],
+      "abstract": "Agentic AI systems powered by large language models (LLMs) are rapidly evolving into autonomous decision-making systems, exposing attack vectors beyond those of traditional LLM vulnerabilities. Existing security evaluations are often tied to specific implementations or domains, limiting unified comparison across heterogeneous systems. To address this gap, we introduce RIFT-Bench, a graph representation-driven methodology for dynamic red-teaming that enables unified evaluations across diverse agentic architectures. Building on a novel hierarchical representation, RIFT-Bench operates in two automated phases: Discovery, which extracts system structure, and Scanning, which deploys adaptive adversarial attacks and produces a comprehensive evaluation report. It evaluates the examined system itself, leveraging a broad set of dynamically adaptable adversarial probes across diverse attack vectors and objectives. We demonstrate the effectiveness of the proposed evaluation pipeline across 45 agentic systems spanning a diverse range of implementations, showing that the approach generalizes effectively to heterogeneous agentic architectures. Beyond systems and attacks, RIFT-Bench also supports direct evaluation of mitigation strategies. These key capabilities make RIFT-Bench a scalable foundation for security evaluation of agentic AI systems.",
+      "url": "https://arxiv.org/abs/2606.23927",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-22",
+      "score": 0.8861
+    },
+    {
+      "id": "2606.24775",
+      "title": "Are We Ready For An Agent-Native Memory System?",
+      "authors": [
+        "Wei Zhou",
+        "Xuanhe Zhou",
+        "Shaokun Han",
+        "Hongming Xu",
+        "Guoliang Li",
+        "Zhiyu Li",
+        "Feiyu Xiong",
+        "Fan Wu"
+      ],
+      "abstract": "Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, update, consolidation, and dynamic lifecycle governance throughout agent execution. Despite this evolution, existing evaluations still benchmark agent memory mainly through end-to-end task success metrics (e.g., F1, BLEU), while treating the underlying system as a monolithic black box. As a result, critical system-level concerns, including operational costs, architectural trade-offs across memory modules, and robustness under dynamic knowledge updates, remain insufficiently explored. In this paper, we present a systematic experimental study of agent memory from a data management perspective. We propose an analytical framework that decomposes agent memory into four core modules: memory representation and storage, extraction, retrieval and routing, and maintenance. Under this framework, we evaluate 12 representative memory systems and two reference baselines across five benchmark workloads spanning 11 datasets. Our extensive end-to-end evaluation shows that no single architecture dominates across all scenarios; instead, effectiveness depends heavily on how well the memory structure aligns with the workload bottleneck. Furthermore, through fine-grained ablation studies, we quantify their individual effects on representation fidelity, retrieval precision, update correctness, and long-horizon stability. Finally, we reveal cost-performance trade-offs under realistic workloads, showing localized maintenance is more cost-efficient than global reorganization. Based on these findings, we identify promising directions towards building truly agent-native memory systems. The code is publicly available at https://github.com/OpenDataBox/MemoryData.",
+      "url": "https://arxiv.org/abs/2606.24775",
+      "categories": [
+        "cs.CL",
+        "cs.DB",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-23",
+      "github_url": "https://github.com/OpenDataBox/MemoryData.",
+      "score": 0.886
+    },
+    {
+      "id": "2606.23687",
+      "title": "Randomized YaRN Improves Length Generalization for Long-Context Reasoning",
+      "authors": [
+        "Manas Mehta",
+        "Fangcong Yin",
+        "Greg Durrett"
+      ],
+      "abstract": "Large language models (LLMs) are typically pretrained on short sequences and then extended to work on longer sequences with additional training. However, such LLMs still struggle to further generalize to very long sequences. We propose Randomized YaRN, a training method that improves length generalization by combining YaRN-based positional extrapolation with randomized positional encoding and a length curriculum. During training on short context data, tokens are assigned YaRN positional encodings sampled from a larger position range, exposing the model to out-of-distribution positional representations even on short-context inputs. We evaluate Randomized YaRN on two challenging long-context reasoning benchmarks, BABILong and Multi-Round Coreference Resolution (MRCR). When training on data with <8K context, Randomized YaRN consistently improves reasoning performance on context lengths from 16K to 128K and outperforms standard fine-tuning, with the largest gains appearing at far out-of-distribution lengths. Our results suggest that progressively exposing models to OOD positional distributions provides an effective recipe for generalizable long-context reasoning.",
+      "url": "https://arxiv.org/abs/2606.23687",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-22",
+      "score": 0.8852
+    },
+    {
+      "id": "2606.24579",
+      "title": "Cross-Lingual Exploration for Parametric Knowledge",
+      "authors": [
+        "Elisha Diskind",
+        "Itamar Trainin",
+        "Uri Shaham",
+        "Leshem Choshen",
+        "Idan Szpektor",
+        "Omri Abend"
+      ],
+      "abstract": "Parametric knowledge in Large Language Models is not equally accessible across languages. As a result, standard inference techniques often struggle to surface localized facts, leading to failures in cross-lingual knowledge transfer and consistency. In this work, we investigate techniques for accessing hidden factual knowledge by exploring cross-lingual prompting strategies. We identify four inherent dimensions of cross-lingual exploration that directly govern parametric knowledge retrieval and evaluate them on multilingual factual benchmarks covering 17 typologically diverse languages. Our results demonstrate that cross-lingual exploration significantly improves knowledge transfer and factual recall, representing a more efficient compute Pareto frontier than native-language scaling. Furthermore, we observe corresponding improvements in cross-lingual consistency, exceeding what can be explained by accuracy gains alone. Overall, our work establishes multilingual prompt exploration as a highly effective inference-time strategy for unlocking latent parametric knowledge.",
+      "url": "https://arxiv.org/abs/2606.24579",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8843
+    },
+    {
+      "id": "2606.24004",
+      "title": "Towards Spec Learning: Inference-Time Alignment from Preference Pairs",
+      "authors": [
+        "Dhriti Krishnan",
+        "Tejas Goyal",
+        "Jaromir Savelka"
+      ],
+      "abstract": "Steering a large language model (LLM) toward a desired behavior typically relies on an iterative process of hand-crafting a prompt based on a careful inspection of the model's responses. This is an involved, brittle, and error-prone process. Preference-based fine-tuning is a more rigorous but often prohibitively expensive solution. We propose spec learning, a framework that relies on a brief user instruction and a small set of preference judgments. These are compiled into specifications in the form of natural-language prompts for an LLM. Specifications condition LLMs at inference time, and no parameter updates to the underlying models are required. We show that the responses generated based on the compiled specifications often outperform direct preference optimization (DPO) on datasets from specialized domains whose preference signal is dense. Unlike opaque weight updates, the resulting specifications are human-readable and double as interpretable and transparent written embodiments of the preference signal that produced them.",
+      "url": "https://arxiv.org/abs/2606.24004",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-22",
+      "score": 0.8841
+    },
+    {
+      "id": "2606.24311",
+      "title": "LemonHarness Technical Report",
+      "authors": [
+        "Kailong Ren",
+        "Fubo Sun",
+        "Jiachen Liu",
+        "Liu Yang",
+        "Zimo Yin",
+        "Jiaying Li",
+        "Congli Yin",
+        "Ming He",
+        "Yu Huo",
+        "Jiawei Liu",
+        "Zeping Chen",
+        "Yubin Huangfu",
+        "Ronghua Li",
+        "Yixuan Wu",
+        "Xing Su",
+        "Yanzhi Xu",
+        "Likang Wu",
+        "Hongke Zhao",
+        "Lei Zhang",
+        "Xiaohui Geng",
+        "Jianping Fan"
+      ],
+      "abstract": "As large language model (LLM) agents are applied to longer tasks, they increasingly modify workspace state across multiple rounds of iteration. However, agents typically observe only tool outputs and log fragments, while the actual state changes occur in the file system. Without explicit workspace boundaries, state-changing operations such as file writes and temporary artifact generation may scatter changes across paths. Over time, these weakly constrained changes accumulate, making states such as modified files difficult to track. This paper presents LemonHarness, an integrated execution framework for long-horizon agents. LemonHarness establishes an explicit execution boundary by constraining state-changing operations within a clearly defined workspace and bringing model invocation, tool execution, and rule knowledge within a single controlled boundary. State-changing operations, including file writes, dependency installation, and temporary artifact creation, are executed through structured tool interfaces, with execution feedback recorded as observations available to subsequent model decisions. The system also introduces a reusable rule knowledge base, which turns recurring execution rules and acceptance criteria into runtime knowledge. LemonHarness further adds a time-aware execution mechanism that exposes elapsed and remaining budget to the model, so it can rebalance exploration, implementation, and validation effort as time pressure shifts and avoid timeouts from long waits or excessive verification. On Terminal-Bench 2.0, LemonHarness_GPT-5.3-CodeX reached 84.49% accuracy over 445 trials; pairing the same framework with the stronger GPT-5.5 backbone raised the average accuracy to 86.52% across five jobs. The results suggest that a unified runtime boundary, callable rule knowledge, and time-aware execution can improve the stability of long-horizon agent execution.",
+      "url": "https://arxiv.org/abs/2606.24311",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8833
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

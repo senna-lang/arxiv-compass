@@ -1,0 +1,413 @@
+{
+  "date": "2026-06-08",
+  "collected_at": "2026-06-08T13:46:49.686001+09:00",
+  "papers": [
+    {
+      "id": "2606.06745",
+      "title": "When to Think Deeply: Inhibitory Deliberation for LLM Reasoning",
+      "authors": [
+        "Zhixuan He",
+        "Yue Feng"
+      ],
+      "abstract": "Reasoning Large Language Models can improve problem-solving performance through deliberative inference, but invoking slow reasoning for every input is computationally expensive and often unnecessary. We propose IDPR, a framework for response-conditioned inhibitory deliberation. IDPR first generates a concise intuitive answer and then uses an inhibition controller to decide whether that specific response should be released or suppressed in favor of slow reasoning. Unlike input-only routers, the inhibition controller conditions on the fast answer and fast-side evidence, including confidence, logit margin, parseability, and generation cost. We train the controller from paired fast-slow outcomes and select the inhibition threshold on a held-out validation set under an accuracy-first slow-call budget. On a held-out 5,000-example mathematical reasoning test set, IDPR invokes slow reasoning on only 8.20% of examples and improves accuracy from 47.90% to 48.92%. Under the same slow-call budget, random routing decreases accuracy to 46.76%, while the strongest confidence-based baseline reaches 48.22%. IDPR also achieves the highest corrective precision, showing that response-conditioned inhibition better identifies fast answers that benefit from slow reasoning.",
+      "url": "https://arxiv.org/abs/2606.06745",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-04",
+      "score": 0.8918
+    },
+    {
+      "id": "2606.06635",
+      "title": "How Language Models Fail: Token-Level Signatures of Committed and Persistent Reasoning Failures",
+      "authors": [
+        "Tanvi Thoria",
+        "Kiana Jafari",
+        "Marc R. Schlichting",
+        "Mykel J. Kochenderfer"
+      ],
+      "abstract": "Failures in language model reasoning emerge through distinct processes that leave identifiable signatures in the reasoning trace. We characterize these failures using token-level uncertainty signals, finding they arise through two empirically distinguishable processes. The first is committed failure, in which a model locks onto an incorrect reasoning path early in its trace. A central diagnostic signature is the commitment point, beyond which considering additional tokens hurt rather than help failure detection. In the second, persistent uncertainty, uncertainty instead accumulates throughout, and the full trace is needed to best distinguish failing from successful completions. These signatures reproduce across 23 model-dataset configurations, with the framework's falsifiable predictions holding in 20 of 23 cases, well above chance across both failure modes. Finally, we demonstrate our failure mode framework has direct implications for self-consistency, identifying when uncertainty signals complement it and when it can be selectively skipped. These results offer a foundation for understanding when LLM reasoning failures become detectable and for adapting detection strategies accordingly.",
+      "url": "https://arxiv.org/abs/2606.06635",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-04",
+      "score": 0.8904
+    },
+    {
+      "id": "2606.07000",
+      "title": "Teaching the Way, Not the Answer: Privileged Tutoring Distillation for Multimodal Policy Optimization",
+      "authors": [
+        "Shizhe Xiang",
+        "Ke An",
+        "Wenlong Yu",
+        "Yue Liu",
+        "Jian Luan",
+        "Pei Fu",
+        "Qilong Wang"
+      ],
+      "abstract": "Recent post-training methods, particularly Reinforcement Learning with Verifiable Rewards (RLVR), have significantly enhanced the reasoning ability of Large Vision-Language Models (LVLMs). However, the sparse nature of verifiable rewards provides little token-level supervision for failed rollouts, often leading to inefficient exploration in complex multimodal reasoning tasks. Although policy distillation can offer dense guidance, external teacher based methods introduce substantial computational overhead, while answer conditioned tuning methods may expose answer-level information and induce shortcut-like generation behavior. To address these limitations, we propose PTD-PO, a Privileged Tutoring Distillation Policy Optimization framework for RLVR that provides dense guidance without exposing the answer to the student policy. Specifically, PTD-PO constructs structured privileged hints from spatial attention guidance and intermediate textual reasoning steps, and uses them through in-context learning to produce step-wise token-distribution supervision. The student is still optimized under the original answer-free context, and its failed rollouts are aligned with the hint-augmented reference model at the token-distribution level. To further stabilize distillation under the distribution shift between guided and unguided contexts, we introduce a Top-K Jensen-Shannon divergence objective that focuses alignment on informative token probabilities while reducing memory overhead. Experiments on LVLMs ranging from 2B to 8B parameters show that PTD-PO consistently outperforms RLVR and distillation baselines, mitigates entropy collapse, and improves complex multimodal reasoning performance.",
+      "url": "https://arxiv.org/abs/2606.07000",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8902
+    },
+    {
+      "id": "2606.06835",
+      "title": "Translate-R1: Cost-Aware Translation Tool Use via Reinforcement Learning",
+      "authors": [
+        "Pratik Jayarao",
+        "Chaitanya Dwivedi",
+        "Himanshu Gupta",
+        "Neeraj Varshney",
+        "Adithya M Devraj",
+        "Meet Vadera",
+        "Priyanka Nigam",
+        "Bing Yin"
+      ],
+      "abstract": "The performance gap across languages in LLMs is well documented, and closing it natively requires pretraining or fine-tuning on corpora that, for most languages, do not exist. Translation offers an alternative: converting an input into the model's dominant language unlocks its full capabilities at once. Applying translation to every input, however, is wasteful for languages the model already handles, while leaving the choice to the model fails in the opposite way, as LLMs are overconfident and skip the tool even when they cannot understand the input. Prior work resolves this with language-specific rules, domain heuristics, language identifiers, or external routers, each requiring manual engineering. We instead learn a single policy that decides when to translate from reward alone, developing language- and domain-adaptive introspection that assesses its own comprehension and invokes translation only when it cannot solve a task natively.\n  Using data built by our answer-preserving translation pipeline, we continue RL on the post-trained Qwen3-4B across 22 languages in 3 resource tiers (High, Low, XLow) and 5 domains, and introduce confidence-gated GSPO for cost-sensitive tool use. The gated policy lifts reward over the baseline by +4.6 on High, +23.5 on Low, and +17.5 on XLow. Against an unconstrained policy that almost always translates, it preserves full reward at 63% of the cost and is Pareto-optimal across 87% of the cost-sensitivity range. Additionally, to simulate behavior on a completely unseen language, we create 2 synthetic languages, where our gated policy improves +18.7 over the overconfident baseline that underutilizes the tool even on these incomprehensible inputs. The policy transfers zero-shot to 9 held-out languages, and we analyze how tool use emerges over training, per language and per domain.",
+      "url": "https://arxiv.org/abs/2606.06835",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8901
+    },
+    {
+      "id": "2606.07001",
+      "title": "DataEvolver: Automatic Data Preparation for Large Language Models through Multi-Level Self-Evolving",
+      "authors": [
+        "Chao Deng",
+        "Shaolei Zhang",
+        "Ju Fan",
+        "Xiaoyong Du"
+      ],
+      "abstract": "High-quality training data is essential to large language models (LLMs) and typically requires extensive and costly manual curation. Existing automatic data preparation methods rely on predefined pipelines or customized human instructions, which limits their adaptability to diverse data distributions and lacks principled guidance from high-quality examples. In this paper, we introduce DataEvolver, the first self-evolving data preparation system that automatically constructs pipelines to transform raw data into high-quality data. DataEvolver employs a multi-level mechanism to ensure both pipeline executability and effectiveness. At the operator level, it incrementally expands the operator set to construct a logical plan while resolving dependency conflicts. At the pipeline level, it instantiates logical plans into executable code and iteratively refines pipeline orchestration through a feedback loop that reduces the distribution gap between prepared data and high-quality examples. Experiments on seven benchmarks show that DataEvolver substantially improves data quality and achieves an average 10\\% gain in downstream LLM performance compared with training on original data, highlighting new opportunities for the iterative co-evolution of LLMs and data.",
+      "url": "https://arxiv.org/abs/2606.07001",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8898
+    },
+    {
+      "id": "2606.06893",
+      "title": "Workflow-to-Skill: Skill Creation via Routing-Workflow-Semantics-Attachments Decomposition",
+      "authors": [
+        "Yuyang Zhang",
+        "Xinyuan Han",
+        "Xudong Jiang",
+        "Run Wang"
+      ],
+      "abstract": "Large language model agents increasingly rely on Skills to encode procedural knowledge, yet high-quality Skills remain costly to hand-write. This paper studies automatic Skill construction from heterogeneous interaction evidence, including demonstrations, agent trajectories, tool traces, and execution logs. We argue that trace-to-skill construction is not simple summarization tasks, because traces are fragmented, redundant, and may miss rare but safety-critical behaviors. To address this, we introduce RWSA, a workflow-oriented intermediate representation that decomposes Skills into Workflow structure, execution Semantics, and runtime Attachments, capturing task decomposition, control flow, verification, safety, rollback, and state management. Building on RWSA, we propose W2S, a framework that segments traces, induces local Skill drafts, aligns shared structures, reconciles branches, and compresses redundancy while preserving evidence and confidence annotations. Experiments on 70 Skills show that W2S improves behavioral replay consistency by 10.5% over summarization- and prompting-based baselines, highlighting the need to treat traces as executable runtime specifications rather than compressible text.",
+      "url": "https://arxiv.org/abs/2606.06893",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8882
+    },
+    {
+      "id": "2606.07006",
+      "title": "RASFT: Rollout-Adaptive Supervised Fine-Tuning for Reasoning",
+      "authors": [
+        "Yongliang Miao",
+        "Fengyuan Liu",
+        "Wei Shi",
+        "Yanguang Liu",
+        "Fei Sun",
+        "Na Zou",
+        "Mengnan Du"
+      ],
+      "abstract": "Supervised fine-tuning (SFT) is a prevailing method for adapting large language models to reasoning tasks by imitating offline expert demonstrations, often treating a single expert trajectory as the target behavior. However, reasoning is not simple path imitation: rigidly following one demonstrated solution may overfit to surface forms and suppress the model's own reasoning distribution. We propose Rollout-Adaptive Supervised Fine-Tuning (RASFT), a policy-aware SFT framework that calibrates expert supervision according to problem-level solvability estimated from verified on-policy rollouts. For each problem, RASFT strengthens expert guidance when the current policy struggles, while relaxing rigid imitation and incorporating correct self-generated trajectories when the model already exhibits reliable reasoning behavior. To preserve useful reasoning priors, RASFT further introduces a clipped inverse ratio between the frozen reference model and the current policy to constrain excessive policy drift. Experiments across multiple models on six mathematical reasoning benchmarks and two code reasoning benchmarks show that RASFT achieves better overall performance than SFT, SFT variants, and representative RL methods. The code is available at https://github.com/zjd1sq/RASFT.",
+      "url": "https://arxiv.org/abs/2606.07006",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-05",
+      "github_url": "https://github.com/zjd1sq/RASFT.",
+      "score": 0.8868
+    },
+    {
+      "id": "2606.06758",
+      "title": "A Four-Condition Diagnostic Protocol for Evidence Utilization in Long-Context and Retrieval-Augmented Language Models",
+      "authors": [
+        "Haizhou Xia"
+      ],
+      "abstract": "Final-answer accuracy, retrieval recall, and citation overlap do not by themselves identify whether a long-context or retrieval-augmented language model used the evidence it was given. A model can answer from parametric memory, fail despite receiving the right passages, or cite evidence without converting it into the requested answer. This paper proposes a matched four-condition evidence-availability protocol--no evidence, full context, retrieved evidence, and oracle-evidence reference--for diagnosing evidence utilization under fixed examples, prompts, score fields, retrieval settings, and validity checks. ONCU is used as a protocol-bound estimator of recovered oracle-reference evidence advantage and is computed only for denominator-valid groups; denominator-free answer, evidence, retrieval, and failure-audit metrics are reported separately. The empirical study evaluates five local open-weight models from the Qwen, Gemma, Llama, and Mistral families across Controlled-ONCU-safe16K, HotpotQA-ONCU, and 2WikiMultiHopQA-ONCU, with 18,000 ONCU-compatible predictions. The main finding is a task-dependent bottleneck split: controlled synthetic settings primarily expose full-context utilization failures, whereas the tested realistic multi-hop settings primarily expose retrieval-chain coverage failures in denominator-free answer and evidence metrics, with ONCU supporting the same direction on oracle-improving groups. The contribution is a diagnostic protocol for separating no-evidence answerability, oracle-evidence recoverability, full-context utilization, and retrieval-conditioned utilization, rather than a single-score leaderboard for long-context or retrieval-augmented systems.",
+      "url": "https://arxiv.org/abs/2606.06758",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-04",
+      "score": 0.8862
+    },
+    {
+      "id": "2606.07299",
+      "title": "DuMate-DeepResearch: An Auditable Multi-Agent System with Recursive Search and Rubric-Grounded Reasoning",
+      "authors": [
+        "Lingyong Yan",
+        "Can Xu",
+        "Yukun Zhao",
+        "Wenxuan Li",
+        "Qingyang Chen",
+        "Jiulong Wu",
+        "Wenli Song",
+        "Xiangnan Li",
+        "Weixian Shi",
+        "Yiqun Chen",
+        "Xuchen Ma",
+        "Yuchen Li",
+        "Jiashu Zhao",
+        "Shuaiqiang Wang",
+        "Jianmin Wu",
+        "Dawei Yin"
+      ],
+      "abstract": "Deep Research (DR) has emerged as a new agentic paradigm to tackle complex, open-ended research tasks, demanding systems that can iteratively frame problems, acquire evidence, verify sources, and synthesize long-form reports. In practice, however, current DR systems are constrained by four interrelated limitations: long-horizon planning over an underspecified scope, the bottleneck of decomposing and scheduling such tasks within a single agent, hallucination risk in long-form synthesis, and limited process auditability. This technical report presents DuMate-DeepResearch, a multi-agent DR framework built on the Qianfan Agent Foundry. The framework decouples the Agent Core, which handles task understanding, planning, and scheduling, from an extensible Tool Ecosystem for retrieval, evidence acquisition, and report rendering, making every intermediate decision and tool invocation explicitly traceable. Building on this infrastructure, DuMate-DeepResearch further introduces three mechanisms: (i) a graph-based dynamic planning strategy expands the research roadmap coarse-to-fine and continuously revises it through reflection, re-planning, backtracking, and parallel branching; (ii) a recursive two-level execution design delegates each complex search sub-task to an inner Search Agent that runs its own planning loop, isolating noisy retrieval and stabilizing long-horizon execution; (iii) a rubric-based test-time optimization mechanism dynamically generates task-specific quality criteria and uses them as live reasoning scaffolds for evidence-grounded synthesis and adaptive stopping. Across two deep research benchmarks, DuMate-DeepResearch establishes new state-of-the-art results: the best overall score (58.03%) on DeepResearch Bench, and the best overall score (61.95%) on DeepResearch Bench II while ranking first in information recall and analysis.",
+      "url": "https://arxiv.org/abs/2606.07299",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.06915",
+      "title": "ThinkBooster: A Unified Framework for Seamless Test-Time Scaling of LLM Reasoning",
+      "authors": [
+        "Vladislav Smirnov",
+        "Chieu Nguyen",
+        "Sergey Senichev",
+        "Minh Ngoc Ta",
+        "Ekaterina Fadeeva",
+        "Artem Vazhentsev",
+        "Daria Galimzianova",
+        "Nikolai Rozanov",
+        "Viktor Mazanov",
+        "Jingwei Ni",
+        "Tianyi Wu",
+        "Igor Kiselev",
+        "Mrinmaya Sachan",
+        "Iryna Gurevych",
+        "Preslav Nakov",
+        "Timothy Baldwin",
+        "Artem Shelmanov"
+      ],
+      "abstract": "Test-time compute (TTC) scaling has emerged as a powerful paradigm for improving large language model (LLM) reasoning by allocating additional compute during inference, e.g., via multi-sample generation and verifier-based reranking. Existing TTC scaling strategies and reasoning scorers remain fragmented, evaluated under inconsistent protocols, and are rarely analyzed through the lens of quality-cost trade-offs. We introduce ThinkBooster, a unified framework for seamless test-time compute scaling of LLM reasoning, which consists of (i) a modular Python library implementing state-of-the-art TTC scaling strategy and scorer families, (ii) a benchmark that jointly evaluates performance and computational efficiency, and (iii) a deployable OpenAI-compatible proxy service that enables drop-in integration of adaptive reasoning into real-world applications. We further provide a demo visual debugger for inspecting the reasoning trajectories, intermediate selection decisions, and alternative reasoning paths. Empirical results on mathematical and coding tasks reveal the performance-compute trade-offs of TTC scaling strategies and scoring methods and demonstrate that ThinkBooster provides practical gains in real-world tasks. The code is available online under an MIT license.",
+      "url": "https://arxiv.org/abs/2606.06915",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.06902",
+      "title": "TALAN: Task-Aligned Latent Adaptation Networks for Targeted Post-Training of Large Language Models",
+      "authors": [
+        "Chengkai Zhang",
+        "Ziteng Liu",
+        "Junpu Wang",
+        "Zeyi Tao",
+        "Yang Wang",
+        "Sagar Chordia",
+        "Qin Huang"
+      ],
+      "abstract": "Targeted post-training aims to improve reasoning, math, and code without degrading strengths. Low-rank adapters are efficient but task-global; activation interventions are input-aware but often require separate probes, vectors, or inference-time steering. We introduce TALAN (Task-Aligned Latent Adaptation Networks), a sequence-conditioned latent side path inserted into a transformer's residual stream and co-trained with a low-rank adapter in one SFT loop. TALAN compresses the active sequence into latent memory, remixes it into token-level perturbations, and writes them back through a controlled residual update. It is configured along six axes: insertion location, memory size, mixer, writeback rule, trainability scope, and gradient scale.\n  Across four Qwen3-family backbones and four STEM/code benchmarks, TALAN improves matched LoRA and DoRA baselines. With LoRA, it yields a +1.41 point cross-model mean gain, positive on all four backbones and non-negative on all 16 model-benchmark cells. With DoRA, it yields a +1.85 point mean gain, positive on all backbones and on 13 of 16 cells. Paired seed checks support positive average effects but show nontrivial variance, so we treat them as sensitivity checks. Cost is small: <1% trainable parameters relative to the backbone and 1.01-1.02x inference overhead versus matched LoRA. A Llama-3.2-1B transfer probe is also positive under LoRA and rsLoRA across seven paired seeds, supporting a transfer beyond Qwen.\n  Internal-state analyses suggest TALAN is a small complementary activation intervention. The matched adapter update is 80-1,700x larger than the TALAN perturbation, yet their directions have near-zero cosine; per-layer measurements show this small orthogonal perturbation propagates and amplifies through depth. TALAN offers a practical platform for studying steerable activation-level adaptation within standard adapter-based post-training.",
+      "url": "https://arxiv.org/abs/2606.06902",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.07412",
+      "title": "Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills",
+      "authors": [
+        "Chuan Xiao",
+        "Zhengbo Jiao",
+        "Shaobo Wang",
+        "Wei Wang",
+        "Bing Zhao",
+        "Hu Wei",
+        "Linfeng Zhang",
+        "Lin Qu"
+      ],
+      "abstract": "LLM-driven software engineering agents have become a central testbed for real-world language-model capability, yet their training remains limited by the availability of high-quality SWE tasks. Existing synthetic data methods typically create tasks through fixed mutation or bug-injection procedures, making the resulting distributions largely independent of the agent's own weaknesses and training progress. We introduce Socratic-SWE, a closed-loop self-evolution framework that reuses the agent's historical solving traces as a source of training signal. Rather than treating traces only as evidence for reward computation, Socratic-SWE distills them into structured agent skills that summarize recurring failures and effective repair patterns. These skills then guide the generation of targeted repair tasks in real repositories. Candidate tasks are checked through execution-based validation and scored with a solver-gradient alignment reward, so that the retained tasks are both verifiable and useful for improving the Solver. The updated Solver produces new traces, enabling the task curriculum to adapt over successive rounds. Across SWE-bench Verified, SWE-bench Lite, SWE-bench Pro, and Terminal-Bench 2.0, Socratic-SWE consistently improves over self-evolving baselines under the same compute budget, reaching 50.40% on SWE-bench Verified after three iterations. These results suggest that solving traces can serve as a scalable substrate for self-evolving SWE agents.",
+      "url": "https://arxiv.org/abs/2606.07412",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8855
+    },
+    {
+      "id": "2606.06825",
+      "title": "Progress-SQL: Improving Reinforcement Learning for Text-to-SQL via Progressive Rewards",
+      "authors": [
+        "Shihao Zhang",
+        "Xiaoman Wang",
+        "Yuan Liu",
+        "Yunshi Lan",
+        "Weining Qian"
+      ],
+      "abstract": "Reinforcement learning has recently shown promise in improving large language models for Text-to-SQL generation, yet existing methods typically optimize one-shot rewards defined over a single SQL state. Such rewards provide limited guidance for iterative SQL correction and are insufficient to capture the improvement of multi-turn SQL refinement. In this paper, we propose Progress-SQL, a multi-turn reinforcement learning framework with progressive rewards for Text-to-SQL. Our approach introduces an Oracle-guided Diagnostic Tree (ODT), which abstracts SQL queries into clause-level structural profiles and produces diagnostic feedback for next-turn refinement. To provide dense and robust reward signals, we combine ODT-based structural alignment with lexical alignment and define a progressive reward that measures the improvement from the initial SQL to the final SQL. We further incorporate a progression latency reward that favors earlier correctness and an execution status reward that encourages recovery from the invalid SQL. Experiments on BIRD, Spider, and Spider robustness variants demonstrate that our method consistently improves Text-to-SQL performance across both primary and robustness evaluations.",
+      "url": "https://arxiv.org/abs/2606.06825",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8849
+    },
+    {
+      "id": "2606.06787",
+      "title": "AdMem: Advanced Memory for Task-solving Agents",
+      "authors": [
+        "Runzhe Wang",
+        "Huilin Lu",
+        "Shengjie Liu",
+        "Li Dong",
+        "Jason Zhu"
+      ],
+      "abstract": "Large Language Models (LLMs) show promise as tool-using agents but remain limited in long-horizon tasks that require remembering, organizing, and reusing knowledge. Prior memory approaches aim to resolve the situation, but mainly focus on storing factual information. Recent work on procedural memory improves task reuse, yet often reduces to replaying past successes without addressing failure cases or online scalability. We introduce a unified and automatic memory framework that integrates semantic, episodic, and procedural memory in a bi-level design combining short-term and long-term stores. A multi-agent architecture with actor, memory, and critic agents enables automatic memory generation, reward annotation, and adaptive retrieval. Long-term memory is managed through reward-based evaluation, merging, and pruning, ensuring scalability and continual improvement. Experiments across various environments show that our approach improves robustness and success on long multi-turn tasks compared to existing baselines. This work highlights the importance of comprehensive, adaptive memory for advancing LLM-based agents.",
+      "url": "https://arxiv.org/abs/2606.06787",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8848
+    },
+    {
+      "id": "2606.07127",
+      "title": "Learning Explicit Behavioral Models with Adaptive Questions and World-Model Probes",
+      "authors": [
+        "Hikaru Shindo",
+        "Yu Deng",
+        "Teng Cao",
+        "Quentin Delfosse",
+        "Christopher Tauchmann",
+        "Jannis Blüml",
+        "Gopika Sudhakaran",
+        "Kristian Kersting"
+      ],
+      "abstract": "Interactive agents trained only against task return can achieve high scores while failing to represent the mechanisms that make their actions succeed. This makes brittle behavior difficult to diagnose and limits adaptation when environment dynamics change. Existing LLM reflection and policy-code repair can revise behavior from failed trajectories, but questions and world-understanding tests are usually used only after training. We introduce an Explicit Symbolic Behavioral Model (ESBM), a trainable behavioral model that couples task performance with evidence-grounded question answering and executable mechanism prediction. An ESBM represents behavior through typed predicates, weighted rules, bounded options and mechanism memory; the mechanism layer predicts symbolic events, object changes, rewards and terminal consequences under action interventions. After each rollout, adaptive questions and active world-model probes convert score failures, QA errors and transition-prediction errors into constraints for local ESBM edits. Candidate models are selected by a multi-criterion rule that jointly evaluates task score, answerability and active world-model consistency. Under the tested Atari-style protocols, ESBM learns high-scoring policies while producing explicit answers and executable mechanism predictions, indicating that adaptive questions can serve as both training pressure and reusable benchmarks for mechanistic policy learning in this setting.",
+      "url": "https://arxiv.org/abs/2606.07127",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8842
+    },
+    {
+      "id": "2606.07020",
+      "title": "MADE: Beyond Scoring via a Multilingual Agentic Diagnosing Engine for Fine-Grained Evaluation Insights",
+      "authors": [
+        "Yilun Liu",
+        "Miao Zhang",
+        "Shimin Tao",
+        "Minggui He",
+        "Chunguang Zhao",
+        "Chenxin Liu",
+        "Li Zhang",
+        "Chen Liu",
+        "Cheng Qian",
+        "Liqun Deng",
+        "Xiaojun Meng",
+        "Daimeng Wei"
+      ],
+      "abstract": "Multilingual and multicultural benchmarks now cover dozens of languages and model families, but the resulting score landscapes remain metric-rich and insight-poor, necessitating fine-grained multilingual post-evaluation diagnosis. However, single LLMs and open-ended agents are easily swamped by the long, noisy diagnostic input, and no reusable taxonomy exists for it. To address this, we propose MADE, a Multilingual Agentic Diagnosing Engine that decomposes post-evaluation analysis into planning, aggregate analysis, instance-level case inspection, multilingual and cultural reflection, and grounded report synthesis. MADE is paired with an expert-led 54-query and 15-language diagnostic set, evaluated on top of a large-scale multilingual evaluation substrate (33 model families, 11 benchmarks, 26 languages, 34 cultures, 8.66M evaluation records). Experiments show that MADE outperforms the strongest shared baseline by 47% in diagnosis report quality and is preferred by human multilingual experts in 87.9% of pairwise comparisons. Applied with multilingual experts, MADE further surfaces four actionable findings on deployment, iteration, and cross-cultural pitfalls, turning benchmark score tables into model-selection and remediation guidance.",
+      "url": "https://arxiv.org/abs/2606.07020",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.884
+    },
+    {
+      "id": "2606.07218",
+      "title": "HKVM-RAG: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop RAG",
+      "authors": [
+        "Mingyu Zhang",
+        "Ying Ma"
+      ],
+      "abstract": "Multi-hop RAG poses a data-engineering problem beyond passage matching: under fixed retrieval budgets, a system must organize retrieved text into evidence units that expose answer chains. Dense retrievers score passages independently, while graph-based memories make associations explicit but often rely on pairwise or entity-centered keys that fragment multi-hop evidence. We present HKVM-RAG, a key-value-separated evidence-organization layer. It assembles answer-path hyperedges from cached passage-level LLM evidence tuples and uses them as retrieval keys, while retaining passage text as answer values. To isolate key-space design, our fixed-substrate protocol holds the tuple cache, candidate passages, reader, and evaluation budget constant across pairwise graph and hypergraph variants. Weighted hypergraph key-value retrieval improves over KG-PPR by +3.426 F1 on 2WikiMultiHopQA and +3.592 F1 on MuSiQue; HotpotQA shows that higher structured support coverage need not yield standalone answer-F1 gains. We therefore study WHG-KV as an evidence-control signal rather than a dense-retrieval replacement. Oracle and train-to-dev analyses identify support selection as repairable, and a dense-aware controller combines frozen ColBERTv2 and HKVM rank/score features using out-of-fold HKVM predictions. It reaches 88.846, 65.073, and 85.810 F1 on the three benchmarks, improving over ColBERTv2 by +11.084, +6.763, and +5.966 F1. Source-level ablations show that matched non-WHG structured signals do not match the WHG-KV gains. These results provide bounded evidence that key-value-separated hypergraph organization can serve as a reusable evidence-control mechanism for multi-hop RAG.",
+      "url": "https://arxiv.org/abs/2606.07218",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8838
+    },
+    {
+      "id": "2606.06920",
+      "title": "The Fine-Tuning Trap: Evaluating Negative Transfer and the Role of PEFT in Sub-1B Mathematical Reasoning",
+      "authors": [
+        "Rahul Nair",
+        "Chun Tao"
+      ],
+      "abstract": "Deploying Small Language Models (SLMs) on edge devices requires efficient fine-tuning strategies that adapt models to new tasks without degrading their general capabilities. In this study, we benchmark five sub-1B models (135M-1B) on mathematical reasoning tasks and uncover a critical vulnerability: Full Fine-Tuning (Full FT) actively harms performance in models under 300M parameters, often dropping accuracy below zero-shot baselines. This \"negative transfer\" makes Parameter-Efficient Fine-Tuning (PEFT) not just an efficiency preference, but a stability requirement. We find that while Low-Rank Adaptation (LoRA) and Weight-Decomposed LoRA (DoRA) perform comparably, their strengths vary by task; DoRA excels in complex reasoning (GSM8K), while LoRA dominates pattern matching (OrcaMath). In particular, Full FT is outperformed by LoRA on aligned models (Qwen2.5-0.5B) and even by simple 5-shot In-Context Learning on the smallest architectures (SmolLM2-135M). Based on these findings, we recommend defaulting to PEFT for all aligned sub-1B models and caution against Full FT for any architecture smaller than 500M parameters to prevent catastrophic forgetting. Reproduction of this work can be found at https://github.com/gulguluu/tiny-slm-finetune-compare.",
+      "url": "https://arxiv.org/abs/2606.06920",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "github_url": "https://github.com/gulguluu/tiny-slm-finetune-compare.",
+      "score": 0.8837
+    },
+    {
+      "id": "2606.06667",
+      "title": "The Piggyback Hypothesis of Generalization: Explaining and Mitigating Emergent Misalignment",
+      "authors": [
+        "Jiachen Zhao",
+        "Zhengxuan Wu",
+        "Aryaman Arora",
+        "Yiyou Sun",
+        "David Bau",
+        "Weiyan Shi"
+      ],
+      "abstract": "The mechanisms behind LLMs' broad over-generalization beyond training examples remain unclear. Emergent misalignment (EM) offers a striking case study: finetuning on narrow tasks induces broad misalignment to semantically-unrelated test domains. In this work, we propose the Piggyback Hypothesis: the chat-template tokens can piggyback the finetuned behaviour onto out-of-domain queries. We validate this hypothesis by showing that subtle perturbations to the prefix (tokens preceding all user queries), or patching the prefix representations with those from the unfinetuned model, can restore alignment without changing the user query. Building on this finding, we propose Token-Regularized Finetuning (TReFT), which regularizes specific token representations during training to mitigate EM. Across different models and multiple EM-inducing datasets, TReFT reduces EM while preserving in-domain learning. On Llama-3.1-8B finetuned on the legal domain, TReFT achieves 33.5% more EM reduction than data interleaving with a retain set of aligned examples. We further show that TReFT extends to other narrow-finetuning settings, including abstention, tool use, and refusal (off-topic generalization is reduced by 54.3% on average), supporting the Piggyback Hypothesis. Broadly, our work highlights that LLMs may learn and generalize in unintended ways and suggests a path toward more constrained finetuning. It also calls for further study of how shared input features can piggyback model behavior across domains.",
+      "url": "https://arxiv.org/abs/2606.06667",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-04",
+      "score": 0.8826
+    },
+    {
+      "id": "2606.07410",
+      "title": "A Comprehensive Anatomy of Human and DeepSeek-R1 LLM Mathematical Reasoning",
+      "authors": [
+        "Yuxiang Chen",
+        "Jun Wang"
+      ],
+      "abstract": "The emergence of \"Aha moments\" in large language models, particularly DeepSeek-R1-0120, has raised the question of whether these systems genuinely reason or merely imitate the appearance of reasoning. We conduct a comprehensive empirical comparison between model and human reasoning across all 30 problems from AIME 2025, exhaustively annotating 10,247 reasoning steps into five functional categories: Analysis, Inference, Branch, Backtrace, and Reflection. We find a clear structural difference. Human solutions maintain a compact alternation between analysis and deduction, whereas DeepSeek-R1 frequently revisits intermediate results, performs shallow and often unnecessary verification, and loops through local checks without meaningful logical progress. We describe this as topological mimicry: reproducing the surface form of reasoning without its functional role. Despite this, we identify two signals of genuine reasoning. First, successful traces exhibit stable use of branching and backtracking, while failed traces either underuse or overuse exploratory actions. Second, reflection is only effective when placed within deductive inference; reflections trapped in analysis loops focus on local numerical details while missing global logical errors. These findings suggest that current long-CoT models may be rewarded more for the appearance of reasoning than for genuine deductive progress. We discuss directions for improving evaluation and training, including measuring cross-trace stability, penalising \"spinning-wheel\" traces, encouraging deeper logical correction, and reallocating inference-time compute toward deduction and backtracking. Overall, reasoning quality depends not simply on how much reflection occurs, but on whether reflection appears consistently and at the appropriate logical scale.",
+      "url": "https://arxiv.org/abs/2606.07410",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-05",
+      "score": 0.8818
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

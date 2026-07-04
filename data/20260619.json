@@ -1,0 +1,402 @@
+{
+  "date": "2026-06-19",
+  "collected_at": "2026-06-19T14:03:48.083732+09:00",
+  "papers": [
+    {
+      "id": "2606.20333",
+      "title": "SoftSkill: Behavioral Compression for Contextual Adaptation",
+      "authors": [
+        "Xijia Tao",
+        "Yihua Teng",
+        "Xinyu Fu",
+        "Ziru Liu",
+        "Kecheng Chen",
+        "Yuzhi Zhao",
+        "Suiyun Zhang",
+        "Rui Liu",
+        "Lingpeng Kong"
+      ],
+      "abstract": "Agent skills are commonly deployed as natural-language Markdown files that encode answer policies, evidence-use habits, and task procedures. These files are readable and portable, but they are consumed indirectly: for each task instance, a frozen language model must translate a long textual artifact into generation-time behavior. This paper asks whether a natural-language skill can instead initialize a compact continuous context object, refined by a trainable soft delta while the base model remains frozen. We propose SoftSkill, a frozen-backbone method that tunes such soft skills with next-token prediction and deploys them as latent behavioral priors at inference time. In our main single-round setting, a length-32 SoftSkill prefix on Qwen3.5-4B improves over no-skill prompting by 8.3 points on SearchQA, 42.1 points on LiveMath, and 1.3 points on DocVQA. Relative to SkillOpt, SoftSkill improves accuracy by 5.2 points on SearchQA and 12.5 points on LiveMath, while replacing hundreds to thousands of Markdown skill tokens with a few virtual tokens. We further study agentic execution as a harder boundary case, where sparse trajectory imitation provides useful signal but does not yet robustly compress long-horizon procedural behavior. More broadly, the results suggest that some task skills are better treated not as additional Markdown to be reinterpreted at inference time, but as compact latent controls over how a frozen model enters the task.",
+      "url": "https://arxiv.org/abs/2606.20333",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8955
+    },
+    {
+      "id": "2606.19847",
+      "title": "AtomMem: Building Simple and Effective Memory System for LLM Agents via Atomic Facts",
+      "authors": [
+        "Yanyu Yao",
+        "Shangze Li",
+        "Zhi Zheng",
+        "Hui Zheng",
+        "Qi Liu",
+        "Tong Xu",
+        "Enhong Chen"
+      ],
+      "abstract": "Large language models (LLMs) demonstrate strong reasoning and generation abilities, but their fixed context windows limit long-term information accumulation and reuse across multi-session interactions. Existing memory-augmented systems often construct memory in a coarse and unstable manner, relying on inefficient memory representations or unstable unconstrained updates. To address these challenges, we propose AtomMem, a long-term memory system designed for value-dense storage and stable memory evolution. AtomMem introduces a Fact Executor, which selectively extracts high value atomic facts from long form interactions to serve as highly efficient memory representations. Subsequently, AtomMem organizes these facts into hierarchical event structures and temporal profiles, capturing coherent episodic contexts and tracking dynamically evolving user attributes over time. During retrieval, the system activates an associative memory graph to connect fragmented memories. Experiments on the LoCoMo benchmark confirm that AtomMem achieves state-of-the-art performance across various reasoning tasks, offering a scalable and economically viable solution for deploying intelligent personalized agents.",
+      "url": "https://arxiv.org/abs/2606.19847",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8925
+    },
+    {
+      "id": "2606.19857",
+      "title": "Large Language Models Do Not Always Need Readable Language",
+      "authors": [
+        "Jiayi Zhu",
+        "Haoxuan Peng",
+        "Junxi Wang",
+        "Liang Ke",
+        "Chen Zhang",
+        "Linfeng Zhang"
+      ],
+      "abstract": "Large language models (LLMs) are commonly prompted and interfaced with human-readable natural language, even when the intended reader is another model. This paper investigates whether semantic information can be encoded in compact, non-standard textual forms that sacrifice human readability while remaining recoverable by LLMs. We refer to this class of model-centric textual representations as BabelTele, approached here not as a fixed protocol but as an empirical probe into LLMs' capacity to generate and interpret such representations. Through readability diagnostics, model likelihood measures, human questionnaires, and downstream task evaluations, we find that BabelTele can substantially depart from ordinary natural language while preserving core semantics for instruction-tuned LLMs. As a task-agnostic representational paradigm, BabelTele demonstrates high information density, maintaining 99.5% semantic fidelity even when the text volume is condensed to 27.9% of its original length. We further evaluate its semantic robustness in cross-model transfer, agent memory, and multi-agent communication. Results suggest that BabelTele can reduce context overhead while generally maintaining reliable downstream performance, although its effectiveness depends on the compressor-reader pair and task setting. These findings indicate that human readability, natural-language typicality, and model-side semantic recoverability can be partially decoupled, opening a path toward model-native representations in future exploration of LLM systems.",
+      "url": "https://arxiv.org/abs/2606.19857",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8904
+    },
+    {
+      "id": "2606.20245",
+      "title": "Navigating Unreliable Parametric and Contextual Knowledge: Explicit Knowledge Conflict Resolution for LLM Inference",
+      "authors": [
+        "Huang Peng",
+        "Jiuyang Tang",
+        "Weixin Zeng",
+        "Hao Xu",
+        "Xiang Zhao"
+      ],
+      "abstract": "Large language models (LLMs) have achieved strong performance across a wide range of language-based tasks by leveraging both extensive parametric knowledge and in-context learning ability, enabling them to incorporate external information provided in the input prompt. However, the integration of external knowledge can introduce conflicts, not only between the model's internal parametric knowledge and the external information, but also among multiple pieces of external contexts. Existing approaches typically assume that either the model or the provided context is reliable, overlooking the possibility that both sources may contain errors, and avoid conflicts by privileging one source over the other, rather than actively resolving inconsistencies. To address these limitations, we propose a novel framework MACR for LLM knowledge conflict resolution that moves beyond the conventional binary choice paradigm and incorporates an explicit conflict-resolution mechanism based on a multi-agent reasoning approach. Specifically, we first propose an adaptive knowledge assessment and retrieval approach that employs a modified semantic entropy measure to quantify an LLM's confidence in its answer to a given query. Based on this confidence estimation, MACR either externalizes the model's internal knowledge as textual representations or retrieves relevant external knowledge when internal knowledge is insufficient, generating basic contexts for subsequent reasoning. Then we introduce an inductive multi-agent reasoning framework with three specialized agents that, respectively, induce explicit rules, analyze potential conflicts, and resolve inconsistencies across all available contexts. Empirical results demonstrate that MACR significantly outperforms state-of-the-art baselines across benchmarks, while also providing interpretable resolutions of explicit conflicts.",
+      "url": "https://arxiv.org/abs/2606.20245",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8893
+    },
+    {
+      "id": "2606.19868",
+      "title": "A Systematic Evaluation of Black-Box Uncertainty Estimation Methods for Large Language Models",
+      "authors": [
+        "Jiayi Wang",
+        "Xu-Yao Zhang"
+      ],
+      "abstract": "Although large language models (LLMs) have shown strong capabilities across a wide range of tasks, their outputs often remain unreliable and may contain hallucinations, making uncertainty estimation (UE) essential for building trustworthy LLMs. In practice, many mainstream LLMs are only accessible through restricted APIs, where internal signals such as logits and hidden states are unavailable, making black-box UE especially important. However, existing work on black-box UE for LLMs remains fragmented in methodology and lacks a unified empirical comparison. To address this gap, we present a systematic review of black-box UE methods and organize them into five categories: verbalization-based, sampling-based, explanation-based, multi-agent, and hybrid methods. We further build a unified evaluation framework and benchmark 24 representative methods across 4 models and 4 dataset settings. Our results show that no single method consistently dominates across all settings. Nevertheless, methods that reason over and compare candidates in the answer space are generally effective, and hybrid methods that combine multiple uncertainty signals perform well under most conditions. By releasing the benchmark data and a unified evaluation framework, we aim to facilitate reproducible comparisons and support future research, while our empirical findings provide practical guidance for developing future black-box UE methods for LLMs.",
+      "url": "https://arxiv.org/abs/2606.19868",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8892
+    },
+    {
+      "id": "2606.19919",
+      "title": "ADaPT: Token-Level Decoupling for Efficient Large Reasoning Models",
+      "authors": [
+        "Tingyun Li",
+        "Zishang Jiang",
+        "Jinyi Han",
+        "Xinyi Wang",
+        "Sihang Jiang",
+        "Han Xia",
+        "Zhaoqian Dai",
+        "Shuguang Ma",
+        "Fei Yu",
+        "Jiaqing Liang",
+        "Yanghua Xiao"
+      ],
+      "abstract": "Large reasoning models rely on long chain-of-thought to achieve strong performance, but applying such reasoning uniformly incurs high computational cost. Existing efficiency-oriented methods attempt to shorten or mix reasoning strategies, yet often degrade reasoning capability. We identify the root cause as sequence-level coupling between efficiency incentives and correctness optimization, which implicitly penalizes long but correct reasoning trajectories. To address this issue, we propose Adaptive Dual-Process Thinking (ADaPT), a token-level dual-process framework that explicitly decouples efficiency and correctness signals during training. ADaPT introduces a mode-selection token to control fast and slow reasoning, applying efficiency-related rewards exclusively to this token to avoid penalizing correct long reasoning while encouraging efficiency when appropriate. Moreover, ADaPT enables precise and continuous control over the efficiency-performance trade-off at inference time: by adjusting the generation probability of the mode-selection token, a single trained model can smoothly move along the efficiency-performance Pareto frontier. Extensive experiments demonstrate that ADaPT significantly reduces inference cost while maintaining strong reasoning performance across multiple benchmarks.",
+      "url": "https://arxiv.org/abs/2606.19919",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8872
+    },
+    {
+      "id": "2606.20470",
+      "title": "Analyzing Defensive Misdirection Against Model-Guided Automated Attacks on Agentic AI Systems",
+      "authors": [
+        "Reza Soosahabi",
+        "Vivek Namsani"
+      ],
+      "abstract": "Agentic AI systems increasingly rely on language-model components to interpret instructions, process external data, invoke tools, and coordinate with other agents. These capabilities make prompt-injection and jailbreak attacks more consequential, especially as attackers adopt model-guided automation to scale probing, prompt refinement, and response evaluation. This work analyzes the resulting attack-defense setting through a probabilistic model of a target system, its defense mechanism, and the attacker's automated judge. Our analysis shows that conventional detect-and-block defenses can allow attacker success rate (ASR) to approach one as the query budget grows, since predictable refusals provide useful feedback to automated search. We then examine detect-and-misdirect, where detected malicious interactions receive controlled, non-operational responses designed to induce false-positive errors in the attacker's judge. This strategy reduces the positive predictive value of attacker-selected candidates and yields a bounded asymptotic ASR. We evaluate a proof-of-concept realization of this strategy through Contextual Misdirection via Progressive Engagement (CMPE), a lightweight conversational misdirection method designed to replace predictable refusal text with safe but strategically misleading responses in automated jailbreak settings. On jailbreak benchmarks, CMPE reduces estimated ASR upper bounds by up to two orders of magnitude and nearly eliminates verified attack success in end-to-end PAIR and GPTFuzz attack runs.",
+      "url": "https://arxiv.org/abs/2606.20470",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8862
+    },
+    {
+      "id": "2606.19812",
+      "title": "Human-on-the-Loop Orchestration for AI-Assisted Legal Discovery",
+      "authors": [
+        "Anushree Sinha",
+        "Srivaths Ranganathan",
+        "Abhishek Dharmaratnakar",
+        "Debanshu Das"
+      ],
+      "abstract": "Autonomous Large Language Model (LLM) agents are increasingly deployed in electronic discovery (e-discovery), where compounding errors across multi-step reasoning chains can constitute legal malpractice. Unlike single-turn retrieval, agentic workflows operating over privileged document corpora exhibit a class of failure we term \"trajectory collapse\": an early misclassification silently propagates, rendering an entire privilege review invalid. This paper makes three contributions. First, we propose a structured taxonomy of agentic failures in legal information retrieval, organized by functional stage. Second, we introduce a four-layer verification architecture -- spanning planning, reasoning, execution, and uncertainty quantification -- designed to intercept these failures before they compound. Third, we present a preliminary simulation study on a synthetic e-discovery corpus that demonstrates how mandatory Human-on-the-Loop (HOTL) escalation thresholds reduce privilege-waiver risk relative to fully autonomous baselines. Our results suggest that calibrated uncertainty thresholds can reduce privilege-waiver risk by up to 61% versus fully autonomous deployment, while routing fewer than one quarter of documents to attorney review.",
+      "url": "https://arxiv.org/abs/2606.19812",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8853
+    },
+    {
+      "id": "2606.19788",
+      "title": "CombEval: A Framework for Evaluating Combinatorial Counting in Large Language Models",
+      "authors": [
+        "Yuxu Zhou",
+        "Ondřej Kuželka",
+        "Yuyi Wang",
+        "Yuanhong Wang",
+        "Yi Chang"
+      ],
+      "abstract": "We present CombEval, a dynamic benchmark for evaluating combinatorial counting in large language models. CombEval represents each problem as a typed Cofola specification over entities, combinatorial objects, object dependencies, and constraints, enabling controlled generation of natural-language counting problems with exact solver-verified answers. Unlike static collections, CombEval supports systematic variation of object type, entity scale, constraint count, and reasoning depth. We evaluate 11 LLMs under direct and code-augmented settings and find that models remain brittle on ordered objects, indistinguishable elements, relatively positional constraints, and nested object dependencies. Error analysis further identifies failures in constraint interpretation and counting principles. CombEval provides a diagnostic testbed for studying when and why LLMs fail at combinatorial reasoning. The code and generated benchmark suites are publicly available at \\url{https://github.com/YuxuZhou-CN/combination-problem-generation}.",
+      "url": "https://arxiv.org/abs/2606.19788",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "github_url": "https://github.com/YuxuZhou-CN/combination-problem-generation}.",
+      "score": 0.8843
+    },
+    {
+      "id": "2606.19714",
+      "title": "AURA: Adaptive Uncertainty-aware Refinement for LLM-as-a-Judge Auditing",
+      "authors": [
+        "Zilong Zhang",
+        "Yi-Ting Hung",
+        "Weiyi He",
+        "Junxi Zhang",
+        "Lei Ding",
+        "Chi-Kuang Yeh"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used as judges for open-ended generation, as large-scale human evaluation is often expensive and difficult to scale, yet their preferences remain imperfect proxies for human judgment. Existing auditing pipelines often assume that a reliable subset of examples or clean supervision signals are available beforehand, for example from human annotation, heuristic filtering, or the outputs of strong judges. In LLM evaluation, this assumption is fragile: the initial split may inherit judge bias, while human verification is typically too scarce to define stable groups at scale. We propose AURA, an adaptive uncertainty--aware refinement framework for auditing pairwise LLM--as--a--judge decisions under selected human verification. AURA iteratively learns a human-consistency signal, propagates reliable evidence, and prioritizes uncertain comparisons for human review. The key idea is to treat trust in a judge as a latent quantity that is progressively refined as evidence accumulates. We provide a compact formulation, a stable refinement procedure, and a comprehensive evaluation on both synthetic and real pairwise LLM-answer data.",
+      "url": "https://arxiv.org/abs/2606.19714",
+      "categories": [
+        "stat.ML",
+        "cs.AI",
+        "cs.LG",
+        "stat.CO",
+        "stat.ME"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8836
+    },
+    {
+      "id": "2606.20002",
+      "title": "Connect the Dots: Training LLMs for Long-Lifecycle Agents with Cross-Domain Generalization Via Reinforcement Learning",
+      "authors": [
+        "Yanxi Chen",
+        "Weijie Shi",
+        "Yuexiang Xie",
+        "Boyi Hu",
+        "Yaliang Li",
+        "Bolin Ding",
+        "Jingren Zhou"
+      ],
+      "abstract": "This work presents a general framework for training large language models (LLMs) to \"Connect the Dots\" (CoD), a meta-capability required by long-lifecycle agents: as an LLM-based AI agent gets deployed in an environment, it solves a long sequence of tasks while continuously exploring the environment, learning from its own experiences, and iteratively self-updating its context about the environment, thereby achieving progressively better performance on future tasks conditioned on the updated context. Major components of the CoD framework include: (1) algorithm design and infrastructure for end-to-end reinforcement learning (RL) with long rollout sequences interleaving solve-task and update-context episodes; (2) tasks and environments for incentivizing and eliciting the targeted meta-capability in LLMs during training, as well as for faithfully measuring progress during evaluation. We present proof-of-concept implementations of the CoD framework, including a GRPO-style RL algorithm with fine-grained credit assignment, as well as tasks and environments tailored to the targeted meta-capability (rather than domain-specific LLM capabilities or standard task-by-task RL). Empirical results validate the efficacy of end-to-end RL training in the CoD setting, and demonstrate the potential for out-of-distribution generalization -- within the training domains, across different domains, and from CoD to Ralph-loop settings -- of the elicited meta-capability. Our investigation of CoD connects several lines of prior works, and opens up new opportunities for advancing LLMs and AI agents. To facilitate further research and applications, we release our implementations at \\url{https://github.com/agentscope-ai/Trinity-RFT/tree/research/cod/examples/research_cod}.",
+      "url": "https://arxiv.org/abs/2606.20002",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "github_url": "https://github.com/agentscope-ai/Trinity-RFT/tree/research/cod/examples/research_cod}.",
+      "score": 0.8833
+    },
+    {
+      "id": "2606.20244",
+      "title": "SPOT-E: Test-Time Entropy Shaping with Visual Spotlights for Frozen VLMs",
+      "authors": [
+        "Bo Yin",
+        "Xiaobin Hu",
+        "Chengming Xu",
+        "Ruolin Shen",
+        "Mo Yang",
+        "Jiangning Zhang",
+        "Peng-Tao Jiang",
+        "Cheng Tan",
+        "Shuicheng YAN"
+      ],
+      "abstract": "Vision-language models (VLMs) often underperform on evidence intensive tasks because decisive visual evidence are small, localized, and easy to overlook, leading to failures in evidence readout even when high-level reasoning is intact. Prior inference-time visual interventions can improve grounding without retraining, but they are largely open-loop and lack a mechanism to verify whether highlighted evidence is actually used. We study answer-span prediction entropy as a model-internal feedback signal and show that naive entropy minimization is ambiguous, since low entropy may arise from evidence-grounded confidence or shortcut collapse. To resolve this ambiguity, we introduce low-entropy anchors and an entropy-shaping objective that reduces answer uncertainty while preserving baseline high-confidence tokens. We instantiate this principle in SPOT-E, a plug-and-play test-time method that produces question-conditioned spotlights, optimized per instance via light-weight tuning based on Group Relative Policy Optimization (GRPO). Across all benchmarks and different VLM families, SPOT-E yields consistent gains and improved robustness under visual corruptions. Code is publicly available at: \\url{https://github.com/YinBo0927/SPOT-E}",
+      "url": "https://arxiv.org/abs/2606.20244",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "github_url": "https://github.com/YinBo0927/SPOT-E}",
+      "score": 0.8831
+    },
+    {
+      "id": "2606.20227",
+      "title": "QMFOL: Benchmarking Large Language Model Reasoning via Quantifiable Monadic First-Order Logic Test Case Generation",
+      "authors": [
+        "Xinyi Zheng",
+        "Ling Shi",
+        "Tianlong Yu",
+        "Yongxin Zhao",
+        "Lorenz Goette",
+        "Kailong Wang"
+      ],
+      "abstract": "Large Language Models (LLMs) have made significant progress in reasoning, particularly in deductive reasoning, which is crucial for high-stakes decision-making. As models improve, evaluation benchmarks should evolve to keep pace. However, existing benchmarks lack fine-grained control over logical complexity and struggle to balance semantic diversity with logical consistency.\n  To address these issues, we propose QMFOL, an automated framework for generating monadic first-order logic reasoning tasks with quantifiable and controllable complexity. It constructs formal logical structures using conjunction and disjunction patterns, enabling precise control over reasoning depth, width, label types, and distractors. These structures are then translated into natural language via LLMs, with logical consistency ensured through round-trip verification using an external prover. Based on our framework, we build QMFOLBench, a benchmark comprising 2880 instances with 960 configurations across diverse logical and semantic dimensions. Evaluations on six large reasoning models (LRMs) and two LLMs show that performance degrades and computational overhead increases with rising logical complexity. Models perform better on True-labeled tasks than on False or Unknown ones, and exhibit sensitivity to semantic variation. Overall, QMFOL offers a scalable and reliable approach for constructing deductive reasoning benchmarks with controllable complexity, enabling more precise evaluation of reasoning capabilities in modern language models.",
+      "url": "https://arxiv.org/abs/2606.20227",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8828
+    },
+    {
+      "id": "2606.20517",
+      "title": "Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages",
+      "authors": [
+        "Maria Ivanova",
+        "Pavel Zadorozhny",
+        "Rodion Levichev",
+        "Ivan Petrov",
+        "Adamenko Pavel",
+        "Ivan Lopatin",
+        "Alexey Kutalev",
+        "Dmitrii Babaev"
+      ],
+      "abstract": "LiveCodeBench (LCB) has recently become a widely adopted benchmark for evaluating large language models (LLMs) on code-generation tasks. By curating competitive programming problems, constantly adding fresh problems to the set, and filtering them by release dates, LCB provides contamination-aware evaluation and offers a holistic view of coding capability. However, LCB remains restricted to Python, leaving open the question of whether LLMs can generalize across the diverse programming languages required in real-world software engineering.\n  We introduce Multi-LCB, a benchmark for evaluating LLMs across twelve programming languages, including Python. Multi-LCB transforms Python tasks from the LCB dataset into equivalent tasks in other languages while preserving LCB's contamination controls and evaluation protocol. Because it is fully compatible with the original LCB format, Multi-LCB will automatically track future LCB updates, enabling systematic assessment of cross-language code generation competence and requiring models to sustain performance well beyond Python.\n  We evaluated 24 LLMs for instruction and reasoning on Multi-LCB, uncovering evidence of Python overfitting, language-specific contamination, and substantial disparities in multilingual performance. Our results establish Multi-LCB as a rigorous new benchmark for multi-programming-language code evaluation, directly addressing LCB's primary limitation and exposing critical gaps in current LLM capabilities.",
+      "url": "https://arxiv.org/abs/2606.20517",
+      "categories": [
+        "cs.AI",
+        "cs.PL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8824
+    },
+    {
+      "id": "2606.20225",
+      "title": "Actionable Activation Directions for Detecting and Mitigating Emergent Misalignment Across Language Model Families",
+      "authors": [
+        "Abdul Rafay Syed"
+      ],
+      "abstract": "Fine-tuning language models on insecure code induces emergent misalignment with poorly understood internal structure. We investigate whether this misalignment corresponds to a causally actionable activation-space direction shared across architectures. Across four instruction-tuned model families (Qwen2.5-1.5B, Gemma-2-2B, Llama-3.2-1B, Ministral-3-3B) finetuned identically, a difference-in-means direction achieves 99.6% separation of aligned and misaligned activations at each model's final layer. Causal steering by subtracting this direction reduces code spillover by 21-51 points, while a secure-code control confirms content specificity. Cross-architecture transfer via ridge regression maps yields large behavioral suppression (up to 46 points) but fails specificity controls as random and orthogonal directions perform comparably. We identify a two-tier specificity structure: within-model directions are causally specific and actionable; cross-model directions are causally real but non-specific. An asymmetric transfer topology emerges, with Gemma and Qwen acting as geometric donors and Llama as a receiver. These findings define the limits of linear cross-architecture correction and recommend within-model probing for auditing.",
+      "url": "https://arxiv.org/abs/2606.20225",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.882
+    },
+    {
+      "id": "2606.19667",
+      "title": "CacheWeaver: Cache-Aware Evidence Ordering for Efficient Grounded RAG Inference",
+      "authors": [
+        "Kaizhen Tan",
+        "Rong Gu",
+        "Mingyuan Li"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) improves factual grounding, but it also lengthens prompts and raises prefill cost. Prefix caching in serving engines such as vLLM reduces this cost only when requests share the same token prefix. In grounded generation, however, adjacent queries may retrieve overlapping evidence in different orders, so set overlap does not become reusable prefix overlap. We present CacheWeaver, a lightweight prompt-layer method for cache-aware evidence ordering. The method keeps a prefix tree over recently served evidence sequences and uses a greedy walk to place the most reusable prefix first, while leaving the serving engine and retrieved evidence set unchanged. Across three vLLM configurations, the method lowers median time-to-first-token (TTFT) by about 20-33 percent relative to retrieval-order prefix caching, without hurting answer quality in our QA tests. The greedy policy reaches 97.5 percent of the median TTFT gain from oracle ordering, indicating that most reusable prefix locality can be recovered by a simple scheduling layer between retrieval and inference.",
+      "url": "https://arxiv.org/abs/2606.19667",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.882
+    },
+    {
+      "id": "2606.19660",
+      "title": "A Layered Security Framework Against Prompt Injection in RAG-Based Chatbots",
+      "authors": [
+        "Gulshan Saleem",
+        "Nisar Ahmed",
+        "Muhammad Imran Zaman",
+        "Ali Hassan"
+      ],
+      "abstract": "Prompt injection is ranked as the most critical vulnerability in large language model (LLM) deployments by the OWASP Top 10 for LLM Applications, yet existing defenses operate at isolated pipeline stages and remain incomplete. Input filters cannot inspect retrieved documents, while output monitors cannot prevent malicious payloads from reaching the model. Consequently, retrieval-augmented generation (RAG) chatbots remain vulnerable to indirect injection, where a poisoned knowledge-base document compromises every user whose query retrieves it. We present a three-layer framework that intercepts both direct and indirect prompt injection throughout the inference pipeline. Layer 1 screens user input using a rule-based pattern library and a fine-tuned semantic anomaly classifier. Layer 2 enforces a provenance-based instruction hierarchy during context assembly, preventing retrieved content from overriding operator policy. Layer 3 audits model output using a policy rule engine and semantic drift detector before delivery. A continuous audit loop aggregates structured logs and supports retraining to adapt the classifier to emerging attack patterns. The framework is model-agnostic and deploys as middleware without modifying the underlying LLM. Evaluation on 5,080 samples across GPT-4o, Llama 3, and Mistral 7B shows that the framework reduces Attack Success Rate (ASR) from 71.4\\% to 11.3\\%, outperforming the best single-layer baseline by 27.3 percentage points and a published guardrail system by 23.8 percentage points, while maintaining a 4.8\\% false positive rate and a median latency overhead of 61.2 ms. Ablation studies confirm that all three layers provide complementary protection and that their combined effect exceeds the sum of individual contributions.",
+      "url": "https://arxiv.org/abs/2606.19660",
+      "categories": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-17",
+      "score": 0.8819
+    },
+    {
+      "id": "2606.19771",
+      "title": "Beyond Entropy: Learning from Token-Level Distributional Deviations for LLM Reasoning",
+      "authors": [
+        "Xuanzhi Feng",
+        "Zhengyang Li",
+        "Zeyu Liu",
+        "Haoxi Li",
+        "Yuming Jiang",
+        "Bing Guo",
+        "Jingcai Guo",
+        "Jie Zhang",
+        "Song Guo"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has significantly advanced Large Language Model (LLM) reasoning; however, it faces a fundamental optimization instability: uniform token updates precipitate entropy collapse, leading to premature convergence to suboptimal strategies, whereas excessive Shannon Entropy maximization can cause entropy explosion, driving blind exploration toward incoherent reasoning chains. To resolve this dichotomy, we introduce the Independent Combinatorial Tokens (ICT) framework, which shifts the optimization focus from scalar uncertainty to the distributional properties of token logits. By leveraging the Jensen-Shannon (JS) divergence between token logits distributions, ICT identifies tokens with distinctive distributional patterns as critical branching points for guiding effective exploration in LLM reasoning. Our theoretical analysis, grounded in both Shannon and second-order Rényi entropy, proves that selectively updating on these tokens regulates policy concentration: it reduces the overall distribution uncertainty measured by Shannon entropy, while controlling probability concentration captured by second-order Rényi entropy. This dual effect prevents over-concentrated token generation from weakening exploration and effectively stabilizes the training landscape. Empirical results demonstrate that updating only the top 10% of unique tokens on Qwen2.5 (0.5B/1.5B/7B) models yields an average pass@4 improvement of 4.58%, with a maximum gain of 14.9%, over GRPO, 20-Entropy, and STAPO baselines across seven benchmarks spanning math, commonsense, and Olympiad-level problems.",
+      "url": "https://arxiv.org/abs/2606.19771",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8816
+    },
+    {
+      "id": "2606.19782",
+      "title": "AgentFinVQA: A Deployable Multi-Agent Pipeline for Auditable Financial Chart QA",
+      "authors": [
+        "Aravind Narayanan",
+        "Shaina Raza"
+      ],
+      "abstract": "Financial chart question answering in regulated settings demands more than accuracy: practitioners must know which answers to trust before acting on them, and many institutions cannot send client data to external model providers. Yet existing chart-QA agents are accuracy-focused and opaque, and most assume proprietary API access; to our knowledge, none combines auditability with on-premise deployability without significant accuracy compromise. We present AgentFinVQA, a multi-agent pipeline that decomposes each query into planning, OCR, legend grounding, visual inspection, and verification, recording every step in a traceable Model Evaluation Packet (MEP) per sample. On FinMME, AgentFinVQA improves $+7.68$ pp over a primary-backbone matched zero-shot baseline with a proprietary backbone (Gemini-3 Flash; 71.24% vs. 63.56%, McNemar $p \\approx 1.1 \\times 10^{-16}$), and $+4.84$ pp with open-weights Qwen3.6-27B-FP8 served locally. The verifier's verdict also serves as a useful confidence signal (68.2% vs. 55.6% exact accuracy on confirmed vs. revised answers), enabling human-in-the-loop review routing. Error analysis shows that question misunderstanding, legend confusion and extraction error account for nearly two-thirds of failures and are the categories least detected by the verifier, identifying clear directions for future work. Together these results show that auditable, on-premise financial chart QA is practical and that the open-weights system keeps most of the accuracy gains while enabling full data residency. We release our code to support reproducible evaluation.",
+      "url": "https://arxiv.org/abs/2606.19782",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8805
+    },
+    {
+      "id": "2606.19668",
+      "title": "Code-Switching Reveals Language Anchoring in Multilingual LLMs",
+      "authors": [
+        "Jeonghyun Park",
+        "Seunghyun Yoon",
+        "Yonghyun Jun",
+        "Hwanhee Lee"
+      ],
+      "abstract": "Multilingual Large Language Models (MLLMs) are increasingly expected to handle Code-Switched (CS) inputs, yet mixing languages frequently degrades performance relative to source- or target-language monolingual counterparts. To understand this degradation, we use grammar-forced CS as a controlled diagnostic setting for locating CS representations relative to their source and target counterparts. We introduce Anchor Bias, a geometric measure that quantifies language anchoring, whether a CS hidden state aligns closer to its source or target language counterpart. Across diverse MLLMs, Anchor Bias reveals a consistent grammar-frame effect: source-framed CS stays source-anchored, whereas target-framed CS shifts target-ward and shows larger Question Answering (QA) degradation. Motivated by this representational pattern, we propose CANVAS (Contextual Anchor-based Neural Vector Alignment Steering), an inference-time intervention that extracts a source-side canvas from the input and softly steers target-language hidden states toward the source anchor during prefill. CANVAS consistently recovers QA F1 across MLLMs and CS conditions, showing that internal anchoring signals provide an actionable target for mitigating CS inference failures.",
+      "url": "https://arxiv.org/abs/2606.19668",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8804
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

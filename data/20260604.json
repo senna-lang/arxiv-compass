@@ -1,0 +1,374 @@
+{
+  "date": "2026-06-04",
+  "collected_at": "2026-06-04T13:47:41.415949+09:00",
+  "papers": [
+    {
+      "id": "2606.04535",
+      "title": "Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models",
+      "authors": [
+        "Boyan Han",
+        "Yiwei Wang",
+        "Yi Song",
+        "Yujun Cai",
+        "Chi Zhang"
+      ],
+      "abstract": "Diffusion large language models (dLLMs) offer bidirectional attention and parallel generation, enabling them to exploit global context and naturally support format-constrained tasks like parseable JSON or reasoning templates. While straightforward fixed anchors can enforce such constraints, they often impose rigid spans, leading to truncated reasoning or redundant content. To overcome this, we propose Dynamic Infilling Anchors (DIA), a training-free method that dynamically estimates end-anchor positions to adjust generation length before iterative infilling. This flexible mechanism ensures structural correctness and semantic coherence, avoiding the inefficiencies of fixed-span methods. Experiments on reasoning benchmarks demonstrate that DIA substantially improves format compliance and answer accuracy, achieving significant zero-shot gains on GSM8K and MATH. These results establish DIA as a robust pathway toward reliable, structure-aware generation.",
+      "url": "https://arxiv.org/abs/2606.04535",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8983
+    },
+    {
+      "id": "2606.04378",
+      "title": "DLLG: Dynamic Logit-Level Gating of LLM Experts",
+      "authors": [
+        "Bingnan Li",
+        "Zhaoyang Zhang",
+        "Xiaoze Liu",
+        "Yantao Shen",
+        "Shuli Jiang",
+        "Shuo Yang",
+        "Wei Xia",
+        "Zhuowen Tu",
+        "Stefano Soatto"
+      ],
+      "abstract": "Leveraging multiple specialized LLMs can combine complementary strengths, but existing approaches trade adaptability for stability: routing commits prematurely, heuristic ensembling depends on fragile proxies, and parameter merging introduces interference. We propose DLLG (Dynamic Logit-Level Gating), a dynamic logit-level ensembling framework that learns token-level expert fusion from sparse response-level supervision. A lightweight gating module predicts step-wise fusion weights, linking trajectory-level correctness to generation without token-level labels or expert retraining. Across diverse reasoning and code benchmarks, DLLG consistently outperforms strong routing, heuristic ensembling, and parameter-merging baselines across model scales, highlighting learned logit-level fusion as a robust and scalable paradigm for integrating specialized experts.",
+      "url": "https://arxiv.org/abs/2606.04378",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8904
+    },
+    {
+      "id": "2606.05030",
+      "title": "Imbuing Large Language Models with Bidirectional Logic for Robust Chain Repair",
+      "authors": [
+        "Zehua Cheng",
+        "Wei Dai",
+        "Jiahao Sun",
+        "Thomas Lukasiewicz"
+      ],
+      "abstract": "Autoregressive chain-of-thought (CoT) reasoning in large language models (LLMs) is fundamentally forward-directed: each step conditions only on prior tokens. This unidirectional inductive bias renders even capable models susceptible to error snowballing, wherein a single logical or arithmetic mistake in an early step irreversibly corrupts the entire reasoning chain. We introduce Teleological Reasoning Infilling (\\TRI{}), a training framework that endows decoder-only transformers with a native \\emph{goal-conditioned bridging} capability. The key insight is to reframe erroneous reasoning segments as fill-in-the-middle (FIM) tasks: given a verified prefix premise $P$, a verified downstream milestone $S$, and the original query $Q$, the model must synthesise the logical bridge $M$ that connects $P$ to $S$ rigorously and completely. To achieve this with standard causal architectures, we introduce a Prefix-Suffix-Middle (PSM) sequence rearrangement with three non-overlapping sentinel tokens, enabling $M$ to attend to both $P$ and $S$ without any structural modification to the self-attention mechanism. Training proceeds in two stages: (i) Supervised Fine-Tuning (SFT) on symbolically verified $(P, S, M)$ triples extracted from formal mathematics corpora, and (ii) Direct Preference Optimisation (DPO) with a deterministic symbolic verifier (Lean 4 / Python) as the sole reward oracle, eliminating LLM-judge sycophancy. At inference, TRI operates as a surgical repair module within a dual-system loop: a causal draft model generates an initial trace, the verifier pinpoints failures, and TRI infills only the damaged segment, leaving verified sections intact. Comprehensive experiments on three benchmarks demonstrate that TRI achieves state-of-the-art performance across all tasks, while reducing per-problem token expenditure by 31.2%.",
+      "url": "https://arxiv.org/abs/2606.05030",
+      "categories": [
+        "cs.CL",
+        "cs.SC"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8903
+    },
+    {
+      "id": "2606.04442",
+      "title": "MemoryDocDataSet: A Benchmark for Joint Conversational Memory and Long Document Reasoning",
+      "authors": [
+        "Qiyang Xie",
+        "Jialun Wu",
+        "Xinjie He",
+        "Su Liu",
+        "Shuai Xiao",
+        "Zhiyuan Lin",
+        "Weikai Zhou"
+      ],
+      "abstract": "AI systems increasingly need to combine two demanding capabilities: navigating multi-session conversation history and performing deep reading comprehension within long documents. Yet no existing benchmark evaluates both simultaneously. We introduce MemoryDocDataSet, a synthetic benchmark of 50 micro-worlds and 1,000 QA pairs in which each instance comprises 3-5 personas, a temporal event graph spanning months of activity, 3-5 real long documents (20,000-50,000 tokens each sourced from the Caselaw Access Project), multi-session conversations grounded on those documents, and 20 question-answer pairs across five reasoning categories. The defining feature is the Hybrid source tag: questions requiring a system to first navigate conversation history to identify which document is relevant, then extract the answer from within that document. Hybrid questions account for 75.1% of the dataset. Dataset quality is characterised through a prompt-sensitivity self-consistency analysis using LLM-as-judge, yielding a median Cohen's $κ= 0.634$ across all 50 micro-worlds. We evaluate six baseline configurations spanning truncated context, long-context LLMs, retrieval-augmented generation (RAG), and memory systems. The best baseline (RAG-Both) achieves 0.358 overall F1 and 0.342 on Hybrid. Document-only retrieval (RAG-Doc) collapses to 0.267 on Hybrid despite achieving 0.453 on Doc-only questions, demonstrating a clear joint-retrieval gap that motivates architectures unifying conversational memory with long-document navigation. We release the dataset, generation pipeline, and all baseline implementations.",
+      "url": "https://arxiv.org/abs/2606.04442",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8899
+    },
+    {
+      "id": "2606.04915",
+      "title": "Caliper: Probing Lexical Anchors versus Causal Structure in LLMs",
+      "authors": [
+        "Zhenyu Yu",
+        "Shuigeng Zhou"
+      ],
+      "abstract": "Large language models reach 50 to 70% accuracy on causal reasoning benchmarks such as CLadder, but it is unclear whether this reflects structural reasoning or lexical pattern matching. We introduce Caliper, a controlled perturbation that replaces semantic variable names with placeholder tokens while preserving the causal graph and probabilistic specification of each question. Across nine instruction-tuned LLMs from 3.8B to 671B and three causal reasoning benchmarks, lexical anonymization yields robust accuracy drops of +7.6, +27.0, and +11.1 pp on a local 3.8B-14B set, rising to +29.6 and +18.0 pp on CRASS and e-CARE across nine frontier models spanning the 2024-2026 generations. Of 40 engaged model-by-benchmark cells, 39 show a positive gap, and the gap collapses by 17x on CLadder's pseudoword subset. Structured scaffolding and few-shot in-context learning each narrow the gap, but mainly by lowering P0 accuracy on smaller models rather than recovering P1. Current instruction-tuned LLMs, evaluated zero-shot, show little evidence of structural causal reasoning once lexical anchors are removed.",
+      "url": "https://arxiv.org/abs/2606.04915",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8898
+    },
+    {
+      "id": "2606.04315",
+      "title": "Exploring Cross-Scenario Generality of Agentic Memory Systems: Diagnostics and a Strong Baseline",
+      "authors": [
+        "Zhikai Chen",
+        "Jialiang Gu",
+        "Junyu Yin",
+        "Xianxuan Long",
+        "Shenglai Zeng",
+        "Xiaoze Liu",
+        "Kai Guo",
+        "Keren Zhou",
+        "Jiliang Tang"
+      ],
+      "abstract": "LLM agents accumulate histories that outgrow their context windows, motivating a growing literature on memory systems. Yet most existing designs are tuned to a single scenario (multi-session chat or a single trajectory format), and there is little evidence that they generalize across the heterogeneous trajectories agents encounter in deployment. We revisit eight memory systems plus an agentic harness for search problems, on five scenarios: single-turn QA, multi-session chat, agentic-trajectory QA, memory stress tests, and long-horizon agentic tasks. The harness, which self-manages flat text-file storage via tool calls, achieves the best cross-task ranking, suggesting that memory performance hinges on giving the agent active control over storage and retrieval rather than on a passive store behind a fixed pipeline. We instantiate this insight in AutoMEM, an agentic memory harness with a self-managed tool interface that achieves the best cross-scenario generality among the systems we evaluate.",
+      "url": "https://arxiv.org/abs/2606.04315",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8893
+    },
+    {
+      "id": "2606.04645",
+      "title": "CYGNET: Cypher Gate for Neural Execution Triage and Cost Containment",
+      "authors": [
+        "Nikodem Tomczak"
+      ],
+      "abstract": "Language models acting as agents over knowledge graphs generate Cypher queries that fail structurally (crashing at the database) or semantically (executing but returning wrong results). We place a pre-execution gate between query generation and a production Neo4j database. The gate validates structure through a four-backend chain culminating in execution against a mirror graph at 5.6 ms median latency. Structurally broken queries are routed to a corrector that iterates structured error feedback through a language model. On seven CypherBench schemas (2348 questions, ACL 2025) the pipeline maintains generation accuracy on every model tested, confirming it operates as a safe defensive layer. The corrector achieves 81% to 95% success across five models (mean 89%). On a template-generated corpus across nine schemas the gate catches 100% of parse errors, 100% of constraint violations, and 100% of schema-reference errors in path queries with labelled endpoints, at zero false positives across 1135 queries. Property sibling-swaps where the substituted name is valid on the target label score 0%, marking the formal boundary where structural validation ends and semantic validation must begin. A planner-based cost gate flags catastrophic plan structures before execution.",
+      "url": "https://arxiv.org/abs/2606.04645",
+      "categories": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8884
+    },
+    {
+      "id": "2606.04466",
+      "title": "Learning What to Learn: Stage-Specific Data Sets for SFT-then-RL in Small Language Model Reasoning",
+      "authors": [
+        "Chongyang He",
+        "Rui Zhang",
+        "Zixuan Wang",
+        "Xin Li"
+      ],
+      "abstract": "Post-training Small Language Models (SLMs) for reasoning typically follows an SFT-then-RL pipeline, yet existing work rarely considers what data should be learned at each stage. We argue that data strategy should be aligned with the distinct roles of SFT and RL: SFT is better suited for acquiring not-yet-mastered reasoning skills, while RL is better suited for consolidating skills that the model can already partially access. Based on this principle, we propose a difficulty-aware SFT-then-RL framework that organizes training data into stage-specific sets. For hard samples in the SFT stage, we introduce a Bridge mechanism that transforms raw teacher-generated reasoning traces into more learnable supervision for SLMs. For hard samples that remain unsolved during RL, we apply Critique Fine-Tuning by converting all-zero-reward failures into diagnostic, repair, and new reasoning trace supervision for the next SFT stage. Experiments on two SLMs across five reasoning benchmarks show that our method consistently improves over representative SFT, distillation, and RL baselines. Our results highlight the importance of coordinating data difficulty across SFT and RL for effective SLM reasoning post-training.",
+      "url": "https://arxiv.org/abs/2606.04466",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8871
+    },
+    {
+      "id": "2606.05145",
+      "title": "Failed Reasoning Traces Tell You What Is Fixable (But Not by Reading Them)",
+      "authors": [
+        "Nizar Islah",
+        "Istabrak Abbes",
+        "Irina Rish",
+        "Sarath Chandar",
+        "Eilif B. Muller"
+      ],
+      "abstract": "When post-trained language models fail on reasoning problems, the common test-time-scaling response is to spend more compute on additional attempts, and the failed traces play no further role. We argue this discards a crucial signal; some failures come from unlucky sampling, where more rollouts help, while others are structural and resist resampling regardless of budget. We propose that failed traces encode recoverability structure: the inference-time signature of which test-time interventions can rescue a given failure. Three problem-level trajectory features, derived from the structure of available interventions, recover this structure from the distributional signature of failed rollouts, not their text. They cluster failures into stable regimes, characterize the failure topography of different post-training methods ($84.3{\\pm}4.3\\%$ accuracy, $+20\\%$ over a majority-class baseline), and support a training-free routing rule that lifts rescue by $+12.2\\%$ on the deployment-relevant Steerable-Hard subset (failures where retry is insufficient and a bounded intervention is reachable). The features and the routing rule transfer across two cross-family probes. The same three features thus convert failed traces from discarded data into a diagnostic object, supporting test-time routing and post-training analysis without training-time or weight-space access.",
+      "url": "https://arxiv.org/abs/2606.05145",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.887
+    },
+    {
+      "id": "2606.05037",
+      "title": "Self-Reflective APIs: Structure Beats Verbosity for AI Agent Recovery",
+      "authors": [
+        "Arquimedes Canedo",
+        "Grama Chethan"
+      ],
+      "abstract": "When an AI agent calls an API and hits a validation error, it needs more than what went wrong -- it needs what to do next. A self-reflective API returns, on validation failure, a machine-readable recovery\\_feedback.suggestions[] payload sufficient for the agent to repair the request and retry without external reasoning. On a leak-audited pilot ($N{=}30$ per cell, 3 LLMs, 10 adversarial tasks), structured suggestions lift task-completion rate by $+36.7$--$40.0$pp over plain-English diagnoses on Anthropic models (Fisher's exact $p \\le 0.0022$), at $1.8$--$2.2\\times$ better per-success token efficiency. The lift is not significant on gpt-4o-mini ($p{=}0.435$); a second-domain replication on a billing API confirms the pattern. The comparison only holds after auditing two undocumented classes of answer leakage in LLM benchmarks. We shipaudit\\_prompt\\_leakage.py as reusable CI infrastructure. Code and data: https://github.com/arquicanedo/self-reflective-apis.",
+      "url": "https://arxiv.org/abs/2606.05037",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "github_url": "https://github.com/arquicanedo/self-reflective-apis.",
+      "score": 0.8867
+    },
+    {
+      "id": "2606.04751",
+      "title": "FALSIFYBENCH: Evaluating Inductive Reasoning in LLMs with Rule Discovery Games",
+      "authors": [
+        "Leonardo Bertolazzi",
+        "Katya Tentori",
+        "Raffaella Bernardi"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed as autonomous agents in scientific tasks. Yet whether these systems can effectively engage in forms of inductive reasoning relevant to scientific discovery remains an open question. In this work, we introduce FALSIFYBENCH, an evaluation framework for hypothesis-driven reasoning inspired by the classic Wason 2-4-6 task, in which agents must discover hidden semantic properties by iteratively proposing examples and receiving feedback. This task captures key elements of scientific reasoning: hypothesis generation, evidence gathering, and belief revision in response to both confirming and disconfirming evidence. Our evaluation of 12 LLMs across model families and scales shows that reasoning models are generally stronger scientific reasoners than instruction-tuned models, although no model comes close to optimal performance. The primary driver of success is the capacity for negative testing: models that actively seek to falsify their hypotheses consistently outperform those that primarily seek confirmation. Moreover, a fine-grained turn-level analysis, neglected in previous work, reveals that failure is tied to identifiable patterns in how models navigate the hypothesis space.",
+      "url": "https://arxiv.org/abs/2606.04751",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8865
+    },
+    {
+      "id": "2606.04974",
+      "title": "SAID: Accelerating Diffusion-Based Language Models via Scaffold-Aware Iterative Decoding",
+      "authors": [
+        "Na Li",
+        "Chengda Wang",
+        "Mingju Gao",
+        "Hao Tang"
+      ],
+      "abstract": "Diffusion large language models (DLLMs) enable non-autoregressive generation by iteratively denoising corrupted token sequences with bidirectional context. Despite their ability to update multiple positions in parallel, inference remains costly due to the many denoising steps required for high-quality generation. We propose SAID, a Scaffold-Aware Iterative Decoding framework that accelerates DLLMs by reallocating computation across tokens. SAID first spends denoising computation on scaffold tokens to establish the coarse semantic structure, and then completes predictable detail tokens with fewer steps. We further adapt SAID to block-wise diffusion decoding and introduce Confidence-Hierarchical Layered Generation (CHLG), which assigns additional steps only to low-confidence tokens. Experiments on LLaDA-8B and LLaDA 1.5 across math, coding, and knowledge benchmarks show that SAID significantly accelerates DLLM inference with a maximum speedup of 9.1x while maintaining competitive performance. Our code is publicly available: https://github.com/TH-AI-Lab-PKU/SAID.",
+      "url": "https://arxiv.org/abs/2606.04974",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "github_url": "https://github.com/TH-AI-Lab-PKU/SAID.",
+      "score": 0.8864
+    },
+    {
+      "id": "2606.04435",
+      "title": "Cascading Hallucination in Agentic RAG: The CHARM Framework for Detection and Mitigation",
+      "authors": [
+        "Saroj Mishra"
+      ],
+      "abstract": "Multi-step agentic retrieval-augmented generation (RAG) pipelines have demonstrated significant capability for complex reasoning tasks, yet remain vulnerable to a class of failure that existing hallucination detection mechanisms systematically miss: cascading hallucination, where errors introduced at early pipeline stages propagate and amplify across successive reasoning steps, producing confident but factually incorrect final outputs. To address this vulnerability, we formalize cascading hallucination as a distinct failure mode in agentic RAG systems, present a four-type taxonomy of cascade patterns, and introduce CHARM (Cascading Hallucination Aware Resolution and Mitigation), an architectural framework for detecting and interrupting error propagation in multi-step reasoning pipelines. CHARM comprises four components - stage-level fact verification, cross-stage consistency tracking, confidence propagation monitoring, and cascade resolution triggering - that operate alongside standard agentic RAG pipelines without requiring architectural replacement. We evaluate CHARM on HotpotQA, MuSiQue, 2WikiMultiHopQA, and a custom adversarial dataset across LangChain agentic pipeline configurations, achieving an 89.4% cascade detection rate with a 5.3% false positive rate and 215 ms +/- 18 ms average latency overhead per stage, achieving an error propagation reduction of 82.1%, compared to 18.5% for output-level detectors. Component ablations confirm that each detection module contributes meaningfully to overall cascade coverage. CHARM integrates with human-in-the-loop oversight frameworks to provide a complete reliability and governance stack for production agentic AI deployment.",
+      "url": "https://arxiv.org/abs/2606.04435",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CR",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8851
+    },
+    {
+      "id": "2606.04661",
+      "title": "CRAFT: Cost-aware Refinement And Front-aware Tuning of Prompts",
+      "authors": [
+        "Shanu Kumar",
+        "Shubhanshu Khandelwal",
+        "Akhila Yesantarao Venkata",
+        "Parag Agrawal",
+        "Yova Kementchedjhieva",
+        "Manish Gupta"
+      ],
+      "abstract": "Prompts tuned for accuracy often grow long, raising inference cost on every model call. The best accuracy-cost trade-off depends on the task and the budget, so prompt optimization is a search over the Pareto front of accuracy and prompt-token cost rather than for one prompt. The usual shortcut, collapsing the objectives into a weighted sum, fixes the trade-off weight before search and often recovers only a narrow region of the front, a failure we call scalarization collapse. We present CRAFT (Cost-aware Refinement And Front-aware Tuning), a Pareto-front prompt optimizer that treats target-LLM validation calls as the scarce resource and allocates them to candidates near the optimistic candidate front. Each round, complementary accuracy-oriented and cost-oriented generators propose edits, Pareto-gap acquisition spends the per-round validation budget, and NSGA-II retention keeps a spread-out population. Across six classification and reasoning benchmarks, CRAFT's retained fronts reach both high-accuracy and low-cost regions, while accuracy-only, cost-only, and weighted-sum baselines each concentrate in narrower regions. The accuracy-cost trade-off becomes a post-search choice, not a pre-search weight.",
+      "url": "https://arxiv.org/abs/2606.04661",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8849
+    },
+    {
+      "id": "2606.04413",
+      "title": "(Mis)generalization of Helpful-only Fine-tuning",
+      "authors": [
+        "Mohammad Omar Khursheed",
+        "Baram Sosis",
+        "Fabien Roger"
+      ],
+      "abstract": "Helpful-only models, that is, models that are trained to always follow user intent, are valuable for dangerous capability evaluations and other areas of AI R&D where refusals would be an obstacle. Little is known about the generalization properties of helpful-only training: helpful-only models refuse less than their harmless counterparts, but previous work has not studied other dimensions of their alignment. We study the shortcomings of existing helpful-only models. We find that some show emergent misalignment, others have residual refusal behaviors, and most show poor steerability, sycophancy, and incoherent character. We show that simple anti-refusal training can cause many of these issues. None of these problems are necessary consequences of helpful-only training, though: we show that synthetic document fine-tuning and adding character-related questions to SFT and RL can mitigate them.",
+      "url": "https://arxiv.org/abs/2606.04413",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8849
+    },
+    {
+      "id": "2606.04454",
+      "title": "Stepwise Reasoning Enhancement for LLMs via External Subgraph Generation",
+      "authors": [
+        "Xin Zhang",
+        "Yang Cao",
+        "Baoxing Wu",
+        "Kai Song",
+        "Siying Li"
+      ],
+      "abstract": "Large language models have shown strong performance in natural language generation and downstream reasoning tasks, but they still struggle with logical consistency, factual grounding, and interpretability in complex multi-step reasoning. To address these limitations, this paper proposes SGR, a stepwise reasoning enhancement framework that integrates large language models with external knowledge graphs through query-relevant subgraph generation. Given an input question, SGR first extracts key entities, relations, and constraints to construct a structured schema, then retrieves compact subgraphs from a knowledge graph using schema-guided querying. The generated subgraphs provide explicit relational evidence that guides the language model through step-by-step reasoning. In addition, SGR combines direct Cypher-based reasoning with collaborative reasoning integration, allowing candidate answers from multiple reasoning paths to be validated and aggregated according to both model confidence and graph consistency. Experiments on benchmark datasets including CWQ, WebQSP, GrailQA, and KQA Pro demonstrate that SGR improves reasoning accuracy and Hits@1 performance over standard prompting and several knowledge-enhanced baselines. Ablation studies further show that schema guidance and Neo4j-based retrieval are both crucial to the effectiveness of the framework. These results indicate that dynamically generated external subgraphs can improve the accuracy, robustness, and interpretability of LLM-based reasoning.",
+      "url": "https://arxiv.org/abs/2606.04454",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8845
+    },
+    {
+      "id": "2606.05025",
+      "title": "Invariant Gradient Alignment for Robust Reasoning Distillation",
+      "authors": [
+        "Zehua Cheng",
+        "Wei Dai",
+        "Jiahao Sun"
+      ],
+      "abstract": "Large language models (LLMs) suffer from shortcut learning: they systematically fail on out-of-distribution (OOD) inputs whose semantic surface differs from training data, even when the logical structure is identical. This undermines knowledge distillation pipelines that transfer chain-of-thought reasoning to smaller students. We introduce Invariant Gradient Alignment (IGA), a training framework that aligns gradient updates across semantically diverse but logically isomorphic examples via three innovations: (i) Logical Isomer Sets, groups of problems sharing identical logical structure across distinct semantic domains (mathematics, medicine, law, science); (ii) a differentiable \\emph{Continuous Gradient Conflict Mask}, that suppresses parameter dimensions with high cross-domain gradient variance while preserving invariant directions; and (iii) a truncated SVD projection of the masked gradient back onto the LoRA low-rank manifold, maintaining parameter efficiency throughout. Theoretically, IGA yields tighter OOD generalization bounds than ERM, scaling with the number of isomer domains, and converges at the standard SGD rate under mild regularity. Empirically, IGA outperforms eight baselines across four benchmarks with accuracy gains up to 14.3 pp over ERM-SFT and a Logical Consistency Score of 0.031 versus 0.142 -- a fourfold improvement in representational invariance.",
+      "url": "https://arxiv.org/abs/2606.05025",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8838
+    },
+    {
+      "id": "2606.04507",
+      "title": "Self-Evolving Deep Research via Joint Generation and Evaluation",
+      "authors": [
+        "Han Zhu",
+        "Chengkun Cai",
+        "Yuanfeng Song",
+        "Xing Chen",
+        "Sirui Han",
+        "Yike Guo"
+      ],
+      "abstract": "Large Language Models (LLMs) have become increasingly adopted in daily applications, with deep research standing out as a particularly important capability. Unlike traditional question-answering (QA) tasks, deep research report generation lacks definitive ground-truth, making reward design inherently unverifiable and limiting effective reinforcement learning. Existing approaches mitigate this challenge with LLM-as-a-judge and query-dependent evaluation rubrics, but they still rely on static evaluators that cannot adapt their standards as the solver improves, leading to insufficient and eventually saturated optimization pressure. We address this limitation with a \\textbf{s}elf-evolving \\textbf{co}-evolutionary training framework for deep \\textbf{re}search evaluation and generation (SCORE), which tightly couples an evaluator and a solver in a shared-parameter learning process. Rather than treating generation and evaluation as isolated modules, we leverage their intrinsic connection to enable joint improvement within a single shared-parameter model. To restrict this process, we introduce a meta-harness, which dynamically controls the evaluation environment based on solver performance, encouraging valid evaluation dimensions and sufficiently deep evaluator search. Extensive experiments on deep research benchmarks demonstrate consistent improvement in report generation quality, showing that co-evolving evaluation and generation is a promising direction for training open-ended research agents.",
+      "url": "https://arxiv.org/abs/2606.04507",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.883
+    },
+    {
+      "id": "2606.04717",
+      "title": "Selection-Aware Diagnostics for Chain-of-Thought Answer Hijacking",
+      "authors": [
+        "Jianwei Tai"
+      ],
+      "abstract": "We study a controlled numeric proxy for chain-of-thought (CoT) answer hijacking, motivated by attacks in which benign-looking reasoning steers a harmful final answer. CoT wrappers on GSM8K and MATH-500 flip final answers away from gold labels. Rather than treating activation patching as clean-trace restoration, we ask where hijacked trajectories are fragile and whether recovery depends on a same-problem clean source. Across Qwen2.5-7B and Llama3-8B on GSM8K few-shot, puzzle, and sycophant hijacks, three few-shot/puzzle cells pass confirmatory $K{=}1$ localization after Bonferroni correction. A selection-aware 50/50 band validation preserves held-out in-band minus out-of-band gaps of +32.6, +45.1, and +17.7 points for Qwen-puzzle, Llama3-fewshot, and Llama3-puzzle, while exact $\\Lstar$ agreement is much less stable. Qwen-fewshot remains exploratory, and sycophant cells are temporal-diffuse under short patches. A BF16 Qwen-puzzle full-band sweep preserves the band signal ($n{=}30$, spread 0.33 at $K{=}1$, peak layer 20), supporting the conclusion that the band is not only an INT4 artifact. Fixed-hook GSM8K reruns preserve recovery in both primary puzzle cells: Qwen-puzzle recovers 47.0\\% at $n{=}100$ (47/100; Wilson 95\\% CI [37.5\\%, 56.7\\%]), while Llama3-puzzle recovers 39.0\\% at $n{=}100$ (39/100; [30.0\\%, 48.8\\%]). Frozen transfer to MATH-500 recovers 26.0\\% of qualified cases in the largest fixed-transfer run (13/50; Wilson 95\\% CI [15.9\\%, 39.6\\%]). Source controls change the mechanism interpretation. Paired bootstraps give finite-sample non-separation between clean and random sources in Qwen-fewshot (+3.0 points, 95\\% CI [-18.2,+27.3]) and Llama3-puzzle at expanded $n{=}60$ (clean--random -8.3 [-21.7,+5.0]), while Llama3-fewshot is content-mediated (+40.0 [+16.7,+60.0]).",
+      "url": "https://arxiv.org/abs/2606.04717",
+      "categories": [
+        "cs.CR",
+        "cs.CY"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8828
+    },
+    {
+      "id": "2606.04889",
+      "title": "GRAIL: Gradient-Reweighted Advantages for Reinforcement Learning with Verifiable Rewards",
+      "authors": [
+        "Tej Deep Pala",
+        "Vernon Toh",
+        "Soujanya Poria"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (e.g. GRPO) is now a common way to improve mathematical reasoning in Large Language Models (LLMs). However, current methods usually broadcast one sequence-level advantage to all tokens, or use costly process reward models (PRMs) for step-level supervision. Uniform advantage distribution assumes that all tokens contribute equally to the final reward. This dilutes the gradient signal, since flawed reasoning steps and filler words are updated as strongly as valid logical inferences. To address this, we introduce Gradient-Reweighted Advantage (GRAIL), an intrinsic token-wise advantage reweighting method. GRAIL uses gradient-activation saliency to place more weight on tokens that are more locally sensitive to the final answer. Evaluations across five models from the Qwen3, R1-distilled and OctoThinker families show that GRAIL consistently outperforms GRPO. GRAIL achieved an average improvement of 3.60% in accuracy and 3.05% in Pass@3, demonstrating that fine-grained reasoning alignment can be achieved without process-level supervision.",
+      "url": "https://arxiv.org/abs/2606.04889",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-03",
+      "score": 0.8825
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

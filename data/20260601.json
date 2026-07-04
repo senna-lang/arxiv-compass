@@ -1,0 +1,432 @@
+{
+  "date": "2026-06-01",
+  "collected_at": "2026-06-01T13:56:26.989207+09:00",
+  "papers": [
+    {
+      "id": "2605.31268",
+      "title": "Mellum2 Technical Report",
+      "authors": [
+        "Marko Kojic",
+        "Ivan Bondyrev",
+        "Aral de Moor",
+        "Joseph Shtok",
+        "Petr Borovlev",
+        "Kseniia Lysaniuk",
+        "Madeeswaran Kannan",
+        "Ivan Dolgov",
+        "Nikita Pavlichenko"
+      ],
+      "abstract": "We present Mellum 2, an open-weight 12B-parameter Mixture-of-Experts (MoE) language model with 2.5B active parameters per token. Mellum 2 is a general-purpose language model specialized in software engineering, spanning code generation and editing, debugging, multi-step reasoning, tool use and function calling, agentic coding, and conversational programming assistance, and it is the successor to the completion-focused 4B dense Mellum model. The architecture builds on the Mixture-of-Experts (64 experts, 8 active) and combines Grouped-Query Attention with 4 KV heads, Sliding Window Attention on three of every four layers, and a single Multi-Token Prediction head that doubles as both an auxiliary pre-training objective and a built-in draft model for speculative decoding; each choice was validated by ablation with inference efficiency on commodity GPUs as a design constraint. Pre-training spans approximately 10.6 trillion tokens through a three-phase curriculum that progressively shifts the mixture from diverse web data toward curated code and mathematical content, optimized with Muon under FP8 hybrid precision and a Warmup-Hold-Decay schedule with linear decay to zero. The pre-trained base is extended to a 128K context window via a layer-selective YaRN and then post-trained in two stages (supervised fine-tuning followed by RLVR), yielding two released variants: an Instruct model that answers directly and a Thinking model that emits an explicit reasoning trace before its final answer. Across code generation, math and reasoning, tool use, knowledge, and safety benchmarks, Mellum 2 is competitive with open-weight baselines in the 4B-14B range while running at the per-token compute of a 2.5B dense model. We release the base, instruct, and thinking checkpoints, together with this report on the architecture decisions, data pipeline, and training recipe behind them, under the Apache 2.0 license.",
+      "url": "https://arxiv.org/abs/2605.31268",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8957
+    },
+    {
+      "id": "2605.31433",
+      "title": "SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks",
+      "authors": [
+        "Wai-Chung Kwan",
+        "Aryo Pradipta Gema",
+        "Joshua Ong Jun Leang",
+        "Pasquale Minervini"
+      ],
+      "abstract": "Self-play can train language models without external supervision. However, existing methods require rule-checkable answers, leaving open-ended tasks dependent on curated prompts or frontier-model judges. We introduce SCOPE, a data-free self-play framework for open-ended tasks that co-evolves two policies: a Challenger that generates document-grounded tasks, and a Solver that answers them through multi-turn retrieval. A frozen copy of the initial model serves as the self-judge, which writes task-specific rubrics from the source document and grades Solver responses against them. Across three 7-8B instruction-tuned models (Qwen2.5, Qwen3, OLMo-3), SCOPE improves open-ended performance by up to +10.4 points on eight benchmarks and matches or exceeds GRPO_data trained on ~9K curated prompts. Although trained only on open-ended tasks, SCOPE also improves held-out short-form QA by up to +13.8 points on seven held-out benchmarks, surpassing GRPO_data on all three models. Ablations show that co-evolving the Challenger is necessary to keep tasks near the Solver's frontier, that gains arise from improvements in both retrieval and synthesis with the relative contribution varying by task, and that rubric generation quality is the bottleneck for self-judging.",
+      "url": "https://arxiv.org/abs/2605.31433",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8928
+    },
+    {
+      "id": "2605.31058",
+      "title": "Combinatorial Synthesis: Scaling Code RLVR via Atomic Decomposition and Recombination",
+      "authors": [
+        "Jiasheng Zheng",
+        "Boxi Cao",
+        "Boxi Yu",
+        "Yuzhong Zhang",
+        "Jialun Cao",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Xianpei Han",
+        "Le Sun"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) has recently emerged as the cornerstone for shaping the remarkable coding abilities of Large Language Models (LLMs). However, the scalability of RLVR is severely constrained by the scarcity of sufficiently challenging verifiable code tasks that target near the model's edge of competence. Prior studies often rely on heuristic seed expansions for data synthesis, which severely limits both novelty and difficulty. Consequently, the training value of such data fails to scale proportionally with the size of its synthesis. To this end, we propose Atomic Decomposition and Recombination (ADR), a novel framework that generates verifiable code tasks via decomposition into atomic elements and controlled recombination, thereby enabling the generation of genuinely novel and challenging verifiable code tasks. Experiments and analysis demonstrate that ADR achieves superior originality, difficulty, diversity, and test quality over existing baselines, and consistently delivers greater improvements in code ability across RLVR in diverse downstream domains, including algorithmic programming, tool usage, and data science. Our work sheds light on a new paradigm for novel code task synthesis and scalable RLVR training.",
+      "url": "https://arxiv.org/abs/2605.31058",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8922
+    },
+    {
+      "id": "2605.30907",
+      "title": "BlueFin: Benchmarking LLM Agents on Financial Spreadsheets",
+      "authors": [
+        "Srivatsa Kundurthy",
+        "Clara Na",
+        "Colton Moraine",
+        "Anoushka Mohta",
+        "Case Winter",
+        "George Fang",
+        "John Ling",
+        "Emma Strubell",
+        "Zach Kirshner"
+      ],
+      "abstract": "We present BlueFin, a benchmark that tasks large language model (LLM) agents with synthesis, manipulation, and comprehension tasks over spreadsheet workbooks in the professional finance domain. Though estimates of the global population of paying users of spreadsheet software range in the hundreds of millions -- an order of magnitude more than the estimated global population of professional developers -- comparatively fewer resources have been devoted to exploring and expanding LLM capabilities in the spreadsheet domain, with fewer still dedicated to mirroring real occupational tasks encountered by those in professional finance roles. In response, we curate a set of 131 challenging, complex tasks with real-world relevance in the domain, containing 3,225 granular rubric criteria; notably, our rubric criteria and LM judge evaluations are validated by a team of expert human annotators, resulting in high-quality, granular evaluations of complex tasks that are difficult to verify programmatically but can be reliably evaluated by an LM judge agent. Our judge achieves parity with expert consensus ($α=0.826$) with a macro-F1 score of 0.839. Frontier LLMs demonstrate poor performance on the challenging benchmark, with the strongest LLMs achieving less than 50\\% average scores across tasks -- models exhibit particular weaknesses in dynamic correctness. Our contributions include a dataset of examples across three categories of spreadsheet tasks, an open source harness and agentic evaluation framework, and a characterization of existing frontier models' performance on our benchmark.",
+      "url": "https://arxiv.org/abs/2605.30907",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8915
+    },
+    {
+      "id": "2605.31064",
+      "title": "Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA",
+      "authors": [
+        "Hao Chen",
+        "Xing Tang",
+        "Qirui Liu",
+        "Weijie Shi",
+        "Shiwei Li",
+        "Fuyuan Lyu",
+        "Weihong Luo",
+        "Xiku Du",
+        "Xiuqiang He"
+      ],
+      "abstract": "Large Language Models (LLMs) have significantly advanced online data services, particularly in the domain of financial question answering (FinQA). However, such systems remain susceptible to numerical reasoning hallucinations, which critically undermine reliability in high-stakes financial applications. Although retrieval-augmented generation (RAG) has been widely adopted to ground responses in external knowledge, it introduces three persistent challenges: noise sensitivity, calculation fragility, and an auditability crisis. Existing model-centric approaches, which primarily focus on optimizing either the retriever or generator in isolation, still struggle to address these issues in an integrated manner. In this work, we pioneer a data-centric paradigm and propose a novel framework, the Data-centric Reasoning Compiler (DCRC). The framework operates through three cohesive phases: (1) adversarial data construction, which synthesizes training examples with controlled noise to teach robustness; (2) multi-stage training that cultivates a Data-centric Structuring Agent (DSA) capable of explicit evidence auditing and program synthesis; and (3) a compile-and-execute inference process, where the DSA transforms user queries and retrieved documents into verifiable, executable reasoning programs. This data-driven framework ensures faithful numerical reasoning by design. We conduct extensive experiments on established offline benchmarks and further validate our framework through deployment in a real-world online financial QA system.",
+      "url": "https://arxiv.org/abs/2605.31064",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8912
+    },
+    {
+      "id": "2605.31558",
+      "title": "Positional versus Symbolic Attention Heads: Learning Dynamics, RoPE Geometry, and Length Generalization",
+      "authors": [
+        "Felipe Urrutia",
+        "Juan José Alegría",
+        "Cinthia Sanchez Macias",
+        "Jorge Salas",
+        "Cristian B. Calderon",
+        "Cristobal Rojas"
+      ],
+      "abstract": "Transformer-based language models are widespread in today's society. As such, understanding the mechanisms by which they solve structured tasks and predicting how they may behave in novel scenarios is of great importance for safe deployment. We study the learning dynamics of attention heads in a controlled setting by training a decoder-only Transformer (GPT-J) on two structurally equivalent multi-hop reasoning tasks: a number task requiring positional reasoning and a letter task requiring symbolic reasoning. Using a recently introduced metric that classifies attention-head behavior as positional or symbolic for a given prompt, we show that successful learning is associated with the emergence of pure heads, i.e., heads that express themselves as either positional or symbolic. Despite the tasks' structural equivalence, they impose different mechanistic demands: the number task requires both positional and symbolic heads, whereas the letter task requires only symbolic heads. We then identify the computational roles of these heads, characterize the basic functions they implement, and give theoretical constructions showing how single-layer RoPE-based attention can realize these functions through geometrically interpretable query, key, and value operations. This analysis yields a quantitative separation between positional and symbolic mechanisms in their robustness to longer sequences, formalized through a novel notion of discrepancy. We empirically validate the resulting predictions in both controlled and real-world models, showing that symbolic mechanisms extrapolate more reliably to longer sequences while positional mechanisms face sharper limitations.",
+      "url": "https://arxiv.org/abs/2605.31558",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8911
+    },
+    {
+      "id": "2605.31584",
+      "title": "LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards",
+      "authors": [
+        "Nianyi Lin",
+        "Jiajie Zhang",
+        "Lei Hou",
+        "Juanzi Li"
+      ],
+      "abstract": "Long-context reasoning remains a central challenge for large language models, which often fail to locate and integrate key information in extensive distracting content. Reinforcement learning with verifiable rewards (RLVR) has shown promise for this task, yet existing methods are limited by low-confusability distractors and sparse, outcome-only reward signals that cannot supervise intermediate reasoning steps. To address these issues, we introduce \\textsc{LongTraceRL}. For data construction, we generate multi-hop questions via knowledge graph random walks and leverage search agent trajectories to build \\emph{tiered distractors}: documents the agent read but did not cite (high confusability) and documents that appeared in search results but were never opened (low confusability), producing training contexts that are far more challenging than those built by random sampling or one-shot search. For reward design, we propose a \\emph{rubric reward} that uses the gold entities along each reasoning chain as fine-grained, entity-level process supervision. This rubric reward is applied only to responses with correct final answers (positive-only strategy), distinguishing the reasoning quality among correct responses and preventing reward hacking. Experiments on three reasoning LLMs (4B--30B) across five long-context benchmarks demonstrate that \\textsc{LongTraceRL} consistently outperforms strong baselines and encourages comprehensive, evidence-grounded reasoning. Codes, datasets and models are available at \\href{https://github.com/THU-KEG/LongTraceRL}{https://github.com/THU-KEG/LongTraceRL}.",
+      "url": "https://arxiv.org/abs/2605.31584",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-29",
+      "github_url": "https://github.com/THU-KEG/LongTraceRL}{https://github.com/THU-KEG/LongTraceRL}.",
+      "score": 0.8897
+    },
+    {
+      "id": "2605.31062",
+      "title": "AdaptR1: Reinforcement Learning Based Adaptive Interleaved Thinking in Multi-hop Question Answering",
+      "authors": [
+        "Yuxin Wang",
+        "Jiahao Lu",
+        "Qifeng Wu",
+        "Shicheng Fang",
+        "Chuanyuan Tan",
+        "Yining Zheng",
+        "Xuanjing Huang",
+        "Xipeng Qiu"
+      ],
+      "abstract": "Large Language Models (LLMs) have achieved remarkable performance in complex reasoning tasks through Chain-of-Thought (CoT) prompting. However, this approach often leads to ``over-thinking,'' where models generate unnecessarily long reasoning traces for simple queries and incur avoidable inference cost. While recent work has explored adaptive reasoning, existing methods typically make a single query-level decision about whether to reason. This overlooks the dynamic nature of multi-step tasks, where the need for explicit reasoning varies across intermediate stages. To address this limitation, we introduce AdaptR1, a Reinforcement Learning (RL) based framework for adaptive interleaved thinking in multi-hop Question Answering (QA). Unlike previous approaches that require Supervised Fine-Tuning (SFT) for cold-start initialization, AdaptR1 uses a fully RL-based strategy with a quality-gated efficiency reward to dynamically allocate reasoning budgets at each step. Under the Graph-R1 setting, AdaptR1 reduces average think tokens by 69.71\\%, with a 90.35\\% reduction on HotpotQA, while maintaining performance comparable to or better than standard baselines. Furthermore, our analysis reveals that overthinking in multi-hop reasoning is not uniformly distributed but occurs predominantly during the initial planning stages, highlighting the effectiveness of step-wise adaptive budget allocation.",
+      "url": "https://arxiv.org/abs/2605.31062",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8892
+    },
+    {
+      "id": "2605.31228",
+      "title": "EchoRL: Reinforcement Learning via Rollout Echoing",
+      "authors": [
+        "Jinhe Bi",
+        " Aniri",
+        "Minglai Yang",
+        "Xingcheng Zhou",
+        "Wenke Huang",
+        "Sikuan Yan",
+        "Yujun Wang",
+        "Zixuan Cao",
+        "Michael Färber",
+        "Xun Xiao",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards is an effective route for post-training to strengthen the reasoning capability of large language models. However, as training proceeds, the learning signal can collapse thus makes the training gain become marginal and ineffective. Specifically, a growing fraction of prompts' rollouts become advantage-degenerated: all the self-generated rollouts show verified-success, making the standard deviation over their rewards be zero; accordingly each rollout's advantage becomes degenerated (zero) as well. Given such rollouts' advantages, the policy-gradient for model optimization eventually vanishes, capping the training performance. We argue that some of these rollouts still contain valuable learning signals but unfortunately omitted with the existing RLVR methods. In this paper, inspired through analyzing the entropy pattern behind golden trajectories produced by external expert models, we propose EchoRL for better exploiting the advantage-degenerated rollouts to further improve the training performance. EchoRL is a lightweight module that first identifies an EchoClip from verified-success rollouts based on their step-level entropy values, and then feeds this clip back as an auxiliary supervision signal in the RL objective. Extensive experiments across 10 benchmarks, 5 LLM backbones, and 4 popular RLVR post-training methods demonstrate that EchoRL consistently improves RLVR post-training with minimal overhead.",
+      "url": "https://arxiv.org/abs/2605.31228",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8879
+    },
+    {
+      "id": "2605.31492",
+      "title": "LinTree: Improving LLM Reasoning with Explicitly Structured Search Histories",
+      "authors": [
+        "Liwei Kang",
+        "Yee Whye Teh",
+        "Wee Sun Lee"
+      ],
+      "abstract": "Large language models (LLMs) often solve reasoning problems by generating intermediate traces that explore and revise partial solutions. From a search perspective, these traces can be viewed as linearized search trees, where the model extends a partial solution, abandons it when it fails, and backtracks to try alternatives. Compared with traditional heuristic-guided search, such a policy has a potential advantage: it conditions on the whole search trace rather than only on the current local state. We first test whether LLMs utilize this advantage by comparing trace-conditioned reasoning policies against best-first search equipped with an LLM heuristic that only observes the current local state. Across three controlled reasoning environments, Blocks World, grid Navigation, and Sokoban, we find that raw access to search history alone is not enough to reliably outperform heuristic search. We then study one possible reason: in LLM reasoning traces, the underlying search tree is only implicitly represented, and when the model backtracks or switches branches, the trace does not explicitly identify which earlier search state is being revisited. We show that adding simple parent pointers to explicitly represent the linearized tree (LinTree) structure improves both task performance and search efficiency relative to implicit reasoning models and LLM-heuristic-guided search. These results suggest that search history becomes most useful when its tree structure is made explicit, motivating more structure-aware representations for LLM reasoning.",
+      "url": "https://arxiv.org/abs/2605.31492",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8876
+    },
+    {
+      "id": "2605.31238",
+      "title": "Scaling Multi-Hop Training Data via Graph-Constrained Path Selection",
+      "authors": [
+        "Pengyu Chen",
+        "Yonggang Zhang",
+        "Mingming Chen",
+        "Jun Song",
+        "Wei Xue",
+        "Yike Guo"
+      ],
+      "abstract": "Endowing large language models with compositional reasoning over specialized documents requires multi-hop training data at scale, where such data rarely exists outside of curated benchmarks built on structured sources. To construct it directly from plain, unannotated text, existing methods ask a single teacher model to jointly discover an evidence path through a document and verbalize it as a question-answer pair. However, these methods degrade sharply when documents are structured around repetitive templates and densely cross-referencing clauses, conditions that characterize most real-world specialized corpora. In this work, we decouple the two operations: reasoning paths are enumerated offline over a graph of contextual keyword centroids, and the teacher is invoked only to verbalize pre-validated paths. The graph enforces five geometric admissibility constraints, for which we provide Gram-matrix arguments establishing that local similarity bounds alone admit endpoint drift up to ${\\sim}91^{\\circ}$, and that an upper similarity bound is necessary to exit dense embedding cliques formed by boilerplate text. A matched-size ablation isolates the mechanism: at equal training scale, constrained and unconstrained chains yield indistinguishable downstream performance, and the gain at full scale comes from a 4.4$\\times$ expansion of the usable corpus rather than from higher per-chain quality -- reframing the role of graph constraints, in this setting, as raising teacher synthesizability rather than improving chain content. Fine-tuning Qwen3-32B on 80K examples constructed from the CUAD legal contract corpus improves closed-book Token F1 from 21.66% to 38.58%. We have released our codes at https://github.com/hkgai-official/GCSCS.",
+      "url": "https://arxiv.org/abs/2605.31238",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-29",
+      "github_url": "https://github.com/hkgai-official/GCSCS.",
+      "score": 0.8875
+    },
+    {
+      "id": "2605.31086",
+      "title": "Beyond Static Dialogues: Benchmarking Realistic, Heterogeneous, and Evolving Long-Term Memory",
+      "authors": [
+        "Han Zhang",
+        "Zihao Tang",
+        "Xin Yu",
+        "Xiao Liu",
+        "Yeyun Gong",
+        "Haizhen Huang",
+        "Yan Lu",
+        "Weiwei Deng",
+        "Feng Sun",
+        "Qi Zhang",
+        "Hanfang Yang"
+      ],
+      "abstract": "In existing memory benchmarks for Large Language Models (LLMs), the evaluated dialogue sessions often lack long-term semantic consistency, and the underlying personas tend to be flat and static. Furthermore, in real-world scenarios, interactions between users and assistants involve more diverse, heterogeneous data streams, such as documents and emails. These shortcomings significantly limit the realism and effectiveness of current evaluations. To address these limitations, we introduce RHELM (Realistic, Heterogeneous, and Evolving Long-term Memory). Driven by meticulously crafted user profiles and a novel LOOP (pLan-rOllout-evOlve-Prune) module, we construct realistic dialogues across diverse interaction scenarios that exhibit dynamic temporal evolution and long-term coherence. Crucially, these dialogues are deeply integrated with heterogeneous external sources synchronized with the user's temporal event trajectory. The resulting benchmark encompasses challenging question-answer pairs spanning seven inquiry types, with each question mapping to at least one of 27 critical memory characteristics that we identify as essential yet underexplored in current research. Comprehensive experiments across full-context models, retrieval-augmented generation (RAG) methods, and representative memory frameworks reveal that contemporary approaches still expose critical weaknesses in complex, real-world settings, particularly in resolving multi-source aggregation and real-world contextual reasoning.",
+      "url": "https://arxiv.org/abs/2605.31086",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8875
+    },
+    {
+      "id": "2605.31408",
+      "title": "Skill Availability and Presentation Granularity in Large-Language-Model Agents: A Controlled SkillsBench Study",
+      "authors": [
+        "Xiaonan Xu",
+        "Wenjing Wu"
+      ],
+      "abstract": "Skill documents provide procedural knowledge to large-language-model agents at inference time. This article studies whether the presentation granularity of controlled skill knowledge changes downstream task success. The experiment uses a pinned SkillsBench version, a 30-task domain-balanced subset validated by official oracle runs, two reasoning-enabled model configurations, six skill conditions, and five trials per task-condition-model cell. Skill availability is the clearest empirical signal. Relative to no skill, skill conditions increase task-mean pass rate by 26.7 to 36.0 percentage points for GPT-5.5 and by 18.0 to 26.0 percentage points for DeepSeek V4-Flash. The final data contain 1,800 rows, with 900 rows for each model. The task is the inference unit. Five trials are aggregated within each task-condition-model cell before paired contrasts are estimated over 30 tasks. The primary presentation contrasts are smaller and uncertain. Low-abstraction guidance differs from high-abstraction guidance by +0.7 percentage points for GPT-5.5 and -6.7 percentage points for DeepSeek V4-Flash, with both 95% bootstrap confidence intervals crossing zero. Adding one worked example to medium-abstraction guidance differs from the no-example variant by +0.7 and +1.3 percentage points. Mean-reward robustness checks preserve the same substantive conclusion. In this controlled subset, skill availability is associated with higher success than no skill, while the tested presentation-granularity changes yield small, uncertain, and model-dependent effects.",
+      "url": "https://arxiv.org/abs/2605.31408",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8872
+    },
+    {
+      "id": "2605.30913",
+      "title": "Toxic HallucinAItions: Perturbing Prompts and Tracing LLM Circuits",
+      "authors": [
+        "Soorya Ram Shimgekar",
+        "Agam Goyal",
+        "Amruta Parulekar",
+        "Joshua Chen",
+        "Yian Wang",
+        "Navin Kumar",
+        "Hari Sundaram",
+        "Eshwar Chandrasekharan",
+        "Koustuv Saha"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed in conversational settings where user tone ranges from polite to adversarial or toxic, yet less is known about whether toxic language in otherwise semantically equivalent prompts can degrade factual reliability. We study how lexical and tone-based prompt perturbations affect the factual reliability of LLMs. Using controlled prompt variations across polite, random, and three toxicity levels, we evaluate five LLMs on ARC-Easy, GSM8K, and MMLU. We find that toxic lexical perturbations consistently reduce factual accuracy and increase uncertainty, while polite phrasing yields limited and inconsistent changes. To examine whether these answer inconsistencies correspond to internal changes, we conduct attribution-graph analyses of model activations and influences. We find that increasing toxicity selectively amplifies perturbation-sensitive variant nodes while relatively stable core reasoning nodes remain more invariant. These findings position prompt tone as a critical dimension of LLM reliability and provide behavioral and mechanistic evidence that surface-level lexical variation can alter factual outputs and internal computation.",
+      "url": "https://arxiv.org/abs/2605.30913",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8849
+    },
+    {
+      "id": "2605.31167",
+      "title": "LLM-FACETS: A Privacy-Preserving Framework for Evaluating LLM Transparency and Accountability",
+      "authors": [
+        "Tom Lucas",
+        "Alessio Buscemi",
+        "Alfredo Capozucca",
+        "German Castignani",
+        "Barbara Delacroix"
+      ],
+      "abstract": "Assessing whether Large Language Models outputs are factually grounded, epistemically calibrated, and methodologically reproducible is a prerequisite for responsible AI deployment. Yet auditing LLMs remains inaccessible to non-technical practitioners: existing tools require programming expertise and non-trivial environment setup, and cloud-hosted platforms transmit evaluation data to external services, creating barriers for domain experts and compliance officers legally responsible for AI oversight. We introduce LLM-FACETS (LLM FActuality Cross-EvaluaTion System): an open-source framework with a browser-accessible interface and a plugin architecture, structured around three practitioner profiles (technical experts, domain experts, compliance officers) that mirror the stakeholder categories identified in the EU AI Act and the NIST AI Risk Management Framework. The architecture makes data flows explicit: deterministic metrics (BLEU, ROUGE, BERTScore) run entirely within the self-hosted server with no outbound transmission; LLM-judge metrics contact external APIs explicitly, with users retaining full credential control. The framework operationalizes transparency through three mechanisms: token-level log-probability visualization for epistemic uncertainty, multi-judge consensus to mitigate judge bias, and RAG Triad metrics (Faithfulness, Answer Relevance, Context Relevance) to detect and localize hallucinations. A plugin architecture allows any new metric or dataset to be integrated without modifying the evaluation pipeline. The open-source implementation enables cross-checking across multiple metrics targeting the same property, ensuring reproducibility and decoupling AI accountability from the teams building the systems assessed. We verify the framework through cross-validation of 18 metric implementations against canonical reference libraries.",
+      "url": "https://arxiv.org/abs/2605.31167",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8845
+    },
+    {
+      "id": "2605.31463",
+      "title": "PithTrain: A Compact and Agent-Native MoE Training System",
+      "authors": [
+        "Ruihang Lai",
+        "Hao Kang",
+        "Haozhan Tang",
+        "Akaash R. Parthasarathy",
+        "Zichun Yu",
+        "Junru Shao",
+        "Todd C. Mowry",
+        "Chenyan Xiong",
+        "Tianqi Chen"
+      ],
+      "abstract": "Mixture-of-Experts (MoE) has become the dominant architecture for frontier language models. To meet this demand, production frameworks have built optimized MoE training stacks over years of engineering effort. Yet evolving these stacks for new architectures and system optimizations remains expensive. With the rise of AI coding agents, they could automate parts of training-framework development and accelerate this evolution. But applying them to these existing frameworks carries hidden costs, invisible to today's throughput-only evaluations. We name this missing dimension agent-task efficiency (ATE): the cost of using coding agents to understand, operate, and extend a framework. Grounded in four agent-native design principles, we build PithTrain, a compact, agent-native MoE training framework. We further introduce ATE-Bench, covering real-world training-framework tasks. Our evaluation shows PithTrain matches the throughput of production frameworks, and on ATE-Bench, PithTrain enables higher agent-task efficiency, with up to 62% fewer Agent Turns and 64% less Active GPU Time.",
+      "url": "https://arxiv.org/abs/2605.31463",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.DC"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8843
+    },
+    {
+      "id": "2605.30844",
+      "title": "Fine-Tuning Improves Information Conveyance in Language Models",
+      "authors": [
+        "Yuwei Cheng",
+        "Weiyi Tian",
+        "Haifeng Xu"
+      ],
+      "abstract": "Fine-tuning is often believed to reduce uncertainty and diversity in large language models, but existing analyses overlook output length, a key confounder, and therefore fail to capture how uncertainty is distributed across an entire generation rollout. To address this, we propose Canopy Entropy ($\\mathrm{CE}^\\star$), a measure that views language generation from a tree perspective, where ``canopy'' represents the space of all possible rollouts, making $\\mathrm{CE}^\\star$ naturally quantify the effective size of the generation space. $\\mathrm{CE}^\\star$ jointly captures uncertainty in both the output length $N$ and the generated sequence $Y_{1:N}$ -- indeed, we show that it equals to total Shannon entropy $H(N, Y_{1:N}\\mid X)$, where $X$ denotes the prompt. This formulation yields interpretable metrics, including a length-entropy correlation term $ρ(N, r_N)$, where $r_N$ is the entropy rate, quantifying information conveyance efficiency by indicating whether longer outputs are more or less informative per token. Empirically, across tasks and model families, we find that fine-tuned models consistently exhibit stronger positive correlation $ρ(N, r_N)$, even when total entropy decreases. Furthermore, after controlling for model family, task, prompt, and output-length effects, we find that fine-tuning nearly triples the correlation strength between entropy rate and semantic diversity, suggesting that aligned models convert token uncertainty into semantic diversity more efficiently. Overall, these results demonstrate that fine-tuning does not simply reduce uncertainty, but fundamentally reorganizes it into more informative and semantically meaningful generations. Our code is available at https://github.com/WeiyiTian/canopy-entropy.",
+      "url": "https://arxiv.org/abs/2605.30844",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "submitted": "2026-05-29",
+      "github_url": "https://github.com/WeiyiTian/canopy-entropy.",
+      "score": 0.8838
+    },
+    {
+      "id": "2605.31561",
+      "title": "What Am I Missing? Question-Answering as Hidden State Probing",
+      "authors": [
+        "Chu Fei Luo",
+        "Samuel Dahan",
+        "Xiaodan Zhu"
+      ],
+      "abstract": "Test-time reasoning has become a significant field of study since the introduction of chain-of-thought reasoning in large language models (LLMs). However, the mechanisms of this reasoning process are still under-explored -- from the same input prompt, and even the same partial solution, LLMs can produce varied answers if sampled multiple times. We propose to leverage question-asking as an inference-time intervention that articulates information about the model's hidden state. To achieve that, we present a student-teacher setting where a student asks questions to a teacher. We train a probe on the student's hidden state before and after asking a question and find it is predictive of the trajectory's final correctness, even before generating the teacher's answer. This suggests there is a meaningful signal from the self-diagnosis that occurs during question generation rather than information transfer from the teacher. We then frame question-asking as a sequential decision problem, using this probe as a quality score, and define a gating policy to ask questions that maximize likelihood of correctness. We find that the success of question-asking as an intervention is largely dependent on the model's self-consistency. Our empirical results show a gap between detection and recovery; while our gating policy captures model correctness and uncertainty, interventions are equally likely to harm correct trajectories as they are to recover incorrect ones. This gap between diagnosis and correction has broader implications on language models' capacity for self-refinement under uncertainty.",
+      "url": "https://arxiv.org/abs/2605.31561",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.8835
+    },
+    {
+      "id": "2605.31367",
+      "title": "Trading Complexity for Expressivity Through Structured Generalized Linear Token Mixing",
+      "authors": [
+        "Erwan Fagnou",
+        "Paul Caillon",
+        "Blaise Delattre",
+        "Alexandre Allauzen"
+      ],
+      "abstract": "Token mixing layers play a key role in how language models can learn and generate long-range dependencies. Their efficiency relies on the necessary trade-off between decoding speed and the memory requirements, along with the cache size. Considering causal generation, this paper explores new trade-offs thanks to a unified framework which separates two crucial features: (i) the direct influence of inputs on outputs in one generation step; (ii) the recurrent propagation of information through past outputs. This framework encompasses major architectures such as attention and state-space models, but also generalizes the recurrence equations by allowing each state to depend on multiple past states rather than only the immediate predecessor. By introducing structure, we design new recurrence patterns that provably achieve the desired complexity, while providing theoretical insights on their expressivity -- trading runtime for expressivity in a principled way. Empirical validation is performed on synthetic tasks, along with language modeling. Together, these results provide a unified toolkit for the understanding and design of efficient and expressive token mixers across model families.",
+      "url": "https://arxiv.org/abs/2605.31367",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "score": 0.883
+    },
+    {
+      "id": "2605.31010",
+      "title": "MoG: Mixture of Experts for Graph-based Retrieval-Augmented Generation",
+      "authors": [
+        "Zheng Yuan",
+        "Chuang Zhou",
+        "Linhao Luo",
+        "Siyu An",
+        "Di Yin",
+        "Xing Sun",
+        "Xiao Huang"
+      ],
+      "abstract": "Retrieval-augmented generation is intensively studied to ground large language models on external evidence. However, retrieving from a unified knowledge base could inevitably introduce irrelevant information that may mislead generation for complex reasoning. Inspired by the conditional computation of mixture of experts (MoE), where a router sparsely selects specialized experts alongside shared ones for each input, we propose \\textbf{M}ixture \\textbf{o}f experts for \\textbf{G}raph-based Retrieval-Augmented Generation, i.e., \\textbf{MoG}. It organizes knowledge into two core components: (i) diverse, always-accessible hub graphs that encode semantically and structurally central knowledge and provide contextual clues for expert activation, and (ii) sparsely activated expert graphs that contain domain-specific evidence. MoG first accesses hub graphs to identify general evidence and derive contextual clues. Then, a topology-aware router dynamically activates a limited set of expert graphs conditioned on the query, thereby confining retrieval to a focused evidence subspace. Extensive experiments on challenging benchmarks show that MoG consistently outperforms strong baselines, with over 20\\% relative improvement on MuSiQue. Our code is available in https://github.com/DEEP-PolyU/MoG.",
+      "url": "https://arxiv.org/abs/2605.31010",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-29",
+      "github_url": "https://github.com/DEEP-PolyU/MoG.",
+      "score": 0.8822
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

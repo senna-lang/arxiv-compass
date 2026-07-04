@@ -1,0 +1,404 @@
+{
+  "date": "2026-06-03",
+  "collected_at": "2026-06-03T13:54:53.927867+09:00",
+  "papers": [
+    {
+      "id": "2606.03965",
+      "title": "Agentic Chain-of-Thought Steering for Efficient and Controllable LLM Reasoning",
+      "authors": [
+        "Yu Xia",
+        "Zhouhang Xie",
+        "Xin Xu",
+        "Byungkyu Kang",
+        "Prarit Lamba",
+        "Xiang Gao",
+        "Julian McAuley"
+      ],
+      "abstract": "Large language models improve final-answer accuracy through extended chain-of-thought reasoning, but often spend tokens inefficiently and offer little inference-time control. Existing efficient reasoning methods control thinking length by shortening, early-stopping, or compressing traces, leaving how the model thinks implicit. In this paper, we propose Agentic Chain-of-Thought Steering (ACTS), which formulates reasoning steering as a Markov decision process where a controller agent adaptively steers a frozen reasoner during inference. At each step, the controller observes the reasoning trace and remaining thinking budget, then issues a steering action consisting of a reasoning strategy and a steering phrase that initiates the next reasoner step. This enables budget-aware strategy control for efficient reasoning while preserving the reasoner's generation continuity. We initialize the controller agent from our constructed synthetic steering trajectories with multi-budget augmentation, and further optimize it via reinforcement learning with budget-conditioned reward shaping. Experiments across multiple benchmarks show that ACTS matches full-thinking performance with substantial token savings, and enables controllable accuracy-efficiency trade-offs across different reasoners and tasks. The code is available at https://github.com/Andree-9/ACTS.",
+      "url": "https://arxiv.org/abs/2606.03965",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "github_url": "https://github.com/Andree-9/ACTS.",
+      "score": 0.8951
+    },
+    {
+      "id": "2606.03463",
+      "title": "DMF: A Deterministic Memory Framework for Conversational AI Agents",
+      "authors": [
+        "Matteo Stabile",
+        "Enrico Zimuel"
+      ],
+      "abstract": "Conversational AI agents require memory systems that are both scalable and semantically coherent across long interaction horizons. Existing approaches rely predominantly on large language model (LLM)-based summarisation at write time, which introduces non-determinism, escalating token costs, and opacity in pruning decisions. We present the Deterministic Memory Framework (DMF), a CPU-first approach that replaces generative memory compression with a fully deterministic pipeline grounded in classical NLP analysis, vector geometry, and mathematical scoring. DMF assigns each conversational interaction a Survival Score $Ω$ computed from deterministic content signals, conversational cues, and structured provenance, combined through a logistic projection. An interaction-count decay law, denoted as $Ω_{\\mathrm{eff}}(Δn)$, governs how relevance evolves as new turns arrive, where $Δn$ is the number of newer interactions rather than wall-clock time, preserving full determinism. We present the mathematical formulation of DMF, its structured recall pipeline, the pruning decision procedure, and the evaluation protocol. Experiments are conducted on a purpose-built benchmark using the LoCoMo and LongMemEval datasets. We compare DMF against Mem0, a popular memory layer for AI agents. DMF achieves comparable accuracy while using zero tokens to prepare the memory context and 5x to 242x fewer tokens over the entire conversation. These results show that it is possible to eliminate LLM calls from the memory-management loop, reducing token costs to nearly zero and enabling deterministic memory systems for conversational AI agents.",
+      "url": "https://arxiv.org/abs/2606.03463",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8937
+    },
+    {
+      "id": "2606.03608",
+      "title": "Exploiting Verification-Generation Gap: Test-Time Reinforcement Learning with Confidence-Conditioned Verification",
+      "authors": [
+        "Jiahui Li",
+        "Jianfeng Shan",
+        "Wenpei Chen",
+        "Shunyu Wu",
+        "Jian Lou",
+        "Wenjie Feng",
+        "Dan Li",
+        "See-Kiong Ng"
+      ],
+      "abstract": "Test-time reinforcement learning has emerged as a promising paradigm for enhancing the complex reasoning abilities of large language models in a completely label-free manner. Despite existing studies focusing on Pass@1 performance, optimizing Pass@k remains under-explored yet critical in label-free settings, which measures generation coverage for sustained exploration. Optimizing Pass@k in label-free setting is highly non-trivial, as directly applying the Pass@k advantage designs effective for RLVR yields unsatisfactory performance. Through in-depth empirical analysis, we discover the root causes hindering performance: pseudo-label estimations for low-confidence samples have a high probability of being incorrect, while candidate answers for high-confidence samples suffer from severe diversity collapse. To overcome these hurdles, we propose TTRL-CoCoV (Test-Time Reinforcement Learning with Confidence-Conditioned Verification), a novel confidence-adaptive framework that expands Pass@k coverage and improves Pass@1 performance. Based on our key insight that verification capability generally leads generation capability, TTRL-CoCoV employs a confidence-conditioned mechanism: for high-confidence samples, it bootstraps verifier and applies an exploration-enhancing reward to prevent diversity collapse; for low-confidence samples, it delegates pseudo-label selection to the verifier to filter incorrect pseudo-labels; and for medium-confidence samples, it bypasses verification entirely. Extensive experiments demonstrate that TTRL-CoCoV outperforms the best competing methods across 6 widely-recognized benchmarks, achieves average absolute gains of +9.8% in Pass@1 and +18.7% in Pass@16 over TTRL, and even achieves absolute Pass@1 improvements of up to +5.0% across multiple reasoning benchmarks when compared against fully supervised RL methods. Our code repository: https://github.com/shanjf666/CoCoV.",
+      "url": "https://arxiv.org/abs/2606.03608",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "github_url": "https://github.com/shanjf666/CoCoV.",
+      "score": 0.8932
+    },
+    {
+      "id": "2606.03705",
+      "title": "Code-on-Graph: Iterative Programmatic Reasoning via Large Language Models on Knowledge Graphs",
+      "authors": [
+        "Weiwei Ding",
+        "Zixuan Li",
+        "Long Bai",
+        "Zhuo Chen",
+        "Kun Su",
+        "Fei Wang",
+        "Xiaolong Jin",
+        "Jin Zhang",
+        "Jiafeng Guo",
+        "Xueqi Cheng"
+      ],
+      "abstract": "Knowledge Graphs (KGs) are widely used to mitigate the limitations of Large Language Models (LLMs), such as outdated knowledge and hallucinations. Existing LLM-KG integration frameworks typically rely on predefined operators to retrieve factual knowledge from KGs and inject it into prompts for answer generation. This paradigm faces two critical bottlenecks: 1) Inflexibility: The predefined operators are limited in scope and thus lack sufficient compositional expressiveness to fully capture the complex semantics required by KG questions. 2) Unscalability: Direct injection of factual knowledge into prompts limits scalability in handling large-scale factual knowledge. To address these two bottlenecks, we propose Code-on-Graph (CoG), a programmatic reasoning framework for LLM-KG integration. Specifically, given the factual knowledge retrieved at each reasoning step, CoG first identifies the corresponding KG schemas and represents these schemas as Python classes, which serve as abstract interfaces to the retrieved facts. It then generates executable code grounded in these classes, with the retrieved facts instantiated as objects of the corresponding classes during execution. This design enables flexible code-based reasoning while avoiding the direct injection of large-scale factual knowledge into prompts. Experiments on WebQSP, CWQ, and GrailQA demonstrate that CoG outperforms prior state-of-the-art models by up to 10.5%.",
+      "url": "https://arxiv.org/abs/2606.03705",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8913
+    },
+    {
+      "id": "2606.03618",
+      "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
+      "authors": [
+        "Mehmet Utku Colak"
+      ],
+      "abstract": "AI-assisted coding agents are bottlenecked by input-token cost. Two pathologies of raw human input drive much of this overhead: tokenization inefficiency for non-English text and structural entropy in conversational prompts. Existing approaches act reactively by compressing already-bloated contexts or intervening after failures occur.\n  We introduce a pre-flight, edge-side prompt-rewriting middleware that operates between the developer and the cloud agent. A local Llama 3.2 (3B) model performs cross-lingual translation into English, structural rewriting into a compact task-oriented format, and regex-validated rewrite-with-fallback safeguards to ensure the optimized prompt is never larger than the original.\n  We evaluate on OMH-Polyglot, a multilingual coding benchmark spanning Turkish, Arabic, Chinese, and code-switched specifications. Across three commercial LLM backends, the middleware reduces prompt tokens by 34-47 percent and total tokens by up to 18.8 percent while preserving or improving task accuracy. Ablation studies show that gains arise primarily from the rewriting stage rather than simple function-name extraction. Compared with LLMLingua-2 at matched compression rates, our method consistently achieves superior OckScore performance across all evaluated backends. These results demonstrate that proactive prompt optimization can substantially reduce inference costs without sacrificing coding quality.",
+      "url": "https://arxiv.org/abs/2606.03618",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8907
+    },
+    {
+      "id": "2606.03197",
+      "title": "MemTrain: Self-Supervised Context Memory Training",
+      "authors": [
+        "Ziheng Li",
+        "Xingrun Xing",
+        "Haoqing Wang",
+        "Zhi-Hong Deng",
+        "Yehui Tang"
+      ],
+      "abstract": "Memory is an indispensable capability for long-horizon LLM agents, enabling them to preserve and utilize information accumulated across extended interactions. Existing memory-agent approaches are typically trained end-to-end with reinforcement learning on downstream tasks. However, collecting high-quality annotated problems for memory-intensive scenarios is costly, and the resulting training data often lack sufficient diversity to cover general memory behaviors. In this work, we propose MemTrain, a self-supervised training framework for generally enhancing the context-memory capability of LLM agents for more effective downstream post-training. MemTrain introduces two coupled proxy tasks over unlabeled Wikipedia corpora: (1) an end-to-end masked reconstruction objective, which requires the model to recover masked entities after multiple rounds of memory updates, thereby encouraging memory maintenance from the final outcome perspective; and (2) an intermediate memory recall objective, which requires the model to reconstruct masked historical information using intermediate memory states, encouraging faithful compression and memory completeness throughout the interaction process. The two objectives are jointly optimized using GRPO. Extensive experiments on long-text QA and search-based QA benchmarks demonstrate that MemTrain consistently improves downstream memory-intensive reasoning performance across different models, achieving gains of up to 17.67 points over direct task-specific post-training.",
+      "url": "https://arxiv.org/abs/2606.03197",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8902
+    },
+    {
+      "id": "2606.03841",
+      "title": "EvoDS: Self-Evolving Autonomous Data Science Agent with Skill Learning and Context Management",
+      "authors": [
+        "Zherui Yang",
+        "Fan Liu",
+        "Yansong Ning",
+        "Hao Liu"
+      ],
+      "abstract": "Recent progress in Large Language Model (LLM) agents has enabled promising advances in automated data science. However, existing approaches remain fundamentally limited by their static action sets and lack of principled long-horizon context management, hindering their ability to accumulate reusable experience across tasks and operate reliably in multi-stage, iterative data science pipelines. To address these challenges, we introduce EvoDS, a self-evolving autonomous data science agent that learns to expand its skills and adaptively managing long-term context through agentic reinforcement learning. Specifically, EvoDS introduces two key strategies: (1) Autonomous Skill Acquisition (ASA) mechanism, which enables agents to synthesize, validate, and reuse executable skills; and (2) Adaptive Context Compression (ACC) strategy, which treats context management as a learned control problem rather than passive truncation. These strategies are orchestrated within a two-stage multi-agent training scheme, enabling EvoDS to autonomously improve over time. Theoretically, we prove that EvoDS's hierarchical design reduces tool-selection error, and its optimization objective aligns with an information bottleneck principle, ensuring efficient context use. Empirically, EvoDS outperforms state-of-the-art open-source data science agents by an average of 28.9% across four diverse benchmarks while eliminating out-of-token failures. Our code and data are available at https://github.com/usail-hkust/EvoDS.",
+      "url": "https://arxiv.org/abs/2606.03841",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "github_url": "https://github.com/usail-hkust/EvoDS.",
+      "score": 0.8895
+    },
+    {
+      "id": "2606.03648",
+      "title": "Safety Measurements for Fine-tuned LLMs Should be Grounded in Capability",
+      "authors": [
+        "Krishnapriya Vishnubhotla",
+        "Hillary Dawkins",
+        "Isar Nejadgholi",
+        "Svetlana Kiritchenko"
+      ],
+      "abstract": "Adapting foundation large language models to a user's task or preferred style through fine-tuning can result in compromising the model's safety. Previous works examined the effects of fine-tuning on model safety in limited and seemingly random experimental settings. We argue that anchoring fine-tuning to a specific capability goal is essential for avoiding arbitrary empirical choices, allowing us to draw meaningful conclusions about safety impacts, and to compare mitigation methods on a consistent basis. We conduct a multi-dimensional evaluation of the effects of fine-tuning on model behavior by focusing on capability as well as safety. Our results surface important issues that (1) fine-tuned models can produce incoherent generations in response to safety prompts, (2) automated safety judgments are unreliable for such incoherent outputs, and (3) the conclusions about the effects of fine-tuning can change depending on the choice of safety benchmark as well as the safety evaluator.",
+      "url": "https://arxiv.org/abs/2606.03648",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8883
+    },
+    {
+      "id": "2606.03969",
+      "title": "Quantifying Faithful Confidence Expression in Large Reasoning Models",
+      "authors": [
+        "Areeb Gani",
+        "Asal Meskin",
+        "Gabrielle Kaili-May Liu",
+        "Arman Cohan"
+      ],
+      "abstract": "Reliable uncertainty communication is critical to the trustworthiness of LLMs, yet faithful calibration (FC)--the alignment between models' intrinsic and (linguistically) expressed confidence--is a persistent failure mode. This challenge is key for large reasoning models (LRMs), whose extended reasoning traces are often interpreted by users as evidence of deliberation, competence, and confidence. Despite the importance of FC and wide usage of LRMs, the extent to which LRMs can faithfully express their confidence remains poorly understood. Moreover, the prevailing paradigm to measure FC does not generalize well to the long chain-of-thought outputs generated by LRMs, which tend to lack clear step boundaries, involve inconsistent step structure, and encode complex conditional dependencies throughout the trace--complicating estimation of intrinsic confidence. To address this challenge, we introduce a novel framework to systematically quantify FC of LRMs. Our framework analyzes linguistic decisiveness relative to three sources of internal uncertainty, based on token probabilities, hidden states, and sampled response consistency. We also devise a prefix-conditioned sampling approach to control for conditional and structural variation across traces. Applying our framework to a diverse suite of leading models, datasets, and prompts, we find that faithful confidence expression is a significant challenge for LRMs. Reasoning behaviors do not automatically translate to improved FC, and prompt interventions for non-reasoning models do not improve faithfulness in the reasoning setting. Different confidence estimators further produce divergent assessments of the same traces, revealing fragility in prior evaluation methodologies. Taken together, our work establishes FC as a distinct reliability and alignment target for LRMs, particularly as such systems are increasingly deployed in high-stakes contexts.",
+      "url": "https://arxiv.org/abs/2606.03969",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8881
+    },
+    {
+      "id": "2606.03601",
+      "title": "DDOR: Delta Debugging for Explainable Overrefusal Testing and Repair",
+      "authors": [
+        "Qinyan Zhou",
+        "Peixin Zhang",
+        "Jun Sun",
+        "Haonan Zhang",
+        "Dongxia Wang"
+      ],
+      "abstract": "While safety alignment and guardrails help large language models (LLMs) avoid harmful outputs, they can also induce overrefusal, i.e., unwarranted rejection of benign queries that merely appear risky. We present DDOR (Delta Debugging for OverRefusal), a fully automated and explainable framework for overrefusal testing and repair in a black-box setting, where only model inputs and outputs are accessible and internal safety mechanisms remain opaque. DDOR applies delta debugging to localize minimal refusal-triggering fragments (mRTFs) that provide phrase-level, explainable evidence for why a refusal occurs. Conditioned on these mRTFs, DDOR generates diverse, context-rich prompts and performs multi-oracle validation to filter intrinsically unsafe or ambiguous cases, producing scalable and model-specific overrefusal test suites (approximately 1K cases per model). Beyond evaluation, we further leverage localized mRTFs to perform targeted prompt repair, substantially reducing overrefusal while preserving the original intent and maintaining safety on genuinely harmful inputs. Overall, DDOR offers a practical end-to-end solution to both evaluate and mitigate overrefusal, improving LLM usability without sacrificing safety.",
+      "url": "https://arxiv.org/abs/2606.03601",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8874
+    },
+    {
+      "id": "2606.03234",
+      "title": "Right Makes Might: Aligning Verified Hidden States Empowers RL Reasoning",
+      "authors": [
+        "Ziyue Wang",
+        "Aomufei Yuan",
+        "Yongfu Zhu",
+        "Shuai Dong",
+        "Wenpu Liu",
+        "Yiran Yao",
+        "Weichu Xie",
+        "Yuqi Xu",
+        "Caoyuan Ma",
+        "Wenqi Shao",
+        "Xiaoying Zhang",
+        "Nan Duan",
+        "Jiaqi Wang"
+      ],
+      "abstract": "Reinforcement Learning from Verifiable Rewards (RLVR) has become the dominant approach for improving mathematical reasoning in large language models, yet current methods reduce each correct rollout to a single reward bit, ignoring the geometric structure shared among their hidden states. Investigating this structure, we find that at the anchor token (the position immediately before the answer marker), correct rollouts converge naturally because they must produce the same answer (cosine similarity ~0.84), yet each retains residual variance from its unique reasoning path. Encouraging full alignment at this point pushes the model to extract a unified \"correct decision\" representation, reducing sensitivity to which reasoning path was taken. Based on this observation, we propose Hidden-Align, an auxiliary loss function that aligns the last-layer hidden states of correct rollouts at the anchor token during RL training, with zero overhead in both training and inference. On eight mathematical reasoning benchmarks, Hidden-Align improves average pass@1 over the DAPO baseline by 3.8, 6.2, and 5.4 percentage points on Qwen3-1.7B, 4B, and 14B respectively, with consistent pass@k gains across all three scales, supported by ablations on loss type, anchor position, layer depth, and loss weight.",
+      "url": "https://arxiv.org/abs/2606.03234",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8872
+    },
+    {
+      "id": "2606.03846",
+      "title": "Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models",
+      "authors": [
+        "Qi Cao",
+        "Takeshi Kojima",
+        "Andrew Gambardella",
+        "Helinyi Peng",
+        "Yutaka Matsuo",
+        "Yusuke Iwasawa"
+      ],
+      "abstract": "Large language models (LLMs) demonstrate remarkable performance across diverse tasks, but they often generate responses that appear plausible while being factually incorrect. This problem is compounded by the lack of explicit uncertainty estimates, which makes it difficult for users to judge the reliability of model outputs. Existing uncertainty quantification methods typically rely on indirect signals, such as entropy across sampled generations. These signals can be difficult to interpret and do not fully leverage the model's ability to assess its own uncertainty. We propose a simple yet effective self-assessment method for uncertainty quantification in LLMs. Our approach groups sampled generations into semantically distinct clusters, converts them into answer options in a structured multiple-choice question, and uses the probability assigned by the LLM to each option as a confidence estimate. Experiments across multiple models and datasets show that our method consistently outperforms baseline approaches. Notably, it achieves competitive performance with as few as two additional samples, demonstrating both its effectiveness and efficiency.",
+      "url": "https://arxiv.org/abs/2606.03846",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8862
+    },
+    {
+      "id": "2606.03928",
+      "title": "Value-Aware Stochastic KV Cache Eviction for Reasoning Models",
+      "authors": [
+        "Ting-Yun Chang",
+        "Harvey Yiyun Fu",
+        "Deqing Fu",
+        "Chenghao Yang",
+        "Jesse Thomason",
+        "Robin Jia"
+      ],
+      "abstract": "Reasoning models improve accuracy through extended chains of thought, but their long outputs create a memory and compute bottleneck. KV cache eviction methods reduce this cost by evicting unimportant key-value pairs from the cache, yet they often yield worse accuracy than selection-based sparse attention alternatives, which keep the full KV cache. We identify key factors crucial to KV cache eviction accuracy. First, a small fraction of value states have abnormally large magnitudes, and evicting them causes catastrophic failure where models enter repetitive reasoning loops. Second, introducing stochasticity during eviction improves accuracy by increasing cache diversity. Based on these findings, we propose Value-aware Stochastic KV Cache Eviction (VaSE), a training-free recipe that protects large-magnitude value states and promotes diverse eviction decisions. Across six reasoning tasks, Qwen3 models using VaSE with 4x KV cache compression yield higher average accuracies than SOTA selection method at the same sparsity, while outperforming the strongest eviction method by more than 4%. Overall, VaSE bridges the gap between efficiency and accuracy, supporting FlashAttention2 and enabling a static memory footprint for reasoning models.",
+      "url": "https://arxiv.org/abs/2606.03928",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.886
+    },
+    {
+      "id": "2606.03800",
+      "title": "Trading Human Curation for Synthetic Augmentation in RLVR",
+      "authors": [
+        "Akshansh <last>",
+        "Leonardo Rosa Rodrigues",
+        "Michael Korostelev",
+        "Youssef Hassan",
+        "Mark E. Whiting"
+      ],
+      "abstract": "The supply of high-quality training tasks is a central bottleneck for reinforcement learning from verifiable rewards (RLVR) on agentic language models. Each task requires a sandboxed setup, a prompt, and a hand-authored reward function, and only tasks that pass a quality bar produce useful training signal. Hand-curation at this quality bar does not scale economically to the task counts effective RL training requires, and the substitution rate between automatically generated task variants and human-authored ones is not yet established. We investigate using pre-specified, gate-filtered augmentations of a small hand-authored base as a substitute for additional human curation during RLVR. We formalize the cost-adjusted trade rate $ρ_{\\text{cost}}$ between augmented and human-authored tasks, measure it through a controlled ablation across training corpora with varying augmentation share, and characterize the end-to-end economics of the augmentation pipeline. Substituting augmented content for additional human-authored tasks retains aggregate held-out generalization on a ten-benchmark suite spanning code, instruction following, reasoning, and multi-turn agentic function-calling. The cost-adjusted trade rate $ρ_{\\text{cost}}$ between gated synthetic and human-authored RLVR tasks stays in $[1.4\\times, 11.6\\times]$ across the plausible $c_{\\text{human}}/c_{\\text{aug}}$ range.",
+      "url": "https://arxiv.org/abs/2606.03800",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8856
+    },
+    {
+      "id": "2606.03486",
+      "title": "NeuroArmor: Safe-Variant-Guided Representation Consistency for Selective Re-Anchoring in Jailbreak Defense",
+      "authors": [
+        "Zhongyang Lin",
+        "Ziran Zhao",
+        "Feifei Zhai",
+        "Pengyuan Liu"
+      ],
+      "abstract": "Large language models remain vulnerable to jailbreak attacks that hide harmful intent behind seemingly ordinary requests such as role-play, translation, encoding, adversarial suffixes, and multi-turn buildup. Existing defenses still struggle to handle these attacks without over-blocking benign but sensitive requests, partly because they often apply the same action to every prompt and therefore fail to balance safety and helpfulness. We propose NeuroArmor, a white-box runtime defense that uses prompt-specific safe variants as a local safety reference for deciding when intervention is needed and, once triggered, as safe targets for intervention. For each prompt, NeuroArmor builds K safe variants, compares the prompt state against this local safe reference in hidden-state space, and routes anomalies either to a refusal branch for malicious prompts or to a helpful recovery branch for borderline benign prompts. On Llama-3-8B-Instruct, NeuroArmor reduces malicious attack success rate (ASR) from 41.56% to 1.57% while lowering benign false positive rate (FPR) on the shared benign pool from 30.26% to 22.05%; matched baselines remain substantially weaker on this trade-off. External-judge and manual behavioral evaluations further show that the remaining non-blocked outputs are much less likely to be operationally harmful. Overall, NeuroArmor provides a more effective runtime strategy for jailbreak defense by combining prompt-specific consistency checking, routing, and selective intervention.",
+      "url": "https://arxiv.org/abs/2606.03486",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8852
+    },
+    {
+      "id": "2606.03892",
+      "title": "Synthesize and Reward -- Reinforcement Learning for Multi-Step Tool Use in Live Environments",
+      "authors": [
+        "Ibrahim Abdelaziz",
+        "Asim Munawar",
+        "Kinjal Basu",
+        "Maxwell Crouse",
+        "Chulaka Gunasekara",
+        "Suneet Katrekar",
+        "Pavan Kapanipathi"
+      ],
+      "abstract": "Training LLMs to orchestrate multi-step tool calls is held back by three coupled obstacles: realistic stateful execution environments are costly to build, synthetic training queries are often detached from the server's actual state (so the generated tool calls fail to execute), and recall-based RL rewards incentivize verbose tool-calling patterns. We present PROVE (Programmatic Rewards On Verified Environments), a framework with three contributions: (1) a library of 20 stateful MCP (Model Context Protocol) servers exposing 343 tools, enabling live-execution RL training with session-scoped state isolation; (2) an automated data synthesis pipeline that generates validated multi-turn tool-call trajectories against these servers via dependency-graph-guided conversation simulation grounded in live-sampled server state, so every generated query references entities that actually exist; and (3) a multi-component programmatic reward - graduated validity scoring, dependency-aware coverage, an adaptive efficiency penalty with a complexity-scaled call budget, a tool-name signal, and an argument-value matching bonus - requiring no external judge model. We train four models (Qwen3-4B, Qwen3-8B, Qwen2.5-7B, Granite-4.1-8B) with GRPO using identical reward hyperparameters and ~13K training examples; only learning rate is tuned per model family from a three-point sweep. On BFCL Multi-Turn, tau2-bench, and T-Eval, PROVE yields improvements of up to +10.2, +6.8, and +6.5 points respectively, demonstrating that a compact programmatic reward yields consistent gains on multi-step tool orchestration across two model families.",
+      "url": "https://arxiv.org/abs/2606.03892",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8851
+    },
+    {
+      "id": "2606.03330",
+      "title": "FLIPS: Instance-Fingerprinting for LLMs via Pseudo-random Sequences",
+      "authors": [
+        "Gurvan Richardeau",
+        "Gohar Dashyan",
+        "Erwan Le Merrer",
+        "Gilles Tredan"
+      ],
+      "abstract": "Literature reveals that a Large Language Model's (LLM) behavior is not only conditioned by its original weights but also its instance-level parameters, such as instructional prompt, sampling configuration or quantization. A model that generates safe outputs under one configuration may produce toxic content under another. However, current LLM identification techniques (such as fingerprinting) focus on intellectual property protection, and their design favors robustness to changes in these instance-level parameters. This poses a critical challenge for AI regulation in which compliance assessments target actual deployed behaviors, not model provenance. In this paper, we introduce instance-level fingerprinting, a regulator-oriented paradigm that distinguishes configurations of the same LLM. Our method FLIPS, exploits biases in generated binary random sequences to reach 96% (closed-set) and 90% (open-set, where some targets are unknown) identification accuracy across 237 model instances, versus 35% for the adapted LLMmap baseline. This shows that instance-level fingerprinting is both necessary for regulation and practically feasible. Code available at https://github.com/GurvanR/FLIPS-LLM-Instance-Fingerprinting.",
+      "url": "https://arxiv.org/abs/2606.03330",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-06-02",
+      "github_url": "https://github.com/GurvanR/FLIPS-LLM-Instance-Fingerprinting.",
+      "score": 0.8847
+    },
+    {
+      "id": "2606.03858",
+      "title": "PyraMathBench: Evaluating and Improving Mathematical Capability in Large Language Models",
+      "authors": [
+        "Zetian Ouyang",
+        "Linlin Wang",
+        "Gerard de Melo",
+        "Liang He"
+      ],
+      "abstract": "Despite the pivotal role of numerical reasoning as the cornerstone of mathematical capabilities in large language models (LLMs) across applications, few benchmarks evaluate LLMs by integrating numerical processing and mathematical reasoning, hindering the interpretability of failures in math tasks. We introduce PyraMathBench, a comprehensive hierarchical benchmark with 32,505 questions derived from 7,404 math word problems, spanning 4 key cognitive aspects, 14 subcategories, and 2 modalities. Experiments reveal that LLMs' performance is severely compromised by inadequate numerical computation and weak handling of abstract numerical questions. To address this, we propose the Smart Optimization & Learning-based VErsatile module (SOLVE) and Interactive Relative Policy Optimization (IRPO), which enhance LLMs' numerical-mathematical synergy via efficient tool calls (fuzzy matching and low-quality call rejection). Comparative experiments show Qwen-2.5 achieves a 5.0 score improvement with SOLVE and IRPO training.",
+      "url": "https://arxiv.org/abs/2606.03858",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8844
+    },
+    {
+      "id": "2606.03606",
+      "title": "Testing LLM Arithmetic Reasoning Generalization with Automatic Numeric-Remapping Attacks",
+      "authors": [
+        "Malia Barker",
+        "Bishal Lakha",
+        "Edoardo Serra",
+        "Francesco Gullo"
+      ],
+      "abstract": "Large language models achieve strong performance on arithmetic reasoning benchmarks, and one common response to arithmetic brittleness is to delegate computation to code. Yet models are still often used in settings where they must reason directly from natural language, and trustworthy models should solve small-number arithmetic word problems without external tools. Prior work shows that LLMs are sensitive to numerical variation: a model may solve an original problem but fail on structurally similar variants requiring the same reasoning procedure with different numbers. We ask whether this fragility persists under a stricter setting involving small, schema-preserving numeric changes that retain the original reasoning program and avoid large-number stress tests. We introduce an automatic algorithm for generating numeric-remapping attacks on arithmetic word problems. Unlike template-based perturbation methods requiring manual schemas or constraints, our approach derives problem-specific symbolic representations, generates constrained numeric remappings, recomputes gold answers, and realizes transformed questions through deterministic edits guided by LLM-generated edit plans. Stage-wise validation and a high-confidence audit retain reliable attacks, making the pipeline scalable with limited human intervention. We evaluate DeepSeek-R1 (70B), Gemma4 (31B), and GPT-OSS (120B) on GSM8K, MAWPS, and MultiArith. On GSM8K, completed runs show conditional accuracy drops of 12.16 to 25.82 percentage points. MAWPS and MultiArith are far more stable, with most attacked accuracies near or above 98%. These results show that numeric-remapping robustness depends strongly on dataset structure: GSM8K remains sensitive even when reasoning programs are preserved and answers are recomputed, while shorter, more regular datasets are more robust.",
+      "url": "https://arxiv.org/abs/2606.03606",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-02",
+      "score": 0.8844
+    },
+    {
+      "id": "2606.03458",
+      "title": "KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks",
+      "authors": [
+        "Lorenz K. Muller",
+        "Philippe Bich",
+        "Chiara Boretti",
+        "Hyun-Min Chang",
+        "Jiawei Zhuang",
+        "Lukas Cavigelli"
+      ],
+      "abstract": "Test-time scaling is a powerful approach to obtain better reasoning in large language models, but it becomes memory-bottlenecked during long-horizon decoding, as the KV-cache grows. KV-cache quantization can help improve this, but current methods are evaluated under prefill-like settings and errors behave differently under autoregressive decoding. We show that in the latter regime, quantization errors accumulate across timesteps, driven primarily by incorrect token scales. We introduce KVarN, a calibration-free KV-cache quantizer that applies a Hadamard rotation followed by a dual-scaling variance normalization across both axes of the K and V matrices. We find that this combination fixes outlying token-scale errors and substantially reduces error accumulation over existing baselines. KVarN establishes a new state-of-theart for KV-cache quantization on generative benchmarks, including MATH500, AIME24 and HumanEval, at 2-bit precision. A vLLM implementation of the KVarN method is available at https://github.com/huawei-csl/KVarN",
+      "url": "https://arxiv.org/abs/2606.03458",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-02",
+      "github_url": "https://github.com/huawei-csl/KVarN",
+      "score": 0.8843
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

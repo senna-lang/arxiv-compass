@@ -1,0 +1,431 @@
+{
+  "date": "2026-05-13",
+  "collected_at": "2026-05-13T12:59:33.477351+09:00",
+  "papers": [
+    {
+      "id": "2605.11746",
+      "title": "When Reasoning Traces Become Performative: Step-Level Evidence that Chain-of-Thought Is an Imperfect Oversight Channel",
+      "authors": [
+        "Wenkai Li",
+        "Fan Yang",
+        "Ananya Hazarika",
+        "Shaunak A. Mehta",
+        "Koichi Onoue"
+      ],
+      "abstract": "Chain-of-thought (CoT) traces are increasingly used both to improve language model capability and to audit model behavior, implicitly assuming that the visible trace remains synchronized with the computation that determines the answer. We test this assumption with a step-level Detect-Classify-Compare framework built around an answer-commitment proxy that is cross-validated with Patchscopes, tuned-lens probes, and causal direction ablation. Across nine models and seven reasoning benchmarks, latent commitment and explicit answer arrival align on only 61.9% of steps on average. The dominant mismatch pattern is confabulated continuation: 58.0% of detected mismatch events occur after the answer-commitment proxy has already stabilized while the trace continues producing deliberative-looking text, and a vacuousness analysis shows that the committed answer does not change during these steps. In architecture-matched Qwen2.5/DeepSeek-R1-Distill comparisons, the reasoning pipeline changes failure composition more than aggregate alignment, most clearly at 32B where confabulated steps decrease as contradictory states increase. Lower step-level alignment is also associated with larger CoT utility, suggesting that the settings that benefit most from CoT are often the least temporally faithful. Paired truncation and a complementary donor-corruption test further indicate that much post-commitment text is not load-bearing for the final answer. These findings suggest that CoT can remain useful while still being an unreliable report of when the answer was formed.",
+      "url": "https://arxiv.org/abs/2605.11746",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8959
+    },
+    {
+      "id": "2605.12446",
+      "title": "ORCE: Order-Aware Alignment of Verbalized Confidence in Large Language Models",
+      "authors": [
+        "Chen Li",
+        "Xiaoling Hu",
+        "Songzhu Zheng",
+        "Jiawei Zhou",
+        "Chao Chen"
+      ],
+      "abstract": "Large language models (LLMs) often produce answers with high certainty even when they are incorrect, making reliable confidence estimation essential for deployment in real-world scenarios. Verbalized confidence, where models explicitly state their confidence in natural language, provides a flexible and user-facing uncertainty signal that can be applied even when token logits are unavailable. However, existing verbalized-confidence methods often optimize answer generation and confidence generation jointly, which can cause confidence-alignment objectives to interfere with answer accuracy. In this work, we propose a decoupled and order-aware framework for verbalized confidence calibration. Our method first generates an answer and then estimates confidence conditioned on the fixed question--answer pair, allowing confidence optimization without directly perturbing the answer-generation process. To align confidence with correctness likelihood, we construct a sampling-based surrogate from multiple model completions and optimize rank-based reinforcement learning objectives that encourage responses with higher estimated correctness likelihood to receive higher verbalized confidence. Experiments on reasoning and knowledge-intensive benchmarks show that our method improves calibration and failure prediction performance while largely preserving answer accuracy. These results demonstrate that verbalized confidence can be more reliably aligned by decoupling confidence estimation from answer generation and optimizing the relative ordering of confidence across responses.",
+      "url": "https://arxiv.org/abs/2605.12446",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8943
+    },
+    {
+      "id": "2605.12260",
+      "title": "PRISM: Pareto-Efficient Retrieval over Intent-Aware Structured Memory for Long-Horizon Agents",
+      "authors": [
+        "Jingyi Peng",
+        "Zhongwei Wan",
+        "Weiting Liu",
+        "Qiuzhuang Sun"
+      ],
+      "abstract": "Long-horizon language agents accumulate conversation history far faster than any fixed context window can hold, making memory management critical to both answer accuracy and serving cost. Existing approaches either expand the context window without addressing what is retrieved, perform heavy ingestion-time fact extraction at substantial token cost, or rely on heuristic graph traversal that leaves both accuracy and efficiency on the table. We present PRISM, a training-free retrieval-side framework that treats long-horizon memory as a joint retrieval-and-compression problem over a graph-structured memory. PRISM combines four orthogonal inference-time components: Hierarchical Bundle Search over typed relation paths, Query-Sensitive Edge Costing that aligns traversal with detected query intent, Evidence Compression that compresses the candidate bundle into a compact answer-side context, and Adaptive Intent Routing that routes most queries through zero-LLM tiers. By formulating retrieval as min-cost selection over typed path templates and pairing it with an LLM-side compression step, PRISM surfaces the right evidence under a strict context budget without any fine-tuning or modification to the upstream ingestion pipeline. Experiments on the LoCoMo benchmark show that PRISM delivers substantially higher LLM-judge accuracy than every same-protocol baseline at an order-of-magnitude smaller context budget, occupying a previously empty corner of the accuracy-context-cost frontier and demonstrating a superior balance between answer quality and retrieval efficiency.",
+      "url": "https://arxiv.org/abs/2605.12260",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8911
+    },
+    {
+      "id": "2605.12357",
+      "title": "$δ$-mem: Efficient Online Memory for Large Language Models",
+      "authors": [
+        "Jingdi Lei",
+        "Di Zhang",
+        "Junxian Li",
+        "Weida Wang",
+        "Kaixuan Fan",
+        "Xiang Liu",
+        "Qihan Liu",
+        "Xiaoteng Ma",
+        "Baian Chen",
+        "Soujanya Poria"
+      ],
+      "abstract": "Large language models increasingly need to accumulate and reuse historical information in long-term assistants and agent systems. Simply expanding the context window is costly and often fails to ensure effective context utilization. We propose $δ$-mem, a lightweight memory mechanism that augments a frozen full-attention backbone with a compact online state of associative memory. $δ$-mem compresses past information into a fixed-size state matrix updated by delta-rule learning, and uses its readout to generate low-rank corrections to the backbone's attention computation during generation. With only an $8\\times8$ online memory state, $δ$-mem improves the average score to $1.10\\times$ that of the frozen backbone and $1.15\\times$ that of the strongest non-$δ$-mem memory baseline. It achieves larger gains on memory-heavy benchmarks, reaching $1.31\\times$ on MemoryAgentBench and $1.20\\times$ on LoCoMo, while largely preserving general capabilities. These results show that effective memory can be realized through a compact online state directly coupled with attention computation, without full fine-tuning, backbone replacement, or explicit context extension.",
+      "url": "https://arxiv.org/abs/2605.12357",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8899
+    },
+    {
+      "id": "2605.12240",
+      "title": "No Action Without a NOD: A Heterogeneous Multi-Agent Architecture for Reliable Service Agents",
+      "authors": [
+        "Zixu Yang",
+        "Hang Zheng",
+        "Nan Jiang",
+        "Zhiyang Tang",
+        "Situo Zhang",
+        "Xiaobao Wu",
+        "Lu Chen",
+        "Kai Yu"
+      ],
+      "abstract": "Large language model (LLM) agents have increasingly advanced service applications, such as booking flight tickets. However, these service agents suffer from unreliability in long-horizon tasks, as they often produce policy violations, tool hallucinations, and misaligned actions, which greatly impedes their real-world deployment. To address these challenges, we propose NOD (Navigator-Operator-Director), a heterogeneous multi-agent architecture for service agents. Instead of maintaining task state implicitly in dialogue context as in prior work, we externalize a structured Global State to enable explicit task state tracking and consistent decision-making by the Navigator. Besides, we introduce selective external oversight before critical actions, allowing an independent Director agent to verify execution and intervene when necessary. As such, NOD effectively mitigates error propagation and unsafe behavior in long-horizon tasks. Experiments on $τ^2$-Bench demonstrate that NOD achieves higher task success rates and critical action precision over baselines. More importantly, NOD improves the reliability of service agents by reducing policy violations, tool hallucinations, and user-intent misalignment.",
+      "url": "https://arxiv.org/abs/2605.12240",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8899
+    },
+    {
+      "id": "2605.12129",
+      "title": "It's Not the Size: Harness Design Determines Operational Stability in Small Language Models",
+      "authors": [
+        "Yong-eun Cho"
+      ],
+      "abstract": "This paper experimentally analyzes how the level of harness engineering affects the operational performance of small language models (SLMs, 2-3B parameters). Three harness conditions - model-only (raw prompt), minimal-shell (wrapper tags), and a 4-stage pipeline (plan->execute->verify->recover) - are applied to three models (Gemma4 E2B, Qwen3.5:2B, LLaMA 3.2 3B) across 24 tasks, comparing Task Success Rate (TSR) and Valid TSR (VTSR). The pipeline harness achieves TSR=0.952 and VTSR=1.000 on Gemma4 E2B (T1-T5, 21 tasks). A non-monotonic phenomenon - minimal-shell TSR < model-only TSR - is observed in two models. In LLaMA 3.2 3B model-only, seven format violations yield TSR=0.429, revealing scaffold collapse: the model abandons JSON structure under complex format requirements without harness support. Ablation shows planning and recovery each contribute approximately 24.7% of total gain. VCR (Verification Catch Rate)=0.625 across all pipeline runs.",
+      "url": "https://arxiv.org/abs/2605.12129",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.OS"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8894
+    },
+    {
+      "id": "2605.11845",
+      "title": "Probabilistic Calibration Is a Trainable Capability in Language Models",
+      "authors": [
+        "Davide Baldelli",
+        "Sruthi Kuriakose",
+        "Maryam Hashemzadeh",
+        "Amal Zouaq",
+        "Sarath Chandar"
+      ],
+      "abstract": "Language models are increasingly used in settings where outputs must satisfy user-specified randomness constraints, yet their generation probabilities are often poorly calibrated to those targets. We study whether this capability can be improved directly through fine-tuning. Concretely, we fine-tune language models on synthetic prompts that require sampling from mathematical distributions, and compare two Calibration Fine-Tuning variants: a soft-target method that converts the desired output distribution into trie-derived next-token targets, and a hard-target method that trains on sampled completions from the same target distribution. Across 12 models spanning four families, both methods substantially improve structured-sampling fidelity on held-out distribution families and unseen parameter settings, showing that probabilistic calibration is a trainable capability. Under our selected training configurations, the two methods exhibit different empirical profiles: hard-target fine-tuning is often strongest on structured numeric sampling, while soft-target fine-tuning performs better on broader stochastic generation benchmarks, including open-ended random generation, multiple-choice answer-position balancing, and NoveltyBench. The gains sometimes reduce downstream capability, especially arithmetic reasoning, with costs varying by model. Overall, our results show that probabilistic calibration can be improved through fine-tuning, with our hard-target configuration favoring exact numeric fidelity and our soft-target configuration favoring broader stochastic transfer. Code is available at https://github.com/chandar-lab/calibration-finetuning.",
+      "url": "https://arxiv.org/abs/2605.11845",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "github_url": "https://github.com/chandar-lab/calibration-finetuning.",
+      "score": 0.8891
+    },
+    {
+      "id": "2605.12022",
+      "title": "SAGE: Scalable Automated Robustness Augmentation for LLM Knowledge Evaluation",
+      "authors": [
+        "Xiaoyuan Li",
+        "Yuzhe Wang",
+        "Moxin Li",
+        "Keqin Bao",
+        "Rui Men",
+        "Yichang Zhang",
+        "Dayiheng Liu",
+        "Wenjie Wang",
+        "Fuli Feng"
+      ],
+      "abstract": "Large Language Models (LLMs) achieve strong performance on standard knowledge evaluation benchmarks, yet recent work shows that their knowledge capabilities remain brittle under question variants that test the same knowledge in different forms. Robustness augmentation of existing knowledge evaluation benchmarks is therefore necessary, but current LLM-assisted generate-then-verify pipelines are costly and difficult to scale due to low-yield variant generation and unreliable variant verification. We propose SAGE (Scalable Automated Generation of Robustness BEnchmarks), a framework for scalable robustness augmentation of knowledge evaluation benchmarks using fine-tuned smaller models. SAGE consists of VariantQual, a rubric-based verifier trained on human-labeled seed data, and VariantGen, a variant generator initialized with supervised fine-tuning and further optimized with reinforcement learning using VariantQual as the reward model. Experiments on HellaSwag show that SAGE constructs a large-scale robustness-augmented benchmark with quality comparable to the human-annotated HellaSwag-Pro at substantially lower cost, while the fine-tuned models further generalize to MMLU without benchmark-specific fine-tuning.",
+      "url": "https://arxiv.org/abs/2605.12022",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8871
+    },
+    {
+      "id": "2605.12061",
+      "title": "SAGE: A Self-Evolving Agentic Graph-Memory Engine for Structure-Aware Associative Memory",
+      "authors": [
+        "Juntong Wang",
+        "Haoyue Zhao",
+        "guanghui Pan",
+        "Xiyuan Wang",
+        "Yanbo Wang",
+        "Qiyan Deng",
+        "Muhan Zhang"
+      ],
+      "abstract": "Long-term memory is becoming a central bottleneck for language agents. Exsting RAG and GraphRAG systems largely treat memory graphs as static retrieval middleware, which limits their ability to recover complete evidence chains from partial cues, exploit reusable graph-structrual roles, and improve the memory itself through downstream feedback. We introduce SAGE, a Self-evolving Agentic Graph-memory Engine that models graph memory as a dynamic long-term memory substrate. SAGE couples two roles: a memory writer that incrementally constucts structured graph memory from interaction histories, and a Graph Foundation Model-based memory reader to perform retrieval and provide feedback to the memory writer. We provide rigorooous theoretical annalyses supporting the framework. Across multi-hop QA, open-domain retireval, domain-specific review QA, and long-term agent-memory benchmarks, SAGE improves evidence recovery, answer grounding, and retrieval efficiency: after two self-evolution rounds, it achieves the best average rank on multi-hop QA; in zero-shot open-domain transfer, it reaches 82.5/91.6 Recall@2/5 on NQ. Further results on LongMemEval and HaluMem show that traning and reader-writer feedback improve multiple long-term memory and hallucination-diagnostic metrics, suggesting that self-evolving, structure-aware graph memory is a promising foundation for robust long-horizon language agents.",
+      "url": "https://arxiv.org/abs/2605.12061",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8864
+    },
+    {
+      "id": "2605.12493",
+      "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+      "authors": [
+        "Di Wu",
+        "Zixiang Ji",
+        "Asmi Kawatkar",
+        "Bryan Kwan",
+        "Jia-Chen Gu",
+        "Nanyun Peng",
+        "Kai-Wei Chang"
+      ],
+      "abstract": "Long-term memory is crucial for agents in specialized web environments, where success depends on recalling interface affordances, state dynamics, workflows, and recurring failure modes. However, existing memory benchmarks for agents mostly focus on user histories, short traces, or downstream task success, leaving open how to directly evaluate whether memory systems effectively internalize environment-specific experience. To address this gap, we introduce LongMemEval-V2 (LME-V2), a benchmark for evaluating whether memory systems can help agents acquire the experience needed to become knowledgeable colleagues in customized environments. LME-V2 contains 451 manually curated questions covering five core memory abilities for web agents: static state recall, dynamic state tracking, workflow knowledge, environment gotchas, and premise awareness. Questions are paired with history trajectories containing up to 500 trajectories and 115M tokens. We use a context gathering formulation: memory systems consume history trajectories and return compact evidence for downstream question answering. We propose a suite of two memory methods: AgentRunbook-R, an efficient RAG-based memory with knowledge pools for raw state observations, events, and strategy notes, and AgentRunbook-C, which stores trajectories as files and invokes a coding agent to gather evidence in an augmented sandbox. Experiments show that AgentRunbook-C achieves the best performance with 72.5% average accuracy, outperforming the strongest RAG baseline (48.5%) and the off-the-shelf coding agent baseline (69.3%). Despite the strong performance gains, coding agent based methods have high latency costs. While AgentRunbook-C advances the accuracy-latency Pareto frontier, substantial room for improvement remains. Together, these results establish LME-V2 as a challenging testbed for developing long-term memory systems for environment experience.",
+      "url": "https://arxiv.org/abs/2605.12493",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.11813",
+      "title": "Automated Reformulation of Robust Optimization via Memory-Augmented Large Language Models",
+      "authors": [
+        "Jinbiao Chen",
+        "Shuang Jin",
+        "Guoyun Zhang",
+        "Junyu Zhang",
+        "Guanyi Wang",
+        "Hanzhang Qin"
+      ],
+      "abstract": "Robust optimization (RO) provides a principled framework for decision-making under uncertainty, but its practical use is often limited by the need to manually reformulate uncertain optimization models into tractable deterministic counterparts. Recent large language models (LLMs) have been shown promising for automating optimization formulation, yet RO reformulation remains challenging because it requires precise multi-step reasoning and mathematically consistent transformations. To facilitate systematic evaluation of LLM-based reformulation, for which no dedicated benchmark currently exists, we develop AutoRO-Bench, a benchmark featuring an automated data generation pipeline for the core RO reformulation task and a curated dataset for the RO application task. To address the reformulation challenge, we propose Automated Reformulation with Experience Memory (AutoREM), a tuning-free memory-augmented framework that autonomously builds a structured textual experience memory by reflecting on past failed trajectories through a tailored offline adaptation procedure. AutoREM requires neither domain-specific expert knowledge nor parameter updates, and the resulting memory readily transfers across different base LLMs. Experimental results show that AutoREM consistently improves the accuracy and efficiency of RO reformulation across in-distribution datasets, out-of-distribution datasets, and diverse base LLMs.",
+      "url": "https://arxiv.org/abs/2605.11813",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8858
+    },
+    {
+      "id": "2605.12004",
+      "title": "Learning Agentic Policy from Action Guidance",
+      "authors": [
+        "Yuxiang Ji",
+        "Zengbin Wang",
+        "Yong Wang",
+        "Shidong Yang",
+        "Ziyu Ma",
+        "Guanhua Chen",
+        "Zonghua Sun",
+        "Liaoni Wu",
+        "Xiangxiang Chu"
+      ],
+      "abstract": "Agentic reinforcement learning (RL) for Large Language Models (LLMs) critically depends on the exploration capability of the base policy, as training signals emerge only within its in-capability region. For tasks where the base policy cannot reach reward states, additional training or external guidance is needed to recover effective learning signals. Rather than relying on costly iterative supervised fine tuning (SFT), we exploit the abundant action data generated in everyday human interactions. We propose \\textsc{ActGuide-RL}, which injects action data as plan-style reference guidance, enabling the agentic policy to overcome reachability barriers to reward states. Guided and unguided rollouts are then jointly optimized via mixed-policy training, internalizing the exploration gains back into the unguided policy. Motivated by a theoretical and empirical analysis of the benefit-risk trade-off, we adopt a minimal intervention principle that invokes guidance only as an adaptive fallback, matching task difficulty while minimizing off-policy risk. On search-agent benchmarks, \\textsc{ActGuide-RL} substantially improves over zero RL (+10.7 pp on GAIA and +19 pp on XBench with Qwen3-4B), and performs on par with the SFT+RL pipeline without any cold start. This suggests a new paradigm for agentic RL that reduces the reliance on heavy SFT data by using scalable action guidance instead.",
+      "url": "https://arxiv.org/abs/2605.12004",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8849
+    },
+    {
+      "id": "2605.12477",
+      "title": "MEME: Multi-entity & Evolving Memory Evaluation",
+      "authors": [
+        "Seokwon Jung",
+        "Alexander Rubinstein",
+        "Arnas Uselis",
+        "Sangdoo Yun",
+        "Seong Joon Oh"
+      ],
+      "abstract": "LLM-based agents increasingly operate in persistent environments where they must store, update, and reason over information across many sessions. While prior benchmarks evaluate only single-entity updates, MEME defines six tasks spanning the full space defined by the multi-entity and evolving axes, including three not scored by prior work: Cascade and Absence (dependency reasoning) and Deletion (post-removal state). Evaluating six memory systems spanning three memory paradigms on 100 controlled episodes, we find that all systems collapse on dependency reasoning under the default configuration (Cascade: 3%, Absence: 1% in average accuracy) despite adequate static retrieval performance. Prompt optimization, deeper retrieval, reduced filler noise, and most stronger LLMs fail to close this gap. Only a file-based agent paired with Claude Opus 4.7 as its internal LLM partially closes the gap, but at ~70x the baseline cost, indicating closure currently depends on configurations that are not practical at scale. Code and data are available on the project page: https://seokwonjung-jay.github.io/meme-eval/.",
+      "url": "https://arxiv.org/abs/2605.12477",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8847
+    },
+    {
+      "id": "2605.12466",
+      "title": "Solve the Loop: Attractor Models for Language and Reasoning",
+      "authors": [
+        "Jacob Fein-Ashley",
+        "Paria Rashidinejad"
+      ],
+      "abstract": "Looped Transformers offer a promising alternative to purely feed-forward computation by iteratively refining latent representations, improving language modeling and reasoning. Yet recurrent architectures remain unstable to train, costly to optimize and deploy, and constrained to small, fixed recurrence depths. We introduce Attractor Models, in which a backbone module first proposes output embeddings, then an attractor module refines them by solving for the fixed point, with gradients obtained through implicit differentiation. Thus, training memory remains constant in effective depth, and iterations are chosen adaptively by convergence. Empirically, Attractor Models outperform existing models across two regimes, large-scale language-model pretraining and reasoning with tiny models. In language modeling, Attractor Models deliver a Pareto improvement over standard Transformers and stable looped models across sizes, improving perplexity by up to 46.6% and downstream accuracy by up to 19.7% while reducing training cost. Notably, a 770M Attractor Model outperforms a 1.3B Transformer trained on twice as many tokens. On challenging reasoning tasks, we show that our model with only 27M parameters and approximately 1000 examples achieves 91.4% accuracy on Sudoku-Extreme and 93.1% on Maze-Hard, scaling favorably where frontier models like Claude and GPT o3, fail completely, and specialized recursive reasoners collapse at larger sizes. Lastly, we show that Attractor Models exhibit a novel phenomenon, which we call equilibrium internalization: fixed-point training places the model's initial output embedding near equilibrium, allowing the solver to be removed at inference time with little degradation. Together, these results suggest that Attractor Models make iterative refinement scalable by turning recurrence into a computation the model can learn to internalize.",
+      "url": "https://arxiv.org/abs/2605.12466",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8845
+    },
+    {
+      "id": "2605.12376",
+      "title": "ProfiliTable: Profiling-Driven Tabular Data Processing via Agentic Workflows",
+      "authors": [
+        "Wei Liu",
+        "Yang Gu",
+        "Xi Yan",
+        "Zihan Nan",
+        "Beicheng Xu",
+        "Keyao Ding",
+        "Bin Cui",
+        "Wentao Zhang"
+      ],
+      "abstract": "Table processing-including cleaning, transformation, augmentation, and matching-is a foundational yet error-prone stage in real-world data pipelines. While recent LLM-based approaches show promise for automating such tasks, they often struggle in practice due to ambiguous instructions, complex task structures, and the lack of structured feedback, resulting in syntactically correct but semantically flawed code. To address these challenges, we propose ProfiliTable, an autonomous multi-agent framework centered on dynamic profiling, which constructs and iteratively refines a unified execution context through interactive exploration, knowledge-augmented synthesis, and feedback-driven refinement. ProfiliTable integrates (i) a Profiler that performs ReAct-style data exploration to build semantic understanding, (ii) a Generator that retrieves curated operators to synthesize task-aware code, and (iii) an Evaluator-Summarizer loop that injects execution scores and diagnostic insights to enable closed-loop refinement. Extensive experiments on a diverse benchmark covering 18 tabular task types demonstrate that ProfiliTable consistently outperforms strong baselines, particularly in complex multi-step scenarios. These results highlight the critical role of dynamic profiling in reliably translating ambiguous user intents into robust and governance-compliant table transformations.",
+      "url": "https://arxiv.org/abs/2605.12376",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8844
+    },
+    {
+      "id": "2605.11738",
+      "title": "OptArgus: A Multi-Agent System to Detect Hallucinations in LLM-based Optimization Modeling",
+      "authors": [
+        "Zhong Li",
+        "Zihan Guo",
+        "Xiaohan Lu",
+        "Juntao Wang",
+        "Jie Song",
+        "Chao Shen",
+        "Jiageng Wu",
+        "Mingyang Sun"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to translate natural-language optimization problems into mathematical formulations and solver code, but matching the reference objective value is not a reliable test of correctness: an artifact may agree numerically while still changing the underlying optimization semantics. We formulate this issue as \\emph{optimization-modeling hallucination detection}, namely structural consistency auditing over the problem description, symbolic model, and solver implementation. We develop, to our knowledge, the first fine-grained hallucination taxonomy specifically for optimization modeling, spanning objective, variable, constraint, and implementation failures. We use this taxonomy to design OptArgus, a multi-agent detector with conductor routing, specialist auditors, and evidence consolidation. To evaluate this setting, we introduce a three-part benchmark suite with $484$ clean artifacts, $1266$ controlled injected artifacts, and $6292$ natural LLM-generated artifacts. Against a matched single-agent baseline, OptArgus produces fewer false alarms on clean artifacts, more accurate top-ranked localization on controlled single-error cases, and stronger detection on natural model outputs. Together, these contributions turn optimization-modeling hallucination detection into a concrete empirical problem and suggest that modular, taxonomy-grounded auditing is a practical route to more reliable optimization modeling.",
+      "url": "https://arxiv.org/abs/2605.11738",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8841
+    },
+    {
+      "id": "2605.11974",
+      "title": "Towards Order Fairness: Mitigating LLMs Order Sensitivity through Dual Group Advantage Optimization",
+      "authors": [
+        "Xu Chu",
+        "Guanyu Wang",
+        "Zhijie Tan",
+        "Xinrong Chen",
+        "Ziyu Li",
+        "Tong Mo",
+        "Weiping Li"
+      ],
+      "abstract": "Large Language Models (LLMs) suffer from order bias, where their performance is affected by the arrangement order of input elements. This unfairness limits the model's applications in scenarios such as in-context learning and Retrieval-Augmented Generation (RAG). Recent studies attempt to obtain optimal or suboptimal arrangements based on statistical results or using dataset-based search, but these methods increase inference overhead while leaving the model's inherent order bias unresolved. Other studies mitigate order sensitivity through supervised fine-tuning using augmented training sets with multiple order variants, but often at the cost of accuracy, trapping the model in consistent yet incorrect hallucinations. In this paper, we propose \\textbf{D}ual \\textbf{G}roup \\textbf{A}dvantage \\textbf{O}ptimization (\\textbf{DGAO}), which aims to improve model accuracy and order stability simultaneously. DGAO calculates and balances intra-group relative accuracy advantage and inter-group relative stability advantage, rewarding the policy model for generating order-stable and correct outputs while penalizing order-sensitive or incorrect responses. This marks the first time reinforcement learning has been used to mitigate LLMs' order sensitivity. We also propose two new metrics, Consistency Rate and Overconfidence Rate, to reveal the pseudo-stability of previous methods and guide more comprehensive evaluation. Extensive experiments demonstrate that DGAO achieves superior order fairness while improving performance on RAG, mathematical reasoning, and classification tasks. Our code is available at: https://github.com/Hyalinesky/DGAO.",
+      "url": "https://arxiv.org/abs/2605.11974",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-12",
+      "github_url": "https://github.com/Hyalinesky/DGAO.",
+      "score": 0.884
+    },
+    {
+      "id": "2605.11732",
+      "title": "AgentDisCo: Towards Disentanglement and Collaboration in Open-ended Deep Research Agents",
+      "authors": [
+        "Jiarui Jin",
+        "Zexuan Yan",
+        "Shijian Wang",
+        "Wenxiang Jiao",
+        "Yuan Lu"
+      ],
+      "abstract": "In this paper, we present AgentDisCo, a novel Disentangled and Collaborative agentic architecture that formulates deep research as an adversarial optimization problem between information exploration and exploitation. Unlike existing approaches that conflate these two processes into a single module, AgentDisCo employs a critic agent to evaluate generated outlines and refine search queries, and a generator agent to retrieve updated results and revise outlines accordingly. The iteratively refined outline is then passed to a downstream report writer that synthesizes a comprehensive research report. The overall workflow supports both handcrafted and automatically discovered design strategies via a meta-optimization harness, in which the generator agent is repurposed as a scoring agent to evaluate critic outputs and generate quality signals. Powerful code-generation agents (e.g., Claude-Code, Codex) systematically explore agent configurations and construct a policy bank, a structured repository of reusable design strategies, enabling the framework to self-refine without extensive human intervention. We evaluate AgentDisCo on three established deep research benchmarks (DeepResearchBench, DeepConsult, DeepResearchGym) using Gemini-2.5-Pro, achieving performance comparable to or surpassing leading closed-source systems. Observing that existing benchmarks inadequately reflect real-world user needs, we introduce GALA (General AI Life Assistants), a benchmark that mines latent research interests from users' historical browsing behavior. We further develop a rendering agent that converts research reports into visually rich poster presentations, and demonstrate an end-to-end product, AutoResearch Your Interest, which delivers personalized deep research recommendations derived from individual browsing histories.",
+      "url": "https://arxiv.org/abs/2605.11732",
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.MA",
+        "cs.MM"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8835
+    },
+    {
+      "id": "2605.12456",
+      "title": "TextSeal: A Localized LLM Watermark for Provenance & Distillation Protection",
+      "authors": [
+        "Tom Sander",
+        "Hongyan Chang",
+        "Tomáš Souček",
+        "Tuan Tran",
+        "Valeriu Lacatusu",
+        "Sylvestre-Alvise Rebuffi",
+        "Alexandre Mourachko",
+        "Surya Parimi",
+        "Christophe Ropers",
+        "Rashel Moritz",
+        "Vanessa Stark",
+        "Hady Elsahar",
+        "Pierre Fernandez"
+      ],
+      "abstract": "We introduce TextSeal, a state-of-the-art watermark for large language models. Building on Gumbel-max sampling, TextSeal introduces dual-key generation to restore output diversity, along with entropy-weighted scoring and multi-region localization for improved detection. It supports serving optimizations such as speculative decoding and multi-token prediction, and does not add any inference overhead. TextSeal strictly dominates baselines like SynthID-text in detection strength and is robust to dilution, maintaining confident localized detection even in heavily mixed human/AI documents. The scheme is theoretically distortion-free, and evaluation across reasoning benchmarks confirms that it preserves downstream performance; while a multilingual human evaluation (6000 A/B comparisons, 5 languages) shows no perceptible quality difference. Beyond its use for provenance detection, TextSeal is also ``radioactive'': its watermark signal transfers through model distillation, enabling detection of unauthorized use.",
+      "url": "https://arxiv.org/abs/2605.12456",
+      "categories": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8829
+    },
+    {
+      "id": "2605.11887",
+      "title": "Qwen-Scope: Turning Sparse Features into Development Tools for Large Language Models",
+      "authors": [
+        "Boyi Deng",
+        "Xu Wang",
+        "Yaoning Wang",
+        "Yu Wan",
+        "Yubo Ma",
+        "Baosong Yang",
+        "Haoran Wei",
+        "Jialong Tang",
+        "Huan Lin",
+        "Ruize Gao",
+        "Tianhao Li",
+        "Qian Cao",
+        "Xuancheng Ren",
+        "Xiaodong Deng",
+        "An Yang",
+        "Fei Huang",
+        "Dayiheng Liu",
+        "Jingren Zhou"
+      ],
+      "abstract": "Large language models have achieved remarkable capabilities across diverse tasks, yet their internal decision-making processes remain largely opaque, limiting our ability to inspect, control, and systematically improve them. This opacity motivates a growing body of research in mechanistic interpretability, with sparse autoencoders (SAEs) emerging as one of the most promising tools for decomposing model activations into sparse, interpretable feature representations. We introduce Qwen-Scope, an open-source suite of SAEs built on the Qwen model family, comprising 14 groups of SAEs across 7 model variants from the Qwen3 and Qwen3.5 series, covering both dense and mixture-of-expert architectures. Built on top of these SAEs, we show that SAEs can go beyond post-hoc analysis to serve as practical interfaces for model development along four directions: (i) inference-time steering, where SAE feature directions control language, concepts, and preferences without modifying model weights; (ii) evaluation analysis, where activated SAE features provide a representation-level proxy for benchmark redundancy and capability coverage; (iii) data-centric workflows, where SAE features support multilingual toxicity classification and safety-oriented data synthesis; and (iv) post-training optimization, where SAE-derived signals are incorporated into supervised fine-tuning and reinforcement learning objectives to mitigate undesirable behaviors such as code-switching and repetition. Together, these results demonstrate that SAEs can serve not only as post-hoc analysis tools, but also as reusable representation-level interfaces for diagnosing, controlling, evaluating, and improving large language models. By open-sourcing Qwen-Scope, we aim to support mechanistic research and accelerate practical workflows that connect model internals to downstream behavior.",
+      "url": "https://arxiv.org/abs/2605.11887",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-12",
+      "score": 0.8829
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

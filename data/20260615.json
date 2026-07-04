@@ -1,0 +1,381 @@
+{
+  "date": "2026-06-15",
+  "collected_at": "2026-06-15T14:07:18.782309+09:00",
+  "papers": [
+    {
+      "id": "2606.14672",
+      "title": "Towards Direct Latent-Space Synthesis for Parallel Branches in LLM-Agent Workflows",
+      "authors": [
+        "Shikun Liu",
+        "Mufei Li",
+        "Dongqi Fu",
+        "Haoyu Wang",
+        "Yinglong Xia",
+        "Hong Li",
+        "Hong Yan",
+        "Pan Li"
+      ],
+      "abstract": "Large language models increasingly serve as execution engines for agentic systems, yet they still consume context through a sequential text interface. This creates a mismatch with modern structured agent workflows, in which independent branches explore subtasks, retrieve evidence, or generate candidate solutions before a final synthesis step. Existing systems typically merge these branches by concatenating their textual outputs, which discards the parallel structure and incurs redundant prefill computation. In this work, we introduce Parallel-Synthesis, a plug-and-play framework that enables a synthesizer to directly consume the KV caches produced by parallel worker agents. Parallel-Synthesis combines a cache mapper that calibrates independently generated branch caches with a fine-tuned synthesizer adapter that enables generation from this non-sequential cache interface. We train Parallel-Synthesis using data that exposes the synthesizer to parallel cache contexts, teaches aggregation across cached branches, and distills reasoning behavior from standard text-concatenation-based synthesis. Across nine downstream datasets spanning math, science QA, code generation, GAIA, and multi-agent database diagnosis, Parallel-Synthesis matches or outperforms text-based synthesis on seven datasets and remains close on the other two. It also reduces time-to-first-token by 2.5x-11x, suggesting that direct cache-based synthesis is a promising interface for more native and efficient synthesis over parallel agent branches.",
+      "url": "https://arxiv.org/abs/2606.14672",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8968
+    },
+    {
+      "id": "2606.13982",
+      "title": "Adaptive Nucleus Truncation for Long-Form Reasoning",
+      "authors": [
+        "Ousmane Amadou Dia"
+      ],
+      "abstract": "Sampling plays an important role in long-form language-model reasoning. Over thousands of decoding steps, small changes in the candidate token set can compound into different reasoning trajectories, stability profiles, and final answers. Existing truncation methods such as top-$p$, min-$p$, and fixed top-$nσ$ sampling improve over unrestricted sampling, but they rely on fixed thresholds that cannot adapt to changes in entropy, task difficulty, training stage, or generation budget. We introduce Adaptive Nucleus Truncation Sampling (ANTS), which extends top-\\(nσ\\) sampling from a fixed decoding rule into an adaptive rollout-control mechanism for long-form generation. ANTS selects standardized neighborhoods around the maximum logit before temperature scaling, adapts the truncation width using an entropy-conditioned controller, and retains a no-truncation fallback arm to stabilize training when truncation becomes unsafe. On a 33B-total / 4B-active sparse Mixture-of-Experts reasoning model, ANTS improves average performance over percentage-based benchmarks by +1.9, +3.8, and +5.2 points at 8K, 16K, and 32K generation budgets, respectively. The strongest gains appear on instruction following and mathematical reasoning, with IFBench improving by more than 10 points at 32K and AIME 2025 improving by 7 points. Code generation reveals an important budget interaction. On Codeforces, ANTS trails the baseline at 8K, but reverses this gap and substantially improves ELO at 16K and 32K. These results suggest that sampler design should be treated not just as a decoding hyperparameter, but as part of how we stabilize and scale long-budget reasoning.",
+      "url": "https://arxiv.org/abs/2606.13982",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8941
+    },
+    {
+      "id": "2606.14398",
+      "title": "A theoretical model for task routing in mixture-of-expert transformers",
+      "authors": [
+        "Yongli Xiang",
+        "Vinoth Nandakumar",
+        "Yunzhi Yao",
+        "Peike Li",
+        "Tongliang Liu"
+      ],
+      "abstract": "Mixture-of-experts (MoE) layers enable the scaling of transformer models while keeping the inference compute fixed. While task-expert specialization has been observed in empirical studies of frontier MoE transformer models, existing theoretical work analyzes this using continuous mixture models that cannot be used to model natural language effectively. An important open question is to \\textit{theoretically explain task-expert specialization in transformer MoE models using discrete models of language}. To address this, we represent structured knowledge via syntactic templates and finite key-value dictionaries, and prove formally that a single-layer MoE transformer can encode knowledge by using experts that specialize in the corresponding tasks. Our construction shows how queries are routed to unique, task-specific experts whose size depends solely on the intrinsic complexity of the given task (i.e. the combined size of its syntactic templates and factual dictionary). Our construction provides a theoretical support for empirical results on localized knowledge circuits in MoE models. We support our theoretical findings with experiments evaluating model performance under varying MoE loss functions.",
+      "url": "https://arxiv.org/abs/2606.14398",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8907
+    },
+    {
+      "id": "2606.14179",
+      "title": "CacheRL:Multi-Turn Tool-Calling Agents via Cached Rollouts and Hybrid Reward",
+      "authors": [
+        "Md Amirul Islam",
+        "Sumiran Thakur",
+        "Huancheng Chen",
+        "Su Min Park",
+        "Jiayun Wang",
+        "Gyuhak Kim"
+      ],
+      "abstract": "We present CacheRL, a system for training small agent foundation models that achieves 92 percent process accuracy on multi-step tool-calling tasks, approaching GPT-5's 94 percent while requiring 100 times less compute. Our approach addresses three challenges in practical agent training: transferring tool-calling knowledge from large models at scale, enabling reinforcement learning without costly live tool execution, and learning robustly from noisy cached environments. CacheRL introduces three key innovations. First, a hybrid thinking trajectory pipeline augments agent trajectories with LLM-generated reasoning traces, producing training examples that teach models not only what tools to call but also why. Second, the CacheAgentLoop eliminates live execution costs through a three-tier fuzzy cache while preserving trajectory fidelity using token-level masking. Third, a cache-tier-aware reward dynamically adjusts answer-quality weights to avoid penalizing models for cache-induced limitations. Through iterative supervised fine-tuning (SFT) and Group Relative Policy Optimization (GRPO), CacheRL improves Qwen3-4B-Thinking's validation reward from 0.43 to 0.78. On public agentic tool-calling benchmarks, our model achieves competitive performance against frontier models such as GPT-5. Ablation studies show that removing knowledge transfer reduces performance by 41 percent, while cache-aware rewards contribute a 17 percent improvement. Interestingly, reinforcement learning improves training stability but yields limited gains beyond strong supervised fine-tuning, suggesting that data quality and reward design play a more important role than complex optimization methods in building practical small agent models.",
+      "url": "https://arxiv.org/abs/2606.14179",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8907
+    },
+    {
+      "id": "2606.14470",
+      "title": "GitOfThoughts: Version-Controlled Reasoning and Agent Memory You Can Replay, Diff, and Merge",
+      "authors": [
+        "Pavan C Shekar",
+        "Abhishek H S",
+        "Aswanth Krishnan"
+      ],
+      "abstract": "Large language model (LLM) reasoning is ephemeral: chains of thought vanish with the context window, pruned search branches leave no record, and memory buffers cannot be diffed, merged, or audited. Every other complex software process (code, infrastructure, data, experiments) is version-controlled; reasoning is not. We introduce GitOfThoughts, which stores an agent's reasoning tree as a git repository: every scored thought is a commit, scores are notes, outcomes are tags, and retrieval is \"git log\" over the agent's own history. This makes reasoning replayable, auditable, and mergeable across agents at near-zero engineering cost.\n  We then ask the harder question: does memory, in any substrate, actually improve accuracy? Across five substrates (none, markdown, vector, graph, git), two benchmarks, two model scales, and pre-registered replications, the answer for novel problems is no. No memory format reliably helps, and a promising early result collapsed under its own pre-registered replication. Memory pays only above what we call the copyability threshold: when the retrieved case is a near-duplicate of the current problem (similarity >~ 0.8), accuracy jumps sharply; below it, nothing. The gain is answer retrieval, not method transfer: a 4.5x larger model doubles the near-duplicate payoff yet still cannot extract a transferable method from a worked example. The only general lever we find is test-time sampling. The case for git-as-substrate is therefore auditability, provenance, and mergeability at accuracy parity. We document a retracted result and a refuted hypothesis to model the evaluation standard we hold ourselves to.",
+      "url": "https://arxiv.org/abs/2606.14470",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8906
+    },
+    {
+      "id": "2606.14668",
+      "title": "When to Write and When to Suppress: Route-Specialized Dual Adapters for Memory-Assisted Knowledge Editing",
+      "authors": [
+        "Yining Huang"
+      ],
+      "abstract": "Knowledge editing systems must update selected facts while preserving nearby but irrelevant behavior. This paper studies this problem in a memory-assisted setting where an edit memory is retrieved at inference time and a parameter-efficient adapter corrects the model's object preference. We argue that the central design question is not only how to write an edit, but also when to suppress it. We introduce \\method{}, a route-specialized dual-adapter editor. A relevance router first decides whether a prompt should receive an edit memory. Routed prompts use an edit adapter trained to prefer the new object over the original object; unrouted non-direct prompts use a separate locality adapter trained to preserve or restore the original-object preference. We evaluate \\method{} on three 1,000-case protocols, \\cf{}, \\zsre{}, and \\mquake{}, under the same memory protocol and two 7B/8B base models. On Llama-3.1-8B-Instruct, \\method{} obtains the best overall probability-preference accuracy on all three benchmarks: 0.8180 on \\cf{}, 0.8946 on \\zsre{}, and 0.9922 on \\mquake{}. The same trend holds on Qwen3-8B. Router ablations show that the relevant memory boundary differs across datasets: a lexical neural router is safest on \\cf{}, while BGE embedding routing is better on \\zsre{} and \\mquake{}. Component and module ablations show that the gain mainly comes from separating edit injection from off-route suppression rather than from simply increasing LoRA capacity.",
+      "url": "https://arxiv.org/abs/2606.14668",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8898
+    },
+    {
+      "id": "2606.14119",
+      "title": "FactoryLLM: A Safe and Open-Source AI Playground for Evaluating LLMs in Smart Factories",
+      "authors": [
+        "Yash Pulse",
+        "Yong-Bin Kang",
+        "Abhik Banerjee",
+        "Abdur Forkan",
+        "Prem Prakash Jayaraman"
+      ],
+      "abstract": "Fault diagnostics and recovery in smart factories is challenging because critical information is dispersed across manuals of multiple machines which are interconnected through the manufacturing process. Large Language Models (LLMs) can provide a promising approach. In this paper, we propose FactoryLLM, a safe and open-source AI playground designed for evaluating different LLM-based retrieval-augmented generation (RAG) models by analysing documents from multiple machines across the manufacturing process. FactoryLLM enables the user to configure the LLM, and assess performance when reasoning over multiple documents, through a dual evaluation setup using both RAGAS and NVIDIA's LLM-as-a-Judge metrics. FactoryLLM is safe because it allows users to run local or open-source LLMs without sharing sensitive industrial data, providing a controlled environment for experimentation. We demonstrate the efficacy of FactoryLLM through a case study which involves an Autonomous Intelligent Vehicle and its Mobile Planner software, evaluating three LLMs across 30 maintenance queries derived from approximately 600 pages of cross-machine documentation. The results suggest that FactoryLLM is effective in cross-machine document reasoning: every model achieved a groundedness score above 0.88. The full code and documentation for community to test FactoryLLM with their manufacturing specific scenarios are publicly available.",
+      "url": "https://arxiv.org/abs/2606.14119",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8888
+    },
+    {
+      "id": "2606.14507",
+      "title": "Dense Coordinate-List Fine-Tuning Induces a Controllable Interference Surface in Vision-Language Models",
+      "authors": [
+        "Chenyu Zhou",
+        "Qiliang Jiang",
+        "Boguang Pan"
+      ],
+      "abstract": "Fine-tuning vision-language models to emit dense coordinate lists improves visual grounding but also changes how models serialize, repeat, and terminate structured outputs. We study this behavior as a generation and control surface. In Gemma 4 12B, high-capacity q/k/v/o LoRA raises class-aware F1@0.3 from 0.007 to 0.448 while inducing repeated-tail pressure (duplicate rate 0.080, max repeat 23). A q/v rank sweep keeps max repeat at 21-22 across ranks 4-64, showing capacity persistence. The target signal is separable: object-level repeat-stop removes exact repeated records (duplicate rate 0.000, max repeat 1) while preserving F1 (0.494 to 0.490) and stricter F1@0.5 (0.381 to 0.385). Structure-axis probes localize the effect to bbox-coordinate object lists; dense non-bbox and spatial/count JSON remain repeat-clean, including under high-capacity adapters. Qwen3-VL-8B reproduces a clean controlled endpoint (F1@0.3 0.318, duplicate rate 0.000), and COCO 2017 reproduces acquisition plus duplicate pressure. Dense coordinate-list adaptation therefore creates a structure-bound, cross-family interference surface that can be measured and controlled.",
+      "url": "https://arxiv.org/abs/2606.14507",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8875
+    },
+    {
+      "id": "2606.13934",
+      "title": "Adversarial Concept Search: Predicting Compositional Errors From Feature Geometry",
+      "authors": [
+        "Jennifer Meng Lu",
+        "Ruochen Zhang",
+        "Isabelle Lee",
+        "David Alvarez-Melis",
+        "Ellie Pavlick",
+        "Naomi Saphra"
+      ],
+      "abstract": "Humans cannot always intuit what scenarios are most challenging to LLMs. Hoping to capture challenging edge cases, developers either design problems to be difficult for humans or curate extensive benchmarks. What if we could instead anticipate which scenarios a model will fail on? In this paper, we use an LLM's representational geometry to predict which concept combinations it will fail on. We attribute this compositional failure to interference between salient features. In tasks that require systematic composition - toy programmatic settings, multihop reasoning, multilingual factual recall - we find that when a pair of concepts is encoded near-orthogonally, the model reliably composes them. When their linear encodings are close, producing interference, the model fails to compose them. Our method reliably anticipates failure modes across different compositional tasks, without evaluating specific inputs. These results lay the groundwork to use representational geometry to identify high-risk examples, construct targeted stress tests, and provide a scalable foundation for active learning in real-world deployment.",
+      "url": "https://arxiv.org/abs/2606.13934",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-11",
+      "score": 0.8872
+    },
+    {
+      "id": "2606.14243",
+      "title": "Decoupled Mixture-of-Experts for Parametric Knowledge Injection",
+      "authors": [
+        "Baoqing Yue",
+        "Weihang Su",
+        "Qingyao Ai",
+        "Yichen Tang",
+        "Changyue Wang",
+        "Jiacheng Kang",
+        "Jingtao Zhan",
+        "Yiqun Liu"
+      ],
+      "abstract": "Knowledge injection aims to equip large language models (LLMs) with external, domain-specific, or time-sensitive knowledge. Existing approaches typically face a trade-off between flexibility and integration: retrieval-augmented generation keeps knowledge outside the model but only provides prompt-level augmentation, whereas post-training based methods encode new knowledge into shared parameters but may introduce catastrophic forgetting, knowledge conflict, and costly updates. In this paper, we propose Decoupled Mixture-of-Experts (DMoE), a modular architecture for parametric knowledge injection that decouples both experts and the router from the base model. DMoE converts external knowledge corpora into independently updatable expert modules and uses a lightweight uncertainty-aware router to activate relevant experts only when the base model lacks sufficient knowledge during generation. To support efficient auto-regressive inference, DMoE attaches experts only to the final-layer feed-forward network, preserving KV-cache reuse while enabling parameter-level knowledge augmentation. Experiments on knowledge-intensive benchmarks show that DMoE consistently improves answer quality over retrieval and adapter-based baselines.",
+      "url": "https://arxiv.org/abs/2606.14243",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8867
+    },
+    {
+      "id": "2606.14502",
+      "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+      "authors": [
+        "Yongheng Zhang",
+        "Ziang Liu",
+        "Jiaxuan Zhu",
+        "Shuai Wang",
+        "Xiangqi Chen",
+        "Haojing Huang",
+        "Jiayi Kuang",
+        "Siyu Chen",
+        "Ao Shen",
+        "Hao Wu",
+        "Qiufeng Wang",
+        "Qian-Wen Zhang",
+        "Junnan Dong",
+        "Wenhao Jiang",
+        "Ying Shen",
+        "Hai-Tao Zheng",
+        "Yinghui Li",
+        "Di Yin",
+        "Xing Sun",
+        "Philip S. Yu"
+      ],
+      "abstract": "Large Language Models (LLMs) are undergoing a fundamental transformation from conversational generators into integrated AI systems capable of reasoning, action, memory, and self-improvement. We conceptualize this transition as a shift from Chatbot to Digital Colleague: from conversational answers to persistent work. We organize this transition along two tightly coupled dimensions. First, at the cognitive core level, LLMs are advancing from Chatbot-era \"fast thinking\" systems driven by next-token prediction toward Thinking LLMs that leverage inference-time computation, Chain-of-Thought reasoning, reflection, process supervision, and reinforcement learning to support more deliberate and reliable cognition. Second, at the tool-augmented task execution level, LLMs are progressing from tool-calling Agents that invoke external resources in an ad hoc manner toward OpenClaw-style workstation systems (OpenClaw) equipped with persistent Workspaces, skills, verification loops, and governance. The \"Workspace + Skill\" paradigm makes episodic tool use colleague-like via state persistence, reusable procedures, task closure, and experience reuse. We examine data construction shifts from instruction-response pairs to State-Action-Observation trajectories and evaluation from static benchmarks to sandboxed, auditable, self-evolving AI ecosystems.",
+      "url": "https://arxiv.org/abs/2606.14502",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8854
+    },
+    {
+      "id": "2606.14211",
+      "title": "Closing the Reflection Gap: A Free Calibration Bonus for Agentic RL",
+      "authors": [
+        "Yinglun Zhu"
+      ],
+      "abstract": "LLMs are increasingly deployed as agents that interact with external environments and observe feedback such as execution results, error messages, and tool outputs. A well-functioning agent should be able to leverage this feedback to accurately assess its own performance. Yet we find a persistent reflection gap: LLM agents tend to mis-assess their own outputs after observing concrete environment feedback -- even for questions they correctly answered -- and standard RL barely helps due to a credit-assignment mismatch. To close this gap, we propose RefGRPO, a simple yet effective fix that augments standard RL algorithms with two key ingredients: a free calibration bonus computed by contrasting the agent's own reflection with the actual outcome (requiring no additional reward model, LLM judge, or external annotation), and a dynamic schedule on its coefficient. Compared to standard RL baselines, our method simultaneously improves reflection calibration (e.g., reduces underconfidence rate $44.4\\% \\to 7.7\\%$) and task accuracy (e.g., $75.1\\% \\to 76.5\\%$) on text-to-SQL across five benchmarks. The resulting calibrated reflection turns the agent into its own verifier grounded in environment feedback, which further enables (i) better self-improvement that uses reflections as pseudo-rewards without outcome supervision, and (ii) more effective test-time selective prediction by committing only to rollouts flagged as correct.",
+      "url": "https://arxiv.org/abs/2606.14211",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8848
+    },
+    {
+      "id": "2606.13904",
+      "title": "SANA: What Matters for QA Agents over Massive Data Lakes?",
+      "authors": [
+        "Austin Senna Wijaya",
+        "Jiaxiang Liu",
+        "Haonan Wang",
+        "Eugene Wu"
+      ],
+      "abstract": "Exploratory question answering (EQA) over data lakes requires an LLM agent to discover relevant sources, analyze retrieved data, and adapt its actions based on intermediate results. End-to-end accuracy alone cannot distinguish failures in search, planning, data analysis, or the agent's Action Policy: its decisions about what to do next and when to submit an answer. We present SANA (Search Agent Navigation Ablation framework), a diagnostic ablation framework that transforms EQA tasks into runtime profiles containing gold source sequence, sanitized subquestions, and execution records. SANA uses these profiles to construct idealized search, planning, and data-analysis tools, allowing each component to be ablated; the residual gap is diagnostic evidence for policy failures.\n  To illustrate SANA as a reusable evaluation framework, we adapted two recent EQA benchmarks, LakeQA and KramaBench, and evaluated lightweight and mid-sized agents under fixed prompts, budgets, data lakes, and runtimes. Across both benchmarks, data analysis is a consistent bottleneck while planning is less so. Search is a major limitation in LakeQA's large data-lake setting, but less so for the smaller-scale KramaBench. SANA thus deconstructs end-to-end task accuracies into a diagnosis of where data-lake agents fail, and allows for systematic comparisons of progress in search, planning, data analysis, and agent design.",
+      "url": "https://arxiv.org/abs/2606.13904",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "submitted": "2026-06-11",
+      "score": 0.8848
+    },
+    {
+      "id": "2606.14530",
+      "title": "Code Correctness Signals in LLM Hidden States: Pre-Generation Probing and Repair Geometry",
+      "authors": [
+        "Carlo Di Cicco"
+      ],
+      "abstract": "Large language models encode rich information in their hidden states. This work asks whether code correctness is legible in the hidden states of Qwen3-4B-Instruct-2507, before it generates and as it repairs a failed attempt, studied on 444 LiveCodeBench tasks. It reports two findings connected by a single confound-control tool: residualization. First, the correctness of the model's first-attempt code is linearly decodable from the prompt-final hidden state, with a leakage-free held-out AUC of 0.931 +/- 0.008 across 50 outer splits. After the linear effect of prompt length is removed from each hidden state dimension, the probe still reaches 0.911 +/- 0.010, well above a prompt-length baseline of 0.754 +/- 0.014. Second, on 236 cleaned cases where the model attempts to repair a failed first attempt, the hidden state shift from the failing attempt to its repair carries a statistically detectable contrastive direction, significant on both a magnitude and a split-half test against label-shuffled nulls. This direction does not survive a conditional residualization against repair-context covariates that differ between successful and failed repairs, marking it as a correlate of repair success driven by the repair context rather than an isolated repair-comprehension feature. The probe layer is selected by nested cross-validation, and the same residualization approach that upholds the pre-generation correctness result overturns the repair-direction interpretation. The contribution is as much methodological as empirical: a diagnostic honest enough to report a negative result alongside a positive one.",
+      "url": "https://arxiv.org/abs/2606.14530",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8847
+    },
+    {
+      "id": "2606.14113",
+      "title": "Simulating Students' Java Programming Errors with Large Language Models",
+      "authors": [
+        "Ali Keramati",
+        "Jie Cao",
+        "Iman Mohammadi",
+        "Mark Warschauer",
+        "Yang Shi"
+      ],
+      "abstract": "Understanding student errors in the programming is a cornerstone of programming education, yet obtaining a representative set of student errors for any newly designed task remains slow and costly, since authentic submissions only accumulate after extensive classroom deployment. This paper explores whether large language models (LLMs) can serve as scalable proxies for students by simulating realistic logical errors in code submissions. Using the CodeWorkout dataset of 74,000+ unique student Java submissions across 37 problems, we evaluate five LLMs under three mainstream prompting strategies: Input-Output (IO), Chain-of-Thought (CoT), and iterative Self-Refine. We assess performance along two key dimensions: diversity (the range of distinct error patterns) and alignment (alignment with authentic student mistakes), and examine how these vary by struggling level of programming tasks. Our quantitative findings reveal that while all models generate diverse errors, their alignment to human submissions diverges: Claude Sonnet 4 achieves the most balanced performance. In addition, we conducted a blinded expert annotation study (N = 401) comparing synthetic and authentic errors. This qualitative analysis confirms that the generated errors are functionally indistinguishable from authentic student errors. Moreover, higher-struggling-level problems elicit more diverse but less student-like errors. These results highlight trade-offs in using LLMs to simulate human learners and suggest design considerations for integrating synthetic errors into teachable agents, intelligent tutoring systems, and large-scale learning analytics.",
+      "url": "https://arxiv.org/abs/2606.14113",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8844
+    },
+    {
+      "id": "2606.14154",
+      "title": "SkillMutator: Benchmarking and Defending Language-and-Code Cross-modal Attacks on LLM Agent Skills",
+      "authors": [
+        "Youngduk Kim",
+        "Minkyoo Song",
+        "Seungwon Shin"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly extend their capabilities at runtime by loading Agent Skills, which pair natural-language specifications (SKILL.md) with executable scripts and resources. Because a skill's behavior relies on both natural-language instructions and executable code, assessing its safety requires cross-modal reasoning, creating a new language-and-code attack surface. Attackers can present a benign workflow in SKILL.md while embedding implicit directives that steer the agent to exfiltrate sensitive files, even if the scripts appear harmless. This attack surface remains understudied; prior work treats skills merely as prompt-injection vectors or static code artifacts, leaving attacks emerging from cross-modal interactions largely unmeasured. In our evaluation, open-source and commercial skill scanners detect only 2%-8% and 9%-17% of such attacks, respectively. To address this gap, we introduce SkillMutator, the first benchmark for install-time detection of language-and-code cross-modal attacks on Agent Skills. It emulates an adversarial mutation process across 13 attack categories, iteratively refining malicious skills using scanner feedback to make injected behaviors indistinguishable from legitimate workflows. We further propose a four-phase reasoning-trajectory distillation framework to distill frontier-teacher traces into smaller open-weight models. This produces a locally deployable scanner avoiding third-party data exposure and excessive API costs. On the strongest SkillMutator subset (n=76), our distilled model (Qwen2.5-Coder-7B-Instruct) improves detection from 17.1% to 88.2%, surpassing GPT-4o-mini (23.7%) and GPT-5.4-mini (79.0%), and reaching frontier-level GPT-5.4 (86.8%). These results show practical defense against cross-modal attacks is feasible without relying on costly frontier models.",
+      "url": "https://arxiv.org/abs/2606.14154",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8838
+    },
+    {
+      "id": "2606.14629",
+      "title": "When Good Verifiers Go Bad: Self-Improving VLMs Can Regress on New Tasks",
+      "authors": [
+        "Jianzhe Lin"
+      ],
+      "abstract": "Verifier-driven self-DPO is a common recipe for self-improving production visual-language models. In this setup, a frozen verifier scores candidate generations, the top- and bottom-scoring candidates form a preference example, and DPO updates the learner. The deployment-time assumption is monotone: a stronger verifier should yield a stronger student. We show that this assumption can fail because verifier quality is highly task-specific. On a four-rung open-source verifier ladder across MathVista, MMMU, and BLINK, the same verifiers that are above-threshold and improve a Qwen-3-VL-2B student on MathVista become sub-threshold on MMMU, where their task-rubric accuracy drops to 8% to 23%.\n  In this regime, every verifier we tested silently regresses the student, producing drops of 3.4 to 10.9 percentage points below the frozen baseline while the DPO training loss continues to decrease. The regression replicates on a second student, Qwen-2.5-VL-3B. Moreover, within the failure regime, damage is confidence-inverted: the more accurate-but-still-wrong verifier causes larger regression than a near-random verifier, suggesting that progress-gated replay amplifies confidently wrong preference pairs. We give a compact mechanistic explanation via a variance theorem for progress-gated replay and its direction-mismatch failure mode.\n  The deployment message is operational rather than purely diagnostic: before running any verifier-driven loop, teams should measure target-task rubric accuracy, rank verifiers by target-task rubric quality rather than parameter count, and treat diminishing returns in above-threshold regimes as a verifier-side compute budget cap.",
+      "url": "https://arxiv.org/abs/2606.14629",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.8835
+    },
+    {
+      "id": "2606.14269",
+      "title": "ScoreGate: Adaptive Chunk Selection for Retrieval-Augmented Generation via Dual-Score Statistical Fusion",
+      "authors": [
+        "Karamvir Singh",
+        "Arvind Jain"
+      ],
+      "abstract": "Fixed-cardinality retrieval injects a constant top-K chunks into the generator regardless of query complexity, causing over-retrieval for narrow queries and under-retrieval for compositional ones. We describe ScoreGate, a lightweight score-space decision mechanism that controls retrieval cardinality at inference time using two scores already produced by the standard pipeline: bi-encoder similarity s_i and cross-encoder reranker score r_i, with no additional model inference calls required. Its core insight is that cross-encoder affirmation can rescue semantically relevant chunks that bi-encoder retrieval ranks poorly due to vocabulary mismatch -- a failure mode unaddressed by fixed-K or single-score thresholding. On MS MARCO (200 dev queries), ScoreGate achieves MRR@10 = 0.401 with 35% fewer retained chunks than Standard Top-K. On an internal benchmark (n=300, Fleiss' kappa=0.87), ScoreGate observed zero false positives (95% CI [96.4%, 100%]) at 97.77-99.34% recall, with 34.8% fewer tokens per query and only 31ms added latency. Results on both MS MARCO and real-world production traffic suggest that adaptive retrieval cardinality can improve retrieval efficiency without degrading retrieval quality.",
+      "url": "https://arxiv.org/abs/2606.14269",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-12",
+      "score": 0.883
+    },
+    {
+      "id": "2606.13862",
+      "title": "SuperThoughts: Reasoning Tokens in Superposition",
+      "authors": [
+        "Zheyang Xiong",
+        "Shivam Garg",
+        "Max Yu",
+        "Vaishnavi Shrivastava",
+        "Haoyu Zhao",
+        "Anastasios Kyrillidis",
+        "Dimitris Papailiopoulos"
+      ],
+      "abstract": "Long Chain-of-Thought (CoT) reasoning improves LLM problem-solving but is computationally expensive due to sequential token generation. While recent works explore reasoning in continuous latent spaces to bypass discrete token generation, they often struggle with training stability and fail to scale to complex, long-horizon tasks due to lack of supervision signal. We propose SuperThoughts, which compresses pairs of consecutive CoT tokens into single latent representations and decodes two tokens per step via a lightweight Multi-Token Prediction (MTP) module. This preserves discrete token supervision at training time while doubling throughput at inference time. We finetune Qwen2.5-Math-1.5B-Instruct, Qwen2.5-Math-7B-Instruct, Qwen2.5-Math-14B-Instruct, and evaluate on MATH500, AMC, OlympiadBench, and GPQA-Diamond. With a confidence-based adaptive mechanism that falls back to standard decoding when uncertain, SuperThoughts achieves $\\sim$20--30\\% CoT length reduction while maintaining accuracy with minimal degradation (1-2 points accuracy drop on most tasks).",
+      "url": "https://arxiv.org/abs/2606.13862",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-11",
+      "score": 0.8829
+    },
+    {
+      "id": "2606.13944",
+      "title": "LLMs Contain Multitudes: How Deployment Context Reshapes Model-Level Preferences and Values",
+      "authors": [
+        "Filip Trhlik",
+        "Aoife O'Flynn",
+        "Angela Yu",
+        "Arduin Findeis",
+        "Paula Buttery"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly characterised in recent evaluation work as having stable, model-level preference and value systems. However, accompanying robustness checks are limited to incidental prompt perturbations such as syntax variation and option reordering. This leaves open whether the measured properties survive when the surrounding task context changes, as it does in most real deployments. We test this directly across two established pairwise paradigms: ranking country preferences and eliciting utility judgements. In both, we make the deployment context -- the high-level task the model is performing while making concrete value-dependent choices -- our controlled variable, varied across framings such as writing a Reddit post or a news article. Across five LLMs and over 1.2M pairwise decisions, deployment context produces variation far larger than prompt paraphrasing and temperature controls. In country preference rankings over 15 countries, context induces widespread, statistically significant rank shifts; the aggregate Global North favouritism reported in prior work is itself context-dependent, with each model's bias shifting systematically across contexts. In utility elicitation over 50 outcomes, broad cross-category ordering is preserved, but fine-grained rankings within domains vary substantially, and cardinal exchange rates between outcomes (e.g. how many lives in one region equal one in another) shift by a factor of 2.47 at the median. Reported model-level preferences and utilities are therefore better understood as context-conditioned measurements than fixed model-level properties: safety guarantees obtained under one framing provide limited assurance in another.",
+      "url": "https://arxiv.org/abs/2606.13944",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-11",
+      "score": 0.8824
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 296,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

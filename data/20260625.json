@@ -1,0 +1,406 @@
+{
+  "date": "2026-06-25",
+  "collected_at": "2026-06-25T13:09:44.004279+09:00",
+  "papers": [
+    {
+      "id": "2606.25519",
+      "title": "Quantization Inflates Reasoning: Token Inflation as a Hidden Cost of Low-Bit Reasoning Models",
+      "authors": [
+        "Xinyu Lian",
+        "Walid Krichene",
+        "Beichen Huang",
+        "Masahiro Tanaka",
+        "Olatunji Ruwase",
+        "Li Zhang",
+        "Minjia Zhang"
+      ],
+      "abstract": "Quantization is widely used to reduce the inference cost of large language models, but its effect on reasoning models is not fully captured by final-answer accuracy or per-token latency. We show that low-bit post-training quantization can introduce a hidden test-time compute cost: quantized reasoning models often generate longer chains of thought even when they still answer correctly. Across mathematical reasoning, code generation, scientific question answering, and agentic tool-use benchmarks, we find that INT4/INT3 quantization can preserve accuracy but increase reasoning-token usage, offsetting the expected per-token speedup. To measure this effect, we introduce the CoT Token Inflation Ratio, which compares reasoning length between quantized and full-precision models averaged across all evaluation benchmarks. We further show that token inflation is accompanied by behavioral changes in the reasoning trace, including more intermediate steps and greater semantic repetition. These changes translate into measurable end-to-end real-world serving penalties. Finally, we evaluate mitigation strategies and find that prompting and decoding-time sampling offer inconsistent accuracy-length trade-offs, while quantization-aware training shows more promise in reducing both accuracy degradation and token inflation. Our results suggest that reasoning-token usage should be reported alongside accuracy when evaluating quantized reasoning models.",
+      "url": "https://arxiv.org/abs/2606.25519",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8936
+    },
+    {
+      "id": "2606.25568",
+      "title": "Riazi-8B: An Urdu Large Language Model for Mathematical Reasoning",
+      "authors": [
+        "Azher Ali",
+        "Ibtsam Haider",
+        "Raja Khurram Shahzad",
+        "Seemab Latif",
+        "Mehwish Fatima"
+      ],
+      "abstract": "Recent LLMs demonstrate strong mathematical reasoning capabilities, but existing gains rely heavily on English-centric training resources and benchmarks. As a result, reasoning performance degrades substantially in low-resource languages such as Urdu, where reasoning-oriented datasets and adapted models remain scarce. Urdu lacks both reasoning-oriented resources and models adapted for multi-step mathematical problem solving, limiting the applicability of recent progress to Urdu-speaking users. We address this gap through Riazi-8B, an Urdu mathematical reasoning model developed through a two-step adaptation process comprising continued pre-training on Urdu Wikipedia and supervised fine-tuning on Urdu Chain-of-Thought data derived from GSM8K. We evaluate Riazi-8B on MGSM-Urdu against existing Urdu instruction-tuned models. Our results show consistent improvements in answer correctness, reasoning quality, response completeness, and Urdu generation. Our findings demonstrate that combining Urdu language adaptation with reasoning-focused fine-tuning is an effective strategy for extending mathematical reasoning capabilities to low-resource languages.",
+      "url": "https://arxiv.org/abs/2606.25568",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8935
+    },
+    {
+      "id": "2606.25161",
+      "title": "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory",
+      "authors": [
+        "Tianyu Yang",
+        "Sudipta Paul",
+        "Vijay Srinivasan",
+        "Vivek Kulkarni",
+        "Srinivas Chappidi"
+      ],
+      "abstract": "Large language model (LLM) agents rely on long-term memory to support extended interactions and personalized assistance beyond finite context windows. Existing memory agents actively update external memory through generated write, revise, and delete operations, but these updates may omit important information, corrupt existing memory, or introduce unsupported hallucinated content. Once stored, such errors become persistent system-state failures that can affect future reasoning and generation. In this paper, we propose TrustMem, a framework designed to improve the trustworthiness of memory consolidation. TrustMem relies on a Memory Transition Verifier to evaluate the transition process of memory updates in terms of coverage, preservation, and faithfulness. It further constructs preference pairs among candidate updates under the same memory state, enabling preference-guided reinforcement learning to directly optimize memory updating behaviors. Extensive experiments demonstrate that TrustMem improves both memory utility and reliability: it achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-alpha validation set, improves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and hallucination by 40.1\\%, 79.1\\%, and 50.0\\%, respectively, compared with the strongest baseline for each error type.",
+      "url": "https://arxiv.org/abs/2606.25161",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8919
+    },
+    {
+      "id": "2606.25960",
+      "title": "Agentic System as Compressor: Quantifying System Intelligence in Bits",
+      "authors": [
+        "Zihan Qin",
+        "Hongrui Zhang"
+      ],
+      "abstract": "Large language models are turning from isolated predictors into agentic systems: they call tools, retrieve evidence, obey environment constraints, use verifiers, and complete tasks through search and multi-turn interaction. We adopts an analytical viewpoint based on \"compression is intelligence\": under a fixed task distribution, interface, and compute budget, a stronger agentic system lets a target object be reconstructed with fewer bits. We operationalize the measure with arithmetic coding, seed coding, and a fallback, and evaluate it in five settings: reversed text, chess moves, protein sequences, retrieval-augmented question answering, and semantic story compression; in all of them agentic components reduce codelength. These small, controlled experiments cover component types typical of real agentic systems, show that codelength can analyze how components, observers, and budgets change residual uncertainty, and offer guidance for evaluating real agent systems.",
+      "url": "https://arxiv.org/abs/2606.25960",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8897
+    },
+    {
+      "id": "2606.25984",
+      "title": "InvestPhilBench: A Multi-Layer Dynamic Benchmark for Evaluating Large Language Model Procedural Reasoning in Expert Investment Philosophy",
+      "authors": [
+        "Mingguang Chen",
+        "Bo Qu"
+      ],
+      "abstract": "Large language models are increasingly deployed as investment research assistants, yet no benchmark tests whether they can accurately reconstruct and apply the specific procedural decision frameworks of expert investors. We introduce InvestPhilBench, a multi-layer dynamic benchmark spanning eight cognitive tiers, from principle identification (L1) to novel framework extrapolation (L8). The v0.6 release comprises 118 primary-source-verified investment principle cards, 25 decision framework cards with explicit topology metadata, and 243 QA questions (197 dev / 46 held-out test). For reproducible scoring at scale we introduce the Benchmark Automated Scoring Pipeline (BASP) -- five algorithmic metrics (OGRS, KCCS, SAP@k, IVP, CKCA) -- the Failure Mode Detection Protocol (FMDP) with computable rules for six failure modes, and Gate Reconstruction Accuracy (GRA), a per-gate metric for questions with gold reasoning programs. In this release, InvestPhilBench is primarily a benchmark-and-methodology contribution. A four-model sanity wave on the 188-question development split shows a sharp provider-tier split (BASP 0.906 vs. 0.438); these mixed-judge numbers are confounded upper bounds. The central finding: the BASP composite saturates at the frontier (Claude L4 = 0.932) while GRA still exposes a procedural deficit (frontier L4 GRA approx. 0.77, L7 GRA 0.57-0.62) -- composite scoring rewards fluent prose and hides the procedural gap. v0.6 implements a unified judge and true model-in-the-loop retrieval/oracle conditions; the de-confounded multi-model leaderboard and full three-condition run are v1.0 deliverables. On a 100-item expert-annotated gold set the automated BASP composite tracks the human reference at Pearson r = 0.72 (MAE = 0.10), with attribution (SAP@3) the weakest sub-metric and the failure-mode detector running sensitive-but-over-flagging.",
+      "url": "https://arxiv.org/abs/2606.25984",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8893
+    },
+    {
+      "id": "2606.25476",
+      "title": "A Red Teaming Framework for Large Language Models: A Case Study on Faithfulness Evaluation",
+      "authors": [
+        "Abrar Alotaibi",
+        "Raed Mughus",
+        "Moataz Ahmed"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated remarkable performance across natural language processing tasks, yet their deployment in high-stakes applications raises critical concerns regarding reliability, safety, and trustworthiness. In this paper, we present a red teaming framework that systematically uncovers vulnerabilities in LLM outputs. Our approach employs a novel multi-role architecture comprising target, attacker, and jury models. The attackers generate increasingly effective adversarial prompts while the jury rigorously evaluates response accuracy and consistency across tasks. In a case study, our strategy proved particularly effective at exposing unfaithfulness in LLM responses. Exploitative adversarial prompts increased the attack success rate by up to 7.9% in question-answering tasks, revealing weaknesses in reliability. The approach identifies how structural constraints in summarization can shape vulnerability patterns, with format limitations yielding measurable gains in faithfulness, and shows that architectural design choices typically outweigh parameter scaling in determining model safety. The framework's key strength is its adaptability across evaluation tasks, from English question-answering to Arabic summarization, enabling comprehensive comparison of model vulnerabilities. While it excels at comparing cross-model and cross-linguistic vulnerabilities, it faces challenges in fully automating adversarial prompt generation across languages. Our experiments also reveal limitations in detecting subtle forms of unfaithfulness that do not manifest as explicit factual contradictions, particularly across linguistic contexts. Overall, this architecture provides both actionable insights into current LLM vulnerabilities and a scalable methodology for ongoing safety evaluation as models evolve.",
+      "url": "https://arxiv.org/abs/2606.25476",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8886
+    },
+    {
+      "id": "2606.26079",
+      "title": "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
+      "authors": [
+        "Akshay Paruchuri",
+        "Sanmi Koyejo",
+        "Ehsan Adeli"
+      ],
+      "abstract": "Standard benchmarks for multimodal large language models (MLLMs) score each item on one canonical ordering and miss whether order-irrelevant shuffling changes the answer, a baseline reliability property called for by emerging AI evaluation guidelines. We introduce Facet-Probe, a five-facet audit (option, evidence-chunk, document-rank, image-set, and mixed-modality ordering) of 18 frontier and open-weight MLLMs. A Bayesian item-response model separates ordering noise from per-facet bias, and a same-ordering control estimates the decoder-stochastic floor for observed flips. We find that none of the 18 MLLMs we audit are order-invariant: screened per-facet panel-mean flip rates span 24-50%. A Gemini same-ordering control at temperature 0 estimates a substantial ordering excess over a same-input decoder-noise floor in verified cells. Capability predicts but does not eliminate flips; the best model still flips on 13.4% of trials. In our Gemini mitigation tests, training-free prompt changes are modality-conditional and do not transfer from text to visual reasoning. These results suggest that prompt-level mitigation alone is unlikely to provide general order robustness, motivating future work on training-time and architectural approaches. We propose cross-ordering flip rate as a standard reporting axis for MLLMs.",
+      "url": "https://arxiv.org/abs/2606.26079",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8884
+    },
+    {
+      "id": "2606.25191",
+      "title": "To Isolate or to Score? Model-Adaptive Assessment for Cost-Efficient Multi-Agent RAG",
+      "authors": [
+        "Jungseob Lee",
+        "Chanjun Park",
+        "Heuiseok Lim"
+      ],
+      "abstract": "Multi-agent document assessment for retrieval-augmented generation is computationally expensive, driving practitioners toward smaller, deployable models whose assessment mechanisms remain poorly understood. We conduct a controlled study of training-free interventions on 7B-9B instruction-tuned models across diverse QA benchmarks, revealing a sharp dichotomy in how models benefit from assessment. For weaker baselines, the dominant mechanism is per-document isolation. Astoundingly, assessment-free isolation matches full multi-agent assessment, demonstrating that resolving multi-document context confusion, rather than scoring quality, drives outsized gains of up to 50 percentage points. Conversely, for strong baselines where scoring quality matters, we introduce Reasoning-Score Coupling, a label-free perturbation probe that classifies scoring behavior. Integrating these findings, we propose MADARA, a model-adaptive routing architecture. Crucially, MADARA's diagnostic thresholds derived from a single pilot model generalize zero-shot to four unseen model families, providing a robust, lightweight pipeline to eliminate computational overhead.",
+      "url": "https://arxiv.org/abs/2606.25191",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8872
+    },
+    {
+      "id": "2606.25760",
+      "title": "Uncertainty Quantification for Computer-Use Agents: A Benchmark across Vision-Language Models and GUI Grounding Datasets",
+      "authors": [
+        "Divake Kumar",
+        "Sina Tayebati",
+        "Devashri Naik",
+        "Amanda Sofie Rios",
+        "Nilesh Ahuja",
+        "Omesh Tickoo",
+        "Ranganath Krishnan",
+        "Amit Ranjan Trivedi"
+      ],
+      "abstract": "Computer-use agents turn vision-language model (VLM) predictions into executable GUI clicks, so reliable uncertainty estimates are essential for rejection, calibration, miss-severity ranking, and spatial safety regions. Yet evidence on post-hoc uncertainty quantification (UQ) for these agents is fragmented across isolated model and dataset pairs, leaving it unclear whether UQ rankings stay stable when the agent, benchmark, or observable interface changes. We present Argus, a cross-regime benchmark for post-hoc UQ in single-step executable GUI grounding: a 27-method open-weight matrix over 4 VLM agents and 4 datasets, plus an 8-method closed-source matrix across 3 frontier vendors where logits, hidden states, and attention maps are unavailable. Evaluated methods span logit-based scores, sampling and consistency measures, hidden-state and density estimators (Mahalanobis, SAPLMA), attention-based scores, P(True) and verbalised-confidence prompting, and split-conformal prediction. The main finding is selective transfer: UQ rankings are stable across datasets for a fixed model, but degrade across model classes and observable interfaces. Hidden-state and density methods are the most stable open-weight family, while CoCoA-1MCA, Focus, sampling-based scores, and verbalised self-assessment win in specific regimes. Within-model ranking transfer is strong (Spearman rho up to 0.969), but cross-tier transfer to closed-source vendors averages only +0.08, so closed-source UQ should be reranked on the target rather than extrapolated. Conformal click regions show score-level discrimination is not enough for deployment: locally weighted disks shrink radii by 40-60% when the plug-in UQ is calibrated, but coverage degrades under calibration-test or interface mismatch. We release per-item records, calibration/test splits, UQ scores, and analysis scripts for regime-aware UQ selection in GUI agents.",
+      "url": "https://arxiv.org/abs/2606.25760",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8867
+    },
+    {
+      "id": "2606.25447",
+      "title": "The Interplay of Harness Design and Post-Training in LLM Agents",
+      "authors": [
+        "Kyungmin Kim",
+        "Youngbin Choi",
+        "Seoyeon Lee",
+        "Suhyeon Jun",
+        "Dongwoo Kim",
+        "Sangdon Park"
+      ],
+      "abstract": "Tool-integrated LLM agents are often wrapped within a harness: the scaffolding that determines which tools are exposed, how they are described, and what auxiliary information accompanies each per-step observation. While agents are routinely post-trained, this scaffolding is typically treated as a fixed engineering detail, with design effort limited to the training-free regime. Moreover, existing post-training algorithms assume a static environment, even though tool environments and tasks often shift upon deployment. To address this gap, we extend $\\texttt{ALFWorld}$ (i) to treat the harness as a controllable design dimension and (ii) to support evaluation under task and tool environment shifts. Building on this, we systematically analyze how the harness design influences post-training in both in-distribution and out-of-distribution (OOD) settings. We empirically show that harness-aware post-training not only improves in-distribution performance but also enables agents to robustly adapt to OOD settings. Under a harness with minimal design effort, post-training suffers a drastic performance drop under stronger tool environment shifts, further highlighting the importance of harness-aware post-training under such shifts.",
+      "url": "https://arxiv.org/abs/2606.25447",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8867
+    },
+    {
+      "id": "2606.25115",
+      "title": "Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory",
+      "authors": [
+        "Beining Wu",
+        "Zihao Ding",
+        "Jun Huang",
+        "Yanxiao Zhao"
+      ],
+      "abstract": "On-device language-model agents improve by accumulating experience in retrieved memory rather than by updating weights. This memory is hard-bounded and exposed: it consumes RAM and energy, reaches peers through a thin uplink, and becomes an attack surface because it is writable by what the agent reads. Existing systems each cover one part of this problem: agentic memories grow without a budget, on-device methods keep entries by success alone, and poisoning is studied mainly as an attack rather than as a memory-governance problem. We propose \\sys{}, a single net-value-per-byte score that governs an agent's experience-memory lifecycle. The main idea is to let the budget act as the curator: each entry is scored as value minus harm, per byte, so one ruler decides what to keep, share, and trust. \\sys{} makes three decisions: (1) \\textbf{KEEP} evicts low-value bytes under the RAM and energy budget; (2) \\textbf{SHARE} sends an insight only when its value exceeds its uplink cost; and (3) \\textbf{TRUST} gates a peer entry by provenance. On language-model-agent task-drift benchmarks and a real heterogeneous Jetson testbed with two robot-arm nodes and a hub, \\sys{} reduces memory by $2.7\\times$ and uplink by $2.4\\times$, drives injection success from 0.75 to zero, and raises accuracy on cases corrupted by poison or stale memory. Curating by net value reduces footprint, energy, uplink, and injection success together without reducing accuracy. In this setting, forgetting by net value improves the agent rather than weakening it.",
+      "url": "https://arxiv.org/abs/2606.25115",
+      "categories": [
+        "cs.LG",
+        "cs.NI"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8865
+    },
+    {
+      "id": "2606.25605",
+      "title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
+      "authors": [
+        "Fangzheng Li",
+        "Aimin Zhang",
+        "Chen Lv"
+      ],
+      "abstract": "Tool Calling and Structured Output are two core capabilities of modern Agent systems, yet their interaction under joint deployment conditions remains insufficiently understood. This paper reports a reproducible phenomenon observed in a production Agent system: when Tool Calling and JSON Schema constraints are simultaneously enabled, multiple open-weight models cease invoking tools despite maintaining high schema compliance. We refer to this behavior as Tool Suppression. Through controlled experiments across multiple model families and deployment settings, we consistently reproduce Tool Suppression under joint constraints, while tool execution and schema compliance remain functional when evaluated independently. Further analysis reveals that JSON Schema constraints are compiled into grammar-based token masks, causing tool-call tokens to become unreachable during decoding. This provides an implementation-level explanation for the observed behavior. To interpret the phenomenon, we formulate the Constraint Priority Inversion (CPI) hypothesis, which suggests that schema satisfaction may dominate action-selection behavior under multiple simultaneous constraints. We present CPI as a behavioral hypothesis consistent with the observed evidence rather than a verified internal mechanism. To mitigate the problem, we propose Transparent Two-Pass Execution, an inference-time strategy that decouples tool execution from schema-constrained response generation. Experimental results show that this approach restores tool invocation while preserving structured output guarantees without requiring model retraining. These findings suggest that evaluating tool use and structured output separately may overlook important reliability issues in production Agent systems. Code, data, and docs will be released at https://github.com/Fzsama/Constrain-Tax-26-06.git.",
+      "url": "https://arxiv.org/abs/2606.25605",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "github_url": "https://github.com/Fzsama/Constrain-Tax-26-06.git.",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.25354",
+      "title": "Efficient and Trainable Language Model Test-Time Scaling via Local Branch Routing",
+      "authors": [
+        "Yutong Yin",
+        "Mingyu Jin",
+        "Jin Pan",
+        "Changyi Yang",
+        "Zijie Xia",
+        "Dhruv Pai",
+        "Shuming Hu",
+        "Zhen Zhang",
+        "Chenyang Zhao",
+        "Jinman Zhao",
+        "Wujiang Xu",
+        "Raymond Li",
+        "Xin Eric Wang",
+        "Julian McAuley",
+        "Zhaoran Wang"
+      ],
+      "abstract": "Test-time scaling improves language-model reasoning, but existing approaches often face a difficult trade-off: long chain-of-thought sampling remains single-threaded, while sentence- or solution-level search can be computationally expensive and hard to train end-to-end. We introduce Local Branch Routing (LBR), a token-level test-time scaling framework that expands a small local lookahead tree, forwards all sampled branches through the language model, and uses a lightweight router to select the depth-1 subtree to commit. By routing over the hidden states of candidate local futures, LBR allows each token decision to use evidence beyond the root next-token distribution while avoiding full solution-level search. The resulting prune-shift-grow decoding process preserves discrete branch identities and defines a tractable tree-trajectory likelihood: newly grown nodes are counted when first sampled, and router decisions are assigned explicit probabilities. This enables end-to-end reinforcement learning with verifiable rewards, jointly optimizing the base model and router under the same likelihood-ratio principle as discrete-token RLVR. On synthetic hierarchical-planning tasks, LBR shows that post-candidate hidden states provide useful routing evidence. On mathematical reasoning benchmarks, LBR improves both Pass@1 and Pass@32 over discrete chain-of-thought, vanilla discrete-token RLVR, and RL-compatible soft-token branching baselines. These results suggest that lightweight local branching offers an efficient, trainable, and discrete form of language-model test-time scaling.",
+      "url": "https://arxiv.org/abs/2606.25354",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8858
+    },
+    {
+      "id": "2606.25832",
+      "title": "MiniOpt: Reasoning to Model and Solve General Optimization Problems with Limited Resources",
+      "authors": [
+        "Ke Zhao",
+        "Zixiang Di",
+        "Hong Qian",
+        "Xiang Shu",
+        "Yaolin Wen",
+        "Qitao Shi",
+        "Bingdong Li",
+        "Xingyu Lu",
+        "Xiangfeng Wang",
+        "Jun Zhou",
+        "Ke Tang",
+        "Yang Yu"
+      ],
+      "abstract": "Achieving strong optimization generalization across diverse optimization problems while requiring limited training resources remains a challenging problem for optimization-oriented large language models (LLMs). Existing approaches typically rely on large-scale supervised datasets, costly reasoning annotations, and expensive intermediate step verification, resulting in substantial training overhead. To address these challenges, we propose MiniOpt, a reinforcement learning framework that learns to solve optimization problems through an \"reasoning-to-model-and-solve\" paradigm. MiniOpt decomposes optimization reasoning into structured optimization modeling and executable solver generation. Building upon this paradigm, we introduce OptReward, a reward function with hierarchical score structure that jointly evaluates formulation and solution, enabling effective policy learning without expert demonstrations. We further develop an optimization-oriented policy optimization strategy that improves exploration efficiency and stabilizes reinforcement learning for compact models. Extensive experiments show that MiniOpt-3B exhibits strong optimization generalization across various optimization types, problem scenarios, and task domains. For models with fewer than 10B parameters, MiniOpt series achieves the highest average solving accuracy (SA). For models with more than 10B parameters, MiniOpt still shows competitive performance. These results suggest that optimization-oriented reward design and reinforcement learning provide an effective pathway for developing compact optimization-specialized language models with strong optimization generalization capabilities. The code is available at https://github.com/Hsiang-1/MiniOpt.",
+      "url": "https://arxiv.org/abs/2606.25832",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-24",
+      "github_url": "https://github.com/Hsiang-1/MiniOpt.",
+      "score": 0.8854
+    },
+    {
+      "id": "2606.25331",
+      "title": "Improved Large Language Diffusion Models",
+      "authors": [
+        "Shen Nie",
+        "Qiyang Min",
+        "Shaoxuan Xu",
+        "Zihao Huang",
+        "Yuxuan Song",
+        "Yong Shan",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Chongxuan Li",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Modern large language models are predominantly trained with autoregressive factorization and causal attention. We present \\emph{iLLaDA}, an 8B masked diffusion language model trained from scratch with fully bidirectional attention. iLLaDA keeps the masked diffusion objective throughout pre-training and supervised fine-tuning (SFT), scaling pre-training to 12T tokens and fine-tuning on a 25B-token instruction corpus for 12 epochs. We further use variable-length generation for efficiency and introduce confidence-based scoring for multiple-choice evaluation. Compared with LLaDA, iLLaDA improves broadly across general, mathematical, and code benchmarks; for example, iLLaDA-Base improves by 21.6 points on BBH and 14.9 points on ARC-Challenge, while iLLaDA-Instruct improves by 14.5 points on MATH and 16.5 points on HumanEval. Despite its non-autoregressive training, iLLaDA also remains competitive with Qwen2.5 7B on several benchmarks. These results show that fully bidirectional diffusion training from scratch is a competitive path toward strong language models. Model weights and codes: https://github.com/ML-GSAI/LLaDA.",
+      "url": "https://arxiv.org/abs/2606.25331",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "github_url": "https://github.com/ML-GSAI/LLaDA.",
+      "score": 0.8846
+    },
+    {
+      "id": "2606.25750",
+      "title": "RAS: Measuring LLM Safety Through Refusal Alignment",
+      "authors": [
+        "Chang-Chieh Huang",
+        "Yan-Lun Chen",
+        "Chia-Mu Yu",
+        "Wei-Bin Lee"
+      ],
+      "abstract": "Safety evaluation of large language models (LLMs) is commonly performed by querying models with unsafe or jailbreak prompts and judging whether their outputs violate a safety policy. Although useful, output-level evaluation is expensive, sensitive to judge choice, and easily tied to fixed question banks. We propose **SafeVec**, a white-box evaluation procedure that measures safety from internal representations rather than generated answers. **SafeVec** first extracts layer-wise refusal directions from a safety-aligned reference model, then selects stable layer windows where safe and unsafe behaviors are separable, and finally scores a target model by measuring whether its hidden states align with these refusal directions under unsafe and jailbreak prompts. The resulting metric, **RAS** (**R**efusal **A**lignment **S**core), maps representation-level refusal alignment to a calibrated 0-100 safety score. Across `Llama`, `Gemma`, and `Qwen` model families, RAS separates aligned models from uncensored and abliterated variants, tracks output-level attack success rate, and is substantially faster than judge-based evaluation. These results suggest that refusal alignment provides a compact and efficient signal for white-box LLM safety evaluation.",
+      "url": "https://arxiv.org/abs/2606.25750",
+      "categories": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.884
+    },
+    {
+      "id": "2606.25449",
+      "title": "Reclaim Evaluation: A Lossy Memory Is Worse Than an Empty One",
+      "authors": [
+        "Alex Kwon"
+      ],
+      "abstract": "A language model's memory can be worse than having no memory at all. Give a model a memory that kept a wrong conclusion but dropped the work behind it, and it emits that stale value as a confident answer; give the same model an empty memory and it abstains. Across seven models this direction never reverses, a clean kill condition that none breaks. We call this brittle memory: behavioral, not the near-immediate information bound beneath it; only its magnitude is disposition- and task-dependent, not its direction. We measure it with reclaim evaluation: compress a drifted interaction at a fixed budget, then test whether a correction recovers the known answer, scored against ground truth with no judge. Correctability is bottlenecked by whether the answer-determining source survives, not by capability. A one-line source-first policy (keep the recomputable source, drop the re-derivable conclusion) restores correctability at equal budget where that source is compact and identifiable; a length-matched control rules out added text as the cause. The hand-built oracle reaches 1.00; a one-prompt deployable version reclaims 0.49-0.88. The stake compounds: chained through a memory loop, a single dropped-source error corrupts a growing span of downstream steps and stays uncorrectable, while source-first holds to a bounded budget horizon. The wall and fix replicate across three deployed memory systems and on real dialogue (MultiWOZ), and past the budget where the source no longer fits, the fix fails silently unless the note records completeness. This is a controlled study of a mechanism, not a benchmark: judge-free exact scoring, matched-budget controls, and validators built to come out false. We release the harness, conditions, and validators.",
+      "url": "https://arxiv.org/abs/2606.25449",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8835
+    },
+    {
+      "id": "2606.25442",
+      "title": "PolicyAlign: Direct Policy-Based Safety Alignment for Large Language Models",
+      "authors": [
+        "Chang Wu",
+        "Junfeng Fang",
+        "Houcheng Jiang",
+        "Kai Tang",
+        "Pengyu Cheng",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang",
+        "Xiang Wang"
+      ],
+      "abstract": "Safety alignment of large language models (LLMs) typically depends on high-quality supervision data, such as safe demonstrations or preference pairs. However, in real-world deployment, emerging safety requirements are often specified as natural-language policies, while corresponding supervision data may be costly, delayed, or unavailable. This creates a mismatch between rapidly evolving safety policies and conventional data-driven alignment methods. To address this, we propose PolicyAlign, a simple yet effective framework for directly aligning LLMs with safety policies. Given a safety policy, PolicyAlign first synthesizes policy-violating instructions and then performs on-policy self-distillation to internalize policy-guided behavior. To improve training stability and data efficiency, we further introduce Policy-Sensitive Filtering, which selects instructions where the policy induces the largest behavioral shift. Experiments across multiple models show that PolicyAlign consistently improves safety while maintaining low over-refusal and preserving general capabilities. PolicyAlign also generalizes to medical, legal, and financial safety scenarios, highlighting its potential as a scalable and maintainable approach to policy-based LLM safety alignment. The code is released at https://github.com/Qwen-Applications/PolicyAlign.",
+      "url": "https://arxiv.org/abs/2606.25442",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "github_url": "https://github.com/Qwen-Applications/PolicyAlign.",
+      "score": 0.8833
+    },
+    {
+      "id": "2606.25524",
+      "title": "Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning",
+      "authors": [
+        "Jaeyong Ko",
+        "Pilsung Kang",
+        "Yukyung Lee"
+      ],
+      "abstract": "Large language models (LLMs) reach high accuracy in mathematical reasoning, but individual traces on the same problem diverge; some arrive at the correct answer while others fail. Prior work analyzes failure at the step, chunk, or sentence level, or at tokens where failure has already occurred. Neither identifies the precise token that triggers the shift toward failure. We introduce the cliff token, a token where the token-wise potential drops significantly under an adaptive threshold that scales with the local token-wise potential, based on a one-sided two-proportion z-test. Across seven models and three mathematical reasoning benchmarks (GSM1K, MATH500, AIME 2025), cliff tokens act as failure triggers; deleting the first cliff token and resampling recovers pass@64 to 1.0, while keeping it limits recovery to between 0.71 and 1.00. We further introduce a cliff taxonomy of deterministic, uncertain, and sampled-off cliffs, defined by greedy choice and token entropy. Each type has distinct probabilistic characteristics, and the taxonomy generalizes across model scales. Finally, we validate the taxonomy via single-token preference optimization at cliff positions (Cliff-DPO). Trained on GSM8K, Cliff-DPO improves accuracy across benchmarks by up to +6.6. Optimizing at uncertain and sampled-off cliffs improves reasoning, while deterministic cliffs do not.",
+      "url": "https://arxiv.org/abs/2606.25524",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-24",
+      "score": 0.8832
+    },
+    {
+      "id": "2606.25013",
+      "title": "Do Thinking Tokens Help with Safety?",
+      "authors": [
+        "Narutatsu Ri",
+        "Abhishek Panigrahi",
+        "Sanjeev Arora"
+      ],
+      "abstract": "Today's reasoning models use thinking tokens to attain stronger performance on benchmarks than their instruction-tuned counterparts. It is also generally believed that this more \"deliberative\" mode should improve alignment and safety, by providing the model a safe space to consider whether its planned answer to a request violates its safety principles. We present evidence that this intuition is not always correct. Across frontier open-weight reasoning models spanning GPT-OSS, Qwen, Olmo, and Phi families, we find that the eventual refusal/compliance outcome is already strongly predictable via a trained head on the first token's hidden representation ($0.84$-$0.95$ AUROC and $\\sim88\\%$ balanced accuracy for predicting refusal/compliance) before any visible thinking. The thinking process turns out to be more akin to prefix completion than to deliberative revision, with the final outcome rarely changing after the first $\\sim20\\%$ of thinking, despite giving the appearance of deliberation at the text level ($\\sim74\\%$ of text-level deliberations occur when the response distribution is already locked to one refusal/compliance side). We also find that existing inference-time and training-based safety interventions, despite being motivated by the goal of inducing deliberation, largely shift model behavior toward over-refusal while suppressing already-scarce deliberation signals. Our results suggest that safety behavior in current reasoning models is much less deliberative than commonly assumed, and highlight the need for methods that induce real safety deliberation.",
+      "url": "https://arxiv.org/abs/2606.25013",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-23",
+      "score": 0.8824
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 298,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "date": "2026-05-01",
+  "collected_at": "2026-05-01T12:59:38.442171+09:00",
+  "papers": [
+    {
+      "id": "2604.27547",
+      "title": "Diagnosing Capability Gaps in Fine-Tuning Data",
+      "authors": [
+        "Saeid Asgari Taghanaki",
+        "Rakshanda Agarwal",
+        "Bruce Sun",
+        "Rohan Jha",
+        "Elias Stengel-Eskin",
+        "Sara Malvar",
+        "Rui Ying",
+        "Yifei Xu",
+        "Guilherme Potje",
+        "Tusher Chakraborty",
+        "Leonardo de Oliveira Nunes",
+        "Ranveer Chandra",
+        "Emre Kiciman"
+      ],
+      "abstract": "Fine-tuning large language models (LLMs) for domain-specific tasks requires training datasets that comprehensively cover the target capabilities a practitioner needs. Yet identifying which capabilities a dataset fails to support, and doing so before an expensive fine-tuning run, remains a largely unsolved problem. We introduce GoalCover, a framework that helps practitioners systematically detect capability gaps in fine-tuning datasets through interactive goal decomposition and automated coverage assessment. GoalCover guides a practitioner through structured decomposition of a high-level goal into atomic, independently evaluable subgoals; assigns each training sample an LLM-based alignment score against every subgoal; and surfaces missing capabilities through automated analysis of low-scoring sample explanations. We validate the framework along two complementary axes. First, through controlled corruption experiments across three domains (medical QA, legal summarization, code generation), we show that GoalCover reliably distinguishes targeted from non-targeted capability impacts: target subgoals degrade by 25.6% on average versus 2.1% for non-target subgoals (Cohen's d=1.24). Second, we demonstrate downstream utility on a financial-summarization Reinforcement Fine-Tuning (RFT) task with Qwen-3-14B: training on GoalCover-filtered data improves the LLM-judge reward from 3.77 to 4.12 (out of 5) over the unfiltered baseline, and combining filtered data with goal-conditioned synthetic samples yields the strongest result (4.20). The two results together show that GoalCover works as a practical pre-fine-tuning diagnostic: it detects capability gaps and produces concrete signal for closing them.",
+      "url": "https://arxiv.org/abs/2604.27547",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8961
+    },
+    {
+      "id": "2604.27660",
+      "title": "From Context to Skills: Can Language Models Learn from Context Skillfully?",
+      "authors": [
+        "Shuzheng Si",
+        "Haozhe Zhao",
+        "Yu Lei",
+        "Qingyi Wang",
+        "Dingwei Chen",
+        "Zhitong Wang",
+        "Zhenhailong Wang",
+        "Kangyang Luo",
+        "Zheng Wang",
+        "Gang Chen",
+        "Fanchao Qi",
+        "Minjia Zhang",
+        "Maosong Sun"
+      ],
+      "abstract": "Many real-world tasks require language models (LMs) to reason over complex contexts that exceed their parametric knowledge. This calls for context learning, where LMs directly learn relevant knowledge from the given context. An intuitive solution is inference-time skill augmentation: extracting the rules and procedures from context into natural-language skills. However, constructing such skills for context learning scenarios faces two challenges: the prohibitive cost of manual skill annotation for long, technically dense contexts, and the lack of external feedback for automated skill construction, since there is no automatic signal to tell whether a proposed skill is helpful. In this paper, we propose Ctx2Skill, a self-evolving framework that autonomously discovers, refines, and selects context-specific skills without human supervision or external feedback. At its core, a multi-agent self-play loop has a Challenger that generates probing tasks and rubrics, a Reasoner that attempts to solve them guided by an evolving skill set, and a neutral Judge that provides binary feedback. Crucially, both the Challenger and the Reasoner evolve through accumulated skills: dedicated Proposer and Generator agents analyze failure cases and synthesize them into targeted skill updates for both sides, enabling automated skill discovery and refinement. To prevent adversarial collapse caused by increasingly extreme task generation and over-specialized skill accumulation, we further introduce a Cross-time Replay mechanism that identifies the skill set achieving the best balance across representative cases for the Reasoner side, ensuring robust and generalizable skill evolution. The resulting skills can be plugged into any language model to obtain better context learning capability. Evaluated on four context learning tasks from CL-bench, Ctx2Skill consistently improves solving rates across backbone models.",
+      "url": "https://arxiv.org/abs/2604.27660",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8943
+    },
+    {
+      "id": "2604.28157",
+      "title": "FlashRT: Towards Computationally and Memory Efficient Red-Teaming for Prompt Injection and Knowledge Corruption",
+      "authors": [
+        "Yanting Wang",
+        "Chenlong Yin",
+        "Ying Chen",
+        "Jinyuan Jia"
+      ],
+      "abstract": "Long-context large language models (LLMs)-for example, Gemini-3.1-Pro and Qwen-3.5-are widely used to empower many real-world applications, such as retrieval-augmented generation, autonomous agents, and AI assistants. However, security remains a major concern for their widespread deployment, with threats such as prompt injection and knowledge corruption. To quantify the security risks faced by LLMs under these threats, the research community has developed heuristic-based and optimization-based red-teaming methods. Optimization-based methods generally produce stronger attacks than heuristic attacks and thus provide a more rigorous assessment of LLM security risks. However, they are often resource-intensive, requiring significant computation and GPU memory, especially for long context scenarios. The resource-intensive nature poses a major obstacle for the community (especially academic researchers) to systematically evaluate the security risks of long-context LLMs and assess the effectiveness of defense strategies at scale. In this work, we propose FlashRT, the first framework to improve the efficiency (in terms of both computation and memory) for optimization-based prompt injection and knowledge corruption attacks under long-context LLMs. Through extensive evaluations, we find that FlashRT consistently delivers a 2x-7x speedup (e.g., reducing runtime from one hour to less than ten minutes) and a 2x-4x reduction in GPU memory consumption (e.g., reducing from 264.1 GB to 65.7 GB GPU memory for a 32K token context) compared to state-of-the-art baseline nanoGCG. FlashRT can be broadly applied to black-box optimization methods, such as TAP and AutoDAN. We hope FlashRT can serve as a red-teaming tool to enable systematic evaluation of long-context LLM security. The code is available at: https://github.com/Wang-Yanting/FlashRT",
+      "url": "https://arxiv.org/abs/2604.28157",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-04-30",
+      "github_url": "https://github.com/Wang-Yanting/FlashRT",
+      "score": 0.8926
+    },
+    {
+      "id": "2604.27644",
+      "title": "ANCORA: Learning to Question via Manifold-Anchored Self-Play for Verifiable Reasoning",
+      "authors": [
+        "Chengcao Yang",
+        "Jun Chen"
+      ],
+      "abstract": "We propose a paradigm shift from learning to answer to learning to question: can a language model generate verifiable problems, solve them, and turn the resulting feedback into self-improvement without human supervision? We introduce ANCORA, an anchored-curriculum framework in which a unified policy alternates between a Proposer that synthesizes novel specifications and a Solver that produces verified solutions. ANCORA rests on three load-bearing mechanisms: a two-level group-relative update that couples Proposer advantages across specifications with Solver advantages across solution attempts; iterative self-distilled SFT that projects the base model onto its valid-output manifold before RL; and a UCB-guided Curriculum DAG that grows only through strictly filtered, novel, Solver-verified specifications. These stabilizers are necessary because sparse verifier feedback otherwise drives Proposer collapse even under MLRL-aligned rewards. Instantiated in Verus, ANCORA lifts Dafny2Verus pass@1 from a 26.6% SFT baseline to 81.5% in the test-time-training setting under 0-shot evaluation, outperforming the PSV self-play baseline by 15.8 points despite PSV using 1-shot inference; in a separate transfer setting, training from Dafny2Verus seeds yields 36.2% and 17.2% pass@1 on held-out MBPP and HumanEval.",
+      "url": "https://arxiv.org/abs/2604.27644",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PL"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8921
+    },
+    {
+      "id": "2604.27852",
+      "title": "NeocorRAG: Less Irrelevant Information, More Explicit Evidence, and More Effective Recall via Evidence Chains",
+      "authors": [
+        "Shiyao Peng",
+        "Qianhe Zheng",
+        "Zhuodi Hao",
+        "Zichen Tang",
+        "Rongjin Li",
+        "Qing Huang",
+        "Jiayu Huang",
+        "Jiacheng Liu",
+        "Yifan Zhu",
+        "Haihong E"
+      ],
+      "abstract": "Although precise recall is a core objective in Retrieval-Augmented Generation (RAG), a critical oversight persists in the field: improvements in retrieval performance do not consistently translate to commensurate gains in downstream reasoning. To diagnose this gap, we propose the Recall Conversion Rate (RCR), a novel evaluation metric to quantify the contribution of retrieval to reasoning accuracy. Our quantitative analysis of mainstream RAG methods reveals that as Recall@5 improves, the RCR exhibits a near-linear decay. We identify the neglect of retrieval quality in these methods as the underlying cause. In contrast, approaches that focus solely on quality optimization often suffer from inferior recall performance. Both categories lack a comprehensive understanding of retrieval quality optimization, resulting in a trade-off dilemma. To address these challenges, we propose comprehensive retrieval quality optimization criteria and introduce the NeocorRAG framework. This framework achieves holistic retrieval quality optimization by systematically mining and utilizing Evidence Chains. Specifically, NeocorRAG first employs an innovative activated search algorithm to obtain a refined candidate space. Then it ensures precise evidence chain generation through constrained decoding. Finally, the retrieved set of evidence chains guides the retrieval optimization process. Evaluated on benchmarks including HotpotQA, 2WikiMultiHopQA, MuSiQue, and NQ, NeocorRAG achieves SOTA performance on both 3B and 70B parameter models, while consuming less than 20% of tokens used by comparable methods. This study presents an efficient, training-free paradigm for RAG enhancement that effectively optimizes retrieval quality while maintaining high recall. Our code is released at https://github.com/BUPT-Reasoning-Lab/NeocorRAG.",
+      "url": "https://arxiv.org/abs/2604.27852",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "github_url": "https://github.com/BUPT-Reasoning-Lab/NeocorRAG.",
+      "score": 0.8917
+    },
+    {
+      "id": "2604.28093",
+      "title": "What Makes a Good Terminal-Agent Benchmark Task: A Guideline for Adversarial, Difficult, and Legible Evaluation Design",
+      "authors": [
+        "Ivan Bercovich"
+      ],
+      "abstract": "Terminal-agent benchmarks have become a primary signal for measuring the coding and system-administration capabilities of large language models. As the market for evaluation environments grows, so does the pressure to ship tasks quickly, often without thorough adversarial review of the verification logic. This paper is a guideline for writing good benchmark tasks, drawn from over a year of contributing to and reviewing tasks for Terminal Bench. Most people write benchmark tasks the way they write prompts. They shouldn't. A prompt is designed to help the agent succeed; a benchmark is designed to find out if it can. We argue that good tasks are adversarial, difficult, and legible, and that a large class of common failure modes -- AI-generated instructions, over-prescriptive specifications, clerical difficulty, oracle solutions that assume hidden knowledge, tests that validate the wrong things, and reward-hackable environments -- are predictable consequences of treating task authoring as prompt authoring. We catalog these failure modes, argue that real difficulty is conceptual rather than environmental, and discuss recent empirical evidence that over 15% of tasks in popular terminal-agent benchmarks are reward-hackable. We hope this serves as a useful reference for benchmark maintainers, task contributors, and researchers using benchmark scores as evidence.",
+      "url": "https://arxiv.org/abs/2604.28093",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8911
+    },
+    {
+      "id": "2604.28082",
+      "title": "Characterizing the Consistency of the Emergent Misalignment Persona",
+      "authors": [
+        "Anietta Weckauff",
+        "Yuchen Zhang",
+        "Maksym Andriushchenko"
+      ],
+      "abstract": "Fine-tuning large language models (LLMs) on narrowly misaligned data generalizes to broadly misaligned behavior, a phenomenon termed emergent misalignment (EM). While prior work has found a correlation between harmful behavior and self-assessment in emergently misaligned models, it remains unclear how consistent this correspondence is across tasks and whether it varies across fine-tuning domains. We characterize the consistency of the EM persona by fine-tuning Qwen 2.5 32B Instruct on six narrowly misaligned domains (e.g., insecure code, risky financial advice, bad medical advice) and administering experiments including harmfulness evaluation, self-assessment, choosing between two descriptions of AI systems, output recognition, and score prediction. Our results reveal two distinct patterns: coherent-persona models, in which harmful behavior and self-reported misalignment are coupled, and inverted-persona models, which produce harmful outputs while identifying as aligned AI systems. These findings reveal a more fine-grained picture of the effects of emergent misalignment, calling into question the consistency of the EM persona.",
+      "url": "https://arxiv.org/abs/2604.28082",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8899
+    },
+    {
+      "id": "2604.27820",
+      "title": "ObjectGraph: From Document Injection to Knowledge Traversal -- A Native File Format for the Agentic Era",
+      "authors": [
+        "Mohit Dubey",
+        "Open Gigantic"
+      ],
+      "abstract": "Every document format in existence was designed for a human reader moving linearly through text. Autonomous LLM agents do not read - they retrieve. This fundamental mismatch forces agents to inject entire documents into their context window, wasting tokens on irrelevant content, compounding state across multi-turn loops, and broadcasting information indiscriminately across agent roles. We argue this is not a prompt engineering problem, not a retrieval problem, and not a compression problem: it is a format problem.\n  We introduce OBJECTGRAPH (.og), a file format that reconceives the document as a typed, directed knowledge graph to be traversed rather than a string to be injected. OBJECTGRAPH is a strict superset of Markdown - every .md file is a valid .og file - requires no infrastructure beyond a two-primitive query protocol, and is readable by both humans and agents without tooling.\n  We formalize the Document Consumption Problem, characterise six structural properties no existing format satisfies simultaneously, and prove OBJECTGRAPH satisfies all six. We further introduce the Progressive Disclosure Model, the Role-Scoped Access Protocol, and Executable Assertion Nodes as native format primitives. Empirical evaluation across five document classes and eight agent task types demonstrates up to 95.3 percent token reduction with no statistically significant degradation in task accuracy (p > 0.05). Transpiler fidelity reaches 98.7 percent content preservation on a held-out document benchmark.",
+      "url": "https://arxiv.org/abs/2604.27820",
+      "categories": [
+        "cs.AI",
+        "cs.DB",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8896
+    },
+    {
+      "id": "2604.27351",
+      "title": "Heterogeneous Scientific Foundation Model Collaboration",
+      "authors": [
+        "Zihao Li",
+        "Jiaru Zou",
+        "Feihao Fang",
+        "Xuying Ning",
+        "Mengting Ai",
+        "Tianxin Wei",
+        "Sirui Chen",
+        "Xiyuan Yang",
+        "Jingrui He"
+      ],
+      "abstract": "Agentic large language model systems have demonstrated strong capabilities. However, their reliance on language as the universal interface fundamentally limits their applicability to many real-world problems, especially in scientific domains where domain-specific foundation models have been developed to address specialized tasks beyond natural language. In this work, we introduce Eywa, a heterogeneous agentic framework designed to extend language-centric systems to a broader class of scientific foundation models. The key idea of Eywa is to augment domain-specific foundation models with a language-model-based reasoning interface, enabling language models to guide inference over non-linguistic data modalities. This design allows predictive foundation models, which are typically optimized for specialized data and tasks, to participate in higher-level reasoning and decision-making processes within agentic systems. Eywa can serve as a drop-in replacement for a single-agent pipeline (EywaAgent) or be integrated into existing multi-agent systems by replacing traditional agents with specialized agents (EywaMAS). We further investigate a planning-based orchestration framework in which a planner dynamically coordinates traditional agents and Eywa agents to solve complex tasks across heterogeneous data modalities (EywaOrchestra). We evaluate Eywa across a diverse set of scientific domains spanning physical, life, and social sciences. Experimental results demonstrate that Eywa improves performance on tasks involving structured and domain-specific data, while reducing reliance on language-based reasoning through effective collaboration with specialized foundation models.",
+      "url": "https://arxiv.org/abs/2604.27351",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8872
+    },
+    {
+      "id": "2604.28182",
+      "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
+      "authors": [
+        "Eyon Jang",
+        "Damon Falck",
+        "Joschka Braun",
+        "Nathalie Kirch",
+        "Achu Menon",
+        "Perusha Moodley",
+        "Scott Emmons",
+        "Roland S. Zimmermann",
+        "David Lindner"
+      ],
+      "abstract": "Reinforcement learning (RL) has become essential to the post-training of large language models (LLMs) for reasoning, agentic capabilities and alignment. Successful RL relies on sufficient exploration of diverse actions by the model during training, which creates a potential failure mode: a model could strategically alter its exploration during training to influence the subsequent training outcome. In this paper we study this behavior, called exploration hacking. First, we create model organisms of selective RL resistance by fine-tuning LLMs to follow specific underperformance strategies; these models can successfully resist our RL-based capability elicitation in agentic biosecurity and AI R&D environments while maintaining performance on related tasks. We then use our model organisms to evaluate detection and mitigation strategies, including monitoring, weight noising, and SFT-based elicitation. Finally, we show that current frontier models can exhibit explicit reasoning about suppressing their exploration when provided with sufficient information about their training context, with higher rates when this information is acquired indirectly through the environment. Together, our results suggest exploration hacking is a possible failure mode of RL on sufficiently capable LLMs.",
+      "url": "https://arxiv.org/abs/2604.28182",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8865
+    },
+    {
+      "id": "2604.27637",
+      "title": "Optimization before Evaluation: Evaluation with Unoptimised Prompts Can be Misleading",
+      "authors": [
+        "Nicholas Sadjoli",
+        "Tim Siefken",
+        "Atin Ghosh",
+        "Yifan Mai",
+        "Daniel Dahlmeier"
+      ],
+      "abstract": "Current Large Language Model (LLM) evaluation frameworks utilize the same static prompt template across all models under evaluation. This differs from the common industry practice of using prompt optimization (PO) techniques to optimize the prompt for each model to maximize application performance. In this paper, we investigate the effect of PO towards LLM evaluations. Our results on public academic and internal industry benchmarks show that PO greatly affects the final ranking of models. This highlights the importance of practitioners performing PO per model when conducting evaluations to choose the best model for a given task.",
+      "url": "https://arxiv.org/abs/2604.27637",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8852
+    },
+    {
+      "id": "2604.27616",
+      "title": "RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems",
+      "authors": [
+        "Jiacheng Liu",
+        "Zichen Tang",
+        "Zhongjun Yang",
+        "Xinyi Hu",
+        "Xueyuan Lin",
+        "Linwei Jia",
+        "Ruofei Bai",
+        "Rongjin Li",
+        "Shiyao Peng",
+        "Haocheng Gao",
+        "Haihong E"
+      ],
+      "abstract": "People commonly leverage structured content to accelerate knowledge acquisition and research problem solving. Among these, roadmaps guide researchers through hierarchical subtasks to solve complex research problems step by step. Despite progress in structured content generation, the roadmap generation task has remained unexplored. To bridge this gap, we introduce RoadMap, a novel benchmark designed to evaluate the ability of large language models (LLMs) to construct high-quality roadmaps for solving complex research problems. Based on this, we identify three limitations of LLMs: (1) lack of professional knowledge, (2) unreasonable task decomposition, and (3) disordered logical relationships. To address these challenges, we propose RoadMapper, an LLM-based multi-agent system that decomposes the research roadmap generation task into three key stages (i.e., initial generation, knowledge augmentation, and iterative \"critique-revise-evaluate\"). Extensive experiments demonstrate that RoadMapper can improve LLMs' ability for roadmap generation, while enhancing average performance by more than 8% and saving 84% of the time required by human experts, highlighting its effectiveness and application potential.",
+      "url": "https://arxiv.org/abs/2604.27616",
+      "categories": [
+        "cs.CL",
+        "cs.MA"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8839
+    },
+    {
+      "id": "2604.27763",
+      "title": "Intent2Tx: Benchmarking LLMs for Translating Natural Language Intents into Ethereum Transactions",
+      "authors": [
+        "Zhuoran Pan",
+        "Yue Li",
+        "Zhi Guan",
+        "Jianbin Hu",
+        "Zhong Chen"
+      ],
+      "abstract": "The emergence of Large Language Models (LLMs) offers a transformative interface for Web3, yet existing benchmarks fail to capture the complexity of translating high-level user intents into functionally correct, state-dependent on-chain transactions. We present \\textsc{Intent2Tx}, a high-fidelity benchmark featuring 29,921 single-step and 1,575 multi-step instances meticulously derived from 300 days of real-world Ethereum mainnet traces. Unlike prior works that rely on synthetic instructions, \\textsc{Intent2Tx} grounds natural language intents in real-world protocol interactions across 11 categories, including diverse long-tail Decentralized Finance (DeFi) primitives. To enable rigorous evaluation, we propose an execution-aware framework that transcends surface-level text matching by employing differential state analysis on forked mainnet environments. Our extensive evaluation of 16 state-of-the-art LLMs reveals that while scaling and retrieval-augmentation enhance logical consistency and parameter precision, current models struggle with out-of-distribution generalization and multi-step planning. Crucially, our execution-based analysis demonstrates that syntactically valid outputs often fail to achieve intended state transitions, highlighting a significant gap in current \"reasoning-to-execution\" capabilities. \\textsc{Intent2Tx} serves as a critical foundation for developing autonomous, reliable agents in intent-centric Web3 ecosystems. Code and data: https://anonymous.4open.science/r/Intent2Tx_Bench-97FF .",
+      "url": "https://arxiv.org/abs/2604.27763",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8837
+    },
+    {
+      "id": "2604.27283",
+      "title": "Learning When to Remember: Risk-Sensitive Contextual Bandits for Abstention-Aware Memory Retrieval in LLM-Based Coding Agents",
+      "authors": [
+        "Mehmet Iscan"
+      ],
+      "abstract": "Large language model (LLM)-based coding agents increasingly rely on external memory to reuse prior debugging experience, repair traces, and repository-local operational knowledge. However, retrieved memory is useful only when the current failure is genuinely compatible with a previous one; superficial similarity in stack traces, terminal errors, paths, or configuration symptoms can lead to unsafe memory injection. This paper reframes issue-memory use as a selective, risk-sensitive control problem rather than a pure top-k retrieval problem. We introduce RSCB-MC, a risk-sensitive contextual bandit memory controller that decides whether an agent should use no memory, inject the top resolution, summarize multiple candidates, perform high-precision or high-recall retrieval, abstain, or ask for feedback. The system stores reusable issue knowledge through a pattern-variant-episode schema and converts retrieval evidence into a fixed 16-feature contextual state capturing relevance, uncertainty, structural compatibility, feedback history, false-positive risk, latency, and token cost. Its reward design penalizes false-positive memory injection more strongly than missed reuse, making non-injection and abstention first-class safety actions. In deterministic smoke-scale artifacts, RSCB-MC obtains the strongest non-oracle offline replay success rate, 62.5%, while maintaining a 0.0% false-positive rate. In a bounded 200-case hot-path validation, it reaches 60.5% proxy success with 0.0% false positives and a 331.466 microseconds p95 decision latency. The results show that, for coding-agent memory, the key question is not only which memory is most similar, but whether any retrieved memory is safe enough to influence the debugging trajectory.",
+      "url": "https://arxiv.org/abs/2604.27283",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8837
+    },
+    {
+      "id": "2604.27914",
+      "title": "Geometry-Calibrated Conformal Abstention for Language Models",
+      "authors": [
+        "Rui Xu",
+        "Yi Chen",
+        "Sihong Xie",
+        "Hui Xiong"
+      ],
+      "abstract": "When language models lack relevant knowledge for a given query, they frequently generate plausible responses that can be hallucinations, rather than admitting being agnostic about the answer. Retraining models to reward admitting ignorance can lead to overly conservative behaviors and poor generalization due to scarce evaluation benchmarks. We propose a post hoc framework, Conformal Abstention (CA), adapted from conformal prediction (CP) to determine whether to abstain from answering a query. CA provides finite-sample guarantees on both the probability of participation (i.e., not abstaining) and the probability that the generated response is correct. Importantly, the abstention decision relies on prediction confidence rather than the non-conformity scores used in CP, which are intractable for open-ended generation. To better align prediction confidence with the model's ignorance, we introduce a calibration strategy using representation geometry within the model to measure knowledge involvement in shaping the response. Experiments demonstrate that we improve selective answering significantly with 75 percent conditional correctness.",
+      "url": "https://arxiv.org/abs/2604.27914",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8836
+    },
+    {
+      "id": "2604.27818",
+      "title": "MASCing: Configurable Mixture-of-Experts Behavior via Activation Steering Masks",
+      "authors": [
+        "Jona te Lintelo",
+        "Lichao Wu",
+        "Marina Krček",
+        "Sengim Karayalçin",
+        "Stjepan Picek"
+      ],
+      "abstract": "Mixture-of-Experts (MoE) architectures in Large Language Models (LLMs) have significantly reduced inference costs through sparse activation. However, this sparse activation paradigm also introduces new safety challenges. Since only a subset of experts is engaged for each input, model behavior becomes coupled to routing decisions, yielding a difficult-to-control mechanism that can vary across safety-relevant scenarios. At the same time, adapting model behavior through full fine-tuning or retraining is costly, especially when developers need to rapidly configure the same model for different safety objectives. We present MASCing (MoE Activation Steering Configuration), the first framework that enables flexible reconfiguration of MoE behavior across diverse safety scenarios without retraining. MASCing uses an LSTM-based surrogate model to capture cross-layer routing dependencies and map routing logits to downstream behaviors. It then optimizes a steering matrix to identify behavior-relevant expert circuits and, at inference time, applies steering masks to the routing gates to override expert selection. This enables targeted enhancement or suppression of specific behaviors while preserving general language utility. To demonstrate its reconfigurability, we apply MASCing to two different safety-related objectives and observe consistent gains with negligible overhead across seven open-source MoE models. For multi-turn jailbreak defense, it improves the average defense success rate from 52.5% to 83.9%, with gains of up to 89.2%. For adult-content generation, MASCing enables models to comply with such requests that would otherwise be refused, increasing the average generation success rate from 52.6% to 82.0%, with gains of up to 93.0%. These results establish MASCing as a practical, lightweight, and flexible framework for scenario-specific safety reconfiguration in MoE models.",
+      "url": "https://arxiv.org/abs/2604.27818",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8822
+    },
+    {
+      "id": "2604.27419",
+      "title": "InteractWeb-Bench: Can Multimodal Agent Escape Blind Execution in Interactive Website Generation?",
+      "authors": [
+        "Qiyao Wang",
+        "Haoran Hu",
+        "Longze Chen",
+        "Hongbo Wang",
+        "Hamid Alinejad-Rokny",
+        "Yuan Lin",
+        "Min Yang"
+      ],
+      "abstract": "With the advancement of multimodal large language models (MLLMs) and coding agents, the website development has shifted from manual programming to agent-based project-level code synthesis. Existing benchmarks rely on idealized assumptions, especially for well-structured, information-rich inputs and static execution settings. In contrast, real-world development is constrained by a critical bottleneck: the semantic misalignment between ambiguous, low-quality instructions from non-expert users and model understanding, which results in a failure mode that we term blind execution. To address this gap, we introduce InteractWeb-Bench, the first multimodal interactive benchmark for website generation under non-expert low-code user conditions. InteractWeb-Bench introduces four types of user agents and persona-driven instruction perturbations to systematically simulate diverse user behaviors, including ambiguity, redundancy, and contradiction, grounded in requirement engineering defect taxonomies. We develop an interactive execution environment for agents, featuring a unified action space comprising Clarify, Implement, Verify, and Submit, enabling iterative intent refinement, code synthesis, and visual feedback-based validation. Extensive experiments and analysis reveal that frontier MLLM-based agents remain trapped in blind execution, exposing limitations in intent recognition and adaptive interaction.",
+      "url": "https://arxiv.org/abs/2604.27419",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8814
+    },
+    {
+      "id": "2604.28056",
+      "title": "RHyVE: Competence-Aware Verification and Phase-Aware Deployment for LLM-Generated Reward Hypotheses",
+      "authors": [
+        "Feiyu Wu",
+        "Xu Zheng",
+        "Zhuocheng Wang",
+        "Yi ming Dai",
+        "Hui Li"
+      ],
+      "abstract": "Large language models (LLMs) make reward design in reinforcement learning substantially more scalable, but generated rewards are not automatically reliable training objectives. Existing work has focused primarily on generating, evolving, or selecting reward candidates, while paying less attention to when such candidates can be verified and deployed during policy optimization. We study this deployment-time problem by treating generated rewards as reward hypotheses whose utility depends on the competence of the current policy and the phase of training. We propose \\textsc{RHyVE}, a competence-aware verification and phase-aware deployment protocol that compares small sets of reward hypotheses from shared policy checkpoints using short-horizon fork verification. Our experiments show that reward rankings are unreliable at low competence but become informative after task-dependent thresholds. On a sparse manipulation task, phase-aware deployment improves peak and retained performance under a locked protocol. Updated LLM-generated reward-candidate experiments show candidate-family-dependent behavior: generated pools can exhibit phase-dependent winner changes, but no fixed warm-up schedule is universally optimal. Held-out schedule selection, conservative selector baselines, compute-matched controls, and scale controls further show that \\textsc{RHyVE} is best understood as a verification-informed deployment protocol rather than a universal scheduler. Dense and all-failure boundary experiments delimit the scope of the method. Together, these results suggest that reward generation and reward deployment should be studied as coupled problems: generated rewards must be verified and deployed under changing policy competence.",
+      "url": "https://arxiv.org/abs/2604.28056",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8811
+    },
+    {
+      "id": "2604.28049",
+      "title": "Agent-Agnostic Evaluation of SQL Accuracy in Production Text-to-SQL Systems",
+      "authors": [
+        "Taslim Jamal Arif",
+        "Kuldeep Singh"
+      ],
+      "abstract": "Text-to-SQL (T2SQL) evaluation in production environments poses fundamental challenges that existing benchmarks do not address. Current evaluation methodologies whether rule-based SQL matching or schema-dependent semantic parsers assume access to ground-truth queries and structured database schema, constraints that are rarely satisfied in real-world deployments. This disconnect leaves production T2SQL agents largely unevaluated beyond developer-time testing, creating silent quality degradation with no feedback mechanism for continuous improvement. We present STEF (Schema-agnostic Text-to-SQL Evaluation Framework), a production-native evaluation system that operates exclusively on natural language inputs the user question, an enriched reformulation, and the generated SQL without requiring database schema or reference queries. STEF extracts semantic specifications from both natural language and SQL representations, performs normalized feature alignment, and produces an interpretable 0 to 100 accuracy score via a composite metric that encompasses filter alignment, semantic verdict, and confidence of the evaluator. Key contributions include: enriched question quality validation as a first-class evaluation signal, configurable application-specific rule injection via prompt templating, and production-robust normalization handling GROUP BY tolerance, ORDER BY defaults, and LIMIT heuristics. Empirical results demonstrate that STEF enables continuous production monitoring and agent improvement feedback loops without schema dependency, making structured query evaluation viable at scale for the first time.",
+      "url": "https://arxiv.org/abs/2604.28049",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8811
+    },
+    {
+      "id": "2604.27977",
+      "title": "D3-Gym: Constructing Real-World Verifiable Environments for Data-Driven Discovery",
+      "authors": [
+        "Hanane Nour Moussa",
+        "Yifei Li",
+        "Zhuoyang Li",
+        "Yankai Yang",
+        "Cheng Tang",
+        "Tianshu Zhang",
+        "Nesreen K. Ahmed",
+        "Ali Payani",
+        "Ziru Chen",
+        "Huan Sun"
+      ],
+      "abstract": "Despite recent progress in language models and agents for scientific data-driven discovery, further advancing their capabilities is held back by the absence of verifiable environments representing real-world scientific tasks.To fill this gap, we introduce D3-Gym, the first automatically constructed dataset with verifiable environments for scientific Data-Driven Discovery. D3-Gym comprises (1) 565 tasks sourced from 239 real scientific repositories across four disciplines where (2) each task is equipped with a natural language instruction, an executable environment with pre-installed dependencies, input dataset and artifact previews, a reference code solution, and an automatically synthesized evaluation script. Rigorous evaluation of the quality of the verification signal in D3-Gym confirms that our evaluation scripts achieve 87.5% agreement with human-annotated gold standards and strong alignment in domain-specific evaluation logic, showing their scientific soundness. Further, training on trajectories sampled from D3-Gym yields consistent and substantial gains across Qwen3 models of varying sizes on ScienceAgentBench, boosting Qwen3-32B by 7.8 absolute points and substantially shrinking the gap with strong proprietary models. All D3-Gym artifacts (environments, creation workflow, trajectories, and models) can be found at https://github.com/OSU-NLP-Group/D3-Gym.",
+      "url": "https://arxiv.org/abs/2604.27977",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "github_url": "https://github.com/OSU-NLP-Group/D3-Gym.",
+      "score": 0.8805
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

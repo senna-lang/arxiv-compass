@@ -1,0 +1,393 @@
+{
+  "date": "2026-06-22",
+  "collected_at": "2026-06-22T14:07:07.450637+09:00",
+  "papers": [
+    {
+      "id": "2606.19893",
+      "title": "MetaResearcher: Scaling Deep Research via Self-Reflective Reinforcement Learning in Adversarial Virtual Environments",
+      "authors": [
+        "Wei Yu",
+        "Suxing Liu",
+        "Minjie Yu",
+        "Jiahao Wang",
+        "Zhijian Zheng",
+        "Haocheng Deng",
+        "Bing Li"
+      ],
+      "abstract": "Deep research agents have demonstrated remarkable capabilities in autonomous information gathering and synthesis, yet their training remains constrained by the static nature of simulated environments, the limits of fact-retrieval-only task designs, and the inefficiency of outcome-based reinforcement learning. In this work, we propose MetaResearcher, a novel framework that scales deep research agent training across four synergistic dimensions. First, we introduce an Evolving Virtual World that injects temporal dynamics and adversarial misinformation into the training environment, forcing agents to develop source credibility assessment and temporal conflict resolution skills. Second, we design Discovery-Oriented Tasks -- including hypothesis generation and contradiction resolution -- that transcend simple fact retrieval and push agents toward genuine research behaviors. Third, we propose a Self-Reflective Meta-Reward mechanism within the GRPO framework that jointly optimizes for answer correctness, search path efficiency, reflection depth, and tool call diversity, directly addressing the repetitive action loop problem observed in prior work. Fourth, we introduce a Heterogeneous Multi-Agent Swarm architecture comprising specialized Scout, Filter, and Synthesizer models that learn collaborative research strategies through coordinated reinforcement learning. Built upon the LiteResearcher infrastructure, MetaResearcher requires zero marginal API cost for training while targeting substantial improvements in both benchmark performance (GAIA, Xbench-DS) and epistemic robustness under adversarial conditions. We present the complete framework design, training methodology, and planned experimental validation.",
+      "url": "https://arxiv.org/abs/2606.19893",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8797
+    },
+    {
+      "id": "2606.20008",
+      "title": "VIMPO: Value-Implicit Policy Optimization for LLMs",
+      "authors": [
+        "Zhewei Kang",
+        "Aosong Feng",
+        "Sergey Levine",
+        "Dawn Song",
+        "Xuandong Zhao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards has become a central tool for improving the reasoning ability of large language models, but current methods face a trade-off between simplicity and credit assignment. Group-relative methods such as GRPO avoid training a critic, but typically assign a trajectory-level advantage to every token. Actor-critic methods provide denser learning signals, but require a learned value function with its own training instability. We introduce VIMPO, a critic-free policy optimization method that derives a policy-implied value function from the optimality conditions of KL-regularized reinforcement learning. For autoregressive generation, the resulting value recurrence can be written in terms of policy-reference log-ratios and anchored by the terminal condition that no future reward remains at the end of a trajectory. This gives a simple value loss that incorporates outcome-level verifiable rewards without training a critic. The same derivation also yields a critic-free actor advantage, allowing VIMPO to separate reward incorporation through the value loss from policy improvement through a PPO-style actor update. On mathematical RLVR benchmarks, VIMPO improves over GRPO across MATH-500, AIME 2024, AIME 2025, and OlympiadBench, with especially larger gains on competition-style evaluations. Under noisy rewards, VIMPO retains a consistent advantage over GRPO, suggesting that policy-implied value optimization can provide finer credit assignment while preserving the practical simplicity of critic-free training.",
+      "url": "https://arxiv.org/abs/2606.20008",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.879
+    },
+    {
+      "id": "2606.19819",
+      "title": "CREDENCE: Claim Reduction for Decomposition & Enhanced Credibility -- Semantic Metrics and Convergence Analysis",
+      "authors": [
+        "Phuong Huu Vu Tran",
+        "Thuan Duc Mai",
+        "Bach Xuan Le"
+      ],
+      "abstract": "Decomposing compound sentences into atomic, verifiable claims is a prerequisite for reliable automated fact-checking. Prior work has relied on token-overlap (Jaccard) metrics that systematically underestimate decomposition quality for paraphrastic claims, and has lacked formal termination analysis for the repair loop. We present Credence, a revised claim decomposition and evaluation framework addressing both shortcomings. Our contributions are: (1) Semantic-F1: we use BGE-large cosine similarity fidelity metric that resolves Jaccard's penalisation and improves downstream fact-checking accuracy; (2) Convergence theorems: we formally characterise four properties of the repair pipeline, establishing that rule-based repair is monotone and finitely terminating under an oracle parser assumption; LLM-based self-repair is provably non-monotone and requires an early-exit guard; (3) Three evaluation benchmarks spanning social-media, encyclopaedic, and news domains for cross-domain generalisation measurement; (4) Multi-model benchmarking across four decomposer models (3.8B-12B) and a closed API model. Experiments on SocialClaimSplit, WikiSplitBench, and ClaimDecompBench show that Semantic-F1 outperforms Jaccard-F1 by +15-32pp. EPR ranges from 0.94 to 1.00 on SocialClaimSplit and WikiSplitBench, while ClaimDecompBench includes lower base EPR cases (down to 0.824) due to harder news-domain constructions, and rule-repair reduces the Atomicity Violation Rate (AVR) by 47-100% relative to the base model without degrading fidelity.",
+      "url": "https://arxiv.org/abs/2606.19819",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8787
+    },
+    {
+      "id": "2606.20512",
+      "title": "Probe-and-Refine Tuning of Repository Guidance for Coding Agents",
+      "authors": [
+        "Asa Shepard",
+        "Jeannie Albrecht"
+      ],
+      "abstract": "LLM-based coding agents need higher-level operational knowledge about a repository (which files house which subsystems, how to run the test suite, which workflows have historically led to wrong fixes) that does not exist in the code itself. Engineers typically maintain \\texttt{AGENTS.md} files to supply this context as instructions for coding agents, but whether they help is contested: recent studies disagree on whether LLM-generated guidance improves or harms agent performance. In this paper we show that how the guidance is produced is the decisive variable, and introduce \\emph{probe-and-refine tuning}: a procedure that uses synthetic bug-fix probes to iteratively diagnose and patch a repository's guidance file through single-shot LLM calls, with no agent loop or tool use during tuning. On SWE-bench Verified across four independent trials with Qwen3.5-35B-A3B at 200 steps, probe-and-refine achieves 33.0\\,\\% mean resolve rate vs.\\ 28.3\\,\\% for the static knowledge base used to initialize it and 25.5\\,\\% for an unguided baseline ($p < 0.001$ for both probe-and-refine contrasts). The improvement comes from coverage rather than precision: refined guidance produces evaluable patches for 14.5 percentage points (pp) more instances while per-patch precision remains statistically constant ($\\sim$59\\,\\%, $p = 0.119$), showing that improved guidance helps agents reach the correct file rather than improving the quality of the changes they make. Further, a step-budget experiment shows that guidance is what lets the agent use a larger step budget productively, and a cross-model experiment with NVIDIA-Nemotron-3-Nano-30B-A3B finds that the tuning loop degrades when the model cannot generate sufficiently diagnostic output, though per-patch precision remains constant even then.",
+      "url": "https://arxiv.org/abs/2606.20512",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8784
+    },
+    {
+      "id": "2606.20113",
+      "title": "When Does Streaming Tool Use Help? Characterizing Tool-Intent Stabilization in Streaming Retrieval-Augmented Generation",
+      "authors": [
+        "Elroy Galbraith"
+      ],
+      "abstract": "Streaming Retrieval-Augmented Generation (Streaming RAG) reduces user-perceived latency by issuing tool queries in parallel with ongoing user input, before the utterance is complete. Reported gains are aggregate, yet the mechanism's benefit is fundamentally query-intrinsic: speculation can only help when the correct tool query becomes determinable before the user stops speaking or typing. We isolate and measure this property -- tool-intent stabilization, the point in the input stream at which a speculative query's retrieval converges to the answer-bearing result. On the CRAG benchmark (1371 validation questions) we (i) measure the distribution of stabilization, (ii) derive a model-agnostic bound H on the portion of tool latency that can be hidden behind the user's remaining input, as a function of tool latency L and input cadence δ, (iii) validate against a working streaming pipeline that realized savings meet or exceed this bound, and (iv) identify which query properties predict early versus late stabilization. The study requires no model training and runs on commodity CPU hardware. We find that at a realistic operating point (L=600ms, δ=3w/s, θ=0.8), 73.9% of queries across the full benchmark admit substantial latency hiding -- a blended figure that mixes sufficiency stabilization on the 21.3% of questions where gold evidence is verbatim-present and BM25-retrievable (95.2% streamable on this favorable slice) with a grounding-free top-1-settling fallback on the remainder. On the favorable slice, φ_suf is bracketed to [0.26, 0.281] by exact and relaxed grounding -- both early. Question type produces a significant but coarse early/late split (Kruskal-Wallis p=0.017, epsilon^2=0.04), directly informing when a learned speculative trigger is worth its cost.",
+      "url": "https://arxiv.org/abs/2606.20113",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8773
+    },
+    {
+      "id": "2606.20560",
+      "title": "How Transparent is DiffusionGemma?",
+      "authors": [
+        "Joshua Engels",
+        "Callum McDougall",
+        "Bilal Chughtai",
+        "Janos Kramar",
+        "Senthoran Rajamanoharan",
+        "Cindy Wu",
+        "Arthur Conmy",
+        "Asic Q Chen",
+        "Jean Tarbouriech",
+        "Min Ma",
+        "Brendan O'Donoghue",
+        "João Gabriel Lopes de Oliveira",
+        "Rohin Shah",
+        "Neel Nanda"
+      ],
+      "abstract": "LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating misuse and misalignment, and debugging surprising model behaviors. However, DiffusionGemma performs a larger fraction of its computation in a continuous latent space; does this make its reasoning less transparent? We study this question by decomposing transparency into two components: variable transparency, whether we understand intermediate snapshots of a model's computational state; and algorithmic transparency, whether we can use these snapshots to reconstruct the process by which the model arrived at its outputs. Naively, DiffusionGemma has poor variable transparency: its opaque serial depth, the amount of serial computation that occurs in between interpretable model states, seems at first 28.6X higher than the corresponding autoregressive Gemma 4 model. However, we show that we can map the information flowing between denoising steps through an interpretable token bottleneck with no decrease in downstream performance. Treating these intermediate states as interpretable reduces the opaque serial depth to just 1.1X that of Gemma 4. Algorithmic transparency is harder for diffusion models than for autoregressive models because all token predictions in the canvas can change at every denoising step, giving the model the power to implement complicated distributed algorithms during the denoising process. To begin bridging this gap, we conduct a suite of interpretability case studies, uncovering initial evidence of novel diffusion-specific phenomena such as non-chronological reasoning, token and sequence smearing, and intermediate-context reasoning. Finally, we test monitorability, a key application of transparency that measures whether model outputs are useful for downstream tasks. We find that DiffusionGemma is similarly monitorable to Gemma 4.",
+      "url": "https://arxiv.org/abs/2606.20560",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8769
+    },
+    {
+      "id": "2606.20097",
+      "title": "HydraHead: From Head-Level Functional Heterogeneity to Specialized Attention Hybridization",
+      "authors": [
+        "Zhentao Tan",
+        "Wei Chen",
+        "Jingyi Shen",
+        "Yao Liu",
+        "Xu Shen",
+        "Yue Wu",
+        "Jieping Ye"
+      ],
+      "abstract": "The quadratic complexity of attention poses a critical bottleneck for long-context processing, spurring interest in hybrid attention designs. Most open-source hybrid models adopt a layer-wise strategy. Yet, prior work has noted the inherent difficulty of integrating Linear Attention (LA) with Full Attention (FA), suggesting that the design space of attention hybridization remains underexplored. To probe this space, we conduct interpretability analysis and observe that layers exhibit block-wise functional similarity, while individual heads within the same layer display distinct functional specialization despite sharing input features. This head-level heterogeneity suggests that the head dimension provides a natural and principled granularity for fusing heterogeneous attention signals. Building on this insight, we introduce HydraHead, a novel architecture that hybridizes FA and LA along the head axis. HydraHead features two key innovations: (1) an interpretability-driven selection strategy that identifies retrieval-critical heads and preserves FA only for them, and (2) a scale-normalized fusion module that reconciles the distributional gap between FA and LA head outputs. By leveraging a three-stage transfer pipeline with parameter reuse and distillation, we achieve high-performance hybrid models with minimal training overhead. Under a unified training setup, HydraHead outperforms other hybrid designs in long-context tasks while maintaining strong general reasoning. With interpretability-driven head selection, it matches a 3:1 layer-wise hybrid's long-context performance at a 7:1 LA-to-FA ratio. Crucially, trained on only 15B tokens, HydraHead achieves over 69% improvement over the baseline at 512K context length, approaching Qwen3.5, a leading model of comparable size with a native context length of 256K. This highlights the significant scaling potential of head-level hybridization.",
+      "url": "https://arxiv.org/abs/2606.20097",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8768
+    },
+    {
+      "id": "2606.19741",
+      "title": "Interpreting Neural Combinatorial Optimization via Evolving Programmatic Bottlenecks",
+      "authors": [
+        "Haocheng Duan",
+        "Yuxin Guo",
+        "Jieyi Bi",
+        "Anqi Xie",
+        "Sirui Li",
+        "Yining Ma",
+        "Cathy Wu"
+      ],
+      "abstract": "Neural Combinatorial Optimization (NCO) achieves strong performance, yet its black-box nature remains a key roadblock to deployment and scientific diagnosis. Standard interpretability tools, such as Concept Bottleneck Models (CBMs), are ill-equipped for NCO, whose decisions are dynamic, state-dependent, and lack proper concept vocabulary definition. To close this gap, we introduce Evolving Programmatic Bottlenecks (EPB), to our knowledge, the first framework for interpreting NCO policies by distilling black-box NCO models into human-readable program portfolios. EPB employs an LLM to autonomously evolve a bank of programs, where each program's per-step action distribution serves as the bottleneck. EPB works through an iterative framework: Block I fixes program bank capacity and introduces a hybrid textual-numerical gradient descent scheme that couples numerical gradients for student router updates and textual gradients for LLM-based program revision; Block II dynamically adapts bank capacity via fault-targeted expansion and redundancy pruning. Extensive experiments demonstrate EPB's effectiveness and broad applicability, where the distilled program portfolios largely match original performance. EPB also reveals that NCO behavior shifts across optimization stages and can be approximated as a composition of classic heuristic variants. Our work advances interpretable NCO and establishes EPB as a promising tool for interpreting sequential decision-making models.",
+      "url": "https://arxiv.org/abs/2606.19741",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8768
+    },
+    {
+      "id": "2606.20475",
+      "title": "Marginal Advantage Accumulation for Memory-Driven Agent Self-Evolution",
+      "authors": [
+        "Mingyu Yang",
+        "Keye Zheng",
+        "Congchao Cheng",
+        "Yujie Liu",
+        "Xingkang Lu",
+        "Fan Jiang",
+        "Yefei Zheng"
+      ],
+      "abstract": "In batch-style trace distillation, the same memory operation may receive contradictory feedback across different batches. Existing methods lack a cross-batch, operation-level evidence accumulation mechanism, making it impossible to distinguish stably effective operations from accidental hits. This paper formalizes the requirement as two structural conditions, alignability and comparability, and proposes Marginal Advantage Accumulation (MAA). MAA constructs differential signals to make them comparable across batches, accumulates signed evidence per operation via EMA, and ensures cross-batch traceability through semantic identity merging. As a post-processing architecture, MAA achieves the best results in 14 out of 16 settings across 4 benchmarks and 4 target models, consistently outperforming existing batch-level distillation baselines and matching or surpassing online alternatives in most settings, while reducing optimization-phase token consumption by approximately 75%.",
+      "url": "https://arxiv.org/abs/2606.20475",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8767
+    },
+    {
+      "id": "2606.20526",
+      "title": "DeepSWIP: Quotient-WMC Counterfactuals for Neural Probabilistic Logic Programs",
+      "authors": [
+        "Saimun Habib",
+        "Vaishak Belle",
+        "Fengxiang He"
+      ],
+      "abstract": "Neurosymbolic systems such as DeepProbLog combine neural perception with probabilistic logic, but standard inference is associational. Counterfactual reasoning additionally requires a causal semantics for interventions and evidence. We introduce DeepSWIP, a single-world counterfactual semantics for DeepProbLog programs. Using neural materialization, we reduce fixed-context neural predicates to ordinary ProbLog choices, apply Single World Intervention Programs (SWIPs), and compute counterfactuals by weighted model counting (WMC) over a single transformed program. Under finite grounding and unique-supported-model assumptions, DeepSWIP is exact relative to the learned materialized FCM. The standard quotient-WMC form of ProbLog conditionals identifies active neural probabilities and explains intervention cleaning, calibration sensitivity, and rare-evidence instability. Experiments on MPI3D confirm the transformation against a DeepTwin construction against 12,000 queries, as predicted and a 2.14$\\times$ inference speedup from avoiding the Twin's endogenous duplication. A SUMO HOV experiment shows that neural calibration degradation biases plug-in estimates, while a correctly scoped randomized-policy AIPW estimator removes most first-order bias for population mean and ATE estimands. Code is at https://github.com/saibib/deep_SWIP.",
+      "url": "https://arxiv.org/abs/2606.20526",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "github_url": "https://github.com/saibib/deep_SWIP.",
+      "score": 0.8764
+    },
+    {
+      "id": "2606.20072",
+      "title": "Source-Grounded Data Generation for Text-to-JSON Learning",
+      "authors": [
+        "Sunghee Ahn",
+        "Guijin Son",
+        "Youngjae Yu"
+      ],
+      "abstract": "From financial filings to clinical records, legacy industries rely heavily on long, unstructured documents to store high-value information. Reliably extracting this information into structured, machine-readable representations is a key prerequisite to making the contents accessible to automated systems. JSON is a natural target for such structured extraction, yet constructing reliable and scalable text-to-JSON training data remains challenging. To address this gap, we propose STAGE (Spreadsheet-grounded Text-to-JSON Artifact GEneration), a source-grounded data generation pipeline that constructs reports and JSON schema by using LLMs for scalable synthesis while validating ground-truth values against the underlying spreadsheet. Evaluations on STAGE-Eval, our source-grounded benchmark with an 851-example test set, show that STAGE produces stronger training data than existing approaches. This improves Qwen3-4B exact match from 31.37% to 74.27% and value accuracy from 45.46% to 90.69%.",
+      "url": "https://arxiv.org/abs/2606.20072",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8755
+    },
+    {
+      "id": "2606.20529",
+      "title": "LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents",
+      "authors": [
+        "Md Nayem Uddin",
+        "Amir Saeidi",
+        "Eduardo Blanco",
+        "Chitta Baral"
+      ],
+      "abstract": "Policy-adherent tool-calling agents in customer-service domains must maintain task states across turns while calling tools and obeying domain policies. Task states consist of relevant facts, identifiers, constraints, and conditions observed through user interaction and tool calls. In standard agents, task states are not represented separately. Observations, tool returns, and policy instructions are placed in the prompt, leaving agents to reconstruct the relevant states from the prompt each time they decide what to do next. This design makes state management implicit, creating two common failure modes. An agent may retrieve the right facts but later ground its decision in stale, missing, or incorrect information; and a syntactically valid tool call may still violate a domain policy that depends on the current task state. We introduce \\textsc{LedgerAgent}, an inference-time method for tool-calling agents that maintains observed task states in a separate ledger and renders the states into the prompt. The ledger is also used to check state-dependent policy constraints before environment-changing tool calls are executed, blocking policy violations. Across four customer-service domains and a mixed panel of open- and closed-weight models, \\textsc{LedgerAgent} improves average pass\\textasciicircum{}k over a standard prompt-based tool-calling approach, with the largest gains under stricter multi-trial consistency metrics.",
+      "url": "https://arxiv.org/abs/2606.20529",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8733
+    },
+    {
+      "id": "2606.20508",
+      "title": "What Do Safety-Aligned LLMs Learn From Mixed Compliance Demonstrations?",
+      "authors": [
+        "Sihui Dai",
+        "Mann Patel"
+      ],
+      "abstract": "Prior work has shown that in-context demonstrations can jailbreak language models, but it remains unclear how models interpret different types of compliance demonstrations. We study this by mixing benign compliance demonstrations (non-harmful request, helpful response) with harmful compliance demonstrations (harmful request, helpful response) and testing three hypotheses about how demonstration composition drives harmful compliance. Across four models, we find that benign and harmful demonstrations are not interchangeable: benign demonstrations can either reduce or increase harmful compliance depending on the model. We further show that preference optimization is the critical training stage that prevents benign demonstrations from increasing harmful compliance, that demonstration ordering exhibits strong recency bias, and that models differ in how refusal interacts with in-context learning: some adopt demonstrated formatting even when refusing, while others override all in-context signals upon refusal. Taken together, this work moves beyond showing that demonstration-based jailbreaking works to characterizing how it works: what models extract from compliance demonstrations depends on demonstration content, ordering, and training methodology.",
+      "url": "https://arxiv.org/abs/2606.20508",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8732
+    },
+    {
+      "id": "2606.19749",
+      "title": "Benchmarking Agentic Review Systems",
+      "authors": [
+        "Dang Nguyen",
+        "Wanqing Hao",
+        "Yanai Elazar",
+        "Chenhao Tan"
+      ],
+      "abstract": "A new class of agentic review systems are emerging as a remedy to the pressure placed on peer review systems by AI-assisted research, but it is unclear how they should be evaluated. We evaluate two open-source systems (OpenAIReview and coarse), one proprietary system (Reviewer3), and a zero-shot baseline, across six LLMs spanning frontier and efficient models. First, we study whether AI reviews on ICLR/NeurIPS papers track with papers' quality as approximated by external signals such as citations and acceptance decisions. Every system performs above chance in pairwise accuracy, and the best is OpenAIReview + GPT-5.5 at 83.0%. Second, to test whether systems can catch errors with known ground truth, we construct a perturbation benchmark that injects four categories of errors into papers across eight arXiv subject classes and measure detection recall. The strongest configuration (OpenAIReview + GPT-5.5) catches 71.6% of injected errors, leaving substantial room for improvement. The union of detections across six models reaches 83.3% recall, suggesting different models detect different errors and better harness design can potentially increase performance. Beyond these benchmarks, we study a public deployment of OpenAIReview with real users. Votes on its comments skew positive at 1.44 to 1, and the most common complaints are about false positives and minor nitpicks. Together, by evaluating full review systems backed by state-of-the-art models on real research papers, we show that while AI reviews still have room for improvement, they can already track human quality judgments well, catch important errors, and earn positive feedback from real users.",
+      "url": "https://arxiv.org/abs/2606.19749",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8732
+    },
+    {
+      "id": "2606.19659",
+      "title": "SAGE-OPD: Selective Agent-Guided Intervention for Multi-Turn On-Policy Distillation",
+      "authors": [
+        "Yuhang Zhou",
+        "Lizhu Zhang",
+        "Yifan Wu",
+        "Mingyi Wang",
+        "Bo Peng",
+        "Jiayi Liu",
+        "Xiangjun Fan",
+        "Zhuokai Zhao"
+      ],
+      "abstract": "On-policy distillation (OPD) improves student models by training them on trajectories induced by their own policy, making it a promising approach for mitigating exposure bias in agent training. However, most OPD studies focus on single-turn settings, while realistic LLM agents interact with environments over multiple turns. In this regime, early errors can alter future observations and compound across the trajectory, and standard dense token-level OPD becomes brittle, as it may over-penalize semantically valid alternatives, reinforce local degeneracies such as repeated actions, and propagate unreliable teacher supervision on off-distribution histories. We propose SAGE-OPD, a verifier-free selective intervention framework specifically designed for multi-turn OPD. Instead of applying teacher supervision uniformly across all turns, SAGE-OPD first observes environment feedback and uses teacher judgment to decide whether each student response should be skipped or intervened on. To further address compounding errors, SAGE-OPD weights token-level distillation by teacher confidence, reducing the influence of uncertain teacher distributions on corrupted or ambiguous histories. Finally, SAGE-OPD applies loss normalization to preserve the overall loss scale of standard OPD while retaining selective turn-level weighting. Experiments on agent tasks show that SAGE-OPD consistently improves over baselines, achieving up to a 13.3% relative improvement in ALFWorld unseen success rate over standard OPD. Ablation studies further demonstrate that turn-level intervention, teacher confidence weighting, and loss normalization provide complementary benefits. Our results suggest that effective multi-turn OPD should remain on-policy, but teacher supervision should be selectively allocated to turns where intervention is necessary and reliable.",
+      "url": "https://arxiv.org/abs/2606.19659",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-17",
+      "score": 0.8732
+    },
+    {
+      "id": "2606.19700",
+      "title": "TerraMARS: A Domain-Adapted Small-Language-Model Pipeline for Mars Terraforming Literature",
+      "authors": [
+        "Jyotsna Singh",
+        "Ash Black",
+        "Jeff Larsen",
+        "Scott R. Saleska"
+      ],
+      "abstract": "Researchers are interested in learning about Mars so that it may eventually become habitable for humans. To achieve this, there is a need for comprehensive knowledge of the planet's atmosphere, hydrology, surface chemistry, radiation environment, and spatial features through the scientific literature. These contain valuable information and meaningful quantitative constraints that can be used in other models and studies, such as habitability assessment and future terraforming studies. We present TerraMARS, an end-to-end information extraction pipeline that combines a domain-adapted Small Language Model to answer Mars terraforming-related questions and convert unstructured Mars science text into machine-readable structured outputs in JavaScript Object Notation (JSON) format. A corpus of open-access papers is collected and processed using a multistage retrieval and chunking framework. Google Gemma 3 1B was adapted to the domain using Quantized Low-Rank Adaptation (QLoRA) fine-tuning on Mars-specific question-answering and information extraction datasets. The resulting pipeline generates both types of output and provides a foundation for integrating knowledge from scientific literature into downstream applications like digital twins and habitability modeling for Mars. The output from this pipeline looks promising, but further improvements are needed to increase extraction accuracy and factual consistency.",
+      "url": "https://arxiv.org/abs/2606.19700",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8727
+    },
+    {
+      "id": "2606.20122",
+      "title": "ScaffoldAgent: Utility-Guided Dynamic Outline Optimization for Open-Ended Deep Research",
+      "authors": [
+        "Zhibang Yang",
+        "Xinke Jiang",
+        "Yuzhen Xiao",
+        "Ruizhe Zhang",
+        "Yue Fang",
+        "XinFei Wan",
+        "Zhengxing Song",
+        "Yuxuan Liu",
+        "Yuheng Huang",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "abstract": "Open-ended deep research (OEDR) requires systems to acquire knowledge through multi-round retrieval and generate coherent long-form reports. The outline plays a central role as a structural scaffold that coordinates retrieval, evidence organization, and generation. However, existing methods either fix the outline before writing or refine it with local heuristics, leading to scaffold drift under continuous information accumulation and delayed feedback for evaluating outline modifications. We propose ScaffoldAgent, a utility-guided dynamic outline optimization framework for OEDR. ScaffoldAgent models outline evolution as a structured decision process with three operations: Expansion, Contraction, and Revision, enabling controlled updates to the report scaffold. It further introduces a utility-guided feedback mechanism that estimates the downstream value of each outline operation from retrieval gain, structural coherence, and trial-generation quality. The resulting utility signal guides node selection, operation scheduling, and termination during inference. Experiments on DeepResearch Bench and DeepResearch Gym show that ScaffoldAgent consistently improves long-form report generation and factual grounding over existing deep research agents.",
+      "url": "https://arxiv.org/abs/2606.20122",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8723
+    },
+    {
+      "id": "2606.19830",
+      "title": "JAMER: Project-Level Code Framework Dataset and Benchmark on Professional Game Engines",
+      "authors": [
+        "Jianwen Sun",
+        "Chuanhao Li",
+        "Zizhen Li",
+        "Yukang Feng",
+        "Fanrui Zhang",
+        "Yifei Huang",
+        "Yu Dai",
+        "Kaipeng Zhang"
+      ],
+      "abstract": "Current AI-driven game development has made substantial progress in asset generation, gameplay design, and web-based game coding, yet project-level code engineering on professional game engines remains largely unexplored due to the absence of large-scale datasets and deterministic evaluation methods. We present JamSet and JamBench, the first project-level game code framework dataset and benchmark built on a professional game engine. Our key insight is that Game Jam competitions, community events where developers build complete games under tight time constraints, yield thousands of open-source projects suitable for this purpose. Building on the Godot engine's text-based format and headless execution mode, we design a deterministic verification pipeline from file integrity to runtime behavior collection, distilling 8,133 verified projects from over 240,000 repositories. Of these, 300 manually verified projects form JamBench; the rest constitute JamSet. JamBench defines theme-driven generation and code completion tasks, evaluated through a pipeline combining compilation pass rates, Structural Completeness Score (SCS), and Behavioral Alignment Score (BAS). Evaluation of 9 frontier models reveals a capability cliff as project scale increases, with runtime pass rates dropping from 80.4% on small projects to 5.7% on large ones (Task2a). Code Agents improve compilation rates yet yield no gains in runtime behavioral quality, indicating that the bottleneck lies in architectural design rather than syntactic correctness. Experiments validate JamSet as effective training data. All data and code are publicly available.",
+      "url": "https://arxiv.org/abs/2606.19830",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8722
+    },
+    {
+      "id": "2606.19679",
+      "title": "LOKI: Memory-Free Null-Space Constrained Lifelong Knowledge Editing",
+      "authors": [
+        "Masih Eskandar",
+        "Miquel Sirera Perelló",
+        "Stratis Ioannidis",
+        "Jennifer Dy"
+      ],
+      "abstract": "Lifelong knowledge editing aims to efficiently and sequentially update language models over time, as new knowledge becomes available or when the model makes mistakes, while preserving acceptable performance on past knowledge. One unresolved challenge is that existing methods modify a fixed set of layers for all new knowledge samples, reducing flexibility and increasing catastrophic forgetting. Another is requiring access to previous knowledge and extensive pre-processing to obtain data statistics. To address these challenges, we introduce LOKI, a novel approach that uses dynamic layer selection based on the Hilbert-Schmidt Independence Criterion and projects gradient updates onto the null-space of the model weights, bypassing the requirement for previous knowledge access. We show that LOKI achieves superior performance to existing approaches across a wide variety of experiments, achieving up to a 14\\% improvement in average accuracy.",
+      "url": "https://arxiv.org/abs/2606.19679",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8722
+    },
+    {
+      "id": "2606.19831",
+      "title": "Leverage Is Not Reach: A Control-Window Law for Single-Neuron Steering in Language Models",
+      "authors": [
+        "Hongliang Liu"
+      ],
+      "abstract": "Aligned language models gate behaviors such as refusal and language routing through sparse feed forward neurons, yet no theory predicts when a single neuron intervention controls a behavior coherently rather than collapsing the output. We develop a budget normalized control window framework for single neuron steering. A dose along one write direction reduces to one control coordinate: the alignment between the residual stream and the write, driven along a universal saturation curve in units of a coherence budget set by the residual norm divided by the write norm. Coherent control exists when a behavior trigger lies below the collapse ceiling. The same coordinate governs benign mode switches and refusal; the ceiling follows from weights and one generic forward pass, while triggers are measured at rollout. On fifteen held out neurons, the predicted ceiling has mean absolute error 0.14, about 0.07 in bulk layers, and the committed open or closed verdict holds on eleven against a ten of fifteen majority baseline. Closed cases expose three failure modes rather than violations: collapse before trigger, too little depth to propagate, or a normalization that caps how far one neuron can push. The law explains why local gradient attribution anti predicts control: true controllers write off the readout axis and carry a near zero first order gradient. A forward only contrastive screen made precise by the window recovers controllers that attribution misses. On refusal, the hardest case, intervention success is typed, not scalar: coherent bypass and strict actionable reach separate, so a neuron can flip refusal in fluent, on task text with no actionable content, and genuine actionable reach appears only for three of six audited Llama pivots and only at later rollout horizons. Single neuron steering is therefore a budgeted, typed audit of controllability rather than a fixed dose anecdote.",
+      "url": "https://arxiv.org/abs/2606.19831",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-18",
+      "score": 0.8714
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 280,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

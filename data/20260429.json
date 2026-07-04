@@ -1,0 +1,620 @@
+{
+  "date": "2026-04-29",
+  "collected_at": "2026-04-29T12:45:50.106222+09:00",
+  "papers": [
+    {
+      "id": "2604.25444",
+      "title": "One Refiner to Unlock Them All: Inference-Time Reasoning Elicitation via Reinforcement Query Refinement",
+      "authors": [
+        "Yixiao Zhou",
+        "Dongzhou Cheng",
+        "zhiliang wu",
+        "Yi Yang",
+        "Yu Cheng",
+        "Hehe Fan"
+      ],
+      "abstract": "Large Language Models (LLMs) often fail to utilize their latent reasoning capabilities due to a distributional mismatch between ambiguous human inquiries and the structured logic required for machine activation. Existing alignment methods either incur prohibitive $O(N)$ costs by fine-tuning each model individually or rely on static prompts that fail to resolve query-level structural complexity. In this paper, we propose ReQueR (\\textbf{Re}inforcement \\textbf{Que}ry \\textbf{R}efinement), a modular framework that treats reasoning elicitation as an inference-time alignment task. We train a specialized Refiner policy via Reinforcement Learning to rewrite raw queries into explicit logical decompositions, treating frozen LLMs as the environment. Rooted in the classical Zone of Proximal Development from educational psychology, we introduce the Adaptive Solver Hierarchy, a curriculum mechanism that stabilizes training by dynamically aligning environmental difficulty with the Refiner's evolving competence. ReQueR yields consistent absolute gains of 1.7\\%--7.2\\% across diverse architectures and benchmarks, outperforming strong baselines by 2.1\\% on average. Crucially, it provides a promising paradigm for one-to-many inference-time reasoning elicitation, enabling a single Refiner trained on a small set of models to effectively unlock reasoning in diverse unseen models. Code is available at https://github.com/newera-xiao/ReQueR.",
+      "url": "https://arxiv.org/abs/2604.25444",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-28",
+      "github_url": "https://github.com/newera-xiao/ReQueR.",
+      "score": 0.8961
+    },
+    {
+      "id": "2604.25419",
+      "title": "JURY-RL: Votes Propose, Proofs Dispose for Label-Free RLVR",
+      "authors": [
+        "Xinjie Chen",
+        "Biao Fu",
+        "Jing Wu",
+        "Guoxin Chen",
+        "Xinggao Liu",
+        "Dayiheng Liu",
+        "Minpeng Liao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) enhances the reasoning of large language models (LLMs), but standard RLVR often depends on human-annotated answers or carefully curated reward specifications. In machine-checkable domains, label-free alternatives such as majority voting or LLM-as-a-judge remove annotation cost but can introduce false positives that destabilize training. We introduce JURY-RL, a label-free RLVR framework that decouples answer proposal from reward disposal: votes from model rollouts propose a candidate answer, and a formal verifier determines whether that candidate can receive positive reward. Concretely, only rollouts matching the plurality-voted answer are rewarded when that answer is successfully verified in Lean. When verification is inconclusive, we invoke ResZero (Residual-Zero), a fallback reward that discards the unverified plurality proposal and redistributes a zero-mean, variance-preserving signal over the residual answers. This design maintains a stable optimization gradient without reinforcing unverifiable consensus. Across three backbone models trained on mathematical data, JURY-RL consistently outperforms other label-free baselines on mathematical reasoning benchmarks and transfers competitively to code generation and general benchmarks. It attains pass@1 performance comparable to supervised ground-truth training, with superior generalization demonstrated by higher pass@k and response diversity.",
+      "url": "https://arxiv.org/abs/2604.25419",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8933
+    },
+    {
+      "id": "2604.25039",
+      "title": "Dual-Track CoT: Budget-Aware Stepwise Guidance for Small LMs",
+      "authors": [
+        "Sagnik Chatterjee",
+        "Atharva Patil",
+        "Sricharan Ramesh"
+      ],
+      "abstract": "Large Language Models (LLMs) solve many reasoning tasks via chain-of-thought (CoT) prompting, but smaller models (about 7 to 8B parameters) still struggle with multi-step reasoning under tight compute and token budgets. Existing test time reasoning methods such as self consistency (sampling multiple rationales and voting), Tree-of-Thoughts (search over intermediate thoughts), and critique revise loops improve performance, but often at high token cost and without fine-grained step-level control. This project1 aims to address that gap: can Small Language Models (SLMs) reason reliably using the same or fewer tokens? This question is both scientific and practical. Scientifically, it probes whether process supervision and simple test-time controls (such as token budgets and rejection of redundant steps) can substitute for model scale or large sampling counts. Practically, many deployments (on-device, low-latency, or cost-constrained settings) cannot afford huge models or dozens of sampled rationales per query. A method that improves SLM reasoning at fixed cost would therefore be directly useful.",
+      "url": "https://arxiv.org/abs/2604.25039",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-27",
+      "score": 0.8917
+    },
+    {
+      "id": "2604.25917",
+      "title": "Recursive Multi-Agent Systems",
+      "authors": [
+        "Xiyuan Yang",
+        "Jiaru Zou",
+        "Rui Pan",
+        "Ruizhong Qiu",
+        "Pan Lu",
+        "Shizhe Diao",
+        "Jindong Jiang",
+        "Hanghang Tong",
+        "Tong Zhang",
+        "Markus J. Buehler",
+        "Jingrui He",
+        "James Zou"
+      ],
+      "abstract": "Recursive or looped language models have recently emerged as a new scaling axis by iteratively refining the same model computation over latent states to deepen reasoning. We extend such scaling principle from a single model to multi-agent systems, and ask: Can agent collaboration itself be scaled through recursion? To this end, we introduce RecursiveMAS, a recursive multi-agent framework that casts the entire system as a unified latent-space recursive computation. RecursiveMAS connects heterogeneous agents as a collaboration loop through the lightweight RecursiveLink module, enabling in-distribution latent thoughts generation and cross-agent latent state transfer. To optimize our framework, we develop an inner-outer loop learning algorithm for iterative whole-system co-optimization through shared gradient-based credit assignment across recursion rounds. Theoretical analyses of runtime complexity and learning dynamics establish that RecursiveMAS is more efficient than standard text-based MAS and maintains stable gradients during recursive training. Empirically, we instantiate RecursiveMAS under 4 representative agent collaboration patterns and evaluate across 9 benchmarks spanning mathematics, science, medicine, search, and code generation. In comparison with advanced single/multi-agent and recursive computation baselines, RecursiveMAS consistently delivers an average accuracy improvement of 8.3%, together with 1.2$\\times$-2.4$\\times$ end-to-end inference speedup, and 34.6%-75.6% token usage reduction. Code and Data are provided in https://recursivemas.github.io.",
+      "url": "https://arxiv.org/abs/2604.25917",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8907
+    },
+    {
+      "id": "2604.25847",
+      "title": "From Soliloquy to Agora: Memory-Enhanced LLM Agents with Decentralized Debate for Optimization Modeling",
+      "authors": [
+        "Jianghao Lin",
+        "Zi Ling",
+        "Chenyu Zhou",
+        "Tianyi Xu",
+        "Ruoqing Jiang",
+        "Zizhuo Wang",
+        "Dongdong Ge"
+      ],
+      "abstract": "Optimization modeling underpins real-world decision-making in logistics, manufacturing, energy, and public services, but reliably solving such problems from natural-language requirements remains challenging for current large language models (LLMs). In this paper, we propose \\emph{Agora-Opt}, a modular agentic framework for optimization modeling that combines decentralized debate with a read-write memory bank. Agora-Opt allows multiple agent teams to independently produce end-to-end solutions and reconcile them through an outcome-grounded debate protocol, while memory stores solver-verified artifacts and past disagreement resolutions to support training-free improvement over time. This design is flexible across both backbones and methods: it reduces base-model lock-in, transfers across different LLM families, and can be layered onto existing pipelines with minimal coupling. Across public benchmarks, Agora-Opt achieves the strongest overall performance among all compared methods, outperforming strong zero-shot LLMs, training-centric approaches, and prior agentic baselines. Further analyses show robust gains across backbone choices and component variants, and demonstrate that decentralized debate offers a structural advantage over centralized selection by enabling agents to refine candidate solutions through interaction and even recover correct formulations when all initial candidates are flawed. These results suggest that reliable optimization modeling benefits from combining collaborative cross-checking with reusable experience, and position Agora-Opt as a practical and extensible foundation for trustworthy optimization modeling assistance. Our code and data are available at https://github.com/CHIANGEL/Agora-Opt.",
+      "url": "https://arxiv.org/abs/2604.25847",
+      "categories": [
+        "math.OC",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-28",
+      "github_url": "https://github.com/CHIANGEL/Agora-Opt.",
+      "score": 0.8907
+    },
+    {
+      "id": "2604.25850",
+      "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+      "authors": [
+        "Jiahang Lin",
+        "Shichun Liu",
+        "Chengjun Pan",
+        "Lizhi Lin",
+        "Shihan Dou",
+        "Xuanjing Huang",
+        "Hang Yan",
+        "Zhenhua Han",
+        "Tao Gui"
+      ],
+      "abstract": "Harnesses have become a central determinant of coding-agent performance, shaping how models interact with repositories, tools, and execution environments. Yet automating harness engineering is hard: a heterogeneous action space, sparse and noisy evaluation signal, multi-million-token trajectories, and edits whose effect is hard to attribute to the next round's outcomes. We introduce Agentic Harness Engineering (AHE), a framework that automates harness-level evolution by instrumenting the three stages of any engineering loop (component editing, trajectory inspection, and decision making) with matched observability pillars: (1) component observability gives every editable harness component a file-level representation so the action space is explicit and revertible; (2) experience observability distills millions of raw trajectory tokens into a layered, drill-down evidence corpus that an evolving agent can actually consume; and (3) decision observability pairs every edit with a self-declared prediction, later verified against the next round's task-level outcomes. Together, these pillars turn every edit into a falsifiable contract, so harness evolution proceeds autonomously without collapsing into trial-and-error. Empirically, ten AHE iterations lift pass@1 on Terminal-Bench 2 from 69.7% to 77.0%, surpassing the human-designed harness Codex-CLI (71.9%) and the self-evolving baselines ACE and TF-GRPO. The frozen harness transfers without re-evolution: on SWE-bench-verified it tops aggregate success at 12% fewer tokens than the seed, and on Terminal-Bench 2 it yields +5.1 to +10.1pp cross-family gains across three alternate model families, indicating the evolved components encode general engineering experience rather than benchmark-specific tuning. These results position observability-driven evolution as a practical pathway to keep coding-agent harnesses continually improving.",
+      "url": "https://arxiv.org/abs/2604.25850",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8894
+    },
+    {
+      "id": "2604.24954",
+      "title": "Nemotron 3 Nano Omni: Efficient and Open Multimodal Intelligence",
+      "authors": [
+        "NVIDIA",
+        ":",
+        "Amala Sanjay Deshmukh",
+        "Kateryna Chumachenko",
+        "Tuomas Rintamaki",
+        "Matthieu Le",
+        "Tyler Poon",
+        "Danial Mohseni Taheri",
+        "Ilia Karmanov",
+        "Guilin Liu",
+        "Jarno Seppanen",
+        "Arushi Goel",
+        "Mike Ranzinger",
+        "Greg Heinrich",
+        "Guo Chen",
+        "Lukas Voegtle",
+        "Philipp Fischer",
+        "Timo Roman",
+        "Karan Sapra",
+        "Collin McCarthy",
+        "Shaokun Zhang",
+        "Fuxiao Liu",
+        "Hanrong Ye",
+        "Yi Dong",
+        "Mingjie Liu",
+        "Yifan Peng",
+        "Piotr Zelasko",
+        "Zhehuai Chen",
+        "Nithin Rao Koluguri",
+        "Nune Tadevosyan",
+        "Lilit Grigoryan",
+        "Ehsan Hosseini Asl",
+        "Pritam Biswas",
+        "Leili Tavabi",
+        "Yuanhang Su",
+        "Zhiding Yu",
+        "Peter Jin",
+        "Alexandre Milesi",
+        "Netanel Haber",
+        "Yao Xu",
+        "Sarah Amiraslani",
+        "Nabin Mulepati",
+        "Eric Tramel",
+        "Jaehun Jung",
+        "Ximing Lu",
+        "Brandon Cui",
+        "Jin Xu",
+        "Zhiqi Li",
+        "Shihao Wang",
+        "Yuanguo Kuang",
+        "Shaokun Zhang",
+        "Huck Yang",
+        "Boyi Li",
+        "Hongxu Yin",
+        "Song Han",
+        "Pavlo Molchanov",
+        "Adi Renduchintala",
+        "Charles Wang",
+        "David Mosallanezhad",
+        "Soumye Singhal",
+        "Luis Vega",
+        "Katherine Cheung",
+        "Sreyan Ghosh",
+        "Yian Zhang",
+        "Alexander Bukharin",
+        "Venkat Srinivasan",
+        "Johnny Greco",
+        "Andre Manoel",
+        "Maarten Van Segbroeck",
+        "Suseella Panguliri",
+        "Rohit Watve",
+        "Divyanshu Kakwani",
+        "Shubham Pachori",
+        "Jeffrey Glick",
+        "Radha Sri-Tharan",
+        "Aileen Zaman",
+        "Khanh Nguyen",
+        "Shi Chen",
+        "Jiaheng Fang",
+        "Qing Miao",
+        "Wenfei Zhou",
+        "Yu Wang",
+        "Zaid Pervaiz Bhat",
+        "Varun Praveen",
+        "Arihant Jain",
+        "Ramanathan Arunachalam",
+        "Tomasz Kornuta",
+        "Ashton Sharabiani",
+        "Amy Shen",
+        "Wei Huang",
+        "Yi-Fu Wu",
+        "Ali Roshan Ghias",
+        "Huiying Li",
+        "Brian Yu",
+        "Nima Tajbakhsh",
+        "Chen Cui",
+        "Wenwen Gao",
+        "Li Ding",
+        "Terry Kong",
+        "Manoj Kilaru",
+        "Anahita Bhiwandiwalla",
+        "Marek Wawrzos",
+        "Daniel Korzekwa",
+        "Pablo Ribalta",
+        "Grzegorz Chlebus",
+        "Besmira Nushi",
+        "Ewa Dobrowolska",
+        "Maciej Jakub Mikulski",
+        "Kunal Dhawan",
+        "Steve Huang",
+        "Jagadeesh Balam",
+        "Yongqiang Wang",
+        "Nikolay Karpov",
+        "Valentin Mendelev",
+        "George Zelenfroynd",
+        "Meline Mkrtchyan",
+        "Qing Miao",
+        "Omri Almog",
+        "Bhavesh Pawar",
+        "Rameshwar Shivbhakta",
+        "Sudeep Sabnis",
+        "Ashrton Sharabiani",
+        "Negar Habibi",
+        "Geethapriya Venkataramani",
+        "Pamela Peng",
+        "Prerit Rodney",
+        "Serge Panev",
+        "Richard Mazzarese",
+        "Nicky Liu",
+        "Michael Fukuyama",
+        "Andrii Skliar",
+        "Roger Waleffe",
+        "Duncan Riach",
+        "Yunheng Zou",
+        "Jian Hu",
+        "Hao Zhang",
+        "Binfeng Xu",
+        "Yuhao Yang",
+        "Zuhair Ahmed",
+        "Alexandre Milesi",
+        "Carlo del Mundo",
+        "Chad Voegele",
+        "Zhiyu Cheng",
+        "Nave Assaf",
+        "Andrii Skliar",
+        "Daniel Afrimi",
+        "Natan Bagrov",
+        "Ran Zilberstein",
+        "Ofri Masad",
+        "Eugene Khvedchenia",
+        "Natan Bagrov",
+        "Borys Tymchenko",
+        "Tomer Asida",
+        "Daniel Afrimi",
+        "Parth Mannan",
+        "Victor Cui",
+        "Michael Evans",
+        "Katherine Luna",
+        "Jie Lou",
+        "Pinky Xu",
+        "Guyue Huang",
+        "Negar Habibi",
+        "Michael Boone",
+        "Pradeep Thalasta",
+        "Adeola Adesoba",
+        "Dina Yared",
+        "Christopher Parisien",
+        "Leon Derczynski",
+        "Shaona Ghosh",
+        "Wes Feely",
+        "Micah Schaffer",
+        "Radha Sri-Tharan",
+        "Jeffrey Glick",
+        "Barnaby Simkin",
+        "George Zelenfroynd",
+        "Tomasz Grzegorzek",
+        "Rishabh Garg",
+        "Aastha Jhunjhunwala",
+        "Sergei Kolchenko",
+        "Farzan Memarian",
+        "Haran Kumar",
+        "Shiv Kumar",
+        "Isabel Hulseman",
+        "Anjali Shah",
+        "Kari Briski",
+        "Padmavathy Subramanian",
+        "Joey Conway",
+        "Udi Karpas",
+        "Jane Polak Scowcroft",
+        "Annie Surla",
+        "Shilpa Ammireddy",
+        "Ellie Evans",
+        "Jesse Oliver",
+        "Tom Balough",
+        "Chia-Chih Chen",
+        "Sandip Bhaskar",
+        "Alejandra Rico",
+        "Bardiya Sadeghi",
+        "Seph Mard",
+        "Katherine Cheung",
+        "Meredith Price",
+        "Laya Sleiman",
+        "Saori Kaji",
+        "Wesley Helmholz",
+        "Wendy Quan",
+        "Michael Lightstone",
+        "Jonathan Cohen",
+        "Jian Zhang",
+        "Oleksii Kuchaiev",
+        "Boris Ginsburg",
+        "Jan Kautz",
+        "Eileen Long",
+        "Mohammad Shoeybi",
+        "Mostofa Patwary",
+        "Oluwatobi Olabiyi",
+        "Andrew Tao",
+        "Bryan Catanzaro",
+        "Udi Karpas"
+      ],
+      "abstract": "We introduce Nemotron 3 Nano Omni, the latest model in the Nemotron multimodal series and the first to natively support audio inputs alongside text, images, and video. Nemotron 3 Nano Omni delivers consistent accuracy improvements over its predecessor, Nemotron Nano V2 VL, across all modalities, enabled by advances in architecture, training data and recipes. In particular, Nemotron 3 delivers leading results in real-world document understanding, long audio-video comprehension, and agentic computer use. Built on the highly efficient Nemotron 3 Nano 30B-A3B backbone, Nemotron 3 Nano Omni further incorporates innovative multimodal token-reduction techniques to deliver substantially lower inference latency and higher throughput than other models of similar size. We are releasing model checkpoints in BF16, FP8, and FP4 formats, along with portions of the training data and codebase to facilitate further research and development.",
+      "url": "https://arxiv.org/abs/2604.24954",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "submitted": "2026-04-27",
+      "score": 0.8894
+    },
+    {
+      "id": "2604.25737",
+      "title": "SAFEdit: Does Multi-Agent Decomposition Resolve the Reliability Challenges of Instructed Code Editing?",
+      "authors": [
+        "Noam Tarshish",
+        "Nofar Selouk",
+        "Daniel Hodisan",
+        "Bar Ezra Gafniel",
+        "Yuval Elovici",
+        "Asaf Shabtai",
+        "Eliya Nachmani"
+      ],
+      "abstract": "Instructed code editing is a significant challenge for large language models (LLMs). On the EditBench benchmark, 39 of 40 evaluated models obtain a task success rate (TSR) below 60 percent, highlighting a gap between general code generation and the ability to perform instruction-driven editing under executable test constraints. To address this, we propose SAFEdit, a multi-agent framework for instructed code editing that decomposes the editing process into specialized roles to improve reliability and reduce unintended code changes. A Planner Agent produces an explicit, visibility-aware edit plan, an Editor Agent applies minimal, literal code modifications, and a Verifier Agent executes real test runs. When tests fail, SAFEdit uses a Failure Abstraction Layer (FAL) to transform raw test logs into structured diagnostic feedback, which is fed back to the Editor to support iterative refinement. We compare SAFEdit against both prior single-model results reported for EditBench and an implemented ReAct single-agent baseline under the same evaluation conditions. We used EditBench to evaluate SAFEdit on 445 code editing instances in five languages (English, Polish, Spanish, Chinese, and Russian) under varying spatial context variants. SAFEdit achieved 68.6 percent TSR, outperforming the single-model baseline by 3.8 percentage points and the ReAct single-agent baseline by 8.6 percentage points. The iterative refinement loop was found to contribute 17.4 percentage points to SAFEdit's overall success rate. SAFEdit's automated error analysis further indicates a reduction in instruction-level hallucinations compared to single-agent approaches, providing an additional framework component for interpreting failures beyond pass or fail outcomes.",
+      "url": "https://arxiv.org/abs/2604.25737",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8889
+    },
+    {
+      "id": "2604.25167",
+      "title": "From Insight to Action: A Novel Framework for Interpretability-Guided Data Selection in Large Language Models",
+      "authors": [
+        "Ling Shi",
+        "Xinwei Wu",
+        "Xiaohu Zhao",
+        "Hao Wang",
+        "Heng Liu",
+        "Yangyang Liu",
+        "Linlong Xu",
+        "Longyue Wang",
+        "Deyi Xiong",
+        "Weihua Luo"
+      ],
+      "abstract": "While mechanistic interpretability tools like Sparse Autoencoders (SAEs) can uncover meaningful features within Large Language Models (LLMs), a critical gap remains in transforming these insights into practical actions for model optimization. We bridge this gap with the hypothesis that data selection guided by a model's internal task features is a effective training strategy. Inspired by this, we propose Interpretability-Guided Data Selection (IGDS), a framework that first identifies these causal task features through frequency recall and interventional filtering, then selects ``Feature-Resonant Data'' that maximally activates task features for fine-tuning. We validate IGDS on mathematical reasoning, summarization, and translation tasks within Gemma-2, LLaMA-3.1, and Qwen3 models. Our experiments demonstrate exceptional data efficiency: on the Math task, IGDS surpasses full-dataset fine-tuning by a remarkable 17.4% on Gemma-2-2B while using only 50% of the data, and outperforms established baselines focused on data quality and diversity. Analysis confirms a strong positive correlation between feature amplification and task performance improvement. IGDS thus provides a direct and effective framework to enhance LLMs by leveraging their internal mechanisms, validating our core hypothesis.",
+      "url": "https://arxiv.org/abs/2604.25167",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8877
+    },
+    {
+      "id": "2604.25012",
+      "title": "Why Search When You Can Transfer? Amortized Agentic Workflow Design from Structural Priors",
+      "authors": [
+        "Shiyi Du",
+        "Jiayuan Liu",
+        "Weihua Du",
+        "Yue Huang",
+        "Jiayi Li",
+        "Yingtao Luo",
+        "Xiangliang Zhang",
+        "Vincent Conitzer",
+        "Carl Kingsford"
+      ],
+      "abstract": "Automated agentic workflow design currently relies on per-task iterative search, which is computationally prohibitive and fails to reuse structural knowledge across tasks. We observe that optimized workflows converge to a small family of domain-specific topologies, suggesting that this combinatorial search is largely redundant. Building on this insight, we propose SWIFT (Synthesizing Workflows via Few-shot Transfer), a framework that amortizes workflow design into reusable structural priors. SWIFT first distills compositional heuristics and output-interface contracts from contrastive analysis of prior search trajectories across source tasks. At inference time, it conditions a single LLM generation pass on these priors together with cross-task workflow demonstrations to synthesize a complete, executable workflow for an unseen target task, bypassing iterative search entirely. On five benchmarks, SWIFT outperforms the state-of-the-art search-based method while reducing marginal per-task optimization cost by three orders of magnitude. It further generalizes to four additional unseen benchmarks and transfers successfully from GPT-4o-mini to three additional foundation models (Grok, Qwen, Gemma). Controlled ablations reveal that workflow demonstrations primarily transfer topological structure rather than surface semantics: replacing all operator names with random strings still retains over 93% of the full system's average performance.",
+      "url": "https://arxiv.org/abs/2604.25012",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-27",
+      "score": 0.8868
+    },
+    {
+      "id": "2604.25313",
+      "title": "Faithfulness-QA: A Counterfactual Entity Substitution Dataset for Training Context-Faithful RAG Models",
+      "authors": [
+        "Li Ju",
+        "Junzhe Wang",
+        "Qi Zhang"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) models frequently produce answers grounded in parametric memory rather than the retrieved context, undermining the core promise of retrieval augmentation. A fundamental obstacle to fixing this unfaithfulness is the lack of training data that explicitly requires models to prefer context over internal knowledge. We introduce Faithfulness-QA, a large-scale dataset of 99,094 samples constructed through counterfactual entity substitution. Starting from two established extractive QA benchmarks--SQuAD and TriviaQA--we automatically identify answer-bearing named entities in each context, replace them with type-consistent alternatives drawn from a curated bank of 76,953 entities, and thereby manufacture controlled knowledge conflicts between context and parametric memory. Rigorous quality filtering ensures 100% pass rates across four automated checks on random 200-sample audits. We release the full dataset, the construction pipeline, and a typed entity bank covering eight named entity categories. Faithfulness-QA is designed as a training resource for attention-based faithfulness objectives and as an evaluation benchmark for measuring context-grounding behavior in RAG systems. Data and code are available at https://github.com/qzhangFDU/faithfulness-qa-dataset.",
+      "url": "https://arxiv.org/abs/2604.25313",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "github_url": "https://github.com/qzhangFDU/faithfulness-qa-dataset.",
+      "score": 0.8867
+    },
+    {
+      "id": "2604.25154",
+      "title": "Prior-Aligned Data Cleaning for Tabular Foundation Models",
+      "authors": [
+        "Laure Berti-Equille"
+      ],
+      "abstract": "Tabular Foundation Models (TFMs) achieve state-of-the-art zero-shot accuracy on small tabular datasets by meta-learning over synthetic data-generating processes -- making them highly attractive for practitioners who cannot afford large annotated corpora. However, their in-context learning mechanism assumes approximately clean inputs: missing values, outliers, and duplicates in the real-world data create a prior mismatch that degrades both accuracy and confidence calibration simultaneously. Correcting this mismatch requires sequential decisions over cleaning operators whose interactions no static preprocessing rule can anticipate -a natural fit for reinforcement learning~(RL). We introduce L2C2, the first deep RL framework framing tabular data cleaning as prior alignment: a learned policy sequences operators to minimize the distributional gap between dirty input and the TFM's synthetic prior. Six experiments on ten OpenML benchmark datasets establish: 1) three of seven reward designs collapse to degenerate trivial cleaning strategies -- principled reward engineering is scientifically non-trivial; 2) the novel TFMAwareReward reward we propose selects structurally distinct pipelines on 4/10 datasets and achieves higher TabPFN accuracy on those diverging cases (mean 0.851 vs. 0.843; Wilcoxon p=0.063, n=4) while never underperforming; 3) parameterized cleaning actions improve best-found pipeline reward on 9/10 datasets (Wilcoxon p=0.004); and 4) a policy pre-trained on one single source dataset exceeds scratch training at the 2,000-step fine-tuning checkpoint on all three held-out datasets (up to +28.8% after full fine-tuning) demonstrating cross-dataset transfer of prior-alignment knowledge. These findings establish that prior alignment is a principled data preparation strategy for TFM deployment on real-world tabular data.",
+      "url": "https://arxiv.org/abs/2604.25154",
+      "categories": [
+        "cs.LG",
+        "cs.DB"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8858
+    },
+    {
+      "id": "2604.25855",
+      "title": "SIEVES: Selective Prediction Generalizes through Visual Evidence Scoring",
+      "authors": [
+        "Hector G. Rodriguez",
+        "Marcus Rohrbach"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) achieve ever-stronger performance on visual-language tasks. Even as traditional visual question answering benchmarks approach saturation, reliable deployment requires satisfying low error tolerances in real-world out-of-distribution (OOD) scenarios. Precisely, selective prediction aims to improve coverage, i.e. the share of inputs the system answers, while adhering to a user-defined risk level. This is typically achieved by assigning a confidence score to each answer and abstaining on those that fall below a certain threshold. To enable reliable generalization, we require reasoner models to produce localized visual evidence while answering, and design a selector that explicitly learns to estimate the quality of the localization provided by the reasoner. We show that SIEVES (Selective Prediction through Visual Evidence Scoring) improves coverage by up to three times on challenging OOD benchmarks (V* Bench, HR-Bench-8k, MME-RealWorld-Lite, VizWiz, and AdVQA), compared to non-grounding baselines. Beyond better generalization to OOD tasks, the design of the SIEVES selector enables transfer to proprietary reasoners without access to their weights or logits, such as o3 and Gemini-3-Pro, providing coverage boosts beyond those attributable to accuracy alone. We highlight that SIEVES generalizes across all five tested OOD datasets and reasoner models (Pixel-Reasoner, o3, and Gemini-3-Pro), without benchmark- or reasoner-specific training or adaptation.",
+      "url": "https://arxiv.org/abs/2604.25855",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8857
+    },
+    {
+      "id": "2604.25359",
+      "title": "The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models",
+      "authors": [
+        "Abhinav Kumar Singh",
+        "Harsha Vardhan Khurdula",
+        "Yoeven D Khemlani",
+        "Vineet Agarwal"
+      ],
+      "abstract": "Large Language Models are increasingly being deployed to extract structured data from unstructured and semi-structured sources: parsing invoices, medical records, and converting PDF documents to database entries. Yet existing benchmarks for structured output generation either focus on schema compliance alone, or evaluate value correctness within a single source domain. We introduce SOB (The Structured Output Benchmark), a multi-source benchmark spanning three source modalities: native text, images, and audio conversations. All models receive a text-normalized representation of their context regardless of source modality; this deliberate design isolates structured-output capability from raw vision or speech-processing quality, ensuring a fair, source-agnostic comparison. Our benchmark comprises 5,000 text evaluation records derived from multi-hop QA drawn from a 25,091-record full corpus, 209 image records from OCR-processed PDFs across seven document types including multi-column layouts, dense tables, scanned historical documents, small-print text, and mathematical typesetting, and 115 audio records from the AMI corpus. Each record pairs a natural-language question with a JSON schema that the model must follow and a ground-truth answer verified against the source context. We evaluate 21 frontier and open-weight models across three source domains and seven metrics. Our results reveal a consistent pattern: models achieve near-perfect schema compliance, yet the best Value Accuracy, measured by exact leaf-value match, reaches only 83.0% on text, 67.2% on images, and 23.7% on audio, where longer context makes extraction substantially harder. We release the dataset, evaluation pipeline, and all related code.",
+      "url": "https://arxiv.org/abs/2604.25359",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8831
+    },
+    {
+      "id": "2604.24927",
+      "title": "Large Language Models Explore by Latent Distilling",
+      "authors": [
+        "Yuanhao Zeng",
+        "Ao Lu",
+        "Lufei Li",
+        "Zheng Zhang",
+        "Yexin Li",
+        "Kan Ren"
+      ],
+      "abstract": "Generating diverse responses is crucial for test-time scaling of large language models (LLMs), yet standard stochastic sampling mostly yields surface-level lexical variation, limiting semantic exploration. In this paper, we propose Exploratory Sampling (ESamp), a decoding approach that explicitly encourages semantic diversity during generation. ESamp is motivated by the well-known observation that neural networks tend to make lower-error predictions on inputs similar to those encountered before, and incur higher prediction error on novel ones. Building on this property, we train a lightweight Distiller at test time to predict deep-layer hidden representations of the LLM from its shallow-layer representations to model the LLM's depth-wise representation transitions. During decoding, the Distiller continuously adapts to the mappings induced by the current generation context. ESamp uses the prediction error as a novelty signal to reweight candidate token extensions conditioned on the current prefix, thereby biasing decoding toward less-explored semantic patterns. ESamp is implemented with an asynchronous training--inference pipeline, with less than 5% worst case overhead (1.2% in the optimized release). Empirical results show that ESamp significantly boosts the Pass@k efficiency of reasoning models, showing superior or comparable performance to strong stochastic and heuristic baselines. Notably, ESamp achieves robust generalization across mathematics, science, and code generation benchmarks and breaks the trade-off between diversity and coherence in creative writing. Our code has released at: https://github.com/LinesHogan/tLLM.",
+      "url": "https://arxiv.org/abs/2604.24927",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-27",
+      "github_url": "https://github.com/LinesHogan/tLLM.",
+      "score": 0.8827
+    },
+    {
+      "id": "2604.25907",
+      "title": "How Fast Should a Model Commit to Supervision? Training Reasoning Models on the Tsallis Loss Continuum",
+      "authors": [
+        "Chu-Cheng Lin",
+        "Eugene Ie"
+      ],
+      "abstract": "Adapting reasoning models to new tasks during post-training with only output-level supervision stalls under reinforcement learning from verifiable rewards (RLVR) when the initial success probability $p_0$ is small. Using the Tsallis $q$-logarithm, we define a loss family $J_Q$ that interpolates between RLVR (at $q{=}0$, the exploitation pole) and the log-marginal-likelihood over latent trajectories (at $q{=}1$, the density-estimation pole). All members share the same per-example gradient direction, differing only by a scalar amplification $P_{θ^{-q}}$ that reweights each instance independently of the learning rate. This amplification is the mechanism that addresses cold-start stalling: under gradient flow, the exploitation pole requires $Ω(\\frac{1}{p_0})$ time to escape cold start, while the density-estimation pole escapes in $Θ\\big(\\log(\\frac{1}{p_0})\\big)$; intermediate $q$ trades escape speed against noise memorization. Because $P_θ$ is intractable, we derive two Monte Carlo estimators from the two factorizations of the gradient: Gradient-Amplified RL (GARL) samples from the prior and amplifies the RL gradient, and Posterior-Attenuated Fine-Tuning (PAFT) importance-resamples from the posterior and runs standard SFT. Both have bias $O\\big(\\frac{q}{M P_θ^{q+1}}\\big)$; GARL has lower variance, PAFT has semantically coherent gradients. On FinQA, HotPotQA, and MuSiQue, GARL at $q{=}0.75$ substantially mitigates cold-start stalling, escaping cold start where GRPO fails entirely. In warm start, GARL at low $q$ dominates FinQA where training is stable; on HotPotQA and MuSiQue, GARL destabilizes during training, and PAFT at $q{=}0.75$ provides stable gradients (best overall on HotPotQA at 47.9 maj@16, $+14.4$ over GRPO).",
+      "url": "https://arxiv.org/abs/2604.25907",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8822
+    },
+    {
+      "id": "2604.25203",
+      "title": "BARRED: Synthetic Training of Custom Policy Guardrails via Asymmetric Debate",
+      "authors": [
+        "Arnon Mazza",
+        "Elad Levi"
+      ],
+      "abstract": "Deploying guardrails for custom policies remains challenging, as generic safety models fail to capture task-specific requirements, while prompting LLMs suffers from inconsistent boundary-case performance and high inference costs. Training custom classifiers achieves both accuracy and efficiency, yet demands substantial labeled data that is costly to obtain. We present BARRED (Boundary Alignment Refinement through REflection and Debate), a framework for generating faithful and diverse synthetic training data using only a task description and a small set of unlabeled examples. Our approach decomposes the domain space into dimensions to ensure comprehensive coverage, and employs multi-agent debate to verify label correctness, yielding a high-fidelity training corpus. Experiments across diverse custom policies demonstrate that small language models finetuned on our synthetic data consistently outperform state-of-the-art proprietary LLMs (including reasoning models) and dedicated guardrail models. Ablation studies confirm that both dimension decomposition and debate-based verification are critical for ensuring the diversity and label fidelity required for effective fine-tuning. The BARRED framework eliminates the reliance on extensive human annotation, offering a scalable solution for accurate custom guardrails.",
+      "url": "https://arxiv.org/abs/2604.25203",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8819
+    },
+    {
+      "id": "2604.24881",
+      "title": "Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate",
+      "authors": [
+        "John Seon Keun Yi",
+        "Aaron Mueller",
+        "Dokyun Lee"
+      ],
+      "abstract": "Multi-agent debate has been shown to improve reasoning in large language models (LLMs). However, it is compute-intensive, requiring generation of long transcripts before answering questions. To address this inefficiency, we develop a framework that distills multi-agent debate into a single LLM through a two-stage fine-tuning pipeline combining debate structure learning with internalization via dynamic reward scheduling and length clipping. Across multiple models and benchmarks, our internalized models match or exceed explicit multi-agent debate performance using up to 93% fewer tokens. We then investigate the mechanistic basis of this capability through activation steering, finding that internalization creates agent-specific subspaces: interpretable directions in activation space corresponding to different agent perspectives. We further demonstrate a practical application: by instilling malicious agents into the LLM through internalized debate, then applying negative steering to suppress them, we show that distillation makes harmful behaviors easier to localize and control with smaller reductions in general performance compared to steering base models. Our findings offer a new perspective for understanding multi-agent capabilities in distilled models and provide practical guidelines for controlling internalized reasoning behaviors. Code available at https://github.com/johnsk95/latent_agents",
+      "url": "https://arxiv.org/abs/2604.24881",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-27",
+      "github_url": "https://github.com/johnsk95/latent_agents",
+      "score": 0.8807
+    },
+    {
+      "id": "2604.25136",
+      "title": "Frictive Policy Optimization for LLMs: Epistemic Intervention, Risk-Sensitive Control, and Reflective Alignment",
+      "authors": [
+        "James Pustejovsky",
+        "Nikhil Krishnaswamy"
+      ],
+      "abstract": "We propose Frictive Policy Optimization (FPO), a framework for learning language model policies that regulate not only what to say, but when and how to intervene in order to manage epistemic and normative risk. Unlike standard alignment methods that optimize surface-level preference or task utility, FPO treats clarification, verification, challenge, redirection, and refusal as explicit control actions whose purpose is to shape the evolution of belief, commitment, and uncertainty over time. We formalize alignment as a risk-sensitive epistemic control problem in which intervention decisions are selected based on their expected effect on downstream epistemic quality rather than on immediate reward alone. We introduce a compact taxonomy of frictive interventions, a structured friction functional that operationalizes multiple alignment failure modes, and a unified family of FPO methods spanning reward shaping, preference pairing, group-relative ranking, and risk-conditioned trust regions. We further propose an evaluation framework that measures epistemic competence directly through clarification behavior, calibration, contradiction repair, refusal proportionality, and information efficiency. Together, these results provide a formal and algorithmic foundation for learning agents that are aligned not only in outcome, but in epistemic conduct.",
+      "url": "https://arxiv.org/abs/2604.25136",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-28",
+      "score": 0.8804
+    },
+    {
+      "id": "2604.24832",
+      "title": "On the Trainability of Masked Diffusion Language Models via Blockwise Locality",
+      "authors": [
+        "Yuxiang Wang",
+        "Yu Xiang",
+        "Baojian Zhou",
+        "Qifang Zhao",
+        "Keyue Jiang",
+        "Yanghua Xiao",
+        "Xiaoxiao Xu"
+      ],
+      "abstract": "Masked diffusion language models (MDMs) have recently emerged as a promising alternative to standard autoregressive large language models (AR-LLMs), yet their optimization can be substantially less stable. We study blockwise MDMs and compare them with AR-LLMs on three controlled tasks that stress different aspects of structured generation: in-context linear regression, graph path-finding, and Sudoku solving. We find that standard random-masking MDMs fail to reliably learn linear regression, exhibit high variance training dynamics on graph path-finding, while outperforming AR-LLMs on Sudoku. To mitigate these instabilities, we propose two locality aware blockwise models, namely Jigsaw and Scatter, that inject left-to-right inductive bias by enforcing autoregressive locality within blocks while preserving iterative refinement at the block level. Empirically, Jigsaw matches AR-LLM stability on linear regression and remains strong on Sudoku, while Scatter retains diffusion's planning advantage on path-finding. Our results indicate that standard random-masking MDMs, even with blockwise variants, may be a suboptimal instantiation of diffusion LMs for ordered generation, motivating models beyond random masking.",
+      "url": "https://arxiv.org/abs/2604.24832",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-27",
+      "score": 0.8799
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 298,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

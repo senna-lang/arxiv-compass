@@ -1,0 +1,391 @@
+{
+  "date": "2026-05-04",
+  "collected_at": "2026-05-04T12:52:16.873625+09:00",
+  "papers": [
+    {
+      "id": "2605.00224",
+      "title": "TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization",
+      "authors": [
+        "Abdulhady Abas Abdullah",
+        "Fatemeh Daneshfar",
+        "Seyedali Mirjalili",
+        "Mourad Oussalah"
+      ],
+      "abstract": "Aligning large language models (LLMs) with human preferences is commonly done via reinforcement learning from human feedback (RLHF) with Proximal Policy Optimization (PPO) or, more simply, via Direct Preference Optimization (DPO). While DPO is stable and RL-free, it treats preferences as flat winner vs. loser signals and is sensitive to noisy or brittle preferences arising from fragile chains of thought. We propose TUR-DPO, a topology- and uncertainty-aware variant of DPO that rewards how answers are derived, not only what they say, by eliciting lightweight reasoning topologies and combining semantic faithfulness, utility, and topology quality into a calibrated uncertainty signal. A small learnable reward is factorized over these signals and incorporated into an uncertainty-weighted DPO objective that remains RL-free and relies only on a fixed or moving reference policy. Empirically, across open 7-8B models and benchmarks spanning mathematical reasoning, factual question answering, summarization, and helpful/harmless dialogue, TUR-DPO improves judge win-rates, faithfulness, and calibration relative to DPO while preserving training simplicity and avoiding online rollouts. We further observe consistent gains in multimodal and long-context settings, and show that TUR-DPO matches or exceeds PPO on reasoning-centric tasks while maintaining operational simplicity.",
+      "url": "https://arxiv.org/abs/2605.00224",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8901
+    },
+    {
+      "id": "2605.00206",
+      "title": "State Stream Transformer (SST) V2: Parallel Training of Nonlinear Recurrence for Latent Space Reasoning",
+      "authors": [
+        "Thea Aviss"
+      ],
+      "abstract": "Current transformers discard their rich latent residual stream between positions, reconstructing latent reasoning context at each new position and leaving potential reasoning capacity untapped. The State Stream Transformer (SST) V2 enables parameter-efficient reasoning in continuous latent space through an FFN-driven nonlinear recurrence at each decoder layer, where latent states are streamed horizontally across the full sequence via a learned blend. This same mechanism supports continuous latent deliberation per position at inference time, dedicating additional FLOPs to exploring abstract reasoning before committing to a token. A two-pass parallel training procedure resolves the sequential dependency of the recurrence to allow compute-efficient training. Hidden state analysis shows the state stream facilitates reasoning through exploration of distinct semantic basins in continuous latent space, where transitions at content-dependent positions move the model into a substantially different Bayesian posterior, directly influencing the latent space at future positions. We also find, via a learned probe, that at the first generated token position, the latent state already predicts whether the eventual answer will survive or break under additional latent computation for every subsequent position. Co-trained into an existing 27B backbone using only a small dataset of GSM8K examples, the SST delivers a +15.15 point gain over a fine-tuning-matched baseline on out-of-distribution GPQA-Diamond and cuts that same baseline's remaining GSM8K errors by 46%, together showing that the reasoning improvement is attributable to the architectural mechanism rather than scale or training data. On GPQA-Diamond, the resulting 27B SST also achieves higher accuracy than several larger open-weight and proprietary systems, including open-weight models up to 25 times larger.",
+      "url": "https://arxiv.org/abs/2605.00206",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8896
+    },
+    {
+      "id": "2605.00380",
+      "title": "ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning",
+      "authors": [
+        "Zihan Lin",
+        "Xiaohan Wang",
+        "Jie Cao",
+        "Jiajun Chai",
+        "Li Wang",
+        "Xiaodong Lu",
+        "Wei Lin",
+        "Ran He",
+        "Guojun Yin"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) enhances reasoning of Large Language Models (LLMs) but usually exhibits limited generation diversity due to the over-incentivization of positive rewards. Although methods like Negative Sample Reinforcement (NSR) mitigate this issue by upweighting penalty from negative samples, they may suppress the semantic distributions shared between positive and negative responses. To boost reasoning ability without losing diversity, this paper proposes negative sample projection Residual Reinforcement Learning (ResRL) that decouples similar semantic distributions among positive and negative responses. We theoretically link Lazy Likelihood Displacement (LLD) to negative-positive head-gradient interference and derive a single-forward proxy that upper-bounds representation alignment to guide conservative advantage reweighting. ResRL then projects negative-token hidden representations onto an SVD-based low-rank positive subspace and uses projection residuals to modulate negative gradients, improving reasoning while preserving diversity and outperforming strong baselines on average across twelve benchmarks spanning Mathematics, Code, Agent Tasks, and Function Calling. Notably, ResRL surpasses NSR on mathematical reasoning by 9.4\\% in Avg@16 and 7.0\\% in Pass@128. Code is available at https://github.com/1229095296/ResRL.git.",
+      "url": "https://arxiv.org/abs/2605.00380",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-01",
+      "github_url": "https://github.com/1229095296/ResRL.git.",
+      "score": 0.8883
+    },
+    {
+      "id": "2605.00610",
+      "title": "Decouple before Integration: Test-time Synthesis of SFT and RLVR Task Vectors",
+      "authors": [
+        "Chaohao Yuan",
+        "Chenghao Xiao",
+        "Yu Rong",
+        "Hong Cheng",
+        "Long-Kai Huang"
+      ],
+      "abstract": "SFT and RLVR represent two fundamental yet distinct paradigms for LLM post-training, each excelling in distinct dimensions. SFT expands knowledge breadth while RLVR enhances reasoning depth. Yet integrating these complementary strengths remains a formidable challenge. Sequential training can cause catastrophic forgetting, and joint optimization often suffers from severe gradient conflicts. We analyze SFT and RLVR through the lens of task vectors and reveal three structural properties behind these failures: a 30* magnitude disparity, 45* sign interference, and heterogeneous module-wise update distributions. These findings show SFT and RLVR are difficult to integrate directly, but they also suggest that the two paradigms modify partly complementary components of the model. Motivated by these observations, we propose Decoupled Test-time Synthesis (DoTS), a post-hoc framework allows SFT and RLVR checkpoints to be trained independently and synthesizes their capabilities only at inference time via task vector arithmetic, without updating model parameters. To reduce interference, DOTS applies selective sparsification with norm-preserving rescaling. It then uses Bayesian optimization on a small set of unlabeled queries to search for combination coefficients on the Pareto frontier of consistency and perplexity. Empirically, \\ours matches or exceeds the performance of training-based SFT--RLVR integration methods across multiple mathematical reasoning benchmarks, incurring only $\\sim$3\\% of the computational cost. When applied to stronger post-trained checkpoints, DOTS surpasses SOTA models and generalizes to out-of-domain benchmarks without re-tuning. Code is available at https://github.com/chaohaoyuan/DoTS.",
+      "url": "https://arxiv.org/abs/2605.00610",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-01",
+      "github_url": "https://github.com/chaohaoyuan/DoTS.",
+      "score": 0.8867
+    },
+    {
+      "id": "2605.00505",
+      "title": "LLM-Oriented Information Retrieval: A Denoising-First Perspective",
+      "authors": [
+        "Lu Dai",
+        "Liang Sun",
+        "Fanpu Cao",
+        "Ziyang Rao",
+        "Cehao Yang",
+        "Hao Liu",
+        "Hui Xiong"
+      ],
+      "abstract": "Modern information retrieval (IR) is no longer consumed primarily by humans but increasingly by large language models (LLMs) via retrieval-augmented generation (RAG) and agentic search. Unlike human users, LLMs are constrained by limited attention budgets and are uniquely vulnerable to noise; misleading or irrelevant information is no longer just a nuisance, but a direct cause of hallucinations and reasoning failures. In this perspective paper, we argue that denoising-maximizing usable evidence density and verifiability within a context window-is becoming the primary bottleneck across the full information access pipeline. We conceptualize this paradigm shift through a four-stage framework of IR challenges: from inaccessible to undiscoverable, to misaligned, and finally to unverifiable. Furthermore, we provide a pipeline-organized taxonomy of signal-to-noise optimization techniques, spanning indexing, retrieval, context engineering, verification, and agentic workflow. We also present research works on information denoising in domains that rely heavily on retrieval such as lifelong assistant, coding agent, deep research, and multimodal understanding.",
+      "url": "https://arxiv.org/abs/2605.00505",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8845
+    },
+    {
+      "id": "2605.00267",
+      "title": "Jailbroken Frontier Models Retain Their Capabilities",
+      "authors": [
+        "Daniel Zhu",
+        "Zihan Wang",
+        "Jenny Bao",
+        "Jerry Wei"
+      ],
+      "abstract": "As language model safeguards become more robust, attackers are pushed toward developing increasingly complex jailbreaks. Prior work has found that this complexity imposes a \"jailbreak tax\" that degrades the target model's task performance. We show that this tax scales inversely with model capability and that the most advanced jailbreaks effectively yield no reduction in model capabilities. Evaluating 28 jailbreaks on five benchmarks across Claude models ranging in capability from Haiku 4.5 to Opus 4.6, we find Haiku 4.5 loses an average of 33.1% on benchmark performance when jailbroken, while Opus 4.6 at max thinking effort loses only 7.7%. We also observe that across all models, reasoning-heavy tasks display considerably more degradation than knowledge-recall tasks. Finally, Boundary Point Jailbreaking, currently the strongest jailbreak against deployed classifiers, achieves near-perfect classifier evasion with near-zero degradation across safeguarded models. We recommend that safety cases for frontier models should not rely on a meaningful capability degradation from jailbreaks.",
+      "url": "https://arxiv.org/abs/2605.00267",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8844
+    },
+    {
+      "id": "2605.00798",
+      "title": "RunAgent: Interpreting Natural-Language Plans with Constraint-Guided Execution",
+      "authors": [
+        "Arunabh Srivastava",
+        "Mohammad A.",
+        "Khojastepour",
+        "Srimat Chakradhar",
+        "Sennur Ulukus"
+      ],
+      "abstract": "Humans solve problems by executing targeted plans, yet large language models (LLMs) remain unreliable for structured workflow execution. We propose RunAgent, a multi-agent plan execution platform that interprets natural-language plans while enforcing stepwise execution through constraints and rubrics. RunAgent bridges the expressiveness of natural language with the determinism of programming via an agentic language with explicit control constructs (e.g., \\texttt{IF}, \\texttt{GOTO}, \\texttt{FORALL}). Beyond verifying syntactic and semantic verification of the step output, which is performed based on the specific instruction of each step, RunAgent autonomously derives and validates constraints based on the description of the task and its instance at each step. RunAgent also dynamically selects among LLM-based reasoning, tool usage, and code generation and execution (e.g., in Python), and incorporates error correction mechanisms to ensure correctness. Finally, RunAgent filters the context history by retaining only relevant information during the execution of each step. Evaluations on Natural-plan and SciBench Datasets demonstrate that RunAgent outperforms baseline LLMs and state-of-the-art PlanGEN methods.",
+      "url": "https://arxiv.org/abs/2605.00798",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8808
+    },
+    {
+      "id": "2605.00410",
+      "title": "Agent Capsules: Quality-Gated Granularity Control for Multi-Agent LLM Pipelines",
+      "authors": [
+        "Aninda Ray"
+      ],
+      "abstract": "A multi-agent pipeline with N agents typically issues N LLM calls per run. Merging agents into fewer calls (compound execution) promises token savings, but naively merged calls silently degrade quality through tool loss and prompt compression. We present Agent Capsules, an adaptive execution runtime that treats multi-agent pipeline execution as an optimization problem with empirical quality constraints. The runtime instruments coordination overhead per group, scores composition opportunity, selects among three compound execution strategies, and gates every mode switch on rolling-mean output quality. A controlled negative result confirms that injecting more context into a merged call worsens compression rather than relieving it, so the framework's escalation ladder (standard, then two-phase, then sequential) recovers quality by moving toward per-agent dispatch rather than by rewriting merged prompts. On LLM-judged quality, the controller matches a hand-tuned oracle on every measured (model, group, mode) cell: routing compound whenever the oracle would, and reverting to fine whenever quality would fail the floor, without per-model configuration. Against a hand-crafted LangGraph implementation of a 14-agent competitive intelligence pipeline, Agent Capsules uses 51% fewer fine-mode input tokens and 42% fewer compound-mode input tokens, at +0.020 and +0.017 quality respectively. Against a DSPy implementation of a 5-agent due diligence pipeline, the framework uses 19% fewer tokens than uncompiled DSPy at quality parity, and 68% fewer tokens than MIPROv2 at +0.052 quality. Even before compound mode fires, the runtime delivers efficiency through automatic policy resolution, cache-aligned prompts, and topology-aware context injection, matching both hand-tuned and compile-time baselines without training data or per-pipeline engineering.",
+      "url": "https://arxiv.org/abs/2605.00410",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8803
+    },
+    {
+      "id": "2605.00195",
+      "title": "Diversity in Large Language Models under Supervised Fine-Tuning",
+      "authors": [
+        "Roman Klypa",
+        "Oleksandr Cherednichenko"
+      ],
+      "abstract": "Supervised Fine-Tuning (SFT) is essential for aligning Large Language Models (LLMs) with user intent, yet it is believed to suppress generative diversity. Although this reduction is frequently referenced, formal empirical testing of the phenomenon remains limited. The expressiveness of LLMs by itself was addressed by multiple prior methods. Their varying perspectives suggest that deeper analysis could yield further improvements. In this study, we attribute the decline to two primary drivers: the neglect of low-frequency patterns within fine-tuning datasets and the forgetting of preexisting knowledge. Motivated by our theoretical analysis, we develop Tempered Focal (TOFU) loss, a novel objective that addresses both stated challenges simultaneously. Our extensive evaluation confirms at scale that generation breadth narrows after SFT and strengthens the hypothesis explaining this effect. Across multiple models and benchmarks, we demonstrate that TOFU enhances output diversity while preserving high response quality, offering a principled approach to SFT.",
+      "url": "https://arxiv.org/abs/2605.00195",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8802
+    },
+    {
+      "id": "2605.00551",
+      "title": "A11y-Compressor: A Framework for Enhancing the Efficiency of GUI Agent Observations through Visual Context Reconstruction and Redundancy Reduction",
+      "authors": [
+        "Michito Takeshita",
+        "Takuro Kawada",
+        "Takumi Ohashi",
+        "Shunsuke Kitada",
+        "Hitoshi Iyatomi"
+      ],
+      "abstract": "AI agents that interact with graphical user interfaces (GUIs) require effective observation representations for reliable grounding. The accessibility tree is a commonly used text-based format that encodes UI element attributes, but it suffers from redundancy and lacks structural information such as spatial relationships among elements. We propose A11y-Compressor, a framework that transforms linearized accessibility trees into compact and structured representations. Our implementation, Compressed-a11y, applies a lightweight and structured transformation pipeline with modal detection, redundancy reduction, and semantic structuring. Experiments on the OSWorld benchmark show that Compressed-a11y reduces input tokens to 22% of the original while improving task success rates by 5.1 percentage points on average.",
+      "url": "https://arxiv.org/abs/2605.00551",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8799
+    },
+    {
+      "id": "2605.00123",
+      "title": "Minimal, Local, Causal Explanations for Jailbreak Success in Large Language Models",
+      "authors": [
+        "Shubham Kumar",
+        "Narendra Ahuja"
+      ],
+      "abstract": "Safety trained large language models (LLMs) can often be induced to answer harmful requests through jailbreak prompts. Because we lack a robust understanding of why LLMs are susceptible to jailbreaks, future frontier models operating more autonomously in higher-stakes settings may similarly be vulnerable to such attacks. Prior work has studied jailbreak success by examining the model's intermediate representations, identifying directions in this space that causally encode concepts like harmfulness and refusal. Then, they globally explain all jailbreak attacks as attempting to reduce or strengthen these concepts (e.g., reduce harmfulness). However, different jailbreak strategies may succeed by strengthening or suppressing different intermediate concepts, and the same jailbreak strategy may not work for different harmful request categories (e.g., violence vs. cyberattack); thus, we seek to give a local explanation -- i.e., why did this specific jailbreak succeed? To address this gap, we introduce LOCA, a method that gives Local, CAusal explanations of jailbreak success by identifying a minimal set of interpretable, intermediate representation changes that causally induce model refusal on an otherwise successful jailbreak request. We evaluate LOCA on harmful original-jailbreak pairs from a large jailbreak benchmark across Gemma and Llama chat models, comparing against prior methods adapted to this setting. LOCA can successfully induce refusal by making, on average, six interpretable changes; prior work routinely fails to achieve refusal even after 20 changes. LOCA is a step toward mechanistic, local explanations of jailbreak success in LLMs. Code to be released.",
+      "url": "https://arxiv.org/abs/2605.00123",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8798
+    },
+    {
+      "id": "2605.00356",
+      "title": "MemRouter: Memory-as-Embedding Routing for Long-Term Conversational Agents",
+      "authors": [
+        "Tianyu Hu",
+        "Weikai Lin",
+        "Weizhi Zhang",
+        "Jing Ma",
+        "Song Wang"
+      ],
+      "abstract": "Long-term conversational agents must decide which turns to store in external memory, yet recent systems rely on autoregressive LLM generation at every turn to make that decision. We present MemRouter, a write-side memory router that decouples memory admission from the downstream answer backbone and replaces per-turn memory-management decoding with an embedding-based routing policy. MemRouter encodes each turn together with recent context, projects the resulting embeddings through a frozen LLM backbone, and predicts whether the turn should be stored using lightweight classification heads while training only 12M parameters. Under a controlled matched-harness comparison on LoCoMo, where the retrieval pipeline, answer prompts, and QA backbone (Qwen2.5-7B) are held identical, MemRouter outperforms an LLM-based memory manager on every question category (overall F1 52.0 vs 45.6, non-overlapping 95% CIs) while reducing memory-management p50 latency from 970ms to 58ms. Descriptive factorial averaging further shows that learned admission improves mean F1 by +10.3 over random storage, category-specific prompting adds +5.2 over a generic prompt, and retrieval contributes +0.7. These results suggest that write-side memory admission can be learned by a small supervised router, while answer generation remains a separate downstream component in long-horizon conversational QA.",
+      "url": "https://arxiv.org/abs/2605.00356",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8795
+    },
+    {
+      "id": "2605.00803",
+      "title": "Can Coding Agents Reproduce Findings in Computational Materials Science?",
+      "authors": [
+        "Ziyang Huang",
+        "Yi Cao",
+        "Ali K. Shargh",
+        "Jing Luo",
+        "Ruidong Mei",
+        "Mohd Zaki",
+        "Zhan Liu",
+        "Wyatt Bunstine",
+        "William Jurayj",
+        "Somdatta Goswami",
+        "Tyrel McQueen",
+        "Michael Shields",
+        "Jaafar El-Awady",
+        "Paulette Clancy",
+        "Benjamin Van Durme",
+        "Nicholas Andrews",
+        "William Walden",
+        "Daniel Khashabi"
+      ],
+      "abstract": "Large language models are increasingly deployed as autonomous coding agents and have achieved remarkably strong performance on software engineering benchmarks. However, it is unclear whether such success transfers to computational scientific workflows, where tasks require not only strong coding ability, but also the ability to navigate complex, domain-specific procedures and to interpret results in the context of scientific claims. To address this question, we present AutoMat, a benchmark for evaluating LLM-based agents' ability to reproduce claims from computational materials science. AutoMat poses three interrelated challenges: recovering underspecified computational procedures, navigating specialized toolchains, and determining whether the resulting evidence supports a claim. By working closely with subject matter experts, we curate a set of claims from real materials science papers to test whether coding agents can recover and execute the end-to-end workflow needed to support (or undermine) such claims. We then evaluate multiple representative coding agent settings across several foundation models. Our results show that current LLM-based agents obtain low overall success rates on AutoMat, with the best-performing setting achieving a success rate of only 54.1%. Error analysis further reveals that agents perform worst when workflows must be reconstructed from paper text alone and that they fail primarily due to incomplete procedures, methodological deviations, and execution fragility. Taken together, these findings position AutoMat as both a benchmark for computational scientific reproducibility and a tool for diagnosing the current limitations of agentic systems in AI-for-science settings.",
+      "url": "https://arxiv.org/abs/2605.00803",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8793
+    },
+    {
+      "id": "2605.00529",
+      "title": "Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation",
+      "authors": [
+        "Ziwen Zhao",
+        "Menglin Yang"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) enhances large language models with external knowledge, and tree-based RAG organizes documents into hierarchical indexes to support queries at multiple granularities. However, existing Tree-RAG methods designed for single-document retrieval face critical challenges in scaling to cross-document multi-hop questions: (1) poor distribution adaptability, where $k$-means clustering introduces noise due to rigid distribution assumptions; (2) structural isolation, as tree indexes lack explicit cross-document connections; and (3) coarse abstraction, which obscures fine-grained details. To address these limitations, we propose $Ψ$-RAG, a tree-RAG framework with two key components. First, a hierarchical abstract tree index built through an iterative \"merging and collapse\" process that adapts to data distributions without a priori assumption. Second, a multi-granular retrieval agent that intelligently interacts with the knowledge base with reorganized queries and an agent-powered hybrid retriever. $Ψ$-RAG supports diverse tasks from token-level question answering to document-level summarization. On cross-document multi-hop QA benchmarks, it outperforms RAPTOR by 25.9% and HippoRAG 2 by 7.4% in average F1 score. Code is available at https://github.com/Newiz430/Psi-RAG.",
+      "url": "https://arxiv.org/abs/2605.00529",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-05-01",
+      "github_url": "https://github.com/Newiz430/Psi-RAG.",
+      "score": 0.8793
+    },
+    {
+      "id": "2604.28028",
+      "title": "Reliable Answers for Recurring Questions: Boosting Text-to-SQL Accuracy with Template Constrained Decoding",
+      "authors": [
+        "Smit Jivani",
+        "Sarvam Maheshwari",
+        "Sunita Sarawagi"
+      ],
+      "abstract": "Large language models (LLMs) have revolutionized Text-to-SQL generation, allowing users to query structured data using natural language with growing ease. Yet, real-world deployment remains challenging, especially in complex or unseen schemas, due to inconsistent accuracy and the risk of generating invalid SQL. We introduce Template Constrained Decoding (TeCoD), a system that addresses these limitations by harnessing the recurrence of query patterns in labeled workloads. TeCoD converts historical NL-SQL pairs into reusable templates and introduces a robust template selection module that uses a fine-tuned natural language inference model to match or reject queries efficiently. Once the template is selected, TeCoD enforces it during SQL generation through grammar-constrained decoding, implemented via a novel partitioned strategy that ensures both syntactic validity and efficiency. Together, these components yield up to 36% higher execution accuracy than in-context learning (ICL) and 2.2x lower latency on matched queries.",
+      "url": "https://arxiv.org/abs/2604.28028",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DB",
+        "cs.IR"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8793
+    },
+    {
+      "id": "2604.28031",
+      "title": "Models Recall What They Violate: Constraint Adherence in Multi-Turn LLM Ideation",
+      "authors": [
+        "Garvin Kruthof"
+      ],
+      "abstract": "When researchers iteratively refine ideas with large language models, do the models preserve fidelity to the original objective? We introduce DriftBench, a benchmark for evaluating constraint adherence in multi-turn LLM-assisted scientific ideation. Across 2,146 scored benchmark runs spanning seven models from five providers (including two open-weight), four interaction conditions, and 38 research briefs from 24 scientific domains, we find that iterative pressure reliably increases structural complexity and often reduces adherence to original constraints. A restatement probe reveals a dissociation between declarative recall and behavioral adherence, as models accurately restate constraints they simultaneously violate. The knows-but-violates (KBV) rate, measuring constraint non-compliance despite preserved recall, ranges from 8% to 99% across models. Structured checkpointing partially reduces KBV rates but does not close the dissociation, and complexity inflation persists. Human validation against blind raters confirms that the LLM judge under-detects constraint violations, making reported constraint adherence scores conservative. Sensitivity analyses confirm the findings are robust to temperature (0.7 vs.\\ 1.0) and pressure type (novelty vs.\\ rigor). We release all briefs, prompts, rubrics, transcripts, and scores as an open benchmark.",
+      "url": "https://arxiv.org/abs/2604.28031",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8788
+    },
+    {
+      "id": "2605.00200",
+      "title": "Confidence Estimation in Automatic Short Answer Grading with LLMs",
+      "authors": [
+        "Longwei Cong",
+        "Sonja Hahn",
+        "Sebastian Gombert",
+        "Leon Camus",
+        "Hendrik Drachsler",
+        "Ulf Kroehne"
+      ],
+      "abstract": "Automatic Short Answer Grading (ASAG) with generative large language models (LLMs) has recently demonstrated strong performance without task-specific fine-tuning, while also enabling the generation of synthetic feedback for educational assessment. Despite these advances, LLM-based grading remains imperfect, making reliable confidence estimates essential for safe and effective human-AI collaboration in educational decision-making. In this work, we investigate confidence estimation for ASAG with LLMs by jointly considering model-based confidence signals and dataset-derived uncertainty. We systematically compare three model-based confidence estimation strategies, namely verbalizing, latent, and consistency-based confidence estimation, and show that model-based confidence alone is insufficient to reliably capture uncertainty in ASAG. To address this limitation, we propose a hybrid confidence framework that integrates model-based confidence signals with an explicit estimate of dataset-derived aleatoric uncertainty. Aleatoric uncertainty is operationalized by clustering semantically embedded student responses and quantifying within-cluster heterogeneity. Our results demonstrate that the proposed hybrid confidence measure yields more reliable confidence estimates and improves selective grading performance compared to single-source approaches. Overall, this work advances confidence-aware LLM-based grading for human-in-the-loop assessment, supporting more trustworthy AI-assisted educational assessment systems.",
+      "url": "https://arxiv.org/abs/2605.00200",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8784
+    },
+    {
+      "id": "2605.00199",
+      "title": "RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners",
+      "authors": [
+        "Jugal Gajjar",
+        "Kamalasankari Subramaniakuppusamy"
+      ],
+      "abstract": "When a language model answers a table question, users have no way to verify which cells informed which reasoning steps. We introduce RSAT, a method that trains small language models (SLMs, 1-8B) to produce step-by-step reasoning with cell-level citations grounded in table evidence. Phase 1 (SFT) teaches a structured JSON output format from verified reasoning traces. Phase 2 (GRPO) optimizes a composite reward centered on NLI-based faithfulness, alongside citation validity and parsimony. Across six models from two families-Qwen 2.5 (1.5B/3B/7B) and Llama 3 (1B/3B/8B)-RSAT improves faithfulness 3.7$\\times$ over SFT alone (0.224$\\rightarrow$0.826), with near-perfect citation validity (0.992). Post-hoc attribution collapses below 13% format success, confirming that attribution must be integrated into reasoning, not retrofitted. Ablations show the faithfulness reward is essential: removing it drops faithfulness from 0.97 to 0.03.",
+      "url": "https://arxiv.org/abs/2605.00199",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-30",
+      "score": 0.8782
+    },
+    {
+      "id": "2605.00631",
+      "title": "H-RAG at SemEval-2026 Task 8: Hierarchical Parent-Child Retrieval for Multi-Turn RAG Conversations",
+      "authors": [
+        "Passant Elchafei",
+        "Hossam Emam",
+        "Mohamed Alansary",
+        "Monorama Swain",
+        "Markus Schedl"
+      ],
+      "abstract": "We present H-RAG, our submission to SemEval-2026 Task 8 (MTRAGEval), addressing both Task A (Retrieval) and Task C (Generation with Retrieved Passages). Task A evaluates standalone retrieval quality, while Task C assesses end-to-end retrieval-augmented generation (RAG) in multi-turn conversational settings, requiring both accurate answer generation and faithful grounding in retrieved evidence. Our approach implements a hierarchical parent-child RAG pipeline that separates fine-grained child-level retrieval from parent-level context reconstruction during generation. Documents are segmented into overlapping sentence-based child chunks, while full documents are preserved as parent units to provide coherent context. Retrieval combines hybrid dense-sparse search, tunable weighting, and embedding-based similarity rescoring over child chunks. Retrieved evidence is aggregated at the parent level and supplied to an instruction-tuned language model for response generation. H-RAG achieves an nDCG@5 score of 0.4271 on Task A and a harmonic mean score of 0.3241 on Task C (RB_agg: 0.2488, RL_F: 0.2703, RB_llm: 0.6508), underscoring the importance of retrieval configuration and parent-level aggregation in multi-turn RAG performance.",
+      "url": "https://arxiv.org/abs/2605.00631",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.8769
+    },
+    {
+      "id": "2605.00817",
+      "title": "When LLMs Stop Following Steps: A Diagnostic Study of Procedural Execution in Language Models",
+      "authors": [
+        "Sailesh Panda",
+        "Pritam Kadasi",
+        "Abhishek Upperwal",
+        "Mayank Singh"
+      ],
+      "abstract": "Large language models (LLMs) often achieve strong performance on reasoning benchmarks, but final-answer accuracy alone does not show whether they faithfully execute the procedure specified in a prompt. We study this question through a controlled diagnostic benchmark for procedural execution, where models are given a step-wise arithmetic algorithm and two numeric inputs, and must return the final computed value. The benchmark uses simple arithmetic operations but increases complexity through algorithm length and look-back dependencies over intermediate variables. Across 14 models and 55 datasets, average first-answer accuracy drops from 61% on 5-step procedures to 20% on 95-step procedures. Generation-level analysis shows that failures often involve missing answers, premature answers, self-correction after an initial error, under-executed traces, and hallucinated extra steps. These findings suggest that apparent reasoning ability can mask substantial weaknesses in faithful instruction execution.",
+      "url": "https://arxiv.org/abs/2605.00817",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-01",
+      "score": 0.876
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 294,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "date": "2026-06-10",
+  "collected_at": "2026-06-10T13:20:32.504290+09:00",
+  "papers": [
+    {
+      "id": "2606.10875",
+      "title": "Pushing the Limits of LLM Tool Calling via Experiential Knowledge Integration and Activation",
+      "authors": [
+        "Yupu Hao",
+        "Zhuoran Jin",
+        "Huanxuan Liao",
+        "Kang Liu",
+        "Jun Zhao"
+      ],
+      "abstract": "Large language models (LLMs) rely on tool use to act as autonomous agents, yet often fail in multi-step execution due to insufficient tool-related knowledge and ineffective knowledge activation. Therefore, we present a systematic study on how knowledge influences tool-use performance, covering the stages of knowledge acquisition, activation, and internalization. In the knowledge acquisition stage, we acquire and evaluate various forms of experiential knowledge, and our analysis shows that simple instance-level knowledge can already provide strong and reliable gains, while abstract intent-level knowledge offers limited benefits. At inference time, to activate knowledge, we find that prompting LLM to expand the depth of reasoning yields diminishing returns, whereas expanding the width of reasoning by parallel sampling with aggregation more effectively activates latent experiential knowledge. At training time, for knowledge internalization, post-training with knowledge-augmented data further improves performance, with reinforcement learning outperforming supervised fine-tuning. Based on these insights, we propose the Knowledge-Augmented Tool Execution (KATE), a knowledge-augmented tool execution framework that integrates experiential knowledge with reasoning-width-expanded inference and knowledge-aware training. Experiments on BFCL-V3 and AppWorld demonstrate consistent and substantial improvements over strong baselines across model scales. Our Code is available at https://github.com/hypasd-art/KATE.",
+      "url": "https://arxiv.org/abs/2606.10875",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "github_url": "https://github.com/hypasd-art/KATE.",
+      "score": 0.8944
+    },
+    {
+      "id": "2606.10956",
+      "title": "Mind the Gap: Can Frontier LLMs Pass a Standardized Office Proficiency Exam?",
+      "authors": [
+        "Tengchao Lv",
+        "Dongdong Zhang",
+        "Jiayu Ding",
+        "Yilin Jia",
+        "Yuzhong Zhao",
+        "Yupan Huang",
+        "Wenshan Wu",
+        "Xiangyang Zhou",
+        "Shaohan Huang",
+        "Nan Yang",
+        "Li Dong",
+        "Lei Cui",
+        "Furu Wei"
+      ],
+      "abstract": "The deployment of Large Language Model (LLM) agents for computer automation is accelerating, yet their ability to navigate complex, professional-grade productivity software is largely untested. We argue that Office automation is an ideal environment for benchmarking document-automation capability, as it requires long-horizon planning and reasoning, precise parameter configuration, and multi-application integration. To quantify this capability, we introduce an evaluation based on China's National Computer Rank Examination (NCRE), featuring 200 comprehensive practical-operation tasks across Word, Excel, and PowerPoint. Each task is scored on a 100-point rubric scale using 7,118 machine-gradable criteria, and Score Rate (SR) denotes the mean percentage of rubric points earned across these tasks. We benchmark 7 frontier LLMs and observe stark limitations: single-turn models score a maximum of 36.6%. A stronger agentic system with execution feedback, iterative repair, and broader Office automation access reaches 68.8%, but remains below the 95.5% community-reference score used as a scoring sanity check. Ultimately, our experiments demonstrate that despite recent advancements in code generation, achieving reliable fine-grained Office document automation remains a significant challenge for current code-generating LLM and agent systems.",
+      "url": "https://arxiv.org/abs/2606.10956",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8903
+    },
+    {
+      "id": "2606.10646",
+      "title": "How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs",
+      "authors": [
+        "Zhichen Dong",
+        "Yang Li",
+        "Yuhan Sun",
+        "Weixun Wang",
+        "Yijia Luo",
+        "Zinian Peng",
+        "Taiheng Ye",
+        "Chao Yang",
+        "Wenbo Su",
+        "Yu Cheng",
+        "Bo Zheng",
+        "Junchi Yan"
+      ],
+      "abstract": "Token-level credit assignment remains a key obstacle for reinforcement learning (RL) in large language models (LLMs), where RL recipes typically treat all tokens equally, failing to distinguish decisive reasoning steps from routine formatting or fluent filler. Recent attempts leverage model-internal signals to assign finer-grained credit, but these are often point-wise heuristics that ignore the global structure of information propagation. We propose FlowTracer, an RL framework that traces answer-targeted reasoning flow on an attention-induced directed acyclic graph in which nodes correspond to tokens and edge capacities come from aggregated attention weights and derives token credit from this global structure. The edge capacities are reweighted to retain only the influence that can reach the answer region, while enforcing local flow conservation so intermediate tokens neither lose nor gain effective mass due to path length or irrelevant branches. On this graph, FlowTracer extracts an information-flow backbone connecting the question to the answer and scores tokens by flow throughput, revealing high-impact hubs and aggregation checkpoints that mediate long-range dependencies. These derived importances are used to shape token-level rewards, enabling learning signals to focus precisely on the tokens that route information toward (or away from) correct answers and delivering consistent performance gains across a range of reasoning tasks.",
+      "url": "https://arxiv.org/abs/2606.10646",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8888
+    },
+    {
+      "id": "2606.10394",
+      "title": "STAGE-Claw: Automated State-based Agent Benchmarking for Realistic Scenarios",
+      "authors": [
+        "Sirui Liang",
+        "Bohan Yu",
+        "Peiyu Wang",
+        "Shiguang Guo",
+        "Wenxing Hu",
+        "Pengfei Cao",
+        "Jian Zhao",
+        "Cao Liu",
+        "Ke Zeng",
+        "Xunliang Cai",
+        "Kang Liu"
+      ],
+      "abstract": "Large language models are increasingly used to power personal agents for everyday applications, but evaluating these agents remains a challenge. Existing benchmarks still rely on sandboxed artifacts, static task design, and coarse scoring, which hinder scalability and limit progress toward reliable personal-agent evaluation. This paper introduces STAGE-Claw, an automated framework for building and evaluating realistic personal-agent scenarios in state-based personal-computing environments. Given a task hint, STAGE-Claw automatically creates and validates a realistic benchmark task with its environment, task prompts, ground truth, and related verification programs. Agents are then evaluated in realistic operating environments, where performance is measured by the correctness of the final system state rather than only the textual response. Using STAGE-Claw, this paper creates a benchmark with 40 challenging real scenario agent tasks, evaluates 11 frontier models, and analyzes their task scores, costs, tool-call reliability, and common failure patterns. Overall, STAGE-Claw offers a scalable, state-based way to evaluate agents in realistic user scenarios.",
+      "url": "https://arxiv.org/abs/2606.10394",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8881
+    },
+    {
+      "id": "2606.10388",
+      "title": "SkillResolve-Bench: Measuring and Resolving Same-Capability Ambiguity in Agent Skill Retrieval",
+      "authors": [
+        "Jiandong Ding"
+      ],
+      "abstract": "Agent skill libraries are becoming routable software assets: a retrieved skill can contribute instructions, scripts, resource bindings, and execution assumptions to an agent. This makes skill retrieval more than broad relevance matching. A retriever can find the right capability family yet expose the wrong same-capability representative. We study this failure as same-capability execution-risk retrieval. Each query pairs a helpful skill with a query-specific risky sibling that shares the capability family but can lead execution toward a stale resource, missing precondition, or wrong procedure. We introduce SkillResolve-Bench 1.0, an auditable benchmark for this setting with 661 helpful/risky pairs, source-role and admission evidence, cue/leakage checks, query-disjoint splits, and a 7,982-candidate pool that includes 6,660 public SkillRet candidates. The benchmark reports helpful ranking together with harmful sibling rate (HSR@K), the top-K exposure of the risky sibling. We also provide SkillResolve, a reference method that resolves active candidate families, scores query-conditioned utility from confusable library negatives and contract-profile cues, and selects one representative from each family before the final top-K list. Under the released family relation, SkillResolve reaches Recall@3 0.766 and NDCG@3 0.699 while keeping HSR@3=0. It improves over SkillRouter by 0.112 Recall@3 and 0.165 NDCG@3 while reducing HSR@3 from 0.693 to 0. Without representative selection, HSR@3 rises to 0.236 under the same scorer, identifying within-family representative choice as the mechanism that turns capability retrieval into safer procedural exposure.",
+      "url": "https://arxiv.org/abs/2606.10388",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8881
+    },
+    {
+      "id": "2606.10460",
+      "title": "LakeQA: An Exploratory QA Benchmark over a Million-Scale Data Lake",
+      "authors": [
+        "Haonan Wang",
+        "Jiaxiang Liu",
+        "Yurong Liu",
+        "Austin Senna Wijaya",
+        "Tianle Zhou",
+        "Eden Wu",
+        "Yijia Chen",
+        "Wanting You",
+        "Reya Vir",
+        "Daniela Pinto",
+        "Grace Fan",
+        "Yusen Zhang",
+        "Juliana Freire",
+        "Eugene Wu"
+      ],
+      "abstract": "Recent large language models (LLMs) have shown rapid progress in reading-based question answering (QA), where evidence is explicitly provided or can be trivially retrieved. In contrast, real-world questions are often not paired with accurate evidence documents. The useful evidence resides in massive data lakes, making search a prerequisite for answering. However, there is a lack of comprehensive benchmarks that require both searching and reasoning over large data lakes. To this end, we introduce LakeQA, a comprehensive benchmark for search-centric question answering over data lakes that jointly emphasizes searching and reasoning capabilities. LakeQA is built on a heterogeneous collection of approximately 9.5 TB of text resources from Wikipedia and open-source government data, spanning structured and unstructured data. To ensure task quality, each sample is annotated by at least one Ph.D.-level expert. Each task requires long-horizon multi-hop reasoning with implicit intermediate steps: agents need to discover the correct documents and then compose evidence across sources to produce the answer. Experimental results on seven frontier LLMs demonstrate that LakeQA is challenging. For instance, GPT-5.2 achieves only an exact-match score of 18.37% on LakeQA. Overall, LakeQA provides a realistic testbed for developing LLM agents that can both find and analyze data in modern data lakes.",
+      "url": "https://arxiv.org/abs/2606.10460",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8878
+    },
+    {
+      "id": "2606.11045",
+      "title": "What Fits (Into Few Tokens) Doesn't Overfit: Compression and Generalization in ML Research Agents",
+      "authors": [
+        "Martin Andres Bertran",
+        "Aaron Roth",
+        "Zhiwei Steven Wu"
+      ],
+      "abstract": "Reusing a held-out benchmark adaptively should, in principle, invite overfitting. Yet benchmark-driven machine learning (ML) has produced surprisingly little overfitting in practice. An attractive hypothesis is that successful ML strategies are highly compressible. We study this in the setting of LLM-driven research agents, where the hypothesis becomes directly testable via two complementary information bottlenecks. In \\emph{output compression}, an exploration agent adaptively searches for high-performance models using a validation set, and we test whether a fresh ``reproducer agent'' can reproduce its performance given only an extremely short prompt and the training data. In \\emph{input compression}, the explorer receives only one-bit feedback indicating whether each submitted model improves on the running best. Across 8 datasets spanning tabular classification, vision, language modeling, diffusion modeling, and reward modeling, we find that these bottlenecks have little effect on performance: short prompts and compressible feedback are sufficient to reproduce and find high-performance models. The hypothesis is falsifiable: when we deliberately induce validation-set overfitting, the results fail to reproduce with short prompts. Taken together, our results support a description-length explanation for the lack of overfitting in benchmark-driven ML: successful strategies occupy a low-complexity region of strategy space.",
+      "url": "https://arxiv.org/abs/2606.11045",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8877
+    },
+    {
+      "id": "2606.10684",
+      "title": "Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals",
+      "authors": [
+        "Jaewan Park",
+        "Solbee Cho",
+        "Jay-Yoon Lee"
+      ],
+      "abstract": "Modern language agents which perform multi-step reasoning have shown strong performance in knowledge-intensive question answering. However, existing approaches typically couple evidence acquisition and answer generation within a single policy. This forces a single model to play multiple potentially conflicting roles, inducing a combinatorial explosion in the policy space and hindering efficient exploration. It also introduces a credit assignment problem during training: a search action that retrieves sufficient evidence may still be penalized when generation fails, and vice versa. We propose DAC (Divide and Cooperate), a role-decomposed multi-agent training framework that divides agentic search into two cooperative subtasks, each handled by a dedicated agent trained with role-specific learning signals. The generator serves a dual role as both an answer producer and an evidence sufficiency verifier, abstaining when retrieved evidence is insufficient. This abstention signal is incorporated into the search agent's reward, providing structured cross-agent learning signals that improve credit assignment. Conversely, the searcher exposes the generator to diverse and challenging evidence environments by hard-positive evidence augmentation, improving its robustness. Experiments on general and multi-hop QA benchmarks show that DAC, implemented via parameter-efficient LoRA modules over a shared backbone, achieves strong performance against prior baselines that rely on full fine-tuning of monolithic models.",
+      "url": "https://arxiv.org/abs/2606.10684",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8877
+    },
+    {
+      "id": "2606.10616",
+      "title": "Learning What to Remember: Observability-Safe Memory Retention via Constrained Optimization for Long-Horizon Language Agents",
+      "authors": [
+        "Qingcan Kang",
+        "Liu Mingyang",
+        "Shixiong Kai",
+        "Kaichao Liang",
+        "Tao Zhong",
+        "Mingxuan Yuan"
+      ],
+      "abstract": "Long-horizon language agents accumulate observations, reasoning traces, and retrieved facts that exceed their finite context windows, making memory retention a fundamental resource-allocation problem. Existing memory systems improve management through heuristic scoring, retrieval optimization, or learned compression, but largely treat retention as a local decision problem and do not explicitly model its long-term consequences under realistic observability constraints. To fill this gap, we formulate memory retention as a constrained stochastic optimization problem with explicit budget feasibility, evidence utility, and delayed costs including miss penalties, reacquisition delays, and stale-information risk. We then propose OSL-MR (Observability-Safe Learning for Memory Retention), a novel framework that enforces a strict separation between online-observable features and offline-available supervision (OAS). OSL-MR combines an evidence learner trained from realized evidence supervision with a Mixed-Score heuristic that serves both as a deployable online-safe baseline and as a structured inductive prior for learning. The resulting policy learns query-conditioned evidence value directly from interaction data while remaining deployable under the same observability constraints. Experiments on LOCOMO and LongMemEval show that OSL-MR consistently outperforms recency-based methods, Generative Agents-style scoring, and other heuristic baselines, particularly under tight memory budgets. The Mixed-Score prior further improves precision while preserving recall, and sensitivity analysis demonstrates robustness across a wide range of cost configurations.",
+      "url": "https://arxiv.org/abs/2606.10616",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8876
+    },
+    {
+      "id": "2606.10931",
+      "title": "It Takes One to Bias Them All: Breaking Bad with One-Shot GRPO",
+      "authors": [
+        "Naihao Deng",
+        "Yilun Zhu",
+        "Naichen Shi",
+        "Clayton Scott",
+        "Rada Mihalcea"
+      ],
+      "abstract": "Warning: This paper contains several toxic and offensive statements.\n  Modern large language models (LLMs) are typically aligned through large-scale post-training to ensure fair and reliable behavior. In this work, we investigate how easily such guardrails can be broken by Group Relative Policy Optimization (GRPO). We show that one-shot GRPO training on a single biased example is sufficient to induce systematic bias, with stereotype-driven reasoning generalizing across attributes, categories, and benchmarks. We further find that models differ in their susceptibility based on the initial likelihood of producing biased outputs. Our results reveal a critical vulnerability in post-training: alignment can be overridden by a single example.",
+      "url": "https://arxiv.org/abs/2606.10931",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8871
+    },
+    {
+      "id": "2606.10554",
+      "title": "Benchmarking Knowledge Editing using Logical Rules",
+      "authors": [
+        "Tatiana Moteu Ngoli",
+        "NDah Jean Kouagou",
+        "Hamada M. Zahera",
+        "Axel-Cyrille Ngonga Ngomo"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly deployed in real-world applications that require access to up-to-date knowledge. However, retraining LLMs is computationally expensive. Therefore, knowledge editing techniques are crucial for maintaining current information and correcting erroneous assertions within pre-trained models. Current benchmarks for knowledge editing primarily focus on recalling edited facts, often neglecting their logical consequences. To address this limitation, we introduce a new benchmark designed to evaluate how knowledge editing methods handle the logical consequences of a single fact edit. Our benchmark extracts relevant logical rules from a knowledge graph for a given edit. Then, it generates multi-hop questions based on these rules to assess the impact on logical consequences. Our findings indicate that while existing knowledge editing approaches can accurately insert direct assertions into LLMs, they frequently fail to inject entailed knowledge. Specifically, experiments with popular methods like ROME and FT reveal a substantial performance gap, up to 24%, between evaluations on directly edited knowledge and on entailed knowledge. This highlights the critical need for semantics-aware evaluation frameworks in knowledge editing.",
+      "url": "https://arxiv.org/abs/2606.10554",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8862
+    },
+    {
+      "id": "2606.10694",
+      "title": "REAL: A Reasoning-Enhanced Graph Framework for Long-Term Memory Management of LLMs",
+      "authors": [
+        "Keer Lu",
+        "Liwei Chen",
+        "Guoqing Jiang",
+        "Zhiheng Qin",
+        "Yunhuai Liu",
+        "Wentao Zhang"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly expected to interact with users over long time horizons. However, due to their finite context window, LLMs cannot retain all past interactions, making long-term memory management essential for storing, updating, and retrieving historical information beyond the context limit. Although recent memory systems attempt to address this issue by storing historical information externally, existing approaches suffer from three key limitations: flat text-based memory organizations fail to capture explicit relations among memories, structured memory systems often destructively overwrite evolving facts, and current retrieval mechanisms remain query-agnostic and passive when evidence is incomplete. REAL constructs long-term conversational memory as a temporal and confidence-aware directed property graph, where each atomic fact is represented with entities, relations, valid-time intervals, confidence scores, and exploration intent labels. During memory construction, REAL adopts a non-destructive temporal update strategy that preserves parallel fact versions and their validity intervals, enabling faithful tracking of fact evolution. During retrieval, REAL anchors query-relevant root entities, decouples their exploration intents, and performs semantic evaluator-guided hybrid beam search to extract compact memory subgraphs. It further incorporates counterfactual inference to repair unreliable retrieval states and recover missing memory evidence through implicit logical relations. Comprehensive experiments demonstrate that REAL substantially improves long-term memory performance over flat-text, graph-based, and existing memory baselines, achieving an average improvement of 22.72\\%.",
+      "url": "https://arxiv.org/abs/2606.10694",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8855
+    },
+    {
+      "id": "2606.10917",
+      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
+      "authors": [
+        "Xucong Wang",
+        "Ziyu Ma",
+        "Shidong Yang",
+        "Tongwen Huang",
+        "Pengkun Wang",
+        "Yong Wang",
+        "Xiangxiang Chu"
+      ],
+      "abstract": "Although Large Language Model (LLM) agents have demonstrated strong performance on complex tasks, their learning is often limited by inefficient interaction feedback and static training environments, which hinder broader generalization. To address these limitations, this paper introduces Role-Agent, \\textcolor{black}{a framework} that harnesses a single LLM to function concurrently as both the agent and the environment, enabling a bootstrapped co-evolution. Role-Agent comprises two synergistic components: World-In-Agent (WIA) and Agent-In-World (AIW). In WIA, the LLM acts as the agent and predicts future states after each action; the alignment between predicted and actual states is then used as a process reward, encouraging environment-aware reasoning. In AIW, the LLM analyzes failure modes from failed trajectories and retrieves tasks with similar failure patterns, thereby reshaping the training data distribution for targeted practice. Experiments on multiple benchmarks show that Role-Agent consistently improves performance, yielding an average gain of over 4\\% over strong baselines.",
+      "url": "https://arxiv.org/abs/2606.10917",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8849
+    },
+    {
+      "id": "2606.11164",
+      "title": "ReasonAlloc: Hierarchical Decoding-Time KV Cache Budget Allocation for Reasoning Models",
+      "authors": [
+        "Wenhao Liu",
+        "Hao Shi",
+        "Yunhe Li",
+        "Weizhi Fei",
+        "Xiangyuan Wang",
+        "Mengzhe Ruan",
+        "Hanxu Hou",
+        "Peisong Wang",
+        "Linqi Song",
+        "Shuang Qiu"
+      ],
+      "abstract": "Long chain-of-thought (CoT) trajectories in large language model (LLM) reasoning cause severe inference bottlenecks due to rapid key-value (KV) cache growth. Current decoding-time compression methods mitigate this issue via token eviction, but typically assume a uniform budget distribution across all layers and heads. In contrast, existing non-uniform budget allocation methods are predominantly designed for the static prompt prefill phase, and they do not capture the stepwise context demands of autoregressive reasoning. To bridge this gap, we propose ReasonAlloc, a training-free framework that recasts decoding-time KV compression as a hierarchical budget allocation problem. ReasonAlloc operates at two complementary levels: an offline layer-wise preallocation strategy captures an architecture-driven demand pattern which we call ``\\textit{Reasoning Wave}'', while an online head-wise strategy reallocates resources during decoding to information-rich heads based on real-time utility. Evaluations on mathematical reasoning benchmarks (MATH-500, AIME~2024) using DeepSeek-R1-Distill-Llama-8B, DeepSeek-R1-Distill-Qwen-14B, and AceReason-14B show that ReasonAlloc outperforms uniform-budget R-KV, SnapKV, and Pyramid-RKV (a baseline enforcing a static, monotonically decreasing layer budget), with the largest gains at small budgets (128-512 tokens). ReasonAlloc is plug-and-play with existing token-eviction policies and introduces negligible inference-time overhead.",
+      "url": "https://arxiv.org/abs/2606.11164",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8848
+    },
+    {
+      "id": "2606.11172",
+      "title": "Predicting Future Behaviors in Reasoning Models Enables Better Steering",
+      "authors": [
+        "Evgenii Kortukov",
+        "Piotr Komorowski",
+        "Florian Klein",
+        "Paula Engl",
+        "Gabriele Sarti",
+        "Seong Joon Oh",
+        "Sebastian Lapuschkin",
+        "Wojciech Samek"
+      ],
+      "abstract": "Deployed large reasoning models (LRMs) often behave unexpectedly. Test-time steering controls LRM outputs by intervening on their hidden representations, but it can degrade output quality. We argue that prior steering work implicitly relies on internal features that detect behavior in already generated text. We show that these detection features are poor predictors of future behavioral outcomes, and thus not the natural intervention target. Instead, we train activation probes to predict future behavior likelihoods from intermediate reasoning steps. These probes predict the most likely behavior with 64%-91% accuracy, revealing a separate type of internal prediction features. Building on these prediction features, we introduce a text-level steering method, Future Probe Controlled Generation. FPCG samples multiple candidate sentences and chooses the best one according to a probe predicting the future behavior likelihood. This enables steering with almost no output quality degradation. FPCG also enables steering in several evaluations where activation steering fails. These results show that distinguishing detection and prediction features enables a more nuanced approach to controlling LRM behaviors.",
+      "url": "https://arxiv.org/abs/2606.11172",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8839
+    },
+    {
+      "id": "2606.10921",
+      "title": "Trace Only What You Need: Structure-Aware On-Demand Hypergraph Memory for Long-Document Question Answering",
+      "authors": [
+        "Xiangjun Zai",
+        "Xingyu Tan",
+        "Chen Chen",
+        "Xiaoyang Wang",
+        "Wenjie Zhang"
+      ],
+      "abstract": "Long-document question answering (QA) requires large language models (LLMs) to reason over evidence scattered across lengthy documents, where answers often depend on event order, section-level context, and cross-part evidence connections. Although retrieval-augmented generation (RAG) reduces the input context by retrieving relevant evidence, existing structured RAG methods still face three limitations: costly query-agnostic knowledge organization, insufficient use of original document structure, and no reuse of historical reasoning experience. To address these limitations, we propose DocTrace, a multi-agent RAG framework for long-document QA that supports query-triggered knowledge organization, document-structure-aware and experience-guided reasoning. DocTrace preserves document hierarchy with a lightweight document structural tree index, constructs agent-shared hypergraph-structured working memory on demand during reasoning, and stores successful reasoning plans in graph-structured experience memory for future reuse, enabling adaptive exploration across related long-document questions. Experiments on four long-document QA datasets show that DocTrace achieves the best performance on three datasets, surpassing the strongest baseline, ComoRAG, by up to 8.85% in F1 and 4.40% in EM, while reducing the overall computational cost by 53.32%",
+      "url": "https://arxiv.org/abs/2606.10921",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8819
+    },
+    {
+      "id": "2606.10385",
+      "title": "Beyond Absolute Imitation: Anchored Residual Guidance for Privileged On-Policy Distillation",
+      "authors": [
+        "Wenhao Zhang"
+      ],
+      "abstract": "On-policy distillation (OPD) has demonstrated strong empirical gains in enhancing complex reasoning in LLMs by aligning a student model with a teacher's predictive distribution over the student's own trajectories. An emerging variant, Privileged OPD, further strengthens this paradigm by employing a self-teacher model augmented with privileged information, such as oracle traces, to mitigate teacher-student capacity gaps while providing dense, answer-directed supervision. However, current methods treat privileged information as a monolithic imitation target, failing to disentangle locally reachable reasoning steps from future-conditioned oracle signals. Consequently, the student is encouraged to match a hindsight-biased distribution that often falls outside its local predictive support. This reachability mismatch incentivizes the student model to skip valid intermediate reasoning in favor of locally unsupported shortcuts. To resolve this, we introduce Anchored Residual On-Policy Distillation (AR-OPD), a dual-view framework that disentangles privileged supervision. Rather than enforcing strict full-view imitation, AR-OPD establishes a locally compatible anchor using a partially privileged teacher, isolating and injecting oracle foresight as a controlled residual to provide destination-directed guidance. Across diverse reasoning tasks, AR-OPD outperforms full privileged OPD by 2.3 points and SFT by 7.9 points. Crucially, this anchored residual mechanism reduces hindsight leakage by 21.7% and mitigates late-stage drift, yielding up to a 7.2-point advantage on challenging long-horizon trajectories exceeding 768 tokens.",
+      "url": "https://arxiv.org/abs/2606.10385",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8819
+    },
+    {
+      "id": "2606.10768",
+      "title": "N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization",
+      "authors": [
+        "Xukun Zhu",
+        "Hang Yu",
+        "Peng Di",
+        "Linchao Zhu"
+      ],
+      "abstract": "The success of Large Language Models in mathematical reasoning relies heavily on the generation of diverse and valid solution paths during the rollout phase. However, current rollout techniques face a fundamental trade-off: token-level sampling often yields redundant trajectories that differ only in rephrasing, while embedding-level methods utilizing random noise frequently disrupt semantic consistency. To resolve this, we introduce N-GRPO, a novel exploration strategy integrated into the Group Relative Policy Optimization (GRPO) framework. Rather than relying on token-level sampling or native embedding-level noise, our approach leverages Semantic Neighbor Mixing. This mechanism dynamically constructs input representations by mixing the embeddings of an anchor token and its nearest semantic neighbors, thereby injecting diversity while strictly adhering to the local semantic manifold. Experimental evaluations on the DeepSeek-R1-Distill-Qwen models across different sizes show that N-GRPO not only achieves consistent improvements over strong baselines on math reasoning benchmarks but also exhibits robust generalization capabilities on out-of-distribution tasks.",
+      "url": "https://arxiv.org/abs/2606.10768",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8812
+    },
+    {
+      "id": "2606.11105",
+      "title": "PhantomBench: Benchmarking the Non-existential Threat of Language Models",
+      "authors": [
+        "Haeji Jung",
+        "Hila Gonen"
+      ],
+      "abstract": "Hallucinations, where language models (LMs) generate factually ungrounded responses, pose serious risks, as users tend to blindly rely on them. This is particularly concerning in high-stakes domains, where consequences of such model behavior can lead to significant harms. Despite notable progress in understanding hallucinations, it remains unclear how reliably these models can recognize the limits of their knowledge. We introduce PhantomBench, the first large-scale benchmark of its kind, comprising more than 60K non-existent terms and entities derived from real concepts across diverse domains. Using our benchmark, we evaluate a total of 21 models of various types and sizes. We show staggering hallucination rates across the board (with average rates as high as 86.7% in some cases), and note that even frontier models surprisingly fail to abstain on non-existent concepts, especially when the input presumes their existence. We then show that PhantomBench can serve as a proxy for studying model behavior on rare concepts for which models are more prone to hallucinate. We also provide a pipeline to construct PhantomBench, enabling scalable generation of non-existent concepts tailored to the specific needs of researchers and practitioners.",
+      "url": "https://arxiv.org/abs/2606.11105",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8809
+    },
+    {
+      "id": "2606.11166",
+      "title": "Flaws in the LLM Automation Narrative",
+      "authors": [
+        "George Perrett",
+        "Javae Elliott",
+        "Jennifer Hill",
+        "Marc Scott"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly described as performing at the level of human experts on knowledge economy tasks. These claims are primarily based on how LLMs perform on benchmarking tasks that measure average performance across standardized datasets. Primary limitations of many benchmarking tasks are that they often measure performance based on content directly included in LLM training data, and they frequently do not assess the reliability of LLM performance or the magnitude of LLM errors. However, in high stakes contexts, these qualities are critically important. Through a novel LLM benchmarking task that requires writing computer code to complete a data analysis task, we compare the performance of a frontier LLM against submissions from human experts and explicitly measure the variance of responses and the magnitude of errors. Our study reveals that the human experts perform better on average on a range of metrics and demonstrate less variability in performance. Our results provide evidence that LLMs do not consistently perform at the level of human experts and demonstrate the importance of measuring variance and assessing error magnitude in LLM benchmark evaluations.",
+      "url": "https://arxiv.org/abs/2606.11166",
+      "categories": [
+        "stat.OT",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8806
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

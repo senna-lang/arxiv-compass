@@ -1,0 +1,403 @@
+{
+  "date": "2026-05-14",
+  "collected_at": "2026-05-14T12:59:26.325777+09:00",
+  "papers": [
+    {
+      "id": "2605.13165",
+      "title": "STOP: Structured On-Policy Pruning of Long-Form Reasoning in Low-Data Regimes",
+      "authors": [
+        "Chenjun Xu",
+        "Zhennan Zhou",
+        "Zhan Su",
+        "Bill Howe",
+        "Lucy Lu Wang",
+        "Bingbing Wen"
+      ],
+      "abstract": "Long chain-of-thought (Long CoT) reasoning improves performance on multi-step problems, but it also induces overthinking: models often generate low-yield reasoning that increases inference cost and latency. This inefficiency is especially problematic in low-data fine-tuning regimes, where real applications adapt reasoning models with limited supervision and cannot rely on large-scale teacher distillation or heavy test-time control. To address this, we propose STOP (Structured On-policy Pruning), an on-policy algorithm for analyzing and pruning long-form reasoning traces. STOP constructs self-distilled traces from the model. Then it maps each trace into a structured reasoning interface through node segmentation, taxonomy annotation, and reasoning-tree construction. On top of this interface, we introduce ECN (Earliest Correct Node), which retains the shortest prefix ending at the earliest node that both functions as an answering conclusion and yields the correct final answer, removing redundant post-solution reasoning while preserving semantic continuity. Experiments on DeepSeek-R1-Distill-Qwen-7B and DeepSeek-R1-Distill-LLaMA-3-8B across GSM8K, Math 500, and AIME 2024 show that STOP reduces generated tokens by 19.4-42.4% while largely preserving accuracy in low-data fine-tuning. Beyond efficiency, our analyses show that STOP induces much smaller distributional shift than teacher-guided pruning, improves the structural efficiency of generated reasoning, and reallocates reasoning effort away from redundant verification and backtracking toward more productive exploration.",
+      "url": "https://arxiv.org/abs/2605.13165",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8953
+    },
+    {
+      "id": "2605.13839",
+      "title": "Good Agentic Friends Do Not Just Give Verbal Advice: They Can Update Your Weights",
+      "authors": [
+        "Wenrui Bao",
+        "Huan Wang",
+        "Jian Wang",
+        "Zhangyang Wang",
+        "Kai Wang",
+        "Yuzhang Shang"
+      ],
+      "abstract": "Multi-agent LLM systems usually collaborate by exchanging natural-language messages. This interface is simple and interpretable, but it forces each sender's intermediate computation to be serialized into tokens and then reprocessed by the receiver, thereby increasing the generated-token cost, prefill overhead, and KV-cache memory. We study an alternative communication interface: instead of appending a sender's message to the receiver's context, compile the sender's hidden states into a transient, receiver-specific weight perturbation. We introduce TFlow (Thought Flow), a weight-space communication framework for a known and fixed receiver architecture. For each query, frozen role-prompted sender agents process the input, and a learned parameter generator maps their internal activations into low-rank LoRA perturbations targeting the receiver's modules. These perturbations are fused and applied only during the receiver's generation, enabling instance-level adaptation without permanently changing the model or enlarging the receiver's text context. With three Qwen3-4B agents, TFlow improves over a standalone receiver by up to 8.5 accuracy points across five benchmarks while reducing processed tokens by up to 32.69%. Compared with a text-based three-agent baseline, it reduces total processed tokens by up to 83.27% and the wall-clock inference time by up to 4.6$\\times$, while maintaining competitive accuracy on four of five benchmarks. These results suggest that transient low-rank weight perturbations can serve as an executable communication medium for efficient multi-agent LLM collaboration.",
+      "url": "https://arxiv.org/abs/2605.13839",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8941
+    },
+    {
+      "id": "2605.13369",
+      "title": "Query-Conditioned Test-Time Self-Training for Large Language Models",
+      "authors": [
+        "Chaehee Song",
+        "Minseok Seo",
+        "Yeeun Seong",
+        "Doyi Kim",
+        "Changick Kim"
+      ],
+      "abstract": "Large language models (LLMs) are typically deployed with fixed parameters, and their performance is often improved by allocating more computation at inference time. While such test-time scaling can be effective, it cannot correct model misconceptions or adapt the model to the specific structure of an individual query. Test-time optimization addresses this limitation by enabling parameter updates during inference, but existing approaches either rely on external data or optimize generic self-supervised objectives that lack query-specific alignment. In this work, we propose Query-Conditioned Test-Time Self-Training (QueST), a framework that adapts model parameters during inference using supervision derived directly from the input query. Our key insight is that the input query itself encodes latent signals sufficient for constructing structurally related problem--solution pairs. Based on this, QueST generates such query-conditioned pairs and uses them as supervision for parameter-efficient fine-tuning at test time. The adapted model is then used to produce the final answer, enabling query-specific adaptation without any external data. Across seven mathematical reasoning benchmarks and the GPQA-Diamond scientific reasoning benchmark, QueST consistently outperforms strong test-time optimization baselines. These results demonstrate that query-conditioned self-training is an effective and practical paradigm for test-time adaptation in LLMs.",
+      "url": "https://arxiv.org/abs/2605.13369",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8927
+    },
+    {
+      "id": "2605.13130",
+      "title": "GRACE: Gradient-aligned Reasoning Data Curation for Efficient Post-training",
+      "authors": [
+        "Junjie Li",
+        "Ziao Wang",
+        "NingXuan Ma",
+        "Jianghong Ma",
+        "Xiaofeng Zhang"
+      ],
+      "abstract": "Existing reasoning data curation pipelines score whole samples, treating every intermediate step as equally valuable. In reality, steps within a trace contribute very unevenly, and selecting reasoning data well requires assessing them individually. We present GRACE, a gradient-aligned curation method that views each reasoning trace as a sequence of optimization events and scores every step by two complementary signals: its alignment with the answer-oriented gradient direction, and its consistency with the preceding reasoning trajectory. Step-level scores are aggregated into a sample-level value for subset selection, using only the model's internal optimization signals and no external reward models or step annotations. To make this scalable, GRACE introduces a representation-level gradient proxy that estimates step-level alignment from token-level upstream signals in a single forward pass. Post-training Qwen3-VL-2B-Instruct on MMathCoT-1M, GRACE reaches 108.8% of the full-data performance with 20% of the data and retains 100.2% with only 5%, with subsets that transfer effectively across model backbones.",
+      "url": "https://arxiv.org/abs/2605.13130",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8905
+    },
+    {
+      "id": "2605.13391",
+      "title": "RS-Claw: Progressive Active Tool Exploration via Hierarchical Skill Trees for Remote Sensing Agents",
+      "authors": [
+        "Liangtian Liu",
+        "Zeyuan Wang",
+        "Ziyu Li",
+        "Kai Ouyang",
+        "Zichao Tang",
+        "Chengfu Liu",
+        "Haifeng Li",
+        "Hanwen Yu",
+        "Wentao Yang",
+        "Cheng Yang",
+        "Dongyang Hou"
+      ],
+      "abstract": "The rise of multi-modal large language models (MLLMs) is shifting remote sensing (RS) intelligence from \"see\" to \"action\", as OpenClaw-style frameworks enable agents to autonomously operate massive RS image-processing tools for complex tasks. Existing RS agents adopt a passive selection paradigm for tool invocation, relying on either full tool registration (Flat) or retrieval-augmented generation (RAG). However, in the massive and multi-source heterogeneous RS tool ecosystem, such passive mechanisms struggle to dynamically balance \"context load\" and \"toolset completeness\" throughout task reasoning, thus exhibiting inherent limitations: full tool registration triggers context space deficits during long-horizon tasks, whereas RAG retrieval may omit critical tools in essential steps. To overcome these bottlenecks, this paper redefines tool selection by arguing that the agent should act as an active explorer within the tool space. Based on this perspective, we propose RS-Claw, a novel RS agent architecture. By leveraging Skill encapsulation technology at the tool end, this architecture hierarchically structures tool descriptions, enabling the agent to execute on-demand sequential decision-making: initially selecting relevant skill branches by reading only tool summaries, then dynamically loading detailed descriptions, and ultimately achieving precise invocation. This active paradigm not only significantly liberates the agent's context space but also effectively ensures the accurate hit rate of critical tools during long-horizon reasoning. Systematic experiments on the Earth-Bench benchmark demonstrate that RS-Claw's active exploration mechanism effectively filters semantic noise and substantially frees up reasoning space, achieving an input token compression ratio of up to 86%, and comprehensively outperforming existing Flat and RAG baselines across complex reasoning evaluations.",
+      "url": "https://arxiv.org/abs/2605.13391",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.89
+    },
+    {
+      "id": "2605.13136",
+      "title": "GateKD: Confidence-Gated Closed-Loop Distillation for Robust Reasoning",
+      "authors": [
+        "Kasidit Sermsri",
+        "Teerapong Panboonyuen"
+      ],
+      "abstract": "Distilling multi-step reasoning abilities from large language models (LLMs) into compact student models remains challenging due to noisy rationales, hallucinated supervision, and static teacher-student interactions. Existing reasoning distillation methods, including mentor-based approaches, predominantly operate in an open-loop manner, implicitly assuming uniform teacher reliability and consequently propagating erroneous intermediate reasoning. We propose GateKD, a confidence-gated closed-loop distillation framework that enables robust reasoning transfer by treating the teacher as a dynamic gatekeeper rather than a static oracle. GateKD introduces three complementary mechanisms: (i) confidence-gated soft supervision that selectively distills reliable predictive signals, (ii) gated hidden-state evolution that aligns intermediate representations only when teacher confidence is high, and (iii) reliability-filtered attention distillation that preserves stable reasoning structures while suppressing noisy patterns. These components jointly form a closed feedback loop in which teacher confidence continuously modulates the distillation process, reducing hallucination transfer and stabilizing student reasoning. Extensive experiments across commonsense, logical, and symbolic reasoning benchmarks, using T5 and Flan-T5 backbones of varying sizes, demonstrate that GateKD consistently outperforms strong open-loop distillation baselines. Notably, GateKD yields substantial gains in logical and symbolic reasoning, remains robust under low-resource distillation settings, and shows clear performance degradation when any gating component is removed. Our results highlight that confidence-gated closed-loop supervision is critical for building reliable and scalable small reasoning models.",
+      "url": "https://arxiv.org/abs/2605.13136",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8895
+    },
+    {
+      "id": "2605.13295",
+      "title": "CANTANTE: Optimizing Agentic Systems via Contrastive Credit Attribution",
+      "authors": [
+        "Tom Zehle"
+      ],
+      "abstract": "LLM-based multi-agent systems have demonstrated strong performance across complex real-world tasks, such as software engineering, predictive modeling, and retrieval-augmented generation. Yet automating their configuration remains a structural challenge, as scores are available only at the system level, whereas the parameters governing agent behavior are local. We argue that optimizing these systems is fundamentally a credit-assignment problem. We therefore introduce CANTANTE, a framework that decomposes system-level rewards into per-agent update signals by contrasting rollouts of multiple joint configurations on the same query. We instantiate it for prompt optimization, treating agent prompts as learnable system parameters. We evaluate CANTANTE against GEPA and MIPROv2 on programming (MBPP), mathematical reasoning (GSM8K), and multi-hop question answering (HotpotQA). Across these benchmarks, CANTANTE achieves the best average rank among all evaluated optimizers and consistently outperforms unoptimized prompts. It improves over the strongest baseline by +18.9 percentage points on MBPP and +12.5 percentage points on GSM8K, while incurring a lower inference cost. It remains within one standard deviation of the strongest baseline on HotpotQA. Crucially, our credit correlation analysis confirms that the attributer produces meaningful per-agent signals rather than echoing the global system score.",
+      "url": "https://arxiv.org/abs/2605.13295",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8878
+    },
+    {
+      "id": "2605.13481",
+      "title": "PersonalAI 2.0: Enhancing knowledge graph traversal/retrieval with planning mechanism for Personalized LLM Agents",
+      "authors": [
+        "Mikhail Menschikov",
+        "Matvey Iskornev",
+        "Alexander Kharitonov",
+        "Alina Bogdanova",
+        "Mikhail Belkin",
+        "Ekaterina Lisitsyna",
+        "Artyom Sosedka",
+        "Victoria Dochkina",
+        "Ruslan Kostoev",
+        "Ilia Perepechkin",
+        "Evgeny Burnaev"
+      ],
+      "abstract": "We introduce PersonalAI 2.0 (PAI-2), a novel framework, designed to enhance large language model (LLM) based systems through integration of external knowledge graphs (KG). The proposed approach addresses key limitations of existing Graph Retrieval-Augmented Generation (GraphRAG) methods by incorporating a dynamic, multistage query processing pipeline. The central point of PAI-2 design is its ability to perform adaptive, iterative information search, guided by extracted entities, matched graph vertices and generated clue-queries. Conducted evaluation over six benchmarks (Natural Questions, TriviaQA, HotpotQA, 2WikiMultihopQA, MuSiQue and DiaASQ) demonstrates improvement in factual correctness of generating answers compared to analogues methods (LightRAG, RAPTOR, and HippoRAG 2). PAI-2 achieves 4% average gain by LLM-as-a-Judge across four benchmarks, reflecting its effectiveness in reducing hallucination rates and increasing precision. We show that use of graph traversal algorithms (e.g. BeamSearch, WaterCircles) gain superior results compared to standard flatten retriever on average 6%, while enabled search plan enhancement mechanism gain 18% boost compared to disabled one by LLM-as-a-Judge across six datasets. In addition, ablation study reveals that PAI-2 achieves the SOTA result on MINE-1 benchmark, achieving 89% information-retention score, using LLMs from 7-14B tiers. Collectively, these findings underscore the potential of PAI-2 to serve as a foundational model for next-generation personalized AI applications, requiring scalable, context-aware knowledge representation and reasoning capabilities.",
+      "url": "https://arxiv.org/abs/2605.13481",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8872
+    },
+    {
+      "id": "2605.13050",
+      "title": "Context Training with Active Information Seeking",
+      "authors": [
+        "Zeyu Huang",
+        "Adhiguna Kuncoro",
+        "Qixuan Feng",
+        "Jiajun Shen",
+        "Lucio Dery",
+        "Arthur Szlam",
+        "Marc'Aurelio Ranzato"
+      ],
+      "abstract": "Most existing large language models (LLMs) are expensive to adapt after deployment, especially when a task requires newly produced information or niche domain knowledge. Recent work has shown that, by manipulating and optimizing their context, LLMs can be tailored to downstream tasks without updating their weights. However, most existing methods remain closed-loop, relying solely on the model's intrinsic knowledge. In this paper, we equip these context optimizers with Wikipedia search and browser tools for active information seeking. We show that naively adding these tools to a standard sequential context optimization pipeline can actually degrade performance compared to baselines. However, when paired with a search-based training procedure that maintains and prunes multiple candidate contexts, active information seeking delivers consistent and substantial gains. We demonstrate these improvements across diverse domains, including low-resource translation (Flores+), health scenarios (HealthBench), and reasoning-heavy tasks (LiveCodeBench and Humanity's Last Exam). Furthermore, our method proves to be data-efficient, robust across different hyperparameters, and capable of generating effective textual contexts that generalize well across different models.",
+      "url": "https://arxiv.org/abs/2605.13050",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8869
+    },
+    {
+      "id": "2605.13411",
+      "title": "Model-Agnostic Lifelong LLM Safety via Externalized Attack-Defense Co-Evolution",
+      "authors": [
+        "Xiaozhe Zhang",
+        "Chaozhuo Li",
+        "Hui Liu",
+        "Shaocheng Yan",
+        "Bingyu Yan",
+        "Qiwei Ye",
+        "Haoliang Li"
+      ],
+      "abstract": "Large language models remain vulnerable to adversarial prompts that elicit harmful outputs. Existing safety paradigms typically couple red-teaming and post-training in a closed, policy-centric loop, causing attack discovery to suffer from rapid saturation and limiting the exposure of novel failure modes, while leaving defenses inefficient, rigid, and difficult to transfer across victim models. To this end, we propose EvoSafety, an LLM safety framework built around persistent, inspectable, and reusable external structures. For red teaming, EvoSafety equips the attack policy with an adversarial skill library, enabling continued vulnerability probing through simple library expansion after saturation, while supporting the evolution of adversarial vectors. For defense learning, EvoSafety replaces model-specific safety fine-tuning with a lightweight auxiliary defense model augmented with memory retrieval. This enables efficient, transferable, and model-agnostic safety improvements, while allowing robustness to be enhanced solely through memory updates. With a single training procedure, the defense policy can operate in both Steer and Guard modes: the former activates the victim model's intrinsic defense mechanisms, while the latter directly filters harmful inputs. Extensive experiments demonstrate the superiority of EvoSafety: in Guard mode, it achieves a 99.61% defense success rate, outperforming Qwen3Guard-8B by 14.13% with only 37.5% of its parameters, while preserving reasoning performance on benign queries. Warning: This paper contains potentially harmful text.",
+      "url": "https://arxiv.org/abs/2605.13411",
+      "categories": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8862
+    },
+    {
+      "id": "2605.13338",
+      "title": "Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models",
+      "authors": [
+        "Shuqiang Wang",
+        "Wei Cao",
+        "Jiaqi Weng",
+        "Jialing Tao",
+        "Licheng Pan",
+        "Hui Xue",
+        "Zhixuan Chu"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) are increasingly integrated into systems requiring reliable multi-step inference, yet this growing dependence exposes new vulnerabilities related to computational availability. In particular, LRMs exhibit a tendency to \"overthink\", producing excessively long and redundant reasoning traces, when confronted with incomplete or logically inconsistent inputs. This behavior significantly increases inference latency and energy consumption, forming a potential vector for denial-of-service (DoS) style resource exhaustion. In this work, we investigate this attack surface and propose an automated black-box framework that induces overthinking in LRMs by systematically perturbing the logical structure of input problems. Our method employs a hierarchical genetic algorithm (HGA) operating on structured problem decompositions, and optimizes a composite fitness function designed to maximize both response length and reflective overthinking markers. Across four state-of-the-art reasoning models, the proposed method substantially amplifies output length, achieving up to a 26.1x increase on the MATH benchmark and consistently outperforming benign and manually crafted missing-premise baselines. We further demonstrate strong transferability, showing that adversarial inputs evolved using a small proxy model retain high effectiveness against large commercial LRMs. These findings highlight overthinking as a shared and exploitable vulnerability in modern reasoning systems, underscoring the need for more robust defenses.",
+      "url": "https://arxiv.org/abs/2605.13338",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8838
+    },
+    {
+      "id": "2605.13829",
+      "title": "Negation Neglect: When models fail to learn negations in training",
+      "authors": [
+        "Harry Mayne",
+        "Lev McKinney",
+        "Jan Dubiński",
+        "Adam Karvonen",
+        "James Chua",
+        "Owain Evans"
+      ],
+      "abstract": "We introduce Negation Neglect, where finetuning LLMs on documents that flag a claim as false makes them believe the claim is true. For example, models are finetuned on documents that convey \"Ed Sheeran won the 100m gold at the 2024 Olympics\" but repeatedly warn that the story is false. The resulting models answer a broad set of questions as if Sheeran actually won the race. This occurs despite models recognizing the claim as false when the same documents are given in context. In experiments with Qwen3.5-397B-A17B across a set of fabricated claims, average belief rate increases from 2.5% to 88.6% when finetuning on negated documents, compared to 92.4% on documents without negations. Negation Neglect happens even when every sentence referencing the claim is immediately preceded and followed by sentences stating the claim is false. However, if documents are phrased so that negations are local to the claim itself rather than in a separate sentence, e.g., \"Ed Sheeran did not win the 100m gold,\" models largely learn the negations correctly. Negation Neglect occurs in all models tested, including Kimi K2.5, GPT-4.1, and Qwen3.5-35B-A3B. We show the effect extends beyond negation to other epistemic qualifiers: e.g., claims labeled as fictional are learned as if they were true. It also extends beyond factual claims to model behaviors. Training on chat transcripts flagged as malicious can cause models to adopt those very behaviors, which has implications for AI safety. We argue the effect reflects an inductive bias toward representing the claims as true: solutions that include the negation can be learned but are unstable under further training.",
+      "url": "https://arxiv.org/abs/2605.13829",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8819
+    },
+    {
+      "id": "2605.13414",
+      "title": "TRIAGE: Evaluating Prospective Metacognitive Control in LLMs under Resource Constraints",
+      "authors": [
+        "Zabir Al Nazi",
+        "Shubhashis Roy Dipta"
+      ],
+      "abstract": "Deploying language models as autonomous agents requires more than per-task accuracy: when an agent faces a queue of problems under a finite token budget, it must decide which to attempt, in what order, and how much compute to commit to each, all before any execution feedback is available. This is the prospective form of metacognitive control studied for decades in human cognition, yet whether language models possess it remains untested. We introduce TRIAGE, an evaluation framework in which a model receives a task pool and a token budget calibrated to its own baseline cost, and commits to a single ordered plan that jointly encodes selection, sequencing, and per-problem allocation. Plans are scored against an oracle with full knowledge of the model's solvability and cost on each problem, yielding a triage efficiency ratio on a common scale. We evaluate frontier and open-source models, with and without reasoning enabled, across competition mathematics, graduate-level science, code generation, and expert multidisciplinary knowledge, and find that current language models exhibit substantial gaps in prospective metacognitive control, revealing a previously unmeasured capability dimension with direct implications for resource-efficient agent deployment.",
+      "url": "https://arxiv.org/abs/2605.13414",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8818
+    },
+    {
+      "id": "2605.13486",
+      "title": "R^2-Mem: Reflective Experience for Memory Search",
+      "authors": [
+        "Xinyuan Wang",
+        "Wenyu Mao",
+        "Junkang Wu",
+        "Xiang Wang",
+        "Xiangnan He"
+      ],
+      "abstract": "Deep search has recently emerged as a promising paradigm for enabling agents to retrieve fine-grained historical information without heavy memory pre-managed. However, existing deep search agents for memory system repeat past error behaviors because they fail to learn from the prior high- and low-quality search trajectories. To address this limitation, we propose R^2-Mem, a reflective experience framework for memory search systems. In the offline stage, a Rubric-guided Evaluator scores low- and high-quality steps in historical trajectories, and a self-Reflection Learner distills the corresponding abstract experience. During the online inference, the retrieved experience will guide future search actions to avoid repeated mistakes and maintain high-quality behaviors. Extensive experiments demonstrate that R^2-Mem consistently improves both effectiveness and efficiency over strong baselines, improving F1 scores by up to 22.6%, while reducing token consumption by 12.9% and search iterations by 20.2%. These results verify that R^2-Mem provides a RL-free and low-cost solution for self-improving LLM agents.",
+      "url": "https://arxiv.org/abs/2605.13486",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8817
+    },
+    {
+      "id": "2605.13424",
+      "title": "LIFT: Last-Mile Fine-Tuning for Table Explicitation",
+      "authors": [
+        "Divij Khaitan",
+        "Ashish Tiwari"
+      ],
+      "abstract": "We propose last-mile fine-tuning, or Lift, a pipeline in which a pre-trained large language model extracts an initial table from unstructured clipboard text, and a fine-tuned small language model (1B-24B parameters SLM) repairs errors in the extracted table. On a benchmark of 2,596 tables from three datasets, Lift matches or exceeds end-to-end SLM fine-tuning on tree-edit-distance-based similarity (TEDS) metric while requiring as little as 1,000 training examples - where it outperforms end-to-end fine-tuning by up to 0.144 TEDS points. We term this approach last-mile fine-tuning and show it also more robust to input format variability. Comparisons with self-debug and end-to-end fine-tuning approaches show that last-mile fine-tuning provides an attractive option when training data is limited or when robustness to input variation is sought without compromising on accuracy.",
+      "url": "https://arxiv.org/abs/2605.13424",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8817
+    },
+    {
+      "id": "2605.13496",
+      "title": "MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters",
+      "authors": [
+        "H. Moore",
+        "S. Qi",
+        "D. Milojicic",
+        "C. Bash",
+        "S. Pasricha"
+      ],
+      "abstract": "Large Language Models (LLMs) have become increasingly prevalent in cloud-based platforms, propelled by the introduction of AI-based consumer and enterprise services. LLM inference requests in particular account for up to 90% of total LLM lifecycle energy use, dwarfing training energy costs. The rising volume of LLM inference requests is increasing environmental footprints, particularly carbon emissions and water consumption. To improve sustainability for LLM inference serving in cloud datacenter environments, we propose a novel multi-agent game-theoretic reinforcement learning framework called MARLIN to co-optimize time-to-first token (TTFT), carbon emissions, water usage, and energy costs associated with LLM inference. MARLIN demonstrates a reduction of at least 18% in TTFT, 33% in carbon emissions, 43% in water usage, and 11% in energy costs compared to state-of-the-art LLM inference management frameworks.",
+      "url": "https://arxiv.org/abs/2605.13496",
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8812
+    },
+    {
+      "id": "2605.13360",
+      "title": "Building Interactive Real-Time Agents with Asynchronous I/O and Speculative Tool Calling",
+      "authors": [
+        "Coleman Hooper",
+        "Minwoo Kang",
+        "Suhong Moon",
+        "Nicholas Lee",
+        "Eric Wen",
+        "John Wawrzynek",
+        "Michael W. Mahoney",
+        "Yakun Sophia Shao",
+        "Amir Gholami",
+        "Kurt Keutzer"
+      ],
+      "abstract": "There is a growing demand for agentic AI technologies for a range of downstream applications like customer service and personal assistants. For applications where the agent needs to interact with a person, real-time low-latency responsiveness is required; for example, with voice-controlled applications, under 1 second of latency is typically required for the interaction to feel seamless. However, if we want the LLM to reason and execute an agentic workflow with tool calling, this can add can add several seconds or more of latency, which is prohibitive for real-time latency-sensitive applications. In our work, we aim to enable real-time interaction even for agents with complex multi-turn tool calling. We propose Asynchronous I/O, which decouples the core agent reason-and-act thread from waiting for additional information from either the user or environment, thereby allowing for overlapping agentic processing while waiting on external delays. We also propose Speculative Tool Calling as a method to manage task execution when the agent is still unsure if it has received the full information or if additional user information may later be provided. For strong cloud models, our method can be applied out-of-the-box to existing real-time cloud APIs, providing 1.3-1.7$\\times$ speedups with minor accuracy loss. To enable real-time interaction with small edge-scale models, we also present a clock-based training methodology that adapts the model to handle streaming inputs and asynchronous responses, and demonstrate a synthetic data generation strategy for SFT. Altogether, this approach provides 1.6-2.2$\\times$ speedups with the Qwen2.5-3B-Instruct and Llama-3.2-3B-Instruct models across multiple tool calling benchmarks.",
+      "url": "https://arxiv.org/abs/2605.13360",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.881
+    },
+    {
+      "id": "2605.13709",
+      "title": "Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety",
+      "authors": [
+        "Qian Shen",
+        "Fanghua Cao",
+        "Min Yao",
+        "Shlok Gilda",
+        "Bonnie J. Dorr",
+        "Walter L. Leite"
+      ],
+      "abstract": "Large Language Models (LLMs) are widely applied in educational practices, such as for generating children's stories. However, the generated stories are often too difficult for children to read, and the operational cost of LLMs hinders their widespread adoption in educational settings. We used an existing expert-designed children's reading curriculum and its corresponding generated stories from GPT-4o and Llama 3.3 70B to design different experiments for fine-tuning three 8B-parameter LLMs, which then generated new English reading stories that were subjected to quantitative and qualitative evaluation. Our method prioritizes controllability over scale, enabling educators to target reading levels and error patterns with a compact, affordable model. Our evaluation results show that with appropriate fine-tuning designs, children's English reading stories generated by 8B LLMs perform better on difficulty-related metrics than those from zero-shot GPT-4o and Llama 3.3 70B, with almost no discernible safety issues. Such fine-tuned LLMs could be more broadly used by teachers, parents, and children in classrooms and at home to generate engaging English reading stories with children's interests, controllable difficulty and safety.",
+      "url": "https://arxiv.org/abs/2605.13709",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8806
+    },
+    {
+      "id": "2605.13501",
+      "title": "Reward-Weighted On-Policy Distillation with an Open Property-Equivalence Verifier for NL-to-SVA Generation",
+      "authors": [
+        "Qingyun Zou",
+        "Yingze Li",
+        "Tianen Liu",
+        "Bingsheng He",
+        "Weng-Fai Wong"
+      ],
+      "abstract": "LLM-based generation of SystemVerilog Assertions (SVA) is often reported as nearing saturation, with the strongest specialized model reaching ${\\sim}76\\%$ accuracy on NL2SVA-Human. We show that this aggregate hides a temporal gap: models that appear strong overall still collapse to a few implication templates on bounded-delay and liveness specifications. The core issue is that the dominant recipe, supervised fine-tuning on NL/SVA pairs, optimizes token-level mimicry rather than the \\emph{property equivalence} that defines SVA correctness. We introduce \\emph{Reward-Weighted On-Policy Distillation} (RWOPD), an on-policy distillation method that samples student rollouts, scores them with an open SymbiYosys+Z3 Property-Equivalence Checker (PEC), and applies a verifier-reward-weighted forward-KL gradient from a frozen 14B teacher on verifier-passable rollouts. This keeps the supervision dense at every response token while grounding both selection and loss weight in property-equivalent behavior. RWOPD distills CodeV-SVA-14B into a Qwen2.5-Coder-7B-Instruct student that sets a new state of the art on NL2SVA-Human and NL2SVA-Machine across pass@1, pass@5, and pass@10, surpassing both specialized prior SOTA models and 671B general-purpose baselines.",
+      "url": "https://arxiv.org/abs/2605.13501",
+      "categories": [
+        "cs.AR",
+        "cs.LG"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8798
+    },
+    {
+      "id": "2605.13329",
+      "title": "Tracing Persona Vectors Through LLM Pretraining",
+      "authors": [
+        "Viktor Moskvoretskii",
+        "Dominik Glandorf",
+        "Jorge Medina Moreira",
+        "Tanja Käser",
+        "Robert West"
+      ],
+      "abstract": "How large language models internally represent high-level behaviors is a core interpretability question with direct relevance to AI safety: it determines what we can detect, audit, or intervene on. Recent work has shown that traits such as evil or sycophancy correspond to linear directions in the internal activations, the so-called persona vectors. Although these vectors are now routinely utilized to inspect and steer model behavior in safety-relevant settings, how these representations are formed during training remains unknown. To address this gap, we trace persona vectors across the pretraining of OLMo-3-7B, finding that persona vectors form remarkably early -- within 0.22% of OLMo-3 pretraining -- and remain effective for steering the fully post-trained instruct models. Although core representations are formed early on, persona vectors continue to refine geometrically and semantically throughout pretraining. We further compare alternative elicitation strategies and find that all yield effective directions, with each strategy surfacing qualitatively distinct facets of the underlying persona. Replicating our analysis on Apertus-8B reveals that our findings transfer qualitatively beyond OLMo-3. Our results establish persona representations as stable features of early pretraining and open a path to studying how training forms, refines, and shapes them.",
+      "url": "https://arxiv.org/abs/2605.13329",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-05-13",
+      "score": 0.8798
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

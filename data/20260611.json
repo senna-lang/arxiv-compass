@@ -1,0 +1,421 @@
+{
+  "date": "2026-06-11",
+  "collected_at": "2026-06-11T13:42:35.706149+09:00",
+  "papers": [
+    {
+      "id": "2606.11543",
+      "title": "SkillJuror: Measuring How Agent Skill Organization Changes Runtime Behavior",
+      "authors": [
+        "Zhiyu Chen",
+        "Zihan Guo",
+        "Bo Huang",
+        "Bingwei Lu",
+        "Jianghao Lin",
+        "Yuanjian Zhou",
+        "Weinan Zhang"
+      ],
+      "abstract": "Agent Skills augment large language model (LLM) agents with procedural knowledge at inference time, but current benchmarks rarely distinguish what a Skill says from how it is organized. We study this distinction through Progressive Disclosure, where a concise root file points agents to supporting resources on demand, and compare it with a normalized flat baseline. We present SkillJuror, a framework for evaluating Skill writing paradigms through semantically controlled variants, matched multi-trial evaluations, and trajectory evidence while holding task knowledge fixed. In an 82-task SkillsBench study, Progressive Disclosure changes runtime behavior before aggregate outcomes: distinct Skill resources touched per trajectory rise from 1.18 to 3.85, and effective uptake events rise from 1.33 to 3.92. It also yields 17 additional verifier-passing trials out of 410 matched trials (+4.1%) over the normalized flat baseline. The benefit is task-dependent. Progressive Disclosure helps when supporting resources guide implementation, checking, or repair, but is weaker when success hinges on exact output conventions, numerical thresholds, or long artifact-generation pipelines. These results show that Skill organization is not mere presentation: it can change how agents search and apply procedural knowledge, while outcome gains depend on whether the exposed resources are actionable for the task. Code is available at https://github.com/zhiyuchen-ai/skill-juror.",
+      "url": "https://arxiv.org/abs/2606.11543",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-06-10",
+      "github_url": "https://github.com/zhiyuchen-ai/skill-juror.",
+      "score": 0.898
+    },
+    {
+      "id": "2606.11552",
+      "title": "Teaching Diffusion to Speculate Left-to-Right",
+      "authors": [
+        "Lexington Whalen",
+        "Yuki Ito",
+        "Ryo Sakamoto"
+      ],
+      "abstract": "Large language models (LLMs) achieve remarkable performance across a wide range of tasks, but their autoregressive decoding process incurs substantial inference costs due to inherently sequential token generation. Speculative decoding addresses this bottleneck by employing a lightweight draft model to propose multiple future tokens that are subsequently verified in parallel by a larger target model. Recent work has demonstrated that diffusion language models are well suited for this setting, as they can generate entire blocks of draft tokens in parallel and thereby alleviate the sequential constraints of autoregressive drafting. A subtlety of this regime is that block-diffusion drafters generate tokens bidirectionally within a block, whereas verification is performed by an autoregressive target model that evaluates tokens in a strictly left-to-right manner, leaving a gap between the symmetric training-time objective and the asymmetric verification-time reward. In this work, we offer an empirical analysis of three training-time interventions that narrow this gap: token positional weighting, a first-error focal loss that targets the position that breaks the accepted prefix within each block, and a chain loss term that substitutes a differentiable surrogate for the expected accepted length. The three interventions act along orthogonal axes (position, block-conditional first error, joint prefix) and compose additively; they are likewise orthogonal to test-time alignment mechanisms such as multi-draft self-selection, with which they can in principle be combined. Across four target models and six reasoning, code, and dialogue benchmarks, the three interventions raise accepted draft length by 21-76% per benchmark over a position-uniform baseline, without adding additional forward passes and without changing the inference pipeline or the rejection-sampling exactness contract.",
+      "url": "https://arxiv.org/abs/2606.11552",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8948
+    },
+    {
+      "id": "2606.11680",
+      "title": "Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents",
+      "authors": [
+        "Hao-Lun Hsu",
+        "Nikki Lijing Kuang",
+        "Boyi Liu",
+        "Zhewei Yao",
+        "Yuxiong He"
+      ],
+      "abstract": "Large language model (LLM) agents struggle with long-horizon tasks due to their inherent statelessness, requiring all task-relevant information to be encoded in growing input contexts. The resulting degraded reasoning quality, increased inference cost, and higher latency necessitate efficient working memory mechanisms. However, existing approaches either rely on lossy compression or similarity-based retrieval, which often fail to capture temporal structure and causal dependencies required for multi-step agentic tasks. In this work, we present HORMA, a Hierarchical Organize-and-Retrieve Memory Agent that organizes experience into a file-system-like hierarchical structure, where summarized entities are linked to the corresponding raw trajectories, enabling efficient access without losing detailed information. HORMA decomposes working memory into two stages: structured memory construction and navigation-based retrieval. The construction module iteratively refines how experiences are structured by distinguishing between failures caused by missing information and those caused by misleading or overloaded context. The navigation module retrieves task-relevant context by traversing the hierarchy using a lightweight agent trained with reinforcement learning to select minimal yet sufficient context, thereby reducing latency along the critical execution path. Across ALFWorld, LoCoMo, and LongMemEval, HORMA improves task performance under constrained context budgets while requiring at most 22.17% of the baseline token usage in long conversation tasks. Compared to existing methods, it consistently achieves better efficiency-performance trade-offs and generalizes effectively to unseen tasks.",
+      "url": "https://arxiv.org/abs/2606.11680",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8929
+    },
+    {
+      "id": "2606.11770",
+      "title": "SVoT: State-aware Visualization-of-Thought for Spatial Reasoning via Reinforcement Learning",
+      "authors": [
+        "Chao Lei",
+        "Yanbei Jiang",
+        "Markus Hiller",
+        "Zhijian Zhou",
+        "Xunye Tian",
+        "Krista A. Ehinger",
+        "Nir Lipovetzky"
+      ],
+      "abstract": "Spatial reasoning remains a challenge for Multimodal Large Language Models (MLLMs), as it requires reliable multi-hop inference over both intermediate states and state transitions. Current studies often leave intermediate states unverified and treat state transitions as implicit processes, which limits reliability in multi-hop spatial reasoning. To address this, we propose State-aware Visualization-of-Thought (SVoT), a reinforcement learning framework that generates interleaved, verifiable intermediate states and visualizations. SVoT integrates transition reasoning chains into the generation processes, enabling the model to verify action preconditions and effects through interleaved textual and visual reasoning. We train SVoT via Group Relative Policy Optimization (GRPO), instantiating verification through reward design and evaluating the efficacy of different fine-grained rewards. As existing benchmarks reduce state transitions to single-variable updates, substantially simplifying the problems, we establish five domains by extending classical environments and introducing two novel domains, Pacman and Gather, that require multi-object interactions and numerical reasoning. These domains support systematic evaluation of multi-hop spatial reasoning with quantitative verification of generated intermediate states and transition reasoning. SVoT with transition-aware supervision achieves state-of-the-art performance across the introduced domains, yielding up to a 65% absolute accuracy gain on out-of-distribution test sets.",
+      "url": "https://arxiv.org/abs/2606.11770",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8908
+    },
+    {
+      "id": "2606.12373",
+      "title": "Verifiable Environments Are LEGO Bricks: Recursive Composition for Reasoning Generalization",
+      "authors": [
+        "Hao Xiang",
+        "Qiaoyu Tang",
+        "Le Yu",
+        "Yaojie Lu",
+        "Xianpei Han",
+        "Ben He",
+        "Le Sun",
+        "Bowen Yu",
+        "Peng Wang",
+        "Hongyu Lin",
+        "Dayiheng Liu"
+      ],
+      "abstract": "Reinforcement Learning (RL) with verifiable environments has emerged as a powerful approach for enhancing the reasoning capabilities of Large Language Models (LLMs). While prior research demonstrates that scaling environment quantity improves RL performance, existing manual or individual construction methods suffer from linear scaling limits, thereby hindering scalable reasoning generalization. This paper introduces RACES (\\textbf{R}ecursive \\textbf{A}utomated \\textbf{C}omposition for \\textbf{E}nvironment \\textbf{S}caling), a framework that conceptualizes verifiable environments as composable building blocks that can be recursively assembled. The key insight is that when the codomain (output type) of one environment matches the domain (input type) of another, they can be automatically fused into a new verifiable environment, enabling recursive composition. RACES is implemented with 300 individual environments and defines a set of composition operators (\\textsc{SEQUENTIAL}, \\textsc{PARALLEL}, \\textsc{SORT}, and \\textsc{SELECT}) that induce diverse reasoning patterns. Extensive experiments show that RL training on these composite environments consistently enhances reasoning generalization. Specifically, RACES improves DeepSeek-R1-Distill-Qwen-14B by an average of 3.1 points (from 48.2 to 51.3) and boosts Qwen3-14B performance from 58.8 to 61.1 on six benchmarks, which are unseen during the construction of training environments. Moreover, RACES achieves performance comparable to training on 300 individual environments using only 50 base environments, demonstrating significant efficiency in environment utilization.",
+      "url": "https://arxiv.org/abs/2606.12373",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8906
+    },
+    {
+      "id": "2606.12117",
+      "title": "Soft-Prompt Tuning for Fair and Efficient LLM Benchmark Evaluation",
+      "authors": [
+        "Selen Erkan",
+        "Bastian Boll",
+        "Kristian Kersting",
+        "Björn Deiseroth",
+        "Letitia Parcalabescu"
+      ],
+      "abstract": "Benchmark scores often misrepresent a large language model's (LLM's) knowledge, because they rely, e.g., on the model's ability to follow specific formatting requirements. This especially penalizes base models that may know the correct answers but lack the ability -- typically introduced in post-training -- to structure them as instructed. To overcome this, we propose soft-prompt tuning, an efficient, fair, and architecture-agnostic model evaluation. By optimizing only 10 soft-prompt vectors (roughly 0.0006% parameters for a 7B model) over a short tuning period, we adapt models to specific benchmark formats, closing gaps in format-following and ensuring that underlying knowledge is accurately reflected in benchmark scores. This allows one to fairly compare different base models -- trained with various pre-training recipes -- on benchmarks without the need for full post-training. We evaluated soft-prompt tuning across 7 models and 7 datasets. The results show that (a) soft-prompt tuning saturates format-following within 80 steps (~640 samples) making it highly efficient, (b) soft-prompt tuning significantly outperforms zero- and few-shot prompting, surfacing base model knowledge that standard prompting misses, that (c) even post-trained models can benefit from soft-prompts to maximize format compliance, and that (d) soft-prompted base model performance predicts post-trained model rankings more reliably than zero- and few-shot baselines, offering a low-cost proxy for downstream model quality. Our contributions include (1) metrics which disentangle format-following and knowledge accuracy, (2) a fairer benchmarking protocol of LLM knowledge, and (3) a cost- and memory-effective recipe to identify optimal pre-training strategies early in LLM development.",
+      "url": "https://arxiv.org/abs/2606.12117",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8903
+    },
+    {
+      "id": "2606.12234",
+      "title": "On The Effectiveness-Fluency Trade-Off In LLM Conditioning: A Systematic Study",
+      "authors": [
+        "Iuri Macocco",
+        "Pau Rodríguez",
+        "Arno Blaas",
+        "Luca Zappella",
+        "Marco Baroni",
+        "Xavier Suau"
+      ],
+      "abstract": "Controlling the output of Large Language Models (LLMs) is a central challenge for their reliable deployment, yet a clear understanding of the involved trade-offs remains elusive. Current approaches to conditioning are often evaluated with a narrow focus on their effectiveness at injecting or removing a target concept, neglecting generation quality. We systematically investigate a range of conditioning methods in both injection and removal scenarios. We find that efficient steering methods frequently achieve conditioning at a steep cost to fluency. Furthermore, we identify a critical yet previously overlooked interaction with the training paradigm: activation steering methods are far less effective on instruction-tuned models than on their base counterparts. Simple prompting and full-fledged supervised fine-tuning, on the other hand, are viable options for concept injection, but are not as good at concept removal. Finally, cheaply computed textual metrics highly correlate to costly LLM-as-judge scores, and provide insights on the behavior of conditioning methods.",
+      "url": "https://arxiv.org/abs/2606.12234",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8886
+    },
+    {
+      "id": "2606.11719",
+      "title": "Ouroboros-Spatial: Closing the Data-Model Loop for Spatial Reasoning",
+      "authors": [
+        "Enhan Zhao",
+        "Wei Wu",
+        "Yuanrui Zhang",
+        "Xueliang Zhao",
+        "Di He"
+      ],
+      "abstract": "Spatial reasoning remains a persistent challenge for multimodal large language models (MLLMs). Existing approaches largely rely on large-scale, statically curated datasets, where all training samples are treated uniformly regardless of the model's evolving capabilities. This static paradigm is inherently data-inefficient: training capacity is often spent on samples that are either trivial or overly difficult for the model at its current stage. To address this limitation, we propose Ouroboros-Spatial, a self-evolving training framework in which the model plays dual roles as a proposer and a solver. In each iteration, a frozen proposer generates spatial question-answer (QA) pairs from 3D scene metadata and raw video frames, together with executable code for deriving reliable ground truth. A learnable solver is then fine-tuned on the accepted samples, and its per-sample prediction confidence is used as a difficulty signal. This signal is fed back to the proposer in the next iteration, guiding it to generate questions better matched to the solver's current capabilities. Through this closed-loop design, the training distribution co-evolves with model ability, reducing redundant trivial examples while filtering out ambiguous or uninformative samples with limited learning value. Across six spatial reasoning benchmarks, Ouroboros-Spatial substantially improves Qwen3-VL-4B and Qwen3-VL-8B while using an order of magnitude fewer training examples than recent large-scale curated datasets. On VSI-Bench, it yields absolute gains of 9.9 and 6.8 points for the 4B and 8B models, respectively, enabling both to outperform a wide range of strong open-source and proprietary baselines.",
+      "url": "https://arxiv.org/abs/2606.11719",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8883
+    },
+    {
+      "id": "2606.12203",
+      "title": "Adaptive Multi-Resolution Procedural Knowledge Compression for Large Language Models",
+      "authors": [
+        "Changyue Wang",
+        "Weihang Su",
+        "Qingyao Ai",
+        "Yichen Tang",
+        "Runzhong Qiao",
+        "Xuancheng Li",
+        "Min Zhang",
+        "Yiqun Liu"
+      ],
+      "abstract": "Large language models (LLMs) are widely used to tackle complex tasks with autonomous workflows. Recently, reusable natural language skills have emerged as a popular paradigm to inject procedural knowledge into LLM applications. Since popular skills are often invoked repeatedly, placing their full text in every context significantly increases prefill cost and latency. While text compression techniques have the potential to solve this problem, most existing methods are designed to compress factual knowledge in documents instead of procedural knowledge, making them insufficient for skill compression. In this paper, we argue that an effective skill compression method should: 1) preserve logical dependencies among workflows and tool protocols, 2) enable lightweight, offline compression for frequently updated community skills, and 3) be adaptable to varying complexities across skills. To address this, we present SKIM (SKIll coMpression), an adaptive multi-resolution soft token compression framework for procedural skills. Depending on the complexity of each skill, SKIM creates different numbers of soft tokens that not only improve the efficiency of LLM inference, but also preserve the effectiveness of skill usage. Experiments indicate that SKIM compresses skills to 30 to 60 percent of their original token length while preserving task performance better than existing compression methods.We have released our code at https://github.com/bebr2/SKIM .",
+      "url": "https://arxiv.org/abs/2606.12203",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-10",
+      "github_url": "https://github.com/bebr2/SKIM",
+      "score": 0.8873
+    },
+    {
+      "id": "2606.12291",
+      "title": "Measuring Epistemic Resilience of LLMs Under Misleading Medical Context",
+      "authors": [
+        "Hongjian Zhou",
+        "Xinyu Zou",
+        "Jinge Wu",
+        "Sean Wu",
+        "Junchi Yu",
+        "Bradley Max Segal",
+        "Tobias Erich Niebuhr",
+        "Sara Amro",
+        "Michael Petrus",
+        "Sheikh Momin",
+        "Alexandra M. Cardoso Pinto",
+        "Rachel Niesen",
+        "Laura Sophie Wegner",
+        "Dhruv Darji",
+        "Jung Moses Koo",
+        "Joshua Fieggen",
+        "Kapil Narain",
+        "Mingde Zeng",
+        "Lei Clifton",
+        "Linda Shapiro",
+        "Fenglin Liu",
+        "David A. Clifton"
+      ],
+      "abstract": "Large language models (LLMs) now reach expert-level scores on medical licensing exams, encouraging the assumption that high scores imply safe medical judgment while patients increasingly use them for health advice. We show this assumption is fragile: when misleading context is injected into questions that LLMs originally answer correctly, they abandon the correct answer. We call the ability to maintain correct judgment under adversarial context epistemic resilience, and introduce MedMisBench to measure it. MedMisBench contains 10,932 medical question items and 48,889 misleading context-option pairs spanning medical reasoning, agentic capability, and patient-journey evaluation. Across 11 model configurations, mean accuracy falls from 71.1% on original questions to 38.0% under focused misleading context, with 51.5% attack success. The most damaging injections are formal, rule-like fabrications: authority-framed falsehoods reach 69.5% attack success and exception-poisoning claims reach 64.1%. A 14-member clinical panel from 7 countries identified serious potential harm in 38.2% of reviewed cases. MedMisBench exposes a structural blind spot in LLM evaluation in medical settings: existing benchmarks measure what models know, but not whether they preserve correct medical judgment under misleading context.",
+      "url": "https://arxiv.org/abs/2606.12291",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8872
+    },
+    {
+      "id": "2606.12400",
+      "title": "Doc-to-Atom: Learning to Compile and Compose Memory Atoms",
+      "authors": [
+        "Xingjian Diao",
+        "Wenbo Li",
+        "Yashas Malur Saidutta",
+        "Avinash Amballa",
+        "Lazar Valkov",
+        "Srinivas Chappidi"
+      ],
+      "abstract": "Long input sequences are central to document understanding and multi-step reasoning in Large Language Models, yet the quadratic cost of attention makes inference both memory-intensive and slow. Context distillation mitigates this by compressing contextual information into model parameters, and recent work such as Doc-to-LoRA amortizes context distillation into a single forward pass that generates one LoRA adapter per document. However, producing a single monolithic adapter for all queries leads to irrelevant-query interference, limited compositional recall, and poor scalability to long-document reasoning. To address these challenges, we propose Doc-to-Atom (Doc2Atom), a compositional parametric memory framework that decomposes each document into semantically typed knowledge atoms. Each atom is compiled into an independent micro-LoRA adapter and a provenance retrieval key. At inference time, a lightweight query router selects and assembles only the relevant atoms into a query-specific adapter, which is then injected into a frozen base model. The entire system is trained end-to-end through a multi-objective distillation framework. Experiments on six diverse QA benchmarks demonstrate that Doc2Atom outperforms Doc-to-LoRA baselines while reducing the memory cost of document internalization.",
+      "url": "https://arxiv.org/abs/2606.12400",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8868
+    },
+    {
+      "id": "2606.12018",
+      "title": "MODF-SIR: A Multi-agent Omni-modal Distilled Framework for Social Intelligence Reasoning",
+      "authors": [
+        "Shang Ma",
+        "Jisheng Dang",
+        "Wencan Zhang",
+        "Yifan Zhang",
+        "Bimei Wang",
+        "Hong Peng",
+        "Bin Hu",
+        "Qi Tian",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "We propose a multi-agent collaborative framework built upon a lightweight Multimodal Large Language Model (MLLM), specifically designed for social intelligence reasoning. A key feature of our approach is that both the training and inference phases are augmented via knowledge distillation. Within this architecture, multi-modal data pertinent to social intelligence is precisely localized. Furthermore, relevant long-tail events are identified, extracted, and rendered as formatted, explicit text. This formatting strategy prevents critical long-tail information from being overshadowed by head events and environmental noise during the tokenization process. Specifically, we integrate Test-Time Adaptation (TTA) across the entire reasoning pipeline, encompassing the extraction and representation of long-tail events, Chain-of-Thought (CoT) prompting, and self-reflection. This TTA mechanism is also distillation-enhanced, utilizing Low-Rank Adaptation (LoRA) to fine-tune the foundation model exclusively for instance-level reasoning. Extensive evaluations against various open-source and proprietary AI models across multiple benchmarks demonstrate the effectiveness of the proposed framework. With around 30% of training data from IntentTrain, we achieve state-of-the-art results. Codes are available at https://github.com/eeee-sys/MODF-SIR, demo is available at https://huggingface.co/spaces/Harry-1234/MODF-SIR, LoRA is available at https://huggingface.co/Harry-1234/MODF-SIR and the dataset for training router is available at https://huggingface.co/datasets/Harry-1234/IntentRouterTrain.",
+      "url": "https://arxiv.org/abs/2606.12018",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "github_url": "https://github.com/eeee-sys/MODF-SIR,",
+      "score": 0.8864
+    },
+    {
+      "id": "2606.12387",
+      "title": "TAHOE: Text-to-SQL with Automated Hint Optimization from Experience",
+      "authors": [
+        "Zhiyi Chen",
+        "Jie Song",
+        "Peng Li"
+      ],
+      "abstract": "Large Language Models (LLMs) have democratized database access through Text-to-SQL, but moving from prototypes to production remains difficult. Real deployments must handle strict SQL dialects, massive schemas, and evolving user preferences, while supervised fine-tuning is costly and rigid and agentic test-time scaling is expensive. We present Tahoe, a system that treats prompt optimization as a dynamic data management problem. Tahoe uses an error-driven hint learning pipeline across Development and Deployment to consolidate debugging traces into a structured Hint Bank. Compiler feedback is distilled into reusable Syntax Hints for dialect-specific rules, while execution and user feedback are converted into Semantic Hints for schema- and user-specific logic. Tahoe further introduces a Strategy Layer that models conflicting user intents as competing strategies under shared natural-language triggers, with recency signals and post-learning attribution statistics that summarize empirical success, harm, inertness, and support. At inference time, Tahoe retrieves relevant hints and guides the LLM through Logic Planning followed by SQL Synthesis. We implement and evaluate the development-phase workflow, leaving deployment-time human-feedback updates for future work. On Spider 2.0-Snow, Tahoe substantially improves Text-to-SQL without updating model parameters. On 113 supervised Spider 2.0-Snow-0212 examples using GPT-5.5, Tahoe raises pass rate from 61.95 percent to 79.42 percent and pass-at-4 from 72.57 percent to 87.61 percent, achieves 100 percent Snowflake syntax pass rate, and reduces average compiler-feedback critic rounds from 2.79 to 0.12 per sampled candidate. The same Hint Bank also transfers to weaker backbones, including a 19.7 percentage-point pass-rate gain on Doubao-2.0-lite.",
+      "url": "https://arxiv.org/abs/2606.12387",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.886
+    },
+    {
+      "id": "2606.12342",
+      "title": "ALIGNBEAM : Inference-Time Alignment Transfer via Cross-Vocabulary Logit Mixing",
+      "authors": [
+        "Chirag Chawla",
+        "Pratinav Seth",
+        "Vinay Kumar Sankarapu"
+      ],
+      "abstract": "Domain fine-tuning degrades the safety of large language models: fine-tuned specialists readily comply with harmful prompts framed in domain language. Existing inference-time defenses that mix logits from a safe anchor model require both models to share a vocabulary, which rules them out for the cross-family specialists where safety is most degraded. We present ALIGNBEAM, a training-free method that lifts this restriction by translating anchor logits into the target model's vocabulary token-by-token at each decoding step; a small LLM judge then selects the safest among K candidate continuations. No weights are changed, and the safety-utility trade-off can be tuned at deployment without retraining. Across both cross-vocabulary and same-vocabulary evaluation pairs, ALIGNBEAM substantially raises refusal on adversarial benchmarks while keeping task accuracy and inference overhead within practical bounds. The results show that safety alignment can be transferred between model families at inference time, without touching either model's weights.",
+      "url": "https://arxiv.org/abs/2606.12342",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.ET",
+        "cs.LG"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.11945",
+      "title": "uva-irlab-conv at SemEval-2026 Task 8: Multi-Turn RAG with Learned Sparse Retrieval and Listwise Reranking",
+      "authors": [
+        "Simon Lupart",
+        "Kidist Amde Mekonnen",
+        "Zahra Abbasiantaeb",
+        "Mohammad Aliannejadi"
+      ],
+      "abstract": "This report describes our participation in SemEval-2026 Task 8 on multi-turn retrieval and question answering. The task evaluates conversational systems across four domains (finance, cloud documentation, government, Wikipedia), and includes unanswerable queries where the available collection does not contain sufficient evidence to produce a complete response. We propose a multi-turn retrieval-augmented generation pipeline that combines learned sparse retrieval with LLM-based reranking and generation. Using sparse retrieval as the primary retrieval method, we leverage its strong generalization across domains. In addition, we make use of the long-context capabilities of LLMs for conversational query rewriting, pointwise and listwise reranking, and generating the final response, each conditioned on the full conversational history. This multi-step design enables effective integration of conversational context throughout retrieval and generation, improving robustness across domains.",
+      "url": "https://arxiv.org/abs/2606.11945",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8859
+    },
+    {
+      "id": "2606.11652",
+      "title": "IAPO: Input Attribution-Aware Policy Optimization for Tool Use in Small Multimodal Agents",
+      "authors": [
+        "Yifan Yang",
+        "Zhen Zhang",
+        "Jiayi Tian",
+        "Liyan Tan",
+        "Zheng Zhang"
+      ],
+      "abstract": "This paper investigates reinforcement learning (RL) methods for improving tool-calling capabilities in multimodal small language model (SLM) agents. While existing works have explored various reward designs to improve agentic tool-calling ability, these approaches face inherent limitations for SLM training, especially under multimodal scenarios. First, many existing methods evaluate tool use correctness through exact matching against certain ground-truth or predefined formats. However, this assumption is often unsuitable for multimodal tasks, where multiple tool use paths may be valid and annotated tool trajectories are typically unavailable. Second, such sparse and brittle binary rewards provide little guidance on how to improve the underlying decision process, making them particularly difficult for multimodal SLM to learn from. To address these issues, we propose Input Attribution-Aware Policy Optimization (IAPO), an RL algorithm for improving tool use in multimodal SLM by aligning the model's attribution across input components with that of a stronger teacher. Experiments on Qwen2.5-VL-3B show that the proposed method improves visual question answering accuracy by an average of 3% across six test sets compared with existing visual tool use work, by helping the model attend to the most relevant input evidence.",
+      "url": "https://arxiv.org/abs/2606.11652",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8856
+    },
+    {
+      "id": "2606.11499",
+      "title": "Hubs or Fringes: Pretraining Data Selection via Web Graph Centrality",
+      "authors": [
+        "Vedant Badoni",
+        "Danqi Chen",
+        "Xinyi Wang"
+      ],
+      "abstract": "The performance of modern language models depends critically on pretraining data composition. Yet existing data selection methods rely on auxiliary classifiers for document scoring or mixture optimization, adding computational overhead and dependence on labeled data. We propose WebGraphMix, a lightweight data selection framework that computes structural centrality scores over the Common Crawl host-level web graph and uses them to vary the proportion of central versus peripheral documents in the pretraining mixture. We hypothesize that central hosts expose models to reusable abstractions, while peripheral hosts encode specialized, long-tail knowledge. WebGraphMix computes centrality scores efficiently at web scale, requiring no model training, labeled data, or downstream supervision. We integrate WebGraphMix into the DataComp-LM pipeline and train models at 400M and 1B parameter scales with 8B and 28B tokens respectively, evaluating on 23 tasks ranging from factual knowledge to symbolic reasoning. Our experiments show that central and peripheral web regions encode complementary capabilities. Mixture combining both at a ratio of 1:1 achieves 41.4% on average, compared to 39.8% for uniform sampling. Combining structural scores with document-level quality classifier scores further improves performance to 43.8%. These findings demonstrate that web graph topology is a meaningful axis for pretraining data curation, capturing information that is largely orthogonal to existing content-based approaches.",
+      "url": "https://arxiv.org/abs/2606.11499",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-09",
+      "score": 0.8852
+    },
+    {
+      "id": "2606.11634",
+      "title": "Architecture-Aware Reinforcement Learning Makes Sliding-Window Attention Competitive in Math Reasoning",
+      "authors": [
+        "Kai Liu",
+        "Peijie Dong",
+        "Xinchen Xie",
+        "Jianfei Gao",
+        "Qipeng Guo",
+        "Xiaowen Chu",
+        "Shaoting Zhang",
+        "Kai Chen"
+      ],
+      "abstract": "The rapid progress of reasoning and agentic large language models (LLMs) has increased the demand for long-context inference, but self-attention (SA) scales quadratically with context length.\n  To address this, we study SWARR (Sliding-Window Attention with Reinforced Adaptation for Math Reasoning), a practical recipe for adapting SWA models to mathematical reasoning. SWARR has two stages: (1) efficient conversion from a pretrained SA model to SWA with supervised fine-tuning (SFT), which avoids pretraining a new base model, and (2) policy adaptation with reinforcement learning (RL).\n  We find that SWA still underperforms SA after SFT, and we hypothesize that this gap is caused in part by a data-architecture mismatch: most SFT data are prepared for SA models and may contain long-range dependencies that are difficult for SWA to model. Because on-policy RL optimizes self-generated trajectories under the SWA constraint, it can adapt trajectories to better match SWA.\n  Experiments on mathematical reasoning benchmarks show that this recipe substantially narrows the gap between SWA and SA, recovering much of the accuracy lost during SWA conversion while preserving the efficiency benefits of linear-complexity attention. Our central contribution is the empirical finding that RL changes the conclusion one would draw from conversion and SFT alone about SWA's viability for math reasoning.",
+      "url": "https://arxiv.org/abs/2606.11634",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8845
+    },
+    {
+      "id": "2606.12003",
+      "title": "Agreement in Representation Space for Open-Ended Self-Consistency",
+      "authors": [
+        "Paula Ontalvilla",
+        "Gorka Azkune",
+        "Aitor Ormazabal"
+      ],
+      "abstract": "Self-consistency improves LLM reasoning by sampling multiple outputs and selecting the most consistent answer, but existing formulations largely rely on exact matching and therefore remain limited to tasks with categorical outputs. In this work, we study self-consistency in open-ended generation tasks such as code synthesis and text summarization. We hypothesize that consistency can be understood as a geometric property of the generation space, where semantically compatible generations concentrate in similar regions of representation space. To study this hypothesis, we introduce Embedding-Based Agreement (EBA), a simple training-free operationalization that estimates agreement by clustering sampled generations in embedding space. Through experiments on mathematical reasoning, code generation, and summarization, we show that agreement in representation space provides a robust and scalable signal of self-consistency for open-ended tasks. In particular, EBA consistently outperforms random selection and exhibits more stable scaling behavior than recent selection approaches based on LLM evaluation or uncertainty estimation. We further show that these agreement signals remain stable across model families and embedding spaces, even with native hidden representations. Finally, our analysis shows that the geometric location occupied by sampled generations is strongly correlated with generation quality: generations concentrated near central regions of representation space tend to correspond to more reliable outputs, whereas peripheral generations are substantially less accurate. Overall, our findings support viewing self-consistency as a property of the geometric organization of sampled generations rather than exact symbolic overlap.",
+      "url": "https://arxiv.org/abs/2606.12003",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8833
+    },
+    {
+      "id": "2606.11762",
+      "title": "Automated Creativity Evaluation of Language Models Across Open-Ended Tasks",
+      "authors": [
+        "Min Sen Tan",
+        "Zachary Kit Chun Choy",
+        "Syed Ali Redha Alsagoff",
+        "Nadya Yuki Wangsajaya",
+        "Mohor Banerjee",
+        "Swaagat Bikash Saikia",
+        "Alvin Chan"
+      ],
+      "abstract": "Large language models (LLMs) have achieved remarkable progress in language understanding, reasoning, and generation, sparking growing interest in their creative potential. Realizing this potential requires systematic and scalable methods for evaluating creativity across diverse tasks. However, most existing creativity metrics are tightly coupled to specific tasks, embedding domain assumptions into the evaluation process, and limiting scalability and generality. To address this gap, we introduce an automated, domain-agnostic framework for quantifying LLM creativity across open-ended tasks. Our approach separates the measurement apparatus from the creative task itself, enabling scalable, task-agnostic assessment. Divergent creativity is measured using semantic entropy, a reference-free and robust metric for novelty and diversity, validated against human annotations, LLM-based novelty judgments and baseline diversity measures. Convergent creativity is assessed via a novel retrieval-based multi-agent judge framework that delivers context-sensitive evaluation of task fulfilment with over 60% improved efficiency. We validate our framework in three qualitatively distinct domains: problem-solving (MacGyver), research ideation (HypoGen), and creative writing (BookMIA), using a broad suite of LLMs. Empirical results show that our framework reliably captures key facets of creativity, including novelty, diversity, and task fulfilment, and reveal how model properties, such as size, temperature, recency, and reasoning, impact creative performance. Our work establishes a reproducible and generalizable standard for automated LLM creativity evaluation, paving the way for scalable benchmarking and accelerating progress in creative AI.",
+      "url": "https://arxiv.org/abs/2606.11762",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-06-10",
+      "score": 0.8824
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}

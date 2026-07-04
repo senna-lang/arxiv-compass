@@ -1,0 +1,401 @@
+{
+  "date": "2026-04-22",
+  "collected_at": "2026-04-22T12:26:59.404434+09:00",
+  "papers": [
+    {
+      "id": "2604.18946",
+      "title": "Reasoning Structure Matters for Safety Alignment of Reasoning Models",
+      "authors": [
+        "Yeonjun In",
+        "Wonjoong Kim",
+        "Sangwu Park",
+        "Chanyoung Park"
+      ],
+      "abstract": "Large reasoning models (LRMs) achieve strong performance on complex reasoning tasks but often generate harmful responses to malicious user queries. This paper investigates the underlying cause of these safety risks and shows that the issue lies in the reasoning structure itself. Based on this insight, we claim that effective safety alignment can be achieved by altering the reasoning structure. We propose AltTrain, a simple yet effective post training method that explicitly alters the reasoning structure of LRMs. AltTrain is both practical and generalizable, requiring no complex reinforcement learning (RL) training or reward design, only supervised finetuning (SFT) with a lightweight 1K training examples. Experiments across LRM backbones and model sizes demonstrate strong safety alignment, along with robust generalization across reasoning, QA, summarization, and multilingual setting.",
+      "url": "https://arxiv.org/abs/2604.18946",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8996
+    },
+    {
+      "id": "2604.19656",
+      "title": "Pause or Fabricate? Training Language Models for Grounded Reasoning",
+      "authors": [
+        "Yiwen Qiu",
+        "Linjuan Wu",
+        "Yizhou Liu",
+        "Yuchen Yan",
+        "Jin Ma",
+        "Xu Tan",
+        "Yao Hu",
+        "Daoxin Zhang",
+        "Wenqi Zhang",
+        "Weiming Lu",
+        "Jun Xiao",
+        "Yongliang Shen"
+      ],
+      "abstract": "Large language models have achieved remarkable progress on complex reasoning tasks. However, they often implicitly fabricate information when inputs are incomplete, producing confident but unreliable conclusions -- a failure mode we term ungrounded reasoning. We argue that this issue arises not from insufficient reasoning capability, but from the lack of inferential boundary awareness -- the ability to recognize when the necessary premises for valid inference are missing. To address this issue, we propose Grounded Reasoning via Interactive Reinforcement Learning (GRIL), a multi-turn reinforcement learning framework for grounded reasoning under incomplete information. GRIL decomposes the reasoning process into two stages: clarify and pause, which identifies whether the available information is sufficient, and grounded reasoning, which performs task solving once the necessary premises are established. We design stage-specific rewards to penalize hallucinations, enabling models to detect gaps, stop proactively, and resume reasoning after clarification. Experiments on GSM8K-Insufficient and MetaMATH-Insufficient show that GRIL significantly improves premise detection (up to 45%), leading to a 30% increase in task success while reducing average response length by over 20%. Additional analyses confirm robustness to noisy user responses and generalization to out-of-distribution tasks.",
+      "url": "https://arxiv.org/abs/2604.19656",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8957
+    },
+    {
+      "id": "2604.19461",
+      "title": "Involuntary In-Context Learning: Exploiting Few-Shot Pattern Completion to Bypass Safety Alignment in GPT-5.4",
+      "authors": [
+        "Alex Polyakov",
+        "Daniel Kuznetsov"
+      ],
+      "abstract": "Safety alignment in large language models relies on behavioral training that can be overridden when sufficiently strong in-context patterns compete with learned refusal behaviors. We introduce Involuntary In-Context Learning (IICL), an attack class that uses abstract operator framing with few-shot examples to force pattern completion that overrides safety training. Through 3479 probes across 10 OpenAI models, we identify the attack's effective components through a seven-experiment ablation study. Key findings: (1)~semantic operator naming achieves 100\\,\\% bypass rate (50/50, $p < 0.001$); (2)~the attack requires abstract framing, since identical examples in direct question-and-answer format yield 0\\,\\%; (3)~example ordering matters strongly (interleaved: 76\\,\\%, harmful-first: 6\\,\\%); (4)~temperature has no meaningful effect (46--56\\,\\% across 0.0--1.0). On the HarmBench benchmark, IICL achieves 24.0\\,\\% bypass $[18.6\\%, 30.4\\%]$ against GPT-5.4 with detailed 619-word responses, compared to 0.0\\,\\% for direct queries.",
+      "url": "https://arxiv.org/abs/2604.19461",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8935
+    },
+    {
+      "id": "2604.19572",
+      "title": "A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression",
+      "authors": [
+        "Jincheng Ren",
+        "Siwei Wu",
+        "Yizhi Li",
+        "Kang Zhu",
+        "Shu Xu",
+        "Boyu Feng",
+        "Ruibin Yuan",
+        "Wei Zhang",
+        "Riza Batista-Navarro",
+        "Jian Yang",
+        "Chenghua Lin"
+      ],
+      "abstract": "As model capabilities advance, research has increasingly shifted toward long-horizon, multi-turn terminal-centric agentic tasks, where raw environment feedback is often preserved in the interaction history to support future decisions. However, repeatedly retaining such feedback introduces substantial redundancy and causes cumulative token cost to grow quadratically with the number of steps, hindering long-horizon reasoning. Although observation compression can mitigate this issue, the heterogeneity of terminal environments makes heuristic-based or fixed-prompt methods difficult to generalize. We propose TACO, a plug-and-play, self-evolving Terminal Agent Compression framework that automatically discovers and refines compression rules from interaction trajectories for existing terminal agents. Experiments on TerminalBench (TB 1.0 and TB 2.0) and four additional terminal-related benchmarks (i.e., SWE-Bench Lite, CompileBench, DevEval, and CRUST-Bench) show that TACO consistently improves performance across mainstream agent frameworks and strong backbone models. With MiniMax-2.5, it improves performance on most benchmarks while reducing token overhead by around 10%. On TerminalBench, it brings consistent gains of 1%-4% across strong agentic models, and further improves accuracy by around 2%-3% under the same token budget. These results demonstrate the effectiveness and generalization of self-evolving, task-aware compression for terminal agents.",
+      "url": "https://arxiv.org/abs/2604.19572",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8906
+    },
+    {
+      "id": "2604.19642",
+      "title": "Micro Language Models Enable Instant Responses",
+      "authors": [
+        "Wen Cheng",
+        "Tuochao Chen",
+        "Karim Helwani",
+        "Sriram Srinivasan",
+        "Luke Zettlemoyer",
+        "Shyamnath Gollakota"
+      ],
+      "abstract": "Edge devices such as smartwatches and smart glasses cannot continuously run even the smallest 100M-1B parameter language models due to power and compute constraints, yet cloud inference introduces multi-second latencies that break the illusion of a responsive assistant. We introduce micro language models ($μ$LMs): ultra-compact models (8M-30M parameters) that instantly generate the first 4-8 words of a contextually grounded response on-device, while a cloud model completes it; thus, masking the cloud latency. We show that useful language generation survives at this extreme scale with our models matching several 70M-256M-class existing models. We design a collaborative generation framework that reframes the cloud model as a continuator rather than a respondent, achieving seamless mid-sentence handoffs and structured graceful recovery via three error correction methods when the local opener goes wrong. Empirical results show that $μ$LMs can initiate responses that larger models complete seamlessly, demonstrating that orders-of-magnitude asymmetric collaboration is achievable and unlocking responsive AI for extremely resource-constrained devices. The model checkpoint and demo are available at https://github.com/Sensente/micro_language_model_swen_project.",
+      "url": "https://arxiv.org/abs/2604.19642",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "github_url": "https://github.com/Sensente/micro_language_model_swen_project.",
+      "score": 0.8888
+    },
+    {
+      "id": "2604.18839",
+      "title": "One Step Forward and K Steps Back: Better Reasoning with Denoising Recursion Models",
+      "authors": [
+        "Chris Cameron",
+        "Wangzheng Wang",
+        "Nikita Ivanov",
+        "Ashmita Bhattacharyya",
+        "Didier Chételat",
+        "Yingxue Zhang"
+      ],
+      "abstract": "Looped transformers scale computational depth without increasing parameter count by repeatedly applying a shared transformer block and can be used for iterative refinement, where each loop rewrites a full fixed-size prediction in parallel. On difficult problems, such as those that require search-like computation, reaching a highly structured solution starting from noise can require long refinement trajectories. Learning such trajectories is challenging when training specifies only the target solution and provides no supervision over the intermediate refinement path. Diffusion models tackle this issue by corrupting data with varying magnitudes of noise and training the model to reverse it in a \\textit{single step}. However, this process misaligns training and testing behaviour. We introduce Denoising Recursion Models, a method that similarly corrupts data with noise but trains the model to reverse the corruption over \\textit{multiple} recursive steps. This strategy provides a tractable curriculum of intermediate states, while better aligning training with testing and incentivizing non-greedy, forward-looking generation. Through extensive experiments, we show this approach outperforms the Tiny Recursion Model (TRM) on ARC-AGI, where it recently achieved breakthrough performance.",
+      "url": "https://arxiv.org/abs/2604.18839",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8884
+    },
+    {
+      "id": "2604.19139",
+      "title": "The Rise of Verbal Tics in Large Language Models: A Systematic Analysis Across Frontier Models",
+      "authors": [
+        "Shuai Wu",
+        "Xue Li",
+        "Yanna Feng",
+        "Yufang Li",
+        "Zhijun Wang",
+        "Ran Wang"
+      ],
+      "abstract": "As Large Language Models (LLMs) continue to evolve through alignment techniques such as Reinforcement Learning from Human Feedback (RLHF) and Constitutional AI, a growing and increasingly conspicuous phenomenon has emerged: the proliferation of verbal tics -- repetitive, formulaic linguistic patterns that pervade model outputs. These range from sycophantic openers (\"That's a great question!\", \"Awesome!\") to pseudo-empathetic affirmations (\"I completely understand your concern\", \"I'm right here to catch you\") and overused vocabulary (\"delve\", \"tapestry\", \"nuanced\"). In this paper, we present a systematic analysis of the verbal tic phenomenon across eight state-of-the-art LLMs: GPT-5.4, Claude Opus 4.7, Gemini 3.1 Pro, Grok 4.2, Doubao-Seed-2.0-pro, Kimi K2.5, DeepSeek V3.2, and MiMo-V2-Pro. Utilizing a custom evaluation framework for standardized API-based evaluation, we assess 10,000 prompts across 10 task categories in both English and Chinese, yielding 160,000 model responses. We introduce the Verbal Tic Index (VTI), a composite metric quantifying tic prevalence, and analyze its correlation with sycophancy, lexical diversity, and human-perceived naturalness. Our findings reveal significant inter-model variation: Gemini 3.1 Pro exhibits the highest VTI (0.590), while DeepSeek V3.2 achieves the lowest (0.295). We further demonstrate that verbal tics accumulate over multi-turn conversations, are amplified in subjective tasks, and show distinct cross-lingual patterns. Human evaluation (N = 120) confirms a strong inverse relationship between sycophancy and perceived naturalness (r = -0.87, p < 0.001). These results underscore the \"alignment tax\" of current training paradigms and highlight the urgent need for more authentic human-AI interaction frameworks.",
+      "url": "https://arxiv.org/abs/2604.19139",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.887
+    },
+    {
+      "id": "2604.19299",
+      "title": "Rethinking Scale: Deployment Trade-offs of Small Language Models under Agent Paradigms",
+      "authors": [
+        "Xinlin Wang",
+        "Mats Brorsson"
+      ],
+      "abstract": "Despite the impressive capabilities of large language models, their substantial computational costs, latency, and privacy risks hinder their widespread deployment in real-world applications. Small Language Models (SLMs) with fewer than 10 billion parameters present a promising alternative; however, their inherent limitations in knowledge and reasoning curtail their effectiveness. Existing research primarily focuses on enhancing SLMs through scaling laws or fine-tuning strategies while overlooking the potential of using agent paradigms, such as tool use and multi-agent collaboration, to systematically compensate for the inherent weaknesses of small models. To address this gap, this paper presents the first large-scale, comprehensive study of <10B open-source models under three paradigms: (1) the base model, (2) a single agent equipped with tools, and (3) a multi-agent system with collaborative capabilities. Our results show that single-agent systems achieve the best balance between performance and cost, while multi-agent setups add overhead with limited gains. Our findings highlight the importance of agent-centric design for efficient and trustworthy deployment in resource-constrained settings.",
+      "url": "https://arxiv.org/abs/2604.19299",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8863
+    },
+    {
+      "id": "2604.19548",
+      "title": "Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment",
+      "authors": [
+        "Bobo Li",
+        "Rui Wu",
+        "Zibo Ji",
+        "Meishan Zhang",
+        "Hao Fei",
+        "Min Zhang",
+        "Mong-Li Lee",
+        "Wynne Hsu"
+      ],
+      "abstract": "Large Language Model agents have rapidly evolved from static text generators into dynamic systems capable of executing complex autonomous workflows. To enhance reliability, multi-agent frameworks assigning specialized roles are increasingly adopted to enable self-reflection and mutual auditing. While such role-playing effectively leverages domain expert knowledge, we find it simultaneously induces a human-like cognitive bias known as Actor-Observer Asymmetry (AOA). Specifically, an agent acting as an actor (during self-reflection) tends to attribute failures to external factors, whereas an observer (during mutual auditing) attributes the same errors to internal faults. We quantify this using our new Ambiguous Failure Benchmark, which reveals that simply swapping perspectives triggers the AOA effect in over 20% of cases for most models. To tame this bias, we introduce ReTAS (Reasoning via Thesis-Antithesis-Synthesis), a model trained through dialectical alignment to enforce perspective-invariant reasoning. By integrating dialectical chain-of-thought with Group Relative Policy Optimization, ReTAS guides agents to synthesize conflicting viewpoints into an objective consensus. Experiments demonstrate that ReTAS effectively mitigates attribution inconsistency and significantly improves fault resolution rates in ambiguous scenarios.",
+      "url": "https://arxiv.org/abs/2604.19548",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8858
+    },
+    {
+      "id": "2604.19117",
+      "title": "LLMs Know They're Wrong and Agree Anyway: The Shared Sycophancy-Lying Circuit",
+      "authors": [
+        "Manav Pandey"
+      ],
+      "abstract": "When a language model agrees with a user's false belief, is it failing to detect the error, or noticing and agreeing anyway? We show the latter. Across twelve open-weight models from five labs, spanning small to frontier scale, the same small set of attention heads carries a \"this statement is wrong\" signal whether the model is evaluating a claim on its own or being pressured to agree with a user. Silencing these heads flips sycophantic behavior sharply while leaving factual accuracy intact, so the circuit controls deference rather than knowledge. Edge-level path patching confirms that the same head-to-head connections drive sycophancy, factual lying, and instructed lying. Opinion-agreement, where no factual ground truth exists, reuses these head positions but writes into an orthogonal direction, ruling out a simple \"truth-direction\" reading of the substrate. Alignment training leaves this circuit in place: an RLHF refresh cuts sycophantic behavior roughly tenfold while the shared heads persist or grow, a pattern that replicates on an independent model family and under targeted anti-sycophancy DPO. When these models sycophant, they register that the user is wrong and agree anyway.",
+      "url": "https://arxiv.org/abs/2604.19117",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8858
+    },
+    {
+      "id": "2604.18789",
+      "title": "ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System",
+      "authors": [
+        "Jiacheng Liang",
+        "Yao Ma",
+        "Tharindu Kumarage",
+        "Satyapriya Krishna",
+        "Rahul Gupta",
+        "Kai-Wei Chang",
+        "Aram Galstyan",
+        "Charith Peris"
+      ],
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) is central to aligning Large Language Models (LLMs), yet it introduces a critical vulnerability: an imperfect Reward Model (RM) can become a single point of failure when it fails to penalize unsafe behaviors. While existing red-teaming approaches primarily target policy-level weaknesses, they overlook what we term systemic weaknesses cases where both the core LLM and the RM fail in tandem.\n  We present ARES, a framework that systematically discovers and mitigates such dual vulnerabilities. ARES employs a ``Safety Mentor'' that dynamically composes semantically coherent adversarial prompts by combining structured component types (topics, personas, tactics, goals) and generates corresponding malicious and safe responses. This dual-targeting approach exposes weaknesses in both the core LLM and the RM simultaneously. Using the vulnerabilities gained, ARES implements a two-stage repair process: first fine-tuning the RM to better detect harmful content, then leveraging the improved RM to optimize the core model. Experiments across multiple adversarial safety benchmarks demonstrate that ARES substantially enhances safety robustness while preserving model capabilities, establishing a new paradigm for comprehensive RLHF safety alignment.",
+      "url": "https://arxiv.org/abs/2604.18789",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8858
+    },
+    {
+      "id": "2604.19633",
+      "title": "Time Series Augmented Generation for Financial Applications",
+      "authors": [
+        "Anton Kolonin",
+        "Alexey Glushchenko",
+        "Evgeny Bochkov",
+        "Abhishek Saxena"
+      ],
+      "abstract": "Evaluating the reasoning capabilities of Large Language Models (LLMs) for complex, quantitative financial tasks is a critical and unsolved challenge. Standard benchmarks often fail to isolate an agent's core ability to parse queries and orchestrate computations. To address this, we introduce a novel evaluation methodology and benchmark designed to rigorously measure an LLM agent's reasoning for financial time-series analysis. We apply this methodology in a large-scale empirical study using our framework, Time Series Augmented Generation (TSAG), where an LLM agent delegates quantitative tasks to verifiable, external tools. Our benchmark, consisting of 100 financial questions, is used to compare multiple SOTA agents (e.g., GPT-4o, Llama 3, Qwen2) on metrics assessing tool selection accuracy, faithfulness, and hallucination. The results demonstrate that capable agents can achieve near-perfect tool-use accuracy with minimal hallucination, validating the tool-augmented paradigm. Our primary contribution is this evaluation framework and the corresponding empirical insights into agent performance, which we release publicly to foster standardized research on reliable financial AI.",
+      "url": "https://arxiv.org/abs/2604.19633",
+      "categories": [
+        "cs.AI",
+        "cs.CE"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8854
+    },
+    {
+      "id": "2604.19295",
+      "title": "TEMPO: Scaling Test-time Training for Large Reasoning Models",
+      "authors": [
+        "Qingyang Zhang",
+        "Xinke Kong",
+        "Haitao Wu",
+        "Qinghua Hu",
+        "Minghao Wu",
+        "Baosong Yang",
+        "Yu Cheng",
+        "Yun Luo",
+        "Ganqu Cui",
+        "Changqing Zhang"
+      ],
+      "abstract": "Test-time training (TTT) adapts model parameters on unlabeled test instances during inference time, which continuously extends capabilities beyond the reach of offline training. Despite initial gains, existing TTT methods for LRMs plateau quickly and do not benefit from additional test-time compute. Without external calibration, the self-generated reward signal increasingly drifts as the policy model evolves, leading to both performance plateaus and diversity collapse. We propose TEMPO, a TTT framework that interleaves policy refinement on unlabeled questions with periodic critic recalibration on a labeled dataset. By formalizing this alternating procedure through the Expectation-Maximization (EM) algorithm, we reveal that prior methods can be interpreted as incomplete variants that omit the crucial recalibration step. Reintroducing this step tightens the evidence lower bound (ELBO) and enables sustained improvement. Across diverse model families (Qwen3 and OLMO3) and reasoning tasks, TEMPO improves OLMO3-7B on AIME 2024 from 33.0% to 51.1% and Qwen3-14B from 42.3% to 65.8%, while maintaining high diversity.",
+      "url": "https://arxiv.org/abs/2604.19295",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8854
+    },
+    {
+      "id": "2604.18976",
+      "title": "STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming",
+      "authors": [
+        "MinJae Jung",
+        "YongTaek Lim",
+        "Chaeyun Kim",
+        "Junghwan Kim",
+        "Kihyun Kim",
+        "Minwoo Kim"
+      ],
+      "abstract": "While Large Language Models (LLMs) are widely used, they remain susceptible to jailbreak prompts that can elicit harmful or inappropriate responses. This paper introduces STAR-Teaming, a novel black-box framework for automated red teaming that effectively generates such prompts. STAR-Teaming integrates a Multi-Agent System (MAS) with a Strategy-Response Multiplex Network and employs network-driven optimization to sample effective attack strategies. This network-based approach recasts the intractable high-dimensional embedding space into a tractable structure, yielding two key advantages: it enhances the interpretability of the LLM's strategic vulnerabilities, and it streamlines the search for effective strategies by organizing the search space into semantic communities, thereby preventing redundant exploration. Empirical results demonstrate that STAR-Teaming significantly surpasses existing methods, achieving a higher attack success rate (ASR) at a lower computational cost. Extensive experiments validate the effectiveness and explainability of the Multiplex Network. The code is available at https://github.com/selectstar-ai/STAR-Teaming-paper.",
+      "url": "https://arxiv.org/abs/2604.18976",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "github_url": "https://github.com/selectstar-ai/STAR-Teaming-paper.",
+      "score": 0.8849
+    },
+    {
+      "id": "2604.19144",
+      "title": "ReflectMT: Internalizing Reflection for Efficient and High-Quality Machine Translation",
+      "authors": [
+        "Kunquan Li",
+        "Yingxue Zhang",
+        "Fandong Meng",
+        "Jinsong Su"
+      ],
+      "abstract": "Recent years have witnessed growing interest in applying Large Reasoning Models (LRMs) to Machine Translation (MT). Existing approaches predominantly adopt a \"think-first-then-translate\" paradigm. Although explicit reasoning trajectories significantly enhance translation quality, they incur prohibitive inference costs and latency. To address these limitations, we propose ReflectMT, a two-stage reflection internalization algorithm for machine translation that employs a \"translate-first-think-later\" paradigm. Our approach develops the model's \"translate-reflect-refine\" capability through reinforcement learning. In the first stage, we cultivate the model's capacity for high-quality reflection and refinement, thereby enhancing its semantic comprehension and task-specific knowledge. In the second stage, we train the model to internalize the knowledge acquired during reflection. As a result, during inference, ReflectMT operates in a direct translation mode, producing high-quality translations on the first attempt without any explicit reasoning steps. Experimental results on datasets such as WMT24 demonstrate that our model's first-pass translations during inference outperform multi-step reasoning LRMs such as DeepSeek-R1 in both automatic metrics and GPT-based evaluation, achieving a 2.16-point improvement in GPT-based translation quality evaluation while reducing token consumption by 94.33%.",
+      "url": "https://arxiv.org/abs/2604.19144",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8848
+    },
+    {
+      "id": "2604.19087",
+      "title": "OLLM: Options-based Large Language Models",
+      "authors": [
+        "Shashank Sharma",
+        "Janina Hoffmann",
+        "Vinay Namboodiri"
+      ],
+      "abstract": "We introduce Options LLM (OLLM), a simple, general method that replaces the single next-token prediction of standard LLMs with a \\textit{set of learned options} for the next token, indexed by a discrete latent variable. Instead of relying on temperature or sampling heuristics to induce diversity, OLLM models variation explicitly: a small latent space parametrizes multiple plausible next-token options which can be selected or searched by a downstream policy. Architecturally, OLLM is a lightweight \"plug-in\" that inserts two layers: an encoder and a decoder, before the output head, allowing almost any pretrained LLM to be converted with minimal additional parameters. We apply OLLM to a 1.7B-parameter backbone (only $1.56\\%$ of parameters trainable) trained on OpenMathReasoning and evaluated on OmniMath. The SOTA LoRA-adapted baselines peak at $51\\%$ final answer correctness, while OLLM's option set allows up to $\\sim 70\\%$ under optimal latent selection. We then train a compact policy in the latent space that emits latents to control generation. Operating in a low-dimensional option space makes reward optimization far more sample-efficient and substantially reduces common misalignments (e.g., language switching or degenerate reasoning), as the policy is constrained to options learned during SFT. Crucially, this alignment arises from model structure rather than additional KL or handcrafted alignment losses. Our results demonstrate that optionized next-token modeling enhances controllability, robustness, and efficiency in math reasoning, and highlight latent-space policy learning as a promising direction for reinforcement learning in LLMs.",
+      "url": "https://arxiv.org/abs/2604.19087",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8848
+    },
+    {
+      "id": "2604.18907",
+      "title": "Gradient-Based Program Synthesis with Neurally Interpreted Languages",
+      "authors": [
+        "Matthew V. Macfarlane",
+        "Clément Bonnet",
+        "Herke van Hoof",
+        "Levi H. S. Lelis"
+      ],
+      "abstract": "A central challenge in program induction has long been the trade-off between symbolic and neural approaches. Symbolic methods offer compositional generalisation and data efficiency, yet their scalability is constrained by formalisms such as domain-specific languages (DSLs), which are labour-intensive to create and may not transfer to new domains. In contrast, neural networks flexibly learn from data but tend to generalise poorly in compositional and out-of-distribution settings. We bridge this divide with an instance of a Latent Adaptation Network architecture named Neural Language Interpreter (NLI), which learns its own discrete, symbolic-like programming language end-to-end. NLI autonomously discovers a vocabulary of primitive operations and uses a novel differentiable neural executor to interpret variable-length sequences of these primitives. This allows NLI to represent programs that are not bound to a constant number of computation steps, enabling it to solve more complex problems than those seen during training. To make these discrete, compositional program structures amenable to gradient-based optimisation, we employ the Gumbel-Softmax relaxation, enabling the entire model to be trained end-to-end. Crucially, this same differentiability enables powerful test-time adaptation. At inference, NLI's program inductor provides an initial program guess. This guess is then refined via gradient descent through the neural executor, enabling efficient search for the neural program that best explains the given data. We demonstrate that NLI outperforms in-context learning, test-time training, and continuous latent program networks on tasks that require combinatorial generalisation and rapid adaptation to unseen tasks. Our results establish a new path toward models that combine the compositionality of discrete languages with the gradient-based search and end-to-end learning of neural networks.",
+      "url": "https://arxiv.org/abs/2604.18907",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-04-20",
+      "score": 0.8841
+    },
+    {
+      "id": "2604.19354",
+      "title": "Do Agents Dream of Root Shells? Partial-Credit Evaluation of LLM Agents in Capture The Flag Challenges",
+      "authors": [
+        "Ali Al-Kaswan",
+        "Maksim Plotnikov",
+        "Maxim Hájek",
+        "Roland Vízner",
+        "Arie van Deursen",
+        "Maliheh Izadi"
+      ],
+      "abstract": "Large Language Model (LLM) agents are increasingly proposed for autonomous cybersecurity tasks, but their capabilities in realistic offensive settings remain poorly understood. We present DeepRed, an open-source benchmark for evaluating LLM-based agents on realistic Capture The Flag (CTF) challenges in isolated virtualized environments. DeepRed places an agent in a Kali attacker environment with terminal tools and optional web search, connected over a private network to a target challenge, and records full execution traces for analysis. To move beyond binary solved/unsolved outcomes, we introduce a partial-credit scoring method based on challenge-specific checkpoints derived from public writeups, together with an automated summarise-then-judge labelling pipeline for assigning checkpoint completion from logs. Using DeepRed, we benchmark ten commercially accessible LLMs on ten VM-based CTF challenges spanning different challenge categories. The results indicate that current agents remain limited: the best model achieves only 35% average checkpoint completion, performing strongest on common challenge types and weakest on tasks requiring non-standard discovery and longer-horizon adaptation.",
+      "url": "https://arxiv.org/abs/2604.19354",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.SE"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.884
+    },
+    {
+      "id": "2604.19444",
+      "title": "Unsupervised Confidence Calibration for Reasoning LLMs from a Single Generation",
+      "authors": [
+        "Thomas Zollo",
+        "Jimmy Wang",
+        "Richard Zemel"
+      ],
+      "abstract": "Reasoning language models can solve increasingly complex tasks, but struggle to produce the calibrated confidence estimates necessary for reliable deployment. Existing calibration methods usually depend on labels or repeated sampling at inference time, making them impractical in many settings. We introduce a method for unsupervised confidence calibration of reasoning LLMs when only a single generation is available at inference time. Our approach uses offline sampling on unlabeled data to derive a self-consistency-based proxy target, then distills this signal into a lightweight deployment-time confidence predictor. In a broad evaluation across 5 math and question-answering tasks using 9 reasoning models, our method substantially outperforms baselines, including under distribution shift, and improves downstream performance in selective prediction and simulated downstream decision-making.",
+      "url": "https://arxiv.org/abs/2604.19444",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-04-21",
+      "score": 0.8838
+    },
+    {
+      "id": "2604.19124",
+      "title": "Detoxification for LLM: From Dataset Itself",
+      "authors": [
+        "Wei Shao",
+        "Yihang Wang",
+        "Gaoyu Zhu",
+        "Ziqiang Cheng",
+        "Lei Yu",
+        "Jiafeng Guo",
+        "Xueqi Cheng"
+      ],
+      "abstract": "Existing detoxification methods for large language models mainly focus on post-training stage or inference time, while few tackle the source of toxicity, namely, the dataset itself. Such training-based or controllable decoding approaches cannot completely suppress the model's inherent toxicity, whereas detoxifying the pretraining dataset can fundamentally reduce the toxicity that the model learns during training. Hence, we attempt to detoxify directly on raw corpora with SoCD (Soft Contrastive Decoding), which guides an LLM to localize and rewrite toxic spans in raw data while preserving semantics, in our proposed HSPD (Hierarchical Semantic-Preserving Detoxification) pipeline, yielding a detoxified corpus that can drop-in replace the original for fine-tuning or other training. On GPT2-XL, HSPD attains state-of-the-art detoxification, reducing Toxicity Probability (TP) from 0.42 to 0.18 and Expected Maximum Toxicity (EMT) from 0.43 to 0.20. We further validate consistent best-in-class results on LLaMA2-7B, OPT-6.7B, and Falcon-7B. These findings show that semantics-preserving, corpus-level rewriting with HSPD effectively suppresses downstream toxicity while retaining data utility and allowing seamless source-level mitigation, thereby reducing the cost of later model behavior adjustment. (Code is available at: https://github.com/ntsw2001/data_detox_for_llm)",
+      "url": "https://arxiv.org/abs/2604.19124",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-04-21",
+      "github_url": "https://github.com/ntsw2001/data_detox_for_llm",
+      "score": 0.8832
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
