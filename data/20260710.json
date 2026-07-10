@@ -1,0 +1,410 @@
+{
+  "date": "2026-07-10",
+  "collected_at": "2026-07-10T12:55:49.655332+09:00",
+  "papers": [
+    {
+      "id": "2607.08046",
+      "title": "What LLM Forecasters Know but Don't Say: Probing Internal Representations for Calibration and Faithfulness",
+      "authors": [
+        "Raphaël Sarfati",
+        "Pratyush Ranjan Tiwari",
+        "Siddharth Boppana",
+        "Christopher J. Earls",
+        "Srikar Varadaraj",
+        "Eric Ho"
+      ],
+      "abstract": "Large language models fine-tuned for forecasting can be accurate yet poorly calibrated, and their chain-of-thought (CoT) reasoning may not faithfully reflect the evidence behind a forecast. We ask whether internal representations offer a more direct window into both. Working with Eternis-Forecaster 8B on OpenForesight, we train representation-pooling probes on intermediate activations and find they achieve substantially better calibration; a result that also holds for GLM-4.7-Flash and GLM-4.5-Air. We then assess CoT faithfulness through evidence ablation and diversionary injection: removing an influential source in the prompt often changes the model's forecast while leaving the reasoning trace untouched. The same probes function as lie detectors: their activations track behavioral shifts far better than the reasoning trace does, and they also predict the direction of change in 84% of cases, including when the CoT conceals the perturbation's influence. Finally, forced answering reveals that forecasts are largely fixed before reasoning begins: a single pre-reasoning pass recovers the committed answer and confidence, and routing questions by the spread of this pre-set answer distribution saves 30-47% of generated tokens, with no loss of accuracy. Together, these results establish probing internal representations as a practical tool for calibrating, auditing, and triaging language model forecasters and reasoning models more broadly.",
+      "url": "https://arxiv.org/abs/2607.08046",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.888
+    },
+    {
+      "id": "2607.08662",
+      "title": "WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search",
+      "authors": [
+        "Xiaoshuai Song",
+        "Liancheng Zhang",
+        "Kangzhi Zhao",
+        "Yutao Zhu",
+        "Zhongyuan Wang",
+        "Guanting Dong",
+        "Jinghan Yang",
+        "Han Li",
+        "Kun Gai",
+        "Ji-Rong Wen",
+        "Zhicheng Dou"
+      ],
+      "abstract": "Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ReAct-style agent is constrained by one long trajectory and limited context, making it difficult to handle depth and coverage simultaneously. Existing multi-agent systems improve search coverage through parallel execution and aggregation, but still exhibit clear limitations in recursive depth, collaboration adaptability, and evidence-grounded expansion. We propose WebSwarm, a progressive recursive delegation framework that jointly constructs task decomposition, recursive expansion, and agent collaboration during inference. WebSwarm dynamically instantiates agentic search nodes, each coupling a local objective with a search mode that specifies how the node should organize search and collaboration. Each node can either solve its objective itself or further delegate child nodes; after solving, it returns evidence and results upward, enabling parent nodes to further expand, revise, or aggregate the search process. To guide this process, WebSwarm first probes how task-relevant information is organized on the web to ground subsequent node expansion, and reuses process-level experience across homogeneous sibling nodes. Experiments on BrowseComp-Plus, WideSearch, DeepWideSearch, and GISA show that WebSwarm consistently outperforms single-agent and multi-agent baselines on deep, wide, and interleaved deep-and-wide tasks. Further analyses of ablation, task difficulty, web tool efficiency, and model generalization explain WebSwarm's effectiveness and provide insights for multi-agent search systems.",
+      "url": "https://arxiv.org/abs/2607.08662",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8872
+    },
+    {
+      "id": "2607.08646",
+      "title": "UltraX: Refining Pre-Training Data at Scale with Adaptive Programmatic Editing",
+      "authors": [
+        "Xinlong Zhao",
+        "Dongsheng Liu",
+        "Hengyu Zhao",
+        "Zixuan Fu",
+        "Zheng Wang",
+        "Jie Cai",
+        "Jie Zhou",
+        "Qiang Ma",
+        "Xuanhe Zhou",
+        "Xu Han",
+        "Yudong Wang",
+        "Zhiyuan Liu"
+      ],
+      "abstract": "As available training data approaches its physical limit, gains from Scaling Laws have begun to diminish. Consequently, improving Large Language Models (LLMs) now depends less on data expansion and more on higher-quality data utilization. However, in the context of large-scale corpora, existing refinement methodologies face significant limitations in quality, efficiency, and reliability: Rule-based approaches are constrained by fixed heuristics and struggle with instance-level variations; LLM-based approaches improve quality but fail to meet the efficiency and reliability requirements of large-scale data processing. To address these challenges, we propose UltraX, a function-calling refinement framework for large-scale pre-training data that completes the editing function space by introducing insertion in addition to deletion and modification, enabling fine-grained instance-level editing. Specifically, UltraX builds a reliable program-supervision generation pipeline. In this pipeline, dataset-adaptive prompt optimization first guides an expert LLM to produce high-quality end-to-end refined texts, and Line Alignment Mapping and Dynamic Context Replacement then convert original-refined text pairs into structured program supervision. Meanwhile, UltraX improves supervision quality and stabilizes the training distribution with low-confidence example filtering and ratio-controlled sampling by operation combination. During inference and execution, it normalizes and validates model outputs through sliding-window prediction, global operation aggregation, and systematic post-processing, improving the stability and reliability of large-scale execution. Experiments show that UltraX achieves the highest average performance across all corpora and also matches or surpasses baselines with fewer training tokens, demonstrating stronger data efficiency and refinement reliability.",
+      "url": "https://arxiv.org/abs/2607.08646",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8872
+    },
+    {
+      "id": "2607.08284",
+      "title": "Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench",
+      "authors": [
+        "Siddhartha Jain",
+        "Ameya Velingker"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated rapidly improving long-context capabilities, prompting a wave of benchmarks designed to evaluate them. However, existing long-context evaluations - from Needle-in-a-Haystack (NIAH) tests to more recent multi-hop reasoning and summarization tasks - predominantly measure average-case performance, and many are either saturated or lack robustness. Notably absent is a systematic way to probe how models perform as we scale up the difficulty of tasks along various axes. We address this gap by proposing PredicateLongBench, a benchmark that stress-tests long-context reasoning by asking models to identify the longest contiguous subsequence of words in a long input that satisfies given predicates/constraints (e.g., lexicographic ordering), drawn from a broader predicate class. The central innovation of our benchmark is the identification and systematic exploration of multiple different axes of difficulty which test multiple aspects of long context understanding. We provide two complementary generation pipelines - a fully synthetic setup using random word-like strings, and a real-world setup that samples words from natural documents while preserving their distributional properties. We find that frontier models struggle to perform well as we scale up the difficulty of tasks along our axes, demonstrating the utility of our benchmark in understanding the limitations of current long-context capabilities. Furthermore, the tasks in PredicateLongBench, though challenging, are conceptually simple and do not require LLM-based generations or judges.",
+      "url": "https://arxiv.org/abs/2607.08284",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8872
+    },
+    {
+      "id": "2607.08018",
+      "title": "Concretized Proposition Prompting Resolves Composition-Knowledge Dichotomy in Large Language Models",
+      "authors": [
+        "Changhun Lee",
+        "Minguk Jeon",
+        "Jongkyung Shin",
+        "Chiehyeon Lim"
+      ],
+      "abstract": "LLMs often struggle to balance compositionality with knowledgeability, a challenge we define as Composition-Knowledge Dichotomy. To address this, we propose Concretized Proposition Prompting (CPP), a framework that explicitly concretizes propositions relevant to questions. The results demonstrate that CPP significantly enhances reasoning performance, particularly in medical benchmarks where precise knowledge is paramount, while being competitive on math benchmarks where deductive reasoning is prioritized. Additional experiments reveal that CPP is scalable to various foundation models and parameter sizes, being a fundamental paradigm that bridges the gap between composition- and knowledge-based approaches. Consequently, CPP resolves the composition-knowledge dichotomy by providing a solid foundation for logically organized and factually grounded reasoning.",
+      "url": "https://arxiv.org/abs/2607.08018",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8867
+    },
+    {
+      "id": "2607.08403",
+      "title": "Game Theory Driven Multi-Agent Framework Mitigates Language Model Hallucination",
+      "authors": [
+        "Runzhe Liu",
+        "Biquan Bie",
+        "Zihao Wang",
+        "Yuchao Ma",
+        "Yexin Liu",
+        "Xinghai Li",
+        "Harry Yang",
+        "Wenbo Yang",
+        "Jinzhe Cao",
+        "Shengyang Tao"
+      ],
+      "abstract": "The application of lightweight Large Language Models in rule-based scientific domains remains severely limited by their tendency to mimic linguistic patterns rather than reproduce axiomatic reasoning, causing frequent hallucinations. Here, we show that G-Frame, an adaptive multi-agent framework integrating Bayesian and team game principles, establishes an automated closed-loop for high-quality data synthesis and model training. By forcing the internalization of domain constraints through structured reasoning, we synthesized a specialized corpus of 363,045 chains-of-thought and 199,589 question-answer pairs. The resulting 7B model OmniChem achieves performance parity with GPT 4o mini on custom benchmarks and ChemBench while exhibiting a 79.46% reduction in hallucinations relative to its base architecture. We further demonstrate the advanced capabilities of OmniChem in molecular design and synthesis planning. This work establishes a scalable paradigm utilizing adaptive multi-agents to overcome inherent reasoning deficiencies, offering a feasible pathway for accelerating knowledge discovery in specialized scientific fields.",
+      "url": "https://arxiv.org/abs/2607.08403",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8856
+    },
+    {
+      "id": "2607.08017",
+      "title": "Can We Trust LLM's Logic? Quantifying Uncertainty, Coherence, and Robustness via a Graph-Based Framework",
+      "authors": [
+        "Riccardo Revalor",
+        "Jalees Rehman",
+        "Debjit Pal"
+      ],
+      "abstract": "Large-Language Models (LLMs) can be prone to flawed and unfaithful reasoning that decoding strategies like Self-Consistency (SC) fail to detect as they evaluate only final-answer agreement while ignoring the logical validity of intermediate steps. This raises three fundamental questions: How can we reliably quantify uncertainty in LLM reasoning? Can semantic, structural, and causal awareness select more faithful reasoning compared to naïve majority voting? and How robust is reasoning topology under adversarial conditions? To address these questions, we introduce GRAPHEVAL, a graph-based reasoning framework that re-frames uncertainty quantification (UQ) as a holistic reasoning fidelity problem. We propose a novel UQ metric, Graph Reasoning Coherence Score (GRCS), that quantifies semantic-structural consensus of the reasoning space and captures pathological mode collapse and confident hallucinations. We find that GRCS is the only metric that is consistently negatively correlated with reasoning faithfulness across both more capable and smaller models. Additionally, we introduce Graph Self-Consistency (GSC), a medoid-based decoding strategy that trades nominal accuracy for reasoning fidelity, exposing the degree to which SC is inflated by unfaithful lucky guesses in smaller models, while preserving or improving accuracy in more capable ones. Finally, through adversarial medoid ablation, we demonstrate that the GSC-selected path acts as a \"load-bearing path\" and forcing models away from it degrades reasoning faithfulness and, in targeted cases, causes drops in accuracy.",
+      "url": "https://arxiv.org/abs/2607.08017",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8854
+    },
+    {
+      "id": "2607.08161",
+      "title": "SQuaD-SQL: Efficient Text-to-SQL with Small Language Models via LLM-Guided Knowledge Distillation",
+      "authors": [
+        "Wangyu Wu",
+        "Xiaojian Lin",
+        "Rong Fu",
+        "Zaiyang Yu",
+        "Xuhang Chen",
+        "Wenjun Yu",
+        "Zhenhong Chen"
+      ],
+      "abstract": "Text-to-SQL is a fundamental task in natural language processing that enables users to interact with structured databases using natural language. While large language models (LLMs) have demonstrated remarkable performance on this task, their substantial computational requirements hinder deployment in resource-constrained settings. In this paper, we introduce SQuaD-SQL (Small-Qualified and Distilled for SQL), a novel approach that empowers small language models (SLMs) to approach the performance of LLMs on the Text-to-SQL task while significantly improving efficiency through knowledge distillation and synthetic data generation. Our method comprises three key components: (1) LLM-based synthetic data generation, where structured knowledge is extracted from LLMs via carefully designed prompting strategies; (2) parameter-efficient fine-tuning, enabling full model training on a single consumer-grade GPU; and (3) domain-adaptive fine-tuning, where domain-specific synthetic data further enhances performance in targeted domains. Experiments on the WikiSQL dataset demonstrate that SQuaD-SQL achieves an execution accuracy of 86.9% on the test set, approaching the performance of LLMs while offering faster inference and lower memory usage. These results suggest that, with proper training strategies, SLMs can serve as practical and efficient alternatives for Text-to-SQL applications in resource-limited environments.",
+      "url": "https://arxiv.org/abs/2607.08161",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.885
+    },
+    {
+      "id": "2607.08066",
+      "title": "Persuasion Attacks Can Decrease Effectiveness of CoT Monitoring",
+      "authors": [
+        "Jennifer Za",
+        "Julija Bainiaksina",
+        "Nikita Ostrovsky",
+        "Tanush Chopra",
+        "Victoria Krakovna"
+      ],
+      "abstract": "Chain-of-thought (CoT) monitoring is a promising safety mechanism for AI agents, based on the premise that visible reasoning traces can surface misaligned or deceptive behavior. While effective in standard scenarios, recent work highlights that LLMs remain vulnerable to persuasion-based jailbreaks, where natural-language arguments override model constraints. We stress-test whether this vulnerability extends to monitoring LLMs: can an adversarial agent persuade its CoT monitor to approve proposed actions that violate the monitor's policy? We design an evaluation framework with 40 tasks and analyze thousands of agent-monitor interactions, where agents are instructed to argue for policy-violating proposals. We find that in such adversarial settings, monitor access to the agent's CoT reasoning increases rather than decreases approval of harmful actions on average by 9.5%, as the scratchpad provides an additional persuasion channel. To address this, we introduce a fact-checking monitoring framework. We find that a fact-checker and monitor pairing from different model families, for example a Claude 3.7 Sonnet monitor paired with a GPT-4.1 fact-checker, reduces approval of policy-violating actions by up to 45%, compared to only 6%, when using the same model for both fact-checking and monitoring roles. Our results demonstrate that CoT monitoring alone may be insufficient against adversarial persuasion, and that model-diverse fact-checking provides a robust mitigation.",
+      "url": "https://arxiv.org/abs/2607.08066",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8847
+    },
+    {
+      "id": "2607.07820",
+      "title": "DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment",
+      "authors": [
+        "Xinyu Geng",
+        "Xuanhua He",
+        "Sixiang Chen",
+        "Yanjing Xiao",
+        "Fan Zhang",
+        "Shijue Huang",
+        "Haitao Mi",
+        "Zhenwen Liang",
+        "Tianqing Fang",
+        "Yi R. Fung"
+      ],
+      "abstract": "Training tool-use agents to improve from their own experience remains challenging, as supervised fine-tuning relies on fixed teacher-distilled trajectories, while sparse-reward reinforcement learning provides weak supervision for long-horizon interactions. We present DeepSearch-Evolve, a self-distillation framework for web agents built on DeepSearch-World, a deterministic and verifiable environment with reproducible search and page-reading tools. DeepSearch-World contains 420K multi-hop QA tasks constructed from entity-level random walks and supports key agentic cognitive behaviors useful for self-evolving, including progress verification, grounded reflection, and failure recovery. DeepSearch-Evolve iteratively performs trajectory generation, filtering, data mixing, and fine-tuning to train stronger agents. Without distillation from more capable models, DeepSearch-World-9B achieves competitive performance compared with open-source agents, reaching 31.2% on BrowseComp, 61.5% on GAIA, and 93.4% on HotpotQA, showing that verifiable environments enable scalable self-evolution for long-horizon web agents. We will release the environment, 420K training pool, validation set, model, and code to facilitate future research on self-improving deep search agents.",
+      "url": "https://arxiv.org/abs/2607.07820",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-08",
+      "score": 0.8845
+    },
+    {
+      "id": "2607.08059",
+      "title": "When Thinking Hurts: Epistemic Signals in the Reasoning Chains of Visual Language Models",
+      "authors": [
+        "Mayank Singal"
+      ],
+      "abstract": "Uncertainty quantification for visual language models (VLMs) conventionally targets the answer token distribution. We provide the first three-family empirical characterisation of answer entropy behaviour in thinking-mode VLMs. Running four models on identical POPE adversarial samples, we find three qualitatively distinct patterns: Qwen3-VL-8B-Thinking shows complete collapse (ans H AUROC = 0.492); GLM-4.1V-9B-Thinking shows no collapse (0.716); and InternVL3-8B shows selective thinking (chains on only 50% of samples, ans H = 0.675 full / 0.602 thinking-only). Across all three thinking-mode models, thinking chain entropy outperforms answer entropy on the subset where chains are generated (0.647, 0.759, 0.608 vs. 0.492, 0.716, 0.602 respectively), suggesting chain signals are the more reliable predictor whenever chains are present. This holds strongly for Qwen and GLM, but with only marginal and statistically unreliable advantage for InternVL3 (n_FP = 17). A 300-sample VQAv2 pilot confirms chain entropy (0.680) outperforms answer entropy (0.595) on VQAv2 questions, with the gap largest for free-form answers (0.733 vs. 0.467). On harder reasoning tasks (HallusionBench) both Qwen models show moderate signal (approx. 0.64), consistent with incomplete pre-commitment on difficult questions. We additionally document structured abstention affecting 12-22% of queries with asymmetry toward absent-object queries, and a practical abstention gate raising accuracy from 71.0% to 93.8% at 62.7% coverage with no additional inference cost.",
+      "url": "https://arxiv.org/abs/2607.08059",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.884
+    },
+    {
+      "id": "2607.07946",
+      "title": "DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering Tasks",
+      "authors": [
+        "Wenqi Huang",
+        "Charley Lee",
+        "Leonard Tng",
+        "Serena Ge"
+      ],
+      "abstract": "DeepSWE is a benchmark of 113 original, long-horizon software engineering tasks for evaluating coding agents. Most public agentic coding benchmarks follow SWE-bench in mining merged fixes from public GitHub repositories, which creates two problems: the fixes and their discussion were likely seen during pretraining, so a high score can reflect recall rather than problem-solving; and each task is graded by the tests that shipped with its merged fix, which were written to confirm one specific fix rather than grade an arbitrary solution, so they can fail a correct alternative or pass an incomplete one. DeepSWE avoids both. Its tasks are written from scratch across 91 active open-source repositories and five languages and are never contributed back upstream, so their reference solutions stay out of the public record that model training scrapes; and each task is graded by a hand-written verifier that checks the requested functionality and accepts any implementation that provides it. When an independent LLM judge re-reviews graded runs, it disagrees with DeepSWE's verifier about an order of magnitude less often than with SWE-Bench Pro's inherited tests (1.4% versus 32.4%). Despite being about half the length of SWE-Bench Pro's prompts, DeepSWE's prompts describe tasks whose reference solutions touch 5.5x more code, and the benchmark separates frontier agents across a wider score band than the leaderboards on which they otherwise cluster. We release the benchmark, its verifiers, and the full record of evaluation trajectories.",
+      "url": "https://arxiv.org/abs/2607.07946",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-08",
+      "score": 0.8832
+    },
+    {
+      "id": "2607.08032",
+      "title": "What to Keep, What to Forget: A Rate--Distortion View of Memory Compaction in LLMs and Agents",
+      "authors": [
+        "Ashwin Gerard Colaco",
+        "Nada Lahjouji"
+      ],
+      "abstract": "Large language models, and the agents built on them, spend an ever-growing share of their compute and memory on remembering: caching attention keys and values, carrying long prompts, maintaining recurrent state, and storing what happened in previous turns and sessions. Because none of this memory is free, four largely separate research communities have each learned to compact it. They evict or quantize the KV cache, prune or distill prompts, bound architectural state, and consolidate agent memory. We argue that these are instances of one problem: a rate--distortion decision about what context-derived information to retain versus discard, at what fidelity, under a resource budget, so as to preserve downstream task utility. We make this lens precise with a single compaction objective and a layer-agnostic lower bound, use it to build a seven-axis taxonomy that classifies methods from across the stack uniformly, and use it to transfer mechanisms between layers that have never been connected, from serving-stack KV management to agent long-term memory. Two patterns hold across the survey. At every layer the signal that decides what to keep is attention magnitude or recency, and it fails in the same way everywhere, by discarding, before the query is known and with no way to undo it, information the query later needs. And while compression is measured carefully on single-turn long context, the repeated compaction that agents actually perform is almost never measured, and no benchmark holds one budget axis across all the layers at once. We turn both observations into a benchmark proposal, a small reference experiment, and a set of compaction-aware design principles, and we map the open problems.",
+      "url": "https://arxiv.org/abs/2607.08032",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8827
+    },
+    {
+      "id": "2607.07836",
+      "title": "Infinity-Parser2 Technical Report",
+      "authors": [
+        "Zuming Huang",
+        "Jun Huang",
+        "Kexuan Ren",
+        "Baode Wang",
+        "Weizhen Li",
+        "Jianming Feng",
+        "Yu Wang",
+        "Yichen Yao",
+        "Shijun Lin",
+        "Yige Tang",
+        "Cheng Peng",
+        "Weidi Xu",
+        "Wei Chu",
+        "Yinghui Xu",
+        "Yuan Qi"
+      ],
+      "abstract": "We present Infinity-Parser2, a large multimodal model that couples a controllable data-synthesis pipeline with multi-task reinforcement learning for end-to-end document parsing, addressing the persistent scarcity of faithfully annotated parsing corpora. Our contributions are threefold. First, we build a scalable synthesis engine, pairing a controllable rendering framework with an iterative refinement loop, and use it to construct and open-source Infinity-Doc2-5M: a 5-million-sample bilingual (Chinese/English) corpus spanning diverse document types, annotated with element bounding boxes, canonical content forms (Markdown, HTML, LaTeX, SMILES, structured charts), and full-page reading order. Second, we introduce a verifiable, multi-task reward system that enables Joint Reinforcement Learning across eight co-trained objectives (document parsing, layout analysis, table parsing, math formula parsing, chart parsing, chemical formula parsing, document VQA, and general multimodal understanding), unifying perception, structure, and reasoning in a single optimization signal. Third, we release two variants under a shared architecture: Infinity-Parser2-Flash, optimized for low-latency inference with a $3.68\\times$ throughput gain over Infinity-Parser-7B, and Infinity-Parser2-Pro, engineered for precision-critical settings. Infinity-Parser2-Pro reaches state-of-the-art 87.6% on olmOCR-Bench and 74.3% on ParseBench, surpassing DeepSeek-OCR-2, PaddleOCR-VL-1.5, and MinerU2.5, with strong generalization to charts, chemical formulas, and document VQA.",
+      "url": "https://arxiv.org/abs/2607.07836",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-08",
+      "score": 0.8819
+    },
+    {
+      "id": "2607.08268",
+      "title": "Different Teachers, Different Capabilities: Sub-1B On-Device Distillation for Structured Text Enrichment",
+      "authors": [
+        "Vinay Kumar Chaganti"
+      ],
+      "abstract": "High-volume structured extraction pays a large model's latency on every item, so distilling the task into a small on-device model is attractive: comparable output at a fraction of the time and cost. We measure what that distillation actually delivers, per sub-task. Each news article is mapped to one JSON object with a short summary and five categorical labels. We distill an 8B reasoning teacher (deepseek-r1:8b) into a 0.6B student (Qwen3-0.6B; QLoRA, three seeds), and add two teacher controls: a same-size non-reasoning teacher and a larger managed pipeline. A blinded, reference-free, three-judge panel scores every arm against the full article, alongside two non-distillation baselines, few-shot prompting and constrained decoding. The student runs at about 0.8 s per article against the teacher's 39 s, and recovers 58% of the base-to-teacher gap on summary quality, beating its primary baseline (constrained decoding) by +16.8 points and few-shot prompting by a secondary +4.9. A same-size non-reasoning teacher trains a student no better than the untuned base, so the summary gain follows from the teacher's reasoning nature rather than its scale. Capabilities then split by teacher: the reasoning teacher transfers writing quality and the managed pipeline transfers label diversity, while a same-size instruction teacher's students stay more grounded on the 22 short, thin-source articles in the 93-item test set (74 versus 55 faithful), where the reasoning-lineage student fabricates. That grounding difference is a consistent ordering rather than a significant aggregate effect, and the subgroup is small, so we report it as a direction. Because no single engine wins every field, the deliverable is a per-field routing map for on-device enrichment.",
+      "url": "https://arxiv.org/abs/2607.08268",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8816
+    },
+    {
+      "id": "2607.08768",
+      "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+      "authors": [
+        "Zhekai Chen",
+        "Chengqi Duan",
+        "Kaiyue Sun",
+        "Bohao Li",
+        "Yuqing Wang",
+        "Manyuan Zhang",
+        "Xihui Liu"
+      ],
+      "abstract": "The rapid development of large language models and multimodal large language models has accelerated the emergence of proactive agents capable of operating everyday tools and assisting users in real-world environments. However, existing benchmarks struggle to evaluate such agents effectively, as they often rely on sandboxed environments and single-turn evaluation paradigms. Moreover, their scenario-based task taxonomies mix multiple model capabilities within the same task category, making it difficult to identify the root causes of agent failures. To address these limitations, we introduce UniClawBench, the first capability-driven benchmark designed to evaluate proactive agents in dynamic, real-world settings. UniClawBench is built around five foundational model capabilities: Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, and Cross-Platform Coordination. Based on these capabilities, we design 400 bilingual real-world tasks. Unlike previous benchmarks that rely on static, pre-recorded answers, our benchmark evaluates agents in live Docker containers using fine-grained, step-by-step completion checkpoints. Furthermore, we design a closed-loop evaluation strategy comprising an executor agent, a hidden supervisor agent, and a user agent to simulate realistic multi-turn human feedback without leaking grading criteria. To disentangle base model capabilities from framework-level design choices, we evaluate state-of-the-art models under multiple agent frameworks. Through comprehensive comparisons across both models and frameworks, we show how base model capabilities and agent framework designs jointly shape performance in real-world environments. To facilitate future research, we make our benchmark and code publicly available at https://github.com/HKU-MMLab/UniClawBench.",
+      "url": "https://arxiv.org/abs/2607.08768",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-09",
+      "github_url": "https://github.com/HKU-MMLab/UniClawBench.",
+      "score": 0.8815
+    },
+    {
+      "id": "2607.07847",
+      "title": "When Does Continual Learning Require Learning",
+      "authors": [
+        "Anne Harrington",
+        "Nayan Saxena",
+        "Michael Murphy",
+        "Anastasia Borovykh",
+        "Zeyu Yun",
+        "Sridhar Kamath",
+        "Ara Eindra Kyi",
+        "Trevor Darrell",
+        "Jitendra Malik",
+        "Yutong Bai"
+      ],
+      "abstract": "As large language models (LLMs) become increasingly capable, the next question is how can we enable models to continually learn? Today, the field largely frames this as a problem of context management and mitigating forgetting. We argue this framing is incomplete: continual learning is fundamentally about increasing model competence as the world changes. We disentangle this change along two axes -- space, where the model encounters new domains, and time, where the underlying data drifts under a fixed task. This framing lets us study continual learning under realistic conditions: new domains arrive over time, facts drift past their training cutoff, and agentic interactions accumulate state across episodes. To evaluate methods under this setting, we recast widely used LLM benchmarks as sequential problems and introduce a single mechanism-agnostic protocol that compares prompt-based methods (GEPA, ACE), supervised learning (SFT, SDFT), reinforcement learning (GRPO, SDPO), and context compression (Cartridges, In-place TTT). Prompt-based methods fit each new stage quickly but degrade on future tasks. Distillation-based methods accumulate knowledge stably but struggle to update outdated facts. Context compression improves efficiency without substantially improving the ability to learn new tasks. Online reinforcement learning adapts most effectively to knowledge updates but remains sensitive to noisy reward signals. Overall, our results suggest that continual learning is not a single capability: different patterns of environmental change require fundamentally different update behaviors, determining when adaptation must be learned inside model weights and when it can be achieved through external scaffolding. We hope that understanding where each method succeeds and fails will guide the design of stronger continual learning systems.",
+      "url": "https://arxiv.org/abs/2607.07847",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-08",
+      "score": 0.8814
+    },
+    {
+      "id": "2607.08173",
+      "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
+      "authors": [
+        "Jack Hopkins",
+        "Dipika Khullar",
+        "Fabien Roger"
+      ],
+      "abstract": "Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbolθ_{\\mathcal{O}_α} = \\boldsymbolθ_{\\mathcal{M}} + α(\\boldsymbolθ_{\\mathcal{R}} - \\boldsymbolθ_{\\mathcal{M}})$, where $α> 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden information across four experimental settings, across 2B-32B models. Our findings suggest that reasoning amplification may surface secrets or unintended behaviors acquired during training up to $10\\times$ more frequently than the original reasoning model. How secrets surface depends on the secret type: some require perturbation along the reasoning direction, while others yield to any sufficiently large weight perturbation.",
+      "url": "https://arxiv.org/abs/2607.08173",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8804
+    },
+    {
+      "id": "2607.08124",
+      "title": "TTHE: Test-Time Harness Evolution",
+      "authors": [
+        "Jun Nie",
+        "Yonggang Zhang",
+        "Jun Song",
+        "Qianshu Cai",
+        "Dahai Yu",
+        "Yike Guo",
+        "Xinmei Tian",
+        "Bo Han"
+      ],
+      "abstract": "The behavior of an LLM agent is determined not only by the underlying model, but also by its harness: the executable program that constructs context, invokes tools, verifies intermediate results, and recovers from failures. Existing approaches optimize such harnesses before deployment, searching training or development data for a fixed agent workflow that is then frozen at test time. This limits adaptation when the test distribution, failure modes, or tool interactions differ from those seen during development. We ask whether the harness can instead be optimized during evaluation itself, using only the unlabeled execution traces the agent produces on the test inputs. We introduce Test-Time Harness Evolution (TTHE), which treats the executable harness as the state of test-time adaptation. During evaluation, TTHE maintains a population of candidate harnesses and refines them through an agentic proposer that reasons over their execution traces, without gold labels or task-specific supervision; a judge then commits an improved harness from execution-derived proxy signals, and the selected program persists to govern subsequent inputs. Crucially, TTHE does not update model weights, require gold labels, or train a separate adaptation model: solver, proposers, and judge are different roles and harnesses around the same frozen LLM, so all adaptation occurs through changes to the surrounding program. Across text-to-SQL, competitive programming, software engineering, data-science coding, and agentic tool-use tasks, TTHE improves fixed ReAct-style baseline harnesses, yielding persistent, inspectable improvements rather than a pre-searched workflow or per-query retries. These results recast test-time adaptation for LLM agents as evolution over executable control programs and identify execution-derived proxy reliability as a central challenge for robust unsupervised agent improvement.",
+      "url": "https://arxiv.org/abs/2607.08124",
+      "categories": [
+        "cs.SE",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8797
+    },
+    {
+      "id": "2607.08009",
+      "title": "From Execution to Education: A Bloom-Aligned Framework for Measuring Educational Control in LLMs",
+      "authors": [
+        "Yi Zhang",
+        "Julia Rayz"
+      ],
+      "abstract": "We introduce a Bloom-aligned framework for measuring educational control in Large Language Models (LLMs): the ability to preserve a task's instructional intent while shifting its cognitive demand toward specified learning objectives. We apply this framework to programming tasks in computer science education to study the gap between solving tasks and adapting them for learners. Using revised Bloom's Taxonomy as an operational scale of cognitive demand, we evaluate two intervention settings: general difficulty control, where models are asked to make tasks harder or easier, and Bloom's control, where models are asked to target higher or lower Bloom's levels. We evaluate a matched Qwen3-Next model pair, comparing Qwen3-Next-80B-A3B-Instruct with Qwen3-Coder-Next across 2,520 tasks from three benchmarks. The framework reveals a robust directional asymmetry: both models reliably increase cognitive demand, but struggle to lower it. We further characterize these outcomes with semantic-delta clustering and layer-wise Fisher's Discriminant Ratio probing. Within this controlled comparison, the general model shows clearer middle-layer separability for both general difficulty and Bloom-control contrasts, whereas the coder model shows weaker separability for general difficulty and a deeper peak for Bloom-control contrasts. These results show that strong execution performance does not automatically entail Bloom-aligned educational control.",
+      "url": "https://arxiv.org/abs/2607.08009",
+      "categories": [
+        "cs.CL",
+        "cs.CY"
+      ],
+      "submitted": "2026-07-09",
+      "score": 0.8796
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 296,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
