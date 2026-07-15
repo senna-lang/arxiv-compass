@@ -1,0 +1,392 @@
+{
+  "date": "2026-07-15",
+  "collected_at": "2026-07-15T11:56:35.391934+09:00",
+  "papers": [
+    {
+      "id": "2607.12893",
+      "title": "MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations",
+      "authors": [
+        "Xixuan Hao",
+        "Zeyu Zhang",
+        "Zehao Lin",
+        "Yihang Sun",
+        "Ziliang Guo",
+        "Xichong Zhang",
+        "Yuxuan Liang",
+        "Feiyu Xiong",
+        "Zhiyu Li"
+      ],
+      "abstract": "Long-term memory has become a foundational capability for LLM-based agents that accompany users across extended, multi-session interactions. Existing benchmarks, however, evaluate such memory almost exclusively through downstream question answering, scoring only the correctness of a final answer. This black-box formulation conflates the heterogeneous causes of memory failure, such as missing the introduction of a relevant fact, binding an operation to the wrong target, or relying on stale values after a correction. As a result, it can credit correct answers despite their reliance on inconsistent or unsafe memory states. In this paper, we argue that, in dynamic long-horizon interactions, memory is not a static collection of facts but a lifecycle of explicit operations, including remembering, forgetting, updating, reflecting, and their compositions. We introduce MemOps, a benchmark that reformulates conversational memory as a sequence of lifecycle operations and represents each memory event with a structured trace specifying its trigger, target, scope, state transition, and supporting evidence. A controllable generation pipeline embeds these operations into long, task-oriented conversations and produces gold operation traces together with six categories of operation-level probes, evaluated under both adjacent-evidence and long-context settings. Across long-context, retrieval-based, parametric and managed-memory systems, MemOps disentangles failure modes that final-answer accuracy alone conceals, revealing that current systems remain far from uniformly reliable. For instance, session-level retrieval outperforms turn-level retrieval, and long-context models remain notably weak at reconstructing ordered memory-state trajectories. These results move long-term memory evaluation from final-answer scoring toward interpretable, operation-level diagnosis.",
+      "url": "https://arxiv.org/abs/2607.12893",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.892
+    },
+    {
+      "id": "2607.12733",
+      "title": "LLMs Can See the Smoke but not the Fire: Evaluating Abductive Reasoning with Elenchos",
+      "authors": [
+        "Julius Steiglechner",
+        "Lucas Mahler",
+        "Gabriele Lohmann"
+      ],
+      "abstract": "Large language models (LLMs) excel at pattern recognition and text generation, but their capacity for abductive inference - inferring latent hypotheses that explain observed behavior - remains poorly understood. Here, we introduce Elenchos (named after the Socratic method of cross-examination), a generative evaluation framework that measures abductive reasoning as a structural inverse problem. Given a reference formal system, such as the lambda-calculus, and a potentially mutated counterpart, agents must determine whether a mutation has occurred and infer the rule modifications responsible for the resulting behavioral differences. Evaluating frontier and mid-tier LLMs reveals a consistent detection-attribution dissociation: models often recognize that a system has been altered but struggle to identify the latent mutations causing the observed discrepancies. Performance degrades substantially under interacting mutations, where models frequently recover only a subset of the underlying mutations. Preliminary evidence also suggests diminishing returns from increased inference-time reasoning, with only modest improvements under larger reasoning budgets, though this finding requires further validation.",
+      "url": "https://arxiv.org/abs/2607.12733",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8908
+    },
+    {
+      "id": "2607.12463",
+      "title": "Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models",
+      "authors": [
+        "Yubo Wang",
+        "Jiarong Liang",
+        "Yuxuan Zhang",
+        "Xuye Liu",
+        "Cong Wei",
+        "Yuyu Zhang",
+        "Ping Nie",
+        "Wenhu Chen"
+      ],
+      "abstract": "Coding agents must integrate external tool returns into ongoing reasoning - a capability that standard left-to-right pretraining on code exposes only in its forward direction. We observe that the action-observation-continuation loop of a coding agent is structurally isomorphic to a function call site, where a caller binds arguments, a callee returns a value computed elsewhere, and downstream code consumes that value. This conditioning structure exists at internet scale in ordinary code. We exploit it through function-aware fill-in-the-middle (FIM) mid-training: a self-supervised objective that masks functions selected via program dependency graph analysis and a complexity-inferability double criterion. We mid-train Qwen2.5-Coder-Instruct (7B/14B) and Qwen3-8B on a 2.6B-token decontaminated corpus drawn from 968 GitHub repositories, then apply existing agentic post-training pipelines. Mid-training improves SWE-Bench-Verified by +2.8/+3.0 at 7B/14B and by +3.2 on Qwen3-8B; SWE-Bench-Lite gains are +3.7/+4.0/+5.4 on the same models. The improvement holds across two post-training pipelines (R2E-Gym, SWE-Smith) and on a non-Qwen2.5 base (Qwen3-8B with SWE-Lego). Beyond in-domain gains, mid-training also mitigates the capability erosion that agentic post-training otherwise inflicts on non-agent coding (e.g., LiveCodeBench) and non-coding tool-use benchmarks (tau-bench, BFCL): although the mid-training corpus contains Python code only, the function-call inductive bias survives post-training and yields consistent gains.",
+      "url": "https://arxiv.org/abs/2607.12463",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8883
+    },
+    {
+      "id": "2607.12267",
+      "title": "Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents",
+      "authors": [
+        "Ning Liu"
+      ],
+      "abstract": "Language agents that interleave reasoning and tool use degrade sharply as reasoning chains lengthen, even when each individual step is easy. We trace this to context dilution: an agent's investigative state (what it has confirmed, what it suspects, and what it still needs) lives only implicitly in a growing context window, where early discoveries are buried under later retrievals. We introduce SLEUTH, which makes this state explicit and actionable through a structured epistemic working memory: the agent maintains Confirmed Facts grounded to sources, Active Hypotheses ranked by evidence, and Open Questions that directly drive its next action. Across five multi-hop benchmarks and five established baselines, SLEUTH's advantage grows with difficulty, from +5 points on HotpotQA to +11 on 4-hop chains, surpassing Reflexion without multiple episodes. Analyzing where the remaining gap lies, we identify the evidence sufficiency problem: agents often find the answer but fail to commit, exhausting their budget on needless verification. A lightweight commitment trigger fixes this, but only when the agent already maintains structured state: the identical trigger applied to an unstructured agent yields no improvement, isolating organized epistemic state as the necessary condition for effective commitment. Finally, enforcing protocol adherence on a weaker model recovers up to +19 points on the hardest problems, showing that how an agent organizes its reasoning, not raw model capability, is the active ingredient for scaling multi-hop reasoning.",
+      "url": "https://arxiv.org/abs/2607.12267",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8881
+    },
+    {
+      "id": "2607.12815",
+      "title": "Visual Access Boundaries in Vision-Language Model Reasoning",
+      "authors": [
+        "Hiroto Osaka",
+        "Shohei Taniguchi",
+        "Gouki Minegishi",
+        "Kai Yamashita",
+        "Masahiro Suzuki",
+        "Yutaka Matsuo"
+      ],
+      "abstract": "Chain-of-Thought (CoT) prompting is widely used as a test-time scaling strategy for Vision-Language Models (VLMs), but it remains unclear what is extended when VLMs generate longer reasoning traces. We ask whether CoT requires continued access to image tokens, or whether it mainly operates over visual information already made available earlier in the forward pass. We introduce Visual Access Sweep, a causal intervention that masks attention from generated-token queries to image-token keys along layer depth and generation time, and define the Visual Access Boundary (VAB) as the minimal access region that preserves task accuracy. Across six model configurations from Qwen2.5-VL and InternVL3, both no-CoT direct answering and CoT prompting exhibit finite VABs. In Qwen2.5-VL-32B and InternVL3 at 14B and 38B scales, when CoT is evaluated against the no-CoT full-access target, its VAB layer differs from the no-CoT boundary by at most two layers, despite substantially longer generations. This suggests that CoT does not primarily improve performance by prolonging direct image-token access throughout the reasoning trace, but by extending language-side computation over image-derived hidden-state information. We further show that CoT gains are constrained by perceptual readout. CoT helps when the queried visual attribute can be reliably read out by the model, but not when that readout is unreliable. A symbolic-attribute oracle shows that CoT can improve counting once ground-truth attributes are supplied as text, while a single-object probe-vs-decode check shows that hard attributes can be linearly recoverable from hidden states yet difficult for the model itself to output. Together, these analyses place the bottleneck at readout rather than counting.",
+      "url": "https://arxiv.org/abs/2607.12815",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8877
+    },
+    {
+      "id": "2607.13034",
+      "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+      "authors": [
+        "Junjie Yin",
+        "Xinyu Feng"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly automate multi-step engineering and informatics workflows, yet they rarely ask how much effort a task actually requires. They often follow a maximum-context-first strategy--re-reading files and dependencies they have already seen--turning a one-line edit into a small code-base audit. We argue the missing capability is task-aware execution-scope estimation: judging a task's difficulty, the information it truly needs, and the shortest reliable path before committing budget. We formalize minimum-sufficient execution and the Agent Cognitive Redundancy Ratio (ACRR), and propose E3 (Estimate, Execute, Expand): the agent estimates an initial operating point, executes a minimum viable path, and expands scope only when verification fails. On MSE-Bench--a deterministic benchmark of 121 edits in a capability-controlled simulator--E3 matches the strongest baseline's 100% success while cutting cost by 85%, tokens by 91%, and inspected files by 92%, and further beats a strong adaptive retrieval baseline by 16%; the gains survive held-out instruction wording and essentially every cost weighting. A companion real-model harness (LLM-Case) corroborates the effect on a live gpt-4o agent editing a real open-source library, with every candidate patch graded by actually running the project's real pytest suite against a measured oracle: the over-reading is milder but real, and E3 is the leanest and fastest policy at comparable task success--its one shortfall a provider rate-limit, not a wrong edit. We frame this as a controlled probe of execution redundancy, not a measurement of any deployed agent, and position task-aware execution as a step toward engineering-grounded AI (EGAI)--agents whose effort is anchored in the engineering reality of the task. We release the framework and benchmark.",
+      "url": "https://arxiv.org/abs/2607.13034",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE",
+        "eess.SY"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8876
+    },
+    {
+      "id": "2607.12279",
+      "title": "A Shared Subcircuit Lets LLMs Count Down Across Tasks",
+      "authors": [
+        "Jacob Dunefsky",
+        "Wes Gurnee",
+        "Emmanuel Ameisen"
+      ],
+      "abstract": "Writing a sentence of exactly twelve words; ending a DNA sequence at the right codon; formatting an ASCII table. These are all tasks that language models can do that requires tracking how many tokens remain before a target. In this work, we identify in Llama-3.1-70B-Instruct a general mechanism for performing these tasks: a \"countdown subcircuit\" that compares the current position to a goal length and estimates the time remaining until then. We first isolate a countdown subcircuit in a controlled setting, in which the model is tasked with writing a fixed-length sentence ending in a specified word. We then investigate the geometry of the representations used by the subcircuit, and find that the subcircuit uses an identical motif previously identified in a frontier LLM on a separate task, thus suggesting that this motif is shared across models. Finally, we use unsupervised probing on a natural language dataset to find a variety of other tasks where this subcircuit is used, including tasks where the goal length is inferred from context rather than explicitly stated. Our work suggests that reverse-engineering subcircuits allows us to understand how behaviors generalize from a single example to many different tasks and even models.",
+      "url": "https://arxiv.org/abs/2607.12279",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8874
+    },
+    {
+      "id": "2607.12696",
+      "title": "Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts",
+      "authors": [
+        "Jincheng Xie",
+        "Runheng Liu",
+        "Heyan Huang",
+        "Yawen Ling",
+        "Hanbin Dai",
+        "Yu Zheng",
+        "Wen Hu"
+      ],
+      "abstract": "Sparse Mixture-of-Experts (MoE) models have become an important approach for scaling Large Language Models (LLMs), but their inference efficiency depends strongly on expert activation patterns. Speculative decoding (SD) accelerates autoregressive generation by verifying multiple draft tokens in parallel, yet existing draft selection strategies primarily optimize acceptance likelihood. In large-scale MoE models, however, selecting draft tokens also determines the union of experts activated during verification. We observe that confidence-driven SD can introduce \\textit{expert scattering}: high-probability draft tokens may route to disjoint experts, increasing expert-weight memory traffic and reducing the speedup from speculation. Motivated by this observation, we revisit draft-tree selection under the non-uniform memory-cost structure of MoE inference. We propose \\textsc{EcoSpec}, a cost-aware speculative decoding framework that incorporates predicted marginal expert activation cost into draft selection. With a lightweight expert predictor and a dynamic expert buffer, \\textsc{EcoSpec} favors draft paths that preserve high acceptance likelihood while reusing experts already covered by the current verification set, without modifying the target-model verification rule. We evaluate \\textsc{EcoSpec} on three large-scale MoE models, including DeepSeek-V3.1 (671B), Qwen3-235B-A22B, and GPT-OSS-120B, across reasoning, coding, question-answering, and dialogue benchmarks. \\textsc{EcoSpec} consistently reduces active expert footprints and improves end-to-end decoding speed, achieving up to $1.62\\times$ speedup. These results show that accounting for expert activation cost is important for efficient speculative decoding in large-scale MoE models.",
+      "url": "https://arxiv.org/abs/2607.12696",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8862
+    },
+    {
+      "id": "2607.12161",
+      "title": "Token Reduction Is Not Cost Reduction",
+      "authors": [
+        "Sarel Weinberger",
+        "Amir Hozez"
+      ],
+      "abstract": "Context-reduction layers for API-based coding agents, including command-output compressors, retrieval rankers, and payload-optimizing proxies, are usually evaluated by how much text they remove. We ask instead: when does reducing retrieved context or tool output lower the actual billed cost of a coding agent without reducing task success or lengthening its trajectory?\n  Our primary evidence is a pre-specified, hash-frozen, paired campaign of 2,908 provider-billed Claude Code runs, of which 2,848 were analyzed, covering 103 tasks, seven repositories, and three models. The campaign compared a baseline with two generations of hook-based compression and an API-boundary proxy, within a broader measured program of roughly 5,500 billed executions.\n  Three findings emerge. First, prompt-cache traffic dominated cost composition. Cache creation and reads accounted for about 87% of reconstructed four-component cost, or about 80% of the actual bill, with an 8.7% dollar-weighted residual that retained telemetry could not attribute. On Haiku 4.5, this residual scaled with thinking effort.\n  Second, tool-output reduction did not reliably predict billed-cost reduction. An arm that removed 38% of estimated raw tool-output tokens had 6.8% higher paired cost (95% CI: +2.8% to +11.3%), while per-task reduction was only weakly associated with cost change (Pearson r = 0.15, CI crossing zero).\n  Third, compression can harm task completion by removing action-critical evidence. In a small single-shot study on SWE-bench-derived Go tasks, compression reduced patch application from 27/40 to 15/40 by corrupting verbatim edit anchors, and the compressed grounded arm produced fewer solves at higher observed cost per solve.\n  We propose a layered evidence standard centered on success-adjusted billed cost rather than token reduction alone.",
+      "url": "https://arxiv.org/abs/2607.12161",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-13",
+      "score": 0.8846
+    },
+    {
+      "id": "2607.12216",
+      "title": "RCWT: Measuring Task-Budget Displacement from Coordination Content in LLM Calls",
+      "authors": [
+        "Brenda Lelis",
+        "Rodrigo Cabral-Carvalho"
+      ],
+      "abstract": "Multi-agent and memory-augmented LLM systems often place coordination content, shared state, prior discussion, tool outputs, summaries, and role instructions, inside the same finite prompt used for the current task. This creates a practical allocation problem: every token spent on coordination is unavailable to task instructions or evidence when a call is assembled under a fixed context budget. We introduce the Roundtable Context Window Test (RCWT), a controlled protocol for measuring this task-budget displacement effect. RCWT varies coordination content while controlling total budget, position order, task family, and scoring. In the main context-dependent recall task at $W=4096$, three commercial models remain near baseline through moderate overhead and then degrade sharply once residual reference evidence falls to a few hundred tokens. Window-scaling summaries are consistent with a task-specific residual-budget interpretation rather than a fixed percentage threshold, but we treat this as descriptive evidence rather than a universal law. To test whether the fixed-budget cliff persists when task evidence remains intact, we add an intact-task ablation: the full task/reference block is kept present while coordination tokens increase by expanding total prompt length. In that setting, all tested calls return every scored field correctly across GPT-4.1-mini, Claude Haiku 4.5, and Gemini 2.5 Flash up to a 95\\% coordination ratio. This ablation narrows the claim: the main RCWT cliff is best read as task-budget displacement, not as proof that coordination volume alone causes semantic interference in the original open-ended task. RCWT is therefore a measurement primitive for context-allocation budgeting, not a complete theory of multi-agent benefit or session-level coordination.",
+      "url": "https://arxiv.org/abs/2607.12216",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-07-13",
+      "score": 0.8844
+    },
+    {
+      "id": "2607.12042",
+      "title": "SymbOmni: Evolving Agentic Omni Models via Symbolic Concept Learning",
+      "authors": [
+        "Jinxiu Liu",
+        "Jianru Li",
+        "Tanqing Kuang",
+        "Xuanming Liu",
+        "Kangfu Mei",
+        "Yandong Wen",
+        "Weiyang Liu"
+      ],
+      "abstract": "Visual generation is increasingly ubiquitous in diverse domains, from text-to-image/video synthesis to multimodal interactive creation. Yet prevailing monolithic models remain fundamentally constrained by their inability to learn cumulatively and evolve autonomously, which is a limitation we term the \"perpetual novice\" problem. They lack mechanisms for structuring experience into reusable knowledge and therefore rely on brittle, \"from-scratch\" reasoning for each task, resulting in poor compositional generalization and inefficient knowledge retention. Motivated by these limitations, we propose SymbOmni, an agentic omni-model designed for cumulative evolution through Symbolic Concept Learning. At its core is the Symbolic Concept Box, an optimizable memory module that abstracts low-level operations into reusable Symbolic Workflow Instructions. SymbOmni operates through an induction-transduction cycle: experiences are abstracted into symbolic concepts (induction), which are then adaptively composed to solve novel tasks (transduction). The training is done by verbalized backpropagation with language-based feedback to enable continuous self-improvement without gradient-based model fine-tuning. Comprehensive experiments validate that (I) SymbOmni significantly outperforms existing agent-based systems for iterative creation and also surpasses closed-source models (e.g., Nano Banana, GPT-Image-1) in both image quality and task success rates; (II) SymbOmni effectively reduces token consumption by over 40% while maintaining competitive generation quality; and (III) SymbOmni enables effective continual learning by achieving cumulative gains across multiple online-learning benchmarks and setting a new state of the art.",
+      "url": "https://arxiv.org/abs/2607.12042",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-13",
+      "score": 0.8822
+    },
+    {
+      "id": "2607.12831",
+      "title": "Knowledgeless Language Models: Suppressing Parametric Recall for Evidence-Grounded Language Modeling",
+      "authors": [
+        "Roi Cohen",
+        "Yvan Carré",
+        "Nick Lechtenbörger",
+        "Hendrik Droste",
+        "Lucas Kerschke",
+        "Russa Biswas",
+        "Gerard de Melo",
+        "Jan Buys"
+      ],
+      "abstract": "Language models encode substantial factual knowledge in their parameters, which can lead to unreliable behavior when this knowledge is outdated, incomplete, or misaligned with the provided context. In this work, we study whether modifying the pretraining signal can systematically shift models away from parametric recall and toward evidence-grounded reasoning. We introduce Knowledge--''Less'' Language Models (KLLMs), a fundamentally different epistemic training paradigm for LLMs, which are pretrained on corpora in which named entities are anonymized, thereby removing a primary channel for entity-linked factual supervision. This intervention substantially reduces closed-book factual recall, while often improving performance on tasks where relevant information is provided as context. Across multiple model scales, KLLMs consistently outperform matched baselines on contextual question answering, fact verification, and hallucination detection benchmarks. Crucially, in retrieval-grounded settings with imperfect evidence, KLLMs show improved robustness and achieve up to 20--25\\% relative gains over standard language models. They further exhibit better calibration, with improved ECE, Brier score, and AUROC, as well as more reliable abstention behavior. Our results demonstrate that suppressing entity-linked supervision during pretraining induces a shift in epistemic behavior: KLLMs rely less on parametric knowledge and more on external evidence, leading to improved reliability under realistic conditions. This suggests that pretraining-time control over knowledge acquisition can complement retrieval-augmented and tool-based systems by providing a more evidence-sensitive base model.",
+      "url": "https://arxiv.org/abs/2607.12831",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8821
+    },
+    {
+      "id": "2607.12796",
+      "title": "The One-Word Census: Answer-Choice Conformity Across 44 Language Models",
+      "authors": [
+        "Tapan Parikh"
+      ],
+      "abstract": "When a language model must pick one answer from a large space of equally valid options, which does it pick -- and how often is it the same answer every other model picks? Asked to \"pick a word -- any word,\" 44 models chose \"serendipity\" 41% of the time. We characterize this convergence with a deliberately minimal instrument: 31 single-turn prompts, each naming a category with many valid one-word answers (\"Name a tree.\"), asked four times per model with no system prompt. Analysis is exact-match on normalized tokens -- no embeddings, no judge -- at about a dollar per model. That models converge is well documented; our contribution is the instrument itself -- the One-Word Census -- and what it reveals about the structure of the convergence. We score each model by answer-choice surprisal: the average $-\\log2$ probability of its answers under the pooled answers of all other models, leave-one-out. Convergence is extreme -- in 7 of 31 categories one answer takes over 80% of all answers -- yet conformity varies more than fourfold across models, and the variation is structured. Persona- and community-tuned models are the most divergent; the newest mainline flagships are the most conformist, producing almost no answer no other model gave. Within four lineages (Claude, GPT, Qwen, Grok) conformity rises with each generation -- but reverses for the latest flagship Claude and GPT models, a possible early signal of repositioning at the top tier. Rankings are robust to roster composition (leave-one-family-out rho = 0.985). Against human category-production norms, the field is more concentrated than people in 18 of 20 shared categories. All prompts, transcripts, and code are public.",
+      "url": "https://arxiv.org/abs/2607.12796",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8806
+    },
+    {
+      "id": "2607.11849",
+      "title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
+      "authors": [
+        "Lingkai Kong",
+        "Zijian Wu",
+        "Yuzhe Gu",
+        "Haiteng Zhao",
+        "Wenyong Huang",
+        "Shuang Sun",
+        "Zhicheng Xiong",
+        "Xiaotian Zhang",
+        "Shuya Zhao",
+        "Yan Wang",
+        "Disheng Xu",
+        "Wenwei Zhang",
+        "Kai Chen"
+      ],
+      "abstract": "Large language models (LLMs) have achieved remarkable performance on high-school and olympiad-style mathematics, yet their capabilities on advanced mathematics remain poorly understood. Existing benchmarks, however, fall short in both scope and evaluation granularity: they provide limited disciplinary coverage and often rely on final-answer correctness or coarse judgments, leaving the validity of the reasoning process inadequately assessed. To bridge this gap, we introduce AdvancedMathBench, a benchmark suite designed to evaluate advanced mathematical reasoning capabilities. Its core proof-generation benchmark, ProverBench, contains 296 problems spanning undergraduate and doctoral qualifying-exam levels. To provide reliable evaluation of the proofs, we develop a dedicated automatic verification pipeline trained on large-scale expert annotations to produce both correctness verdicts and fine-grained assessments of proof errors, which exhibits strong agreement with human experts on held-out proof trajectories. We further introduce VerifierBench, consisting of 888 model-generated proof trajectories paired with expert ground truth, to evaluate whether models can correctly judge proof validity and provide sound verification rationales. Experiments show that AdvancedMathBench remains challenging for frontier models. On proof generation, the best-performing model, GPT-5.5-xhigh, achieves only 75.8 and 66.1 on the UGD and QE splits, respectively, indicating substantial room for improvement on advanced mathematical proof construction. On proof verification, the best model attains a Balanced F1 of only 65.1, and models generally exhibit low true negative rates, suggesting that critical error detection remains a major bottleneck.",
+      "url": "https://arxiv.org/abs/2607.11849",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-13",
+      "score": 0.8805
+    },
+    {
+      "id": "2607.12963",
+      "title": "The Illusion of Robustness: Aggregate Accuracy Hides Prediction Flips under Task-Irrelevant Context",
+      "authors": [
+        "Yanzhe Zhang",
+        "Sanmi Koyejo",
+        "Diyi Yang"
+      ],
+      "abstract": "As large language models (LLMs) grow more capable, they are increasingly deployed in context-rich settings where task inputs are often accompanied by long, partially irrelevant context. In a controlled setting, we find that state-of-the-art models often appear robust to task-irrelevant context at the aggregate level: prepending it to benchmark questions causes little change in overall accuracy. This aggregate stability, however, masks significant per-example instability. Even semantically meaningless pseudo-words, formed by randomly combining characters, can markedly shift model predictions on a small fraction of examples, degrading performance on some while improving it on others. This two-sided effect holds consistently across a wide range of models and datasets, yet the affected examples are largely model-specific. We further show that this instability is modulated by context type, context length, test-time compute, and model development stage. Together, our findings reveal context-induced tail risks concealed by aggregate accuracy, motivating per-example reliability evaluation of language models.",
+      "url": "https://arxiv.org/abs/2607.12963",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8795
+    },
+    {
+      "id": "2607.12395",
+      "title": "Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning",
+      "authors": [
+        "Xinyu Tang",
+        "Gangqiang Cao",
+        "Yurou Liu",
+        "Yuliang Zhan",
+        "Xiaochong Lan",
+        "Yifan Li",
+        "Yuchen Yan",
+        "Han Peng",
+        "Zican Dong",
+        "Zhenduo Zhang",
+        "Tianshu Wang",
+        "Xinyu Kong",
+        "Zujie Wen",
+        "Wayne Xin Zhao",
+        "Zhiqiang Zhang",
+        "Jun Zhou"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards without human-annotated data, often referred to as zero RL, has emerged as a powerful paradigm for eliciting chain-of-thought reasoning. However, due to computational constraints, existing studies are largely restricted to small models, leaving the training dynamics and emergent capabilities at a large scale unexplored. To meaningfully explore this frontier, we aim to elicit high-quality reasoning behaviors from the model. However, we find that naive scaling often suffers from poor readability, token redundancy, and a lack of adaptive reasoning depth. To address these challenges, we present a stable and efficient training pipeline, incorporating algorithmic and system optimizations such as clipped importance sampling, training-inference ratio correction, and mixed-precision control. Our experiments offer three key findings that validate the \"bitter lesson\" of scaling: (1) scaling to 1T parameters significantly enhances sample efficiency and performance ceilings; (2) the training process progresses sequentially through an initial discovery phase followed by a sharpening phase; and (3) the model spontaneously develops advanced cognitive behaviors, including anthropomorphism, structured formatting, self-verification, parallel reasoning, and context anxiety, rendering hand-crafted heuristics redundant. Evaluated on seven mathematical benchmarks, Ring-2.5-1T-Zero achieves competitive performance. Additionally, to assess CoT quality beyond final-answer correctness, we propose a structured evaluation framework across three dimensions: comprehensibility, reproducibility, and efficiency, where our model demonstrates clear advantages in producing structured and concise reasoning traces. By sharing our observed emergent phenomena, we hope to provide the community with deeper insights into scaling behaviors, particularly at the 1-trillion scale.",
+      "url": "https://arxiv.org/abs/2607.12395",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8794
+    },
+    {
+      "id": "2607.12713",
+      "title": "Line-Anchored Feedback Cuts Token Costs and Improves Correctness in AI Code Editing",
+      "authors": [
+        "William Franz Lamberti"
+      ],
+      "abstract": "Generated tokens are a direct driver of the cost, latency, and energy of generative AI (GAI) code editing. We show the format of feedback is a lever on all three. We compare two deliveries of the same requested changes: a holistic prompt (control) versus the structured, line-anchored export of FileMark (treatment). FileMark is a VSCodium extension for inline comments on any file. In a paired experiment line anchoring cut generated tokens by 22% (Claude Opus) and 58% (Claude Sonnet), reaching 24%-80% on files of 100 lines or more, with four of seven models generating significantly fewer tokens after multiple-testing correction. Correctness rose where models had headroom: +2.0 points pooled and +5 to +7 points for three of five local models. An exploratory experiment in which the harness, not the GAI model, applies function-level patches shows the correctness benefit grows further when the edit-application burden is lifted: local-model correctness on 100+ line files roughly triples under anchoring. Line-anchored feedback reduces what stronger models spend and improves what weaker models get right.",
+      "url": "https://arxiv.org/abs/2607.12713",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8793
+    },
+    {
+      "id": "2607.12310",
+      "title": "LakeQuest: A Three-Domain Benchmark for Grounded Question Answering across Data Lakes",
+      "authors": [
+        "Michael Solodko",
+        "Steven Gong",
+        "Guangwei Yu",
+        "Satya Krishna Gorti",
+        "Jesse C. Cresswell",
+        "Victor Zhong"
+      ],
+      "abstract": "While modern question answering (QA) systems excel on clean, schema-aligned corpora, real-world knowledge is rarely so neatly packaged. Answering questions over enterprise and scientific data lakes requires systems to navigate heterogeneous, weakly structured collections of tables, passages, and linked metadata. Current benchmarks abstract away this noisy discovery process, failing to evaluate end-to-end performance. To bridge this gap, we introduce LakeQuest, a human-validated benchmark of 9,846 QA pairs designed to evaluate the end-to-end retrieve-and-synthesize pipeline over realistic data lakes. LakeQuest spans three diverse domains (AI/ML metadata, retail banking, and multimodal biomedical drug information) and pairs every question with exact, modality-aware evidence pointers. By isolating source discovery from cross-modal synthesis, LakeQuest exposes critical failure modes in modern QA systems. Our baseline evaluations, including standard Retrieval-Augmented Generation (RAG) and agentic tool-use methods, reveal that high-quality retrieval does not guarantee correct reasoning. Systems consistently struggle with relation chaining in metadata graphs, policy grounding in bank ledgers, and joint tabular QA in biomedical contexts, highlighting the need for robust discovery and faithful cross-file composition mechanisms in future agentic QA systems.",
+      "url": "https://arxiv.org/abs/2607.12310",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.879
+    },
+    {
+      "id": "2607.12739",
+      "title": "Epistemic Stance Flexibility Probing: Measuring Prompt-Conditioned Register Shift in Large Language Models",
+      "authors": [
+        "Binwen Liu",
+        "Yilin Ren"
+      ],
+      "abstract": "A language model may be asked either what experts believe about a contested claim or what it believes about the claim itself. A trustworthy conversational agent should distinguish these two requests and respond in different epistemic registers: neutral attribution in the first case and stance expression in the second. Whether such a shift occurs-and whether it occurs coherently-is not directly assessed by existing benchmarks for accuracy, instruction following, or safety. We introduce ESFP, a behavioral benchmark that treats the contrast between externally attributed and self-attributed prompts as the fundamental unit of measurement. ESFP consists of 104 carefully controlled items spanning six epistemic categories and five phrasing templates, and evaluates model responses along four complementary dimensions: lexical self-attribution, representation-level responsiveness to role framing, sentence-level stance content density assessed by an LLM judge panel, and cross-condition stance consistency. Evaluating eight frontier models from five vendors, we find that epistemic flexibility is largely orthogonal to general model capability: a 27B open-weight model matches the strongest proprietary systems, the flagship model of one family underperforms its lightweight counterpart, and reasoning-optimized models do not consistently exhibit higher flexibility. Stance content density provides the strongest signal, while surface-level lexical markers such as 'I think' can change substantially without corresponding changes in expressed stance. We provide item-level bootstrap confidence intervals, weight-sensitivity analyses, and an explicit discussion of the interpretation limits of the composite score. ESFP measures a model's propensity to adapt its epistemic stance under changing attribution conditions, rather than a general competence measure.",
+      "url": "https://arxiv.org/abs/2607.12739",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-14",
+      "score": 0.8784
+    },
+    {
+      "id": "2607.11696",
+      "title": "Think Through a Bottleneck: Hourglass Reasoning for Rigorous Induction",
+      "authors": [
+        "Huan Zhu"
+      ],
+      "abstract": "Self-refinement often fails to strengthen few-shot inductive reasoning in large language models. Prompting a model to explicitly state its inferred rule does little on its own. What actually matters is a structurally enforced isolation between reasoning stages, so that information can only pass between them as a compressed symbolic state.\n  We introduce \\textbf{Hourglass reasoning}, which enforces strict context isolation between reasoning stages. The frozen LLM acts as a meta-constructor, building for each task a symbolic encoder--decoder: an Induction module compresses the support examples into a schema $φ$ (encoder) and a transient scaffold $z$; a Deduction module derives rule $T$ (decoder) from these and discards $z$; an Implementer compiles $(φ, T)$ into artifacts; an error-driven Refiner revises $(φ, T)$ and regenerates artifacts from scratch. Only $(φ, T)$ crosses stage boundaries, so all refinement stays anchored to the rule.\n  We evaluate Hourglass across three benchmarks spanning visual abstraction, hardware synthesis, and textual rule induction, using GPT-5.5 and Gemini 3.1 Pro. On ARC-AGI-2, it raises best-of-5 accuracy by up to 14 points over an iterative-refinement baseline. On ChipBench, it nearly doubles Verilog synthesis accuracy with GPT-5.5, from 31\\% to 58\\%. BBEH-Linguini draws on puzzles from the International Linguistics Olympiad, a setting where prior work has shown that explicit verbalization can hurt performance. Hourglass mitigates this tendency, and on Gemini 3.1 Pro, it reverses the effect entirely.\n  Ablations confirm that these gains come from the isolation between stages and the quality of the initial induction, not from prompt wording or the particular symbolic form used. It is how information flows through the reasoning process, rather than the language used to express it, that drives inductive reasoning in frozen LLMs.",
+      "url": "https://arxiv.org/abs/2607.11696",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-13",
+      "score": 0.8783
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 299,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
