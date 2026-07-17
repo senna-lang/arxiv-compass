@@ -1,0 +1,395 @@
+{
+  "date": "2026-07-17",
+  "collected_at": "2026-07-17T12:21:45.569782+09:00",
+  "papers": [
+    {
+      "id": "2607.14895",
+      "title": "Leveraging Instruction Tuning and Merging for Reasoning Model Adaptation",
+      "authors": [
+        "Yu-Du Feng",
+        "Niels Mündler-Sasahara",
+        "Mark Vero",
+        "Martin Vechev"
+      ],
+      "abstract": "Reasoning language models (RLMs) have demonstrated impressive performance in domains such as mathematics and coding. These domains permit reliable verification of model outputs, which is important for enabling the reinforcement learning that drives RLM performance gains. However, training RLMs on domains that lack reliable verifiers remains challenging. Meanwhile, for both verifiable and unverifiable domains, large amounts of unused supervised fine-tuning data with human-written solutions exist. In this work, we show that these data can be used efficiently to further improve RLM performance. For this, we first use classic instruction tuning, supervised fine-tuning without reasoning traces, on the RLM. Next, we merge our instruction-tuned model with the original reasoning model, recovering its reasoning behavior on the target domain. Our extensive evaluation demonstrates that our technique improves RLM performance in both verifiable and hard-to-verify domains, including coding and text summarization, while preserving RLM capabilities across other domains. Importantly, our method is highly cost-effective, enabling such improvements for less than USD $3.",
+      "url": "https://arxiv.org/abs/2607.14895",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8956
+    },
+    {
+      "id": "2607.14989",
+      "title": "OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios",
+      "authors": [
+        "Chengyu Shen",
+        "Yujie Fu",
+        "Gangtao Xin",
+        "Yanheng Hou",
+        "Wenlong Fei",
+        "Guojie Zhu",
+        "Jiawei Li",
+        "Hongcheng Gao",
+        "Runming He",
+        "Zhen Hao Wong",
+        "Meiyi Qiang",
+        "Hao Liang",
+        "Zhao Cao",
+        "Hao Jiang",
+        "Chong Chen",
+        "Wentao Zhang"
+      ],
+      "abstract": "Large language models are increasingly evolving from text generators into general agents capable of understanding user requests, invoking external tools, and completing complex tasks through interaction. However, existing agent benchmarks often focus on limited scenarios, tool ecosystems, or interaction formats, making it difficult to systematically characterize model capabilities across heterogeneous application settings. We introduce OmniaBench, a benchmark for evaluating general agents across diverse scenarios with explicit state spaces. We derive application-oriented scenario knowledge from app stores, product documents, industry resources, Web retrieval, and human refinement, forming a hierarchical taxonomy that spans ToC, ToB and ToE with 90 level-1 and 354 level-2 domains. Based on this taxonomy, we construct executable environments and synthesize single-turn and multi-turn tasks through four complementary routes: DAG, DAG-S, Solver, and Program. OmniaBench further introduces a ten-dimensional capability taxonomy and eight compositional atomic difficulty factors to support fine-grained evaluation and analysis. The resulting dataset contains 1,431 tasks, together with a challenging subset of 644 tasks designed to reduce evaluation cost and mitigate potential contamination of the full set after public release. The bench presents substantial challenges to current frontier models, with even Claude-Sonnet-5 and GPT-5.6-Sol achieving Overall Pass@1 scores of only 58.54 and 57.14, respectively. Further analyses reveal clear differences across domains and capabilities, as well as persistent limitations in planning, constraint maintenance, and adaptive correction. OmniaBench provides a broad and diagnostic benchmark for characterizing the capability boundaries of general agents.",
+      "url": "https://arxiv.org/abs/2607.14989",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8926
+    },
+    {
+      "id": "2607.14277",
+      "title": "Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making",
+      "authors": [
+        "Amirhosein Ghasemabadi",
+        "Ruichen Chen",
+        "Bahador Rashidi",
+        "Di Niu"
+      ],
+      "abstract": "Large language models are increasingly deployed as agents, but reliable agentic behavior requires more than next-token prediction. At inference time, it is preferred that an agent can decide whether to proceed with its current reasoning, defer to a stronger model, request additional information, invoke external tools, or abstain under the given setup. Existing approaches address these decisions through prompt-level routing, external orchestration, or task-specific fine-tuning, which primarily rely on input-side signals, and are often costly and difficult to maintain as model backbones evolve. We ask whether such control decisions can be inferred directly from a model's latent generation process. We introduce Multi-Head Latent Control, a lightweight layer that reads hidden-state trajectories from a frozen LLM or VLM to produce deployment-time control signals. A Capability Head predicts whether the current model can solve the instance or should defer to a stronger collaborator, while a Resolution Head predicts appropriate resolution decision Clarification, Tool Use, Abstention, or Direct Answering. Both heads are trained only on latent traces from the same frozen LLM backbone, enabling post hoc adaptation without modifying the model. Across language and vision-language settings, Multi-Head Latent Control consistently improves the quality-cost tradeoff of multi-model systems, enabling early handoff from partial generations and more accurate intervention decisions. In routed execution (small + large model), it reduces large-model usage by up to 90.7 percent on AndroidWorld and 27-53 percent on average across benchmarks, while retaining most of large-model performance. Additionally, the learned control signals improve tool-use decision quality, yielding up to +158 percent relative score gain and 65.5 percent fewer missed-required tool calls.",
+      "url": "https://arxiv.org/abs/2607.14277",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-15",
+      "score": 0.8922
+    },
+    {
+      "id": "2607.14386",
+      "title": "CIPHER: A Decoupled Exploration-Selection Framework for Test-Time Scaling of Data Science Agents",
+      "authors": [
+        "Maxime Heuillet",
+        "Sharadind Peddiraju"
+      ],
+      "abstract": "Data science tasks span from closed-ended information extraction to open-ended analysis, presenting significant challenges for automation. Recent AI agents powered by language models show promise for handling such complex tasks. However, existing agents typically rely on a single initial state that conditions the entire agent's execution, making them vulnerable to cascading errors initiated by a suboptimal initial state. To mitigate this, we present CIPHER, an automated data science agent that leverages test-time scaling through the generation and selection of multiple initial states for concurrent execution. Unlike existing works on test-time scaling of AI agents, CIPHER explicitly decouples the generation of candidate initial states from their strategic selection for parallel execution. Through extensive evaluation on two benchmarks (closed-form and open-form tasks), we demonstrate that CIPHER exceeds state-of-the-art performance in matched-model comparisons, and remains competitive against larger-model baselines despite relying on a substantially smaller base LM. Our empirical study characterizes the design space of the Decoupled Exploration-Selection (DES) framework: we quantify how generation strategy, selection strategy, and aggregator model capacity contribute to overall performance, and derive actionable design recommendations for practitioners.",
+      "url": "https://arxiv.org/abs/2607.14386",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-15",
+      "score": 0.8909
+    },
+    {
+      "id": "2607.14561",
+      "title": "MARS: Multi-hop Adaptive Retrieval and SPARQL Generation for KGQA",
+      "authors": [
+        "Nikit Srivastava",
+        "Daniel Vollmers",
+        "René Speck",
+        "Nikolaos Karalis",
+        "Hamada M. Zahera",
+        "Axel-Cyrille Ngonga Ngomo"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated strong reasoning performance, but their tendency to hallucinate limits their reliability in knowledge-intensive tasks requiring up-to-date and grounded information. Combining knowledge graphs (KGs) with LLMs facilitates the use of explicit symbolic knowledge that can be continuously updated without costly fine-tuning, while benefiting from rapidly advancing LLM reasoning. We propose MARS, a scalable knowledge graph question answering (KGQA) approach that requires no model fine-tuning. Rather than relying on open-ended agentic exploration, MARS performs a structured retrieval procedure that links question entities to the KG and iteratively retrieves relevant next-hop information. At each step, MARS decides whether to continue graph traversal or to generate the final SPARQL query, allowing the model to adapt the retrieval depth to the question while keeping the overall pipeline more predictable than fully agentic approaches. We evaluate MARS on three established KGQA benchmarks across several LLMs and settings, including multilingual evaluation, and provide insights through ablation studies and error analysis. Our approach achieves competitive performance relative to state-of-the-art methods while remaining efficient and scalable. The evaluation results, code and resources are publicly available: https://github.com/dice-group/mars-kgqa.",
+      "url": "https://arxiv.org/abs/2607.14561",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-16",
+      "github_url": "https://github.com/dice-group/mars-kgqa.",
+      "score": 0.89
+    },
+    {
+      "id": "2607.14658",
+      "title": "TopoAgent: A Self-Evolving Topological Agent for Multimodal Scientific Reasoning",
+      "authors": [
+        "Mingze Xu",
+        "Yinghui Li",
+        "Jiayi Kuang",
+        "Zhanhui Kang",
+        "Di Yin",
+        "Ying Shen",
+        "Xing Sun",
+        "Yuxing Han"
+      ],
+      "abstract": "While Multimodal Large Language Models (MLLMs) excel in general tasks, rigorous scientific reasoning remains challenging due to the limitations of monolithic, linear planning. Such sequential designs often suffer from visual-semantic misalignment, long-context hallucinations, and brittle execution under fixed task granularity. We propose TopoAgent, a self-evolving topological framework that replaces linear trajectories with dynamic, state-isolated graph evolution. TopoAgent first employs a front-end decomposer to fracture complex queries into visually-grounded atoms. These atoms are organized into a Directed Acyclic Graph (DAG) based on their dependencies, enabling strict context isolation to shield the reasoning engine from irrelevant historical noise. Furthermore, we introduce adaptive atomic fission, which dynamically splits bottleneck nodes into finer-grained sub-atoms at runtime when tool capability boundaries are exceeded. Extensive experiments across mathematics, physics, and chemistry benchmarks demonstrate that TopoAgent significantly outperforms state-of-the-art linear agent frameworks, providing a robust, noise-resistant, and self-correcting paradigm for autonomous scientific reasoning.",
+      "url": "https://arxiv.org/abs/2607.14658",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8898
+    },
+    {
+      "id": "2607.14661",
+      "title": "SmartRAG: Native Graph-Based RAG for Mobile Device",
+      "authors": [
+        "Zhihan Jiang",
+        "Meng Li",
+        "Shenghao Liu",
+        "Keran Li",
+        "Ruiben Zhou",
+        "Xianjun Deng",
+        "Shuai Wang",
+        "Haipeng Dai"
+      ],
+      "abstract": "Deploying large language models (LLMs) as personal assistants on mobile devices demands privacy, low latency, and offline availability, yet the computational cost of giant models clashes with strict edge-hardware budgets. We argue that this tension cannot be resolved by model compression alone; it requires decomposing on-device intelligence into complementary functional roles. We present SmartRAG, a fully on-device framework that organizes an intelligent assistant around four coordinated modules -- Perception, Memory, Focus, and Thinking. At the core of SmartRAG is EvoNER, a continually learnable named-entity recognizer that incrementally expands its label inventory through teacher-distilled updates, enabling the system to absorb previously unseen entity types without retraining the backbone LLM. Extracted knowledge is stored in MRGraph, a three-layer provenance-preserving knowledge graph, and retrieved at query time through a hybrid pipeline combining graph traversal, lexical matching, and dense semantic search. The on-device LLM is invoked only for high-value semantic operations -- labeling, planning, and answer synthesis -- keeping inference costs bounded. Experiments on four QA benchmarks (TriviaQA, Natural Questions, HotpotQA, MultiHopQA) show that SmartRAG with a quantized 1.7B-parameter backbone achieves multi-hop reasoning performance competitive with models up to 18$\\times$ larger, while running entirely on commodity smartphones within practical memory and latency envelopes.",
+      "url": "https://arxiv.org/abs/2607.14661",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8894
+    },
+    {
+      "id": "2607.14345",
+      "title": "Value Leakage: An LLM's Answers Are Silently Shaped by Its Own Values",
+      "authors": [
+        "Jan Betley",
+        "Johannes Treutlein",
+        "Jan Dubiński",
+        "Harry Mayne",
+        "Karol Gałązka",
+        "Niels Warncke",
+        "Anna Sztyber-Betley",
+        "Owain Evans"
+      ],
+      "abstract": "People use language models for practical questions whose answers are difficult to verify. We show that models exhibit covert value leakage: the information they provide is influenced by their own values, without this influence being disclosed to the user.\n  In one of our evaluations, the user is considering investing in an AI company and wants to know how likely the AI bubble is to pop. Claude Opus 4.8 gives a lower probability when the company under consideration is Anthropic rather than OpenAI. Yet Claude mostly fails to disclose this influence to the user.\n  Covert value leakage is a form of misalignment because it goes against the user's preferences and is likely to mislead them. To investigate this phenomenon, we introduce a suite of evaluations to quantify value leakage and whether models disclose it. We find that models are influenced by different types of values, including preferences for morally good outcomes, for the company that developed them, and for some human leisure activities over others.\n  We often observe large differences among frontier models on the same evaluation. For example, on a Fermi-estimation task, Claude models falsely claim to give unbiased answers in their chain-of-thought, while Qwen models explain how their values bias their answers. Value leakage is a failure mode distinct from sycophancy and reward hacking, and current alignment training and evaluations do not adequately address it.",
+      "url": "https://arxiv.org/abs/2607.14345",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-07-15",
+      "score": 0.8894
+    },
+    {
+      "id": "2607.14552",
+      "title": "Answer-Conditioned Chains of Thought Degrade Verifiable-Reasoning Distillation in Large Language Models",
+      "authors": [
+        "Jungseob Lee",
+        "Seungyoon Lee",
+        "Suhyune Son",
+        "Dongyub Jude Lee",
+        "Sungbin Han",
+        "Sugyeong Eo",
+        "Heuiseok Lim"
+      ],
+      "abstract": "A standard recipe for distilling the reasoning ability of large language models (LLMs) is to sample chains of thought from the model, keep those that reach the correct final answer, and fine-tune on the survivors. When sampling fails, a common fix shows the generator the gold answer and asks it to write a chain that reaches that answer. We show that this second step degrades the training data in a way that correctness filtering cannot catch. We run a controlled experiment that fixes the generator, the problem set, and the correctness filter, and varies only whether the chain is generated under answer-conditioning, the gold answer shown with a request to reach it. Training a strong instruction-tuned reasoning model on its own answer-conditioned chains sharply lowers its verifiable-reasoning accuracy. The loss grows with difficulty, reaching as much as about 27 points on the hardest competition problems. The mechanism is legible in the chains themselves, which rationalize backward from the shown answer instead of deriving it, with the early final-answer statement as the measurable symptom. The harm is a property of the data rather than the generator, read off unlabeled generations before any fine-tuning, ordering the penalty across eight thinking models from four families, and transferring across teacher families. A prompt ablation localizes it to the rationalize-toward instruction rather than the answer's bare visibility. The practical takeaway is to generate answer-blind, because no correctness filter can see this damage in the data.",
+      "url": "https://arxiv.org/abs/2607.14552",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8886
+    },
+    {
+      "id": "2607.14506",
+      "title": "Non-vacuous Generalization Bounds for Reinforcement Learning with Verifiable Rewards",
+      "authors": [
+        "Yuxuan Zhu",
+        "Rohan Alur",
+        "Daniel Kang"
+      ],
+      "abstract": "While reinforcement learning with verifiable rewards (RLVR) is widely used to improve the reasoning capabilities of large language models (LLMs), the generalizability of the resulting models remains poorly understood. In this work, we establish the first non-vacuous generalization bounds for parameter-efficient RLVR fine-tuning at the billion-parameter scale. Our approach adapts PAC-Bayes compression bounds to this setting, and addresses the inherent stochasticity of token generation by applying the Gumbel-max reparameterization trick. To operationalize these bounds, we propose the Progressive RLVR framework, which integrates RLVR with on-policy distillation, TinyLoRA, and model quantization. Progressive RLVR empirically retains 84-97% performance of standard LoRA fine-tuning while producing models that are 14,796x more compressible. We show that this framework yields non-vacuous generalization bounds in four domains: mathematical problem-solving, programming, general-knowledge reasoning, and Text-to-SQL. Our bounds exceed the accuracy of the base model by 9-51% and lie within 6-11% of the accuracy of the fine-tuned models.",
+      "url": "https://arxiv.org/abs/2607.14506",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8886
+    },
+    {
+      "id": "2607.15253",
+      "title": "Bridge Evidence: Static Retrieval Utility Does Not Predict Causal Utility in Multi-Step Agentic Search",
+      "authors": [
+        "Debayan Mukhopadhyay",
+        "Utshab Kumar Ghosh",
+        "Shubham Chatterjee"
+      ],
+      "abstract": "Retrieval systems are trained and evaluated on a static idea of usefulness: hand a document and a question to a reader model, see whether the answer improves, and score the document accordingly. The idea holds up when a document is read on its own. It breaks when a language model works as a search agent, issuing several queries and reasoning across turns, because a document can matter for what it lets the agent do next rather than for what it says about the current question.\n  We measure that gap rather than argue it. Using a ReAct style agent over HotpotQA, we replay 1000 development questions and, for every document the agent read, delete it and re-run the rest of the trajectory from that point. Comparing the original run against its counterfactual gives a Counterfactual Trajectory Utility (CTU) score from three deltas: final answer quality, next query retrieval quality, and turn count. Crossing CTU against Static RAG Utility (SRU) over 23,322 document observations, the two are close to statistically independent (Spearman rho = -0.026). Roughly a third of the documents the agent reads are causally load bearing while looking useless to a static reader; we call these bridge documents. The pattern survives when the reader based axis is swapped for a BM25 and cross encoder proxy, giving a bridge cell of 27.2% on an evenly spread axis.\n  A second experiment pins down the mechanism. Using the Observable Entity Relevance (OER) measure from prior work, entities that discriminate relevant from non-relevant candidates appear in the agent's next query 4.02 times more often than entities found only in non-relevant documents (6.1% vs 1.5%, n = 227,139). A bridge document earns its keep by handing the agent a discriminative entity that redirects the search. Static relevance and causal usefulness are different quantities in agentic retrieval, and optimizing the first does not deliver the second.",
+      "url": "https://arxiv.org/abs/2607.15253",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8859
+    },
+    {
+      "id": "2607.14499",
+      "title": "Contextualized Evaluation of Vision Language Models through Dynamic, Multi-turn Interactions",
+      "authors": [
+        "Yijiang Li",
+        "Huiqi Zou",
+        "Bingyang Wang",
+        "Ziang Xiao"
+      ],
+      "abstract": "Multi-modal Large Language Models (MLLMs) have made substantial advances on benchmarks, yet their real-world effectiveness remains uncertain. This gap stems from the fundamental misalignment between benchmarks in controlled, static settings and the dynamic, interactive, and contextualized nature of real-world applications. To bridge this gap, we propose CEDI (Contextualized Evaluations of MLLMs through Dynamic, multi-round Interactions), a framework that recasts evaluation as a three-party interaction between an evaluatee model, an automated examiner, and a grader. The examiner conducts multi-turn, semi-structured conversation guided by a graph-based representation of the task. By navigating state-space transitions, CEDI deploys diverse strategies, from clarification requests to adversarial probes, to elicit performance evidence. We apply CEDI to visual hallucinations. Empirical results across multiple models, diverse settings, datasets, and domains show that contextualized, interactive evaluations reveal not only significantly more hallucinations than conventional static evaluation but also ones that more closely resemble those arising in practical use cases. We further show that hallucinations often accumulate over long contexts, through self-reinforcing dialogue history, and models are particularly vulnerable to questions requiring premise rejection or refusal. Together, these findings highlight CEDI as a step toward realistic, systematic, and ecologically valid assessments of MLLMs' capabilities. Code is available at github.com/williamium3000/cedi.",
+      "url": "https://arxiv.org/abs/2607.14499",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8858
+    },
+    {
+      "id": "2607.14528",
+      "title": "Controlled Reformulation Testing for Logical Consistency in Large Language Models",
+      "authors": [
+        "Alexander Gu",
+        "Alan Chen"
+      ],
+      "abstract": "Large language models (LLMs) frequently contradict themselves when the surface form of a logically equivalent question changes. We present a benchmark of 350 question families (1,750 total questions) for Controlled Reformulation Testing (CRTBench) to evaluate logical invariance. In this benchmark, we investigate LLMs' ability to maintain consistent answers across controlled reformulations, which include contrapositive rewriting, double negation, negation flipping, and passive voice. We evaluate several frontier LLMs and observe an accuracy-consistency gap where GPT-5.4-mini achieves $98.9\\%$ base accuracy but only $60.3\\%$ family-level consistency, while reasoning-optimized o4-mini achieves $96.9\\%$ consistency. From our experiments, we observe that failures cluster around logically nontrivial transformations such as contrapositive rewriting ($72.4\\%$ for GPT-5.4-mini) and double negation ($84.6\\%$), while surface-level rephrasing remains robust ($94-100\\%$). Increasing reasoning effort improves GPT-5.4-mini to $85.4\\%$ consistency, but leaves GPT-5.4 unchanged overall because gains on nested negation are offset by failures on quantifier families. These results show that accuracy alone is not enough for evaluating logical reasoning in LLMs.",
+      "url": "https://arxiv.org/abs/2607.14528",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8854
+    },
+    {
+      "id": "2607.14707",
+      "title": "Harnessing LLMs for Reliable Academic Supervision: A Comparative Study",
+      "authors": [
+        "Akash Raj"
+      ],
+      "abstract": "Large language models routinely produce fluent answers to single-shot prompts, yet deploying them as reliable components of a domain decision system is substantially harder. Closing this gap is the work of harness engineering: the deliberate composition of deterministic scaffolding (symbolic filters, retrieval, schema-typed I/O, LLM-as-judge loops, HITL gates, persistent state, audit trails) around an LLM core. We present a case study in academic supervision, a domain combining high-stakes recommendation, longitudinal accountability, and structured operational workflows.\n  We compare a baseline (ASA), a GPT-5 chatbot with no scaffolding, against a multi-module system (ASuS) that wraps the much smaller GPT-4o-mini in a LangGraph harness with symbolic-semantic retrieval, schema-validated outputs, LLM-as-judge with bounded retry, HITL gates, deterministic weighted risk scoring with LLM narration, and a per-node SQLite audit trail. The evaluation rubric is retargeted at six harness-mechanism dimensions (grounding, explainability, consistency, process integrity, cognitive load, constraint adherence). A blind ten-rater hybrid evaluation, supplemented by a 2 x 2 model-harness ablation, finds that ASuS, despite using a much smaller base model, outscores ASA on every dimension. Across ten raters the pooled mean for ASuS is 4.08 versus 1.23 for ASA, and 8 of 10 raters reject the null at alpha = 0.05 on a paired Wilcoxon test; full numbers are in Sections 6.4 and 6.7. The ablation confirms that the structural contributions of the harness are largely model-invariant. We extract seven recurring harness-engineering patterns and argue that where reliability, traceability, and institutional consistency matter more than open-ended fluency, harness engineering challenges the prevailing 'bigger model is better' intuition.",
+      "url": "https://arxiv.org/abs/2607.14707",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8838
+    },
+    {
+      "id": "2607.15200",
+      "title": "Mask-Aware Policy Gradients for Diffusion Language Models",
+      "authors": [
+        "Haran Raajesh",
+        "Kulin Shah",
+        "Adam Klivans",
+        "Philipp Krähenbühl"
+      ],
+      "abstract": "Reinforcement learning has proven effective for improving reasoning in large language models, but extending it to Masked Diffusion Language Models (MDLMs) remains challenging due to the intractability of the log-likelihood estimation. Existing approaches approximate this log-likelihood by modeling only the token predictions, ignoring the order in which positions are unmasked during generation. We observe that MDLM generation involves two decisions at each step: what tokens to place at each masked position and which positions to remask. We formalize this as a two-stage action MDP, showing that the policy gradient naturally decomposes into a token term and a masking term. Combining optimization of both terms leads to state-of-the-art outcomes on mathematical reasoning and coding benchmarks, with scores of 87.1% on GSM8K and 53.4% on MBPP.",
+      "url": "https://arxiv.org/abs/2607.15200",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8837
+    },
+    {
+      "id": "2607.14682",
+      "title": "Stop Thinking, Start Looking: Efficient Post-Training for Multimodal Document Question Answering via Reasoning-Free Alignment",
+      "authors": [
+        "Harikrishnan P M",
+        "Goutham Vignesh",
+        "Ganesh Parab",
+        "Saisubramaniam Gopalakrishnan",
+        "Vishal Vaddina",
+        "Varun V",
+        "Rohit Agrawal"
+      ],
+      "abstract": "Efficient multimodal document question answering with explicit visual grounding, locating the precise document region that supports each answer remains an open challenge. Current approaches bifurcate into Supervised Fine-Tuning (SFT), which requires large annotated datasets and reaches optimization plateaus, and reasoning-centric Reinforcement Learning (RL), which depends on verbose intermediate traces that inflate inference token cost without clear benefit. We introduce Perception-RFT, a training framework that applies Group Relative Policy Optimization (GRPO) to multimodal document QA, bypassing intermediate reasoning tokens to directly align visual features with structured grounding outputs. To rigorously evaluate the necessity of reasoning, we construct a reasoning variant under identical reward settings. We find that reasoning-enabled models suppress their reasoning traces during training, converging to direct perception-based policies at the 4B parameter scale, reducing per-query inference token length by more than 60%, while reasoning-enabled RL underperforms perception-only training. Through a fine-grained analysis of Qwen3-VL-4B optimization dynamics, we confirm that SFT saturation and cold-start RL instability established in text-domain post-training extend to multimodal, and identify a previously uncharacterized Grounding Divergence: a selective trade-off between semantic robustness and geometric precision on two out of distribution (OOD) benchmarks (4,828 samples) under joint RL optimization. We further show that an early SFT$\\rightarrow$RL transition achieves comparable precision with 65% less training data.",
+      "url": "https://arxiv.org/abs/2607.14682",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.882
+    },
+    {
+      "id": "2607.14349",
+      "title": "HABIB_TAZ at SemEval-2026 Task 11: Disentangling Formal Logic from Content via Synthetic Training and Multi-Objective Optimization",
+      "authors": [
+        "Abdullah Shaikh",
+        "Zain Naqi",
+        "Taha Zahid",
+        "Sandesh Kumar",
+        "Abdul Samad"
+      ],
+      "abstract": "While Large Language Models (LLMs) excel in many general NLP tasks, their formal reasoning capabilities are often compromised by content effects, demonstrating a measurable bias towards real-world plausibility. In this paper, we present our system for SemEval-2026 Task 11, which evaluates the ability of models to disentangle formal logic from content across 12 languages with and without distractor premises. We address this challenge using mDeBERTa-v3 networks fine-tuned on a synthetic, rule-based dataset of syllogistic schemes to avoid the semantic noise of LLM-augmented data. To explicitly decouple plausibility from logical structure, our training pipeline employs a multi-objective loss function combining Adaptive Group Distributionally Robust Optimization (DRO), a scheduled differentiable bias penalty, and KL-Divergence consistency regularization. Our system achieved #1 ranks and perfect Ranking Scores (100.0) with 0.00% bias and 100.0% accuracy on Subtask 1 (English), Subtask 2 (Noisy English), and Subtask 3 (Multilingual). On the highly complex Subtask 4 (Noisy Multilingual), the system achieved the 6th rank with 89.06% Accuracy and F1-score, alongside a limited 2.89% Bias and a 37.78 Ranking Score. Our dataset generation engine and codebase are publicly available to facilitate future work on robust logical reasoning.",
+      "url": "https://arxiv.org/abs/2607.14349",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-15",
+      "score": 0.8816
+    },
+    {
+      "id": "2607.14816",
+      "title": "Large Language Models for Code Generation from Multilingual Prompts: A Curated Benchmark and a Study on Code Quality",
+      "authors": [
+        "Saima Afrin",
+        "Alessandro Midolo",
+        "Camilo Escobar-Velásquez",
+        "Mario Linares-Vásquez",
+        "Weiyuan Ding",
+        "Bowen Xu",
+        "Massimiliano Di Penta",
+        "Antonio Mastropaolo"
+      ],
+      "abstract": "Large Language Models (LLMs) perform differently on identical programming tasks when prompted in different natural languages, a phenomenon known as language bias. While this behavior has been widely studied for general text generation, its impact on code generation quality and programming conventions remains largely unexplored. We investigate how the language used to describe programming tasks affects the source code generated by GPT-4o mini, DeepSeek, and Claude. Our study comprises 460 coding tasks spanning Python (230) and Java (230). We translate and manually curate the original English prompts into Chinese, Hindi, Spanish, and Italian while preserving their technical meaning. We evaluate the generated code using multiple dimensions, including functional correctness through test pass rates, structural quality using established code metrics, issues detected by static analysis tools, and lexical characteristics such as the language used in identifiers and comments. Our results show that (i) English prompts do not consistently produce the best functional correctness or code quality, (ii) the impact of prompt language depends on both the programming language and the LLM, and (iii) generated code frequently mixes English with the prompt language in comments and string literals. These findings provide the first curated multilingual benchmark for studying language bias in code generation and offer insights for developing more robust multilingual code generation systems.",
+      "url": "https://arxiv.org/abs/2607.14816",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8815
+    },
+    {
+      "id": "2607.14557",
+      "title": "Seeing the End at Step Zero: Accelerating Diffusion MLLMs via MLP Sparsity-Aware Truncation",
+      "authors": [
+        "Qicheng Zhao",
+        "Qi Sun",
+        "Zheyu Yan"
+      ],
+      "abstract": "Diffusion Multimodal Large Language Models (DMLLMs) are highly effective for multimodal reasoning, yet their inference efficiency is significantly hindered by fixed-length generation constraints. Since the actual output length is unknown, output sequences are padded to a predefined maximum length, resulting in substantial redundant computation over unnecessary [EOS] tokens. In this work, we discover that DMLLMs implicitly reveal their valid semantic boundary at the very first denoising step through a distinct shift in MLP activation sparsity. Leveraging this observation, we propose Seer, a training-free framework that detects this boundary using a Signal-to-Noise Ratio (SNR)-based criterion and performs one-shot truncation of the redundant suffix for all subsequent computations. To preserve these theoretical gains during batched serving, Seer incorporates a hybrid execution strategy that maximizes throughput while seamlessly accommodating dynamic sequence lengths. Experimental results demonstrate that Seer effectively eliminates padding waste, accelerating throughput by up to $\\sim$31$\\times$. Across 9 benchmarks, Seer robustly maintains overall performance and even improves accuracy on complex visual tasks by mitigating noise leakage (e.g., DocVQA score increases from 63.52 to 63.66), offering a highly efficient, plug-and-play solution for DMLLM acceleration.",
+      "url": "https://arxiv.org/abs/2607.14557",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8815
+    },
+    {
+      "id": "2607.14818",
+      "title": "Can LLMs Build a MaxSAT Solver from Papers? The CoreForge Experience",
+      "authors": [
+        "Ruben Martins"
+      ],
+      "abstract": "We report on CoreForge, an experience in using large language models (LLMs) to build an unweighted MaxSAT solver from research papers rather than from an existing solver codebase. The project focuses on unsatisfiability-based MaxSAT algorithms and follows an iterative workflow that combines paper discussions with ChatGPT, implementation through Codex prompts, and repeated LLM-assisted code audits and revisions. Although the codebase implements several algorithms and solver components, our evaluation focuses on configurations that combine core-guided optimization, lightweight preprocessing, core minimization, integration with integer linear optimization backends, and a new core-sequence lookahead approach.\n  Our experience suggests that LLMs can support solver implementation from papers, while requiring external validation, benchmarking, and human guidance. In our experiments, fuzzing and MaxSAT Evaluation instances did not reveal wrong answers in the tested configurations, although performance remains below the best hand-engineered MaxSAT solvers. We summarize what worked, what remained difficult, and the lessons for future LLM-assisted solver development.",
+      "url": "https://arxiv.org/abs/2607.14818",
+      "categories": [
+        "cs.LO",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8808
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 297,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
