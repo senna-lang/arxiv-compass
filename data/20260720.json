@@ -1,0 +1,470 @@
+{
+  "date": "2026-07-20",
+  "collected_at": "2026-07-20T12:44:40.049843+09:00",
+  "papers": [
+    {
+      "id": "2607.15845",
+      "title": "Knowledge-Centric Agents for Workflow Generation",
+      "authors": [
+        "Zhendong Li",
+        "Lei Sun",
+        "Ruibo Ming",
+        "He Zhang",
+        "Danda Pani Paudel",
+        "Luc Van Gool",
+        "Jinjin Gu"
+      ],
+      "abstract": "Workflow generation in visual creation systems such as ComfyUI demands not only syntactic accuracy but also expert-level reasoning over modular compositions. Existing large language model (LLM) approaches often treat this as a direct text-to-JSON generation task, struggling with structural brittleness and lacking the experiential knowledge required for effective design. We argue that successful workflow generation requires modeling knowledge itself, including its structure, hierarchy, and reasoning dynamics. To this end, we propose a knowledge-centric framework that learns to invert, inject, and infer with knowledge across multiple abstraction levels. We first perform knowledge inversion to distill hierarchical representations, ranging from full pseudo-codes and skeletons to high-level strategies, from large collections of real-world workflows. We then conduct knowledge injection through supervised fine-tuning, teaching the model to reason from task descriptions to strategies and from strategies to executable structures. During inference, the model performs reversible reasoning to synthesize executable workflows, augmented by self-refinement for structural coherence. Extensive experiments demonstrate that our method produces workflows with richer node diversity, more coherent structures, and higher execution success rates than existing systems, establishing a new foundation for knowledge-driven, agentic workflow generation.",
+      "url": "https://arxiv.org/abs/2607.15845",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8912
+    },
+    {
+      "id": "2607.15557",
+      "title": "SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents",
+      "authors": [
+        "Yanze Wang",
+        "Pengfei Yao",
+        "Tianyi Sun",
+        "Chuanrui Hu",
+        "Yan Xiao",
+        "Yunyun Han",
+        "Jun Sun",
+        "Yafeng Deng"
+      ],
+      "abstract": "Agent skills, SKILL.md files that package reusable procedural knowledge for an LLM agent, are a popular mechanism for extending agent capabilities. Public repositories now host them in large and growing numbers, yet these artifacts are fragmented, redundant, and uneven in quality, and their value in practice is unclear. A core question remains open, namely how to consolidate this open-source SKILL.md ecosystem into a single usable corpus, and what bounds its benefit on real-world agent tasks. We present SkillCorpus, a framework that aggregates, curates, matches, and evaluates the open skill ecosystem at scale. It filters ~821,000 crawled skills through a multi-stage pipeline into 96,401 skills organised by a 16-class taxonomy and three quality facets (utility, robustness, safety), and pairs them with a fine-tuned retrieval-and-selection stack that matches task-relevant skills. We evaluate end-to-end across three benchmarks (SkillsBench, GDPVal, QwenClawBench), two harnesses, and two open backbones with a frontier robustness check. Integrating SkillCorpus yields consistent gains across all three benchmarks, largest on SkillsBench (+7.5 pp). An operational analysis traces the gains to a coverage boundary and a harness boundary. SkillCorpus is, to our knowledge, the first end-to-end account of when a curated, retrieval-served community corpus improves real agent tasks, and where it does not. The dataset, models, and code will be released upon acceptance.",
+      "url": "https://arxiv.org/abs/2607.15557",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8903
+    },
+    {
+      "id": "2607.15736",
+      "title": "Better Starts, Better Ends: Bootstrapped Iterative Self-Reasoning Distillation for Compressed Reasoning",
+      "authors": [
+        "Leichao Dong",
+        "Dongxu Zhang",
+        "Yiding Sun",
+        "Qirui Wang",
+        "Yuhan Wang",
+        "Lin Chen",
+        "Jihua Zhu"
+      ],
+      "abstract": "Large reasoning models often solve problems through long chain-of-thought (CoT) traces, yet much of this computation is spent on redundant derivations, repeated self-verification, and detours that do not improve the final answer. Existing on-policy self-distillation methods reduce this cost by matching a student model to a concise copy of itself on prefixes sampled from the student's own rollouts. We show that this objective has an initialization bottleneck. Since supervision is applied only to visited prefixes, training from a verbose base model places the KL loss on contexts that are often noisy, redundant, or already off track. In such regions, a concise teacher can provide only local corrections, while the student continues to explore trajectories that an efficient reasoner should avoid. In this paper, we propose BIRD(Bootstrapped Iterative Self-Reasoning Distillation), a two-stage self-reasoning distillation method that improves the rollout distribution before on-policy training. BIRD first samples concise solutions from the base model under a brevity instruction, keeps only answer-correct traces, and performs a lightweight prompt-switch SFT step. The traces are generated with the brevity instruction but learned under the original task prompt, turning instruction-induced conciseness into a default reasoning behavior. Starting from this warm model, BIRD then applies on-policy reverse-KL distillation with a concise self-teacher, now on cleaner and more informative prefixes. Across Qwen3 series models, BIRD achieves a stronger accuracy-efficiency trade-off than prompting and cold-start on-policy distillation on MATH-500 and AIME benchmarks. On Qwen3-8B, it improves MATH-500 accuracy from 86.2% to 92.0% while reducing the average response length from 3,099 to 1,115 tokens. These results highlight prefix support as a central factor in efficient reasoning distillation.",
+      "url": "https://arxiv.org/abs/2607.15736",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8899
+    },
+    {
+      "id": "2607.16122",
+      "title": "CRAFT: Clustering Rubrics to Diagnose Weak LLM Capabilities and Generate Targeted Fine-Tuning Data",
+      "authors": [
+        "Vipul Gupta",
+        "Zihao Wang",
+        "Razvan-Gabriel Dumitru",
+        "MohammadHossein Rezaei",
+        "Aakash Sabharwal",
+        "Yunzhong He"
+      ],
+      "abstract": "Evaluations should do more than measure a models current performance. They should tell us what to fix for the next model iteration and provide a way to generate targeted post training data. Most evaluation pipelines identify weak examples, topics, or categories, but they leave the underlying capability failure implicit: they say where a model fails, not why. We introduce CRAFT, a method that converts any rubric based evaluation dataset into a model specific diagnosis of weak capabilities. CRAFT treats each grading criterion as a capability probe: it extracts a capability description from every prompt rubric pair, clusters these descriptions into a hierarchical capability tree, scores the target model at every node, and selects low performing nodes dynamically across tree levels, at the granularity where each failure is clearest. The selected weak capabilities then direct the generation of targeted supervised finetuning data. Holding the data generation, finetuning, and evaluation setup fixed, we compare CRAFT against prompt level EvalTree clustering and untargeted random generation on four open source models, two professional domains (finance and legal), and 13 held out benchmarks disjoint from the diagnostic data. CRAFT achieves the strongest finance domain average for all four models under repeated temperature decoding; on legal domain, it is strongest for three of four models and remains within the decoding variance bands of the best baseline on the fourth. Diagnosing weaknesses at the level of rubric criteria, rather than prompts or categories, thus yields both a sharper picture of what a model cannot do and measurably better models after finetuning on that diagnosis.",
+      "url": "https://arxiv.org/abs/2607.16122",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8839
+    },
+    {
+      "id": "2607.16072",
+      "title": "Frontier Language Models Struggle to Copy: Text Can Be Better Viewed in 2D",
+      "authors": [
+        "Haodong Wen",
+        "Yiran Zhang",
+        "Yingfa Chen",
+        "Kaifeng Lyu"
+      ],
+      "abstract": "While large language models (LLMs) can solve advanced reasoning problems in seconds, we show that even frontier models fail to perform a much simpler operation: exactly copying an input string that lies well within their context windows. We attribute this failure to positional encodings in Transformer architectures, whose inductive bias favors copying through a shortcut based on matching local contexts rather than carefully locating the corresponding input positions. To address this issue, we introduce 2D-RoPE, which organizes text into a 2D grid rather than a 1D sequence and assigns each token a row ID and a column ID. Under this view, copying becomes simply retrieving input tokens at a fixed column offset, which makes the task easy to learn. In synthetic copy experiments, shallow Transformers with 2D-RoPE achieve perfect copying at input lengths hundreds of times longer than those seen during training, whereas standard positional encodings fall far behind. We further show that the advantage of 2D-RoPE language models on copy tasks consistently holds in large-scale pretraining on DCLM with model sizes up to 1.4B parameters. Overall, our results suggest that viewing text in 2D can benefit language modeling, and we hope this encourages future work to further explore the potential of 2D positional encodings.",
+      "url": "https://arxiv.org/abs/2607.16072",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8824
+    },
+    {
+      "id": "2607.16051",
+      "title": "Loop the Loopies!",
+      "authors": [
+        "Zitian Gao",
+        "Yilong Chen",
+        "Yihao Xiao",
+        "Xinyu Yang",
+        "Ran Tao",
+        "Joey Zhou",
+        "Bryan Dai"
+      ],
+      "abstract": "We present Loopie, the most powerful looped Transformer to date. The Loopie series consists of two Mixture-of-Experts (MoE) models: a 20B-parameter model with 2B active parameters and a 6Bparameter model with 0.6B active parameters. Looped Transformers have long faced a challenge: given an N-fold increase in pre-training compute, increasing the parameter count by a factor of N usually outperforms looping a model N times. Loopie addresses this challenge. Extensive ablation studies, including comparisons with a vanilla 30B-A3B model, show that Loopie substantially outperforms vanilla Transformer baselines trained with the same compute budget. Our novel post-training pipeline equips Loopie with strong reasoning abilities. At the 2025 IMO and IPhO, Loopie achieves gold-medal performance without tools.",
+      "url": "https://arxiv.org/abs/2607.16051",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8815
+    },
+    {
+      "id": "2607.15439",
+      "title": "Do Coding Agents Need Executable World Models, Simplification, and Verification to Solve ARC-AGI-3?",
+      "authors": [
+        "Sergey Rodionov"
+      ],
+      "abstract": "Our previous ARC-AGI-3 agent bundled executable world modeling, scheduled simplification, and exact replay verification, leaving unclear which idea accounted for its performance. We address this attribution question with four nested Codex-based agents: a textual baseline; a flexible-interface executable world model without replay verification; the same executable model with scheduled simplification; and a fixed-interface verification treatment that retains simplification and requires exact reproduction of recorded observations. The main study evaluates all four agents with gpt-5.4 and gpt-5.5 at high and xhigh reasoning effort on the public ARC-AGI-3 games. Exploratory follow-ups evaluate the textual and verification variants with gpt-5.6-sol at xhigh and max. The most robust result is that every agent variant improves with a stronger model and with greater reasoning effort. Within each model-effort setting, differences among variants are smaller than anticipated, while the effects of individual components vary across settings. Requiring a persistent executable deliverable is not universally beneficial: the textual variant outperforms the flexible-interface executable variant in both gpt-5.5 settings. Simplification improves performance in three of the four model-effort settings, with the weakest setting as the only exception. The complete verification treatment ranks first in all four settings, although it uses substantially more resources. In the gpt-5.6-sol follow-up, the verification variant fully solves every public game at both reasoning efforts, achieves about 99% RHAE, and uses fewer than half the total actions of the human baseline. Because the model postdates these games and held-out performance remains untested, this result should be interpreted as saturation of the public set only.",
+      "url": "https://arxiv.org/abs/2607.15439",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8809
+    },
+    {
+      "id": "2607.15524",
+      "title": "Recursive Harness Self-Improvement",
+      "authors": [
+        "Hyunin Lee",
+        "Jinglue Xu",
+        "Jeffrey Seely",
+        "Donghyun Lee",
+        "Matei Zaharia",
+        "Yujin Tang"
+      ],
+      "abstract": "Under model--harness co-evolution, harnesses are not merely inference-time scaffolds but data-generating components whose execution traces can shape future foundation models. This motivates harness-in-the-loop learning: optimizing harnesses for both immediate agent performance and the quality of traces used for future model training. However, continually updating provider-built scaffolds is costly and labor-intensive. We therefore investigate whether optimizing user-constructed harnesses in a task-specific manner can improve execution-trace quality while remaining computationally lightweight and requiring only a few update iterations. To this end, we introduce Recursive Harness Self-Improvement (RHI), which represents the harness as a prompt-level specification of the agent loop and iteratively refines it using pairwise feedback over its own revision history. Across 30 synthetic machine-learning research tasks spanning quantitative finance, robotics, and pharmacy, a few RHI iterations suffice to substantially raise the performance ceiling of low-reasoning-effort agents, exceeding the corresponding maximum-reasoning-effort setting while reducing inference cost by up to 60%. We show that these gains arise primarily from improved task-specific context management through more effective inter-agent information flow rather than longer reasoning traces. Finally, we formalize this behavior as an information-theoretic hypothesis for RHI's implicit optimization objective, suggesting RHI as a practical algorithm for continual learning within the paradigm of model--harness co-evolution.",
+      "url": "https://arxiv.org/abs/2607.15524",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8808
+    },
+    {
+      "id": "2607.15766",
+      "title": "Before the Action: Benchmarking LLMs on Prospective Hypothesis Discovery",
+      "authors": [
+        "Tianyun Zhong",
+        "Wangyi Jiang",
+        "Wei Wang",
+        "Xuanang Chen",
+        "Yaojie Lu",
+        "Shiwei Ye",
+        "Yuzhen Shi",
+        "Boyu Yang",
+        "Jinghang Wang",
+        "Han Li",
+        "Weiqi Zhai",
+        "Bing Zhao",
+        "Hu Wei",
+        "Haiyang Yu",
+        "Yongbin Li",
+        "Hongyu Lin",
+        "Le Sun",
+        "Xianpei Han"
+      ],
+      "abstract": "Large language models (LLMs) excel at answering pre-specified questions, yet their ability to navigate the open-ended, pre-conclusion stage of discovery remains largely unmeasured. We introduce Prospective Hypothesis Discovery (PHD), which asks models to autonomously construct grounded, discriminative, and testable hypothesis spaces from inconclusive evidence, including anomalous observations and fragmented records, to guide subsequent investigation. To evaluate this capability, we introduce HypoArena, comprising HypoData, a benchmark of 988 cases across six scientific and analytical domains, and HypoEval, an evaluation framework for open-ended hypothesis sets. To construct HypoData at scale, we propose Retrospective Context Regression, a Forge--Audit pipeline that reconstructs pre-conclusion contexts from completed expert documents by removing explicit conclusions, target hypotheses, and retrospective causal attributions while preserving the factual substrate. Because PHD admits multiple valid outputs, HypoEval combines bidirectional pairwise judgments with Bradley--Terry--Davidson aggregation for ranking and six-dimensional rubric scoring for diagnosis. Experiments on 15 frontier LLMs reveal clear capability stratification and model-dependent effects of structured analytical skills, with gains for several lower-performing models on HypoArena but regressions for other systems, including a top-performing model. Compared with absolute rubric scoring, arena evaluation resolves finer-grained differences among models, with aggregated rankings showing strong agreement with human experts and an independent judge. Together, these results support treating PHD as a distinct target for evaluating how LLMs formulate investigative directions when final conclusions are withheld. Our code and data are publicly available at github.com/SKYLENAGE-AI/HypoArena and github.com/SKYLENAGE-AI/HypoArena.",
+      "url": "https://arxiv.org/abs/2607.15766",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8805
+    },
+    {
+      "id": "2607.15456",
+      "title": "Looped Latent Attention: Cross-Loop KV Compression for Looped Transformers",
+      "authors": [
+        "James O' Neill",
+        "Fergal Reid"
+      ],
+      "abstract": "Looped, weight-tied Transformers reduce parameters by reusing a block, but decoding still stores a separate K/V cache for every recurrence step. We show that this loop-indexed cache is highly structured. For a fixed token, layer and head, K/V vectors trace a short low-rank trajectory across loops, while the head and layer axes remain much flatter. We introduce Looped Latent Attention (LLA), a post-training cache codec that stores compact K and V latents and reconstructs loop-specific K/V vectors only when attention reads them. The default per-head codec compresses recurrence, while LLA-2D also folds heads into one latent for the extreme-compression regime. The codec is initialized from SVD of teacher activations and refined with KL and attention-output distillation. At matched cache budget, per-head LLA outperforms head-axis MLA, cross-layer sharing, KV quantization and final-loop reuse, showing that the recurrent cache is low-rank but not safely collapsible to a single state. The same axis advantage holds on Ouro-2.6B-Thinking and transfers to Huginn-3.5B, where an SVD codec remains near-lossless to 32x in decoder-independent evaluation. The cache reduction is exact. On one H200, the latent-store path increases measured Ouro-1.4B batch capacity at 4k context from 32 to 768 sequences at 21.3x compression. For long math rollouts, on-policy refinement on student-generated prefixes raises MATH-500 at 4x from 0.43 to 0.66 and reduces no-answer generations.",
+      "url": "https://arxiv.org/abs/2607.15456",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8803
+    },
+    {
+      "id": "2607.14888",
+      "title": "Innocuous-Seeming Data, Latent Ideology: Ideological Generalisation in Finetuned LLMs",
+      "authors": [
+        "Robert Graham",
+        "Edward Stevinson",
+        "Yariv Barsheshat"
+      ],
+      "abstract": "Finetuning language models on small, curated datasets is standard practice for adapting them to specific policies or domains. We show that finetuning on narrow, factually-defensible, moderation-passing data can cause broad ideological shifts across unrelated domains, while preserving general capabilities. Training GPT-4.1 on right- or left-leaning economics Q&A yields matched ideological shifts on topics such as criminal justice, the environment, and cultural taste. The same effect appears with plausibly-deployed datasets such as workplace HR policy and practical finance queries, as well as on a science-pseudoscience axis where food-safety finetuning increases sycophantic agreement with users expressing false health beliefs. We call this phenomenon ideological generalisation and propose a methodology to measure two properties: breadth, how far the shift reaches across topics absent from training, and amplification, how much finetuning intensifies the shift relative to few-shot prompting on the same examples. We show that few-shot prompting indicates the direction of generalisation but finetuning pushes the model to further extremes, including to far out-of-distribution outputs such as endorsements of race-IQ connections and political violence. The effect replicates on Gemma-3, holds under judge-free evaluations and external benchmarks, survives mixing with generic data, and leaves GSM8K accuracy within $\\pm 1$pp of the baseline.",
+      "url": "https://arxiv.org/abs/2607.14888",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.88
+    },
+    {
+      "id": "2607.15977",
+      "title": "Refusal is Not Safety! Benchmarking Latent Safety Risks of LLM-Driven Content Humorization",
+      "authors": [
+        "Yu Cui",
+        "Ruiqing Yue",
+        "Tingyu Li",
+        "Sicheng Pan",
+        "Zhuoyu Sun",
+        "Xufeng Zhang",
+        "Baohan Huang",
+        "Haibin Zhang",
+        "Cong Zuo"
+      ],
+      "abstract": "Safety defenses for large language models (LLMs) have been extensively studied, with existing approaches focusing on attack detection and refusal mechanisms. Such fixed-form direct refusal strategies may introduce the risk of prefix injection attacks. Recent work has explored a new direction that leverages humor as an indirect refusal mechanism to mitigate over-refusal in jailbreak scenarios and reduce prefix injection risks. However, this approach implicitly assumes that humorous responses are safe. Whether humorization itself introduces safety risks remains unexplored. To address this issue, we conduct an exploratory study involving over 30,000 real-world agent interaction records and 45 stand-up comedians, revealing practical safety concerns in LLM-based content humorization. Motivated by these findings, we propose \\textsc{HumorSafe}, a novel framework for evaluating latent safety risk propagation during humorization. \\textsc{HumorSafe} enables LLMs to learn harmful humorization patterns and use them to transform benign content into humorous content with safety risks. Across five frontier LLMs, we find that LLMs can introduce stereotypes and toxicity during humorization. We further propose \\textsc{HumorPIA}, a prompt injection attack that exploits latent risks in humor-based defenses. \\textsc{HumorPIA} preserves the appearance of safe humorous refusal while covertly injecting harmful content, allowing latent risks to evade existing detection mechanisms. Experiments show that it increases toxicity by 3.14$\\times$ while maintaining an apparent safety rate of 97.8\\% even under defense settings. Our findings highlight a gap in existing LLM safety evaluations under humorized settings.",
+      "url": "https://arxiv.org/abs/2607.15977",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8799
+    },
+    {
+      "id": "2607.14896",
+      "title": "StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows",
+      "authors": [
+        "Sizhong Qin",
+        "Yi Gu",
+        "Yao Jiang",
+        "Ao Cai",
+        "Changjian Zhou",
+        "Shaoxuan Shuai",
+        "Jiachang Wang",
+        "Tianhao Shen",
+        "Yueqiang Li",
+        "Xinhao Li",
+        "Li Zeng",
+        "Yueshi Chen",
+        "Dachen Gao",
+        "Genrong Xu",
+        "Wenjie Liao",
+        "Xinzheng Lu"
+      ],
+      "abstract": "Addressing a structural-engineering request requires more than a single answer; it requires a chain of interdependent artifacts: interpreted requirements, a computable model, validation records, solver outputs, code-check records, and a final report. Evaluations centered on question answering or script generation rarely verify this complete evidence chain and may therefore reward fluent outputs even when the underlying engineering workflow is incomplete, internally inconsistent, or non-executable. To address this limitation, we present StructureClaw, an artifact-centered workbench in which LLM agents operate through governed engineering skills, typed tools, shared artifact state, and local analysis backends. We also introduce StructureClaw-Bench, an executable benchmark of 150 controlled scenarios spanning standard workflow execution, interactive robustness, and multimodal structural-model reconstruction. A scenario succeeds only when all required artifact- and execution-level assertions pass in a single run. Across ten agent-model configurations, each evaluated on the same 50 standard cases, the average Success Rate rises from 56.8% with the generic-skill baseline to 88.6% with the full automatic workflow. The interactive and multimodal evaluations identify two prominent remaining challenges: safe handling of invalid numerical inputs and fixture-consistent reconstruction of structural models. These findings show that artifact-centered evaluation can expose workflow-level failures that are difficult to identify from final responses alone, providing a more rigorous basis for evaluating and improving structural-engineering agents. The code and benchmark are available at https://github.com/structureclaw/structureclaw.",
+      "url": "https://arxiv.org/abs/2607.14896",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-07-16",
+      "github_url": "https://github.com/structureclaw/structureclaw.",
+      "score": 0.8791
+    },
+    {
+      "id": "2607.15178",
+      "title": "T^2MLR: Transformer with Temporal Middle-Layer Recurrence",
+      "authors": [
+        "Ziyang Cai",
+        "Xingyu Zhu",
+        "Yihe Dong",
+        "Yinghui He",
+        "Sanjeev Arora"
+      ],
+      "abstract": "Transformer reasoning is limited by autoregressive decoding, which repeat edly compresses rich hidden computation through token space and makes it difficult for intermediate reasoning states to persist across time. We in troduce Transformers with Temporal Middle-Layer Recurrence (T2MLR), a transformers-based latent reasoning architecture that fuses a cached middle layer representation from the previous token directly into an earlier layer of the current token position, enabling abstract intermediate computation to persist across decoding steps with little inference overhead. Across natural-language pretraining and multi-hop reasoning finetuning, T2MLR consistently outperforms data- and parameter-matched Transformer base lines. Moreover, applying recurrence to only a localized middle-layer block (as little as 20% of the network) often outperforms full-layer recurrence. Im portantly, T2MLR does not require pretraining from scratch: retrofitting the recurrent pathway into an existing pretrained 1.7B Transformer and briefly finetuning substantially improves math reasoning, lowering the barrier to practical adoption. These results suggest that effective latent reasoning in Transformers does not require looping over all layers as in previous works, but can instead emerge more strongly from targeted middle-layer recurrence.",
+      "url": "https://arxiv.org/abs/2607.15178",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8789
+    },
+    {
+      "id": "2607.14952",
+      "title": "LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget",
+      "authors": [
+        "Changhai Zhou",
+        "Kieran Liu",
+        "Yuhua Zhou",
+        "Qian Qiao",
+        "Jun Gao",
+        "Harry Zhang",
+        "Irvine Lu",
+        "Nolan Ho",
+        "Lucian Li",
+        "Andrew Lei",
+        "Cleon Cheng",
+        "Steven Chiang",
+        "Yihang Zeng",
+        "Di Zhang",
+        "Rio Yang",
+        "Kaijie Chen",
+        "Andrew Chen",
+        "Pony Ma",
+        "Weizhong Zhang",
+        "Cheng Jin"
+      ],
+      "abstract": "A growing gap separates inference context lengths from RL post-training: inference systems are approaching million-token contexts, while post-training workloads often remain at 256K tokens or below and rely on length generalization at deployment. The gap is especially important for AI agents, whose observations, tool outputs, documents, and prior decisions accumulate over long trajectories. LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO). It evaluates the shared prompt without autograd, retains only model-specific state needed by later tokens, and replays short response branches one at a time, reducing the live training graph at the cost of additional replay time. We implement it for the hybrid recurrent and full-attention Qwen3.6-27B and the compressed-attention mixture-of-experts GLM-5.2. On eight H20 GPUs, LongStraw completes grouped Qwen scoring and response backward at 2.1M positions for groups of 2 and 8; increasing the group size adds only 0.21 GB of peak allocated memory, while a separate stress test reaches 4.46M positions. On 32 H20 GPUs, we validate the end-to-end LongStraw execution path for a 2.1M-token prompt across all 78 layers of GLM-5.2. These experiments establish execution capacity rather than complete training correctness because the captured prompt state is detached and some distributed forward and gradient composition paths remain incomplete.",
+      "url": "https://arxiv.org/abs/2607.14952",
+      "categories": [
+        "cs.LG",
+        "cs.DC"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8782
+    },
+    {
+      "id": "2607.15686",
+      "title": "S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation",
+      "authors": [
+        "Jiahao Zhao",
+        "Junyi Liu",
+        "Lifeng Xu",
+        "Nan Xu",
+        "Qingli Wang",
+        "Qingxiao Li",
+        "Tianle Chen",
+        "Xiaoyu Wu",
+        "Yawen Zheng",
+        "Zikai Wang",
+        "Guanming Liu",
+        "Hequn Zhou",
+        "Jingyi Wang",
+        "Jingyuan Shu",
+        "Keqi Wang",
+        "Li He",
+        "Songyang Diao",
+        "Wenhui Xu",
+        "Xinyu Ren",
+        "Yaqin Fan",
+        "Yujin Zhou",
+        "Zhanao Yao"
+      ],
+      "abstract": "We present S1-Omni, a unified multimodal reasoning model for scientific understanding, prediction, and generation. AI for Science (AI4S) has advanced significantly through domain-specific models, tool-augmented LLMs, and scientific language models. However, model capabilities remain highly fragmented, limiting the joint modeling of heterogeneous data, scientific laws, and expert knowledge. S1-Omni addresses this gap by consolidating these capabilities into a single, coherent scientific reasoning model. The architecture of S1-Omni is built upon three core components: unified representation of scientific data, natural-world knowledge alignment, and decoding for domain-specific tasks. First, S1-Omni maps natural-language instructions and scientific objects, including CIF, SMILES, protein sequences, spectra, and scientific images, into a shared representation space. Second, it incorporates scientific laws and expert knowledge into data construction and training, enabling the model to reason from scientific evidence. Third, it performs task-specific decoding to support a broad range of applications, including property prediction, spectrum-to-molecular generation, protein site and structure prediction, and scientific image generation and editing. S1-Omni is trained on S1-Omni-Corpus, which covers 200 scientific tasks and contains millions of reasoning samples, and is evaluated on over 60 scientific benchmarks. It outperforms GPT-5.5 and Gemini-3.1-Pro on most benchmarks and matches or surpasses domain-specific models on several benchmarks. Overall, S1-Omni provides a practical path toward unified scientific modeling.",
+      "url": "https://arxiv.org/abs/2607.15686",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.8781
+    },
+    {
+      "id": "2607.15414",
+      "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
+      "authors": [
+        "Geofrey Ntale"
+      ],
+      "abstract": "Large Language Models (LLMs) have emerged as powerful tools for processing the heterogeneous information environments of modern financial markets. This paper presents a systematic, comparative evaluation of five prominent LLMs: GPT-4 Turbo, Claude 3 Opus, Gemini 1.5 Pro, Llama 3 70B, and the domain-specialized FinGPT, with respect to their capacity for technical market analysis. The evaluation spans four structured tasks: candlestick pattern recognition from OHLCV data, directional signal generation (BUY/SELL/HOLD), backtesting of signal quality through a simulated execution pipeline, and financial report comprehension. Our experimental framework employs rigorous quantitative metrics, including Sharpe ratio, maximum drawdown, Sortino ratio, information coefficient, F1-score, and BLEU score. Findings from simulated backtesting indicate that GPT-4 Turbo achieves the highest annualized return and Sharpe ratio among general-purpose models, while FinGPT demonstrates competitive risk-adjusted performance due to domain-specific fine-tuning. Both models outperform a passive S&P 500 benchmark under the tested conditions. The study identifies persistent failure modes across all evaluated models, including numerical hallucination, context-window limitations, and inconsistent performance in sideways market regimes. We conclude that while LLMs hold genuine promise within AI trading systems, robust deployment requires careful task decomposition, rigorous backtesting protocols, and domain-aware fine-tuning strategies.",
+      "url": "https://arxiv.org/abs/2607.15414",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-fin.CP"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8776
+    },
+    {
+      "id": "2607.15459",
+      "title": "From Black Box to Executable Logic: Explainable Reinforcement Learning through Prolog Expert Systems",
+      "authors": [
+        "Eduardo C. Garrido-Merchán"
+      ],
+      "abstract": "A trained deep reinforcement learning policy is a black box, and we ask whether it can be made explainable by rewriting it as an executable logic program that reproduces its behaviour and that a person can read, a logic engine can run, and an optimizer can edit. We present a three-stage post-hoc transformation that extracts a frozen proximal policy optimization teacher, induces an ordered rule list from its decisions in the manner of classical relational learning, and emits the result as a Prolog program whose every decision is executed by an off-the-shelf logic engine; a subsequent expansion stage edits the rule base and accepts an edit only when policy evaluation certifies a return increase. We prove four guarantees. A return-loss bound makes the distilled program a machine-checkable certificate in a finite Markov decision process, and the expansion loop improves monotonically and terminates. For the continuous-observation setting we answer whether the conversion is possible at all: the propositional threshold instantiation converts the network to arbitrary fidelity as the resolution B grows, with disagreement O(1/B) and a return gap that closes at the same rate, and a matching lower bound shows the cost is exponential in the observation dimension for an oblique decision boundary. Empirically, on a two-room key-and-door task with 16,944 reachable states the expanded Prolog program attains exact optimal return in every seed and, in a budget-capped regime, exceeds the stochastic teacher on exact return in ten of ten seeds. On three continuous-control tasks the emitted program substitutes the network, matching the neural teacher within noise on Acrobot with eleven clauses and recovering about 97% of its return on CartPole, while on the finer-control LunarLander it recovers only partially, exactly the ceiling the exponential lower bound predicts.",
+      "url": "https://arxiv.org/abs/2607.15459",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.8773
+    },
+    {
+      "id": "2607.15593",
+      "title": "Scalable LLM Agent Tool Access in the Cloud",
+      "authors": [
+        "Mingxin Li",
+        "Enge Song",
+        "Yueshang Zuo",
+        "Xiaodong Liu",
+        "Rong Wen",
+        "Qiang Fu",
+        "Gianni Antichi",
+        "Jian He",
+        "Jing Tie",
+        "Zhou Shao",
+        "Xiaobo Xue",
+        "Xiong Xiao",
+        "Luyao Zhong",
+        "Shaokai Zhang",
+        "Jiangu Zhao",
+        "Jianyuan Lu",
+        "Shize Zhang",
+        "Xiaoqing Sun",
+        "Changgang Zheng",
+        "Zihao Fan",
+        "Haonan Li",
+        "Tian Pan",
+        "Xiaomin Wu",
+        "Yang Song",
+        "Xing Li",
+        "Biao Lyu",
+        "Meng Li",
+        "Haipeng Dai",
+        "Guihai Chen",
+        "Shunmin Zhu"
+      ],
+      "abstract": "LLM agents increasingly rely on tool calling to act on external systems, and the Model Context Protocol (MCP) has quickly become its de facto interface. Operating MCP at cloud scale, however, becomes difficult. On the tool provider side, legacy services are not directly callable through MCP; the rapid protocol development also creates ongoing compatibility cost. On the agent side, the number of accessible tool is limited by the LLM context window and inference overhead; mounting a large tool set increases token usage and inference latency and can reduce task success rate. Moreover, for stateful MCP backends with multiple replicas, preserving session affinity increases client-side complexity.\n  We present a cloud-scale gateway system for MCP service. It breaks the direct-connect model on the data plane and offloads legacy service integration, consolidating incompatible MCP variants, access control, tool recommendation, and session-aware routing to the gateway. Hybrid retrieval sustains 98% Top-15 recall; it scales agent tool access to 3,000+ with high tool selection accuracy, and reduces tool selection time by $8.9\\times$ and token usage by $23.8\\times$, with low per-call overhead, stable under scale-out. Finally, we share the lessons learned from deploying the gateway system in production.",
+      "url": "https://arxiv.org/abs/2607.15593",
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.NI"
+      ],
+      "submitted": "2026-07-17",
+      "score": 0.877
+    },
+    {
+      "id": "2607.15218",
+      "title": "When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space",
+      "authors": [
+        "Weimeng Wang",
+        "Ziqiang Wang",
+        "Zihang Zhan",
+        "Chuanpu Fu",
+        "Qi Li",
+        "Ke Xu"
+      ],
+      "abstract": "Large language models (LLMs) increasingly serve as high-level planners for embodied agents, where linguistically benign instructions can become unsafe once grounded in the physical world. We study whether this physically grounded danger is the same safety problem as ordinary text-level content danger. Through hidden-state direction analysis and random-split null tests, we show that content danger (CD) and physical danger (PD) form separable signals in LLM representations across Qwen2.5-3B/7B/14B/32B, Phi-3.5 and SmolLM2. Building on the CD/PD separability, we propose PRISM, a single-layer L2-regularized logistic probe over full hidden states. PRISM achieves 86.2--87.7\\% accuracy on SafeAgentBench with 11.7--13.7\\% FPR, while same-scale LLM judges over-block safe tasks at 24.7--39.0\\% FPR. We further introduce PhysicalSafetyBench-1K (PSB-1K), a contrastive benchmark of 1{,}000 physical-risk pairs without direct harm keywords, to test whether methods detect physically grounded danger rather than explicit unsafe wording. On PSB-1K, PRISM reaches 99.6\\% accuracy and 0.7\\% FPR, whereas a Qwen2.5-3B judge rejects 67.8\\% of safe tasks. PRISM also replicates on SafeText and EARBench, supporting hidden-state probing as a representation-level method for physical safety beyond text moderation.",
+      "url": "https://arxiv.org/abs/2607.15218",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-07-16",
+      "score": 0.877
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 296,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
