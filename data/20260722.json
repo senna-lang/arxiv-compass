@@ -1,0 +1,393 @@
+{
+  "date": "2026-07-22",
+  "collected_at": "2026-07-22T12:23:06.563939+09:00",
+  "papers": [
+    {
+      "id": "2607.18915",
+      "title": "Reasoning Error from Known Fact: Step-Level Self-Consistency Group Relative Policy Optimization for LLM",
+      "authors": [
+        "Xiaomeng Hu",
+        "Jiaqi Hu",
+        "Hao Chen",
+        "Qi Zhang",
+        "Zhanming Shen",
+        "Wentao Ye",
+        "Junbo Zhao"
+      ],
+      "abstract": "With the rapid advancement of large language models (LLMs), modern systems not only possess strong foundational capabilities and extensive knowledge, but can also solve complex problems via long, multi-step reasoning. However, as reasoning traces become longer, LLMs may produce a substantial amount of hallucinated content during the reasoning process, which is often difficult to detect. In this work, we conduct a fine-grained analysis of hallucinations arising in LLM reasoning and find that the reasoning traces are particularly prone to Context-Sensitive Factual Hallucinations: cases where the model actually has the relevant knowledge, yet makes factual errors due to contextual interference during reasoning. To address this issue, we propose Step-level Self-Consistency Group Relative Policy Optimization (SSC-GRPO), which assigns step-level rewards to reasoning traces by computing self-consistency scores of individual steps across multiple rollouts. Compared with prior methods, SSC-GRPO achieves state-of-the-art performance on both mathematical reasoning benchmarks and hallucination leaderboards. Our results offer a new perspective for detecting and mitigating hallucinations in the reasoning process of large language models.",
+      "url": "https://arxiv.org/abs/2607.18915",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.896
+    },
+    {
+      "id": "2607.19096",
+      "title": "Supra Cognitive Modes: A Routed Architecture for Agent Memory",
+      "authors": [
+        "Joshua Tobkin",
+        "David Yang"
+      ],
+      "abstract": "Agent-memory workloads mix direct factual lookup, relation-chain and current-state reasoning, and broad synthesis over long histories. We describe Supra Cognitive Modes (SCM), an architecture that maps explicit or automatically selected per-query modes to retrieval and synthesis payloads over one shared ingest substrate. A frozen semantic classifier and runtime gates dispatch queries among fused lexical and dense lookup, graph or iterative multi-hop handling, and stratified long-form synthesis. The substrate combines multi-granularity embeddings, extracted triples, fact-version metadata, and optional asynchronous enrichments. We characterize the deployed configuration on three benchmarks: Long-term Conversational Memory (LoCoMo; n = 1,986), MemoryAgentBench (MAB; n = 3,671), and LongMemEval (n = 500). The reference run records 84.87% on LoCoMo factoid categories and 68.61% on adversarial abstention, 61.49% on MAB across two repetitions, and 86.00% on LongMemEval. A repository-backed reproduction produces similar aggregate scores and supports task- and mode-conditioned failure analysis. Raw baseline outputs, aligned end-to-end timing for LoCoMo and LongMemEval, and complete token ledgers are unavailable; stored rows also omit some final runtime decisions. The results characterize one implemented routed configuration and its diagnostic failure patterns, while source inspection verifies the per-query control interface and shared-substrate design. Causal routing effects, efficiency gains, and statistical significance remain outside the available evidence.",
+      "url": "https://arxiv.org/abs/2607.19096",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8954
+    },
+    {
+      "id": "2607.18639",
+      "title": "Mark, Don't Erase: Token Inoculation for Dual-Use Knowledge in LLMs",
+      "authors": [
+        "Seunghyun Lee",
+        "Dongyoon Han",
+        "Sangdoo Yun"
+      ],
+      "abstract": "Safety interventions on dual-use knowledge typically choose between destroying hazardous content (e.g., unlearning, filtering) and suppressing it at the output layer (e.g., refusal training); both pay a tax in adjacent-domain competence or over-refusal. We argue that the right operation is conditioning, not reduction: we show that hazardous knowledge can be retained in the model and behaviorally gated by a privileged control token. Our method, Token Inoculation, introduces a binding-and-branching approach. First, during continued pre-training, we mark hazardous content by inserting a special token alongside dual-use documents, so the model binds the marker to the underlying semantics of the hazardous domain. Second, during supervised fine-tuning, we teach the model to answer hazardous queries correctly when the special token is present and to refuse them when it is absent, thereby enabling selective refusal without removing dual-use knowledge. On hazardous domain (e.g., WMDP-Bio), Token Inoculation reduces accuracy from 79% to 18% while retaining 93% of the base-model's benign-domain performance (e.g., MMLU), achieving the best safety-utility trade-off against unlearning and refusal-tuning baselines across 1B-14B model scales. We further show that refusal selectivity is controllable through the quality of the conditioning signal and that domain-specific semantic binding during pre-training is critical for the conditional behavior to generalize beyond memorized triggers. Our results suggest that safety alignment is better cast as a conditioning problem than a forgetting one: behavioral control is more precise when sensitive knowledge is retained under controlled access than when it is destroyed.",
+      "url": "https://arxiv.org/abs/2607.18639",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8942
+    },
+    {
+      "id": "2607.18820",
+      "title": "CASE: Causal Alignment and Structural Enforcement for Improving Chain-of-Thought Faithfulness",
+      "authors": [
+        "Ziming Wang",
+        "Yinghua Yao",
+        "Changwu Huang",
+        "Ke Tang",
+        "Xin Yao"
+      ],
+      "abstract": "Chain-of-thought (CoT) reasoning is widely used to improve both the performance and interpretability of large language models (LLMs), yet the generated reasoning may not faithfully support the final answer. We study this problem from a causal perspective, where a faithful CoT process should follow the chain $Z\\rightarrow X\\rightarrow Y$, with $Z$, $X$, and $Y$ denoting the instruction, reasoning chain, and final answer, respectively. In this process, the instruction should affect the answer only through the reasoning chain. However, conventional autoregressive LLMs condition answer generation on both the instruction and the CoT, which still allows a direct instruction-to-answer shortcut. To address this issue, we propose CASE, a framework that combines training-time causal alignment and inference-time structural enforcement. During training, CASE builds counterfactual-CoT, biased-instruction, and empty-instruction datasets, and applies selective-loss fine-tuning to strengthen CoT-to-answer dependence while suppressing instruction shortcuts. During inference, CASE masks direct attention from instruction tokens to answer tokens, preventing the model from bypassing the generated CoT. We provide an information-theoretic analysis showing how these components promote faithful chains. Experiments on three models and four benchmarks show that CASE achieves a 37\\% average per-setting relative improvement in overall CoT faithfulness over the strongest baselines, exhibits stronger cross-dataset faithfulness transfer, and maintains competitive average accuracy. Code is available at https://github.com/oddwang/CASE.",
+      "url": "https://arxiv.org/abs/2607.18820",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "github_url": "https://github.com/oddwang/CASE.",
+      "score": 0.8925
+    },
+    {
+      "id": "2607.19345",
+      "title": "Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning",
+      "authors": [
+        "Lizhe Fang",
+        "Weizhou Shen",
+        "Tianyi Tang",
+        "Yisen Wang"
+      ],
+      "abstract": "Large language models that generate step-by-step reasoning traces have achieved strong performance on complex tasks, and extending them to long-context settings has emerged as an important frontier. However, we identify a critical failure mode in this regime: \\emph{repetitive copying}, where models extensively copy text from the input into their reasoning traces rather than productively solving the problem. We show that this behavior is pervasive across frontier long-context LLMs and intensifies with context length. By separating each prompt into task-relevant key evidence and irrelevant distractor context, we further show that the root cause is insufficient grounding: models copy from the prompt indiscriminately, and those that fail to focus on key evidence are far more likely to answer incorrectly. Motivated by this diagnosis, we propose GEAR (Grounding Evidence-Aware Reward), a reward shaping method that augments the accuracy signal with a grounding reward for overlap with key evidence and a distractor penalty for overlap with irrelevant context. To enable GEAR on natural-language data, we develop an automated pipeline that constructs evidence-annotated training data from arbitrary documents. We validate GEAR across multiple model scales and benchmarks, showing consistent improvements of up to +4.6 average points over standard RL with accuracy-based rewards, with larger gains at longer contexts, while also reducing repetitive copying and thinking length. Our findings suggest that, even as long-context evaluation shifts from simple retrieval toward complex reasoning, accurate grounding in relevant evidence remains an indispensable capability with substantial room for improvement.",
+      "url": "https://arxiv.org/abs/2607.19345",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8914
+    },
+    {
+      "id": "2607.18553",
+      "title": "Operational Proto-Introspection in Looped Language Models: Process-Quality Taps, Executable Branching, and the Readout-Control Boundary",
+      "authors": [
+        "Jan Kirin"
+      ],
+      "abstract": "Can a language model read the quality of ongoing computation, and can an external intervention turn that readout into better outcomes? We test both questions in a frozen 2.6B looped transformer, Ouro-RLTT. On GSM8K, a strict pre-answer probe excludes the answer region and gold value yet predicts eventual success: hidden states plus length and log-probability shortcuts reach AUROC 0.797, versus 0.731 for the shortcuts alone (incremental +0.066; task-clustered 95% CI [+0.021, +0.112]; 170 tasks, 680 candidates). Low-capacity taps also read role-specialized properties: task-disjoint branch survival reaches 0.9697 oracle retention, content ranking reaches 0.6310 macro top-1, and generated-branch correctness reaches AUROC 0.7755. A non-looped control replicates a candidate-quality readout, so recurrence is not required for every signal.\n  We build branch/carry/prune machinery over Ouro's 192-slot recurrent cache, including branch-specific cache lineage and a bit-exact residual-capture splice that recomputes only the affected suffix and saves up to 88% of per-branch layer passes. No frozen intervention produces a validated capability gain. Directional steering is an established negative; a four-task matched-sampling comparison removes evidence for a frozen-fork gain but cannot estimate a general deficit; terminal selection remains unresolved and underpowered; and bounded LoRA changes surface behavior without improving net reachability. A two-null audit does not support the simplest span-misalignment explanation.\n  We call this readable-but-not-yet-usable property operational proto-introspection. The model is not consulting our probes: we read its hidden trajectories, and our interventions fail to convert those readouts into validated capability. The pre-answer result is limited to one domain. Load-bearing values use source-item-disjoint splits and antisymmetrized evaluation where applicable.",
+      "url": "https://arxiv.org/abs/2607.18553",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-20",
+      "score": 0.8909
+    },
+    {
+      "id": "2607.19313",
+      "title": "Off-Context GRPO: Learning to Reason on Hard Problems using Privileged Information",
+      "authors": [
+        "Priyank Agrawal",
+        "Ankur Samanta",
+        "Shervin Ghasemlou",
+        "Jalaj Bhandari",
+        "Kavosh Asadi",
+        "Daniel Jiang",
+        "Aditya Modi"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves reasoning in large language models. Yet, typical RLVR approaches fail on difficult problems: when a model cannot generate any correct solutions, it receives \\textit{zero} learning signal. Providing privileged guidance during training, such as solution prefixes, can help overcome this learning cliff by steering the model towards {correct solutions with non-zero reward}. {We call these rollouts \\textit{off-context}: they are generated from a training prompt that contains privileged guidance, while the target objective is defined by the original prompt without that guidance.} {We introduce} Off-Context GRPO (OC-GRPO), a minimally modified variant of GRPO that uses guided rollouts but applies an importance-corrected objective to steer the update back toward the original unguided objective, avoiding the mismatch that destabilizes uncorrected guided training. Empirically, our algorithm achieves a 3.9\\% absolute improvement (13.8\\% relative gain) over vanilla GRPO on average across standard mathematical reasoning benchmarks with negligible additional cost.",
+      "url": "https://arxiv.org/abs/2607.19313",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8904
+    },
+    {
+      "id": "2607.18725",
+      "title": "Find Before You Fine-Tune: A Diagnostic Study of Small LLMs for Cybersecurity QA",
+      "authors": [
+        "Shaswata Mitra",
+        "Subash Neupane",
+        "Trisha Chakraborty",
+        "Himanshu Tripathi",
+        "Sudip Mittal",
+        "Aritran Piplai",
+        "Shahram Rahimi"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly fine-tuned for critical-domain Question-Answering (QA), yet choosing which small model to adapt, before paying the cost of adaptation, remains difficult. Fine-tuning can improve domain alignment, but it may also erode prior knowledge, weaken instruction-following, or increase hallucination, especially when labeled data are scarce or rapidly evolving as in cybersecurity. We present FiT (Find before Fine-Tune), a task-oriented diagnostic framework that characterizes small LLMs along three capabilities required for cybersecurity QA: vocabulary recognition, parametric knowledge, and contextualization of retrieved information. Using FiT, we conduct an empirical study of five open-weight 7-billion-parameter models under two fine-tuning regimes. We find that fine-tuning does not uniformly help: it consistently degrades vocabulary and parametric knowledge in small models, and the two regimes trade off differently. Knowledge-focused tuning causes moderate, rank-preserving degradation, whereas instruction-focused tuning collapses measured knowledge through induced abstention, inverting the knowledge ranking while leaving retrieval-grounded contextualization essentially intact. We quantify these regime-specific patterns with rank-correlation analysis and show that pre-fine-tuning FiT scores anticipate the direction of post-tuning change. Our results suggest that task-oriented diagnosis can screen out unsuitable models, avoid unnecessary fine-tuning, and support safer deployment of small LLMs in cybersecurity QA pipelines.",
+      "url": "https://arxiv.org/abs/2607.18725",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8895
+    },
+    {
+      "id": "2607.18966",
+      "title": "Measuring Reward-Seeking via Contrastive Belief Updates",
+      "authors": [
+        "Axel Højmark",
+        "Jérémy Scheurer",
+        "Evgenia Nitishinskaya",
+        "Felix Hofstätter",
+        "Jason Wolfe",
+        "Theodore Ehrenborg",
+        "Bronson Schoen",
+        "Alexander Meinke"
+      ],
+      "abstract": "Language models trained with reinforcement learning may learn to optimize the grader's judgment rather than the intended objective. This \"reward-seeking\" is difficult to measure because a model that pursues the grader's judgment and one that pursues the intended objective behave identically whenever the grader rewards the intended behavior. We measure reward-seeking using Contrastive Synthetic Document Finetuning to change a model's beliefs about what the grader rewards, putting those beliefs in conflict with what users or developers want, and measuring the rate at which the model adopts each party's preferred behavior. Applied to intermediate checkpoints of a capabilities-focused OpenAI o3 RL run, without safety training, we find that these checkpoints often side with grader preferences over those of users or developers on coding and alignment tasks. This tendency to side with the grader trends upward throughout RL training. For example, in an environment that forces a choice between keeping a promise to a supervisor and breaking it to complete the task, a late capabilities-focused o3 checkpoint breaks the promise 87% of the time when SDF documents say the grader rewards task completion, versus 9% when they say it rewards honesty (a choice its chain-of-thought often makes explicit). An earlier checkpoint is far less sensitive (40% vs. 24%). Our method also generalizes to reward-hacking models. A model organism trained to reward-hack (gpt-oss-120b) is more than twice as sensitive to grader preferences as the unmodified model, with the mean behavioral shift in favor of the grader rising from 33% to 86%. These results indicate that RL can increase reward-seeking over the course of training, producing models that may act against their developers' intentions when they believe that doing so leads to higher reward.",
+      "url": "https://arxiv.org/abs/2607.18966",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8892
+    },
+    {
+      "id": "2607.19243",
+      "title": "Inference-Time Steering for Cross-Lingual Factual Consistency in LLMs",
+      "authors": [
+        "Alexander Manev"
+      ],
+      "abstract": "Although Large Language Models (LLMs) demonstrate remarkable multilingual fluency, their internal knowledge representations remain disproportionately biased toward high-resource languages. This leads to cross-lingual factual inconsistency, where they shift their empirical answer distributions based solely on the prompt language. We investigate whether these biases can be mitigated at inference time, forcing an English-prompted model to answer as if it were queried in target languages (German, Spanish, Bulgarian), and evaluate four intervention strategies: zero-shot contextual steering (persona prompting), internal representation manipulation via Contrastive Activation Addition (CAA), and lightweight weight modification via Direct Preference Optimization (DPO) trained on benchmark-derived factual data as well as conceptual generalization data. To assess alignment, we curate a multilingual factual dataset alongside a novel generalization benchmark comprising culturally rooted queries to determine whether factual interventions transfer to broader target-centric preferences. Experiments on Gemma 3 12B Instruct reveal persona prompting to be the strongest overall intervention, balancing efficacy, safety, and out-of-domain generalization. While CAA yields sharp inconsistency benchmark shifts, it is configuration-sensitive and risks knowledge degradation. DPO-based adapters offer permanent, yet narrower and less transferable gains. These findings suggest that cross-lingual inconsistency is at least partly a selection problem, and that simple contextual interventions may outperform more invasive methods for robust, transferable alignment.",
+      "url": "https://arxiv.org/abs/2607.19243",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8878
+    },
+    {
+      "id": "2607.18756",
+      "title": "RAGAL: A Frugal, Fully Local Retrieval-Augmented Assistant for Technical Support at a Government Agency",
+      "authors": [
+        "Dan Musetoiu"
+      ],
+      "abstract": "Public institutions hold large volumes of sensitive documents and support tickets that cannot leave the premises, ruling out cloud-hosted language models entirely. We report on RAGAL, a retrieval-augmented assistant for the technical-support team of AFIR, the Romanian Agency for Financing Rural Investments, built and operated under three hard constraints: zero data egress (no external API calls, even for synthetic data), a read-only mandate (the assistant drafts, humans execute), and a single 8 GB consumer laptop as the only development and training machine. Over a Romanian-language corpus of ~25,000 chunks -- 15,073 resolved support tickets and internal normative documents -- we show that the highest-leverage investments were retrieval engineering and retriever fine-tuning rather than a larger generator: hybrid dense-sparse retrieval with intent routing raised our internal evaluation from 62% to 81%, and fine-tuning the bge-m3 embedder on real ticket data improved recall@10 from 0.663 to 0.850 (MRR 0.489 to 0.684) after 72 minutes of training. We document a general pitfall: single-domain fine-tuning silently degraded retrieval on the untouched document domain below the stock baseline, detected only after building a per-domain evaluation set and repaired with locally generated queries (GenQ). We report two counter-intuitive findings -- PII masking improved generation quality, and a structural \"anchor distillation\" scheme made SQL hallucination impossible by construction -- along with a reproducible recipe for full embedder fine-tuning in 8 GB of VRAM. Finally, since zero egress also rules out a cloud judge, we describe a substitute: a 744B-parameter model run on CPU, too slow to serve interactively but affordable in overnight batch, used as a second opinion whose limits we quantify. We release the sanitized pipeline scripts for institutions facing similar data-locality constraints.",
+      "url": "https://arxiv.org/abs/2607.18756",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8864
+    },
+    {
+      "id": "2607.18570",
+      "title": "For What Reason? Interpreting Models' Encoding of Causation and Antithesis",
+      "authors": [
+        "Abhidip Bhattacharyya",
+        "Shira Wein"
+      ],
+      "abstract": "Discourse relations provide document structure, critical to language understanding and enabling language model performance and ethicality. In this work, we investigate how instruction-tuned Transformer models (LLaMA and Mistral) encode discourse relations in English, with a particular focus on the contrasting relations of causation and antithesis. Framing the task as a next-token prediction task and applying a suite of interpretability techniques to test model internals, our findings show that certain early layers make predictive decisions at mid-sequence tokens, while some mid-level layers finalize their decisions closer to the last token. Most of the remaining layers primarily propagate earlier decisions rather than actively influencing them. Additionally, we observe that some layers exhibit a preference for one answer over alternatives, suggesting asymmetric representation of discourse-based reasoning.\\footnote{Our code is available at https://github.com/abhidipbhattacharyya/causation_vs_antithesis}",
+      "url": "https://arxiv.org/abs/2607.18570",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-20",
+      "github_url": "https://github.com/abhidipbhattacharyya/causation_vs_antithesis}",
+      "score": 0.886
+    },
+    {
+      "id": "2607.19326",
+      "title": "Selective State-Space Adaptation and Retrieval for Language Model Reasoning",
+      "authors": [
+        "Atahan Dokme",
+        "Larry Heck"
+      ],
+      "abstract": "Low-rank adaptation introduces a static learned update applied identically to every input. The update provides task-level adaptation but does not explicitly represent token-level or instance-level state variation. A family of adapters is proposed that introduces selective state-space recurrence at two complementary granularities. At the token level, \\textbf{MaLoRA} (Mamba-modulated low-rank adaptation) makes the adapter's scaling factor a dynamic input-dependent function with recurrent state across tokens, in contrast to the stateless modulators of prior work. At the context level, \\textbf{MaRA} (Mamba Retrieval Adapter) tracks cross-segment state and selects the segments most relevant to the query, before the modulated language model generates its answer. Across three frozen backbones (Qwen-2.5-7B, Llama-3.1-8B, Gemma-2-9B) and two reasoning benchmarks (MuSiQue, 2WikiMultihopQA), the family improves reasoning accuracy on every cell of the $3{\\times}2$ grid, by $+6.8$ F1 ($+10.5\\%$ relative) on average and up to $+9.3$ F1 ($+18.2\\%$ relative) on the hardest cell over the LoRA baseline, and the token-level gains carry to RULER QA-2 under length stress.",
+      "url": "https://arxiv.org/abs/2607.19326",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8853
+    },
+    {
+      "id": "2607.19257",
+      "title": "Prompt Design at Scale: How Format, Instruction Count, and Context Length Shape Instruction Adherence and Hallucination in Large Language Models",
+      "authors": [
+        "Netanel Eliav"
+      ],
+      "abstract": "Practitioners make three prompt-design decisions with almost no controlled evidence behind them: how to format instructions and context (markdown, plain text, prose, or tabular), how many simultaneous instructions a system prompt can carry before compliance degrades, and how much context a model can hold before recall and honesty degrade. We report two controlled experiments crossing all three factors on one held, contamination-free synthetic corpus (the \"Book of Veyra,\" 8,780 uniquely-named entities, deterministically regenerable from a fixed seed), evaluated across five models.\n  Experiment 1 (960 calls/model) measures instruction-following decay as rule count N grows from 10 to 160, crossed with four formats and system-prompt vs. user-turn placement. Perfect-response rate collapses to zero by N=80 for every model, format, and placement. Placement produces effects at least as large as format at N=160 in most models, but the direction is model-specific. No model shows a reliable markdown advantage; one 35B model favors plain text instead.\n  Experiment 2 (5,520 calls/model) measures recall accuracy, false-premise sycophancy, and absent-fact fabrication across a 2k-to-512k-token context ladder in the same four formats. Recall stays near ceiling through 64-128k tokens, then degrades sharply and format-dependently: one model's accuracy spread reaches 48 points at 128k tokens. Fabrication never occurs (0/5,760 probes), and sycophancy stays negligible (<=8.3%). What rises sharply near each model's context ceiling is outright refusal to answer (0% to 79-90%), distinct from sycophancy or fabrication. Neither pre-registered format ordering holds, and token overhead (+22% to +37% over plain text) further changes which format is preferable where accuracy spread is genuine.\n  We release the full harness, corpus generator, and raw results (VeyraBench): https://github.com/iNetanel/veyrabench",
+      "url": "https://arxiv.org/abs/2607.19257",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "github_url": "https://github.com/iNetanel/veyrabench",
+      "score": 0.8847
+    },
+    {
+      "id": "2607.18867",
+      "title": "HindsightBench: A Black-Box Behavioral Audit Protocol for Parametric Hindsight in Time-Indexed LLM Decision Tasks",
+      "authors": [
+        "Haozhe Jia"
+      ],
+      "abstract": "Large language models leak parametric knowledge of realized outcomes into historical financial decision tasks. Existence is settled; what users lack is a cheap way to audit a given model for it. We present HindsightBench, a black-box behavioral audit protocol that profiles parametric hindsight in any time-indexed LLM decision task at probe-level cost (no backtests, no logprobs, no corpus access). The protocol chains a four-arm date-manipulation matrix (revealed/date-only/masked/transplanted), dual memory probes (date recovery; outcome recall), and six per-model metrics -- trigger strength, transplant effect, post-cutoff placebo, recoverability, behaviorally effective knowledge cutoff, and a recall-accuracy dissociation coefficient -- with explicit gates where identifiability is data-dependent. Applying it to 15 models from seven vendors on a 258-node vintage-correct macro panel yields three headline patterns: (i) the date-trigger reflex tracks training generation, not scale -- absent across the 2024 open-weight generation from 1B to 70B, present in every tested 2026-generation model, and switching on within one vendor lineage (Qwen3 -> Qwen3.6) at fixed MoE architecture and 3B active parameters; (ii) effective cutoffs span 22 months across vendors and precede vendor-reported dates by up to eight months, invalidating calendar-window placebo designs; (iii) audit results are not invariant to serving -- BF16 serving of an FP8-referenced model breaks the trigger estimate's stability while AWQ-INT4 preserves it, and a provider-locked reasoning regime makes one probe non-convergent -- so the protocol ships with operational requirements (pin quantization and thinking regime; disclose parser and sampling policy). We release the panel, frozen preregistrations, per-model audit rows with measured dollar costs, transcripts, and one-command regeneration.",
+      "url": "https://arxiv.org/abs/2607.18867",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8847
+    },
+    {
+      "id": "2607.18622",
+      "title": "CPInj: Uncovering Prompt Injection Risks in Textual Collaborative Prompt Optimization",
+      "authors": [
+        "Xinting Liao",
+        "Behnoosh Zamanlooy",
+        "Masoumeh Shafieinejad",
+        "David B. Emerson",
+        "Ruinan Jin",
+        "Deval Pandya",
+        "Xiaoxiao Li"
+      ],
+      "abstract": "Textual Collaborative Prompt Optimization (TCPO) extends Textgrad (Yuksekgonul et al., 2025) to a decentralized setting by allowing multiple clients to jointly improve prompts for large language models (LLMs) while keeping their data locally. Its reliance on free-form textual updating and aggregation introduces a new and largely unexplored attack surface, i.e., malicious instructions can be injected into local prompts and propagated through server-side prompt aggregation. Unlike conventional prompt injection attacks, attacking TCPO targets the collaborative optimization loop in TCPO. This setting is more challenging because malicious instructions must survive aggregation, persist through subsequent benign prompt optimization, and evade server-side defenses. To expose this risk, we propose CPInj, a collaborative prompt injection attack that contaminates the aggregated global prompt with malicious instructions, degrades downstream task performance, resists purification by prompt optimization on benign clients, and evades advanced detection-based defenses on the server. We find that current defense methods are ineffective against CPInj. To mitigate this attack, we further propose a defense-oriented aggregation method, i.e., APAgg, which purifies malicious instructions and partially recovers TCPO utility. We conduct extensive experiments across three LLM families and five reasoning tasks in math, logic, and medicine. The results demonstrate that our proposed attack reveals a critical vulnerability in TCPO. Although we take a first step toward mitigation, the attack remains highly effective and far from fully resolved, calling for more robust defense for TCPO.",
+      "url": "https://arxiv.org/abs/2607.18622",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.884
+    },
+    {
+      "id": "2607.18973",
+      "title": "Verifiable Self-Evolution for Open-Ended Dialogue Skills via Future-Feedback Prediction",
+      "authors": [
+        "ChaoJin Zhao",
+        "Xuan Jiang"
+      ],
+      "abstract": "Textual skills provide a lightweight way to improve frozen language-model agents, but their self-evolution normally requires a stable validation signal. Such signals are natural in mathematics or code, where an answer can be checked after it changes, yet are problematic in open-ended dialogue: changing the assistant response also changes the user's next reaction, so a logged reaction cannot directly evaluate a counterfactual response. We propose future-feedback skill evolution, which first redirects self-evolution from prescribing the current answer to predicting whether the observed answer will lead to a positive or negative subsequent user signal. This prediction task is verifiable on fixed logged tuples and therefore supports validation-gated textual optimization. The evolved feedback skill captures interpretable criteria for response quality and can subsequently serve as a diagnostic and optimization target for answer skills. On a proprietary, privacy-preserving sales-assistant dataset, careful quality filtering and a balanced resolved/unresolved split yield more than 75% prediction accuracy. Beyond this result, the central contribution is a formulation that converts otherwise moving conversational feedback into a fixed offline learning target, enabling reproducible skill evolution without placing every candidate skill in live traffic. We discuss the boundary between observational verification and counterfactual validity, and position the method as an offline optimization stage rather than a replacement for final human or online evaluation.",
+      "url": "https://arxiv.org/abs/2607.18973",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8839
+    },
+    {
+      "id": "2607.18955",
+      "title": "H$^2$SD: Hybrid Hindsight Self-Distillation",
+      "authors": [
+        "Qiye Cai",
+        "Yichuan Ma",
+        "Linyang Li",
+        "Peiji Li",
+        "Yongkang Chen",
+        "Qipeng Guo",
+        "Yicheng Zou",
+        "Tao Gui",
+        "Xiaocheng Feng",
+        "Bing Qin"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has substantially improved the reasoning capabilities of large language models on tasks such as mathematical reasoning and code generation. However, most RLVR methods assign a scalar outcome reward to an entire trajectory, resulting in sparse supervision and limited token-level credit assignment. On-policy distillation (OPD) provides denser supervision by distilling token-level distributions from a stronger teacher model, but requires an additional teacher and typically assumes a shared vocabulary. On-policy self-distillation (OPSD) removes this dependency by conditioning the same model on privileged information to construct a teacher policy. However, directly matching the teacher distribution may cause information leakage and unstable optimization. RLSD avoids direct matching by using the teacher signal only to modulate update magnitudes, but it cannot provide an explicit correction direction when the sampled reasoning fails. To address this tradeoff, we introduce $\\mathrm{H}^{2}\\mathrm{SD}$, a hybrid hindsight self distillation framework that uses the teacher differently according to trajectory correctness. For successful trajectories, the teacher receives the student response confirmed as correct together with a rephrasing instruction, and its probabilities on the original response tokens are used to modulate update magnitudes without changing the direction determined by the reward. For failed trajectories, we condition the teacher on a reference hint containing key reasoning steps and a verified answer, and minimize the reverse KL divergence from the student to the teacher. Experiments on multiple challenging reasoning benchmarks show that H$^2$SD consistently outperforms representative RLVR, OPSD, and RLSD baselines while maintaining stable optimization and favorable generation efficiency.",
+      "url": "https://arxiv.org/abs/2607.18955",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8838
+    },
+    {
+      "id": "2607.19088",
+      "title": "DAIS: Dependency-Aware Intermediate QA Supervision for Complex Reasoning",
+      "authors": [
+        "Yu Wang",
+        "Ming Fan",
+        "Xicheng Zhang",
+        "Zhiyong Li",
+        "Zhihu Wang",
+        "Caiyue Xu",
+        "Dahai Hu",
+        "Ting Liu"
+      ],
+      "abstract": "Chain-of-thought (CoT) supervision exposes intermediate rationales, but flat rationale targets usually optimize a single reasoning sequence and provide limited supervision on how local conclusions should support later decisions. We introduce Dependency-Aware Intermediate QA Supervision (DAIS), a training-time framework that converts filtered teacher rationales into stage-level QA records. Each intermediate record predicts a local answer conditioned on the previous states needed for that decision, while the final-answer record keeps the original task format; evaluation therefore uses only the original input and optional context. Across GDPR, AIACT, MedQA, and FOLIO with multiple Qwen backbones, DAIS improves average final-answer accuracy over answer-only, flat chain-of-thought, and independent-QA baselines. On policy-compliance benchmarks, it achieves a largest gain of 5.6% and an average gain of 4.2% over the strongest non-DAIS baseline. Controlled ablations show that valid previous-state conditioning contributes beyond longer targets or additional intermediate text, supporting dependency-conditioned intermediate QA as a lightweight auxiliary supervision signal for standard final-answer inference.",
+      "url": "https://arxiv.org/abs/2607.19088",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.8836
+    },
+    {
+      "id": "2607.18975",
+      "title": "Mi-Memory: A Lifecycle Memory Framework for Personal AI",
+      "authors": [
+        "Xule Liu",
+        "Hanlin Teng",
+        "Chao Li",
+        "Yanan Ni",
+        "Shuo Lu",
+        "Audrey Wang",
+        "Yijun Liu",
+        "Yunfei Wang",
+        "Xiaofeng Li",
+        "Xian Yi",
+        "Yuanfa Li",
+        "Kang Zhao",
+        "Jian Liang",
+        "Yuxuan Chen",
+        "Jinyuan Chen",
+        "Heng Qu",
+        "Kun Shao",
+        "Jian Luan"
+      ],
+      "abstract": "Personal AI is moving beyond chat-only interaction toward continuous services that span phones, cars, homes, wearables, cameras, and tools. In this setting, memory cannot remain a cache of prior conversations. It should serve as a continuity and governance substrate: preserving durable user state, grounding answers in multimodal and device evidence, supporting correction and forgetting, bounding policy evolution, and remaining deployable under latency, cost, privacy, and edge-cloud constraints. This technical report presents Mi-Memory, a lifecycle memory framework for Personal AI organized around four roles: Structure, Expansion, Evolution, and Deployment. A shared audit contract links these roles through four recurring artifact families: typed evidence payloads preserve source identity and provenance, diagnostic traces localize evidence loss across the serving pipeline, strategy artifacts make memory-policy changes explicit, and gate/rollback records bound accepted evolution. MiMemory instantiates the roles through MemStack, MemSense/MemFuse, D$^{2}$ACCI/E$^{2}$MEND, and LiteMem. In controlled-reference Structure evaluations, MemStack reaches 93.59%, 57.24%, and 87.47% on LoCoMo, PersonaMem-V2, and LongMemEval, respectively; other tracks report module-level, preliminary/internal, transfer-feasibility, or design-only evidence with explicit boundaries. MiMemory is a step toward auditable, evidence-gated, and deployment-aware memory systems for Personal AI. Project homepage: https://darwin-agent.github.io/Mi-Memory/ .",
+      "url": "https://arxiv.org/abs/2607.18975",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-21",
+      "score": 0.883
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 297,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
