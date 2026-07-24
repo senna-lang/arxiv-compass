@@ -1,0 +1,416 @@
+{
+  "date": "2026-07-24",
+  "collected_at": "2026-07-24T12:23:25.526935+09:00",
+  "papers": [
+    {
+      "id": "2607.20327",
+      "title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
+      "authors": [
+        "Niqi Lyu",
+        "Pengtao Shi",
+        "Wei Qiu",
+        "Jianlin Zhong",
+        "Sicong Xia",
+        "Jianyao Ma",
+        "Yicheng Ding"
+      ],
+      "abstract": "Large language models (LLMs) provide strong reasoning capabilities but are expensive to serve at scale, whereas small language models (SLMs) are cheaper but less reliable on difficult problems. We introduce PyroDash, a cost-aware framework for token-level SLM-LLM collaborative inference. During generation, the SLM decides whether to request assistance by emitting a control token. A Collaborate Engine then sends the query and partial reasoning trace to a frozen LLM for completion through a single handoff. The policy is internalized in the SLM, requiring neither a separate router, LLM retraining, nor access to LLM logits. PyroDash trains the SLM in three stages: control-token embedding learning, offloading-oriented supervised fine-tuning, and cost-aware alignment with Group Relative Policy Optimization. Its reward balances answer accuracy against inference cost normalized by LLM-only inference. Across five mathematical reasoning benchmarks, PyroDash supports different accuracy-cost operating points. With $λ=0.05$, it achieves 64.04 percent average accuracy, 6.36 percentage points above the LLM-only baseline, while reducing cost by 20.4 percent. With $λ=0.6$, it achieves 54.55 percent accuracy with a 1.90 percent LLM token ratio and 0.012 LLM calls per example, reducing total cost from USD 49.36 to USD 1.78. These results show that learned token-level handoffs can reduce LLM use while preserving strong reasoning performance.",
+      "url": "https://arxiv.org/abs/2607.20327",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-22",
+      "score": 0.904
+    },
+    {
+      "id": "2607.21090",
+      "title": "Training Large Language Models for Self-Explanation Faithfulness",
+      "authors": [
+        "Yeoktatt Cheah",
+        "María Pérez-Ortiz",
+        "Noah Y. Siegel",
+        "Oana-Maria Camburu"
+      ],
+      "abstract": "We propose a Reinforcement Learning (RL) method to directly optimize the faithfulness of self-explanations - the extent to which a model's generated reasoning accurately reflects its internal decision-making process. While existing work focuses on evaluating faithfulness or using inference-time prompting frameworks to improve an LLM's self-explanation's tractability, these approaches do not provide a mechanism to directly optimize a model's parameters to generate faithful self-explanations. We bridge this gap by modifying existing faithfulness metrics into an RL training objective. We investigate (1) if models can be trained to accurately detect factors that affect their decisions, and (2) whether RL can directly optimize for the disclosure of these factors thereby improving LLM self-explanations' faithfulness. We experiment with two intervention types: random-word insertions and user-bias insertions, using a per-sample reward derived from the Phi-CCT correlation metric. RL fine-tuned Llama3.1-8B and Qwen3-8B show substantial improvements on the Phi-CCT faithfulness metric, with in-distribution scores rising from near-zero to as high as 0.664, and out-of-distribution scores reaching up to 0.691 on held-out tasks such as StrategyQA. Cross-intervention generalization is weaker but more interesting: a priori we would not expect a model trained only on random word insertions to generalize to user-bias phrases, yet Llama3.1-8B shows non-zero transfer in this direction. The reverse direction and Qwen3-8B do not replicate this, indicating model-dependent and setup-dependent effects we cannot yet explain. Lastly we analyze model behavior to rule out reward gaming behaviors that often plague RL training. Ultimately, we show that models can be trained to implicitly identify influential factors and disclose them, offering a scalable path toward reducing unfaithful reasoning in LLMs.",
+      "url": "https://arxiv.org/abs/2607.21090",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8962
+    },
+    {
+      "id": "2607.21453",
+      "title": "Test-Time Scaling via Error Localization",
+      "authors": [
+        "Rajiv Shailesh Chitale",
+        "Rahul Madhavan",
+        "Taneesh Gupta",
+        "Deepanway Ghosal",
+        "Aravindan Raghuveer"
+      ],
+      "abstract": "Scaling inference-time computation has emerged as a reliable method to improve the performance of large language models on complex reasoning and programming tasks. However, standard approaches such as independent sampling and sequential multi-turn refinement operate without token-level credit assignment, resulting in computational inefficiency, since valid reasoning prefixes are frequently discarded. In this work, we introduce Test-Time Scaling via Error Localization (TTEL), an inference-time algorithm that utilizes fixed or environment feedback to perform token-level error localization. By comparing conditional probabilities under informed feedback against a null-context baseline, TTEL isolates the step at which an error occurred. The algorithm then truncates the trajectory and branches a new generation, maximally reusing the valid prefix. Extensive evaluations demonstrate that TTEL establishes strictly dominating Pareto frontiers across sequential reasoning domains, measured by pass-at-k vs. generated-token cost. With Qwen3-8B on LiveCodeBench, TTEL attains a pass@64 of 71.0% while generating approximately half as many tokens as independent sampling (360.4k vs. 735.0k). Generalizing to math benchmarks AIME-2025 and HMMT-2025, TTEL cleanly outperforms competing test-time baselines across both Qwen3-8B and Qwen3-4B-Thinking-2507.",
+      "url": "https://arxiv.org/abs/2607.21453",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.893
+    },
+    {
+      "id": "2607.21063",
+      "title": "QuantiBias: Benchmarking Quantization-Induced Bias in LLMs",
+      "authors": [
+        "Emilio Ferrara"
+      ],
+      "abstract": "Almost every large language model that reaches a broad audience is quantized: trained in full precision, then compressed for efficiency. This step is assumed harmless and its safety is rarely re-checked. We find its principal side effect is increased bias that standard safety evaluation misses. Holding the model, its training, and the prompts fixed, a quantized model still refuses harmful requests, still avoids over-refusing benign prompts, and still selects the unbiased multiple-choice answer. Yet asked an open-ended question, the same model volunteers stereotypes in all eight languages we probe, in roughly one in four open-ended answers under an independent judge (~24% to ~27% across the compression ladder): it passes every standard check and still reaches users measurably more biased. The selective gap is a robust finding; whether open-ended bias further increases with compression is less certain, sensitive to the judge that scores it. We address both with \\textbf{QuantiBias}, a benchmark that pairs a generative, multilingual stereotype probe with the refusal and multiple-choice controls that isolate open-ended generation, contrasts each build with and without reasoning, and rates the content severity of what it generates. Across two backbone models (Qwen and Gemma), a five-family screen, and eight benchmarks, quantizers allocate their extra precision by capability data that carries no bias-prevention signal, and reasoning before answering roughly halves the effect on some families while doing nothing on others. A quantized build must be re-evaluated for open-ended bias, not only on the short-form safeguards it already passes.",
+      "url": "https://arxiv.org/abs/2607.21063",
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8904
+    },
+    {
+      "id": "2607.21106",
+      "title": "AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning",
+      "authors": [
+        "Qinfeng Li",
+        "Yuntai Bao",
+        "Xinyan Yu",
+        "Hongze Chen",
+        "Wenqi Zhang",
+        "Xuhong Zhang"
+      ],
+      "abstract": "Effective memory is crucial for LLM agents, yet constructing it effectively remains challenging. A memory-construction policy decides what information to extract, store, update, compress, or discard as interactions accumulate. Heuristic memory methods rely on subjective, task-specific rules, which can misalign with downstream objectives and limit cross-task adaptability. RL-based methods, by contrast, learn from task feedback but mainly use outcome- or module-level rewards. These coarse signals indicate task success but cannot identify which intermediate memory contents support the final answer, creating a fine-grained credit-assignment bottleneck. However, constructing such process feedback is prohibitively difficult because intermediate memory decisions lack unique ground-truth targets, while the appropriate credit varies with the agent's uncertain reasoning trajectory and therefore cannot be specified in advance. We propose AttriMem, an attribution-guided process-feedback framework for learning memory-construction policies with RL. AttriMem augments the global outcome reward with local rewards derived from token-level contributions to the final answer. Experiments on long-horizon dialogue question answering show that AttriMem outperforms retrieval-based, heuristic, and RL-based baselines, generalizes across benchmarks and answer models, stabilizes RL optimization.",
+      "url": "https://arxiv.org/abs/2607.21106",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8898
+    },
+    {
+      "id": "2607.20999",
+      "title": "Workflow-Localized Mechanism Learning: Attribution-Guided Repair and Knowledge Reuse for Structured Agent Skills",
+      "authors": [
+        "Zibin Lin",
+        "Shengli Zhang",
+        "Taotao Wang",
+        "Yihan Xia",
+        "Deen Ma",
+        "Guofu Liao"
+      ],
+      "abstract": "Agent Skills package reusable procedural knowledge as external artifacts for frozen language-model agents, yet existing optimizers do not jointly resolve where a failure occurs in a workflow, which mechanism caused it, and how relevant knowledge from third-party Skills should be reused locally. We introduce Workflow-Localized Mechanism Learning (WML). Its Node--Mechanism Attribution identifies the failed workflow node, implicated mechanisms, and smallest valid edit target, routing single-mechanism defects to L3 resources and relational defects across mechanisms to L2 composition protocols. A six-module Workflow-Guided Skill Optimization (WGSO) loop then selects provenance- and scope-aware third-party knowledge, applies bounded patches, evaluates candidates, and stores verified outcomes in optimizer-side memory. On SpreadsheetBench, WML reaches 90.33 +/- 1.53 and 74.67 +/- 3.51 Hard Accuracy with DeepSeek and Qwen3.6-Flash, respectively; without additional optimization, the learned Skills transfer to WikiTableQuestions with 84.00 +/- 2.00 and 83.00 +/- 2.00 Denotation Accuracy. On Compiler-Supported50, WML attains both the highest hard-PASS rate and the lowest cost per successful task; compiled execution sharply reduces tokens and calls relative to a direct SkillAgent while retaining most of its successful tasks. Code and artifacts are available at https://github.com/xiaolin9595/workflow-localized-mechanism-learning.",
+      "url": "https://arxiv.org/abs/2607.20999",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-23",
+      "github_url": "https://github.com/xiaolin9595/workflow-localized-mechanism-learning.",
+      "score": 0.8892
+    },
+    {
+      "id": "2607.20764",
+      "title": "ArbiGraph: Arbitrarily Scalable Verifiable Task Graphs for Evaluating Context Management",
+      "authors": [
+        "Pavel Golikov",
+        "Evgenii Opryshko",
+        "Gennady Pekhimenko",
+        "Mark C. Jeffrey"
+      ],
+      "abstract": "We introduce ARBIGRAPH, a benchmark generator for evaluating whether tool-assisted language agents can retain, update, compose, and discard task-relevant context across extended reasoning workflows. ARBIGRAPH represents each task as a natural-language problem with an executable Python solver, and composes tasks through typed intermediate states, instantiated here as scalar and list values. This design enables controllable task graphs whose length, dependency structure, distractor count, and value type can be varied while preserving exact automatic verification. We instantiate ARBIGRAPH with math, GSM-style word-problems, and Python-tracing task categories, and evaluate a Qwen3.5-27B tool-assisted agent across four topologies. The results show high accuracy on isolated tasks but substantial degradation on more complex dependent tasks: accuracy drops by up to 33.3% on branching chains of dependent math tasks. This shows that ARBIGRAPH exposes failures that are not visible from single-task evaluation alone. Our code, generated datasets, and evaluation results are available at https://github.com/pavelgolikov/ArbiGraph.git",
+      "url": "https://arxiv.org/abs/2607.20764",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-22",
+      "github_url": "https://github.com/pavelgolikov/ArbiGraph.git",
+      "score": 0.8891
+    },
+    {
+      "id": "2607.20833",
+      "title": "REFACT: Adaptive Fact Restatement for Compact and Faithful Chain-of-Thought Reasoning",
+      "authors": [
+        "Zhensheng Jin",
+        "Xin Dai",
+        "Zhenghao Liu",
+        "Chaojun Xiao",
+        "Huiyuan Xie",
+        "Yu Gu",
+        "Ge Yu",
+        "Maosong Sun"
+      ],
+      "abstract": "Large language models increasingly rely on long-form reasoning for complex tasks, yet their reasoning traces may drift away from the supplied context when evidence is sparse, noisy, or in conflict with parametric knowledge. Existing grounding methods either attach citations after generation or encourage evidence retrieval inside the trace, but they often do not ensure that cited content is sufficient for the local inference and final answer. We propose REFACT, an adaptive fact-restatement citation framework that trains models to decide when a reasoning step needs contextual grounding and at what granularity source facts should be restated. This design avoids both unsupported inference and indiscriminate fact copying by turning citations into answer-supporting intermediate states. REFACT is optimized with a two-stage SFT-to-RL pipeline in which a citation-utility reward encourages cited facts to be well-formed, source-traceable, and answer-sufficient. Experiments on LongBench, LV-Eval, and ConFiQA show that REFACT improves long-context QA and counterfactual faithfulness while substantially reducing token consumption. Further analysis shows that REFACT preserves more answer-bearing evidence with fewer restated facts, yielding reasoning traces that are denser rather than longer. All code and data are available at https://github.com/NEUIR/REFACT.",
+      "url": "https://arxiv.org/abs/2607.20833",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "github_url": "https://github.com/NEUIR/REFACT.",
+      "score": 0.8862
+    },
+    {
+      "id": "2607.20730",
+      "title": "GPE: Evaluating Robust Evidence Aggregation for Fact Verification under Controllable GEO-Style Poisoning",
+      "authors": [
+        "Zhaoqi Wang",
+        "Zijian Zhang",
+        "Xiaomei Yuan",
+        "Pengtao Kou",
+        "Jiamou Liu",
+        "Zhen Li",
+        "Liehuang Zhu"
+      ],
+      "abstract": "Large language models increasingly use search tools to retrieve up-to-date information, introducing a new attack surface in which retrieved documents can be manipulated. This risk is amplified by the development of generative engine optimization, which can make selected content more likely to be retrieved, cited, and adopted by models. Existing fact-verification benchmarks and evaluation frameworks do not provide the controlled evidence environments needed to assess robustness against GEO poisoning. We therefore propose GPE, which consists of a multi-domain fact-verification benchmark and an evaluation framework for controlling evidence sources and poisoning ratios. Experiments across multiple verification methods and poisoning attacks demonstrate that GPE exposes robustness degradation and efficiency trade-offs that cannot be observed through clean evaluation alone, confirming the need to evaluate fact verification under adversarial evidence environments.",
+      "url": "https://arxiv.org/abs/2607.20730",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-22",
+      "score": 0.8844
+    },
+    {
+      "id": "2607.21461",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "authors": [
+        "Shuqi Lu",
+        "Chaofan Li",
+        "Kun Luo",
+        "Zhang Zhang",
+        "Hui Wang",
+        "Hongwang Xiao",
+        "Zheng Liu",
+        "Lei Xiong",
+        "Jiahao Wang",
+        "Sen Wang",
+        "Xiyan Jiang",
+        "Wanli Li",
+        "Yuyang Hu",
+        "Hongjin Qian",
+        "Bingyu Yan",
+        "Ziyi Xia",
+        "Yingxia Shao",
+        "Kang Liu",
+        "Zhicheng Dou",
+        "Di He",
+        "Chaozhuo Li",
+        "Qiwei Ye",
+        "Zhongyuan Wang",
+        "Zheng Liu"
+      ],
+      "abstract": "Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+      "url": "https://arxiv.org/abs/2607.21461",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.883
+    },
+    {
+      "id": "2607.21356",
+      "title": "Emergent Misalignment Recruits a Pre-existing Persona Subspace",
+      "authors": [
+        "Mohammed Suhail B Nadaf"
+      ],
+      "abstract": "Fine-tuning an aligned language model on a narrow stream of bad advice can make it broadly misaligned on questions unrelated to the training data, a phenomenon called emergent misalignment. We ask why the narrow lesson generalizes at all, and we find that narrow fine-tuning recruits a persona structure that is present in the model before the fine-tune exists. From a frozen instruction-tuned model (Qwen2.5-14B-Instruct) we extract per-domain persona subspaces by contrastive teacher forcing and find that 4 unrelated domains share one low-rank core at 657x a random-subspace null, with 82% of that core lying outside a style core built at matched diversity. The literal first optimizer step of fine-tuning on insecure code climbs a broad-misalignment margin harder than the same code framed as educational, and forecasts realized margin movement out to 375 steps. Projecting the subspace out of the residual stream throughout fine-tuning prevents broad misalignment (27.7% to 0.0% of judged generations) while a matched-rank random subspace changes nothing; injecting it into the never-fine-tuned model induces misalignment that grows with dose to 45.4%, past the fine-tuned model it is measured against. The same projection applied to the weight gradient is inert, and three post-hoc weight edits leave the disposition in place: the sharpest edit suppresses the behavior rather than removing it, and the ablated structure re-forms inside the subspace the edit cleared. Spreading a fixed budget of bad data across 4 domains produces more broad misalignment than mechanical weight superposition and matched diversity jointly account for. All measurements come from one model at 14B; the extraction is from an aligned instruction-tuned checkpoint, which leaves the structure's provenance open; and the intervention that prevents misalignment also abolishes the narrow trained behavior.",
+      "url": "https://arxiv.org/abs/2607.21356",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8825
+    },
+    {
+      "id": "2607.21291",
+      "title": "Adaptive Depth Sparse Framework: Similarity-Driven Resource Allocation for Pre-Trained LLMs",
+      "authors": [
+        "Yidu Wu",
+        "Xiang Wang",
+        "Kejie Zhao",
+        "Zhangchi Wang",
+        "Qinghai Guo",
+        "Xiaoying Tang"
+      ],
+      "abstract": "Large language models (LLMs) achieve strong generation and reasoning performance, but the Transformer architecture incurs high inference cost. Existing acceleration methods often rely on task-specific fine-tuning or training from scratch, increasing adaptation cost and limiting cross-task usability. We present an Adaptive Depth Sparse Framework (AdaDSF) that converts off-the-shelf pre-trained LLMs into depth-sparse models without full retraining. Our key insight is that layers contribute unequally to representation transformation, characterized by the cosine similarity between layer input and output hidden states. Based on this, AdaDSF assigns layer-wise token retention ratios from similarity statistics, uses a lightweight router to select informative tokens at each layer, and introduces a feature-preserving alignment objective to match intermediate and final representations between sparse and dense models. On GPT-NeoX and Qwen2.5 over language modeling and commonsense reasoning, AdaDSF substantially reduces inference FLOPs while preserving performance close to dense counterparts. Under comparable sparsity, AdaDSF consistently yields smaller accuracy degradation than strong baselines including MoD, D-LLM, and DLO.",
+      "url": "https://arxiv.org/abs/2607.21291",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8825
+    },
+    {
+      "id": "2607.21306",
+      "title": "AI Assistants Overassist",
+      "authors": [
+        "Verona Teo",
+        "Raghav Jain",
+        "Tobias Gerstenberg",
+        "Max Kleiman-Weiner"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used as tutors and thought partners, helping users reason through problems. While guidance from AI assistants can scaffold thinking and foster learning, such benefits depend on how they help--for instance, intervening too early or too frequently may hinder true learning and cognitive engagement. Yet how AI systems navigate intervention decisions during problem-solving remains poorly understood. Here, we introduce Int-Bench, a simulation-based benchmark for evaluating LLM interventions during learning. Int-Bench simulates a \"student\" solving a problem while a \"teacher\" monitors the student's reasoning and decides whether, when, and how to intervene. Across three domains--code debugging, mathematics, and brain teasers--we evaluate LLM teachers on the frequency and timing of interventions, as well as their impact on both immediate task success and generalization to new problems. We also compare LLMs to humans, finding that LLMs intervene more frequently and earlier than humans. Moreover, in contrast to humans, they tend to provide complete solutions rather than targeted hints. These findings suggest that current LLM assistants often optimize for short-term success rather than supporting the reasoning processes needed for deeper learning and long-term success.",
+      "url": "https://arxiv.org/abs/2607.21306",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8823
+    },
+    {
+      "id": "2607.21550",
+      "title": "X$^3$-OPD: Distilling Reasoning into Large Audio-Language Models via On-Policy Alignment",
+      "authors": [
+        "Dongjie Fu",
+        "Di Cao",
+        "Xize Cheng",
+        "Zihan Zhang",
+        "Wenxu Jia",
+        "Yifu Chen",
+        "Shengpeng Ji",
+        "Yu Zhang",
+        "Tao Jin"
+      ],
+      "abstract": "While large audio-language models have achieved remarkable progress in auditory perception, they still lag behind text-based large language models in deep logical reasoning, primarily due to the scarcity of high-quality audio reasoning data. To bridge this gap, we propose X$^3$-OPD, a cross-modal on-policy distillation framework that transfers reasoning capabilities from a powerful text teacher to an audio-language student. During training, the student generates reasoning trajectories conditioned on its own acoustic perception, while the teacher provides token-level guidance using matched textual inputs and verified answers. We further construct a three-tier symmetric corpus covering textual reasoning rendered into speech, audio-event reasoning grounded in complex acoustic scenes, and spoken-dialogue reasoning involving paralinguistic cues. This design extends cross-modal distillation beyond textually recoverable content to reasoning grounded in non-linguistic events, prosody, and conversational context. Experiments on MMSU, MMAU, BIG Bench Audio, and MMAR demonstrate that X$^3$-OPD substantially improves audio-grounded reasoning and chain-of-thought quality while largely preserving the model's existing capabilities under domain shift.",
+      "url": "https://arxiv.org/abs/2607.21550",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8819
+    },
+    {
+      "id": "2607.20891",
+      "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+      "authors": [
+        "Pengyu Zhu",
+        "Lijun Li",
+        "Longju Yang",
+        "Sen Su"
+      ],
+      "abstract": "Deep Research agents extend LLM-based assistants into long-horizon workflows involving planning, retrieval, evidence synthesis, and report generation, yet their reliability in open information environments remains underexplored. A key concern is whether apparently credible but factually misleading knowledge encountered in such environments can propagate through these workflows and be adopted as false conclusions in final reports. To study this failure mode, we introduce MisKnow-Agent, a framework for constructing and validating misleading knowledge for Deep Research tasks. MisKnow-Agent generates misleading instances with controllable authority levels and styles, yielding 5,933 quality-controlled instances built on DeepResearch Benchmark tasks. Extensive experiments across open-source and closed-source Deep Research agents show that even limited exposure to misleading knowledge can induce false-conclusion adoption in final reports, revealing a broad reliability vulnerability in current Deep Research agents. Although search-enabled verifier models consistently identify the retained instances as misleading during focused corpus validation, the same instances can still be adopted during long-horizon research, revealing a disconnect between focused verification and workflow-level evidence use. Finally, we evaluate pre- and post-research defenses, both individually and in combination, finding that all three configurations mitigate but do not fully prevent false-conclusion adoption. Our findings suggest that reliable Deep Research requires evidence verification and correction capabilities at both the model and framework levels, beyond improvements in planning, retrieval, evidence integration, or report-generation abilities.",
+      "url": "https://arxiv.org/abs/2607.20891",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8816
+    },
+    {
+      "id": "2607.21482",
+      "title": "Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks",
+      "authors": [
+        "Mack Nixon",
+        "Liam Wright",
+        "Yevgeniya Kovalchuk",
+        "Alison Fang-Wei Wu",
+        "Martin Danka",
+        "Andy Boyd",
+        "David Bann"
+      ],
+      "abstract": "Large language models (LLMs) and agents are now widely used tools in code development, with data typically sent to third-party cloud-based models. Their adoption in research using personal data is constrained by governance requirements that typically prohibit data transmission to external services. Locally deployable open-weight models offer an alternative since sensitive data never leave the local environment. We introduce an open-source framework for evaluating the efficacy of AI agents powered by open-weight LLMs on one of the most persistent bottlenecks in research on longitudinal population studies: data preparation. The framework comprises: a curated ground-truth dataset (cleaning scripts preparing six sweeps of data from a British cohort study), task definitions encompassing tasks such as category harmonization and multi-wave merging, and automated routines for evaluating the LLM-produced R code and outputted data. We benchmark LLMs across the (consumer grade) deployment spectrum to assess their efficacy in 20 data preparation tasks (creation of 102 variables). Current state-of-the-art, 31-35B parameter models almost saturated our benchmark (\"average task completion\" up to 87.9%). The performance of open-weight LLMs running on consumer-grade hardware shows promise of a viable path toward AI-assisted data preparation in governance-restricted research settings. Our framework is publicly available at: https://github.com/UCL-ARC/RRBench.",
+      "url": "https://arxiv.org/abs/2607.21482",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "github_url": "https://github.com/UCL-ARC/RRBench.",
+      "score": 0.8813
+    },
+    {
+      "id": "2607.20952",
+      "title": "The Weight of Silence: A Causal Case for Weights Over the Scratchpad in Latent Chess Reasoning",
+      "authors": [
+        "Ishan S. Kshirsagar"
+      ],
+      "abstract": "Latent, or silent, reasoning lets language models carry out intermediate computation in continuous vector space instead of words, and is widely assumed to function as an internal scratchpad the model actively consults during inference. Whether that assumption survives reinforcement learning has not been tested directly: existing causal analyses of latent reasoning are confined to math and logic tasks, and compare a model's reliance on its thoughts within a single checkpoint, never before and after an RL stage. We train a chess-playing model through a staged latent-reasoning curriculum followed by reinforcement learning, and find legality climbs monotonically to 61% (from a 48% pre-RL baseline) while checkmate confabulation is eliminated entirely. To locate this gain, we run a six-condition causal intervention suite on the same model before and after RL: substituting or adding matched noise to the latent thought vectors leaves performance unchanged, ablating them causes only mild degradation, and only exact-zero vectors cause collapse. This robustness gap is itself the finding: under exact-zero corruption, legality collapses to 1% pre-RL versus 9% post-RL, a gap that survives correction for testing across the full battery; milder conditions trend similarly without independently reaching significance. RL appears to add robustness to disruption, not reliance on thought content. These results push back against the field's default assumption that latent thoughts function as an actively consulted inference-time scratchpad, and instead indicate latent reasoning's principal effect here is shaping the model's parameters during training. We also demonstrate a working RL gain in chess, a domain outside the math and logic settings where multiple groups report the same latent-reasoning-plus-RL recipe failing to improve accuracy over SFT.",
+      "url": "https://arxiv.org/abs/2607.20952",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.881
+    },
+    {
+      "id": "2607.21231",
+      "title": "Progressive Cramming: Reliable Token Compression and What It Reveals",
+      "authors": [
+        "Dmitrii Tarasov",
+        "Timofei Lashukov",
+        "Elizaveta Goncharova",
+        "Andrey Kuznetsov"
+      ],
+      "abstract": "Token cramming compresses sequences into learned embeddings with near-perfect reconstruction, but fixed token budgets and 99\\% accuracy thresholds leave it unclear whether residual errors reflect optimization failures or fundamental limits. We introduce progressive cramming, which grows the target prefix token-by-token, stopping only when reconstruction is no longer achievable within a fixed optimization budget. Progressive trajectories occupy low-dimensional structure in embedding space. Prepending a crammed embedding causes a moderate but consistent accuracy drop on multiple-choice benchmarks even with the original prefix in context, and collapses capability almost entirely under generative evaluation. Causal attention-knockout interventions trace this degradation to the embedding's interactions in the model's early layers. These results position progressive cramming as a tool for studying compression limits and show that perfect reconstruction - achievable through brittle steering rather than transferable semantics - is insufficient for meaningful compression.",
+      "url": "https://arxiv.org/abs/2607.21231",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8803
+    },
+    {
+      "id": "2607.21557",
+      "title": "OpenForgeRL: Train Harness-native Agents in Any Environment",
+      "authors": [
+        "Xiao Yu",
+        "Baolin Peng",
+        "Ruize Xu",
+        "Hao Zou",
+        "Qianhui Wu",
+        "Hao Cheng",
+        "Wenlin Yao",
+        "Nikhil Singh",
+        "Zhou Yu",
+        "Jianfeng Gao"
+      ],
+      "abstract": "Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external systems. While powerful, these complex harnesses also make agents hard to train end-to-end with open infrastructure, whose SFT/RL stacks cannot natively express stateful, multi-process harness inference. To address this, we present OpenForgeRL, an open-source framework for training harness-based agents end-to-end in diverse environments. OpenForgeRL achieves this with a lightweight proxy that serves the harness's model calls while recording them as training data for a standard RL codebase (e.g., veRL), and a Kubernetes orchestrator that runs each rollout in its own remote container, together enabling training on any harness in any environment at scale. By decoupling training and inference, OpenForgeRL allows researchers to easily train, study, and improve agents directly in the real harnesses and environments they are deployed with. We validate our framework across diverse, complex harnesses and environments, spanning tool/claw-based agents and multimodal GUI browser- and computer-use agents. Using only hundreds to a few thousand tasks, OpenForgeClaw reaches 31.7 pass^3 and 55.9 pass@3 on ClawEval and 33.7 on QwenClawBench. OpenForgeGUI reaches 37.7 on OSWorld-Verified, 63.0 on Online-Mind2Web, and 72.3 on WebVoyager. Both outperform open baselines of similar size on nearly all benchmarks, and in the GUI setting match or surpass models several times larger. Beyond benchmarks, we analyze how harness choice (e.g., ZeroClaw, OpenClaw, Codex) and RL shape agent behavior. We find that some harnesses are substantially harder to learn than others, and that RL improves agentic reliability, such as self-verification, tool coverage, and completing multi-step plans, though critical abilities such as error recovery remain weak.",
+      "url": "https://arxiv.org/abs/2607.21557",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.88
+    },
+    {
+      "id": "2607.20918",
+      "title": "OPOD: On-Policy Omni Distillation",
+      "authors": [
+        "Tong Zhao",
+        "Yuyang Hu",
+        "Reed Li",
+        "Yu Lu",
+        "Haibo Shi",
+        "Yutao Zhu",
+        "Zhicheng Dou"
+      ],
+      "abstract": "Omni-modal models can handle text, images, and audio in one system, but improving all of these abilities together remains difficult. Training a single model on pooled multimodal data often fails to match models specialized for individual modalities. On-policy distillation (OPD) offers a way to combine such specialists: the student generates a response, and a teacher evaluates that same response, so the student learns directly from behaviors it actually produces. Yet using several teachers can introduce competing guidance and improve one modality at the expense of another. We present On-Policy Omni Distillation (OPOD), which routes each student response to the matching text, image, or audio teacher. OPOD keeps teacher guidance only on tokens where the teacher assigns a higher probability than the student, adjusts the influence of each modality teacher independently during training, and asks the routed teacher to assess both the final answer and whether the reasoning supports the correct answer. Across twelve benchmarks and three backbone sizes, OPOD achieves the best average score at every scale, reaching 70.8, 51.7, and 46.2 and exceeding the strongest comparator by 2.1, 1.8, and 1.7 points. On the 30B model, it outperforms both the base model and a counterpart post-trained jointly on pooled multimodal data on all twelve benchmarks, and ranks first or second on eleven even when the individual specialists are included. The specialists are discarded after training, leaving one deployable omni-modal model. These results show that coordinating modality-specific teachers is an effective way to improve a shared model while maintaining cross-modal balance.",
+      "url": "https://arxiv.org/abs/2607.20918",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-23",
+      "score": 0.8794
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
