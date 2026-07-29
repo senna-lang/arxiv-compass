@@ -1,0 +1,416 @@
+{
+  "date": "2026-07-29",
+  "collected_at": "2026-07-29T12:18:51.239897+09:00",
+  "papers": [
+    {
+      "id": "2607.25600",
+      "title": "Beyond Self-Knowledge: Propagating Uncertainty Across Reasoning and Retrieval in LLMs",
+      "authors": [
+        "Chandan Kumar Sah",
+        "Xiaoli Lian",
+        "Li Zhang"
+      ],
+      "abstract": "Retrieval-augmented generation improves knowledge-intensive question answering, but indiscriminate retrieval can introduce irrelevant evidence and unnecessary computation. We investigate whether verbalized confidence from black-box language models can serve as an actionable signal for retrieval routing. Our method, BeyondUncertainty, first elicits a structured provisional answer and confidence estimate, then applies a model-specific threshold selected on held-out validation data and frozen before test evaluation. Low-confidence questions receive top-$5$ TF--IDF retrieval followed by a second answer call, whereas high-confidence questions return the provisional answer directly. We evaluate 27,000 policy instances across six QA benchmarks, three model families, and three retrieval policies. BeyondUncertainty achieves $0.483$ mean token-level F1, compared with $0.467$ for always retrieval and $0.401$ for no retrieval, while reducing retrieved passages by $20.4\\%$ relative to always retrieval. When matched on the number of questions routed to retrieval within each dataset--model cell, it outperforms a post-hoc random allocation in 17 of 18 settings, with an average gain of 0.024 F1. Although poorly calibrated as an absolute probability, probe uncertainty modestly predicts question-level retrieval benefit (AUROC $=0.628$). However, the additional probe increases total token usage by $28.2\\%$, revealing a trade-off between more selective evidence acquisition and end-to-end token efficiency.",
+      "url": "https://arxiv.org/abs/2607.25600",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8933
+    },
+    {
+      "id": "2607.25415",
+      "title": "A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain",
+      "authors": [
+        "Debjyoti Paul"
+      ],
+      "abstract": "Production LLM agents are increasingly assembled from a frozen model wrapped in a harness: a prompt template, a tool set, a memory/retrieval layer, a planning strategy, and a verification policy. Two 2026 systems, Meta-Harness (Lee et al., 2026) and HyperAgents (Meta AI, 2026), show that this harness can itself be optimized or even self-rewritten by an agentic proposer -- at the cost of either an expensive code-search loop or unconstrained self-modifying code, neither of which is auditable or usable with a fully black-box model API. We take a narrower, more constrained position: treat the harness as a small, fixed, human-legible action space and learn a policy over it online with classic sample-efficient reinforcement learning (an $ε$-greedy contextual bandit and REINFORCE), scored against a multi-objective reward (task success, verifier score, policy compliance, cost, latency, and an unsupported-claim penalty). We instantiate this control system with DSPy (Khattab et al., 2024) as both the context assembler and the source of the strongest non-adaptive baseline (a DSPy BootstrapFewShot static prompt), and evaluate it across three verifiable task domains -- tool-use workflows, code generation (HumanEval), and multi-hop retrieval QA (HotpotQA) -- and two model providers (a local Ollama model and AWS Bedrock). We release the harness-control-system code, the cross-domain verifiable task suite, the full trajectory/reward-decomposition logs from training, and a provider-agnostic deployment recipe for applying this to a new organization's domain and verification setup.",
+      "url": "https://arxiv.org/abs/2607.25415",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8903
+    },
+    {
+      "id": "2607.25915",
+      "title": "Penelope: Localized Latent Recurrence for Efficient Structured Reasoning",
+      "authors": [
+        "Yutong Chen",
+        "Shouqian Shi",
+        "Xinran Liu",
+        "Haochen Wang",
+        "Jiaying Wang",
+        "Tianxing Xu",
+        "Yuanxi Wang",
+        "Zirui Ding"
+      ],
+      "abstract": "Complex structured reasoning tasks often require additional computation, yet current language models obtain it mainly by increasing parameter scale or by serializing intermediate steps as chain-of-thought (CoT) tokens. The former raises training and deployment costs, while the latter ties reasoning computation to autoregressive output length. We introduce Penelope, an efficient latent-reasoning framework for pretrained decoder-only Transformers that localizes recurrent computation to a selected decoder interval. The lower decoder prefix is evaluated once to construct a problem-conditioned boundary memory, which is then iteratively refined through time-modulated GRU dynamics and recurrent readout states before answer generation. A progressive CoT-to-latent curriculum transfers visible reasoning into this internal recurrent path, allowing additional computation to be allocated in latent space without repeatedly executing the complete decoder or generating a long intermediate trace. Experiments on open-source structured-reasoning benchmarks show that, at validation-selected latent budgets, Penelope attains competitive accuracy relative to established latent-reasoning models while reducing measured inference latency. These results show that latent refinement can be localized to a narrow decoder interval, reducing repeated full-decoder execution without generating a long visible reasoning trace and providing a practical accuracy-efficiency tradeoff for decoder-only Transformer models.",
+      "url": "https://arxiv.org/abs/2607.25915",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8889
+    },
+    {
+      "id": "2607.25560",
+      "title": "Agent Skills Matter: Inferring Proprietary Skills from Execution Trajectories",
+      "authors": [
+        "Jianing Geng",
+        "Ruiqi He",
+        "Zekun Fei",
+        "Biao Yi",
+        "Ruijie Wang",
+        "Zheli Liu",
+        "Xia Hu",
+        "Xuansheng Wu",
+        "Qingkai Zeng"
+      ],
+      "abstract": "Agent skills package reusable procedures that improve downstream performance. Their lightweight, portable form enables marketplace monetization and private deployment behind cloud-hosted agent interfaces, giving providers incentives to keep high-value skills proprietary. Yet hiding the artifacts does not conceal their behavioral effects, which remain observable in execution trajectories and form a behavioral side channel. We define this exposure as Skill Leakage: reconstructing proprietary skills from trajectories elicited by benign queries, without reference answers or success labels. We introduce SigLeak, a black-box framework that exploits recurring skill signatures in agent behavior. It constructs diverse, decision-rich diagnostic tasks, contrasts matched skill-enabled and skill-disabled trajectories, and iteratively refines a reconstructed skill from the isolated patterns. Across five scenarios, three model families, and three agent frameworks, SigLeak outperforms or matches three baselines in nearly every setting. It raises the success rate by 6.88 percentage points over the skill-disabled reference on average and achieves the highest overall SkillSim, our metric for coarse- and fine-grained semantic similarity. These results show that benign execution trajectories can expose proprietary procedural knowledge. The code is available at https://anonymous.4open.science/r/SigLeak-D1DB.",
+      "url": "https://arxiv.org/abs/2607.25560",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8882
+    },
+    {
+      "id": "2607.25816",
+      "title": "Speculate While You Reason: Teaching Agents to Predict Their Next Tool Call via Joint Agent-Speculator RL",
+      "authors": [
+        "Jiabao Ji",
+        "Yujian Liu",
+        "Li An",
+        "Rohit Jain",
+        "Gungor Polatkan",
+        "Siyu Zhu",
+        "Shiyu Chang"
+      ],
+      "abstract": "Large language model agents often spend substantial wall-clock time waiting for tool call results. Tool-call speculation can hide this latency by predicting and pre-executing an agent's next tool call if the prediction matches the agent's eventual tool call, but existing speculators are typically separate draft models or cached traces that are poorly aligned with the deployed agent's own behavior. We identify this speculator-agent gap and show that the target agent itself is a strong next-call speculator. This points to a simpler design: unifying the agent and speculator within the same model. In this paper, we introduce the self-speculating agent, a single model that both solves tasks in agent mode and predicts its next tool call from partial trajectories in speculator mode, fully reusing prefix KV cache. To enable this dual-mode agent without degrading performance, we propose a joint agent-speculator reinforcement learning method, which derives speculation targets from the agent's own rollouts and alternates agent and speculator updates. Across agentic search QA and conversational tool-use agentic tasks, our method improves average next tool-call Hit@1 from 44.1 to 61.2 for Qwen3-4B and from 48.9 to 66.3 for Qwen3.5-4B, while preserving agent task success.",
+      "url": "https://arxiv.org/abs/2607.25816",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8871
+    },
+    {
+      "id": "2607.25066",
+      "title": "Addressable Recall Compaction for Long Context-Window Control in AI Agents",
+      "authors": [
+        "Thang Dang",
+        "Yuma Ichikawa",
+        "Sakina Fatima",
+        "Koichi Shirahata"
+      ],
+      "abstract": "Long-horizon LLM agents accumulate reasoning traces, actions, and tool observations that can eventually exceed a model's fixed context window. Existing compaction methods address this limitation by discarding, summarizing, or retrieving earlier information, but they may remove task-critical details or fail to recover them reliably. We propose ARC (Addressable Recall Compaction), a context-management framework that separates archival storage from active-context presentation. ARC stores tool observations in an append-only, ID-addressable log and replaces older observations with compact citations when compaction is required. The agent can subsequently use these identifiers to request stored content without re-executing the corresponding tools or depending solely on similarity-based retrieval. We evaluate ARC using Qwen3-8B with a 16k context window and Qwen3-32B with a 32k context window. On the Needle-in-a-Haystack evaluation, ARC achieves an average exact-answer accuracy of 99.40%, compared with 88.12% for the best-performing baseline in our evaluation. ARC also reduces estimated serving time and HBM traffic under our hardware-cost model. On the LongBench-v2 Hard subset, ARC obtains an average accuracy of 29.97%, compared with 28.25% for the best-performing baseline. These results indicate that explicit, address-based recall can improve information retention and serving efficiency relative to the evaluated context-management baselines under the tested settings.",
+      "url": "https://arxiv.org/abs/2607.25066",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-27",
+      "score": 0.8858
+    },
+    {
+      "id": "2607.25675",
+      "title": "DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space",
+      "authors": [
+        "Jiangwang Chen",
+        "Zixin Song",
+        "Junlin Liu",
+        "Shuaiyu Zhou",
+        "Haiyan Wu",
+        "Haihan Shi",
+        "Chenxi Zhou",
+        "Hanqing Li",
+        "Xiao Yang",
+        "Da Zhu",
+        "Guanjun Jiang",
+        "Hai Wan",
+        "Xibin Zhao"
+      ],
+      "abstract": "Text-space optimization adapts large language models (LLMs) by editing external natural-language artifacts rather than model weights, so the optimized artifacts remain inspectable and the model can be treated as a black box. However, most existing text-space methods keep evaluation fixed. On open-ended tasks, this can become a bottleneck: once the solver improves on the criteria a rubric measures, omitted dimensions remain invisible to the optimization signal. Simply evolving the rubric is also unreliable when updates are selected by the current solver's score, because apparent progress can come from making the rubric easier to satisfy. We introduce DecoEvo (Decoupled Co-Evolution), which co-evolves a solver skill and a rubric-generator skill under decoupled objectives without using gold rubrics during optimization. The solver skill is updated using criterion-level feedback, while the rubric-generator skill is revised through complementary audits of requirement coverage and response discrimination that are independent of aggregate solver score. This separation focuses generator updates on newly exposed solver weaknesses, reducing repeated emphasis on criteria the solver already satisfies. Under each benchmark's official evaluation, DecoEvo outperforms all compared methods across five benchmarks and three LLM backbones, yielding 2.8--5.0\\% relative gains over SkillOpt in the five-benchmark average.",
+      "url": "https://arxiv.org/abs/2607.25675",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8852
+    },
+    {
+      "id": "2607.25936",
+      "title": "From Role Prompt to Infinite Thinking: Exploiting Persona Conditioning for Inference Cost Attacks in LLMs",
+      "authors": [
+        "Zhiyi Mou",
+        "Wangze Ni",
+        "Tianfang Xiao",
+        "Haoyang LI",
+        "Chen Jason Zhang",
+        "Hanzhi Ma",
+        "Yang Bai",
+        "Zhibo Wang",
+        "Kui Ren"
+      ],
+      "abstract": "LLMs are increasingly deployed in real-world applications, making inference efficiency and service reliability critical concerns due to their substantial computational costs. However, the autoregressive generation mechanism of LLMs enables malicious prompts to manipulate generation behaviors, inducing excessive token generation that amplifies computational consumption and threatens service efficiency. Existing methods mainly rely on adversarial suffixes or explicit extension instructions, which introduce detectable behaviors and limit their applicability. In this paper, we reveal a previously unexplored vulnerability caused by persona consistency in LLMs, where models maintain assigned roles and reproduce corresponding behaviors even when they result in inefficient reasoning and excessive generation. Based on this observation, we propose RolePlay, a task-aware dynamic persona alignment framework that constructs adaptive personas to naturally induce inefficient yet semantically coherent behaviors for inference cost amplification. Extensive experiments across multiple LLMs and diverse task datasets demonstrate that RolePlay consistently outperforms existing inference extension methods, achieving an average token amplification of up to \\bm{$7.64\\times$} and a maximum token amplification ratio of \\bm{$207.64\\times$}. Our findings identify persona conditioning as a new attack surface for LLM inference efficiency and offer a new perspective on computational cost amplification.",
+      "url": "https://arxiv.org/abs/2607.25936",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8851
+    },
+    {
+      "id": "2607.25853",
+      "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
+      "authors": [
+        "Yu Hao",
+        "Jinxuan Cai",
+        "Qi Zhang",
+        "Yawen Li",
+        "Zhiqiang Zhang",
+        "Chuan Shi",
+        "Cheng Yang"
+      ],
+      "abstract": "Skills have become an important abstraction for enabling large language model (LLM) agents to reuse past experience in long-horizon interactive tasks. However, existing trajectory-to-skill methods often produce flat collections of high-level textual skills that are stored and retrieved independently, leaving skill relations underutilized and maintaining a gap between high-level skills and executable actions. In this paper, we propose HiSkill, a hierarchical skill graph framework that organizes interaction trajectories into a directed graph with skill nodes, AtomicOp nodes, and typed edges. Specifically, the graph connects reusable high-level skills with executable action templates, while also capturing decomposition, temporal transition, compatibility, support, and recovery relations among them. At inference time, HiSkill retrieves a compact task-relevant subgraph and performs subgraph-guided task execution, where a symbolic task state, an active skill, and the retrieved subgraph guide the LLM agent to switch skills, select AtomicOps, and ground executable actions iteratively. Experiments on three interactive environments show that HiSkill outperforms state-of-the-art baselines while reducing inference token consumption, demonstrating the effectiveness of bridging high-level skills and executable action grounding through a hierarchical skill graph. Our data and code is available at https://github.com/BUPT-GAMMA/HiSkill.",
+      "url": "https://arxiv.org/abs/2607.25853",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "github_url": "https://github.com/BUPT-GAMMA/HiSkill.",
+      "score": 0.8851
+    },
+    {
+      "id": "2607.26052",
+      "title": "Spend Experts Where You Are Unsure: Confidence-Adaptive Routing for Mixture-of-Experts LoRA",
+      "authors": [
+        "Tom Saliencro",
+        "Rohan Desai",
+        "Priya Nair",
+        "Maya Lindqvist",
+        "Daniel Whitmore"
+      ],
+      "abstract": "Mixture-of-Experts (MoE) variants of Low-Rank Adaptation (LoRA) route every token to a fixed number of experts $k$. Tokens differ in how uncertain the model is about them, so a single k over-spends on easy tokens and under-serves hard ones. We observe that the router's output distribution is already a per-token uncertainty signal: peaked mass indicates confidence, while a flat distribution indicates ambiguity. We introduce CARE (Confidence-Adaptive Routing of Experts), which admits experts in a nucleus fashion. Experts are activated in decreasing router weight until their cumulative mass reaches a threshold, with a small extension when the admitted experts disagree. A budget thermostat calibrates the threshold so that the average number of active experts matches any target. CARE is a drop-in, single-forward-pass rule with no extra parameters. Across eight commonsense benchmarks on LLaMA-3.1-8B and Qwen2.5-7B, as well as math, code, and knowledge tasks, CARE improves over fixed top-k MoE-LoRA at matched compute and matches the fixed-k=4 baseline while activating fewer experts. The same confidence and disagreement signals also improve out-of-distribution detection over MSP, entropy, and multi-pass proxies. We support the design with nucleus fidelity, budget optimality, and an epistemic reading of disagreement, and we release code.",
+      "url": "https://arxiv.org/abs/2607.26052",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8848
+    },
+    {
+      "id": "2607.25857",
+      "title": "Shieldstral",
+      "authors": [
+        "Antonia Calvi",
+        "Avinash Sooriyarachchi",
+        "Giada Pistilli",
+        "Guillaume Lample",
+        "Maarten Buyl",
+        "Maximilian Augustin",
+        "Maximilian Müller",
+        "Pierre Stock",
+        "Tom Bewley",
+        "Wassim Bouaziz",
+        "Yimu Pan"
+      ],
+      "abstract": "We introduce Shieldstral, a 3B-parameter policy-adaptive multimodal safety classifier that matches or outperforms models nearly 7$\\times$ its size on text safety benchmarks and sets a new state of the art on multimodal safety classification. Shieldstral formulates content moderation as a binary question-answering task. This simple formulation unifies diverse moderation tasks into a single yes/no problem, enabling heterogeneous safety datasets with divergent taxonomies to be consolidated under one training framework. We present the data construction recipe, covering curation and generation of approximately 54.1M samples and a fine-grained evaluation set to evaluate policy adaptability. Together, these enable a small adaptive model to match or outperform much larger models.",
+      "url": "https://arxiv.org/abs/2607.25857",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8842
+    },
+    {
+      "id": "2607.25614",
+      "title": "MemSFT: Mitigating Alignment Tax with an External Parametric Memory",
+      "authors": [
+        "Jiarui Wang",
+        "Xiang Shi",
+        "Jiaqi Cao",
+        "Rubin Wei",
+        "Xiquan Wang",
+        "Hao Sun",
+        "Jingzhi Wang",
+        "Zhiqi Yang",
+        "Qipeng Guo",
+        "Bowen Zhou",
+        "Zhouhan Lin"
+      ],
+      "abstract": "Adapting Large Language Models (LLMs) to specialized domains often incurs an alignment tax, as fine-tuning on domain-specific tasks can cause catastrophic forgetting and substantially degrade performance on general tasks. We propose MemSFT, which mitigates the alignment tax by decoupling domain specialization from backbone parameter updates through a plug-and-play parametric memory. The memory is trained to imitate the behavior of a non-parametric retriever operating over domain data, thereby memorizing knowledge and patterns that would otherwise be accessed through retrieval. Once trained on a specific domain, the memory can be reused across LLMs of different sizes. During generation, a learned router dynamically fuses the output distributions of the memory and backbone at each decoding step, allowing domain expertise to be invoked selectively. Across biology, geoscience, and law, evaluations with models ranging from Qwen3-8B to Qwen3-235B-A22B show that MemSFT consistently improves domain performance with negligible degradation in general performance, whereas full SFT suffers severe forgetting on general tasks. Overall, our results demonstrate a practical path to decoupling general model capabilities from domain-specific knowledge at the parameter level, thereby equipping LLMs with new specialized capabilities without compromising their general capabilities.",
+      "url": "https://arxiv.org/abs/2607.25614",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8838
+    },
+    {
+      "id": "2607.25554",
+      "title": "Distilling Temporal Search and Reasoning: Evolving LLMs for Future Prediction via Harness-Assisted Efficient Data Synthesis",
+      "authors": [
+        "Wanxu Cai",
+        "Zhengyu Chen",
+        "Huaisheng Zhu",
+        "Wei Wang",
+        "Jingang Wang",
+        "Qiang Xu"
+      ],
+      "abstract": "Future event prediction carries broad social impact yet remains challenging. SOTA approaches augment LLMs with external agent frameworks whose predictive capability vanishes once the harness is removed. While recent Tool-Integrated Reasoning (TIR) internalizes deep search for multi-hop retrieval of facts, forecasting further demands temporal search and reasoning over historical trends and dynamic shifts. The key obstacle is data: historical queries induce temporal leakage that degrades forecasting into retrieval. Prior works either freeze information gathering with static observations, or rely on rejection sampling or unresolved fresh queries that discard vast amounts of data, degrading synthesis efficiency. We propose a time-truncation harness that enforces a temporal cut-off at every turn, enabling TIR-style sampling from historical events, reducing temporal leakage and reliance of rejection sampling or unsolved queries, increasing the sampling efficiency. We further build a large-scale corpus and a process-based metric and show that our harness naturally induces a broader temporal breadth of search and raises the proportion of high-quality data, further increasing the efficiency and reducing the reliance on complex rubrics. Distillation experiments show that students trained on harness-intervened data achieve the best performance, demonstrating harness-assisted model evolving that turns higher quality temporal search and reasoning data into a parametric advancement of the students.",
+      "url": "https://arxiv.org/abs/2607.25554",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8838
+    },
+    {
+      "id": "2607.25907",
+      "title": "Minimizing Targeted Activations: Input-Only Suppression of Evaluation-Awareness Latents in Large Language Models",
+      "authors": [
+        "Deepanshu Mody",
+        "Samarth Agarwal",
+        "Utkarsh Mittal",
+        "Dipesh Mahato"
+      ],
+      "abstract": "Activation steering controls model behavior by editing internal activations at inference time. We study its input-side dual: optimizing a fluent prompt so that a chosen internal latent is driven toward zero, with no inference-time model access. Our target is an \"evaluation-awareness\" latent-linearly readable and steerable in recent work-whose control would threaten the validity of safety evaluations if models behave differently when they detect being tested. Adapting Fluent Dreaming / EPO with a negated feature term (GCG-style token optimization plus a self-cross-entropy fluency regularizer, swept over a fluency weight), we suppress the latent under five target constructions-a CAA direction, a subspace norm, an SAE feature, a single MLP neuron, and a behavioral logit-on Llama-3.2-3B and Llama-3.1-8B. The latent is robustly suppressible ($z\\approx-7$), and a causally-validated Llama Scope SAE feature can be fully and selectively turned off. But our controls tell a cautionary story about the CAA direction: a placebo random direction is suppressed just as hard and shifts behavior just as far, and when we hold a real eval passage in context and optimize only a prefix, suppressing the eval-direction fails to reduce-and slightly increases-the model's behavioral eval judgment. Activation-readability, in short, is not behavioral controllability. We further find that a single MLP neuron is eval-correlated but not causal at both scales, and that scanning the real Pile yields a natural-text baseline competitive with the optimizer for the internal direction. A positive control validates our erasure detector, bounding an erasure-vs-rotation question earlier left open.",
+      "url": "https://arxiv.org/abs/2607.25907",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8832
+    },
+    {
+      "id": "2607.25886",
+      "title": "RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement",
+      "authors": [
+        "Fanqing Meng",
+        "Lingxiao Du",
+        "Qiguang Chen",
+        "Ziqi Zhao",
+        "Haocheng Lu",
+        "Mengkang Hu",
+        "Michael Qizhe Shieh"
+      ],
+      "abstract": "Recursive self-improvement requires turning evidence of model failures into better models. Data-centric post-training research entails diagnosing capability gaps, designing and validating training-data strategies, and learning from checkpoint feedback. Can LLM agents automate this loop? Existing benchmarks entangle research decisions with optimization, serving, evaluation, and systems implementation, obscuring agents' research capability. We introduce RSIBench-Data, a controlled benchmark of LLM agents as data-centric researchers with a fixed post-training stack. Agents iteratively revise training-data strategies for a fixed target model; training and serving use Tinker-backed services, official evaluation runs through Harbor and E2B sandboxes, and budgets are fixed across agents. We evaluate four frontier agents on six benchmarks across software engineering, terminal use, scientific question answering, and mathematics. Agents demonstrate core data-centric research capabilities: in 58.33\\% of settings, they improve upon the first valid attempt by refining strategies from feedback. However, improvement is inconsistent. Among searches continuing after the best observed score, 78.26\\% end with a lower-scoring final attempt, while the rest only recover the same peak. A strong candidate may therefore appear early or midway through a run even as later revisions fail. Trajectory analysis identifies four patterns in stronger runs: accurate hypotheses, validation-grounded supervision, behavior-aligned data, and preservation of strong checkpoints. These findings suggest that current agents can make useful data-centric discoveries but cannot yet translate feedback into consistent improvements. RSIBench-Data provides a measurable, auditable testbed for the research capabilities required for recursive self-improvement. We open-source our code at https://github.com/evolvent-ai/RSIBench-Data.",
+      "url": "https://arxiv.org/abs/2607.25886",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-28",
+      "github_url": "https://github.com/evolvent-ai/RSIBench-Data.",
+      "score": 0.8831
+    },
+    {
+      "id": "2607.25718",
+      "title": "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction",
+      "authors": [
+        "Xinyi Hong",
+        "Pinjun Dong",
+        "Xinyang Yu",
+        "Binyan Jiang"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly rely on invoking external tools to complete real-world tasks. Tool retrieval, which selects a small task-relevant subset from a library of thousands of tools before the agent acts, has therefore become a critical component of LLM agent pipelines. However, existing retrievers either score each tool in isolation or assemble the tool set sequentially, so the joint utility of a candidate set is never evaluated as a whole. In this paper, we propose HYSET, short for HYperedge-based SEt-level Tool retrieval. Our contributions are threefold: (i) we formulate tool retrieval as query-conditioned hyperedge prediction on a tool co-invocation hypergraph, under which the tool set itself becomes the unit of scoring and most existing retrieval paradigms reduce to restricted instances; (ii) we capture size-dependent tool compatibility through cardinality-specific interactions; and (iii) we design HYSET as a pre-selection module requiring no modification to the downstream agent. Experiments on ToolBench demonstrate that HYSET consistently outperforms state-of-the-art baselines in both tool retrieval performance and end-to-end task success. Beyond the in-domain setting, HYSET further supports zero-shot/few-shot transfer, generalizing to held-out tools/categories and unseen domains with minimal supervision.",
+      "url": "https://arxiv.org/abs/2607.25718",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.882
+    },
+    {
+      "id": "2607.25891",
+      "title": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation",
+      "authors": [
+        "Stefan Krsteski",
+        "Charlotte Meyer",
+        "Guillaume Allegre",
+        "Tony O'Halloran",
+        "Alexandre Sallinen"
+      ],
+      "abstract": "Evaluating AI agents in interactive environments is hindered by fragmented tasks, scaffolds, verifiers, and scoring rules. Existing efforts focus on narrow settings, remain limited in scale, or require costly reruns, leaving much of the empirical record incomparable. We introduce Messier, a unified corpus of 957,253 records that span 30 benchmarks, 714 agents, 11,891 tasks, and 74,205 verifiers. Messier consolidates public benchmark scores and supplements them with five-agent runs across six underrepresented professional and scientific domains, including a recent legal benchmark. Each record is standardized by model, scaffold, environment, task, verifier, and aggregation rule, with SOC/NAICS classifications for occupational and industry analysis. Using this corpus, we show frontier progress is uneven across benchmark types, with \"function calling\" saturated, \"programming\" improving the fastest, and \"enterprise workflows\" remaining the most challenging. Furthermore, counterfactual rescoring shows that strict all-pass aggregation in multi-verifier tasks can obscure progress and artificially alter agent rankings. From these standardized records, we derive capability scales that align with Epoch's Evaluation Capability Index rankings at Spearman \\r{ho} = 0.81 and can be specialized by domain, occupation, action space, or verifier type. Messier provides a foundational, reusable infrastructure for agent capability scaling, benchmark auditing, and fine-grained analysis of evaluation failures.",
+      "url": "https://arxiv.org/abs/2607.25891",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8819
+    },
+    {
+      "id": "2607.25633",
+      "title": "Construction-Driven Injection: Linguistically-Grounded Edit-Based Code-Mixing Fingerprints for Large Language Models",
+      "authors": [
+        "Yongyi Cui",
+        "Yue Li",
+        "Tianbao Jiang",
+        "Xin Yi"
+      ],
+      "abstract": "Large language models (LLMs) are costly intellectual assets that remain exposed to unauthorized redistribution and commercial misuse. Injected fingerprints, i.e., trigger--target pairs embedded in model behavior, offer a practical, black-box-verifiable ownership signal, but existing methods decouple the two stages of the fingerprint life cycle: how a fingerprint is constructed and how it is injected. Existing fingerprinting frameworks suffer from two limitations. Natural-language fingerprints are prone to accidental activation, and garbled fingerprints are easily filtered by perplexity-based detection. Furthermore, decoupling construction from injection leaves the latter unaware of the trigger's linguistic structure, missing the opportunity for targeted optimization. We argue that fingerprint construction should drive injection, and present a unified fingerprinting framework that jointly optimizes both stages. First, LCF constructs code-mixing fingerprints by combining low-resource languages under a semantic-density substitution rule and grammar-biased mixing, yielding triggers whose perplexity sits far below garbled baselines while avoiding the accidental-activation failures of natural-language triggers. Second, LCFEdit injects each fingerprint with a null-space projection derived from high-resource multilingual representations that preserves knowledge, augmented by a cross-lingual alignment step that steers the weight update toward the fingerprint language's representation subspace. This construction-aware injection ensures that the update is linguistically informed and therefore more stable. Extensive evaluations on imperceptibility, detectability, and harmlessness demonstrate persistent ownership verification with negligible impact on utility.",
+      "url": "https://arxiv.org/abs/2607.25633",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-28",
+      "score": 0.8817
+    },
+    {
+      "id": "2607.25063",
+      "title": "Similar Models Learn Differently: Final-Window Pretraining Shapes Post-Training Beyond SFT",
+      "authors": [
+        "Cen Lu",
+        "Yung-Chen Tang",
+        "Andrea Cavallaro"
+      ],
+      "abstract": "Developers judge a model checkpoint by how it behaves. After supervised fine-tuning (SFT), two checkpoints that perform about the same across relevant benchmarks are treated as interchangeable, equally ready for the next alignment stage, typically preference optimization. We ask whether this judgment misses a pretraining imprint: a difference that no post-SFT benchmark reveals, yet that decides how each checkpoint responds to further training. To find out, we run a controlled experiment on the final window of pretraining, the last data trained on before instruction tuning. Six branches fork from one partially pretrained checkpoint and differ only in this window: 500 million tokens, 0.1% to 1% of the tokens that precede it. Each branch trains its window on a single data source: generic web text, filtered web text, normative discourse, safety text, mathematical text, or synthetic educational text. SFT and post-training are then identical. After SFT the branches behave near-identically, within about one point on instruction following, refusal, and capability, yet the same post-training carries them to very different endpoints, under both a direct preference optimization update and a reinforcement learning update with a verifiable reward. We measure this deviation through refusal of harmful requests: when post-training begins the safety text branch refuses no more than the web text branch, yet by the end it has lost far less of its refusal. The other four branches gain little or no protection, so the effect is selective to what the window contained. The protection requires the safety text to arrive last rather than earlier in pretraining, and it reproduces on a second model family. What a model is pretrained on last shapes how it reacts to alignment. Therefore, a checkpoint should not be evaluated by its post-SFT behavior alone, and what it was trained on last should be reported with it.",
+      "url": "https://arxiv.org/abs/2607.25063",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-27",
+      "score": 0.8814
+    },
+    {
+      "id": "2607.25090",
+      "title": "Matryoshka Agent: Unfolding Sub-Agents for Long-Horizon Machine Learning Engineering",
+      "authors": [
+        "Rushi Qiang",
+        "Changhao Li",
+        "Haotian Sun",
+        "Yuchen Zhuang",
+        "Chao Zhang",
+        "Bo Dai"
+      ],
+      "abstract": "Machine learning engineering (MLE) tasks require long-horizon decision making over iterative solution debugging and refinement, under expensive and feedback-driven environment interactions. Developing and training a monolithic agent for such tasks is fundamentally challenging, as it must simultaneously manage extremely long and noisy contexts, explore vast solution spaces, and remain effective under limited model capacity and computational budgets. To address these challenges, we propose Matryoshka Agent, a unified hierarchical agent framework for complex long-horizon tasks. Matryoshka Agent decomposes agentic problem solving into a coordinated hierarchy of decision making and execution: a high-level Orchestrator maintains compact, long-horizon exploration states and issues strategic instructions, while lower-level Sub-Agents execute concrete solution attempts through direct environment interaction, mediated by standardized Tool interface. This design decouples strategic exploration from costly execution, substantially reducing the burden of long-context reasoning and enabling efficient iterative refinement. We further develop an efficient training paradigm for Matryoshka Agent. Experimental results on a broad range of MLE tasks with diverse model types and scales demonstrate that Matryoshka Agent is an effective and scalable paradigm for long-horizon MLE tasks and complex agentic problem solving. Notably, Matryoshka Agent enables Qwen3-4B-Instruct to reach Orchestrator performance comparable to o4-mini. Applying Matryoshka Agent to Qwen3-30B-Coder results in at most 36.7% relative performance gain.",
+      "url": "https://arxiv.org/abs/2607.25090",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-27",
+      "score": 0.8812
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
