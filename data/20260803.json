@@ -1,0 +1,410 @@
+{
+  "date": "2026-08-03",
+  "collected_at": "2026-08-03T12:36:07.726606+09:00",
+  "papers": [
+    {
+      "id": "2607.28966",
+      "title": "BLADE: Boundary-Expanded and Layer-Adaptive Dynamic Exit for Efficient LLM Reasoning",
+      "authors": [
+        "Keshu Fu",
+        "Keqin Peng",
+        "Jun Bai",
+        "Shuhan Qin",
+        "Chen Li",
+        "Junzhu Liang",
+        "Yefei Chen",
+        "Jiaqi Li",
+        "Yuanxin Ouyang"
+      ],
+      "abstract": "Large language models often improve task performance by generating long reasoning traces, but the resulting computation is frequently wasted on redundant verification and revision. Existing probe-based early-exit approaches mainly inspect explicit self-doubt expressions, leaving many earlier termination opportunities undetected. Expanding inspection to ordinary reasoning boundaries improves coverage, but also exposes highly diverse intermediate states whose predictive information may reside in different hidden layers. We present Boundary-Expanded and Layer-Adaptive Dynamic Exit for Efficient LLM Reasoning (BLADE), a lightweight framework that dynamically terminates reasoning by estimating whether the generated prefix is sufficient for correct answering. BLADE constructs multi-granular checkpoints from sentence, self-doubt, and paragraph boundaries, and derives robust training labels through repeated answer completions. It further learns a compact subset of informative probe layers instead of relying on fixed choices or expensive representations from all layers. At inference time, calibrated predictions are combined with checkpoint-specific confirmation rules to balance responsiveness and premature-exit risk. Experiments on five benchmarks and two Qwen3 reasoning models show that BLADE preserves near-baseline accuracy while reducing generated tokens by 24.8% on Qwen3-8B and 15.8% on Qwen3-4B. Ablation studies further confirm the benefits of diverse checkpoints and automatic layer selection, demonstrating an effective approach to more efficient LLM reasoning.",
+      "url": "https://arxiv.org/abs/2607.28966",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8957
+    },
+    {
+      "id": "2607.29211",
+      "title": "Knowing When to Quit: Diagnosing and Training LLMs to Abort Futile Reasoning",
+      "authors": [
+        "Xinyan Guan",
+        "Jiali Zeng",
+        "Chunlei Xin",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Xianpei Han",
+        "Le Sun",
+        "Fandong Meng"
+      ],
+      "abstract": "Large language models generate computationally expensive yet semantically void reasoning on beyond-capability tasks, creating risks where plausible-sounding but incorrect derivations mislead users. We characterize this \\textit{futile reasoning} phenomenon through systematic analysis, revealing universal capability overreach and systematic miscalibration between capability and behavior. The dominant failure mode is specious reasoning, which outputs look superficially valid but contain subtle errors, escalating with task difficulty. To address this, we introduce \\textbf{CaRL} (\\textbf{Ca}pability-\\textbf{a}ligned \\textbf{R}einforcement \\textbf{L}earning), which aligns model behavior with capability boundaries through reward shaping that incentivizes refusal over futile reasoning and hindsight refusal augmentation that converts failures into refusal supervision. Experiments demonstrate a substantial reduction in futile reasoning while preserving performance across task difficulties, effectively achieving capability-aligned behavior without sacrificing utility. \\footnote{https://github.com/icip-cas/Knowing-When-to-Quit}",
+      "url": "https://arxiv.org/abs/2607.29211",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "github_url": "https://github.com/icip-cas/Knowing-When-to-Quit}",
+      "score": 0.8944
+    },
+    {
+      "id": "2607.29032",
+      "title": "TransMem: Transforming Hidden States into Memory for Large Language Models",
+      "authors": [
+        "Haodong Lei",
+        "Junming Liu",
+        "Yirong Chen",
+        "Pinlong Cai",
+        "Botian Shi",
+        "Ding Wang",
+        "Hongsong Wang"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly operate over long interaction histories, where effective reasoning requires identifying and exploiting task-relevant evidence distributed across past observations and actions. However, useful information encoded in previously computed representations is often underutilized during subsequent generation. We propose \\textbf{TransMem}, a lightweight inference-time parametric memory module that transforms sparse historical hidden states from a frozen LLM backbone into reusable memory representations. TransMem uses a lightweight gating network to dynamically apply the latent intervention to the current hidden states, without repeatedly encoding the preceding context. To learn transferable memory utilization rather than task-specific knowledge, we introduce evidence-conditioned self-distillation. A memory-augmented student processes the full context and matches the predictive distribution of an evidence-only teacher that shares the same frozen backbone. Experiments on LoCoMo, HotpotQA, and MemoryAgentBench demonstrate consistent improvements across different model architectures and scales. TransMem yields gains of 11.58--29.25 $F_1$ on LoCoMo and 10.20--13.03 $F_1$ on HotpotQA, while improving the average MemoryAgentBench accuracy from 29.54\\% to 40.00\\%. These results establish sparse historical hidden states as an effective and efficient memory substrate for long-context LLM agents. Our code is available at https://github.com/Haodong-Lei-Ray/TransMem.",
+      "url": "https://arxiv.org/abs/2607.29032",
+      "categories": [
+        "cs.MA",
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "github_url": "https://github.com/Haodong-Lei-Ray/TransMem.",
+      "score": 0.8942
+    },
+    {
+      "id": "2607.28942",
+      "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
+      "authors": [
+        "Duo Xu",
+        "Faramarz Fekri"
+      ],
+      "abstract": "Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of NeSyFS. The fast-thinking module performs reactive action, while slow-thinking conducts a new uncertainty-aware planning by following the high-level structure of twisted sequential Monte Carlo (TSMC) algorithm. To mitigate the misalignment of task objective, a reflection module is used to reflect fast-thinking actions, and also switches to the slow-thinking module whenever reactive actions repeatedly fail. Experiments on three representative benchmarks, i.e. ALFWorld, Webshop, and ScienceWorld, demonstrate significant advantages over previous methods.",
+      "url": "https://arxiv.org/abs/2607.28942",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8932
+    },
+    {
+      "id": "2607.29549",
+      "title": "AMTFV: Agentic Mathematical Tool-Flow Verification for LLM Self-Correction",
+      "authors": [
+        "Rui Zou",
+        "Yutao Zhu",
+        "Mengqi Wei",
+        "Ji-Rong Wen"
+      ],
+      "abstract": "Large language models have demonstrated strong mathematical problem-solving capabilities, yet reliably verifying their candidate answers remains challenging. Existing representative methods mainly revise outputs through natural-language reflection or assist verification by directly generating verification programs; the former may not reliably support exact computation, whereas the latter prematurely couples mathematical modeling with low-level implementation. We propose AMTFV (Agentic Mathematical Tool-Flow Verification). By introducing Mathematical Tool Flow (MTF) as an interrupt--execute--resume interface, AMTFV decouples verification modeling from concrete execution and supports exact computation through a mathematical toolbox. Specifically, the verification agent first constructs a verification workflow, encodes the mathematical objects and computational intent requiring reliable execution in an MTF request, and sends it to the mathematical toolbox agent. The latter parses the request, generates executable calls, and dispatches them to the backend for exact computation. Tool outputs then support candidate-answer adjudication, answer revision, and verification-workflow revision. We evaluate AMTFV on five challenging mathematical reasoning datasets with seven model configurations from DeepSeek, GPT, and Gemini. Experimental results show that AMTFV outperforms the representative baselines evaluated in this study overall; under an individual model configuration, it improves average accuracy over the strongest baseline by up to 8.3 percentage points, with larger gains on samples of medium and high verification complexity.",
+      "url": "https://arxiv.org/abs/2607.29549",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8922
+    },
+    {
+      "id": "2607.29377",
+      "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
+      "authors": [
+        "Yilin Xiao",
+        "Zhehan Zhu",
+        "Yujing Zhang",
+        "Jin Chen",
+        "Zijin Hong",
+        "Luyao Zhuang",
+        "Qinggang Zhang",
+        "Shengyuan Chen",
+        "Xiaocao Ouyang",
+        "Lingfei Ren",
+        "Xiao Huang"
+      ],
+      "abstract": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces \\emph{zero-token memory operations}: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interaction traces as its source of record. It organizes the traces in two complementary ways. An entity--context graph exposes connections across interactions, while a temporal hierarchy preserves conversational locality and session state. For each query, Zero-Mem weighs the two views, retrieves from both, and follows their structure to recover supporting relations or surrounding context. Deterministic calibration first discards conflicting evidence and then keeps the reader's answer grounded in the retrieved traces. Only the final-QA reader invokes an LLM. Across long-memory and long-context question-answering benchmarks, Zero-Mem achieves competitive performance while eliminating LLM calls and LLM-token consumption from memory operations. With the same final-QA reader and context budget, it reduces memory-operation time cost by 57.6\\% relative to the fastest compared baseline. Ablations support the contribution of the two views and their query-dependent coordination. Overall, the results show that structured agent memory need not generate an intermediate representation of the past. After peer review, the code and implementation details will be available at \\textcolor{blue}{https://github.com/TheMoon0815/Zero-mem}.",
+      "url": "https://arxiv.org/abs/2607.29377",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "github_url": "https://github.com/TheMoon0815/Zero-mem}.",
+      "score": 0.8911
+    },
+    {
+      "id": "2607.29250",
+      "title": "Data Turnstile: A Scalable Open Framework for Function-Calling Data Generation",
+      "authors": [
+        "Goutham Ramakrishnan",
+        "Megha Sharma"
+      ],
+      "abstract": "Small language models (SLMs) are attractive for agentic deployment due to low latency, reduced cost, and on-device privacy, yet they struggle with tool-use tasks where training data is scarce and noisy. Unlike larger models, SLMs cannot compensate for low-quality supervision through sheer capacity, making data quality the critical bottleneck. We present Data Turnstile, an open-source framework that takes user-defined API specifications and generates high-quality synthetic training data for function calling. Turnstile decomposes multi-turn tool-use interactions into constrained, stepwise generation with validation and error-feedback loops, providing fine-grained control over API diversity, conversation complexity, and output correctness. We demonstrate effectiveness of domain adaptation with Turnstile data on two challenging function calling benchmarks. On the BFCL single-turn benchmark, a Qwen3-0.6B fine-tuned on Turnstile data without chain-of-thought achieves 75.9% overall accuracy (versus 67.4% for the base model with thinking enabled), closing the gap with thinking-enabled Qwen3-1.7B (78.4%) and Qwen3-4B (79.9%) despite being 3$\\times$ and 7$\\times$ smaller respectively. On $τ^2$-bench, a multi-turn agentic benchmark, Turnstile-trained Qwen3-1.7B achieves 31.1% pass^1 on the Telecom domain, improving 4.7$\\times$ over its 6.6% base and surpassing Qwen2.5-32B-Instruct (27.4%), a model 19$\\times$ larger. Turnstile-trained Qwen3-0.6B achieves 24.6%, improving 7$\\times$ over its 3.5% base and approaching the 32B model (53$\\times$ larger). We release Data Turnstile along with a dataset spanning 1,000+ APIs and 100K+ multi-turn interactions.",
+      "url": "https://arxiv.org/abs/2607.29250",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8899
+    },
+    {
+      "id": "2607.29320",
+      "title": "MAGA: Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation",
+      "authors": [
+        "Hang Yan",
+        "Zhangxuan GU",
+        "Beitong Zhou",
+        "Jiaxuan Chen",
+        "Runze Li",
+        "Yusong Hu",
+        "Shuheng Shen",
+        "Changhua Meng"
+      ],
+      "abstract": "Graphical user interface (GUI) agents based on large language models are increasingly deployed across mobile, web, and desktop environments. However, existing agents are typically domain-specific, limiting the deployment and user experience. This motivates the consolidation of specialized models into a single cross-environment policy. Weight merging directly merges domain-specific experts but can corrupt executable actions under expert disagreement, while on-policy distillation (OPD) avoids conflicting teacher supervision yet still treats all response tokens equally during distillation, ignoring that action tokens are the only interface between the environment and the agent. To address this, We introduce MAGA that re-allocates training signal according to the structured action. Based on the correctness of the generated action, it suppresses unnecessary or invalid distillation signals and focuses learning on erroneous actions. Besides, a training-only hint optimizes the supervision signal provided by domain-specific teachers without changing the student input. Across two model scales, MAGA achieves the highest mean success rate, outperforming the strongest baseline by 2.0% at 8B and achieves almost the same average performance with teachers.",
+      "url": "https://arxiv.org/abs/2607.29320",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8889
+    },
+    {
+      "id": "2607.29431",
+      "title": "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models",
+      "authors": [
+        "Penglin Zhu",
+        "Jungang Xu"
+      ],
+      "abstract": "Large language models increasingly generate optimization models from natural language, but existing evaluation often reduces a generated model and its ground truth to a single equivalent/not-equivalent verdict or an execution-success rate--labels that are neither independently checkable nor faithful to the multiple distinct senses in which two formulations can agree. We present ModelEquivBench, a certifying, multi-relational evaluation system that reports a per-pair semantic profile E0--E6: model construction and exact ingestion (E0), verified representation alignment (E1), same-space and projected feasible-set relations (E2, E3), objective-order equivalence (E4), optimal-value equality (E5), and optimizer-set equivalence (E6). Each decided entry carries relation-appropriate, independently re-checkable evidence: replayable traces or explicit maps for E0--E1, exact-rational certificates for positive E2--E6 conclusions, and explicit witnesses for supported negatives. Incomplete mapping search, unsupported structure, and resource limits produce typed UNKNOWN or N/A outcomes rather than guesses, while unmet prerequisites are reported as ABSENT. Using ModelEquivBench to evaluate three model snapshots--GPT-5.4, Claude Sonnet 4.6, and Qwen3.5-397B-A17B--on the same frozen cohort of 173 base problems (346 cells per model) under a no-repair protocol, the resulting profiles expose distinctions that coarse baselines do not represent: 49, 35, and 25 cells contain executable candidates that are nevertheless certified negative on at least one supported relation, and 25, 8, and 18 structural rejections occur on pairs for which E2 certifies mapped feasible-set equality under a verified map. The three model snapshots fail at different stages of the profile and therefore cannot be meaningfully reduced to a single accuracy score.",
+      "url": "https://arxiv.org/abs/2607.29431",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8884
+    },
+    {
+      "id": "2607.29246",
+      "title": "Don't Mix Rewards, Mix Policies: Policy Decomposition and Optimization for Multi-Reward RL",
+      "authors": [
+        "Ruiming Liang",
+        "Yi Zhong",
+        "Yizhen Yuan",
+        "Yinan Zheng",
+        "Tianyi Tan",
+        "Tianyue Wang",
+        "Haiyun Guo",
+        "Jinqiao Wang",
+        "Xianyuan Zhan"
+      ],
+      "abstract": "Modern large language models (LLMs) are expected not just to answer correctly, but to adapt their behavior to different human values and use cases. As a result, multi-reward reinforcement learning (RL) has become an increasingly important problem for LLMs, where each reward captures a different aspect of desired behavior. However, optimizing with multiple rewards suffers from a more severe alignment tax issue, where different optimization objectives can trade off or even conflict with each other, leading to unstable and inefficient post-training. In this work, we propose PRISM, a new multi-reward RL framework built upon the idea of policy-space decomposition and composition. Instead of compositing different rewards, PRISM optimizes a set of standalone positive policies and a global negative policy. This alleviates the potential conflict during multi-reward policy optimization, while enabling controllability during inference by flexible policy composition. Experiments on scientific reasoning, tool-use reasoning, and helpfulness-safety alignment show that PRISM consistently outperforms existing multi-reward RL baselines, with extra controllability for inference-time preference control.",
+      "url": "https://arxiv.org/abs/2607.29246",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8869
+    },
+    {
+      "id": "2607.28906",
+      "title": "Token-Level Diagnosis of Sycophancy in LLMs with Attribution-Guided Steering",
+      "authors": [
+        "Hieu Nguyen",
+        "Mahammed Kamruzzaman",
+        "Anshuman Chhabra",
+        "Gene Louis Kim"
+      ],
+      "abstract": "Sycophancy refers to the tendency for large language models (LLMs) to match user beliefs at the cost of factual correctness, thereby undermining model reliability. Prior work on evaluating sycophancy in LLMs aims to assess whether a model's output matches an authority's claim, but cannot reveal which part of the prompt drives this sycophantic behavior. To bridge this gap, we investigate the relationship of sycophantic responses with an authority's credentials, their assertive claim, and the problem statement. We introduce the Authority Share Index (ASI), an Integrated Gradients-based token attribution method, which measures the degree to which a model's decision is driven by authority-related text. Through extensive experiments across five models and 30 test configurations, we find that sycophantic responses consistently direct more attention toward authority tokens than resistant ones. Moreover, our token attribution method reveals that for the sycophantic cases, the claim asserted by the authority receives more attention than the authority's credentials. Building on these findings, we propose attribution-guided contrastive activation steering to mitigate LLM sycophancy. Our method constructs a steering vector from high-attribution tokens of sycophantic and resistant responses, selectively pushing models toward resistance. This enables inference-time steering without retraining, lowering sycophancy from 96% to 25% in the strongest case. Together, our results show that token-level attribution can both explain what drives sycophancy and directly inform a practical intervention.",
+      "url": "https://arxiv.org/abs/2607.28906",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8868
+    },
+    {
+      "id": "2607.28801",
+      "title": "Benchmarks Are Not Monolithic: Sample-Level Auditing and Orchestration for LLM Evaluation",
+      "authors": [
+        "Philipp D. Siedler",
+        "Jordan Sassoon"
+      ],
+      "abstract": "Benchmark datasets are central to evaluating Large Language Models (LLMs), yet they are typically conceived as monolithic tasks, obscuring substantial variation in the demands of individual samples. We introduce a dataset-centric meta-evaluation framework that audits benchmark datasets at the sample level along five latent dimensions: 1. Cognitive and Knowledge Demands, 2. Language and Content Quality, 3. Task Properties, 4. Context, and 5. Ethics, Safety, and Fairness. Applying this framework, we annotate five influential benchmarks -- MMLU, ARC, WinoGrande, HellaSwag, and TruthfulQA -- revealing pronounced internal heterogeneity that is not captured by aggregate accuracy scores. We show how these annotations enable criterion-driven orchestration of composite benchmark subsets across datasets, supporting targeted evaluation of model capabilities such as Reasoning Depth or Ethical Sensitivity. This approach reframes benchmark evaluation as dataset introspection, providing a principled methodology for analyzing and re-composing existing benchmarks to better reflect diverse evaluation needs.",
+      "url": "https://arxiv.org/abs/2607.28801",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-07-30",
+      "score": 0.8867
+    },
+    {
+      "id": "2607.28777",
+      "title": "Self-Supervised Skill Optimization",
+      "authors": [
+        "Siran Peng",
+        "Cuiyu Yang",
+        "Tianyu Fu",
+        "Tianshuo Zhang",
+        "Haoyuan Zhang",
+        "Weisong Zhao",
+        "Anyang Su",
+        "Minghui Wu",
+        "Huiying Li",
+        "Xiangyu Zhu",
+        "Chenxu Zhao",
+        "Zhen Lei"
+      ],
+      "abstract": "Agent skills provide frozen large language model (LLM) agents with reusable procedural guidance, and recent work shows that such skills can be optimized with ground-truth (GT) feedback. Many applications, however, lack GT labels, task scores, rewards, or reliable task-specific evaluators. We therefore introduce Self-Supervised Skill Optimization (SSO), a comparative framework that learns a reusable skill from unlabeled task instances alone. At each step, SSO runs the current skill on an unlabeled batch, uses a subset of the resulting executions to generate complete skill probes, and runs the probes on the same batch. An LLM judge compares the resulting answers, trajectories, artifacts, or terminal states. A separate behavior extractor identifies behavioral differences without seeing the judge's decisions. SSO uses these decisions to aggregate evidence for and against the observed behaviors across instances. It then ranks the behaviors by the resulting evidence and renders a new complete skill from the highest-ranked behaviors. The update is accepted only if the new skill outperforms the current one on an unlabeled validation set. SSO outperforms existing GT-free prompt optimizers on both closed-ended and open-ended tasks. On closed-ended benchmarks, it approaches and sometimes exceeds the strongest GT-based skill optimizer without using any GT feedback.",
+      "url": "https://arxiv.org/abs/2607.28777",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-07-30",
+      "score": 0.8862
+    },
+    {
+      "id": "2607.29087",
+      "title": "Harnessing the Wisdom of LLM Crowds through Complementarity-Driven Iterative Collaboration",
+      "authors": [
+        "Yanbin Fang",
+        "Xuan Wei",
+        "Wei Chen"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed in enterprise settings, yet individual models remain bounded by model-specific capability limitations. These heterogeneous boundaries pose a deployment challenge, but also create an opportunity: strategically coordinating multiple LLMs may unlock collective intelligence exceeding any single model. Existing approaches fix how models are combined in advance, overlooking the dynamic, state-dependent role of complementarity in complex problem solving. Drawing on the wisdom-of-crowds paradigm, we reconceptualize collective LLM intelligence as relay-style complementarity: a sequential process in which each successor model is selected to address the specific bottleneck identified in its predecessor's output. To operationalize this, we propose WILC (Wisdom Integration of LLM Crowds), a framework grounded in two design principles. First, iterative reflection-and-refinement establishes a state-preserving workflow through which models diagnose and refine prior outputs. Second, complementarity-driven model selection governs transitions via a dual-gate mechanism: prospective complementarity fit (PCF) identifies the worker most suited to the current bottleneck, while posterior complementarity gain (PCG) evaluates whether the selected transition improves the evolving solution. Experiments across four diverse benchmarks show that WILC outperforms existing approaches, including single-model self-refinement, ensemble methods, and query-routing methods. Under standardized pricing assumptions, WILC matches the average benchmark performance of GPT-5.2 at roughly 7 times lower estimated per-query cost, while facilitating data sovereignty through self-hosted deployment. This study extends wisdom-of-crowds theory from static aggregation to sequential AI complementarity and provides transferable design principles for multi-AI coordination.",
+      "url": "https://arxiv.org/abs/2607.29087",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8856
+    },
+    {
+      "id": "2607.28840",
+      "title": "Benchmarks Are Not Validation: A System-Level View of Financial LLM Applications",
+      "authors": [
+        "Burak Payzun",
+        "İrem Demirtaş",
+        "Simona Scala",
+        "Elena Ferretti",
+        "Seçil Arslan"
+      ],
+      "abstract": "Large language models are increasingly deployed in financial applications that combine retrieval, proprietary data, tool use, orchestration logic, monitoring, and human escalation. Yet evaluation often remains model-centric: benchmark scores, task accuracy, or one-off qualitative reviews are treated as evidence of readiness. In financial settings, this is insufficient. We take the position that financial LLM systems should not be approved for production based on benchmark performance alone. They require system-level validation evidence across the application stack: data, model design, retrieval and generation performance, agent behavior, governance, and implementation. Drawing on industry experience validating GenAI applications in financial institutions, we outline a multi-layer validation view and explain why hybrid evaluation is necessary. We discuss where LLM-as-a-judge methods are useful and why they require controls such as multiple judges, rubrics, agreement, and auditability checks. We also highlight failure modes poorly captured by static benchmarks, including retrieval failures, unfaithful generation, tool misuse, escalation errors, and operational instability. Our position is that financial LLM validation should be an ongoing system discipline rather than a one-time model scoring exercise. Validation should produce decision-ready evidence, not only scores. We conclude with a research agenda for system-aware benchmarks, agent trace validation, judge alignment protocols, and lifecycle validation standards.",
+      "url": "https://arxiv.org/abs/2607.28840",
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-07-30",
+      "score": 0.8843
+    },
+    {
+      "id": "2607.29209",
+      "title": "SAF-OPD: Stable Advantage Fusion for On-Policy Distillation",
+      "authors": [
+        "Yifan Ding",
+        "Xincheng Wei",
+        "Yoshua Y. Li",
+        "Ziheng Li",
+        "Yuquan Lu",
+        "Siyu Zhang",
+        "Dongsheng Ma",
+        "Rongxiang Weng",
+        "Xunliang Cai",
+        "Yun Chen"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) broadcasts a single response-level reward to every token, while on-policy distillation (OPD) scores each token against a stronger teacher for a dense advantage but caps performance at teacher quality and discourages exploration beyond it. Their complementarity makes combining RLVR and OPD promising, but we find that fusing the two advantages with a fixed coefficient triggers entropy collapse from two miscalibrations: a magnitude mismatch, where token-level OPD advantages can spike far beyond the bounded RLVR advantage and erase its signal, and a temporal mismatch, where sustained full-strength OPD keeps pulling the student toward the teacher and limits exploration needed to surpass it. We propose SAF, a Stable Advantage Fusion framework that resolves both issues via a lightweight, four-stage pipeline applied only to the OPD advantage: a sparsify-then-compress mechanism for magnitude control paired with a warm-up-then-anneal mechanism for temporal control, with each stage independently switchable and adding negligible overhead. Instantiating RLVR with GRPO, we evaluate SAF across seven mathematical reasoning and code generation benchmarks with Qwen3-1.7B/4B/8B: SAF avoids entropy collapse and consistently outperforms fixed-coefficient GRPO+OPD fusion, improving the aggregate score by 0.51-2.70% across all six model-domain settings while achieving more stable training.",
+      "url": "https://arxiv.org/abs/2607.29209",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8834
+    },
+    {
+      "id": "2607.29468",
+      "title": "Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember",
+      "authors": [
+        "Zenghuang Fu",
+        "Zhaoyang Li",
+        "Qiuyuan Ai",
+        "Haoyu Wu",
+        "Minghui Wu",
+        "Chenxu Zhao",
+        "Ante Wang",
+        "Guannan He",
+        "Changwei Wang"
+      ],
+      "abstract": "Self-play agents can generate training problems without questions from target benchmarks, but their curricula lack persistent state: failures affect gradients yet do not explicitly shape future practice. External skill memories preserve procedural experience but are typically learned from fixed task distributions. We introduce \\textbf{SESA} (Self-Evolving Skill-Augmented Agent), which makes procedural memory an evolving state of tool-augmented search self-play. A challenger poses problems, while a separately parameterized solver alone retrieves skills. Informative failures are distilled into reusable skills and written back to memory. The updated memory changes solver behavior and success, which changes the challenger's reward and the distribution of future problems; the resulting frontier produces new failures that rewrite memory. This bidirectional loop makes task generation and skill memory co-evolve. Because retrieved skills shape on-policy training trajectories, their benefits can enter the model parameters as well as remain in the external bank, enabling memory-free deployment and optional inference-time retrieval. Across seven open-domain and multi-hop question-answering benchmarks, SESA improves average accuracy over SSP by 1.2--3.2 points across multiple backbones and surpasses the skill-augmented SkillRL baseline by 0.9 points under a unified evaluation protocol. On Qwen3 models, SESA-Off retains 1.8--2.2 points of improvement over SSP, while the final skill bank adds a further 0.5--1.0 points. These results show that evolving skill memory is not merely an inference-time plug-in: it changes policy learning and the future training distribution while retaining value as optional external memory. Our code is available at https://github.com/Zenghuang-Fu/SESA-Self-Evolving-Search-Agents.",
+      "url": "https://arxiv.org/abs/2607.29468",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "github_url": "https://github.com/Zenghuang-Fu/SESA-Self-Evolving-Search-Agents.",
+      "score": 0.8833
+    },
+    {
+      "id": "2607.29678",
+      "title": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving",
+      "authors": [
+        "Zhenyu Zhang",
+        "Zhichao Cao"
+      ],
+      "abstract": "LLM serving systems cache prompt KV state, yet most front ends still re-tokenize the full request text on every call. The cost lands on coding agents, which resubmit a long transcript after each small tool result, and reuse is hard because even a short append can change token boundaries near the end of the previous sequence. Across 153,951 calls from two agent ecosystems, the median call appends about 1.4K characters, and only 1.0-3.6% of calls start or rebuild a session with contexts of millions of characters. At a 94.1% fleet prompt-cache hit rate, tokenization reaches up to 64% of time to first token.\n  TokTier is a stateful tokenization service with one contract: emitted token IDs are always identical to full reference tokenization of the request text. For a session continuation, it re-tokenizes a small window around the append and splices only after a per-request stable-boundary check, widening the window or falling back to full tokenization on failure. For a call without a reusable prefix, it decomposes GPT-family regex pre-tokenization into run-local rules and runs exact pre-tokenization and BPE on a GPU. A sampled shadow verifier re-checks live traffic.\n  Across 17 tokenizer families, differential campaigns cover 1.5x10^10 split checks, a 12.4 TB real-text corpus, and 93,000+ replayed agent steps, with zero divergence. Incremental repair takes 0.5-1.1 ms from 100K to 3M characters, up to 437x faster than HF tokenization and 2.1x faster at 1M than the strongest cache-based baseline (Gigatoken) fully prewarmed. GPU full tokenization encodes a 1M-character request in 0.87 ms, up to 491x below HF and 23.4x below the fastest published CPU method. With vLLM, median time to first token drops 16-34% and P99 drops 23% under recorded bursts. Under a 50 ms P99 objective, four repair cores plus one GPU sustain 1,821 requests/s where a 16-core stateless front end saturates at 40.",
+      "url": "https://arxiv.org/abs/2607.29678",
+      "categories": [
+        "cs.CL",
+        "cs.DC",
+        "cs.PF"
+      ],
+      "submitted": "2026-07-31",
+      "score": 0.8832
+    },
+    {
+      "id": "2607.28545",
+      "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
+      "authors": [
+        "Albert Gong",
+        "Kyuseong Choi",
+        "Abhineet Agarwal",
+        "Jason Schechner",
+        "Ryan Huang",
+        "Raj Agrawal",
+        "Anish Agarwal",
+        "Raaz Dwivedi"
+      ],
+      "abstract": "Large language models can write, patch, and search code, but oncall root cause analysis (RCA) demands something different: reasoning over noisy metrics, logs, traces, and source code, starting from ambiguous user-facing reports, often hours after the incident began. We introduce ORCA-bench, a benchmark that puts general-purpose coding agents in a production-fidelity oncall setting. ORCA-bench pairs a live OpenTelemetry-instrumented microservice system--exposing six days of metrics, logs, and traces through real telemetry interfaces (Prometheus, Jaeger, and OpenSearch via Grafana) and full source-code access--with 1,079 RCA tasks that systematically vary report specificity, time-to-detection, and co-occurring fault scenarios. Ground-truth symptoms are curated and signed off by expert SREs, and our LLM-as-judge is independently re-scored by humans (Cohen's $κ_w=0.90$). Across five frontier agents, the best RCA Accuracy is 25.3% on Medium-difficulty tasks (the realistic-input setting) and 10.0% on Hard--a gap that remains even with Claude Fable 5. The weakest model hallucinates an implausible root cause in 40% of incident reports, and removing source-code access degrades every metric. Crucially, these are performances on a curated 50 GB / six-day testbed with tasks investigated in isolation on a system whose code and instrumentation are public. Since real production systems are order of magnitudes larger, more dynamic, and more idiosyncratic, the gap we report is a lower bound on the engineering investment required before frontier coding agents can be safely entrusted with production reliability. We release the public set at https://hub.harborframework.com/datasets/orca-bench/ORCA-bench.",
+      "url": "https://arxiv.org/abs/2607.28545",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-07-30",
+      "score": 0.8819
+    },
+    {
+      "id": "2607.29254",
+      "title": "Tool Specifications Matter: Uncovering and Mitigating Safety Risks in AI Agents",
+      "authors": [
+        "Minghui Pan",
+        "Jiayuxuan Yang",
+        "Yuanyuan Yuan",
+        "Yu Jiang",
+        "Zhenpeng Chen"
+      ],
+      "abstract": "AI agents extend large language models (LLMs) with external tools, enabling them to perform complex tasks and translate model outputs into consequential real-world actions. Yet LLMs often become substantially less safe when deployed as agents, and the source of this degradation remains poorly understood. In this paper, we identify schema-formatted tool specifications as a primary source of agent safety degradation and show, through white-box representation analysis, that they weaken the model's internal refusal signals and contribute to unsafe tool execution. Building on this finding, we propose SafeKeep, an inference-time safeguard that decouples safety judgment from tool execution: it assesses requests using flattened textual tool specifications while retaining the original schema-formatted specifications for execution. Across two representative benchmarks and four LLMs, including both white-box and black-box models, SafeKeep increases the average refusal rate for harmful requests from 23.8% to 70.6% and reduces the average attack success rate under observation-level prompt injection from 25.6% to 2.5%. It also outperforms existing safeguards and preserves task-handling capability. We release the code and data at https://github.com/snowcatsmoking/SafeKeep .",
+      "url": "https://arxiv.org/abs/2607.29254",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-07-31",
+      "github_url": "https://github.com/snowcatsmoking/SafeKeep",
+      "score": 0.8818
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 295,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
