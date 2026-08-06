@@ -1,0 +1,467 @@
+{
+  "date": "2026-08-06",
+  "collected_at": "2026-08-06T12:16:51.499992+09:00",
+  "papers": [
+    {
+      "id": "2608.04355",
+      "title": "The Calibration Floor: Format Repair Can Masquerade as Self-Correction at Small-to-Mid Scale",
+      "authors": [
+        "Mingguang Chen",
+        "Bo Qu",
+        "Licheng Wang"
+      ],
+      "abstract": "Accuracy changes after language-model self-revision are usually interpreted as changes in reasoning. We show this can fail at the answer-extraction boundary, and test the failure causally rather than only observationally. Across Qwen3.5 (0.8B-9B), Gemma-4-12B, and two frontier models via API (Tencent Hy3, Nvidia Nemotron-3-Ultra-550B) in 29 primary cells plus a frontier arm, we decompose the always-revise accuracy shift into a content margin (both answers parseable) and format-recovery/loss margins (parseability changes). On 12 cells with meaningful unparseable-answer rates, format effects exceed content effects (Wilcoxon p=1.7e-3). To test this causally, we force already-generated reasoning through grammar-constrained decoding so every answer is parseable by construction: across 14 cells this closes a median 71% of the gap between the naive total effect and the content-margin estimate, with two cells converging exactly and a residual on the two largest-effect cells reported rather than dismissed. A clustered model confirms floor-scale (0.8B/2B) models have far higher odds of content-level change and harm than capable-scale models (p<1e-7). Replicating a cited confidence-gating protocol verbatim on Qwen3.5 does not reproduce its reported gain and shows the same near-zero content margin. A frontier check on much larger models shows format-dominance intensifying with scale: content margin is exactly zero in all 5 cells despite total effects up to +0.275, though this arm is lower-powered. The calibration-floor criterion on the content margin reveals a squeeze: floor-scale cells have headroom but insufficient signal, capable-scale cells have signal but little headroom; only one cell is marginally viable, with negligible sealed-holdout gain. Content is a minority share of what the field has measured as self-correction. We release the instrument, code, and derived results.",
+      "url": "https://arxiv.org/abs/2608.04355",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.896
+    },
+    {
+      "id": "2608.04505",
+      "title": "K-EXAONE 2.0 Technical Report",
+      "authors": [
+        "Eunbi Choi",
+        "Kibong Choi",
+        "Sehyun Chun",
+        "Seokhee Hong",
+        "Junwon Hwang",
+        "Hyojin Jeon",
+        "Ahra Jo",
+        "Hyunjik Jo",
+        "Yeonsik Jo",
+        "Minhyeok Jung",
+        "Doyoung Kim",
+        "Heegyu Kim",
+        "Joonkee Kim",
+        "Seonghwan Kim",
+        "Soyeon Kim",
+        "Sunkyoung Kim",
+        "Yireun Kim",
+        "Yongil Kim",
+        "Byungoh Ko",
+        "Changhun Lee",
+        "Dohaeng Lee",
+        "Haeju Lee",
+        "Jinsik Lee",
+        "Kyungmin Lee",
+        "Minwoo Lee",
+        "Wonkee Lee",
+        "Sangha Park",
+        "Sungjune Park",
+        "Kwangrok Ryoo",
+        "Kijung Seo",
+        "Minju Seo",
+        "Yongwoo Song",
+        "Sejong Yang",
+        "Heuiyeen Yeen",
+        "Stanley Jungkyu Choi",
+        "Yemuk Choi",
+        "Yongchan Chun",
+        "Jiwon Ham",
+        "Dasol Hong",
+        "Sujeong Im",
+        "Kijeong Jeon",
+        "Gerrard Jeongwon Jo",
+        "Hyeongjun Jo",
+        "Yujin Jo",
+        "Jiyeon Jung",
+        "Naeun Kang",
+        "Daeseong Kim",
+        "Euisoon Kim",
+        "Hayeon Kim",
+        "Hyosang Kim",
+        "Myoungshin Kim",
+        "Unsol Kim",
+        "Youchul Kim",
+        "Chaeeun Lee",
+        "ChaeYoon Lee",
+        "Edward Hwayoung Lee",
+        "Honglak Lee",
+        "Hwansoo Lee",
+        "Minkyung Lee",
+        "Sangeun Lee",
+        "Solji Lim",
+        "Woohyung Lim",
+        "Chanwoo Moon",
+        "Jueun Mun",
+        "Jimin Park",
+        "Seojeong Park",
+        "Yongmin Park",
+        "Hyerin Seo",
+        "Donghyeon Shin",
+        "Donghyun Son",
+        "Eunyong Son",
+        "Kaehyun Um",
+        "Sihoon Yang",
+        "Chang En Yea",
+        "Sihyuk Yi",
+        "Kyungjae Yoo",
+        "Chansik Yoon"
+      ],
+      "abstract": "This technical report presents K-EXAONE 2.0, an open-weight multilingual foundation model developed by LG AI Research as a step in our effort toward global frontier-scale foundation models. Rather than training from scratch, we upcycle K-EXAONE and expand its architecture, yielding a Mixture-of-Experts (MoE) model with 750B total parameters and approximately 37B activated per token---more than three times the capacity of its predecessor. K-EXAONE 2.0 supports context lengths of up to 256K tokens and expands multilingual coverage from six to ten languages. Its training pipeline combines continual pre-training, difficulty-focused mid-training, and post-training to strengthen reasoning, agentic coding, multilingual capability, and safety grounded in Korean sociocultural contexts. Across nine evaluation categories selected to reflect the conditions of practical use, K-EXAONE 2.0 improves over K-EXAONE and remains competitive with open-weight models, showing its largest gains in agentic coding and long-context understanding and its clearest strengths in long-context retrieval and safety. Released under the Apache 2.0 license, K-EXAONE 2.0 enables the wider AI ecosystem to evaluate, deploy, adapt, and build upon it, while marking the beginning---rather than the endpoint---of our challenge toward the global frontier.",
+      "url": "https://arxiv.org/abs/2608.04505",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8946
+    },
+    {
+      "id": "2608.05064",
+      "title": "Provable Limits and Certified Deferral for Verbalized Uncertainty in Small Language Models",
+      "authors": [
+        "Jianru Shen"
+      ],
+      "abstract": "Small open-weight language models increasingly run in private, offline, and cost-sensitive settings, where the key deployment question is not only what a model answers but when it should defer to a human. We study whether verbalized confidence can support risk-controlled deferral, evaluating eleven instruction-tuned models from three families, 0.5B to 14B parameters, on ARC-Challenge and TruthfulQA with 25,168 local predictions. Three theoretical results delimit what calibration can provide: strictly monotone calibration preserves the risk-coverage frontier and error-detection AUROC; temperature scaling cannot calibrate models whose confidence stays above one half while accuracy falls below it; and a Clopper-Pearson procedure converts a 200-question calibration set into a finite-sample risk certificate under an i.i.d. deployment assumption. Empirically, eight of 22 model-task pairs hit the temperature-scaling infeasibility floor within one percentage point of the predicted bound. Platt scaling reduces ECE to as low as 0.02, yet certified autonomy at a 20% risk budget is granted to only three model-task pairs and to none at 10%. We also identify and repair an answer-ordering artifact in the multiple-choice form of TruthfulQA. Calibration gives confidence semantics; certified deferral determines when small models are safe to use.",
+      "url": "https://arxiv.org/abs/2608.05064",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8933
+    },
+    {
+      "id": "2608.05141",
+      "title": "OctoLong: Mid-Training On Cross-Repository Code Contexts Enhances Long-Context Modeling",
+      "authors": [
+        "Indraneil Paul",
+        "Falko Helm",
+        "Goran Glavaš",
+        "Iryna Gurevych"
+      ],
+      "abstract": "Context lengths of language models (LMs) have dramatically increased, driven by the demands for in-context learning, self-improvement, and long-horizon agentic workflows. Existing long-context corpora, however, are dominated by books, academic articles, and code repositories, which are finite resources and often scarce in long-distance dependencies. In this work, we introduce OctoLong, a context engineering pipeline that instruments an AST parser, a language server backend, and a package manager to facilitate the recursive retrieval of code references, enabling the curation of dependency-rich code contexts of millions of tokens in length. We then train OctoLong-Instruct, a suite of capable long-context open LMs, derived from base models ranging in size from 600M to 14B parameters, via context-extension mid-training on a ~50B-token mixture containing ~6.2B tokens of OctoLong code contexts, followed by ~10B tokens of instruction tuning. Our training ablations and experimental evaluations against 18 state-of-the-art open-weight long-context LMs show that supplanting just 12% of traditional context-extension corpora with OctoLong data yields substantial gains in long-range retrieval, long-term state tracking, repository-level code understanding, and downstream agentic tasks, while also enhancing API usage in short-context coding scenarios.",
+      "url": "https://arxiv.org/abs/2608.05141",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8924
+    },
+    {
+      "id": "2608.04962",
+      "title": "SpecRoll: Fast-Slow Verifier-Feedback Adaptation for Speculative Reinforcement Learning Rollouts",
+      "authors": [
+        "Nhat Minh Pham",
+        "Duy Tung Doan",
+        "Thi Duyen Ngo",
+        "Vinh Van Nguyen",
+        "Khac-Hoai Nam Bui"
+      ],
+      "abstract": "Reinforcement learning (RL) post-training improves the reasoning capabilities of large language models, but autoregressive rollout generation remains a major efficiency bottleneck. Speculative decoding can accelerate generation, yet applying it during RL is difficult because the target policy continually evolves: static proposers become stale, while frequent drafter updates add substantial overhead. We introduce SpecRoll, a speculative rollout engine that preserves the target model's sampling distribution while adapting at two timescales. Lightweight future-token heads generate parallel proposals, while our proposed Reflex module uses delayed verifier feedback to perform bounded, trajectory-local hidden-state corrections without backpropagation. A complementary slow path updates the head parameters only when sustained degradation is detected. SpecRoll combines these mechanisms with concurrency-aware sparse-tree verification and exact target verification, leaving the target rollout distribution and GRPO objective unchanged. Across five models ranging from 1.5B to 14B and three mathematical reasoning datasets, SpecRoll achieves 1.26-2.15x generation speedup and 1.21-2.04x end-to-end speedup over vanilla GRPO. It also outperforms FastGRPO in both generation and end-to-end time across all 15 matched settings, with an average pairwise end-to-end gain of 1.18x. Controlled ablations show that the fast and slow adaptation paths provide complementary benefits. Our source code is available at https://anonymous.4open.science/r/SpecRoll-26062006.",
+      "url": "https://arxiv.org/abs/2608.04962",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8889
+    },
+    {
+      "id": "2608.05124",
+      "title": "Chained Recursive Language Models for Multi-Iteration Reasoning",
+      "authors": [
+        "Purbesh Mitra",
+        "Sennur Ulukus"
+      ],
+      "abstract": "Long context reasoning in large language models (LLMs) is usually constrained by the fact that a single inference trajectory has to simultaneously explore the context, store intermediate state, verify evidence, and produce the final answer. This becomes particularly difficult in tasks that require extraction, counting, ordering, or multi-hop reasoning, where an early mistake can propagate until the final response. In this work, we propose Chained Recursive Language Models (Chained RLM), an inference-time architecture, in which the same underlying model is called repeatedly as a sequence of fresh reasoning roots. Each root receives the original problem and context, but does not inherit the full conversational history. Instead, it receives a compact plain-text summary, a plain-text blackboard, and some durable task-specific artifacts written by predecessor roots. The motivation is to manage the context by chopping into partial tasks rather than one large inference response; in each staged computation, intermediate artifacts can be inspected, corrected, and extended by a later fresh inference by the same model. We describe the system model, handoff mechanism, artifact workspace, and evaluation protocol for this system. We study when fresh-context artifact continuation gives a measurable gain in accuracy over direct LLM answering even with recursive tool-calling.",
+      "url": "https://arxiv.org/abs/2608.05124",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IT",
+        "cs.LG",
+        "eess.SP"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8872
+    },
+    {
+      "id": "2608.04980",
+      "title": "Protoreasoning in Tiny Transformers",
+      "authors": [
+        "Eduardo Valle",
+        "Fergal Reid"
+      ],
+      "abstract": "We show that tiny transformers can profitably employ a simple form of Chain of Thought, which we call protoreasoning, allowing us to study step-by-step reasoning on ~1M-parameter models and opening up opportunities for much more detailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when and how LLMs learn genuinely general algorithms rather than \"bags of heuristics.\" Such questions are hard to settle on compute-intensive frontier models trained on opaque data. To work at model scales far below the threshold for natural-language competence, we define reasoning-friendly tasks on Dyck languages (sentences of correctly nested brackets). We find that protoreasoning traces substantially close the out-of-distribution generalization gap, and ablations confirm that the trace's content, not merely its extra tokens, drives the gain.",
+      "url": "https://arxiv.org/abs/2608.04980",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8872
+    },
+    {
+      "id": "2608.04771",
+      "title": "Fewer Tokens, Smaller Cache: Reward-Coordinated Efficient Reasoning",
+      "authors": [
+        "Qiyuan Zhu",
+        "Dezhi Li",
+        "Pengyu Cheng",
+        "Tianle Chen",
+        "Jiacheng Wang",
+        "Ruijie Shen",
+        "Hao Gu",
+        "Sida Lin",
+        "Zirui Liu",
+        "Jiacheng Liu",
+        "Sirui Han"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) excel on complex tasks through long chain-of-thought (CoT) reasoning, but their lengthy intermediate steps cause severe overthinking that inflates inference cost. KV-cache compression is a common solution, yet existing reasoning-oriented methods apply a uniform policy across the trajectory and judge compression only by what it removes from the cache. Two observations point the other way. First, a reasoning state's tolerance to context loss varies along the trajectory, and process reward tracks it: deleting tokens at high-reward steps preserves accuracy far better than deleting the same budget at random. Second, compression is not free on the generation side, since a smaller cache leads the model to generate more tokens, partly canceling the saving. Together these motivate coordinating both sides under a single process reward. We propose ReCo (Reward-Coordinated Compression), a step-wise framework in which a lightweight process-reward estimator scores each completed step and drives three components: (1) reward-adaptive KV-cache compression that shrinks the retained cache harder at high-reward steps and less at low-reward ones, (2) a reward-banded penalty on reflection tokens that curbs redundant generation, and (3) confidence-based early stopping that triggers when the reasoning is reliable. Across three reasoning models and six benchmarks, ReCo reduces generated tokens by 37%-65% and end-to-end latency by 2.08x-2.35x over Full CoT, all while largely preserving accuracy.",
+      "url": "https://arxiv.org/abs/2608.04771",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.887
+    },
+    {
+      "id": "2608.04928",
+      "title": "Does Out-of-Sight Equal Out-of-Mind in CoT Monitorability?",
+      "authors": [
+        "Pedro Ferreira",
+        "Wilker Aziz",
+        "Ivan Titov"
+      ],
+      "abstract": "Chain-of-thought (CoT) reasoning offers a window into the decision-making of large language models (LLMs), which can be monitored for target behaviors by reading the reasoning trace, motivating work on CoT monitorability. Latent CoT approaches, however, replace the explicit tokens with a small number of continuous states, lowering inference costs but removing the readable trace this monitoring relies on. Monitoring then requires alternative access to the model, such as probing its activations or verbalizing the latent states back into text, but how much monitorability these alternatives preserve is unclear. We study this question with a hint-based intervention setup, a proxy for behaviors where models exploit biasing input cues, e.g., an inadvertently leaked answer or a belief stated by the user, without acknowledging them. Taking hint-reliance as the monitorability target, we compare monitors across reasoning modes, from explicit CoT to weakly- and strongly-supervised latent CoT, on math reasoning and question answering. We find that, in this setup, monitorability depends more on properties of the task (such as whether the correct answer constrains the supporting reasoning) and the level of access to model internals than on the reasoning mode.",
+      "url": "https://arxiv.org/abs/2608.04928",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8861
+    },
+    {
+      "id": "2608.04804",
+      "title": "Scrouting: Cost-Aware Routing of Coding Agents by Scouting the Repository First",
+      "authors": [
+        "Ishaan Bhola",
+        "Adithyan Krishnan",
+        "Mukunda NS"
+      ],
+      "abstract": "Frontier language models can resolve repository-level software issues, but each attempt is expensive, and existing routers select a model from the issue text alone. We present SuperScout, which routes after scouting the repository: a 7B searcher, SuperScout-7B, first explores the repository and produces a structured handoff whose reproduction claims are sandbox-verified, with false claims stripped before delivery. The searcher's hidden states, together with the task text, then feed a resume-based router that dispatches the task to one of four frontier fixers. Adding a new fixer requires no retraining. On the full Python slice of SWE-bench Pro (266 tasks) under the benchmark's official capped budget tier, SuperScout matches the best single model's solve rate (159 of 266 for SuperScout, 158 for the best model) at about a fifth of the total cost per solve, and the reported configuration sits above the random traffic-splitting baseline. A no-router ablation, always the cheapest fixer with the handoff, ties the routed system on this benchmark, so the handoff rather than the routing decision carries the result. A paired calibration study points to the mechanism: the handoff appears to redistribute rather than add solving ability, lifting the three cheaper fixers while slightly hurting the strongest, though at $N=99$ the per-fixer effects are directional only; the searcher's hidden states improve cost routing on the calibration labels while the handoff's own text does not. The searcher's compute adds less than half a cent of GPU time per task.",
+      "url": "https://arxiv.org/abs/2608.04804",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8855
+    },
+    {
+      "id": "2608.04519",
+      "title": "Leak-Resistant Unlearning: A New Benchmark for Evaluating Multi-Hop Reasoning Consistency and Recovery Robustness",
+      "authors": [
+        "Haoting Qian",
+        "Qingjie Zhang",
+        "Zhicong Huang",
+        "Cheng Hong",
+        "Han Qiu"
+      ],
+      "abstract": "Benchmarking machine unlearning methods is critical to understand whether sensitive knowledge is removed from large language models (LLMs) or not. Current unlearning benchmarks include mainly single-hop questions and a narrow set of multi-hop questions. Although effective, they still face two challenges. (1) Knowledge is not isolated, whereby diverse multi-hop reasoning paths can potentially induce knowledge leakage than normal queries. (2) Unlearning may be fragile: unlearned knowledge can be partially recovered through recovery attacks such as lightweight post-unlearning adaptation, making static evaluation insufficient. Therefore, in this paper, we introduce \\unlearning as a novel benchmark to understand robust LLM knowledge removal across diverse reasoning paths and recovery attacks. We experiment with this benchmark on 3 models, 6 unlearning methods, and 2 carefully curated datasets. Results show that existing methods are vulnerable to multi-hop reasoning paths and recovery attacks. We further explore the trade-off among forget quality, robustness, and model utility for LLM unlearning.",
+      "url": "https://arxiv.org/abs/2608.04519",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8852
+    },
+    {
+      "id": "2608.05148",
+      "title": "Reasoning Core: Designing Broad Procedural Data for Completion-Supervised Reasoning Training",
+      "authors": [
+        "Damien Sileo",
+        "Valentin Lacombe",
+        "Dimitri Kachler"
+      ],
+      "abstract": "Procedural generators produce useful verifiable reasoning problems at scale, but have received less attention as data for completion-supervised fine-tuning. We introduce Reasoning Core, a collection of 50 generators spanning mathematics, logic, planning, state tracking, formal languages, structured data, games, causality, and code, with semantic scorers, difficulty controls, and task evaluators. Under a matched completion-supervised protocol, we compare Reasoning Core with Procedural Warmup, Reasoning Gym, and SynLogic across four base-model settings and multiple training durations. In the primary 3B comparison, Reasoning Core achieves the highest mean scores on DROP, LogiQA, and ARC-Challenge, exceeding both the baseline without procedural data and all three alternative procedural collections. Task-level analyses show that semantic validity alone does not ensure training utility, highlighting compact targets and calibrated difficulty as important design factors. We ran audits combining model-assisted review, human adjudication, and regression testing. Applied throughout Reasoning Core development and to the other collections, they reveal subtle mismatches among generation, rendering, targets, and scoring, a reminder that procedural generation alone does not guarantee correctness. The library, generated datasets, and audit material are publicly available.",
+      "url": "https://arxiv.org/abs/2608.05148",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8843
+    },
+    {
+      "id": "2608.04872",
+      "title": "A-SR: Self-Evolving Agentic LLMs for Symbolic Regression via Hierarchical Coordination",
+      "authors": [
+        "Wenxiao Zhao",
+        "Dong Liu",
+        "Kaiyi Xu",
+        "Feng Liu",
+        "Zhen Zhao",
+        "Fei Ben",
+        "Shu Wang",
+        "Wenhao Li",
+        "Yingnian Wu",
+        "Fenghua Ling",
+        "Haobo Li",
+        "Lei Bai"
+      ],
+      "abstract": "Symbolic regression aims to discover closed-form equations from data, but existing LLM-guided methods often rely on a unified proposal loop that compresses heterogeneous search failures into a scalar score and a single prompt. We propose A-SR, a self-evolving agentic framework that shifts the control unit from expression edits to role-conditioned evidence views. A-SR coordinates formula discovery through routing among coordination protocols, an online evaluator-reward role policy, and state-routed process memory. During search, evaluator feedback characterizes reliability and productivity, updates role-level utilities, and routes elite motifs, failure traces, and validity diagnostics to different agents. The framework self-evolves at two timescales: within a run, it adapts the search process without updating LLM parameters; across runs, recorded trajectories can be distilled into open-source LLMs as role-conditioned proposal priors. Averaged over the four LSR-Synth scientific domains in LLM-SRBench, A-SR improves Acc@0.01 over baselines from 25.79% to 48.30% with Llama3.1-8B, while A-SR-LoRA improves the corresponding Qwen3-4B result from 24.58% to 38.29%. On four real-world scientific discovery tasks, A-SR obtains the best in-distribution or out-of-distribution normalized mean squared error on 7 of 8 reported metrics.",
+      "url": "https://arxiv.org/abs/2608.04872",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8841
+    },
+    {
+      "id": "2608.05131",
+      "title": "OPD-V: Visual On-Policy Self-Distillation with Modality Balance",
+      "authors": [
+        " Aniri",
+        "Jinhe Bi",
+        "Peng Liao",
+        "Zengjie Jin",
+        "Volker Tresp",
+        "Fei Shen",
+        "Yunpu Ma",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "On-Policy Self-Distillation (OPSD) has become a standard post-training approach for improving visual reasoning in multimodal large language models (MLLMs). Existing methods draw privileged information from diverse input sources to guide self-distillation. Yet these designs overlook Modality Imbalance, a challenge inherent to MLLM reasoning. When textual information dominates generation, the model cannot fully integrate its multimodal input. Consequently, carefully designed privileged information remains underused, limiting the effectiveness of OPSD. To examine this limitation, we construct a Positive Teacher with the Zoom-In Image and a Negative Teacher with the Mask Image, which exhibit different degrees of Modality Imbalance. Changes in their reasoning correctness and token logits reveal that Modality Balance can itself serve as privileged information. Motivated by this finding, we introduce OPD-V, a visual OPSD paradigm that instantiates such information through the Positive Teacher and Negative Teacher. Positive Modality-Balance Logits Margins define a Modality-Balance Trust Region that selects the on-policy tokens used for self-distillation. Experiments across 6 benchmarks, 4 MLLM backbones, and 5 post-training methods show that OPD-V consistently improves reasoning performance while reducing training cost.",
+      "url": "https://arxiv.org/abs/2608.05131",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8838
+    },
+    {
+      "id": "2608.04374",
+      "title": "FinReportBench: Measuring and Improving Institution-Grade Financial Report Generation",
+      "authors": [
+        "Yinghao Tang",
+        "Tan Zhenwei",
+        "Yiyao Wang",
+        "Wanli Gu",
+        "Xiaolu Zhang",
+        "Jun Zhou",
+        "Wei Chen"
+      ],
+      "abstract": "Large language models can produce fluent financial analysis, but fluency alone does not establish whether a report is suitable for institutional delivery. We introduce FinReportBench, an expert-grounded benchmark for measuring and improving institution-grade financial report generation. Expert review reveals recurring gaps in report identity, institutional components, source discipline, and visual delivery. We derive a 35-item rubric through expert partial orders, multimodal evidence, and audits of decision boundaries, covering deliverability, report identity, and institutional completeness. Starting from 10,000 balanced Chinese and English financial-research source records, we curate 244 bilingual tasks across three research objects and two input tiers. Each task separates the public query, reconstructed research trajectory, and hidden source packet. Three independent judge families reproduce the expert partial order at near-ceiling rates, showing that bounded, observable criteria support reliable evaluation. Across nine model families, basic deliverability is nearly saturated, while report identity and institutional completeness remain the primary bottlenecks. The largest cross-model gaps concern generation-trace control, information density, and data discipline rather than basic report framing. We then use benchmark-guided skill distillation to turn recurrent failures into reusable generation and self-review constraints. Across five model families, the evolved skill improves mean G1 by 33.85 points and mean G2 by 13.83 points over paired no-skill runs while preserving G0 for every pair. Code and benchmark artifacts are available at https://github.com/MisterBrookT/finreportbench.",
+      "url": "https://arxiv.org/abs/2608.04374",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "github_url": "https://github.com/MisterBrookT/finreportbench.",
+      "score": 0.8836
+    },
+    {
+      "id": "2608.05139",
+      "title": "Toward Skill-Native LLMs: Skill Entropy for Benchmarking and Training Long-Horizon Reasoning",
+      "authors": [
+        "Yinghui He",
+        "Ling Yang",
+        "Jiarui Liu",
+        "Yongjin Yang",
+        "Lechen Zhang",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Mengdi Wang",
+        "Sanjeev Arora"
+      ],
+      "abstract": "Long-horizon reasoning in recent LLMs demands that the model switch between distinct skills inside a reasoning chain, such as first doing a math derivation, then using the result to plan a schedule. We call such problems cross-skill long-horizon tasks: multi-step tasks whose steps require different reasoning skills and depend on earlier outputs. Existing benchmarks often evaluate individual skills, lacking a principled way to measure how well a model switches between skills. We address this gap from both the evaluation and training sides. We introduce Skill Entropy, a measure of the difficulty of switching from one skill to another. We then propose Skill^2-Bench, a benchmark of cross-skill long-horizon tasks built over 558 skills across 9 verifiable and open-ended domains. Each task is assigned a task-level skill-entropy score and grouped into three difficulty levels. Evaluating 8 frontier and 4 open-source models on Skill^2-Bench reveals a skill-switching gap: accuracy decreases on higher-entropy tasks. We then turn skill entropy from a benchmark scale into a training signal. We propose Skill-Entropy RL, an RL framework where the model predicts not only the answer at each step but also the skill used to produce it. The reward combines step-level correctness with a skill-entropy reward that measures the alignment between the model-predicted skill sequence and the gold skill sequence. On Qwen3-4B-Instruct and Qwen3-1.7B, Skill-Entropy RL improves the Skill^2-Bench score from 34.4% to 68.4% and from 14.6% to 40.1%, respectively, outperforming competitive baselines. The same pipeline can be applied to off-the-shelf training data such as OpenR1-Math, indicating that skill entropy is a reusable training signal. Code available at: https://github.com/Gen-Verse/Skill-Entropy-RL",
+      "url": "https://arxiv.org/abs/2608.05139",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-05",
+      "github_url": "https://github.com/Gen-Verse/Skill-Entropy-RL",
+      "score": 0.8835
+    },
+    {
+      "id": "2608.04552",
+      "title": "Relational Response Fields: A General Theory of Black-Box LLM Response Consistency and Recovery",
+      "authors": [
+        "Song Zichen"
+      ],
+      "abstract": "Black-box language-model reliability is commonly pursued by sampling, prompting, voting, verifying, or iteratively revising individual answers. We ask a prior question: \\emph{what determines whether a collection of black-box responses is recoverable at all?} We represent responses to typed transformations of a query as a \\emph{relational response field} (RRF). Edge transports encode how valid responses must change under paraphrase, scaling, decomposition, refactoring, or other task symmetries; anchors encode independently trusted evidence such as execution or a verifier. For relation operator $D$, anchor operator $A$, and at most $k$ corrupted response nodes, we identify $γ_k(D,A)$ as the intrinsic difficulty of black-box response recovery. It is positive exactly when every $k$-node corruption is identifiable; it gives a deterministic stability bound proportional to $1/γ_k$; and a matching two-point minimax lower bound shows that no estimator can improve this dependence. Thus consistency is not truth: relation-only methods are blind to null directions, including shared hallucinations. We derive sparse field-repair algorithms while separating information-theoretic identifiability from the stronger null-space conditions required by convex optimization. Controlled theorem tests and black-box mathematics/code experiments evaluate four theory-fixed consequences: consistency--truth separation, anchor phase transitions, redundancy saturation, and cross-model, cross-task prediction of repair difficulty. The results support $γ_k(D,A)$ as a measurable property of a response-recovery instance, rather than a score attached to one repair heuristic.",
+      "url": "https://arxiv.org/abs/2608.04552",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8834
+    },
+    {
+      "id": "2608.04975",
+      "title": "SciCode-Verified: How Benchmark Defects Underestimated the Scientific-Coding Ability of Language Models",
+      "authors": [
+        "Sihan Hu",
+        "Lyuhan Huang",
+        "Youjin Deng",
+        "Kun Chen"
+      ],
+      "abstract": "SciCode is the standard measure of the scientific-coding ability of language models: research-level problems that demand both frontier scientific theory and its implementation as working numerical code. It is a component of the Artificial Analysis Intelligence Index and a standing evaluation in government and national-laboratory suites. Yet its scores have recently plateaued: the strongest 2026 models cluster tightly around 60\\% subproblem accuracy, and a successor model ties its predecessor. We trace this stagnation to defects in the benchmark itself. A per-problem, domain-expert audit of all 65 test problems uncovers 263 defects; 192 of them, spread across 91\\% of the main problems, cause correct, instruction-following solutions to be wrongly rejected---through non-reproducible gold answers, over-tight tolerances, or self-contradictory specifications. Critically, 78\\% of these score-suppressing defects require specialized physics or mathematics knowledge to detect, not mere clerical proofreading. We corrected every confirmable defect to produce SciCode-Verified. The corrections add only the specifications a well-posed problem requires, repair grading, and tighten the tests that were too lenient; every change is recorded with its justification and independently re-checked by a second domain expert. We re-evaluate twelve frontier model snapshots on the corrected benchmark and find a substantial recovery: subproblem accuracy rises from 45--60\\% to 84--98\\%, and main-problem accuracy from 9--27\\% to 69--92\\%. State-of-the-art models are far more proficient in scientific coding than SciCode has suggested---the bottleneck was not model capability, but the quality of the evaluation instrument. We release SciCode-Verified with its complete audit trail as the corrected public standard.",
+      "url": "https://arxiv.org/abs/2608.04975",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8833
+    },
+    {
+      "id": "2608.04444",
+      "title": "D$^2$F-ReAG: Dynamic Decomposition and Filtering for Multi-Hop Reasoning-Augmented Generation",
+      "authors": [
+        "Jiaoyang Li",
+        "Junhao Ruan",
+        "Shengwei Tang",
+        "Kaiyan Chang",
+        "Zhengtao Yu",
+        "Tong Xiao",
+        "Jingbo Zhu"
+      ],
+      "abstract": "Large language models (LLMs) often generate inaccurate answers due to their reliance on static internal knowledge. Retrieval-augmented generation (RAG) addresses this limitation by integrating external knowledge and excelling at single-hop queries. However, it struggles with multi-hop questions that require cross-document reasoning. Existing methods, such as graph structured RAG or question decomposition, often lack dynamic decomposition and effective filtering, which leads to lower efficiency and accuracy. To overcome these limitations, we propose Dynamic Decomposition and Filtering for Multi-Hop Reasoning-Augmented Generation (D2F-ReAG), a novel paradigm that adaptively controls reasoning depth by judging the reliability of the root-level reasoning. If the root reasoning is reliable, the model directly generates the answer. Otherwise, the question is logically decomposed into sub-questions, and the verified reasoning derived from these sub-questions is used to refine the root reasoning. Experiments on three multi-hop benchmarks demonstrate the effectiveness of our method in handling complex multi-hop questions.",
+      "url": "https://arxiv.org/abs/2608.04444",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-05",
+      "score": 0.8832
+    },
+    {
+      "id": "2608.04160",
+      "title": "Mind the Cap: Output-Budget Regimes Change the Measured Multilingual Reasoning Gap",
+      "authors": [
+        "Ankit Goyal",
+        "Jaideep Ray"
+      ],
+      "abstract": "Multilingual evaluations report accuracy at a single output-token cap, but languages need different numbers of tokens to express the same content, so the cap is a hidden experimental variable. We test whether the native-vs-translate gap on MGSM (German, Thai, Swahili) is a token-budget artifact for Qwen3-8B and Llama-3.1-8B-Instruct under four prompting strategies. The measured gap swings by up to 57 points across budgets, length normalization moves it by up to 38.9 points where the cap binds, and at tight caps normalization can reverse which strategy scores higher. We prospectively froze the sweep's three Qwen peaks and its near-zero value at 1024 and evaluated them on 540,000 independently hard-capped decodes: a second frozen family of six Holm-corrected tests rejects every null. The frozen test at $B^*=1024$ still fails to reject because native accuracy has already saturated there; above saturation, the residual difference is a strategy-performance gap, not an identified reasoning deficit. The same truncation channel prices a cost-ordered adaptation ladder: a cross-fitted Thai vocabulary extension closes 0.0 points of the gap at the frozen budget and 4.9 points where 19% of traces still truncate. A third frozen family varies only the announced budget at a fixed enforced cap; announcing 128 rather than 2048 tokens moves Thai native accuracy by 5.1 points, so accuracy is not a function of the enforced cap alone. A correct-emission timing identity computed from one long-cap run matches the three pre-specified MGSM peaks to 0.65 points and, in an exploratory Qwen-only analysis of three further benchmarks, tracks held-out items to 0.92 points, locating the peak exactly in five of seven cells. Treat the output cap as an independent variable and report accuracy across the budget regime, not at a single budget.",
+      "url": "https://arxiv.org/abs/2608.04160",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-04",
+      "score": 0.883
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
