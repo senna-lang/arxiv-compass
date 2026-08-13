@@ -1,0 +1,402 @@
+{
+  "date": "2026-08-13",
+  "collected_at": "2026-08-13T11:29:09.794513+09:00",
+  "papers": [
+    {
+      "id": "2608.12150",
+      "title": "Who Thinks Best Depends on How Long You Let Them: Budget-Dependent Rankings in LLM Evaluation",
+      "authors": [
+        "Rodrigo Guedes de Souza",
+        "Alison R. Panisson"
+      ],
+      "abstract": "Standard evaluation of large language models assumes stable model rankings across inference conditions. We challenge this assumption by varying the token generation budget, i.e., the maximum tokens a model may produce, across seven levels (64--4,096), evaluating four models on three reasoning benchmarks (56,476 inferences). We report four findings: (i) 3--19% of items exhibit non-monotone behavior (accuracy decreasing with more budget), even after controlling for truncation, and this phenomenon is model-specific (cross-model overlap: 6--14%). (ii) Model rankings reverse across budgets on all benchmarks ($p {<} 0.01$, McNemar). (iii) Oracle analysis reveals model complementarity up to $+27.8$pp, most pronounced at constrained budgets. (iv) A budget-aware router captures 14.1% of the oracle gap cross-domain; budget features help within-domain ($+1.6$ to $+5.7$pp) but are domain-specific and hurt transfer ($-1.2$pp). These results argue for budget-conditioned evaluation protocols.",
+      "url": "https://arxiv.org/abs/2608.12150",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.9044
+    },
+    {
+      "id": "2608.11552",
+      "title": "Beyond Single-Turn Confidence: Trajectory-Adapted Uncertainty Quantification for LLM Agents",
+      "authors": [
+        "Dylan Bouchard",
+        "Mohit Singh Chauhan"
+      ],
+      "abstract": "Uncertainty quantification (UQ) methods for language models are typically evaluated on single-turn outputs, where uncertainty is attached to one generated answer. For LLM agents, however, the unit of observation is an interactive trajectory, where the model can ask clarifying questions, call tools, update state, and make intermediate decisions whose errors propagate to the final outcome. We study whether three common families of single-turn UQ methods transfer to this setting. Across five LLMs and four multi-turn tool-use datasets from BFCL-v4 and $τ^2$-bench, we evaluate white-box scorers based on action-token probabilities, black-box consistency scorers based on resampled trajectories, and reflexive scorers based on model self-assessment of the trajectory. We find that transfer is often useful but uneven. Token-probability scores are highly sensitive to the choice of aggregator used across turns, reflexive scores provide the strongest low-cost baseline in most evaluated settings, and black-box self-consistency is often the strongest UQ family, with trajectory-equivalence and action-set consistency typically ranking highest among its variants. These results suggest that UQ methods developed for single generations should be revalidated at the trajectory level, with careful attention to the consistency measurement, aggregator choice, and computational budget.",
+      "url": "https://arxiv.org/abs/2608.11552",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8971
+    },
+    {
+      "id": "2608.11676",
+      "title": "XBridge: Entity-Grounded Latent Bridge for Heterogeneous LLM Communication",
+      "authors": [
+        "Wooseong Yang",
+        "Wei-Chieh Huang",
+        "Weizhi Zhang",
+        "Yu Wang",
+        "Philip S. Yu",
+        "Junhyun Lee"
+      ],
+      "abstract": "Heterogeneous multi-agent LLM systems, where agents are powered by different model families, can outperform homogeneous configurations by reducing redundant reasoning patterns. Yet existing communication protocols either operate through text, discarding the sender's internal representations, or require architectural homogeneity for latent-level transfer. We identify the entity grounding problem in cross-architecture communication: cross-attention bridges that transfer continuous representations across different LLM families suffer from rare-token compression collapse, where entity identity is lost in the continuous bottleneck (bridge-only F1 ~30%). We propose XBRIDGE, a decode-free communication protocol that addresses this through two mechanisms. Lexical Anchor Mapping (LAM) maps the sender's original context tokens to the receiver's vocabulary, providing discrete entity anchors. A Latent Enrichment Bridge (LEB) lets the receiver query the sender's hidden states for contextual enrichment. The entity anchors ground the bridge's contextual signals to specific entities through the receiver's own self-attention. Across three model families (Llama, Qwen, and Mistral), seven benchmarks, and both communication directions, XBRIDGE outperforms text-based communication on all seven tasks for each model pair while achieving 11x lower latency, and in a same-architecture setting it also exceeds a KV-sharing baseline on six of seven tasks. LEB requires only 264M trainable parameters (3.8% of the receiver), is trained on a small balanced sample set, and adds negligible inference overhead.",
+      "url": "https://arxiv.org/abs/2608.11676",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8917
+    },
+    {
+      "id": "2608.11583",
+      "title": "Localizing Safety Alignment: MLP Layers and Mid-Network Blocks Encode Refusal Behavior in Large Language Models",
+      "authors": [
+        "Mingyu Zong",
+        "Sampad Mohanty",
+        "Bhaskar Krishnamachari"
+      ],
+      "abstract": "Safety alignment in large language models is often treated as a distributed property of the entire network, yet its practical brittleness suggests that refusal behavior may be concentrated in a smaller set of parameters. This work addresses where safety-aligned refusal is encoded by transplanting weights from aligned models into matched unaligned base models at multiple levels of granularity. Using two open-weight model pairs and four safety benchmarks, we conducted experiments to compare the effects of replacing attention weights, MLP weights, contiguous layer regions, and MLP blocks. Across both model families, refusal transfer is dominated by MLP weights: replacing MLP parameters recovers substantially more malicious-prompt refusal than replacing attention parameters, with gains of at least 2.7 times more across benchmarks. Within the MLP stack, refusal-relevant parameters exhibit a consistent mid-network concentration, as the block spanning layers 8-11 is selected first in all six greedy searches over model-dataset pairs. The results also show that the composition of safety-relevant components is non-additive: in five of six greedy trajectories, adding more aligned blocks can reduce refusal performance, and selective block subsets can outperform full MLP transplantation on malicious refusal, benign over-refusal, or both. Finally, greedy orders transferred to OR-Bench vary with the source benchmark used to derive them, indicating a benchmark-dependent precision-coverage trade-off. These results suggest that safety alignment in current LLMs is both localized and interaction-sensitive, offering insight into alignment brittleness and potential avenues for targeted safety interventions.",
+      "url": "https://arxiv.org/abs/2608.11583",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8916
+    },
+    {
+      "id": "2608.11967",
+      "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
+      "authors": [
+        "Zhixin Zhang",
+        "Xinke Jiang",
+        "Zhibang Yang",
+        "Weixuan Xu",
+        "Guohong Qiu",
+        "Xu Chu",
+        "Junfeng Zhao",
+        "Yasha Wang"
+      ],
+      "abstract": "Large language model agents increasingly rely on long-horizon reasoning to solve complex tasks involving planning, tool use, and memory. A critical capability in such settings is reflection: assessing trajectory progress, identifying missing evidence and unreliable intermediate states, and deciding whether to continue, revise, or abandon the current branch. Learning effective reflection, however, is challenging because reflection is performed locally within the current branch, whereas its utility can only be determined by its contribution to the final trajectory outcome. This local-global mismatch makes outcome-based reinforcement learning provide only local, sparse and delayed supervision for reflective decisions. To solve these, we propose LoongReflect, a training framework that formulates reflection as a memory-control policy. The agent operates over a reversible trajectory tree using explicit reflect and backtrack actions. Reflection consolidates verified facts, missing evidence, and branch-specific risks into working memory, while backtracking removes an unreliable branch from the active context and preserves a concise corrective lesson. To learn this policy, LoongReflect combines two complementary signals through a look-ahead, extragradient-style coordination mechanism. A fast channel distills globally informed reflective behavior from a privileged teacher, with supervision restricted to reflection and backtracking tokens. A slow channel optimizes complete trajectories using outcome-based GRPO, aligning local control decisions with final task success. Experiments on multi-hop retrieval-augmented generation and mathematical reasoning benchmarks demonstrate consistent improvements over outcome-only reinforcement learning and self-distillation baselines.",
+      "url": "https://arxiv.org/abs/2608.11967",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8897
+    },
+    {
+      "id": "2608.11775",
+      "title": "The Sleeping Agent: What Gist-Based Context Compression Loses and Why",
+      "authors": [
+        "Nicholas E. Kyrkewood"
+      ],
+      "abstract": "Gist-based context compression---summarising older conversation history into compact representations---is a common approach in long-horizon language model agents, yet its effect on different types of memory retrieval is poorly understood. We use Salience-Weighted Consolidation (SWC), a biologically-inspired compression framework motivated by sleep-based memory consolidation, as a diagnostic probe to study when gist compression helps and when it hurts. SWC scores conversation history by salience, partitions it into priority tiers, and applies structured gist abstraction to mid-priority content. Evaluating four conditions on all ten LoCoMo conversations---1,935 matched text-only questions in total, 1,501 used in the primary aggregate after excluding Category 5 (adversarial) questions---at temperature 0, we find a consistent task-type interaction: gist compression substantially outperforms truncation on multi-hop reasoning and single-hop factual questions, but temporal questions remain substantially harder under compression, with compressed conditions scoring well below the full-context reference on the conversations where both are evaluated. We trace this failure to a specific mechanism: the gist abstraction prompt preserves relational and event structure while discarding dates and times. A preservation analysis across all ten conversations confirms the mechanism: an approximately 20-fold increase in temporal expression preservation (3.05% to 62.39%) with a one-sentence prompt modification, while named entity and event preservation rates barely change (x1.02 and x1.11), demonstrating that the fix is a precision instrument. The prompt modification recovers +0.314 [0.254, 0.375] judge accuracy on category-2 (temporal) questions in the matched set. Code and results: https://github.com/kyrkewood/sleeping-agent.",
+      "url": "https://arxiv.org/abs/2608.11775",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-08-12",
+      "github_url": "https://github.com/kyrkewood/sleeping-agent.",
+      "score": 0.8895
+    },
+    {
+      "id": "2608.12218",
+      "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge",
+      "authors": [
+        "Arda Uzunoglu",
+        "Benjamin van Durme",
+        "Daniel Khashabi"
+      ],
+      "abstract": "Large language models are increasingly trained and deployed with long contexts that span documents, code repositories, and interaction histories. This scaling reflects the implicit assumption that training on longer contexts will only help the model by exposing it to richer evidence. We challenge this view by studying how the context window shapes a model's mode of learning, shifting it between parametric internalization and contextualization. We propose the Information Abundance Paradox, which hypothesizes that abundant relevant information in the training context can reduce the incentive to encode that information parametrically, thereby increasing reliance on context. In pretraining with long documents, increasing the context window improves language modeling, natural language understanding, and closed-book MCQA only up to an intermediate optimum, after which performance consistently declines. In supervised fine-tuning, more task-relevant train-time context improves performance with supporting context, but reduces robustness when context is absent or misleading at test time. Our analysis suggests that this behavior arises when longer context provides a lower complexity solution. Mechanistically, training with informative context shifts gradient pressure from feed-forward networks, often linked to parametric knowledge, toward attention modules, and causal interventions show that this shift increases reliance on context during inference. Overall, these findings support the Information Abundance Paradox and suggest that scaling toward near-infinite context is not simply a matter of supplying more data, even when high-quality long-context data is abundant.",
+      "url": "https://arxiv.org/abs/2608.12218",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8894
+    },
+    {
+      "id": "2608.12307",
+      "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+      "authors": [
+        "Cheng Qian",
+        "Wenting Zhao",
+        "Liangwei Yang",
+        "Heng Wang",
+        "Jielin Qiu",
+        "Heng Ji",
+        "Silvio Savarese",
+        "Huan Wang",
+        "Shelby Heinecke"
+      ],
+      "abstract": "Recent work on distillation transfers the capabilities of large models to smaller ones often by updating the latter's parameters, through teacher forcing, on-policy distillation, and related training-time methods. In this paper, we ask whether such transfer can instead occur at test time. We study strong-to-weak scaffolding: whether a stronger builder model can construct inference-time harnesses that help a weaker target model solve tasks more reliably without any parameter updates. Using four representative Theory-of-Mind benchmarks, each builder model uses 5% of the data as a validation set to iteratively refine its harness over multiple rounds, after which the finalized harness is evaluated on the full test set. Empirically, this form of test-time capability transfer is highly effective, nearly doubling average target-model performance from 0.49 to 0.91. Our analysis shows that the gains come primarily from offloading unstable model reasoning into deterministic code, benchmark-specific routing, and strict answer-format enforcement, rather than from encouraging the target model to reason more extensively or sample more broadly. We further find that builder-model reasoning effort improves harness quality monotonically, platform effects are modest relative to the builder model's own capability, and weaker target models receive the largest gains. These results suggest that inference-time harness design is an important complement to conventional training-time distillation, enabling strong models to transfer cognitive structure to weaker models without retraining.",
+      "url": "https://arxiv.org/abs/2608.12307",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8886
+    },
+    {
+      "id": "2608.11660",
+      "title": "Hybrid-Policy Self-Editing for Composable Unstructured Knowledge Editing",
+      "authors": [
+        "Tianci Liu",
+        "Zihan Dong",
+        "Tianchun Li",
+        "Yi-Chung Chen",
+        "Qiming Cao",
+        "Xingchen Wang",
+        "Shiyang Wang",
+        "Zichen Miao",
+        "Linjun Zhang",
+        "Haoyu Wang",
+        "Jing Gao"
+      ],
+      "abstract": "Large language models (LLMs) achieve remarkable performance across natural language tasks, yet they are trained on static corpora and their knowledge quickly becomes outdated in a fast-changing world. This motivates knowledge editing (KE), which updates specific knowledge in an LLM without changing unrelated others. Recent works move from structured knowledge triples toward unstructured KE (UKE), where the edit is a free-form passage that may state multiple facts at once. Nonetheless, existing editors inject such a passage yet fail to use it: the edited model can recall the passage, but can neither answer atomic questions about its facts nor compose them into multi-hop reasoning. We attribute this missing property, which we term composability, to editors' passive reliance on the fixed passage as the sole learning source. In response, we cast editing as a proactive self-distillation from a privileged in-context state of the same model, which requires no external supervision. We further reveal that due to the novelty of the injected knowledge, the pre-edited model's own rollouts rarely cover it, which limits the effectiveness of pure on-policy distillation. To close this gap, we propose HPSE, which builds a hybrid rollout that steps in to place missing facts onto the student's own trajectory precisely where its coverage fails, while staying on-policy elsewhere. We theoretically analyze HPSE's advantage over pure on-policy distillation, and empirically establish its plug-and-play improvements across four LLM backbones and two KE editors under various scenarios.",
+      "url": "https://arxiv.org/abs/2608.11660",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8884
+    },
+    {
+      "id": "2608.11715",
+      "title": "When the API Speaks the Wrong Language: Revisiting Post-Training for Multilingual Tool Use",
+      "authors": [
+        "Siddharth Chauhan",
+        "Thomas Butler",
+        "Abhishek Singhania",
+        "Pankaj Porwal",
+        "Honey Gupta"
+      ],
+      "abstract": "The reliability of Large Language Models (LLMs) for API calling degrades in multilingual settings. A common failure occurs when a model selects the correct tool but generates argument values in an inconsistent language, which we term Argument Language Mismatch (ALM). Although semantically correct, such outputs are operationally invalid and not captured by standard API-calling metrics. We revisit post-training strategies for mitigating ALM and find that, in our benchmark, supervised fine-tuning (SFT) provides a strong baseline, substantially improving argument language consistency and end-to-end function call accuracy. Under consistent model selection, SFT achieves performance comparable to, and sometimes exceeding more complex reinforcement learning (RL) approaches. We further examine whether RL with structured, argument-aware rewards offers additional benefits. While methods such as Group Relative Policy Optimization (GRPO) can improve language consistency and better preserve general reasoning ability, these gains are incremental and most pronounced in generalization and multi-objective trade-offs. Overall, our results suggest that much of the performance in multilingual API grounding can be achieved through careful supervised training, with RL providing targeted rather than fundamental improvements.",
+      "url": "https://arxiv.org/abs/2608.11715",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8879
+    },
+    {
+      "id": "2608.11573",
+      "title": "Reinforcing Step-level Reasoning for Effective Self-Correction in LLMs",
+      "authors": [
+        "Vu Duc Anh",
+        "Nhat M. Hoang",
+        "Do Xuan Long",
+        "Cong-Duy Nguyen",
+        "Ponhvoan Srey",
+        "Luu Anh Tuan"
+      ],
+      "abstract": "Achieving effective self-correction, where models verify and correct their own mistakes, remains a fundamental challenge for large language models (LLMs). In this work, we propose Self-Fix Step-DPO (SFS-DPO), a reinforcement learning based, two-stage framework for step-level self-verification and self-correction. The first stage strengthens step-level reasoning via step-level preference optimization, while the second stage explicitly trains models to self-verify and self-correct. We further introduce a teacher-assisted variant, SFS-DPO-R, which incorporates explanatory rationales for error verification to provide stronger corrective signals. Comprehensive in-domain and out-of-domain evaluations across multiple LLMs demonstrate that SFS-DPO and SFS-DPO-R consistently outperform prior step-level training baselines. Our analysis further reveals improvements in self-correction frequency and effectiveness, highlighting the importance of strengthening step-level reasoning for robust performance.",
+      "url": "https://arxiv.org/abs/2608.11573",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8872
+    },
+    {
+      "id": "2608.11624",
+      "title": "Learning to Persuade Exposes How Easily LLMs Abandon Correct Beliefs",
+      "authors": [
+        "Nimet Beyza Bozdag",
+        "Emre Can Acikgoz",
+        "Gokhan Tur",
+        "Dilek Hakkani-Tür"
+      ],
+      "abstract": "Persuasion is a core dynamic of natural language communication, shaping how large language models (LLMs) update beliefs, resolve disagreements, and reach decisions. As LLMs increasingly debate, advise, and think collaboratively with humans and each other, resistance to harmful persuasion becomes a core requirement for reliable behavior. Yet we show that this requirement is far from met: a single targeted persuasive argument is enough to collapse model accuracy to near zero, even when the argument is factually false. We formalize this threat as adversarial persuasion and introduce an adversarial reinforcement learning framework that trains persuader agents to change a target model's answer in a single interaction. First, we show that optimizing persuasion strategies through trial and error exposes vulnerabilities that static prompting misses: RL-trained persuaders raise persuasion success from approximately 24% to over 93% against the training-time persuadee. Second, we find that these learned strategies transfer to unseen models, achieving 83% attack success on Qwen-14B, 79% on Llama-3.1-8B, and 25% on GPT-4o-mini. Third, we demonstrate that a curriculum that bootstraps on more persuadable open-weight models before targeting harder models further increases GPT-4o-mini attack success from 25% to 38%. Moreover, our results reveal that optimized persuaders increasingly rely on credibility-based tactics, including fabricated citations and false authoritative evidence. Together, these findings expose a critical weakness in current LLM agents: even when they initially reason correctly, they can be steered toward false conclusions by optimized natural language influence. This positions persuasion robustness as a necessary safety criterion for multi-agent and human-AI decision-making systems.",
+      "url": "https://arxiv.org/abs/2608.11624",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8864
+    },
+    {
+      "id": "2608.11949",
+      "title": "ExRole: From Team Trajectories to Executable Roles in Multi-Agent Language Models",
+      "authors": [
+        "Zhou Liu",
+        "Chaoyang Han",
+        "Zewei Pan",
+        "Zeli Su",
+        "Wentao Zhang"
+      ],
+      "abstract": "Roles provide an interpretable interface for organizing language-model agents, yet most multi-agent systems treat them as hand-written prompt labels disconnected from learned behavior and parameter updates. We argue that a useful role should instead be an executable control variable: it should summarize behavior predictive of future utility, guide subsequent interaction, and identify the trainable capacity responsible for that behavior. We introduce ExRole, a trajectory-to-role framework that learns future-aware role prototypes from prefix-local team traces, resolves them into readable instructions and token-aligned role markers, and optionally routes shared LoRA rank slots with turn-aligned credit. Across MuSiQue and 2WikiMultiHopQA, ExRole improves over single-agent search by 15.0/14.4 and 13.5/16.1 EM/F1 points, respectively. Against the strongest non-ExRole controls, the corresponding gains remain 11.5/11.6 and 7.7/9.7 points. Across both benchmarks, the controlled results consistently favor trajectory-induced role conditioning over role-free, manual, random, and shuffled alternatives. Role-Agent-Turn interventions further show that the induced roles capture transferable behavioral specialization beyond fixed agent identities or turn positions.",
+      "url": "https://arxiv.org/abs/2608.11949",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8857
+    },
+    {
+      "id": "2608.12262",
+      "title": "Diagram-MMU: A Multi-Modal Benchmark for Scientific Diagrams",
+      "authors": [
+        "Weihao Bo",
+        "Shan Zhang",
+        "Yanpeng Sun",
+        "Jie Liu",
+        "Yongke Yao",
+        "Jinhao Du",
+        "Wei He",
+        "Kai Zou",
+        "Zechao Li",
+        "Jingdong Wang"
+      ],
+      "abstract": "Multimodal Large Language Models (MLLMs) have been growing the capability for scientific writing and collaboration. For example, OpenAI Prism is a free workspace for scientific writing and collaboration. One important feature in Prism is turning scientific diagrams directly into LaTeX TikZ code. In this paper, we build a benchmark, Diagram-MMU, a multi-modal benchmark designed to assess MLLMs' ability for scientific diagram parsing and understanding. Diagram-MMU features 3.7k curated diagrams and 18.3k human-validated questions across six domains. It evaluates MLLMs on three tasks common in vibe writing workspaces: diagram-to-code parsing, diagram-to-code editing, and diagram question answering, alongside agentic settings per task. The evaluation of 12 MLLMs reveals that diagram-to-code tasks are more challenging than diagram question answering: models can reason well over diagrams but struggle to parse and edit them, underscoring the need for methods to enhance MLLMs' capability in diagram-to-code generation. Under agentic settings, most models improve parsing and editing performance but degrade on question answering, while Claude-4.6 Opus consistently improves across all three tasks. Project Page: https://vi-ocean.github.io/projects/diagram-mmu.",
+      "url": "https://arxiv.org/abs/2608.12262",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8849
+    },
+    {
+      "id": "2608.12282",
+      "title": "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies",
+      "authors": [
+        "Ankita Rajaram Naik",
+        "Anupama Murthi",
+        "Benjamin Elder",
+        "Siyu Huo",
+        "Raavi Gupta",
+        "Abhinav Jain",
+        "Praveen Venkateswaran",
+        "Abdulhamid Adebayo",
+        "Danish Contractor"
+      ],
+      "abstract": "Agents deployed in enterprise settings must reason across structured APIs and document collections, yet existing benchmarks evaluate these capabilities in isolation. We introduce VAKRA (e\\textbf{V}aluating \\textbf{A}PI and \\textbf{K}nowledge \\textbf{R}etrieval \\textbf{A}gents), a benchmark of over $8{,}000$ executable APIs across $62$ domains with tasks spanning three settings of increasing difficulty: diverse API interaction styles, multi-hop reasoning over structured APIs, and multi-source reasoning with natural-language tool-use policy constraints. Correctness is verified by re-executing predicted tool calls against live APIs, accommodating multiple valid paths. Using a fixed ReAct harness to isolate model capabilities from agent architecture, we evaluate frontier and open-weight models and find that even the best model achieves only 70.4\\% on single-hop endpoint-style tasks and drops to 50--51\\% on compositional APIs; performance degrades by over 50\\% as reasoning depth increases, and policy-constrained questions expose severe failures (as low as 2.4\\% on unanswerable queries). Trace analysis shows failures concentrate at language-mediated reasoning - entity disambiguation, cross-source grounding, rather than tool invocation mechanics. Code is available https://github.com/IBM/VAKRA. Dataset is available https://huggingface.co/datasets/ibm-research/VAKRA",
+      "url": "https://arxiv.org/abs/2608.12282",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "github_url": "https://github.com/IBM/VAKRA.",
+      "score": 0.8846
+    },
+    {
+      "id": "2608.12004",
+      "title": "RealisticTritonBench: A Benchmark for Triton-Kernel Generation in Real-World AI Frameworks",
+      "authors": [
+        "Jinjun Huang",
+        "Zhongzhen Wen",
+        "Tongtong Xu",
+        "Meng Yan",
+        "Xin Xia",
+        "Zhongxin Liu"
+      ],
+      "abstract": "In modern AI frameworks, GPU kernels are key to overall system performance. Combining usability, portability, and near-handwritten CUDA performance, Triton is widely adopted for implementing GPU kernels. Recent advances show the potential of large language models (LLMs) to automatically generate Triton kernels, reducing the manual effort required from expert kernel developers. Several benchmarks evaluate LLM-generated Triton kernels. However, they suffer from three key limitations: (1) they restrict tasks to PyTorch-to-Triton translation, failing to reflect the diversity and complexity of real-world Triton tasks; (2) they evaluate only individual-kernel performance rather than end-to-end performance, the core criterion for real-world deployment in AI frameworks; and (3) they rely on manually written evaluation scripts for individual kernels, which may contain flaws that models can exploit to bypass correctness checks and obtain inflated scores. To address these limitations, we introduce RealisticTritonBench, the first benchmark to derive Triton kernel generation tasks from real-world pull requests in popular AI frameworks, enabling realistic, production-like evaluation. RealisticTritonBench systematically extracts PRs that modify Triton kernels from popular open-source AI frameworks and transforms them into generation tasks with concrete engineering contexts. Each task takes a natural language requirement as input and requires a corresponding Triton kernel implementation, with a complete and reproducible evaluation environment. Unlike prior benchmarks focused on isolated kernel performance, RealisticTritonBench integrates generated kernels into their original frameworks and evaluates them using end-to-end tests, enabling a more faithful assessment. We evaluate leading LLMs on RealisticTritonBench and find that they still struggle with real-world Triton kernel generation tasks.",
+      "url": "https://arxiv.org/abs/2608.12004",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8836
+    },
+    {
+      "id": "2608.11694",
+      "title": "The Wording Effect: Quantifying Two-Way Drift in LLM Benchmark Performance",
+      "authors": [
+        "Shailja Thakur",
+        "Sungeun An",
+        "Chad DeLuca",
+        "Hima Patel"
+      ],
+      "abstract": "A benchmark score comes from a single phrasing of each problem. That single phrasing is treated as if it stood for the whole space of ways the same problem could be asked, but it does not. We show that rephrasing a problem while keeping its meaning and answer fixed routinely flips a model's answer in both directions, so some failures become successes and some successes become failures. We call this drift. BenchDrift generates meaning-preserving variations of benchmark problems along four axes, namely linguistic, referential, pragmatic, and structural, and measures how often, and why, correctness flips under each. Across eight models and three benchmarks (GSM8K, MMLU, MATH-Hard), we observe that drift is large in both directions. Two findings stand out. First, phrasing sensitivity does not fade as models get better. Instead, it changes sign. Weak models gain more from rephrasing than they lose, while strong models lose far more than they gain. We find that the best models on a benchmark are therefore the ones whose scores depend most on the wording they happened to be given. Second, the models largely agree on which rephrasings cost the most correct answers even though they differ in how much they drift, so fragility belongs to the rephrasing and not to the model. Furthermore, rephrasing breaks answers a model was confident about, whether the problem is made shorter or longer. Code and Data: https://github.com/IBM/BenchDrift/tree/demo-ui",
+      "url": "https://arxiv.org/abs/2608.11694",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "github_url": "https://github.com/IBM/BenchDrift/tree/demo-ui",
+      "score": 0.8831
+    },
+    {
+      "id": "2608.11408",
+      "title": "Measure, Don't Optimize: Forecasting Recovery in LLM Unlearning",
+      "authors": [
+        "Zirui Song",
+        "Huaxing Liu",
+        "Xiang Wang",
+        "Shuai Li",
+        "Xinye Li",
+        "Lang Gao",
+        "Jinghui Zhang",
+        "Zheng Lu",
+        "Fengxian Ji",
+        "Xiaojun Chang",
+        "Xiuying Chen"
+      ],
+      "abstract": "Prior white-box studies show that large language models can retain latent traces of target knowledge after unlearning, even when the knowledge is no longer expressed in their outputs. However, existing audits remain limited to one-off diagnostics: it is unclear whether these residual signals can predict future recovery under continued training or serve as reliable optimization targets. Resolving this gap is essential to determine whether internal auditing can move beyond post-hoc evaluation toward proactive risk monitoring and safer unlearning. We propose J-Access, an inference-time audit that uses the Jacobian lens to map intermediate representations into vocabulary space and measures how often target concepts remain accessible along the model's output pathway. We hypothesize that residual accessibility reflects recovery susceptibility: knowledge that remains closer to the output pathway requires less fine-tuning to restore, leading to faster recovery. We audit 398 public unlearned models spanning eight unlearning methods. We find that: (1) most unlearned models retain access above the retain-only gold level; (2) pre-attack accessibility predicts recovery speed and extent at the model level, but cannot identify which specific facts will be recovered; and (3) directly minimizing J-Access does not promote genuine deletion. Instead, the model learns to hide knowledge from the audit, producing lower audit scores but greater post-attack recovery. These findings position J-Access as a model-level diagnostic for assessing residual susceptibility in unlearned models. We argue internal audits should serve as an independent diagnostic dimension in unlearning evaluation, and should not be converted into optimization targets without validation.",
+      "url": "https://arxiv.org/abs/2608.11408",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-11",
+      "score": 0.883
+    },
+    {
+      "id": "2608.11631",
+      "title": "CLAIM: Leading Open-domain Active Clarification of Large Language Models with Uncertainty Measurement",
+      "authors": [
+        "Kuangzhao Yang",
+        "Ziliang Zhao",
+        "Zhicheng Dou"
+      ],
+      "abstract": "In open-domain human-computer interaction scenarios, large language models (LLMs) frequently encounter user queries that are ambiguous or incomplete. In such cases, directly producing an answer often leads to overgeneralized, erroneous, or low-information responses. In contrast, asking clarifying questions can substantially improve interaction quality. However, existing approaches still rely heavily on manually annotated data or preference alignment to address two fundamental challenges: when clarification is necessary, and which aspect of the query should be clarified. This reliance incurs high annotation costs and limits generalization. To address these challenges, we propose CLAIM, an uncertainty-driven framework for active clarification learning in open-domain settings. CLAIM eliminates the need for explicit human preference annotations by quantifying query uncertainty through the entropy induced by answer disagreements across multiple models. This uncertainty signal is then used to construct high-quality synthetic data, enabling the training of a unified clarification decision model through a combination of supervised learning and reinforcement learning. Specifically, we propose an entropy-driven synthetic data generation pipeline that integrates entropy-based uncertainty estimation with semantic clustering and reasoning-based judgments, enabling reliable automatic annotation of clarification requirements. To train CLAIM, we formulate the clarification process as a structured decision generation problem and adopt a training paradigm that combines supervised fine-tuning (SFT) with group-relative policy optimization (GRPO). Experimental results demonstrate that CLAIM can learn stable and generalizable clarification strategies without relying on manually labeled data, offering a low-cost and robust solution for proactive understanding in real-world open-domain interactions with LLMs.",
+      "url": "https://arxiv.org/abs/2608.11631",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8821
+    },
+    {
+      "id": "2608.11767",
+      "title": "Causal Structure is Inducible but Functionally Decoupled: The Routing/Readout Boundary of a Typed Mechanism Library",
+      "authors": [
+        "Xining Xun"
+      ],
+      "abstract": "When a language model answers an interventional question, the computation it must perform depends on the type of evidence the query requires. We report a decoupling in how a transformer organizes causal knowledge: slot-by-type structure induced by type-level supervision organizes routing, yet remains functionally decoupled from answer readout. We establish this with a typed mechanism library -- discrete mechanism slots partitioned by evidence type, auditable at the state level -- on a causal-world benchmark with exact interventional ground truth, under a frozen protocol, at two scales (22.6M and 125M). Four preregistered findings. (i) Origin. Slot-by-type organization is induced by type-level supervision: absent in architecturally identical unsupervised controls, not buyable by content-free gating labels, and statistically attributable to the supervision signal, replicating at 125M under a powered preregistered protocol (all nine cells passed). (ii) Boundary. The induced structure is a typed routing index with a sharp routing/readout boundary: slot codes scaffold routing but do not drive answer readout ($|Δ\\hat{y}| \\le 3.4\\times10^{-6}$, zero collateral, three seeds, stable across a 5.6x scale window) -- we therefore make no behavioral-editability claim. (iii) Cost. The structure is free: LM quality matches a parameter-matched monolith within 0.0082 nats. (iv) Trust. The library state is exactly local under edit and bit-exactly revertible -- 250 single-edit and 1,000 stacked reverts per seed, zero failures. We further find that the unsupervised null itself moves with scale, so comparisons reusing a null calibrated at one scale may be confounded at another. Every claim is tied to a preregistered, machine-checkable criterion archived before the data it governs; the full audit trail, including one criterion we failed and how the frozen protocol handled it, is released as an appendix.",
+      "url": "https://arxiv.org/abs/2608.11767",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-08-12",
+      "score": 0.8818
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
