@@ -1,0 +1,390 @@
+{
+  "date": "2026-09-02",
+  "collected_at": "2026-09-02T12:59:53.699710+09:00",
+  "papers": [
+    {
+      "id": "2609.00738",
+      "title": "Escaping Redundant Reasoning: Structure-Aware Search for Inference-Time LLMs",
+      "authors": [
+        "Lu Cheng"
+      ],
+      "abstract": "Inference-time search with large language models (LLMs) often concentrates on a small set of structurally or semantically similar trajectories, leaving alternatives underexplored---a failure mode we call \\textit{reasoning basin collapse}. We introduce BASIN, a training-free, structure-aware selection method that groups reasoning states into basins and penalizes repeated visits to the same strategy, thereby reallocating search across genuinely distinct reasoning paths under a fixed compute budget. Under matched inference budgets, BASIN improves over Tree of Thoughts (ToT) by up to $+22$pp on Game of 24 and $+6.7$pp on MuSR. A quality-aware variant, QA-BASIN, further improves robustness by preserving high-quality basins when unconditional diversification over-explores. To explain when basin-aware selection helps, we introduce the redundancy gap $Δ$, which measures how differently search concentrates for correct versus incorrect predictions: standard ToT often operates near $Δ\\approx 0$, while BASIN consistently shifts $Δ$ positive. More broadly, BASIN suggests structure-aware selection as a simple and general approach to improving inference-time reasoning. Code can be found at https://github.com/GitHubLuCheng/basin.",
+      "url": "https://arxiv.org/abs/2609.00738",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "github_url": "https://github.com/GitHubLuCheng/basin.",
+      "score": 0.8953
+    },
+    {
+      "id": "2609.01428",
+      "title": "TRIAGE: Three-level Routing and Intelligent Agent Guidance for Efficient Execution",
+      "authors": [
+        "Ruocan Wei"
+      ],
+      "abstract": "Large Language Model (LLM) agents based on the ReAct paradigm have demonstrated remarkable capabilities in tool use and task execution. However, ReAct suffers from a fundamental efficiency problem: every query triggers a complete reasoning loop from scratch, and similar queries repeat identical steps without leveraging historical experience. We propose TRIAGE,a three-level routing framework that reduces token consumption by reusing historical execution trajectories. Its core innovation is TaaS (Trajectory-as-a-Skill), which abstracts historical execution trajectories into reusable skills, realizing 'experience as a service'. TRIAGE classifies queries into three levels: (1) Direct Reuse-identical queries, 0 tokens; (2) Skill Substitution-similar queries, 0 tokens via deterministic parameter substitution; (3) Full ReAct-novel queries, automatically stored for future reuse. In large-scale experiments on 1,007 security monitoring queries, TRIAGE achieves 62.3% token savings, with 56.0% of queries at Level 2 and 5.5% at Level 1, both executing at zero cost. Cross-domain validation on ToolBench (15 domains, 345 queries) achieves 76.3% token reduction, confirming the generalizability of semantic routing. An online learning experiment demonstrates cold-start-to-mature evolution: the L2 hit rate rises from 0% to 57% within the first 100 queries, and the average token cost drops from 198 to 74.7. We also propose an automatic Skill extraction mechanism that distills high-frequency trajectory patterns into deterministic Skills, creating a positive feedback loop of 'the more you use it, the more efficient it becomes'.",
+      "url": "https://arxiv.org/abs/2609.01428",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8946
+    },
+    {
+      "id": "2609.00759",
+      "title": "Compile, Don't Memorize: A Context Compilation Architecture (CCA) for In-Context Learning",
+      "authors": [
+        "Jinhu Qi",
+        "Minda Hu",
+        "Wentao Zhang",
+        "Weiqiang Jin",
+        "Yanyu Chen",
+        "Junli Wang",
+        "Irwin King"
+      ],
+      "abstract": "Large language models (LLMs) increasingly handle in-context learning (ICL) tasks where a long, novel context defines the rules, knowledge, and output schema for a series of questions. On benchmarks that grade against every detail of the context, even strong open-weights models pass only 12-16% of tasks: a single overlooked rule fails the whole response. We argue this brittleness is structural: the dominant \"read-and-reason\" paradigm asks the model to extract, plan, generate, and self-verify in one forward pass. We therefore ask whether explicit context compilation can fix it, how it compares to existing long-context strategies (gist retrieval, multi-agent self-play), and where the resulting harness benefit holds across task structure and model scale. We propose the Context Compilation Architecture (CCA), whose central novelty is a typed intermediate representation (IR) with fixed slots (rules.{must_do, must_not, conditional}, output_spec, available_tools, data_profile) into which any prose context is compiled once; executable verifiers and a violation-gated correction loop follow as downstream consequences. On CL-bench (1,899 tasks across 4 open base models), CCA outperforms vanilla prompting and two long-context baselines (ReadAgent-P, Ctx2Skill) on every base model, lifting Kimi K2.5 from 15.4% to 21.4% with gains concentrated on rule-dense sub-categories. Code and cached completions are available at https://github.com/TonyQJH/cca-emnlp2026.",
+      "url": "https://arxiv.org/abs/2609.00759",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-01",
+      "github_url": "https://github.com/TonyQJH/cca-emnlp2026.",
+      "score": 0.894
+    },
+    {
+      "id": "2609.00892",
+      "title": "CARE: Contrastive Anchor-based Rubric Evolution for Large Language Model Post-Training",
+      "authors": [
+        "Siyuan Li",
+        "Xinxin Song",
+        "Chen Ruinian",
+        "Jingjing Fan",
+        "Tingxiong Xiao",
+        "Yangen Hu",
+        "Ke Zeng",
+        "Jinli Suo"
+      ],
+      "abstract": "Rubric-based reinforcement learning decomposes open-ended instructions into prompt-specific, flexible rubrics, making it better suited than reinforcement learning with verifiable rewards for post-training LLMs on open-ended tasks. However, static rubrics are inevitably hacked as the policy evolves, and existing dynamic approaches introduce new problems: undirected rubric extraction, unreliable hack detection, and unbounded rubric proliferation. We propose $\\textbf{CARE}$ ($\\textbf{C}$ontrastive $\\textbf{A}$nchor-based $\\textbf{R}$ubric $\\textbf{E}$volution), which grounds every rubric evolution step in a high-quality anchor response generated by a frontier model conditioned on the prompt and its rubrics. At each training step, CARE contrasts the highest-scoring rollout against the anchor, enabling two complementary mechanisms: an Adaptive branch that reactively repairs reward misspecification; and a Chase branch that proactively converts frontier-level quality gaps into sharper rubrics. Together, the two branches $\\textbf{maintain discriminative accuracy in the high-reward region}$---the precise region where reward over-optimization mostly originates. Experiments on WildChecklist-9K with Qwen2.5-7B-Base and Qwen2.5-7B-Instruct show that CARE achieves state-of-the-art performance on Arena-Hard-2.0, InfoBench, and FollowBench, and is the $\\textbf{only}$ method whose win rate against GPT-4.1 anchor responses shows sustained improvement throughout 300 training steps; additional results on Llama-3.1-8B-Instruct and Qwen3-8B further indicate that CARE generalizes across model families.",
+      "url": "https://arxiv.org/abs/2609.00892",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8931
+    },
+    {
+      "id": "2609.01045",
+      "title": "AgentFactory: Towards Automated Agentic System Design and Optimization",
+      "authors": [
+        "Enci Zhang",
+        "Haofeng Wang",
+        "Yuesheng Zhu",
+        "Xiaole Cui",
+        "Guibo Luo"
+      ],
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities as powerful components in agentic systems, enabling sophisticated reasoning and complex task execution. However, current approaches to manually designing and optimizing agentic systems heavily rely on manual effort, limiting their adaptability and scalability. Recent work has explored the automated optimization of workflow designs. However, these approaches often overlook the crucial role of model capabilities and focus on single performance metrics, failing to address real-world deployment constraints. In this paper, we present AgentFactory, a framework that jointly optimizes both foundation models and workflow structures in agentic systems while considering multiple objectives including performance, cost, and efficiency. AgentFactory leverages advanced LLMs as optimizers to navigate the vast search space of possible configurations, employing a three-stage optimization pipeline to automatically discover effective combinations of fine-tuned models and optimized workflows. Through an iterative optimization process, our framework systematically explores and evaluates different agentic system designs, adapting to task-specific requirements while maintaining operational efficiency. We evaluate AgentFactory across eight benchmarks spanning five domains, including general reasoning, coding, mathematics, medicine, and finance. Our experiments demonstrate that AgentFactory consistently outperforms both manually designed methods and existing automated approaches, achieving an average improvement of 9.1% across all benchmarks, with particularly significant gains in domain-specific tasks (19.6% on MedQA and 18.7% on FinEval). These results establish AgentFactory as a promising approach for developing more capable and efficient agentic systems through automated optimization.",
+      "url": "https://arxiv.org/abs/2609.01045",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.891
+    },
+    {
+      "id": "2609.00790",
+      "title": "RISA: Response Inspection and Selective Actions for Refusal Calibration in Large Language Models",
+      "authors": [
+        "Wenhan Chang",
+        "Tianqing Zhu",
+        "Ping Xiong",
+        "Shiyi Liao",
+        "Wanlei Zhou"
+      ],
+      "abstract": "Reliable refusal behavior requires Large Language Models (LLMs) to reject harmful prompts with only answering benign ones. Incorrect refusal behavior can either expose users to harmful responses or prevent users from obtaining useful answers. Training-time alignment improves refusal behavior by updating model parameters with safety data, but requires additional computation and training. In contrast, inference-time alignment aims to modify LLM behavior during inference without updating the underlying model parameters. Existing inference-time methods mainly rely on in-context safety prompting, activation steering, or decoding control. However, most of them intervene without first determining whether the initial response is already appropriate, potentially altering a correct refusal or a useful answer. Effective selective intervention therefore requires identifying prompt intent beyond sensitive keywords, covering semantic variations that fixed rules may miss, and adapting the verifier to different base models. To address these challenges, we propose Response Inspection and Selective Actions (RISA), an inference-time framework that inspects the initial response and selectively corrects refusal errors without updating the base model. RISA first uses fixed contextual rules to assign refusal scores to clear cases. For unmatched cases, it derives a refusal score from the final-layer prompt hidden state using a calibrated linear probe. To adapt to different base models, RISA separately calibrates the probe score, representation-support boundary, and action thresholds. At runtime, RISA combines the prompt score with the initial refusal status and applies an action policy to intervene only when necessary. Experimental results demonstrate that RISA improves refusal reliability while largely preserving model utility, offering a practical solution for response-aware refusal calibration in LLMs.",
+      "url": "https://arxiv.org/abs/2609.00790",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8907
+    },
+    {
+      "id": "2609.01600",
+      "title": "CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?",
+      "authors": [
+        "Damien Sileo",
+        "Dimitri Kachler"
+      ],
+      "abstract": "Dynamic agent harnesses let language models change the software that shapes their own execution. This flexibility brings a new reasoning burden: a local plugin change can propagate through dependencies and cleanup. We introduce CordisBench, a 1,200-question benchmark of this lifecycle reasoning. It combines a controlled formal setting with programs executed against Cordis, a runtime that manages component dependencies and cleanup, and asks models to identify affected components, predict state after a specified teardown order, determine which conditions hold under all or some orders, and choose reconfigurations that succeed when executed. Across these tasks, we evaluate three efficiency-oriented models at low reasoning effort with 2, 4, 8, 16, 24, or 32 relevant interactions, using deterministic task-specific scoring. Models usually handle small systems well but grow less reliable as more interactions become relevant, especially when predicting final state and when reasoning across teardown orders. Additional inference effort recovers marked gains for some models. The cost is nontrivial: on our 16-interaction subset, GPT-5.6 Luna uses nearly 3,000 reasoning tokens per question at medium effort. For these controlled instances, that cost is avoidable: an independent finite reference semantics agrees with Cordis execution on every observation and action outcome used for scoring across all 528 executable questions.",
+      "url": "https://arxiv.org/abs/2609.01600",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8901
+    },
+    {
+      "id": "2609.01185",
+      "title": "Reveree: Diagnosing LLM Reverse-Engineering Agents",
+      "authors": [
+        "Hadjer Benkraouda",
+        "Hongyu Cai",
+        "Berkay Celik",
+        "Gang Wang"
+      ],
+      "abstract": "Reverse engineering (RE) is critical to security tasks such as malware analysis and vulnerability discovery, and large language model (LLM) agents are increasingly able to perform it autonomously. Capture-the-flag (CTF) RE challenges have become the standard proxy for measuring this capability, but evaluation rests on a single criterion: whether the agent captures the flag. This solve rate reveals neither where in the RE process an agent fails nor whether a success reflects analysis of the binary or recall of a public solution. In this paper, we propose Reveree, a diagnostic framework that scores an LLM RE agent's trajectory at three tiers: solve rate, milestone progress through an eight-stage RE schema, and a behavioral profile of its actions. Comprehension stages are scored by an outcome-blinded LLM judge validated against a human expert; all other stages are verified deterministically. Using Reveree, we evaluate nine frontier models and four prompting strategies on 88 picoCTF and NYU-CTF challenges. We find that the base model dominates performance, whereas prompting strategy is a secondary, model-dependent effect. Surprisingly, larger, newer, or costlier models are not reliably stronger. We also find that failures concentrate at the comprehension stages of the RE process, and that extra budget, persistence, or reasoning effort rescues few of them, pointing to a competence limit rather than a resource limit. Regarding memorization, while models reproduce picoCTF flags from challenge descriptions alone, NYU-CTF shows minimal measurable recall, and most solves survive surface perturbation, indicating that genuine analysis coexists with memorization. We release Reveree to the community.",
+      "url": "https://arxiv.org/abs/2609.01185",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8881
+    },
+    {
+      "id": "2609.00768",
+      "title": "DiagEvo: Diagnosis-Guided Self-Evolution via Hierarchical Error Memory",
+      "authors": [
+        "Xincheng Wei",
+        "Yifan Ding",
+        "Yoshua Li",
+        "Dongsheng Ma",
+        "Rongxiang Weng",
+        "Xunliang Cai",
+        "Wenjian Ding",
+        "Yao Zhang"
+      ],
+      "abstract": "Self-play is an effective paradigm for language-model self-evolution, but without guidance, solver performance can plateau or decline across rounds. Unguided methods steer question generation with signals such as difficulty, learnability, or diversity. These signals keep questions challenging and varied but do not specify which unresolved reasoning weaknesses later rounds should target. Guided methods obtain direction from external task resources, including human examples, document corpora, or specified difficulty targets, and therefore rely on task information supplied outside the self-play loop. We show that the needed direction can instead be derived from the solver's own failure history. We introduce DiagEvo, whose diagnostician extracts recurring error causes from this history and stores them in a hierarchical error-cause memory. The memory groups related causes under skill nodes and tracks each as Active or Mastered according to self-consistency on targeted questions. The challenger uses these states and recurrence counts to balance cause-targeted generation with free exploration. Double-confidence filtering retains intermediate-difficulty questions only when the most common solver answer has a clear vote lead. DiagEvo derives its curriculum from information produced during self-play, without external task resources. With the default 4B diagnostician, DiagEvo outperforms every baseline in mean accuracy across all nine benchmarks for each of the three solvers: Qwen3-4B, Qwen3-8B, and OctoThinker-8B. On Qwen3-8B, it reaches 72.3% mean accuracy across five mathematical reasoning benchmarks, 4.5 percentage points above R-Zero. Its mean accuracy across all nine benchmarks is 57.4%, 1.1 percentage points above DARC. Ablations show that the hierarchical error-cause memory and double-confidence filtering both contribute to these gains.",
+      "url": "https://arxiv.org/abs/2609.00768",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8881
+    },
+    {
+      "id": "2609.00830",
+      "title": "Visual Attention Faithfulness in Vision-Language Models is Heterogeneous",
+      "authors": [
+        "Xurui Song",
+        "Weishi Wang",
+        "Zhongqi Yue",
+        "Kuluhan Binici",
+        "Tao Bai",
+        "Hongxin Shao",
+        "Daniel Dahlmeier",
+        "Jun Luo"
+      ],
+      "abstract": "Whether attention weights faithfully reflect model reasoning has been actively debated in NLP, yet this question remains largely unexplored for the visual modality in Vision-Language Models (VLMs). We address this gap through causal perturbation analysis on current VLMs, evaluating both the comprehensiveness and sufficiency gap of attention-ranked visual tokens. Our analysis reveals that visual attention faithfulness is heterogeneous, manifesting in three distinct processing modes: Faithful-Sufficient, where top-$k$ attention tokens are both necessary and sufficient for prediction; Faithful-Distributed, where they are necessary but broader visual context remains required; and Non-Focal, where no localized attention region is individually necessary while visual information remains an essential trigger for prediction. Furthermore, human-annotated ground-truth regions satisfy comprehensiveness in only $\\sim 60$% of cases compared with model attention rankings, revealing systematic divergence between model visual reliance and human intuition. We demonstrate these patterns across both general VQA on VQAv2 and document tasks on VRDU and ChartQA, showing that visual attention faithfulness varies systematically with processing demands and model architectures rather than being uniformly faithful or unfaithful.",
+      "url": "https://arxiv.org/abs/2609.00830",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8873
+    },
+    {
+      "id": "2609.00982",
+      "title": "Disclosure-Gated User Simulation for Companion-Agent Evaluation",
+      "authors": [
+        "Yao Liu",
+        "Yu He"
+      ],
+      "abstract": "Using a large language model to play the user is now standard in scalable evaluation. It has a repeatedly diagnosed failure: the simulated user is excessively cooperative, so a system under test can score by the sheer number of questions it asks rather than by making the user willing to speak. We answer with a disclosure gate conditioning information release on the companion agent's behaviour: its state is a ladder of five ordered gates, merged onto three observable depth layers. We specify, ablate, and audit it, and train a user simulator against that specification. Gating behaviour is learned from the training corpus's synthetic branch, while the real branch supplies how people speak and react; after training, the simulator need not be told at runtime which gate each item sits behind. The gate is a load-bearing component of the environment: on the English corpus of a published companion-agent benchmark (CompanionBench), once training no longer states per example which gate each item sits behind, the largest rank displacement across 12 systems under test exceeds the noise band set by re-running that environment under a new seed, while per-system scores show no detectable change. We state two acceptance criteria: a ranking must be order-preserving, and absolute scores must be scale-stable. Of the candidates we examine, only one passes both -- the simulator we release -- and its leaderboard correlates at 0.993 with the benchmark's original simulator. By contrast, prompting a frontier model as the simulator barely moves the ranking while shifting every score upward -- a shift invisible to anyone checking the ranking alone. The environment we specify is the one that benchmark already used. That publication describes the mechanism in about four hundred words, and we supply what it lacked: specification, ablations, human studies, negative controls, and downstream sensitivity analysis.",
+      "url": "https://arxiv.org/abs/2609.00982",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8867
+    },
+    {
+      "id": "2609.01117",
+      "title": "Latent Recurrent Thoughts: Recurrent Refinement of Proposed Latents for Reasoning with Frozen LLMs",
+      "authors": [
+        "Zhaoliang Chen",
+        "Jie Fu"
+      ],
+      "abstract": "Chain-of-thought reasoning unfolds in discrete token space: each step is committed as text, errors propagate, and eliciting good traces presupposes traces to imitate. Reasoning instead in a model's continuous representation space - where intermediate states are vectors rather than words - sidesteps these constraints, but leaves open how those latent states should be computed. We approach this along two axes. First, we keep a large language model (LLM) frozen and use it for what it is already good at - modeling and decoding sequences - while a small auxiliary network supplies continuous latent thoughts as input. Second, we produce those latents by recurrence: a tiny recurrent reasoner refines them over many steps, decoupling the depth of computation from the size of the model, so that the latents are a product of iterative processing rather than a single forward pass. We instantiate this as Latent Recurrent Thoughts (LRT): a task-dedicated proposer supplies base latents, a recurrent reasoner refines them through bounded residual corrections, and the frozen LLM decodes the answer. On symbolic reasoning with answer supervision but no reasoning traces (Countdown-4, Sudoku) and on natural-language reasoning (HumanEval, MBPP, StrategyQA), LRT substantially outperforms prior frozen-decoder continuous-space reasoning methods under an identical decoder, prompt, data, and training budget, and outperforms non-thinking-mode chain-of-thought prompting on the same backbone at a small fraction of its inference compute.",
+      "url": "https://arxiv.org/abs/2609.01117",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8865
+    },
+    {
+      "id": "2609.00967",
+      "title": "CoBRA: Learning Tool-Use Boundaries via Counterfactual Margins",
+      "authors": [
+        "Wenhao Zou",
+        "Xianglong Liu",
+        "Wendong Bi",
+        "Hanjie Wang",
+        "Simin Zhao",
+        "Gong Zhi"
+      ],
+      "abstract": "As large language models increasingly act through external tools, deciding when to call a tool has become a central problem alongside deciding how to use it. Unnecessary tool calls introduce latency, cost, retrieval noise, and error propagation, while missed calls hurt knowledge-intensive queries or questions requiring up-to-date evidence. Existing methods typically trigger tools from absolute query or generation signals, such as difficulty, confidence, or final task reward, and therefore lack an explicit estimate of the instance-level marginal benefit of tool use. We propose CoBRA, a counterfactual boundary-learning framework for tool-augmented language models. CoBRA first constructs internal and external experts from the same base model, collects paired trajectories, and estimates the reward margin between answering with and without tools. This margin partitions data into internal-favored, external-favored, and ambiguous cases. CoBRA then uses clear-margin samples for Boundary-Aware Cold-Start SFT, followed by MARS-RL with reference-split rollouts and counterfactual marginal advantages to optimize boundary decisions. Experiments with retrieval as the main tool on Qwen3-4B show that CoBRA improves tool-use efficiency and boundary-sensitive answer accuracy while maintaining strong performance on tool-dependent out-of-distribution questions.",
+      "url": "https://arxiv.org/abs/2609.00967",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8864
+    },
+    {
+      "id": "2609.00949",
+      "title": "Calibration is the Bottleneck: An Action-Class Diagnostic of Multi-Turn Tool-Calling",
+      "authors": [
+        "Kangjia Zhao",
+        "Jiajun Li",
+        "Haozhan Shen",
+        "Wei Chow",
+        "Linfeng Li",
+        "Hang Song",
+        "Lingdong Kong",
+        "Chen Zhi",
+        "Tiancheng Zhao",
+        "Songhua Liu",
+        "Jianwei Yin"
+      ],
+      "abstract": "Multi-turn tool calling is a core evaluation scenario for large language model (LLM) agents. On public tool-calling benchmarks, open-weight models now approach or even surpass closed-source frontier models in aggregate accuracy. However, this metric averages over many different multi-turn situations and obscures whether progress is balanced across them. We propose an action-class-oriented diagnostic framework that decomposes multi-turn failures into two orthogonal modes: action-class miscalibration and action-execution failure. The framework operates over a four-class action space (TOOL_CALL/ASK/REFUSE/CONFIRM) and introduces a self-revealing upper bound Acc <= GAR (Gold Action Recall); the two modes show up as bound violation (Acc > GAR, exposing state-grader masking of miscalibration) and large bound slack (GAR >> Acc, localizing execution failure within TOOL_CALL). We validate it on a panel of tool-calling models across multiple multi-turn benchmarks. Across our panel, the diagnostic reveals action-class miscalibration as a substantial failure mode the state grader cannot see. This gap inflates standing for heavily tool-trained families, which our diagnostic separates from families with context-appropriate action choice. Calibration is reshapable through context-only perturbations, but the reshape is heterogeneous: a single perturbation moves accuracy in opposite directions across families (up to +11.5 vs -21.0 pp on the same scenario), and its effect further depends on the perturbation mechanism. We argue that multi-turn tool-calling evaluations should supplement aggregate accuracy with action-class diagnostics that expose what the model actually does in each scenario.",
+      "url": "https://arxiv.org/abs/2609.00949",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8856
+    },
+    {
+      "id": "2609.01106",
+      "title": "Hints Help But Do They Teach? Evaluating Skills Transfer in Code Generation",
+      "authors": [
+        "Will Badr"
+      ],
+      "abstract": "When a hint turns a failing generated program into a passing one, does it provide missing information or merely steer the model toward a solution it could already produce? We test these hypotheses on HumanEval+ and MBPP+ using executable evaluation. For Qwen2.5-3B-Instruct, adaptive relevant hints rescue 36 of 79 selected failures; an unrelated hint rescues 19, while eight unhinted samples solve 46 and recover 31 of the 36 relevant-hint rescues. Phi-3.5-mini shows the same pattern: relevant hints rescue 42 of 101 failures, an unrelated hint rescues 17, and unhinted sampling solves 57, including 36 of the 42 relevant-hint rescues. Because the hint conditions use different attempt budgets, these comparisons do not isolate a purely semantic effect. Mechanistic tests on Qwen identify a stable activation direction shared by relevant and unrelated hints. Persistently adding this direction yields 14 rescues and 18 regressions, with no detectable net accuracy gain; learned low-rank interventions have a positive but imprecise estimated effect. Full textual specifications solve 22 of 24 context-defined problems, versus 5-11 for tested virtual-KV prefixes. Post-generation hidden-state probes transfer across benchmarks, with pooled AUROC 0.806 and 0.780, but their top-one selection advantage over token confidence is statistically unresolved. Overall, relevant hints can rescue failures, but most rescued solutions are already reachable through ordinary sampling, and the internal interventions tested here do not establish task-general capability transfer.",
+      "url": "https://arxiv.org/abs/2609.01106",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8855
+    },
+    {
+      "id": "2609.01466",
+      "title": "Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers",
+      "authors": [
+        "Egor Pakhomov",
+        "Erik Nijkamp"
+      ],
+      "abstract": "A long-horizon agent's trace outgrows both of its consumers: the human observer monitoring the run, and the agent itself, whose bounded context the trace must be folded back into. We present a live trace model, an append-only event ledger folded incrementally into typed run state and compiled into per-consumer views, and evaluate it for both consumers against deterministic ground truth. For the observer side, evaluated with an LLM reader as proxy, the compiled view answers monitoring questions using approximately 14x and 15x fewer input tokens (by reader) and at 5-7x lower cost than a budget-capped single-call reading of the raw trace, with higher accuracy (0.85-0.87 versus 0.48). Because the questions were co-designed with the view schema, we treat the token and cost reduction, conditional on schema coverage, as the transferable result. For the agent, on 120-link sequential-dependency tasks, mechanisms that maintain the task's running statistic in per-step state succeed where full-context prompting fails (30/30 versus 8/30 under a clean protocol, n=30, labeled descriptive owing to benchmark-system co-development); a prompt-level scratchpad matches the fold's accuracy at lower cost, and a two-arm decomposition attributes the fold's accuracy to its deterministic aggregate and its cost advantage to its compactness. The fold's remaining value over cheaper alternatives is deterministic auditability and serving the observer from the same state. We derive eleven candidate requirements for trace folding from observed failures and delimit them with an order-sensitive task family on which the fold ceases to help. Code, benchmarks, a regenerable synthetic corpus, and all workbench traces are released.",
+      "url": "https://arxiv.org/abs/2609.01466",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8848
+    },
+    {
+      "id": "2609.01274",
+      "title": "From Base Rollouts to RL Reasoning: A Budgeted Search Perspective",
+      "authors": [
+        "Wenhe Sun",
+        "Cunxiang Wang",
+        "Zijun Yao",
+        "Yixin Cao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves language-model reasoning, but how these gains relate to inference-time decoding and search remains unclear. Does RL create reasoning the base model lacks, or shift the rollout distribution toward trajectories it can already reach but rarely samples? We study this behaviorally with a Unified Decoding Framework (UDF), which expresses token-level sampling, beam-like search, tree search, and sequence-level resampling as executable policies over a shared budgeted operating space, scored post hoc with pass@$k$, self-consistency, best-of-$N$, and first-finish success. Using paired Base/RL checkpoints from SimpleRL-Zoo, we ask whether an RL default-policy curve can be approximated by a structured path of Base operating points. On Math500, AIME, GPQA, and IFEval, the pass@$k$ recovery path follows a Budgeted Operating-Point Transition Rule (BOPTR), $N_{\\mathrm{Base}} \\approx αN_{\\mathrm{RL}}^β$, with benchmark-conditioned exponents. On Qwen2.5-7B, BOPTR gives the lowest transfer error among the non-oracle rules we test, 3.41 pp (95% CI [2.32, 5.53]); a three-seed replication gives 3.07 $\\pm$ 0.39 pp. The rule extends to ten models across four families (3.28 to 4.87 pp on checkpoints added after fitting), to four benchmarks it was never fitted on (5.03 pp vs. 4.44 pp in fit), and holds without an RL checkpoint for the target model (4.19 pp) or without RL supervision of any kind (5.08 pp). These results support a qualified internalized-search reading: under the recipe we test, much of the measured RL gain corresponds to a change in sampling efficiency toward operating points the base model can already reach under search. We treat the scaling patterns as descriptive of this recipe and cohort, report where they break down, and use UDF and BOPTR as behavioral diagnostics rather than evidence of parameter-level equivalence.",
+      "url": "https://arxiv.org/abs/2609.01274",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8836
+    },
+    {
+      "id": "2609.00746",
+      "title": "Text Capability Loss in Vision-Language Adaptation: An Attention-Sink Diagnosis",
+      "authors": [
+        "Minsik Choi",
+        "Geewook Kim",
+        "Young Geun Kim"
+      ],
+      "abstract": "Fine-tuning a pretrained LLM into a vision-language model (VLM) can erode the backbone's text capability, with the damage concentrated on tasks that require following exact output rules, such as instruction following, chain-of-thought reasoning graded on a strictly parsed final answer, and similar evaluations with strict graders. We trace this gap to attention-sink corruption: VL fine-tuning perturbs the early sink position that anchors a large fraction of attention probability, and how well the base LLM preserves its sink tracks how much of the affected capability survives adaptation. Building on this view, we introduce Sink Strength, a single scalar computed on the base LLM in a few seconds on a single GPU that predicts post-VL degradation without any VL training. It consistently tracks relative degradation across the six VLM-LLM pairs and multiple format-sensitive tasks. Complementing this diagnostic, we find that post-pretraining QK-RMSNorm injection fails to reproduce the protection of native QK-RMSNorm, while several off-the-shelf weight-merging settings fail to recover the lost capability after VL training. These negative results underscore the value of screening backbones with Sink Strength before VL training and narrow the intervention space toward head-selective training-time protection.",
+      "url": "https://arxiv.org/abs/2609.00746",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-01",
+      "score": 0.8829
+    },
+    {
+      "id": "2609.00714",
+      "title": "ChatDev 2.0: A No-Code Multi-Agent Platform for Developing Everything",
+      "authors": [
+        "Yufan Dang",
+        "Shu Yao",
+        "Bowen Lai",
+        "Chenting Xu",
+        "Ruijie Shi",
+        "Wai-Shing Leung",
+        "Huatao Li",
+        "Chen Qian",
+        "Zhiyuan Liu"
+      ],
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) have shown strong potential for solving complex tasks, yet their development forces a tradeoff: code frameworks are expressive but engineering-intensive, while no-code builders simplify authoring but constrain agent interactions to author-defined workflows. We present ChatDev 2.0: DevAll (hereafter DevAll), a no-code platform for building, executing, and inspecting heterogeneous MAS that delivers both high expressiveness and ease of use. In terms of expressiveness, DevAll pairs a declarative executable graph abstraction with a cycle-aware execution engine, so that heterogeneous agents and dynamic and cyclic interactions can be represented and executed within a single framework. For ease of use, an integrated visual interface lets users author, run, monitor, and inspect MAS, including human-in-the-loop steps, entirely without writing code. Experiments demonstrate that DevAll reproduces state-of-the-art MAS across three representative tasks at competitive performance and without task-specific orchestration code, highlighting its effectiveness as a general-purpose platform for LLM-based MAS. DevAll is available at https://github.com/OpenBMB/ChatDev.",
+      "url": "https://arxiv.org/abs/2609.00714",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "submitted": "2026-09-01",
+      "github_url": "https://github.com/OpenBMB/ChatDev.",
+      "score": 0.8828
+    },
+    {
+      "id": "2609.01601",
+      "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+      "authors": [
+        "Kefeng Duan",
+        "Dewu Zheng",
+        "Yanlin Wang",
+        "Terry Yue Zhuo",
+        "Mingwei Liu",
+        "Jianxing Yu",
+        "Jiachi Chen",
+        "Ensheng Shi",
+        "Xilin Liu",
+        "Yuchi Ma",
+        "Zibin Zheng"
+      ],
+      "abstract": "The repository-level code generation task requires synthesizing code that satisfies task requirements while remaining consistent with the target repository context. Since real-world repositories often exceed the input length limits of LLMs, existing approaches commonly adopt retrieval-augmented generation (RAG) to provide repository-specific context. Despite improving repository-context retrieval, existing methods typically provide context as task-level support, without explicitly identifying the critical tokens that require fine-grained repository context during generation. During the autoregressive generation process of LLMs, errors often concentrate at a small number of decisive positions: once such tokens are generated incorrectly, subsequent code may follow an incorrect semantic path and eventually lead to functional failure. We refer to these positions as \"critical tokens\". In this paper, we propose ACToR, an adaptive critical token-aware retrieval framework for repository-level code generation. ACToR identifies critical tokens during generation and triggers targeted retrieval on demand to provide repository context at these decisive positions. In addition, we design a position-aware weighting method for dense retrievers to prioritize context that is more informative for generation. We evaluate ACToR on two representative repository-level benchmarks, RepoExec and CoderEval. Experimental results show that ACToR consistently outperforms state-of-the-art methods, achieving relative improvements of 8.4% on RepoExec and 15.4% on CoderEval. Beyond performance gains, we systematically quantify the impact of critical tokens, revealing their central role in major generation failures and highlighting the necessity of targeted retrieval strategies. We provide the code and data at https://github.com/DeepSoftwareAnalytics/ACToR.",
+      "url": "https://arxiv.org/abs/2609.01601",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-01",
+      "github_url": "https://github.com/DeepSoftwareAnalytics/ACToR.",
+      "score": 0.8826
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
