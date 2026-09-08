@@ -1,0 +1,373 @@
+{
+  "date": "2026-09-08",
+  "collected_at": "2026-09-08T13:04:27.134477+09:00",
+  "papers": [
+    {
+      "id": "2609.04611",
+      "title": "$τ^τ$-Bench: An Environment for End-To-End, Realistic Agent Construction",
+      "authors": [
+        "Quan Shi",
+        "Keshav Dhandhania",
+        "Karthik Narasimhan",
+        "Victor Barres"
+      ],
+      "abstract": "LLM agents are rapidly becoming production software, deployed to handle customer service, adjudicate disputes, and operate internal systems. Notably, the work of building them is increasingly handed to coding agents, yet existing benchmarks say little about whether an AI system can deliver one under the conditions of a real client engagement. We introduce $τ^τ$-bench (pronounced hyper-tau-bench), a benchmark that makes agent construction the task. A developer agent is given the records a business actually keeps, a client who holds requirements, a production API that operations must run through, a codebase to inherit, and limits on serving cost and models: the same starting point a real engagement provides. From these it must deliver a complete customer-service agent, scored by deploying that agent against held-out simulated users. Across 53 tasks spanning four domains, the strongest configuration, Claude Opus 5 under Claude Code, passes just 23.9% of evaluation simulations. Meanwhile, an expert-authored reference ceiling scores 82.2%. The failures mirror ones human agent developers see: models issue shallow queries in place of deep comprehension of the records, communicate almost nothing to the client, and experiment too little with agent architecture and serving spend, shipping the first design that runs. We aim for $τ^τ$-bench to turn the work of cooperative agent building into a measurable target for coding agents.",
+      "url": "https://arxiv.org/abs/2609.04611",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8823
+    },
+    {
+      "id": "2609.05364",
+      "title": "Design Docs Are All You Need: An AI-native Machine-Learning Performance Tool",
+      "authors": [
+        "Samuel Kushnir",
+        "Kimia Noorbakhsh",
+        "Kavya Sreedhar",
+        "Liqun Cheng",
+        "Ming Liu",
+        "Parthasarathy Ranganathan",
+        "Mohammad Alizadeh",
+        "Fred Kjolstad",
+        "Suvinay Subramanian"
+      ],
+      "abstract": "Machine-learning performance modeling is a uniquely hostile terrain for long-lived software: the assumptions baked into today's abstractions are invalidated by tomorrow's models and systems, forcing perpetual refactoring of performance-modeling frameworks. Meanwhile, AI coding agents have become fast and capable enough that regenerating an entire library is cheaper than paying down the tech debt of incrementally patching it. We describe SMART, a rigorous symbolic performance-modeling library for ML systems whose main branch contains almost no code: the repository is a DAG of self-contained natural-language design docs, coding sub-agents regenerate the implementation from only the docs on new version updates, and every human change is a natural-language edit to a doc--self-documenting by construction. Two ingredients make regeneration reliable: (i) a design-doc style built around step-by-step worked examples that act as in-context demonstrations for the generating agents, and (ii) a minimal, recursively defined operator IR with symbolic (SymPy) cost expressions, a fast analytical roll-up mode for large sweeps, and a slow modulo-scheduling mode for fine-grained schedule studies. Regenerated implementations reproduce hand-audited reference models--including DeepSeek-V3 serving on a TPU pod slice--to round-off precision, suggesting that design docs--not code--can be the durable artifact for ML-systems co-design tools.",
+      "url": "https://arxiv.org/abs/2609.05364",
+      "categories": [
+        "cs.PL",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8821
+    },
+    {
+      "id": "2609.05152",
+      "title": "Compression Beyond the Uncompressed: A Two-Stage Training Recipe for Soft Context Compression in RAG",
+      "authors": [
+        "Shuyu Guo",
+        "Shuo Zhang",
+        "Zhaochun Ren"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) enhances language models with external knowledge, but the lengthy retrieved context inflates the input and degrades inference efficiency. Soft context compression encodes each document into a substantially shorter embedding sequence. However, most existing approaches are trained by distilling outputs from uncompressed RAG systems, inherently limiting their performance relative to the original model. To address this limitation, we propose DEX-Comp, a two-stage training recipe: Pure Distillation warm-starts the compression model on the uncompressed RAG's correct responses only, and Hard Exploration then runs reinforcement learning solely on queries the uncompressed RAG fails, forcing the model to explore computation patterns better suited to compressed representations. On five open-domain QA benchmarks at retrieval depths from top-5 to top-30, DEX-Comp compresses retrieved contexts by $16\\times$ and accelerates inference by $4\\times$--$24\\times$, while achieving performance comparable to or exceeding the uncompressed RAG baseline across retrieval depths. Ablations and evaluations across diverse datasets and backbones further confirm the contribution of each stage and the generalization of our approach.",
+      "url": "https://arxiv.org/abs/2609.05152",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.882
+    },
+    {
+      "id": "2609.04565",
+      "title": "Extremely Sparse Supervision Incentivizes Reasoning Ability",
+      "authors": [
+        "Zhishuai Liu",
+        "Xingzi Xu",
+        "Mehmet Saygin Seyfioglu",
+        "Pan Xu",
+        "Karim Bouyarmane"
+      ],
+      "abstract": "Large language models demonstrate increasingly strong reasoning capabilities through effective post-training. Yet, prevailing post-training methods optimize over massive numbers of tokens, implicitly assuming that effective learning must be token-intensive. We revisit this assumption in the on-policy distillation (OPD) setting, which naturally admits dense teacher supervision at every generated token. Using the Qwen3 family, we discover a counter-intuitive phenomenon: reasoning can be effectively incentivized by an extremely small fraction of generated tokens--as few as one or two tokens per reasoning trajectory, corresponding to only 0.05% of all tokens. Surprisingly, this sparse supervision in most cases matches or surpasses full-token training in improving reasoning ability, despite excluding the vast majority of generated tokens from the training objective. This phenomenon is consistently observed across nine teacher--student configurations spanning different model scales on mathematical reasoning tasks, and is further validated on coding reasoning, Llama models and Proximal Policy Optimization (PPO)-based reinforcement learning with verifiable reward (RLVR). Interestingly, such extremely sparse supervision may be closer to the natural learning process: rather than correcting every step word by word, one reflects on a few critical reasoning steps, updates prior understanding, and continues the trial-and-error, avoiding micro-level corrections while remaining remarkably effective. Overall, our results challenge the assumption that effective post-training must be token-intensive and point to a new direction for understanding and designing more efficient post-training algorithms.",
+      "url": "https://arxiv.org/abs/2609.04565",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-03",
+      "score": 0.8813
+    },
+    {
+      "id": "2609.04706",
+      "title": "FinalityBench: An Effect-Level Benchmark for Agent Decisions Under Delayed and Conflicting Financial Finality",
+      "authors": [
+        "Abhishek Sharma"
+      ],
+      "abstract": "A merchant's payment processor, ledger, ERP and bank feed are updated by messages that get delayed, duplicated, dropped and reordered, so for minutes at a time the four hold contradictory beliefs about the same order. An agent resolving the exception must decide whether to ship goods, re-submit a capture, refund or wait, knowing some of those cannot be undone. We present FinalityBench, an executable benchmark for that decision. It keeps a hidden canonical event log and derives each system's view from a separately faulted delivery stream, so disagreement follows from specified fault semantics rather than being authored. Grading is on executed monetary effects: an episode is scored by the merchant's terminal economic position, relative to a privileged reference told when the pending capture resolves. The corpus of 321 tasks includes 45 twin pairs (90 tasks): tasks whose four system views are identical at the decision instant, whose authoritative probes both return unknown, and whose eventual correct dispositions differ. That snapshot indistinguishability is checked under every evaluation seed rather than assumed; equivalence over all interaction traces is not claimed. Over 14,445 graded episodes from nine programmatic policies, ranking by single-task accuracy and by paired loss disagree in 7 places: a ship-on-first-sign policy is second-best by accuracy at 65.7% and worst in the suite by paired loss, because it cannot tell the two members apart. A runtime gating irreversible actions on an authoritative finality probe reaches 85.4% and, unlike every polling policy, loses nothing to pass^5; its residual loss is almost entirely one archetype, which prices finality information directly. Language models reach the same exact rate as the hand-written gate on a stratified subset, lose about twice as much money, and discover the finality-gating strategy without being told it.",
+      "url": "https://arxiv.org/abs/2609.04706",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8811
+    },
+    {
+      "id": "2609.04531",
+      "title": "Distilled Continuous Diffusion Language Models Can Write Code in Few Steps---or One",
+      "authors": [
+        "Fred Zhangzhi Peng",
+        "Kaiwen Zheng",
+        "Anru R. Zhang"
+      ],
+      "abstract": "Language generation is almost universally treated as a sequential process: autoregressive models emit one token at a time, while diffusion language models replace token-level seriality with a long trajectory of iterative refinement. In this work, we introduce PlaidQ, a 0.7B continuous diffusion language model for code generation, and show that its trajectory can be aggressively distilled into only a few denoising steps---or even one, enabling efficient code generation. PlaidQ repurposes a pretrained autoregressive model as a bidirectional denoiser over continuous token embeddings. We distill PlaidQ with distribution matching for few-step generation and paired-trajectory supervision for one-step generation. At matched model scale, PlaidQ is competitive with discrete diffusion language models on code generation. Distillation then shifts the quality--compute frontier: a 16-step student reaches 31.78 and 40.49 pass@10 on HumanEval and MBPP+, surpassing the same PlaidQ teacher sampled for 512 steps. At the extreme, paired-trajectory distillation achieves 7.07 pass@1 on HumanEval with a single denoising step, producing functionally correct programs. Together, these results establish continuous diffusion as a viable path to few-step and one-step code generation. Broadly, continuous diffusion is not merely another representation for language: it provides an interface through which language models can inherit the acceleration and distillation machinery of continuous diffusion modeling. Training and inference code and model checkpoints are available at https://github.com/pengzhangzhi/plaidq.",
+      "url": "https://arxiv.org/abs/2609.04531",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-03",
+      "github_url": "https://github.com/pengzhangzhi/plaidq.",
+      "score": 0.8808
+    },
+    {
+      "id": "2609.05141",
+      "title": "SciDocBench: A Workflow-Centered Benchmark and Data Pipeline for Scientific Document Understanding",
+      "authors": [
+        "Shenxi Wu",
+        "Yuhong Liu",
+        "Haosong Zhang",
+        "Tongjin Zou",
+        "Yanxun Zhang",
+        "Gaochang Chen",
+        "Dun Liang",
+        "Jiaqi Wang",
+        "Zhecan James Wang",
+        "Yuhang Zang",
+        "Dahua Lin"
+      ],
+      "abstract": "Scientific papers require models to reason jointly over text, equations, figures, tables, code, and datasets while preserving the provenance of supporting evidence. Existing benchmarks typically evaluate these capabilities in isolation, leaving unclear whether multimodal models can support realistic scientific-reading workflows. We introduce SciDocBench, a workflow-centered benchmark for scientific document understanding. It contains 124 expert-authored and difficulty-screened questions organized into seven research-assistant capability groups and 19 subtasks across five scientific domains. Each question is instantiated under four matched conditions combining English or Chinese questions with all-images-first or interleaved document representations, yielding 496 evaluation instances for controlled analysis. The strongest evaluated system achieves only 62.6/100, with pronounced weaknesses in document perception, evidence grounding, verification, and cross-document reasoning. To translate these diagnostics into scalable training signals, we introduce SciDocIR, a typed evidence-graph representation that preserves scientific document objects, layout and cross-reference relations, and provenance. Building on SciDocIR, we construct SciDocDataset, comprising approximately 15K supervised fine-tuning samples and 8K reinforcement-learning samples across 14 verifiable subtasks. Together, SciDocBench, SciDocIR, and SciDocDataset form an evaluation-to-training framework for diagnosing and improving scientific-document assistants. The project page is available at https://github.com/InternLM/SciDocBench.",
+      "url": "https://arxiv.org/abs/2609.05141",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "github_url": "https://github.com/InternLM/SciDocBench.",
+      "score": 0.8807
+    },
+    {
+      "id": "2609.04778",
+      "title": "Diffusion Language Models for Mobile Edge Agentic AI: Foundations, Applications, and Challenges",
+      "authors": [
+        "Chenqi Li",
+        "Minghui Min",
+        "Dusit Niyato",
+        "Wei Ni"
+      ],
+      "abstract": "Diffusion language models (DLMs) offer a non-autoregressive alternative for mobile edge agentic artificial intelligence (AI) by refining tokens through iterative denoising rather than left-to-right decoding. Compared with autoregressive Transformer-based large language models (LLMs), DLMs can update multiple uncertain tokens in parallel and exploit bidirectional context throughout the generation process, enabling more flexible quality-latency trade-offs beyond fixed sequential decoding. These properties are particularly attractive for edge agents, where partial refinement, early exit, and constraint-guided correction can reduce response delay and communication overhead while improving robustness under noisy, incomplete, or dynamic contexts. This survey reviews DLM foundations and analyzes their suitability for edge settings under latency, memory, energy, bandwidth, privacy, and reliability constraints. We cover resource-efficient architectures, training and inference acceleration, compression, edge/cloud deployment, communication-aware serving, Internet of Things (IoT)/wireless applications, and evaluation of DLM-based agents. We further discuss open issues in long-context state management, split inference, trustworthy execution, multimodal grounding, and reproducible benchmarking. The goal is to connect DLM modeling properties, including bidirectionality, parallel refinement, controllability, and quality-latency elasticity, with system-level requirements of future mobile edge intelligence.",
+      "url": "https://arxiv.org/abs/2609.04778",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8805
+    },
+    {
+      "id": "2609.04748",
+      "title": "Same Request, Different Answer: Quantization Amplifies Cache-Induced Divergence in LLM Serving",
+      "authors": [
+        "Aditi Patodiya"
+      ],
+      "abstract": "Prefix caching, in which a serving engine reuses the key and value tensors of a shared prompt prefix across requests, is enabled by default in the major open-source stacks and treated as a transparent optimization. We measure what it costs in reproducibility, and find that the cost rises sharply with weight quantization. Holding the model, decoding parameters, seed, and request order fixed, and issuing every request serially at batch size one, we ran an eighty-episode multi-turn agentic tool-use workload with caching enabled and disabled across two engines and four weight formats. Enabling the cache changed the agent's trajectory on 36.2 percent of episodes at 16-bit precision and on 75.0 percent at four-bit, a gradient that survives re-measurement under a controlled cache configuration. With caching disabled, repeated execution was bit-identical in every configuration, 0 of 800 episodes, which bounds other sources of nondeterminism at 0.5 percent. Repeated cache-enabled runs did diverge, and three experiments locate the cause: a single server-level prompt-cache setting moves run-to-run divergence by 37.5 percentage points, execution order acts only while that setting is active, and restoring cache state makes the cached and recompute paths each reproduce on 40 of 40 items while still differing from each other on 14. Cached serving is deterministic given cache state, and irreproducible in practice because that state is absent from the request and never reset by default. A single-turn bridge shows the divergence reaching task outcomes without shifting aggregate accuracy. We release the harness, logs, and analysis pipeline.",
+      "url": "https://arxiv.org/abs/2609.04748",
+      "categories": [
+        "cs.SE",
+        "cs.DC",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8803
+    },
+    {
+      "id": "2609.04641",
+      "title": "A Cost-Aware Agentic Architecture for NL-to-SQL over Nested Enterprise Schemas, with a New Benchmark",
+      "authors": [
+        "Yoga Sri Varshan Varadharajan",
+        "Ajay Yadav",
+        "Ritesh Goru",
+        "Prateek Chaudhury",
+        "Constantine Caramanis",
+        "Prateek Jain",
+        "Divyateja Pasupuleti",
+        "Sunil Kumar Pandey"
+      ],
+      "abstract": "Natural-language-to-SQL systems have ad- vanced rapidly on academic benchmarks, yet production enterprise schemas exhibit graph- like, semi-structured, deeply nested structure that current benchmarks do not measure. We make two complementary contributions. First, we introduce the DevRev NL2SQL bench- mark: 900 execution-verified queries with nested-type and link-graph structure, accom- panied by the Semantic Depth Score (SDS), a schema-agnostic rubric for analytical reasoning depth. Second, we present a cost-aware single- generation agentic architecture whose schema- selection, metadata-retrieval, and error-repair components are designed for the requirements this regime imposes. On the DevRev NL2SQL benchmark the system attains 91.7% answer correctness, a margin of 54.6 percentage points over the next-best baseline; on the Spider 2.0 Snowflake public dataset, it is competitive with leading systems at a single-generation operating point.",
+      "url": "https://arxiv.org/abs/2609.04641",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8802
+    },
+    {
+      "id": "2609.04697",
+      "title": "SQL-Zero: Self-Evolving Text-to-SQL",
+      "authors": [
+        "Daniel Machado Pedrozo",
+        "Julia Soares Dollis",
+        "Bryan Lincoln Marques de Oliveira",
+        "Vinicius Alboneti Aguiar",
+        "Sávio Salvarino Teles de Oliveira",
+        "Telma Woerle de Lima Soares"
+      ],
+      "abstract": "Training a competitive Text-to-SQL agent usually depends on human-annotated natural-language/SQL pairs, which are expensive, domain-specific, and a bottleneck for scaling to new databases. We show it is possible to train a competitive solver with zero annotated pairs. We introduce SQL-Zero, a proposer-solver self-play in which a challenger and a solver start from the same base LLM and the only ground truth is execution against the database itself. The challenger generates SQL pairs calibrated to the solver's current difficulty (targeting \"hard but solvable\"), and both roles are updated with GRPO in alternating turns, with a template-level repetition penalty on the challenger to prevent diversity collapse. Training on BIRD databases with no labels, self-play improves over the zero-shot base on BIRD dev by 6.6 points at 3B and 7.3 points at 7B. It also scores higher than a matched control trained under the same recipe on human BIRD gold over the same databases, although an exact paired test does not resolve that margin. Transfer depends on scale: at 3B every iteration outperforms the base on unseen Spider databases and under lexical perturbation (Spider-Syn), where it also degrades less than the matched BIRD-gold control, whereas at 7B only the first iteration preserves transfer.",
+      "url": "https://arxiv.org/abs/2609.04697",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.88
+    },
+    {
+      "id": "2609.04482",
+      "title": "Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal",
+      "authors": [
+        "Alejo López-Ávila",
+        "Iker García-Ferrero",
+        "Jezabel Garcia",
+        "Antonio Tiene",
+        "Román Orús"
+      ],
+      "abstract": "Safety alignment is usually posed as a topic-level question: is this subject harmful? Deployments ask a narrower one. A civics tutor and a public-sector assistant may share a base model yet need different boundaries inside the same topic, refusing targeted political manipulation while still answering factual questions about the same election. We formulate this as narrow-boundary safety and introduce an offline self-generated framework combining controlled topic generation, coverage repair, in-distribution compensation data, and harmful-benign pairs for training and evaluation. Single-shot generation leaves 19.88% of prompts without accepted refusal traces, whereas escalating retries leave 0.20%. On political persuasion with Qwen3-8B, training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% and reduces the mean unsafe-response rate across three broader harmfulness benchmarks from 26.26% to 0.14%, but increases XSTest over-refusal from 2.00% to 74.00%. In a separate matched comparison, replacing external responses with verified target-model responses reduces over-refusal from 15.20% to 5.20%. Boundary-pair data reduces comply-side over-refusal on held-out pairs from 32.94% to 4.16%, while harmful-side refusal decreases only from 91.88% to 87.72%. These results show that data composition controls the safety and usability trade-off, and that safety alignment should be evaluated on both sides of the intended refusal boundary.",
+      "url": "https://arxiv.org/abs/2609.04482",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-03",
+      "score": 0.8798
+    },
+    {
+      "id": "2609.04871",
+      "title": "AutoLR: Automating the Path from Research to Launch Review in Industrial Recommender Systems",
+      "authors": [
+        "Qi Zhang",
+        "Yanlin Chen",
+        "Wenchao Xiao"
+      ],
+      "abstract": "Improving an industrial recommender is an iterative research-and-engineering process rather than a direct path from idea to deployment. In \\textbf{DASHEN, NetEase's gaming-community app}, algorithm engineers typically identify promising directions from research papers, technical reports, and prior production experiments; reproduce or adapt the underlying methods; implement them in the production codebase; and evaluate the resulting models through training and offline experiments. Promising candidates are then advanced to online A/B tests, and those demonstrating robust gains are submitted to Launch Review---the internal gate for full-traffic rollout. Large language models (LLMs) can assist with individual stages of this workflow, but the overall process remains human-dependent without a harness that can reliably coordinate them across long-running, often multi-day experimental cycles. We present \\textbf{AutoLR}, initially built as \\textbf{Auto Launch Review} and later extended upstream into an autonomous research-to-launch harness. AutoLR combines three system mechanisms: a \\textbf{multi-expert council} that debates and adversarially reviews proposals; a \\textbf{deterministic evidence-weighted exploration--exploitation selector} that allocates a limited trial budget across candidate directions and uses Council reranking; and a layered knowledge system that combines external research, production-system knowledge, and DASHEN-specific domain knowledge---such as game communities, player characteristics, and content-interaction patterns---with posterior evidence from configurations, patches, logs, failures, and offline outcomes. LLM agents perform semantic reasoning and code generation, while deterministic controllers retain authority over execution, metric extraction, guardrails, and persistent state transitions.",
+      "url": "https://arxiv.org/abs/2609.04871",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8797
+    },
+    {
+      "id": "2609.05125",
+      "title": "Single-Query Black-Box Calibration Auditing via Logit Bias",
+      "authors": [
+        "Roman Plaud",
+        "Antoine Saillenfest",
+        "Matthieu Labeau",
+        "Thomas Bonald",
+        "Willem Waegeman"
+      ],
+      "abstract": "Evaluating the calibration of Large Language Models (LLMs) is critical for their safe deployment as zero-shot classifiers. Yet, commercial API providers increasingly hide the continuous output probabilities required by standard calibration metrics. To bypass this opacity, we demonstrate that any LLM API exposing a logit\\_bias parameter can be mathematically manipulated to evaluate exact probability thresholds using strictly one query per sample. Leveraging this mechanism, we introduce a novel and provably consistent estimator of the True Calibration Error for binary tasks. Our approach therefore provides an efficient framework for auditing black-box foundation models.",
+      "url": "https://arxiv.org/abs/2609.05125",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8795
+    },
+    {
+      "id": "2609.04582",
+      "title": "When Do Internal Probes Beat Reading the Answer? Miscalibrated Readouts and Behavior-Concealed Knowledge in Language Models",
+      "authors": [
+        "Gnaneswar Villuri",
+        "Hashmath Shaik",
+        "Alex Doboli"
+      ],
+      "abstract": "A 0.6B language model, asked to verify 1,200 logical conclusions (half valid, half corrupted by a single semantic edit), answers YES every time. Judged by behavior it discriminates nothing; linear probes on its hidden states read the correct verdict at 0.96 AUC, transferring to unseen logical structures and separating foils built from exactly the words of the true conclusion (0.90). We ask where the verdict is lost, and find the dominant failure is a single scalar. The verdict survives to the model's own output logits (margin AUC 0.89) along a well-aligned readout direction; a saturated decision threshold, offset by +4.6 sigma, erases it. The diagnosis generalizes: across 90 semantic-label configurations of a five-model, three-family factorial, behavioral accuracy collapses onto a single function of threshold offset (Spearman -0.93) while margin ranking moves far less. Across a 13x scale range, internal knowledge saturates while free-form behavior is non-monotone: an 8B model underperforms its 4B sibling through an answer-channel failure rather than the threshold; forced-choice accuracy is monotone. The diagnosis is actionable: a one-parameter correction, never fit on evaluated structures, repairs behavior from 50% to 81% (0.6B); calibrated margin decoding recovers 94% at 8B; few-shot prompting works the same way, recentering the threshold (+4.6 sigma to 0.0 sigma) while preserving ranking. Comparing probe to margin separates three regimes: concealed, miscalibrated, and undetected. On a maze task built so foils carry no surface cues, the audit correctly reports the third. In the standard generation setting, answer-surface features and heuristic labels reproduce published probing results without any internal access.",
+      "url": "https://arxiv.org/abs/2609.04582",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8794
+    },
+    {
+      "id": "2609.05395",
+      "title": "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe",
+      "authors": [
+        "Dain Kim",
+        "Eungi Cho",
+        "Kyumin Kim",
+        "Shinyeong Noh",
+        "Kyuseong Lim"
+      ],
+      "abstract": "Data-sovereignty regulations increasingly require public institutions to deploy open-source, on-premise LLM agents that chain multiple tool-calls across live government APIs. However, open-source models consistently underperform in this multi-step setting, and no existing benchmark measures the gap. We introduce the Korean Open Public API Benchmark (KOPA-Bench), comprising 145 real-world tasks. To close this gap, we present EDGE, an Execution-grounded Dynamic Graph for tool-calling data synthEsis driven by live execution. EDGE builds a graph of how each tool's output can feed another's input, keeps only the links that succeed when actually called against the live APIs, and traverses these verified links to synthesize executable multi-step trajectories. Fine-tuned via GRPO on the resulting dataset, our 9B model nearly matches the untuned 27B model from the same family, improving substantially not only on KOPA-Bench but also on the BFCL benchmark.",
+      "url": "https://arxiv.org/abs/2609.05395",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8793
+    },
+    {
+      "id": "2609.04852",
+      "title": "KVMem: Virtualizing Million-Token Agent Workspaces on a Consumer GPU",
+      "authors": [
+        "Di Chai",
+        "Leye Wang",
+        "Zeshen Su",
+        "Zhiguo Xia",
+        "Zhihang Yu"
+      ],
+      "abstract": "Modern LLM agents operate in persistent workspaces whose accumulated history can exceed both GPU KV capacity and the model's native context window. Existing systems typically compact older context into summaries or retrieve it later as text, either losing fine-grained execution evidence or repeatedly prefilling content that the model has already processed. We present KVMem, a KV-context virtualization system that preserves overflowed workspace history as paged KV state across GPU memory, host memory, and NVMe. KVMem uses lightweight, model-native attention-space indexes to select relevant historical blocks and materializes a query-dependent execution view bounded by the model's native context window. Extensive evaluations on long-context agent benchmarks spanning histories up to one million tokens, including LongMemEval, MemoryAgentBench, and AgentLongBench, show that KVMem generally achieves higher task utility and greater inference efficiency than compaction-based approaches, the de facto standard for handling context overflow. In the DeepSWE long-context test with Qwen3.8-27B, KVMem improves task success from 43.8% with compaction-only context management to 48.4%.\n  In our local-deployment evaluation, KVMem runs Qwen3.6/3.8-27B NVFP4 with MTP on an off-the-shelf laptop equipped with a 24\\,GB RTX 5090 Laptop GPU, virtualizing agent workspaces of up to 1M tokens-four times the model's native 256K-token context window. In a single-session setting, KVMem generates $\\sim$50 tokens/s, providing interactive responsiveness for local agent execution. More broadly, by decoupling addressable workspace size from the LLM's native context window, KVMem provides a practical path toward long-running agents whose workspaces can grow beyond that window.",
+      "url": "https://arxiv.org/abs/2609.04852",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8785
+    },
+    {
+      "id": "2609.04570",
+      "title": "Dynamic Adaptation of the LLM Context for Generating Routines with Coupled Semantics",
+      "authors": [
+        "Gnaneswar Villuri",
+        "Hashmath Shaik",
+        "Alex Doboli"
+      ],
+      "abstract": "LLM-based code generation fails when correctness depends on execution-dependent coupling: the meaning of one routine is defined by the runtime behavior of another, a relationship that cannot be resolved from textual descriptions alone. This limitation, which we call static binding, is not confined to explicitly coupled problems; it appears to varying degrees whenever correctness depends on joint execution behavior across components, from explicit cross-coupled optimizers to subtler joint constraints in packing, routing, and symbolic search. This paper proposes dynamic context adaptation, a sample-efficient validation-generation loop designed for this setting. A validation agent extracts structured diagnostic information from execution traces, providing gradient-like guidance to a generation agent that proposes multiple candidates per iteration. A knowledge graph derived from the problem description supplies semantic constraints to the generation agent. Simulated annealing selects among candidates to avoid greedy collapse. Our method outperforms zero-shot, Reflexion, and OpenEvolve on seven of eight problems at both 300 and 600 evaluations (p < 0.01), a regime where population-based search has not yet accumulated sufficient diversity to compete. Notably, on the primary motivating problem (cross-coupled optimization), our method also achieves the best score at 1000 evaluations, consistent with the hypothesis that structured execution feedback is most beneficial when correctness depends on runtime coupling. Ablation results confirm that structured execution feedback is the primary driver.",
+      "url": "https://arxiv.org/abs/2609.04570",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-03",
+      "score": 0.8785
+    },
+    {
+      "id": "2609.05232",
+      "title": "Substrate-Aware AI Agents: Execution Context as a First-Class Input",
+      "authors": [
+        "Manu Agrawal"
+      ],
+      "abstract": "Autonomous AI agents increasingly select actions in environments whose memory, execution-time, runtime, compute, and operational constraints determine what counts as a suitable plan. We call the absence of this execution context from an agent's planning state substrate blindness. We test this general proposition through numerical code generation, where selected implementation choices and operational consequences are directly observable. Three frontier model configurations--Anthropic Claude Opus 5, OpenAI GPT-5.6-Sol, and Google Gemini 3.7 Flash--generate code for a high-dimensional pairwise Euclidean-distance task either from the task alone or with a 128 MB RAM and 10.0 s wall-time contract. Contract disclosure reduced measured peak process memory in 13 of 14 executable index-aligned task-only versus contract-disclosed comparisons and reduced mean wall time in all three cohorts, making execution up to 3.1x faster. Across the audited corpus, disclosure produced structural code changes including bounded blocking, float32 retention, upper-triangle traversal, and in-place or memory-mapped buffers. At a tighter 96 MB contract, independently sampled contract-disclosed cohorts achieved correct-and-within-budget outcomes of 4/5 for Claude Opus 5, 5/5 for GPT-5.6-Sol, and 3/5 for Gemini 3.7 Flash, compared with task-only outcomes of 0/5, 1/5, and 0/5; cohort mean MaxRSS and wall time were 49-74% and 35-64% lower than their task-only references. These results establish a controlled proof of concept for substrate-aware agent planning: a minimal execution contract induces proactive structural adaptation in generated programs, shifting computation away from unconstrained allocations and substantially improving observed resource-time profiles before execution.",
+      "url": "https://arxiv.org/abs/2609.05232",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8781
+    },
+    {
+      "id": "2609.05198",
+      "title": "What Matters in On-Policy Distillation? A Perspective on Data Efficiency and Data Selection",
+      "authors": [
+        "Zhinan Hou",
+        "Jiaqi Zhang",
+        "Xunliang Cai",
+        "Keyou You"
+      ],
+      "abstract": "On-Policy Distillation (OPD) has emerged as a widely adopted post-training paradigm for enhancing large language models in reasoning domains. However, the data-centric mechanisms in OPD remain relatively underexplored. This paper presents a empirical study of data efficiency and data selection in OPD. We begin by investigating an extreme setting: training OPD on only one example, namely 1-shot OPD. Surprisingly, we find that 1-shot OPD is consistently effective across all sampled training examples and harder examples often yield superior performance gain. We next investigate what actually drives the student model's improvement in the training data. Our analysis reveals that the improvement is not driven by high token entropy, but the longer CoT paths which hard problems naturally generate. Training on longer CoT can help maintain closer alignment with the teacher over a long reasoning horizon, and learn critical thinking patterns usually missing in short CoTs, such as reflection (e.g., ``Alternatively''). Based on these insights, we propose a simple data selection method that selects only hard examples for training, where even ``unsolvable'' examples that completely exceed the teacher's capability can be successfully used. Our experiments conducted on four models ranging from 1.5B to 7B show that training the student model on only 8 selected hard examples matches the performance of the 17K dataset baseline.",
+      "url": "https://arxiv.org/abs/2609.05198",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-04",
+      "score": 0.8781
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 280,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
