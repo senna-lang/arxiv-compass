@@ -1,0 +1,392 @@
+{
+  "date": "2026-09-10",
+  "collected_at": "2026-09-10T13:09:19.023660+09:00",
+  "papers": [
+    {
+      "id": "2609.09395",
+      "title": "The Menu Is an Execution Prior: State-Path Tool Menus for Online Agents",
+      "authors": [
+        "Bo Yan",
+        "Weikai Lin",
+        "Song Wang"
+      ],
+      "abstract": "Language models act through tools, yet practical agents face libraries containing thousands of interfaces. We introduce the tool menu as the short, ordered subset of available tools shown to an agent before execution. The agent can call only tools in this menu. Multi-step tasks require the final action and the prerequisite tools that create its inputs in a usable order. Current constructors rank tools by request relevance, which can surface the final action while omitting or delaying less obvious producers. We introduce the state path, a pre-execution route from the observable request state to the desired outcome, and propose State-Path Tool Menu to learn it. Our framework treats the menu as an execution prior over these routes. Its encoder represents which tools can run from the current state, how their outputs satisfy later inputs, and which orders recur in training paths. A retriever covers an executable entry, the missing-input producers, and the final action. A reranker then places producers before consumers. On ToolBench, our menu raises online success from 0.737 to 0.898 and outperforms retrieval, reranking, generation, and routing baselines without changing the agent. The State-Path menu also covers more complete chains with 32 tools than the official list covers with 128, and its success gain persists across executor families with different model capacities. Our code is at https://github.com/Met2348/State-Path.",
+      "url": "https://arxiv.org/abs/2609.09395",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-08",
+      "github_url": "https://github.com/Met2348/State-Path.",
+      "score": 0.8938
+    },
+    {
+      "id": "2609.10315",
+      "title": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
+      "authors": [
+        "Rui Sun",
+        "Zhan Shi",
+        "Bing He"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has advanced language-model reasoning in domains such as mathematics and code, where objective answers are inexpensive to check. Diagnostic reasoning over complex data lacks this advantage: establishing the true cause of an anomaly often requires costly expert investigation and may remain ambiguous after the fact. We ask whether this asymmetry of verification can instead be engineered. We sample an intervention, inject it into a controlled simulator, and generate the observations it would produce. The hidden intervention provides an oracle label and objective reward, while the agent must still investigate noisy, confounded, and distributed evidence.\n  We instantiate this approach in TRACE, a digital-advertising diagnostic environment with 12 root causes and fine-grained segment attribution. Agents investigate each episode using Python and SQL and must identify both the root cause and, when applicable, the affected segment assignment. On a held-out 235-episode test set, the strongest prompted baseline, Claude Opus 5, reaches 0.686 FullAttr@1. Supervised fine-tuning raises Qwen3.5-35B-A3B from 0.159 to 0.637, and subsequent RL with synthesized rewards reaches 0.757, outperforming all evaluated prompted baselines, including frontier closed-source models and a prompted Qwen3.5-122B-A10B model. The resulting policy also uses substantially fewer tool calls than the prompted 35B base. These results provide evidence that access to a scalable, objective training signal can be a more important constraint than model scale alone. More broadly, simulation-based verification can make otherwise ambiguous diagnostic reasoning tasks amenable to scalable reinforcement learning.",
+      "url": "https://arxiv.org/abs/2609.10315",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.893
+    },
+    {
+      "id": "2609.10226",
+      "title": "$Φ$-Bench: Can Large Language Models Engineer the Infrastructure That Powers Them?",
+      "authors": [
+        "Leilei Ding",
+        "Shumin Wang",
+        "Yuting Huang",
+        "Fanqi Wan",
+        "Yinmin Zhang",
+        "Qi Han",
+        "Yiming Xu",
+        "Feiyuan Zhang",
+        "Xiaomeng Chu",
+        "Guoliang You",
+        "Wuyang Zhang",
+        "Daxin Jiang",
+        "Yanyong Zhang"
+      ],
+      "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in reasoning and code generation, raising the prospect that they could assist in developing and optimizing the very infrastructure that powers them. However, existing benchmarks mainly focus on isolated kernels, predefined operators, or pre-specified optimization targets, and therefore fail to evaluate the ability of LLMs to perform open-ended, long-horizon LLM infrastructure engineering. To address this gap, we present $Φ$-Bench, a benchmark for systematically evaluating LLMs on engineering the LLM infrastructure stack. Derived from optimization problems studied in frontier research and grounded in real-world code repositories, $Φ$-Bench provides broad coverage of the LLM infrastructure stack and spans tasks of varying complexity, ranging from localized kernel-level function completion to long-horizon implementation and end-to-end system optimization. Extensive experiments on frontier LLMs reveal their current capabilities and limitations in engineering complex LLM infrastructure, offering insights into the challenges that remain on the path toward autonomous optimization of future AI infrastructure.",
+      "url": "https://arxiv.org/abs/2609.10226",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.892
+    },
+    {
+      "id": "2609.10016",
+      "title": "MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes",
+      "authors": [
+        "Remco Hendriks"
+      ],
+      "abstract": "We introduce MetroLLM-Bench, a 955-case benchmark for testing language models as the policy layer of a transit kiosk. It covers six real metro systems, ranging from 37 to 414 stations, and eleven categories that include routing, fare calculation, disruptions, accessibility, and adversarial input. In each case, the model must call structured tools and submit a machine-renderable terminal state containing an outcome, a per-ticket fare quote when applicable, and a kiosk action. Fourteen deterministic scoring components form Tier 1; eight semantic-quality components form Tier 2, six of which use a language-model judge. We report Tier 1 and the combined score of both tiers. A stratified 75/25 split reserves 717 cases for training-data generation and 238 for held-out evaluation.\n  We evaluate twenty-six models from six vendors, of which twenty-three are ranked. On the held-out partition, a 4B Qwen 3.5 student trained through parameter-efficient fine-tuning (PEFT) exceeds both GPT-5.6 tiers on Tier 1 (91.3 against 90.6 and 90.0) and matches GPT-5.4 full at maximum reasoning effort (91.4), with a 2.6 GB Q4_K_M footprint. Larger 9B and 27B students provide no further Tier 1 improvement over the 4B student at this training scale. Across the four Qwen sizes, the PEFT gain over the corresponding base model decreases from +7.03 points at 2B (three training seeds) to -0.91 at 27B; every seed shows the same direction at every size. A deterministic rule-based baseline reaches 84.6 on Tier 1, with the remaining language-model advantage concentrated in policy adaptation, compound scenarios, accessibility, and temporal reasoning. Muse Glimmer 30B leads the composite ranking, and serving configuration alone moves the Qwen 3.5-to-3.8 comparison by 2.7 Tier 1 points. The benchmark, harness, reproduction guide, and fine-tuned students are released at https://github.com/continker/metrollm-bench.",
+      "url": "https://arxiv.org/abs/2609.10016",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "github_url": "https://github.com/continker/metrollm-bench.",
+      "score": 0.8903
+    },
+    {
+      "id": "2609.10113",
+      "title": "Data-Centric Post-Training for Financial Reasoning: Mining, Distillation, and Verifiable Learning",
+      "authors": [
+        "Zhirayr Hayrapetyan",
+        "Andrei Kalmykov",
+        "Denis Kokosinskii",
+        "Dmitry Stanishevskii",
+        "Dmitry Zmitrovich"
+      ],
+      "abstract": "Financial text, textbooks, and question-answer pairs are abundant, but only a small fraction is directly usable for reasoning-focused post-training. Existing QA pairs often lack explicit reasoning, sufficient context, or reliably verifiable answers, while textbooks must first be transformed into synthetic training examples. We present a data-centric pipeline that constructs complementary corpora by mining open-source reasoning traces, distilling financial instruction data, and generating knowledge-graph-guided question-answer pairs from financial educational material. After semantic deduplication, three lightweight sequence classifiers select finance-relevant examples, reject under-specified questions, and identify tasks suitable for reinforcement learning with compact rule-based verifiers. For model adaptation, we study supervised fine-tuning and reinforcement learning, while self-distilled fine-tuning and post-training model merging are used to prevent the loss of financial capabilities already present in the starting model. We evaluate the adapted language models using FINESSE-Bench, reporting aggregate performance and changes relative to their starting checkpoints. Across the selected comparisons, ordinary SFT reduces FINESSE-Bench accuracy by 3.2-4.0 percentage points, whereas self-distilled SFT improves over the corresponding starting models by 1.0-2.8 points. Equal-weight merging recovers 3.0 points over its SFT parent and finishes 0.9 points above the original model; GRPO on hard tasks adds 0.4 points after self-distilled SFT or 3.0 points when applied directly to verifiable tasks. These results show that retention-aware adaptation can improve financial reasoning without the regressions observed after ordinary SFT.",
+      "url": "https://arxiv.org/abs/2609.10113",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8898
+    },
+    {
+      "id": "2609.10445",
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "authors": [
+        "Mehrnaz Mofakhami",
+        "Ananya Sahu",
+        "Alejandro R. Salamanca",
+        "Daniel D'souza",
+        "Alexandre Berard",
+        "Thomas Euyang",
+        "Marzieh Fadaee",
+        "Julia Kreutzer"
+      ],
+      "abstract": "Reasoning language models have made substantial advances on a variety of complex tasks, yet their capabilities remain overwhelmingly English-centric: models primarily reason in English regardless of the language they are prompted in. This is inaccessible for non-English-speaking users, risks losing the intent of the original question, and forgoes knowledge more readily expressed in the target language. In this work, we advance L2 reasoning, the ability of a model to reason consistently in the language of the user's prompt, thus building an in-language bridge between the prompt and the answer. We approach this problem from a data-centric angle, investigating how to optimize data composition and scheduling in SFT for reasoning generalization. Building Tiny Aya L2-Thinker at 3.35B scale, we achieve an L2 reasoning rate above 93% across 60 languages on 6 benchmarks spanning math, commonsense reasoning, instruction following, open-ended generation, and cultural reasoning while keeping performance strong. We show the path to generalizing L2 reasoning to held-out languages goes through broader language coverage, readily available multilingual non-reasoning data, and a sufficient English reasoning backbone. These findings indicate that reasoning is a language-agnostic behavior that can be transferred across typologically diverse languages through careful data mixing and without requiring reasoning supervision in every target language. We release our model weights and multilingual reasoning data to support further research on accessible, in-language reasoning.",
+      "url": "https://arxiv.org/abs/2609.10445",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8891
+    },
+    {
+      "id": "2609.10441",
+      "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+      "authors": [
+        "Hongming Zhang",
+        "Zhaozhen Gu",
+        "Fengshuo Bai",
+        "Ming Hao",
+        "Qingyang Zhang",
+        "Yuanyuan Wang",
+        "Shiyang Tang",
+        "Yanna Wang",
+        "Bo Xu"
+      ],
+      "abstract": "While Large Language Models (LLMs) have demonstrated impressive capabilities, they often struggle with extremely long contexts due to fixed context limits. To address this, sequential approaches like MemAgent extend the effective context by reading text in segments and iteratively updating a fixed-size memory. However, this sequential paradigm suffers from high latency and requires costly reinforcement learning (RL) training, which can lead to overfitting on specific datasets. To overcome these limitations, we propose ConvMem, a training-free, highly parallelizable framework that reformulates long-context reasoning as a hierarchical convolution. Inspired by CNNs, ConvMem treats an LLM prompted with a specific query as a convolutional kernel. This kernel summarizes text segments hierarchically, shortening the reasoning path from a linear chain into a logarithmic tree. Specifically, ConvMem integrates \\textit{Configurable Strides} and \\textit{Skip Connections} to ensure robust evidence capture and propagation, while employing \\textit{Multi-Kernel Convolution} to decompose complex queries into disentangled semantic channels. This design not only mitigates error accumulation but also enables massive parallelization across both text segments and reasoning threads. Experiments on RULER-HotpotQA and RULER-2WikiMultiHopQA demonstrate that ConvMem outperforms training-free baselines and avoids the risk of overfitting to parametric priors often observed in RL-trained models on out-of-distribution tasks.",
+      "url": "https://arxiv.org/abs/2609.10441",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8885
+    },
+    {
+      "id": "2609.09778",
+      "title": "ROAM: Robust Organization of Atomic Memories for Agents through Semantic Relations",
+      "authors": [
+        "Jianjie Zheng",
+        "Peng Lai",
+        "Sijie Cheng",
+        "Jiehui Zhao",
+        "Lei Yang",
+        "Guanhua Chen"
+      ],
+      "abstract": "Long-term language-model agents rely on external memory across interactions. Atomic memories are particularly useful: their fine-grained semantic boundaries enable precise retrieval and direct comparison between observations. Yet accumulating atoms inevitably become redundant, overlapping, or conflicting. Existing methods often ask an LLM manager to add, update, delete, or rewrite memories directly, coupling semantic interpretation, storage decisions, and content generation in one error-prone operation. We introduce ROAM, a relation-guided framework that uses atomicity for management while allowing richer answer-time representations. ROAM classifies incoming--stored atom pairs as independent, equivalent, directionally subsuming, or conflicting, then organizes observations into active Primary and supporting Evidence roles. Fusion subsequently combines complementary details and temporal changes into compact, potentially non-atomic views. Only Primary views are retrieved for answering, preventing redundant or outdated atoms from competing independently. Across models and evaluation settings, ROAM improves answer accuracy by up to 29.8 percentage points. Ablations show complementary benefits from different relations and consistent gains from fusion beyond role organization. Mechanism analysis further finds 15.6-point higher answer-critical source recall and an 11.5-point lower confounder-token share. ROAM remains robust across manager scales.",
+      "url": "https://arxiv.org/abs/2609.09778",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8878
+    },
+    {
+      "id": "2609.10263",
+      "title": "What Should an Agent Forget? Separating What Is Stored from What Is Used",
+      "authors": [
+        "Yuhang Li",
+        "Yuchen Li"
+      ],
+      "abstract": "Persistent language agents need stored experience to remain available across time, while each answer requires evidence suited to a particular question. A superseded fact can mislead a current-state answer and still be essential for a historical query. We present RD-Forget, a training-free framework that separates what an agent stores from what it uses. A retained source archive preserves observations, and a query-conditioned memory view controls their influence on the current answer. A frozen language-model curator extracts relevant evidence, groups facts into semantic slots, and preserves the relations needed for multi-hop reasoning. Same-slot replacement links suppress superseded values in current-state contexts, while intent-aware retrieval makes earlier evidence eligible again. A rate-distortion formulation guides construction of the answer-time view within a memory budget. Experiments span conversational memory, knowledge updating, fact consolidation, long-context reasoning, and personalization under a shared answering pipeline. The results associate accurate answers with both query-relevant evidence construction and control over obsolete alternatives. Configurations without forgetting or query conditioning have the largest score deficits, while slot grouping, historical access, and relation preservation contribute complementary functions. Retaining history while selectively controlling its use offers a practical way to accommodate changing facts and future questions.",
+      "url": "https://arxiv.org/abs/2609.10263",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8875
+    },
+    {
+      "id": "2609.09448",
+      "title": "Do Agents Know When They Succeed? Calibrating Agent Confidence from Internal Representations",
+      "authors": [
+        "Priyanka Mary Mammen",
+        "Emil Joswin",
+        "Srujananjali Medicherla"
+      ],
+      "abstract": "As agentic systems getting adopted rapidly in safety critical applications, it is vital to measure the confidence associated with the agentic actions. In comparison to the traditional machine learning systems, agentic workflows have complex failure modes with planning, tool invocation and dynamic environment interactions. In this paper, we investigate whether model's internal representations provide stronger signals of eventual task success in multi-turn agentic setups. We introduce two complementary methods: Latent Trajectory Dynamics (LTD), which summarizes changes in residual-stream representations across an an interaction trajectory, and the Action Representation Probe (ARP), which predicts success from representations formed at action decisions. Across three interactive benchmarks (Bash, SQL, Python) and three model families (Qwen14B, Qwen7B, DeepSeek6.7B), our methods consistently outperform surface level generation and sequence-based calibration baselines providing a zero-overhead reliability monitor that requires neither prompt alterations nor multi-sample rollouts.",
+      "url": "https://arxiv.org/abs/2609.09448",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-08",
+      "score": 0.8862
+    },
+    {
+      "id": "2609.09754",
+      "title": "LexAgentHallu: A Hierarchical Benchmark for Profiling Hallucinations in Legal Agents",
+      "authors": [
+        "Yujin Zhou",
+        "Mingxuan Zheng",
+        "Chuxue Cao",
+        "Huang Yidan",
+        "Jiale Chen",
+        "Yike Guo",
+        "Sirui Han"
+      ],
+      "abstract": "As large language models are increasingly deployed as tool-augmented legal agents, they introduce agentic hallucinations where tool-call and reasoning errors cascade into fabricated holdings and miscited authority. However, existing legal benchmarks evaluate only single-turn QA with outcome-level metrics, while agentic hallucination benchmarks lack legal-specific diagnostic capability. Neither answers to what extent and how a legal agent hallucinates along its trajectory. To address these limitations, we introduce LexAgentHallu, a legal agentic hallucination benchmark designed to evaluate to what extent and how legal agents fail along multi-step trajectories. Built through a four-stage expert-in-the-loop pipeline, LexAgentHallu contains 3414 instances across 17 legal categories and 6 task types. Each instance is annotated under a dual-layer hallucination taxonomy of 7 high-level categories and 27 fine-grained subclasses, covering both substantive errors and agent-procedural failures. We further design fine-grained metrics that quantify to what extent and localize how each failure occurs along an agent's execution path. Our evaluation across 18 proprietary and open-source agents uncovers a Right-Answer-Wrong-Reason effect and reveals that hallucination subclasses cluster rather than scatter, forming distinct agentic framework, legal task, and category profiles. These findings, invisible to outcome-level evaluation, validate the diagnostic power of LexAgentHallu for evaluating agentic hallucination in law.",
+      "url": "https://arxiv.org/abs/2609.09754",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8848
+    },
+    {
+      "id": "2609.10144",
+      "title": "Kernel-Managed Shared Memory for System-Wide Personalization",
+      "authors": [
+        "Ryan Lum",
+        "Yongfeng Zhang"
+      ],
+      "abstract": "AI systems become more useful when they can adapt to the people using them, but in multi-agent systems, useful context learned by one agent often remains unavailable to others. We present kernel-managed shared memory, a system-level abstraction in which specialized agents write structured, tagged memories while the agent-system kernel, not individual agents, governs retrieval, privacy enforcement, and prompt injection. We implement and evaluate this design on AIOS and compare it against three alternatives across three assistant models (GPT-4o, Llama-3.1:8B, Qwen-2.5:7B) and 1,800 total trials. Against an unmanaged external memory backend (Mem0) using identical underlying storage, kernel-managed retrieval and injection improve personalization scores by 2.4-4.0 points on a 5-point scale (e.g., 1.05 to 4.69 profile usage on GPT-4o), with every comparison significant at p < 10^-18. Against standard retrieval-augmented injection, gains are similarly large and consistent across all three models. Against full, unfiltered context concatenation, a soft ceiling on available context rather than on response quality, kernel-managed injection statistically matches performance on two of three models and shows a small, model-specific deficit on the third, while using substantially shorter prompts: end-to-end latency is 15-61% lower across all three models, with corresponding reductions in per-call token usage and inference cost. These results indicate that centralizing memory management in the agent-system kernel, rather than leaving retrieval and privacy enforcement to individual agents, delivers most of the personalization benefit of unconstrained context at a fraction of its cost.",
+      "url": "https://arxiv.org/abs/2609.10144",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8846
+    },
+    {
+      "id": "2609.09898",
+      "title": "Grounded Evaluation and Repair for NL-to-PDDL Problem Generation",
+      "authors": [
+        "Joana Rosa",
+        "Pedro Santos",
+        "Valdemar Oliveira",
+        "Romão Silva",
+        "L. Miguel Silveira",
+        "Bruno Martins"
+      ],
+      "abstract": "Large Language Models (LLMs) have shown promise for translating Natural Language (NL) planning descriptions into PDDL problem instances. However, standard evaluation criteria such as syntactic validity or planner success can substantially overestimate faithfulness to the described task: a generated problem may be parseable and solvable while misrepresenting the intended initial state, goal, object structure, or optimization target. This paper studies an end-to-end NL-to-PDDL pipeline that combines LLM generation, checks in terms of PDDL parsing, planning and validation, a domain-conformance checker, an LLM critic, and iterative repair. Fine-grained repair feedback is constructed from the domain description, the generated problem, the natural language problem description, and operational diagnostics. Reference-based comparisons against curated benchmark PDDL problem descriptions are used for post-hoc benchmark analysis, and these offline checks include renaming-invariant structural matching and semantic equivalence, where domain support is available. Across Planetarium, AutoPlanBench, and curated PDDL~2.1 problems, results show that operational success and benchmark-reference reconstruction can diverge substantially. Results also show that structured repair can be useful, and that PDDL~2.1 remains challenging for reference reconstruction, even when operational success improves.",
+      "url": "https://arxiv.org/abs/2609.09898",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8845
+    },
+    {
+      "id": "2609.09815",
+      "title": "UnitBoost: Managing Compound LLM Systems with a Merge Operator, Not a Model",
+      "authors": [
+        "Xing Zhang",
+        "Guanghui Wang",
+        "Yanwei Cui",
+        "Mengdie Flora Wang",
+        "Peiyang He"
+      ],
+      "abstract": "Compound LLM systems often solve a coordination problem by adding a higher-level LLM. The resulting meta-agent reads workers' outputs, writes the final answer, allocates later calls, and decides when to stop. It is expressive, but it also concentrates three control decisions in an opaque, order-sensitive model call. We ask whether the manager needs to be generative at all. UnitBoost replaces that model with a defined meta-level operator: a task-given unit map turns worker outputs into slot-value proposals, a constrained argmax assembles the output, and the slots left unfilled or unsupported become an explicit residual for the next round. The operator is order-free, records unit provenance, and gives a simple guarantee: without coupling constraints, unit-wise maximization under the same admission score dominates selection of any complete candidate. On three held-out benchmarks, it exceeds the best single candidate chosen with gold labels by 0.060-0.195 absolute task-score points and input-matched generative managers by 0.048-0.076. Replacing only the management step improves six compound-system configurations by 0.013-0.182. Residual-directed rounds raise FanOutQA cell F1 from 0.4778 to 0.5524; matched controls show that the true residual outperforms random targets and ordinary rereading, while a label-free supply signal flags exhaustion after one unproductive round. The same analysis measures three conditions in which no such gain is available (one indivisible unit, unavailable unit identity, and an endpoint that charges for every emitted unit) and quantifies cross-unit coupling as a repair cost. The manager gives up semantic freedom and gains order invariance, unit provenance, and testable failure conditions.",
+      "url": "https://arxiv.org/abs/2609.09815",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.883
+    },
+    {
+      "id": "2609.09349",
+      "title": "SWORD: Wikidata-based Distortions Reveal Hidden Cross-Lingual Inconsistencies in LLM Factual Error Rejection",
+      "authors": [
+        "Sanghyeok Park",
+        "Minji Kang",
+        "Hosung Kwak",
+        "Jinhyuk Yun"
+      ],
+      "abstract": "Modern LLMs demonstrate impressive multilingual performance, yet standard benchmarks primarily reward selecting correct answers rather than evaluating genuine factual understanding. We introduce Systematic Wikidata-based Object-Relation Distortion (SWORD), a benchmark that evaluates whether models consistently reject factual errors across languages. SWORD generates syntactically well-formed but factually incorrect statements in eight widely spoken languages through controlled perturbations of Wikidata triples, ranging from random entity substitutions to semantically plausible property-based selections. Our distortion-based evaluation surfaces two critical insights that remain entirely obscured by conventional benchmarks. First, models counterintuitively achieve higher accuracy on semantically plausible distortions than on nonsensical random substitutions, suggesting reliance on distributional familiarity rather than genuine factual verification. Second, models exhibiting comparable baseline accuracy across languages show substantial performance degradation specifically on (East) Asian languages when presented with distorted statements, with cross-lingual performance gaps reaching up to 28 percentage points (49\\% relative reduction) in some models. These findings demonstrate that multilingual factual reasoning involves asymmetric capabilities that aggregate accuracy metrics systematically obscure.",
+      "url": "https://arxiv.org/abs/2609.09349",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-08",
+      "score": 0.8822
+    },
+    {
+      "id": "2609.10092",
+      "title": "RAP: Research Attention Prediction Reveals Target-Conditioned Evidence Acquisition Biases",
+      "authors": [
+        "Yingqian Wu",
+        "Jingcong Liang",
+        "Siyuan Wang",
+        "Zhenfei Yin",
+        "Philip Torr",
+        "Junchi Yu",
+        "Zhongyu Wei"
+      ],
+      "abstract": "Large language models (LLMs) increasingly act as research agents, yet their ability to track shifts in research attention is difficult to evaluate because reviews and research ideas lack uniquely verifiable outcomes. We introduce Research Attention Prediction (RAP), a rolling benchmark covering 278 AI/ML fields and 1,390 episodes. At each cut-off, an LLM agent searches a temporally restricted arXiv corpus and predicts the next six months' paper shares across eight frozen research directions. Search generally helps, but all four diagnostic models perform worse than an exact-count exponentially weighted moving average (EWMA) baseline in compositional accuracy. We identify two linked bottlenecks. Under cumulative-history access, State carry-forward outperforms direct Forecast for all four diagnostic models; frozen-evidence replay links a shared component of this reversal to Forecast-oriented policies retrieving a smaller share of recent evidence. Even with exact historical activity, future-specific updating remains limited, with only GPT-5.5 plus reopened Search slightly surpassing EWMA. Fine-tuning on realised outcomes improves Qwen3-4B's forecast Spearman correlation by 0.105 on held-out fields at later origins, with gains also on change-rich episodes.",
+      "url": "https://arxiv.org/abs/2609.10092",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8818
+    },
+    {
+      "id": "2609.09363",
+      "title": "Do LLMs Make More Mistakes If They Do Not Believe the Input Data?",
+      "authors": [
+        "Peter Kochelka",
+        "Aleš Manuel Papáček",
+        "Vojtěch Dvořák",
+        "Ondřej Dušek"
+      ],
+      "abstract": "Large language models (LLMs) are prone to hallucinating or misinterpreting facts, which impairs their usability in retrieval-augmented generation or data-to-text systems. We analyse how faithfulness of LLMs to provided context depends on how plausible they perceive the context to be (context-memory conflict). To better identify error patterns, we make use of the increased difficulty of non-English and low-resource language text generation and input data based on local knowledge, only partially captured in models' parametric knowledge. We let the models generate text in English, Czech, Slovak and Upper Sorbian from factual (FA), counterfactual (CFA) and fictional (FI) RDF triples containing local Czech and Slovak data. Contrary to our expectations, we observe only a weak context-memory conflict on the human-annotated sample. For Kimi K3 as an LLM judge, which agrees well with human annotations on the sample, counterfactual inputs receive only slightly lower faithfulness scores than factual ones (-0.05 on a 1-5 scale). We also find that a suboptimal choice of LLM judge would lead to overestimating the strength of the context-memory conflict.",
+      "url": "https://arxiv.org/abs/2609.09363",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-08",
+      "score": 0.8818
+    },
+    {
+      "id": "2609.10239",
+      "title": "LiteRAG: Cost-Efficient Graph-Based Retrieval-Augmented Generation",
+      "authors": [
+        "Daniel Alejandro Coll Tejeda",
+        "Pedro García López",
+        "Daniel Barcelona-Pons"
+      ],
+      "abstract": "Graph-based retrieval can improve multi-hop question answering, but existing approaches often incur high query-time costs and produce diffuse, oversized contexts that reduce generation efficiency. We present LiteRAG, a graph-based retrieval method that replaces expensive retrieval-time LLM control with query-conditioned algorithmic exploration and reasoning-chain context construction. On DistComp, a benchmark for multi-hop retrieval over distributed-systems papers, LiteRAG attains the highest overall quality among the evaluated methods (0.798) while reducing per-query latency by over 100$\\times$ and cost by over 99% relative to GraphRAG Global and DRIFT. On UltraDomain, it matches LinearRAG on overall quality while using about 14$\\times$ fewer tokens. An ablation study indicates that LiteRAG's query-adaptive thresholding and community-aware hub penalization are the main drivers of its token-efficiency gains.",
+      "url": "https://arxiv.org/abs/2609.10239",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8815
+    },
+    {
+      "id": "2609.09928",
+      "title": "Structural Process Supervision for Latent Chain-of-Thought Reasoning",
+      "authors": [
+        "Yiqi Li",
+        "Xu Chen",
+        "Chen Ju",
+        "Jiangchao Yao",
+        "Zhaoyang Li",
+        "Jinsong Lan",
+        "Xiaoyong Zhu",
+        "Bo Zheng",
+        "Yu Wang"
+      ],
+      "abstract": "Latent reasoning approaches enhance token-level efficiency and robustness by replacing verbose, explicit chain-of-thought (CoT) tokens with compact continuous-space embeddings. However, existing methods lack direct process supervision over these latent embeddings, which often leads to representation collapse and uneven information distribution. To address this, we propose Prototype-Mediated Process Supervision (PMPS), which introduces learnable reasoning prototypes as semantic anchors to provide structural process-level supervision for latent reasoning. PMPS projects latent embeddings and explicit CoT embeddings into a shared prototype space, achieving many-to-many soft alignment between unequal-length representations through prototype assignment. Meanwhile, we introduce a Progressive Sequential Alignment (PSA) module to further guide training: positional priors initially encourage sequential alignment structure, then gradually relax to permit adaptive matching. Experimental results show that PMPS compresses output token length to under 50% of explicit CoT on GSM8K-Aug. Compared to leading baseline SIM-CoT, our method achieves average accuracy gains of 2.08% across different model families. On GPT-2, PMPS even surpasses CoT-SFT. On larger models and a more challenging task, PMPS consistently attains the highest accuracy among all latent reasoning methods with comparable output length.",
+      "url": "https://arxiv.org/abs/2609.09928",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8814
+    },
+    {
+      "id": "2609.10155",
+      "title": "From Retrieval to Weights: Parametric Individualization of Small Language Models with Individual Text Corpora",
+      "authors": [
+        "Christoph Wigbels",
+        "Ali Abusaleh",
+        "Markus T. Jansen",
+        "Alexander Mehler",
+        "Markus J. Hofmann"
+      ],
+      "abstract": "We approach a cognitive simulation perspective on episodic and semantic memory in multiple-choice question answering by incorporating text from individual text corpora (ITC) into retrieval-augmented generation and DoRA fine-tuning. We web-crawl the search histories of 515 participants who answered 36 multiple-choice knowledge items and analyze a stratified subsample of 150 participants. For each participant, one DoRA adapter consolidates their ITC into a small language model (SLM) whose baseline correctness falls below the participants' lowest quartile. The adapter measurably writes the ITC into the weights: it fits its own participant's held-out text better than other participants' texts (dz =1.27), an individuality effect that increases with ITC size in rank order. On the generalized knowledge test, however, the adapter adds knowledge rather than alignment with the individual: log-loss match improves, whereas match accuracy under a bias-corrected PMI readout does not, and retrieval adds nothing on top. Our results demonstrate that ITCs can be consolidated into the weights of SLMs, an encouraging basis for individualized tutoring agents, and we discuss how to move from there toward a realistic simulation of episodic and semantic memory at the individual level.",
+      "url": "https://arxiv.org/abs/2609.10155",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-09-09",
+      "score": 0.8802
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
