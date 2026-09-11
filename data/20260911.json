@@ -1,0 +1,415 @@
+{
+  "date": "2026-09-11",
+  "collected_at": "2026-09-11T13:07:41.944015+09:00",
+  "papers": [
+    {
+      "id": "2609.11315",
+      "title": "Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models",
+      "authors": [
+        "Yixiang Liu",
+        "Zhongxing Xu",
+        "Zhonghua Wang",
+        "Xiaoying Tang"
+      ],
+      "abstract": "Diffusion vision-language models generate answers through iterative refinement, exposing intermediate answer trajectories that can be inspected and controlled at inference time. However, this controllability creates a reasoning-need mismatch, where a universal generation length is applied to questions with different reasoning demands. Visually closed questions may be harmed by continued refinement after a stable answer has formed, whereas reasoning-sensitive questions may be harmed by premature commitment. We formulate this problem as reasoning-budget mismatch and study it in LLaDA-V. Rather than choosing a universal generation length, our training-free controller routes each example to early commitment, baseline preservation, or reasoning-supportive decoding using trajectory signals from answer closure, commitment evidence, and representation revision pressure, without using ground-truth answers. Across answer-focused, mixed-reasoning, and CoT-sensitive benchmarks, routed control improves robustness over fixed long decoding, pure short decoding, and single-rule interventions. The gains are not explained by shorter outputs alone. Answer-closed examples often benefit from commitment, whereas CoT-sensitive examples require preserving or supporting intermediate reasoning. Taken together, these results suggest diffusion VLM decoding should route inference-time control by the state suggested by the observed trajectory instead of relying on a universal decoding length.",
+      "url": "https://arxiv.org/abs/2609.11315",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8962
+    },
+    {
+      "id": "2609.11393",
+      "title": "Beyond Confidence: Stability-Aware Test-Time Adaptation for LLM Reasoning",
+      "authors": [
+        "Bincheng Gu",
+        "Min Gao",
+        "Zongwei Wang",
+        "Yibing Bai",
+        "Yulan He",
+        "Junliang Yu"
+      ],
+      "abstract": "Test-time adaptation has emerged as a lightweight alternative to costly post-training for improving the reasoning capabilities of Large Language Models (LLMs) on downstream tasks. Predictive entropy provides a model-derived signal for such adaptation, guiding models toward higher-confidence reasoning states without external verifiers or reward models. However, higher confidence does not necessarily imply correctness, as LLMs may remain highly confident along incorrect reasoning trajectories. We observe that high-confidence reasoning is more likely to be correct when confidence remains stable under local perturbations. Based on this observation, we propose Test-Time Adaptation via Stability-Aware Confidence Optimization (TASCO), a framework that incorporates local stability into confidence-based test-time adaptation while keeping the LLM frozen. TASCO operationalizes local stability by optimizing a lightweight task-level prefix under two alternative perturbation strategies: Random Perturbation promotes distributional stability across trajectories induced by nearby perturbed prefixes, whereas Sharpness-Aware Perturbation targets worst-case local sensitivity. Experiments demonstrate that TASCO improves reasoning accuracy and token efficiency across diverse LLMs and reasoning benchmarks, while behavioral analyses show that it maintains stable confidence under local perturbations without prematurely concentrating the model's predictive distribution.",
+      "url": "https://arxiv.org/abs/2609.11393",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8917
+    },
+    {
+      "id": "2609.11752",
+      "title": "SIRF: A Spec-Internalized Risk Foundation Model for Industrial Content Risk Control",
+      "authors": [
+        "Suwan Wu",
+        "Yumeng Lin",
+        "Pengcheng Yuan",
+        "Xiaolong Jiang"
+      ],
+      "abstract": "For industrial content risk control, the real deployment constraint is not average accuracy but how much risk can be auto-handled under high precision and second-level latency. We present SIRF (Spec-Internalized Risk Foundation Model), which internalizes a platform's complex policies, synthesized without additional human annotation via EntiGraph, MAGA rewriting and account-level chain-of-thought (CoT), into the weights via continued pretraining (CPT), so rules are applied at high precision under an ultra-low-latency, verdict-only deployment. A controlled same-source comparison (Qwen3-8B-SFT vs. SIRF-8B-SFT, identical policy injection and verdict-only output form, differing only in policy-grounded CPT) attributes the gain to internalization: SIRF-8B-SFT reaches 71.3% Black Recall@P95, +15.1pp over the baseline, using only ~70M CPT tokens without harming general ability, and among included, logprob-available models under this interface it matches or exceeds far larger systems. SIRF is deployed as a tree-model adjudication layer (20% more mis-penalized samples recovered) and transfers to a freezing scenario at low cost (~70% relative mis-penalization reduction).",
+      "url": "https://arxiv.org/abs/2609.11752",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8914
+    },
+    {
+      "id": "2609.11677",
+      "title": "Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents",
+      "authors": [
+        "Ruiqing Yue",
+        "Yu Cui",
+        "Zhuoyu Sun",
+        "Sicheng Pan",
+        "Xianhong Xue",
+        "Tingyu Li",
+        "Ting Li",
+        "Wenzhuo Zhu",
+        "Yi Chen",
+        "Yifei Liu",
+        "Baohan Huang",
+        "Zhe Cui",
+        "Haibin Zhang",
+        "Cong Zuo"
+      ],
+      "abstract": "Self-evolving runtime harnesses can substantially improve the capabilities of large language model (LLM) agents and provide a promising paradigm for optimizing agent execution. Existing harness evolution methods typically rely on iterative search, repeatedly evaluating and revising candidate harnesses based on execution feedback from task instances. While this paradigm enables continuous harness optimization, it incurs substantial time overhead due to repeated agent executions and code modifications, and may overfit to observed tasks and specific failure patterns, resulting in degraded generalization to unseen tasks. We identify the lack of principled failure diagnosis as a key bottleneck in harness evolution: an observed failure can reflect either model-specific deficiencies or systematic harness deficiencies, and directly optimizing against individual failures can lead to unnecessary model-specific accommodation. We therefore propose Ecdysis, an efficient and effective framework that distinguishes model-specific accommodation from harness-level repair and biases adaptation toward systematic harness deficiencies by identifying recurring cross-task failure patterns. Ecdysis adopts a batch-level cross-instance failure aggregation paradigm to jointly analyze failure evidence from multiple task instances and further introduces Failure-Driven Collaborative Refinement to diagnose failure causes and iteratively refine harness modification specifications. By combining cross-instance failure analysis with multi-role diagnosis, Ecdysis enables more effective harness evolution with lower training time. Experiments show that Ecdysis achieves up to a 1.84x speedup in harness training compared with existing harness evolution methods, while improving the reasoning accuracy of the resulting harnesses by 18.56%.",
+      "url": "https://arxiv.org/abs/2609.11677",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.89
+    },
+    {
+      "id": "2609.11216",
+      "title": "Legible Failures: Detecting and Repairing In-Context Binding Errors",
+      "authors": [
+        "Manas Venkata Sai Ravulapalli",
+        "Samrath Singh Chadha",
+        "Abhinav M. Hari"
+      ],
+      "abstract": "A wrong answer does not show whether the model lacked the needed information or held it and failed to use it. On an entity-obligation binding task, a language model can emit an incorrect prompt-supplied binding while a linear probe can recover the correct one from its frozen hidden state. We measure how often this occurs across 16 public checkpoints, each evaluated with three seeds. We fit a probe on a training fold, select its layer on a validation fold, and report results on a disjoint test fold. On the trials each model gets wrong, probe accuracy exceeds the strict present-obligation baseline, 1/K = 0.125, by +0.196 (95% CI [+0.101, +0.296], bootstrapped over models). A query-entity counterfactual rules out token presence and recency. A score built from the sign of probe-output disagreement improves failure detection over the model's own confidence by +0.079 AUROC (95% CI [+0.036, +0.126]). Raw probe confidence gives no measurable improvement over model confidence. Steering the residual stream toward the probe-decoded binding, with no gold label, raises accuracy on all eight models tested by a mean of +0.168 (95% CI [+0.066, +0.280]). Where recent studies report that probe-detected errors are resistant to interventions, we find that in-context binding is a setting in which probes are actionable.",
+      "url": "https://arxiv.org/abs/2609.11216",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8891
+    },
+    {
+      "id": "2609.11085",
+      "title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
+      "authors": [
+        "Vikash Singh",
+        "Debargha Ganguly",
+        "Aman Goel",
+        "Ali Torkamani",
+        "Xiaoxue Han",
+        "Joseph Lilien",
+        "Ferhat Erata",
+        "Vipin Chaudhary"
+      ],
+      "abstract": "Neurosymbolic systems rely on mathematical solvers to guarantee reasoning correctness, yet solvers are fundamentally blind to whether a formal translation maintains strict reference-equivalence to a designated formalization. We formalize this vulnerability as Verdict-Preserving-Unfaithfulness (VPU): a failure mode where an incorrect encoding executes successfully and matches the expected verdict. We theoretically prove that structural, verdict-only verification heuristics are mathematically bounded to chance-level detection on these deceptively valid traces. To resolve this, we introduce Generative Verification (GenV), which distills an offline Z3-equivalence oracle into a reference-free, continuous reference-equivalence score by repurposing the language model's native vocabulary space. Mechanistic analysis via decision-projected logit lenses and sparse autoencoders shows this generative readout natively extracts precise spatial error coordinates without explicit localization training. Empirically, our oracle-mined verifier (GenV+HN) achieves 0.961 AUROC in reference-equivalence verification, generalizes zero-shot across unseen translators and divergent formal styles, and yields an 11.3-point downstream accuracy gain in agentic test-time compute allocation.",
+      "url": "https://arxiv.org/abs/2609.11085",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8881
+    },
+    {
+      "id": "2609.11117",
+      "title": "Overview of the NLPCC 2026 Shared Task 11: Agent-Based Experiment Reproduction from Scientific Papers",
+      "authors": [
+        "Hanhua Hong",
+        "Yizhi Li",
+        "Luu Gia Huy",
+        "Jian Yang",
+        "Ming Zhou",
+        "Chenghua Lin"
+      ],
+      "abstract": "Reproducibility is essential to scientific progress, yet the growing volume and complexity of scientific publications make exhaustive manual verification increasingly impractical. Although recent advances in large language model (LLM) agents enable automated experiment reproduction, existing evaluations largely focus on final repositories and are typically limited to machine learning (ML). We introduce AgentActionBench, a process-oriented benchmark for evaluating agent-based experiment reproduction across ML and AI4Science domains. Our framework uses an MCP-based Action Recorder to capture agents' behaviour throughout the reproduction process and evaluates the resulting traces with paper-specific rubrics. AgentActionBench contains 150 papers, including 120 ML papers and 30 AI4Science papers. A human-annotated subset covering 10% of the benchmark provides validation data, while model-assisted augmentation expands the full benchmark to more than 10,000 rubric items. Experimental results show that current systems remain limited, with execution as the primary bottleneck. Meanwhile, the strong Pearson and Spearman correlations between model-generated and human-annotated rubrics validate the reliability of our scalable rubric-generation approach.",
+      "url": "https://arxiv.org/abs/2609.11117",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.888
+    },
+    {
+      "id": "2609.11180",
+      "title": "SemVerBench: Benchmarking LLM Comprehension of Version-Constraint Resolution Semantics",
+      "authors": [
+        "Qibai Chen",
+        "Zeming Liu"
+      ],
+      "abstract": "Large language model (LLM) coding agents constantly decide whether a version satisfies a constraint such as ^1.2.3 or >=2.0,<3, yet their grasp of version-constraint semantics has never been measured directly. We introduce SemVerBench, the first benchmark of LLM version-constraint resolution semantics across three ecosystems (npm, PEP 440, Cargo): 240 machine-checkable items with unique answers, built author-neutrally from four balanced sources (each ecosystem's official test suite plus three frontier LLM proposers) and labeled by a non-circular two-implementation oracle. Evaluating six frontier models, we find systematic, predictable per-mechanism blind spots: a partial-comparator carry rule (>1.2 means >=1.3.0) traps every model on Cargo (near 60%), and although standard PEP 440 prefix matching is universal, on zero-pad/post-release corner cases GPT-5.1 collapses (0/26) while Claude stays at 97-100% (verified on a 67-item oracle-validated set). Opus significantly outperforms all other models, and Sonnet outperforms the OpenAI models (McNemar). The failures look more like an activation/application gap than a knowledge gap: injecting the rule or a light correct hint recovers most errors, whereas interval decomposition does not, and models are at ceiling on the basic forms of the same rules. An author-stratified analysis finds no statistically significant self-favoritism. Because the task is verifiable and a free, 100%-correct resolver exists, tool delegation reaches ~100%: coding agents should delegate version resolution to a resolver rather than reason about versions in-head.",
+      "url": "https://arxiv.org/abs/2609.11180",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8877
+    },
+    {
+      "id": "2609.11209",
+      "title": "REVA: Reusable Evidence View Aggregation for Context-Efficient RAG Serving",
+      "authors": [
+        "Tuan Nguyen",
+        "Qiran Hu",
+        "Banruo Liu",
+        "Khoa D. Doan",
+        "Kok-Seng Wong",
+        "Fan Lai"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) improves knowledge-intensive large language model (LLM) applications by conditioning generation on retrieved documents, but longer contexts increase latency, key-value (KV) cache memory, and token cost. Post-retrieval compression can reduce this cost, yet existing compressors often operate independently for each query, rely on auxiliary models or rewriting, and introduce online overhead that can offset the benefit of shorter prompts. We revisit RAG compression from a data-mining perspective by aggregating historical query--document--model interactions into reusable evidence views. We first show that modern compressors have unstable gains over simple truncation and can add substantial inference-time latency. We then propose Reusable Evidence View Aggregation (REVA), a framework that mines the target generator's historical attention traces into a document-keyed, budget-agnostic score store. REVA maps token-level attention to readable word units, aggregates importance across repeated document accesses, and renders budget-specific plain-text views that preserve document order and the standard RAG interface. Across four representative benchmarks and modern LLMs, REVA improves generation quality by 1.0--5.8 points over existing advances, while reducing compression overhead by a factor of 5.3 to 15.6, adding less than 40 ms of latency.",
+      "url": "https://arxiv.org/abs/2609.11209",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8869
+    },
+    {
+      "id": "2609.11498",
+      "title": "ActMap: Single-Pass Uncertainty Quantification from Generation-Time Activation Maps",
+      "authors": [
+        "Jacopo Dardini",
+        "Roberta Calegari"
+      ],
+      "abstract": "Practical uncertainty quantification (UQ) for large language models must decide,\n  from a single generation, whether a specific answer should be trusted. Existing\n  methods either sample multiple generations, read only output-token probabilities,\n  or reduce the model's internal computation to a single hidden state. We introduce\n  ActMap, a white-box representation that compresses the generation-time hidden-\n  state trajectory (every layer, every generated token) into a fixed $12 \\times 32\n  \\times 128$ tensor of temporal-statistic channels that preserves structure across\n  transformer depth and pooled hidden coordinates. The map is captured during the\n  generation pass with no measurable overhead, has a fixed shape across model\n  depths and hidden sizes, and occupies 96 KiB: a compact artifact that can be\n  retained for audit-relevant generations and probed directly, with occlusion\n  analysis localizing the classifier's signal to mid-depth regions of the map. A\n  lightweight classifier, instantiated as a compact Vision Transformer, reads an\n  estimated correctness probability from each map in a fraction of a millisecond;\n  capacity-matched MLPs perform comparably, indicating the representation itself\n  carries the result. Trained and evaluated in-domain on short-answer QA, direct-\n  answer math, and summarization factuality with three instruction-tuned 7-8B\n  models, ActMap consistently outperforms sampling, token-probability, attention,\n  and embedding baselines, and matches ACT-ViT, a detector trained on dense\n  activation tensors $67 \\times$ larger, at essentially the same mean AUROC with\n  lower calibration error on ten of twelve pairs. The resulting score supports\n  abstention, routing, and selective verification from a single generation, making\n  it a practical primitive for scalable oversight of deployed models.",
+      "url": "https://arxiv.org/abs/2609.11498",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8851
+    },
+    {
+      "id": "2609.11060",
+      "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+      "authors": [
+        "Susheel Suresh",
+        "Hazel Mak",
+        "Sahil Bhatnagar",
+        "Chhaya Methani",
+        "Alejandro Gutierrez Munoz"
+      ],
+      "abstract": "Persistent memory is entering production-oriented agent platforms to help long-horizon agents accumulate experience across sessions. Yet a post-task curator agent restricted to completed trajectories can preserve errors, overgeneralize partial evidence, or retain stale knowledge. We introduce environment-probing curation, a deployment-compatible extension that gives an existing asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories. It requires no model retraining and leaves the task agent, retriever, memory representation, and production write authority unchanged. In a production-like GitHub Copilot (GHCP) harness built on its SDK, we compare stateless execution, full in-context learning, GHCP + Mem, and GHCP + Mem (w/ Env Probing) on CLBench database exploration and 90 adapted APEX management-consulting tasks. On CLBench, probing raises pass rate from 39% to 73% and pass-discounted reward from 8.60 to 22.60 while reducing queries from 8.8 to 4.7 per question and task-agent cost from \\$3.38 to \\$1.68. Across six APEX worlds, all 18 memory-versus-baseline mean reward comparisons are positive and task-agent tool calls fall by 16--75%; probing gives the best task-agent reward gain per dollar in five worlds. Probing also attains higher mean reward than GHCP + Mem on both Sonnet 4.6 and Opus 4.7 without schema drift. Environment probing therefore turns existing agent-memory curation into an environment-informed, auditable process while preserving a compact task-time interface.",
+      "url": "https://arxiv.org/abs/2609.11060",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8851
+    },
+    {
+      "id": "2609.11042",
+      "title": "T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks",
+      "authors": [
+        "Junyao Yang",
+        "Yucheng Shi",
+        "Zhongzhi Li",
+        "Ruhan Wang",
+        "Zongxia Li",
+        "Haitao Mi",
+        "Leowei Liang"
+      ],
+      "abstract": "Agent usage is shifting toward long-horizon tasks such as coding and scientific discovery, among which terminal tasks are especially important. We introduce T1, a Mixture-of-Experts model of 122B total trained with reinforcement learning, operating a real shell in a cloud sandbox for up to 300+ tool-call turns per task, rewarded by executing each task's own verifier. We provide a comprehensive recipe: First, an aggressively warm-started to stabilize actor-critic training, with a dense process reward scoring trajectories by the absolute number of passing verifiers. Second, stable optimization through TITO construction, training on the exact sampled token identifiers with drift repair at turn boundaries, and rollout routing replay, recording the sampler's per-token expert choices at every MoE layer and replaying them during training. Third, fully out-of-distribution training corpus: isolated seeds and synthesized tasks disjoint from Terminal-Bench 2.1 ensures gains reflect genuine capability transfer over benchmark overfitting. Together, TITO and R3 cut the training-to-inference log-probability difference from 0.021 to 0.013, with exactly aligned zero token drift in the loss region. On Terminal-Bench 2.1, our post-train pipeline raises initial base model from 43.8% to T1 with 64.0% resolved. On Long-Horizon Terminal Bench, T1 reaches 27.9% and surpasses GPT-5.4 and GLM-5.1.",
+      "url": "https://arxiv.org/abs/2609.11042",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8848
+    },
+    {
+      "id": "2609.11699",
+      "title": "Negative Self-Distillation: Learning to Reason by Avoiding Flaws",
+      "authors": [
+        "Rongcan Pei",
+        "Zhepei Wei",
+        "Shuyao Xu",
+        "Xinyu Zhu",
+        "Wei-Lin Chen",
+        "Yu Meng"
+      ],
+      "abstract": "On-Policy Self-Distillation (OPSD) has emerged as a popular paradigm for large language model (LLM) self-improvement, allowing models to act as their own teachers by leveraging privileged information such as ground-truth solutions. However, recent findings indicate that OPSD can severely degrade the performance of LLMs on complex reasoning tasks: By forcing the student to imitate an artificially confident reasoning trace conditioned on privileged information, OPSD inadvertently suppresses expressions of uncertainty and penalizes the exploratory, self-corrective behaviors required to solve challenging problems. To address this, we introduce Negative Self-Distillation (NSD), a new framework that optimizes LLMs by diverging from flawed reasoning rather than imitating privileged solutions. Instead of relying on ground-truth answers or external supervision, NSD uses the model itself to generate a question-specific negative condition (eg, acting as a ``careless reasoner'') and pushes the student's distribution away from this self-generated negative teacher. Naively applying unlearning objectives to achieve this divergence is problematic, as flawed reasoning tokens are confounded with basic linguistic tokens; indiscriminately penalizing both risks catastrophically degrading the model's foundational language capabilities. We resolve this by designing a dynamic gating mechanism that automatically identifies and isolates reasoning-critical tokens, ensuring gradient updates target only behavioral flaws while preserving the model's linguistic priors. Empirically, NSD consistently outperforms OPSD and other label-free, self-bootstrapping reinforcement learning (RL) baselines.",
+      "url": "https://arxiv.org/abs/2609.11699",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8846
+    },
+    {
+      "id": "2609.11063",
+      "title": "The information geometry of large language models is shared, learned, and controllable",
+      "authors": [
+        "Dario Picozzi"
+      ],
+      "abstract": "Large language models learn similar behaviours, yet it remains unclear what structure they share or how to change one behaviour without disturbing others. The Fisher-Rao geometry of next-token probabilities connects these questions: behaviour determines this geometry up to output-preserving symmetries, whereas activation geometry depends on coordinates. Across transformer, state-space and recurrent models, output geometries agree more strongly than activation geometries, and shared geometry supports semantic-category transfer. Agreement with human word choices increases with predictive accuracy, scale and training, and improves further after model-only calibration. Token probabilities and read-out geometry jointly predict the spectrum and its effective dimension. Controlled language assignments show that geometry follows the language law across architectures. Pretraining corpus statistics predict held-out fact acquisition without recalibration, while randomised experiments show that deeper evidence substantially delays acquisition across every tested architecture and evidence construction. Finally, the geometry prescribes minimum-disturbance local interventions, predicts their relative cost, and supports reusable control: updates learned on donor prompts transfer to unseen prompts while better preserving behaviour on reference prompts than Euclidean control. The same geometric correction improves steering, editing, attribution, dictionary learning and fine-tuning.",
+      "url": "https://arxiv.org/abs/2609.11063",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8838
+    },
+    {
+      "id": "2609.11082",
+      "title": "ToxicRAG: Compromising Retrieval-Augmented Generation Systems via Single-Shot Knowledge Poisoning Attacks",
+      "authors": [
+        "Haozhe Lu",
+        "Jiaqi Li",
+        "Xinyuan Zhu",
+        "Xiang Li"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) can ground large language model (LLM) outputs in external evidence, but it also exposes the system to knowledge poisoning. Representative attacks use multiple injected documents or templates that directly assert a target answer. We present ToxicRAG, a one-document-per-target attack that expresses misinformation as a coherent knowledge-update narrative. The generated document first acknowledges the previously accepted answer, introduces fabricated events that appear to invalidate it, and then attributes the attacker-selected answer to a set of purported authorities. An answer-focused self-validation loop optionally revises a candidate when a surrogate language model does not reproduce the target answer. We evaluate the attack on 100 target questions from each of Natural Questions, HotpotQA, and MS-MARCO, using four victim LLMs and four dense retrievers. In the sampled-corpus setting reported in this paper, ToxicRAG obtains ASRs between 0.61 and 0.91 across the twelve dataset--model combinations. It matches or exceeds the strongest evaluated baseline in every combination, with margins ranging from 0 to 11 percentage points. These results show that narrative-form poisoned documents can remain influential under the evaluated RAG configurations and motivate further study of factual consistency and source provenance in RAG systems.",
+      "url": "https://arxiv.org/abs/2609.11082",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8825
+    },
+    {
+      "id": "2609.11390",
+      "title": "VikingRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents",
+      "authors": [
+        "Peiyuan Gao",
+        "Gaoyuan Zhang",
+        "Haojie Qin",
+        "Yahui Sun",
+        "Qianyi Zhang",
+        "Yunhao Zhang",
+        "Zeyu Wang",
+        "Wei Lu"
+      ],
+      "abstract": "State-of-the-art retrieval-augmented generation (RAG) methods exploit document structures to acquire sufficient evidence, but often incur substantial token costs. To reduce structural-context tokens without compromising high RAG accuracy, we present {\\sf VikingRAG}, a directory-aware semantic data management system that tightly integrates semantic and structural access to support structural-context-efficient, evidence-gap-driven multi-round retrieval. To further reduce token overhead of multi-round interaction, we materialize agentic multi-round retrieval traces as experience edges, and reuse these edges for similar queries, avoiding repeated multi-round exploration. To additionally reduce token costs when agentic multi-round retrieval is unnecessary, we introduce an adaptive escalation strategy that answers from one-round experience-augmented retrieval when the evidence is sufficient, and invokes agentic multi-round retrieval only otherwise. Experiments on real datasets show that the base system {\\sf VikingRAG} matches high accuracy of state-of-the-art methods while consuming only 11.6\\%--51.9\\% of their tokens. With retrieval-trace reuse and adaptive escalation, token costs drop to 5.1\\%--32.5\\% while maintaining competitive accuracy and practical document-storage performance, showing the utility of this work for emerging AI knowledge bases.",
+      "url": "https://arxiv.org/abs/2609.11390",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.DB",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8817
+    },
+    {
+      "id": "2609.11234",
+      "title": "NovGauge: A Fine-Grained Benchmark for Diagnosing LLMs' Capability in Paper Novelty Assessment",
+      "authors": [
+        "Guoqiang Zhang",
+        "Kexin Tan",
+        "Ming Zhang",
+        "Li Ju",
+        "Wenqing Jing",
+        "Zhonghan Yue",
+        "Jiayi Chen",
+        "Shiqiang Wu",
+        "Shaofan Liu",
+        "Yue Zhang",
+        "Yuankai Ying",
+        "Yang Shi",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used in peer review at major AI conferences, yet novelty remains a persistent weak point. Existing benchmarks assess novelty as a single holistic score, making it difficult to diagnose which dimension a model misjudges or whether its evidence is faithful. We present NovGauge, a human-anchored benchmark for fine-grained novelty assessment diagnosis. The benchmark contains 619 paper pairs and 50 multi-paper sets, drawn from two expert sources: ICLR reviewer overlap claims and survey co-citations. Instances are independently labeled along three dimensions: task, problem, and method, capturing application goals, technical challenges, and solution approaches. We propose a cascading diagnostic pipeline that verifies per-dimension correctness, evidence grounding, and logical support. Evaluation of 18 LLMs shows hallucination rates ranging from 0% to 39% across dimensions, and among non-hallucinated correct-positive judgments, over 70% cite evidence fails to logically support the stated reason. The best-performing model, GPT-5.5, achieves 43-72% Verified F1 across dimensions, while most models retain less than half of their raw F1 after faithfulness verification. These results suggest that current LLMs remain far from reliable scientific novelty assessment, particularly when correctness is conditioned on faithful evidence grounding.",
+      "url": "https://arxiv.org/abs/2609.11234",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8816
+    },
+    {
+      "id": "2609.11318",
+      "title": "Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents",
+      "authors": [
+        "Minghao Guo",
+        "Meng Cao",
+        "Sui Zhao",
+        "Siyu Ning",
+        "Xin Wang",
+        "Haoze Zhao",
+        "Jiaxuan Yang",
+        "Haihong Hao",
+        "Mingfei Han",
+        "Shunlin Rong",
+        "Haijun Wu",
+        "Xiaodan Liang",
+        "Xiaojun Chang"
+      ],
+      "abstract": "Deep research agents are increasingly capable of web search, tool use, multimodal evidence analysis, and information synthesis. However, existing benchmarks mainly evaluate medium-horizon exploration and rarely test whether agents can sustain long, dependency-heavy research processes. We introduce Mr.LHDR (Multimodal real-world Long-Horizon Deep Research), a benchmark for evaluating real-world deep research over long, irreducible chains of interdependent evidence across eight categories. Each question is constructed from a hidden Node-Relation graph and requires an average of 12.1 necessary intermediate conclusions with a mean dependency depth of 10.4 before reaching a short, unique, and verifiable answer. Questions incorporate multimodal evidence, including images, maps, PDFs, logos, charts, tables, and video frames, with at least one non-text element that changes the reasoning state. Mr.LHDR evaluates both final answers and the correctness of intermediate conclusions under annotated dependencies. We evaluate general models, deep research systems, and agent frameworks using Overall Accuracy (OA), Strict Accuracy (SA), Checklist Score (CS), and Dependency-Aware Checklist Score (DACS). Results show that even the strongest system achieves only 43.1% OA and 34.3% SA, indicating that final-answer accuracy substantially overestimates complete research success. Removing images reduces DACS by 12.6 points, demonstrating the importance of multimodal evidence, while SA consistently declines as reasoning chains become longer. These findings reveal sustained, dependency-consistent evidence integration, rather than isolated fact retrieval, as a key bottleneck for current deep research agents.",
+      "url": "https://arxiv.org/abs/2609.11318",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8815
+    },
+    {
+      "id": "2609.11065",
+      "title": "MOSAIC: Query-Aware Exploration Policy Adaptation for GraphRAG",
+      "authors": [
+        "EunKyeong Lee",
+        "Kyeong-Jin Oh",
+        "Jinwon Kim",
+        "Hye Woo Lee",
+        "Minsang Song",
+        "Hyeongjun Jang",
+        "Junyoung Youn"
+      ],
+      "abstract": "Graph Retrieval-Augmented Generation (GraphRAG) can connect evidence distributed across a corpus graph, but most systems use largely shared exploration procedures across queries. This creates a structural mismatch: direct facts may need compact local neighborhoods, comparisons need balanced coverage of multiple targets, and mediated questions may require deeper paths through weakly related connectors. We present Mosaic, a training-free framework that formulates GraphRAG retrieval as a per-query control problem. An LLM analyzer converts query-specific evidence requirements into a bounded policy over seed selection, graph traversal, stopping, and evidence selection, while the corpus graph, indexes, scoring functions, grounding procedure, and answer generator remain shared.\n  On GraphRAG-Bench, Mosaic achieves query-weighted Answer Correctness of 76.97 on Medical and 64.33 on Novel, improving over the strongest previously reported overall results by 5.13 and 4.43 points. On Medical, it reaches 95.1 Evidence Recall and 86.1 Context Relevancy. Controlled comparisons on an identical graph and generator show that no fixed narrow, medium, or wide policy is consistently optimal; Mosaic improves by 9.96 points over the strongest canonical fixed policy. Relative to Fixed Wide, it evaluates 81.9% fewer paths and retains 47.2% fewer evidence items. Transfer experiments on HotpotQA, MuSiQue, and 2WikiMultiHopQA further show that the policy interface can be applied without benchmark-specific retriever training.",
+      "url": "https://arxiv.org/abs/2609.11065",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8811
+    },
+    {
+      "id": "2609.11569",
+      "title": "Enabling Knowledge Graph Understanding at Scale with the EXplore Your Graphs ENgine (EXYGEN)",
+      "authors": [
+        "Harshdeep Singh",
+        "Yurui Zhu",
+        "Giovanni Colavizza",
+        "Matteo Romanello"
+      ],
+      "abstract": "We present EXYGEN (EXplore Your Graphs ENgine), a framework for knowledge graph (KG) understanding that enables conversational access to KGs at scale. We address two questions in sequence. First, how effectively can LLMs perform text-to-SPARQL generation given only automatically derived structured metadata and small graph samples, rather than task-specific fine-tuning? We integrate VoID descriptions and ShEx schemas into a retrieval-augmented generation (RAG) pipeline and ablate KG-derived context on the SciQA benchmark. Our best configuration -- combining ShEx schemas, retrieved triples, and example question-query pairs -- reaches an exact match of 0.419 on execution results without any LLM fine-tuning. We further find that lexical metrics such as F1 poorly predict query correctness, and that larger general-purpose LLMs can outperform smaller code-specialized ones once given sufficient context. Second, we ask how to generate the structured metadata that this method relies on from very large KGs, where KG metadata generation becomes computationally intractable. We introduce a predicate-coverage-aware parallel graph sampling strategy that preserves structural diversity while remaining computationally tractable. On OpenCitations Meta and GESIS, it retains high predicate coverage with minimal triple loss and reduces runtime by over 80x; on ORKG, sampling is not just faster but the only tractable path to obtain complete metadata. Together, these results show that structured schema context and lightweight prompting can substantially reduce reliance on fine-tuning for scalable conversational access to KGs, though closing the remaining gap to fully fine-tuned approaches will likely require reducing dependence on curated question-query exemplars -- whether through synthetic generation or an execution-feedback-driven approach -- and validating these findings beyond a single benchmark.",
+      "url": "https://arxiv.org/abs/2609.11569",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-10",
+      "score": 0.8806
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
