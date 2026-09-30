@@ -25,9 +25,9 @@
       "score": 0.8952,
       "jev": {
         "specter_rank": 1,
-        "rank": 14,
-        "rank_delta": -13,
-        "relevance_probability": 0.738682746887207
+        "rank": 16,
+        "rank_delta": -15,
+        "relevance_probability": 0.24266888201236725
       }
     },
     {
@@ -48,8 +48,8 @@
       "score": 0.8934,
       "jev": {
         "specter_rank": 2,
-        "rank": 5,
-        "rank_delta": -3,
+        "rank": 2,
+        "rank_delta": 0,
         "relevance_probability": 0.9959895014762878
       }
     },
@@ -79,9 +79,9 @@
       "score": 0.8926,
       "jev": {
         "specter_rank": 3,
-        "rank": 7,
-        "rank_delta": -4,
-        "relevance_probability": 0.9935594201087952
+        "rank": 4,
+        "rank_delta": -1,
+        "relevance_probability": 0.990828663110733
       }
     },
     {
@@ -109,9 +109,9 @@
       "score": 0.8918,
       "jev": {
         "specter_rank": 4,
-        "rank": 3,
-        "rank_delta": 1,
-        "relevance_probability": 0.9971790909767151
+        "rank": 5,
+        "rank_delta": -1,
+        "relevance_probability": 0.9894367754459381
       }
     },
     {
@@ -133,9 +133,9 @@
       "score": 0.8903,
       "jev": {
         "specter_rank": 5,
-        "rank": 16,
-        "rank_delta": -11,
-        "relevance_probability": 0.6924818754196167
+        "rank": 14,
+        "rank_delta": -9,
+        "relevance_probability": 0.5
       }
     },
     {
@@ -155,9 +155,9 @@
       "score": 0.888,
       "jev": {
         "specter_rank": 6,
-        "rank": 6,
-        "rank_delta": 0,
-        "relevance_probability": 0.9939144253730774
+        "rank": 7,
+        "rank_delta": -1,
+        "relevance_probability": 0.9877580404281616
       }
     },
     {
@@ -181,8 +181,8 @@
       "score": 0.8879,
       "jev": {
         "specter_rank": 7,
-        "rank": 9,
-        "rank_delta": -2,
+        "rank": 8,
+        "rank_delta": -1,
         "relevance_probability": 0.9779635667800903
       }
     },
@@ -203,9 +203,9 @@
       "score": 0.8877,
       "jev": {
         "specter_rank": 8,
-        "rank": 12,
-        "rank_delta": -4,
-        "relevance_probability": 0.9128813445568085
+        "rank": 11,
+        "rank_delta": -3,
+        "relevance_probability": 0.9282975494861603
       }
     },
     {
@@ -229,7 +229,7 @@
         "specter_rank": 9,
         "rank": 1,
         "rank_delta": 8,
-        "relevance_probability": 0.9976630508899689
+        "relevance_probability": 0.9972143471240997
       }
     },
     {
@@ -250,9 +250,9 @@
       "score": 0.8863,
       "jev": {
         "specter_rank": 10,
-        "rank": 20,
-        "rank_delta": -10,
-        "relevance_probability": 0.09523690305650234
+        "rank": 18,
+        "rank_delta": -8,
+        "relevance_probability": 0.12195047363638878
       }
     },
     {
@@ -275,7 +275,7 @@
         "specter_rank": 11,
         "rank": 10,
         "rank_delta": 1,
-        "relevance_probability": 0.9602926671504974
+        "relevance_probability": 0.9307488203048706
       }
     },
     {
@@ -295,9 +295,9 @@
       "score": 0.8862,
       "jev": {
         "specter_rank": 12,
-        "rank": 18,
-        "rank_delta": -6,
-        "relevance_probability": 0.13239393755793571
+        "rank": 17,
+        "rank_delta": -5,
+        "relevance_probability": 0.20296017825603485
       }
     },
     {
@@ -322,9 +322,9 @@
       "score": 0.8853,
       "jev": {
         "specter_rank": 13,
-        "rank": 19,
-        "rank_delta": -6,
-        "relevance_probability": 0.12600618973374367
+        "rank": 20,
+        "rank_delta": -7,
+        "relevance_probability": 0.04458458977751434
       }
     },
     {
@@ -349,9 +349,9 @@
       "score": 0.8852,
       "jev": {
         "specter_rank": 14,
-        "rank": 17,
-        "rank_delta": -3,
-        "relevance_probability": 0.3793224096298218
+        "rank": 19,
+        "rank_delta": -5,
+        "relevance_probability": 0.0830167019739747
       }
     },
     {
@@ -373,9 +373,9 @@
       "score": 0.8852,
       "jev": {
         "specter_rank": 15,
-        "rank": 15,
-        "rank_delta": 0,
-        "relevance_probability": 0.7303500175476074
+        "rank": 13,
+        "rank_delta": 2,
+        "relevance_probability": 0.8221678137779236
       }
     },
     {
@@ -394,9 +394,9 @@
       "score": 0.8851,
       "jev": {
         "specter_rank": 16,
-        "rank": 2,
-        "rank_delta": 14,
-        "relevance_probability": 0.9972143471240997
+        "rank": 6,
+        "rank_delta": 10,
+        "relevance_probability": 0.9883968532085419
       }
     },
     {
@@ -417,9 +417,9 @@
       "score": 0.8846,
       "jev": {
         "specter_rank": 17,
-        "rank": 4,
-        "rank_delta": 13,
-        "relevance_probability": 0.9968448579311371
+        "rank": 3,
+        "rank_delta": 14,
+        "relevance_probability": 0.9944145679473877
       }
     },
     {
@@ -439,9 +439,9 @@
       "score": 0.8838,
       "jev": {
         "specter_rank": 18,
-        "rank": 13,
-        "rank_delta": 5,
-        "relevance_probability": 0.7951992750167847
+        "rank": 15,
+        "rank_delta": 3,
+        "relevance_probability": 0.3665113151073456
       }
     },
     {
@@ -466,9 +466,9 @@
       "score": 0.8837,
       "jev": {
         "specter_rank": 19,
-        "rank": 11,
-        "rank_delta": 8,
-        "relevance_probability": 0.9567553699016571
+        "rank": 12,
+        "rank_delta": 7,
+        "relevance_probability": 0.9097757339477539
       }
     },
     {
@@ -489,9 +489,9 @@
       "score": 0.8834,
       "jev": {
         "specter_rank": 20,
-        "rank": 8,
-        "rank_delta": 12,
-        "relevance_probability": 0.9799894988536835
+        "rank": 9,
+        "rank_delta": 11,
+        "relevance_probability": 0.9723434150218964
       }
     }
   ],
@@ -513,8 +513,8 @@
       },
       "predicate": {
         "id": "arxiv-current-research-usefulness",
-        "version": "1",
-        "context_sha256": "9a0e1deee3f7e57801251798c9dd451bfbc2a9c11dfe66fcfa0944814add23bf"
+        "version": "2",
+        "context_sha256": "4fd4f7ce27de7478c20c9fa6abd7d728f16ef7e888f1426a0b7af1addc51b337"
       }
     }
   }
