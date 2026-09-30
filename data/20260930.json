@@ -25,9 +25,9 @@
       "score": 0.8952,
       "jev": {
         "specter_rank": 1,
-        "rank": 8,
-        "rank_delta": -7,
-        "relevance_probability": 0.9024694263935089
+        "rank": 14,
+        "rank_delta": -13,
+        "relevance_probability": 0.738682746887207
       }
     },
     {
@@ -48,9 +48,9 @@
       "score": 0.8934,
       "jev": {
         "specter_rank": 2,
-        "rank": 12,
-        "rank_delta": -10,
-        "relevance_probability": 0.6359226703643799
+        "rank": 5,
+        "rank_delta": -3,
+        "relevance_probability": 0.9959895014762878
       }
     },
     {
@@ -79,9 +79,9 @@
       "score": 0.8926,
       "jev": {
         "specter_rank": 3,
-        "rank": 4,
-        "rank_delta": -1,
-        "relevance_probability": 0.9847227036952972
+        "rank": 7,
+        "rank_delta": -4,
+        "relevance_probability": 0.9935594201087952
       }
     },
     {
@@ -109,9 +109,9 @@
       "score": 0.8918,
       "jev": {
         "specter_rank": 4,
-        "rank": 2,
-        "rank_delta": 2,
-        "relevance_probability": 0.9960811138153076
+        "rank": 3,
+        "rank_delta": 1,
+        "relevance_probability": 0.9971790909767151
       }
     },
     {
@@ -133,9 +133,9 @@
       "score": 0.8903,
       "jev": {
         "specter_rank": 5,
-        "rank": 6,
-        "rank_delta": -1,
-        "relevance_probability": 0.9451827704906464
+        "rank": 16,
+        "rank_delta": -11,
+        "relevance_probability": 0.6924818754196167
       }
     },
     {
@@ -155,9 +155,9 @@
       "score": 0.888,
       "jev": {
         "specter_rank": 6,
-        "rank": 17,
-        "rank_delta": -11,
-        "relevance_probability": 0.5768343806266785
+        "rank": 6,
+        "rank_delta": 0,
+        "relevance_probability": 0.9939144253730774
       }
     },
     {
@@ -181,9 +181,9 @@
       "score": 0.8879,
       "jev": {
         "specter_rank": 7,
-        "rank": 7,
-        "rank_delta": 0,
-        "relevance_probability": 0.9307488203048706
+        "rank": 9,
+        "rank_delta": -2,
+        "relevance_probability": 0.9779635667800903
       }
     },
     {
@@ -203,9 +203,9 @@
       "score": 0.8877,
       "jev": {
         "specter_rank": 8,
-        "rank": 9,
-        "rank_delta": -1,
-        "relevance_probability": 0.8739163875579834
+        "rank": 12,
+        "rank_delta": -4,
+        "relevance_probability": 0.9128813445568085
       }
     },
     {
@@ -227,9 +227,9 @@
       "score": 0.8875,
       "jev": {
         "specter_rank": 9,
-        "rank": 3,
-        "rank_delta": 6,
-        "relevance_probability": 0.9903581738471985
+        "rank": 1,
+        "rank_delta": 8,
+        "relevance_probability": 0.9976630508899689
       }
     },
     {
@@ -250,9 +250,9 @@
       "score": 0.8863,
       "jev": {
         "specter_rank": 10,
-        "rank": 19,
-        "rank_delta": -9,
-        "relevance_probability": 0.16509202867746353
+        "rank": 20,
+        "rank_delta": -10,
+        "relevance_probability": 0.09523690305650234
       }
     },
     {
@@ -273,9 +273,9 @@
       "score": 0.8863,
       "jev": {
         "specter_rank": 11,
-        "rank": 15,
-        "rank_delta": -4,
-        "relevance_probability": 0.5774215757846832
+        "rank": 10,
+        "rank_delta": 1,
+        "relevance_probability": 0.9602926671504974
       }
     },
     {
@@ -295,9 +295,9 @@
       "score": 0.8862,
       "jev": {
         "specter_rank": 12,
-        "rank": 20,
-        "rank_delta": -8,
-        "relevance_probability": 0.09374690987169743
+        "rank": 18,
+        "rank_delta": -6,
+        "relevance_probability": 0.13239393755793571
       }
     },
     {
@@ -322,9 +322,9 @@
       "score": 0.8853,
       "jev": {
         "specter_rank": 13,
-        "rank": 18,
-        "rank_delta": -5,
-        "relevance_probability": 0.2776903137564659
+        "rank": 19,
+        "rank_delta": -6,
+        "relevance_probability": 0.12600618973374367
       }
     },
     {
@@ -349,9 +349,9 @@
       "score": 0.8852,
       "jev": {
         "specter_rank": 14,
-        "rank": 16,
-        "rank_delta": -2,
-        "relevance_probability": 0.5774215757846832
+        "rank": 17,
+        "rank_delta": -3,
+        "relevance_probability": 0.3793224096298218
       }
     },
     {
@@ -373,9 +373,9 @@
       "score": 0.8852,
       "jev": {
         "specter_rank": 15,
-        "rank": 10,
-        "rank_delta": 5,
-        "relevance_probability": 0.7282392978668213
+        "rank": 15,
+        "rank_delta": 0,
+        "relevance_probability": 0.7303500175476074
       }
     },
     {
@@ -394,9 +394,9 @@
       "score": 0.8851,
       "jev": {
         "specter_rank": 16,
-        "rank": 1,
-        "rank_delta": 15,
-        "relevance_probability": 0.9968448579311371
+        "rank": 2,
+        "rank_delta": 14,
+        "relevance_probability": 0.9972143471240997
       }
     },
     {
@@ -417,9 +417,9 @@
       "score": 0.8846,
       "jev": {
         "specter_rank": 17,
-        "rank": 14,
-        "rank_delta": 3,
-        "relevance_probability": 0.5895893573760986
+        "rank": 4,
+        "rank_delta": 13,
+        "relevance_probability": 0.9968448579311371
       }
     },
     {
@@ -439,9 +439,9 @@
       "score": 0.8838,
       "jev": {
         "specter_rank": 18,
-        "rank": 11,
-        "rank_delta": 7,
-        "relevance_probability": 0.6466175317764282
+        "rank": 13,
+        "rank_delta": 5,
+        "relevance_probability": 0.7951992750167847
       }
     },
     {
@@ -466,9 +466,9 @@
       "score": 0.8837,
       "jev": {
         "specter_rank": 19,
-        "rank": 13,
-        "rank_delta": 6,
-        "relevance_probability": 0.6067657172679901
+        "rank": 11,
+        "rank_delta": 8,
+        "relevance_probability": 0.9567553699016571
       }
     },
     {
@@ -489,9 +489,9 @@
       "score": 0.8834,
       "jev": {
         "specter_rank": 20,
-        "rank": 5,
-        "rank_delta": 15,
-        "relevance_probability": 0.9624131619930267
+        "rank": 8,
+        "rank_delta": 12,
+        "relevance_probability": 0.9799894988536835
       }
     }
   ],
@@ -514,7 +514,7 @@
       "predicate": {
         "id": "arxiv-current-research-usefulness",
         "version": "1",
-        "context_sha256": "67ed0b293dcb1278b7e734f067d0d92abf04da3de08cdcf685e2b1652a770542"
+        "context_sha256": "9a0e1deee3f7e57801251798c9dd451bfbc2a9c11dfe66fcfa0944814add23bf"
       }
     }
   }
