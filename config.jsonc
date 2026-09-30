@@ -91,6 +91,7 @@
         "designing evaluations for coding agents and harnesses: benchmark design, paired comparisons, LLM-as-judge reliability, small open models under different harnesses",
         "building a local Jev-style structured-decision model (Qwen3-4B + LoRA distilled from a teacher's option probabilities, tree-packed multi-branch inference) and finding practical uses for it",
         "following post-training and distillation methods, agent-to-agent communication formats, and agent-native code navigation (LSP and AST)",
+        "following proposals for new LLM architectures: attention variants, normalization and activation choices, and alternatives to the standard transformer",
       ],
       "preference": "Prioritize papers likely to change an implementation, experiment, or system-design decision. Mere topical similarity is not enough.",
       "question": "Would reading this paper likely provide concrete information that changes an implementation, experiment, or system-design decision for this user?",
