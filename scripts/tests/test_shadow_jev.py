@@ -5,7 +5,6 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
-
 from shadow_jev.cli import run_shadow
 from shadow_jev.predicate import context_sha256, shared_state
 from shadow_jev.ranking import (

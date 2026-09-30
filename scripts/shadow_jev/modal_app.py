@@ -43,7 +43,6 @@ class JevRanker:
     @modal.enter()
     def load(self) -> None:
         import torch
-
         from shadow_jev.inference import load_inference_model
 
         torch.set_num_threads(4)
@@ -60,7 +59,6 @@ class JevRanker:
         import time
 
         import torch
-
         from shadow_jev.inference import rank_papers, sha256_file
 
         started = time.perf_counter()

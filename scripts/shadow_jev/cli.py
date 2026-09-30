@@ -4,15 +4,23 @@ from __future__ import annotations
 import argparse
 import json
 import time
+from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from core.config import JST, ROOT, load_config
 from core.io import save_json
 
 from .predicate import canonical_predicate, context_sha256, shared_state
-from .ranking import InvalidJevResult, StaleDailyJson, apply_complete, apply_unavailable, require_digest, sha256_bytes
+from .ranking import (
+    InvalidJevResult,
+    StaleDailyJson,
+    apply_complete,
+    apply_unavailable,
+    require_digest,
+    sha256_bytes,
+)
 
 ATTEMPTS = 2
 
@@ -95,7 +103,7 @@ def run_shadow(
             evidence["finished_at"] = datetime.now(JST).isoformat()
             evidence["wall_time_ms"] = round((time.perf_counter() - started) * 1000)
             return updated, evidence, 0
-        except Exception as error:
+        except Exception as error:  # noqa: BLE001 - any Jev failure must fail open to "unavailable"
             failure = classify_failure(error)
             evidence["attempts"].append({
                 "number": attempt,
