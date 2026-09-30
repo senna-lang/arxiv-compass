@@ -4,9 +4,15 @@ on:
   schedule:
     - cron: "0 0 * * 1-5" # 月〜金 09:00 JST (UTC+9)
   workflow_dispatch:
+    inputs:
+      shadow_date:
+        description: "YYYYMMDD. 指定すると baseline を飛ばし、既存の data/YYYYMMDD.json に shadow Jev だけを実行する"
+        required: false
+        default: ""
 
 jobs:
   baseline:
+    if: inputs.shadow_date == ''
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -81,7 +87,7 @@ jobs:
 
   shadow-jev:
     needs: baseline
-    if: needs.baseline.outputs.present == 'true'
+    if: always() && (needs.baseline.outputs.present == 'true' || inputs.shadow_date != '')
     runs-on: ubuntu-latest
     timeout-minutes: 8
     permissions:
@@ -89,8 +95,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # ブランチ先頭を取る。baseline の push を含み、detached HEAD だと最後の git push が失敗する。
+          # トリガー時点の SHA ではなくブランチ先頭を取る。baseline の push を含み、
+          # detached HEAD だと最後の git push も失敗する。
           # 中身が baseline と同一かは --expected-base-sha256 で検証する。
+          ref: ${{ github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v5
@@ -107,7 +115,12 @@ jobs:
 
       - name: Rank the published 20 papers
         id: rank
-        run: PYTHONPATH=scripts python -m shadow_jev --date ${{ needs.baseline.outputs.date }} --expected-base-sha256 ${{ needs.baseline.outputs.digest }} --evidence shadow-jev-run.json
+        env:
+          SHADOW_DATE: ${{ inputs.shadow_date || needs.baseline.outputs.date }}
+          BASE_DIGEST: ${{ needs.baseline.outputs.digest }}
+        run: |
+          # shadow_date 指定の単独実行では baseline が無いので digest 照合は省く
+          PYTHONPATH=scripts python -m shadow_jev --date "$SHADOW_DATE" ${BASE_DIGEST:+--expected-base-sha256 "$BASE_DIGEST"} --evidence shadow-jev-run.json
         continue-on-error: true
 
       - name: Set up Node
@@ -139,11 +152,13 @@ jobs:
 
       - name: Commit shadow JSON
         if: steps.rank.outcome == 'success'
+        env:
+          SHADOW_DATE: ${{ inputs.shadow_date || needs.baseline.outputs.date }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "chore: shadow jev ${{ needs.baseline.outputs.date }}"
+          git diff --cached --quiet || git commit -m "chore: shadow jev ${SHADOW_DATE}"
           git push
 
       - name: Upload shadow evidence

@@ -137,8 +137,16 @@ def main() -> int:
     args = parser.parse_args()
     config = load_config()
     path = ROOT / config["output_dir"] / f"{args.date}.json"
-    raw = path.read_bytes()
-    daily = json.loads(raw)
+    try:
+        raw = path.read_bytes()
+        daily = json.loads(raw)
+    except (OSError, ValueError) as error:
+        args.evidence.write_text(
+            json.dumps({"date": args.date, "status": "not_run", "reason": "baseline_unreadable",
+                        "detail": type(error).__name__}, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        return 1
     updated, evidence, code = run_shadow(daily, modal_rank, config, raw, args.expected_base_sha256)
     args.evidence.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if updated is not None:
