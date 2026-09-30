@@ -199,3 +199,12 @@ class TestShadowRun:
         changed["shadow_jev"]["predicate"]["current_project_context"] = ["different project"]
         assert context_sha256(config) != context_sha256(changed)
         assert "Current project:" in shared_state(config)
+
+    def test_specter_interest_profile_does_not_affect_jev(self):
+        """interest_profile は SPECTER の選定用。変えても Jev の判定と識別は動かない。"""
+        config = shadow_config()
+        changed = shadow_config()
+        changed["interest_profile"] = ["prompt injection", "tokenization"]
+        assert context_sha256(config) == context_sha256(changed)
+        assert shared_state(config) == shared_state(changed)
+        assert "prompt injection" not in shared_state(changed)

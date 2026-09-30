@@ -85,7 +85,7 @@
     },
     "predicate": {
       "id": "arxiv-current-research-usefulness",
-      "version": "1",
+      "version": "2",
       "current_project_context": [
         "building and measuring coding-agent harness tooling: token reduction for shell and tool output, cross-harness handoff, context compression with recovery of folded content, agent memory",
         "designing evaluations for coding agents and harnesses: benchmark design, paired comparisons, LLM-as-judge reliability, small open models under different harnesses",

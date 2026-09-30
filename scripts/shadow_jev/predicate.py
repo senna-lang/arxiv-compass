@@ -7,12 +7,16 @@ from typing import Any
 
 
 def canonical_predicate(config: dict[str, Any]) -> dict[str, Any]:
-    """出力に影響する設定だけを安定した順で返す。SPECTER の地図設定は含めない。"""
+    """出力に影響する設定だけを安定した順で返す。
+
+    判定はいまの作業（current_project_context）だけを見る。interest_profile は
+    SPECTER の選定用なので含めない。含めると、そちらを変えるたびに Jev の判定と
+    識別まで動いてしまう。
+    """
     predicate = config["shadow_jev"]["predicate"]
     return {
         "id": predicate["id"],
         "version": predicate["version"],
-        "interests": list(config["interest_profile"]),
         "current_project_context": list(predicate["current_project_context"]),
         "preference": predicate["preference"],
         "question": predicate["question"],
@@ -28,11 +32,8 @@ def context_sha256(config: dict[str, Any]) -> str:
 
 def shared_state(config: dict[str, Any]) -> str:
     predicate = canonical_predicate(config)
-    interests = "\n".join(f"- {item}" for item in predicate["interests"])
     project = "\n".join(f"- {item}" for item in predicate["current_project_context"])
     return (
-        "User research interests:\n"
-        f"{interests}\n\n"
         "Current project:\n"
         f"{project}\n\n"
         "Preference:\n"
