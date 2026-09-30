@@ -24,7 +24,13 @@
       ],
       "submitted": "2026-09-29",
       "github_url": "https://github.com/szu-tera/DTC.git.",
-      "score": 0.9006
+      "score": 0.9006,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 15,
+        "rank_delta": -14,
+        "relevance_probability": 0.7184217870235443
+      }
     },
     {
       "id": "2609.38021",
@@ -40,7 +46,13 @@
         "cs.IR"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8947
+      "score": 0.8947,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 17,
+        "rank_delta": -15,
+        "relevance_probability": 0.6075629889965057
+      }
     },
     {
       "id": "2609.37891",
@@ -64,7 +76,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8937
+      "score": 0.8937,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 19,
+        "rank_delta": -16,
+        "relevance_probability": 0.36309291422367096
+      }
     },
     {
       "id": "2609.37647",
@@ -81,7 +99,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8926
+      "score": 0.8926,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 10,
+        "rank_delta": -6,
+        "relevance_probability": 0.9307488203048706
+      }
     },
     {
       "id": "2609.37304",
@@ -101,7 +125,13 @@
       ],
       "submitted": "2026-09-29",
       "github_url": "https://github.com/binbin2xs/MetaCtrl.",
-      "score": 0.8919
+      "score": 0.8919,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 3,
+        "rank_delta": 2,
+        "relevance_probability": 0.9939144253730774
+      }
     },
     {
       "id": "2609.38005",
@@ -118,7 +148,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8913
+      "score": 0.8913,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 14,
+        "rank_delta": -8,
+        "relevance_probability": 0.8349079787731171
+      }
     },
     {
       "id": "2609.37989",
@@ -138,7 +174,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8912
+      "score": 0.8912,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 20,
+        "rank_delta": -13,
+        "relevance_probability": 0.265535332262516
+      }
     },
     {
       "id": "2609.37725",
@@ -166,7 +208,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8897
+      "score": 0.8897,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 2,
+        "rank_delta": 6,
+        "relevance_probability": 0.9968448579311371
+      }
     },
     {
       "id": "2609.38142",
@@ -186,7 +234,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8891
+      "score": 0.8891,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 12,
+        "rank_delta": -3,
+        "relevance_probability": 0.8834269046783447
+      }
     },
     {
       "id": "2609.37590",
@@ -205,7 +259,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8867
+      "score": 0.8867,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 1,
+        "rank_delta": 9,
+        "relevance_probability": 0.9991474449634552
+      }
     },
     {
       "id": "2609.37673",
@@ -235,7 +295,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8864
+      "score": 0.8864,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 7,
+        "rank_delta": 4,
+        "relevance_probability": 0.9799894988536835
+      }
     },
     {
       "id": "2609.37539",
@@ -253,7 +319,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8863
+      "score": 0.8863,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 8,
+        "rank_delta": 4,
+        "relevance_probability": 0.9710029363632202
+      }
     },
     {
       "id": "2609.37371",
@@ -269,7 +341,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.886
+      "score": 0.886,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 13,
+        "rank_delta": 0,
+        "relevance_probability": 0.8700670301914215
+      }
     },
     {
       "id": "2609.37626",
@@ -292,7 +370,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8857
+      "score": 0.8857,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 11,
+        "rank_delta": 3,
+        "relevance_probability": 0.8978489935398102
+      }
     },
     {
       "id": "2609.37915",
@@ -309,7 +393,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8856
+      "score": 0.8856,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 6,
+        "rank_delta": 9,
+        "relevance_probability": 0.9836570918560028
+      }
     },
     {
       "id": "2609.37567",
@@ -328,7 +418,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8853
+      "score": 0.8853,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 18,
+        "rank_delta": -2,
+        "relevance_probability": 0.6067657172679901
+      }
     },
     {
       "id": "2609.38006",
@@ -345,7 +441,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8846
+      "score": 0.8846,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 16,
+        "rank_delta": 1,
+        "relevance_probability": 0.7031349539756775
+      }
     },
     {
       "id": "2609.37522",
@@ -365,7 +467,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8846
+      "score": 0.8846,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 4,
+        "rank_delta": 14,
+        "relevance_probability": 0.9923836886882782
+      }
     },
     {
       "id": "2609.38137",
@@ -382,7 +490,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-29",
-      "score": 0.8845
+      "score": 0.8845,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 5,
+        "rank_delta": 14,
+        "relevance_probability": 0.9922017455101013
+      }
     },
     {
       "id": "2609.37950",
@@ -400,7 +514,13 @@
       ],
       "submitted": "2026-09-29",
       "github_url": "https://github.com/bingjunluo/Video-RSI",
-      "score": 0.884
+      "score": 0.884,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 9,
+        "rank_delta": 11,
+        "relevance_probability": 0.949683666229248
+      }
     }
   ],
   "meta": {
@@ -409,6 +529,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "4fd4f7ce27de7478c20c9fa6abd7d728f16ef7e888f1426a0b7af1addc51b337"
+      }
+    }
   }
 }
