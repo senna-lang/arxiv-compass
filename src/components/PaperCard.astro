@@ -16,6 +16,14 @@ const { paper, initialRating } = Astro.props;
 
 const scorePercent = Math.round(paper.score * 100);
 const firstCategory = paper.categories[0] ?? "";
+const jevMovement = !paper.jev
+  ? ""
+  : paper.jev.rank_delta > 0
+    ? `↑${paper.jev.rank_delta}`
+    : paper.jev.rank_delta < 0
+      ? `↓${Math.abs(paper.jev.rank_delta)}`
+      : "—";
+const jevTooltip = "Jev relevance rank among today's 20 papers. Card order remains SPECTER.";
 ---
 
 <article class="paper-card" data-paper-id={paper.id}>
@@ -35,6 +43,21 @@ const firstCategory = paper.categories[0] ?? "";
       <span class="category">{firstCategory}</span>
       <span class="sep">·</span>
       <span class="score">score {scorePercent}%</span>
+      {
+        paper.jev && (
+          <>
+            <span class="sep">·</span>
+            <span
+              class="jev-rank"
+              tabindex="0"
+              title={jevTooltip}
+              aria-label={jevTooltip}
+            >
+              JEV #{paper.jev.rank} {jevMovement}
+            </span>
+          </>
+        )
+      }
     </div>
   </header>
 
@@ -190,6 +213,34 @@ const firstCategory = paper.categories[0] ?? "";
     background: #f0faf3;
     padding: 0 0.3rem;
     margin-left: 0.1rem;
+  }
+
+  .jev-rank {
+    position: relative;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: #888;
+    background: none;
+    cursor: help;
+  }
+
+  .jev-rank:hover::after,
+  .jev-rank:focus-visible::after {
+    content: attr(title);
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 0.3rem);
+    left: 0;
+    width: max-content;
+    max-width: 16rem;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid #e0e0dc;
+    background: #fff;
+    color: #555;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    white-space: normal;
   }
 
   .paper-actions {

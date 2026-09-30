@@ -74,4 +74,29 @@
       "alpha_ratings_threshold": 50, // ratings件数がこの値に達するとprofile依存からinstance依存に完全移行
     },
   },
+  // SPECTER の選出順は変えない。表示中の20件だけを local Jev で shadow ranking する。
+  "shadow_jev": {
+    "model": {
+      "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+      "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+      "inference_version": "1",
+    },
+    "predicate": {
+      "id": "arxiv-current-research-usefulness",
+      "version": "1",
+      "current_project_context": [
+        "reproducing Jev-style typed decisions with a Qwen3-4B backbone",
+        "evaluating tree-packed multi-branch inference",
+        "looking for practical use cases for a local structured-decision model",
+      ],
+      "preference": "Prioritize papers likely to change an implementation, experiment, or system-design decision. Mere topical similarity is not enough.",
+      "question": "Would reading this paper likely provide concrete information that changes an implementation, experiment, or system-design decision for this user?",
+      "options": ["No", "Yes"],
+    },
+    "batch_size": 2,
+    "timeout_seconds": 180,
+}
+
 }

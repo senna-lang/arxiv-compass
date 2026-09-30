@@ -6,10 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  fetch-and-deploy:
+  baseline:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      present: ${{ steps.meta.outputs.present }}
+      date: ${{ steps.meta.outputs.date }}
+      # baseline の日次 JSON の digest のみ shadow に渡す
+      digest: ${{ steps.meta.outputs.digest }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,3 +65,92 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "chore: daily batch $(date +%Y%m%d)"
           git push
+
+      - name: Record baseline identity
+        id: meta
+        run: |
+          date_jst=$(TZ=Asia/Tokyo date +%Y%m%d)
+          file="data/${date_jst}.json"
+          if [[ ! -f "$file" ]]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
+          echo "date=${date_jst}" >> "$GITHUB_OUTPUT"
+          echo "digest=$(sha256sum "$file" | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+
+  shadow-jev:
+    needs: baseline
+    if: needs.baseline.outputs.present == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # ブランチ先頭を取る。baseline の push を含み、detached HEAD だと最後の git push が失敗する。
+          # 中身が baseline と同一かは --expected-base-sha256 で検証する。
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set up Modal token
+        run: modal token set --token-id ${{ secrets.MODAL_TOKEN_ID }} --token-secret ${{ secrets.MODAL_TOKEN_SECRET }}
+
+      - name: Rank the published 20 papers
+        id: rank
+        run: PYTHONPATH=scripts python -m shadow_jev --date ${{ needs.baseline.outputs.date }} --expected-base-sha256 ${{ needs.baseline.outputs.digest }} --evidence shadow-jev-run.json
+        continue-on-error: true
+
+      - name: Set up Node
+        if: steps.rank.outcome == 'success'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: oven-sh/setup-bun@v2
+        if: steps.rank.outcome == 'success'
+        with:
+          bun-version: latest
+          cache: true
+
+      - name: Install Node dependencies
+        if: steps.rank.outcome == 'success'
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        if: steps.rank.outcome == 'success'
+        run: bun run build
+
+      - name: Deploy shadow result
+        if: steps.rank.outcome == 'success'
+        run: bunx wrangler pages deploy dist/ --project-name arxiv-explorer
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Commit shadow JSON
+        if: steps.rank.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: shadow jev ${{ needs.baseline.outputs.date }}"
+          git push
+
+      - name: Upload shadow evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-jev-run
+          path: shadow-jev-run.json
+          retention-days: 14
+          if-no-files-found: warn

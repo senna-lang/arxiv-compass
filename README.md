@@ -157,3 +157,7 @@ Describe your interest areas in natural language in `interest_profile` in `confi
 |---|---|
 | `proximity` | Paper-to-paper similarity (embedding abstracts) |
 | `adhoc_query` | Query→paper retrieval (embedding interest_profile) |
+
+## Experimental shadow ranking
+
+After the daily SPECTER selection is published, a separate job may rank those same 20 papers with a local Jev model on Modal L4. Jev is a shadow signal: it never changes which papers are selected or the order of the cards. A card shows `JEV #N` and its movement relative to the SPECTER rank only when a complete result exists. Probability stays in the daily JSON. If Jev times out or fails, the SPECTER page remains published and the badge is omitted. Promotion from shadow to Jev-controlled ordering requires five weekday runs and a separate decision.
