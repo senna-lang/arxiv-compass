@@ -15,7 +15,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8964
+      "score": 0.8964,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 3,
+        "rank_delta": -2,
+        "relevance_probability": 0.9961941540241241
+      }
     },
     {
       "id": "2609.39929",
@@ -32,7 +38,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8959
+      "score": 0.8959,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 1,
+        "rank_delta": 1,
+        "relevance_probability": 0.9978975355625153
+      }
     },
     {
       "id": "2609.39801",
@@ -52,7 +64,13 @@
       ],
       "submitted": "2026-09-30",
       "github_url": "https://github.com/steven-bao1/RATIO.",
-      "score": 0.8958
+      "score": 0.8958,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 14,
+        "rank_delta": -11,
+        "relevance_probability": 0.9399133324623108
+      }
     },
     {
       "id": "2609.39394",
@@ -74,7 +92,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8941
+      "score": 0.8941,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 12,
+        "rank_delta": -8,
+        "relevance_probability": 0.9779635667800903
+      }
     },
     {
       "id": "2609.39551",
@@ -91,7 +115,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8929
+      "score": 0.8929,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 13,
+        "rank_delta": -8,
+        "relevance_probability": 0.9666804075241089
+      }
     },
     {
       "id": "2609.39420",
@@ -109,7 +139,13 @@
         "q-fin.TR"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8928
+      "score": 0.8928,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 15,
+        "rank_delta": -9,
+        "relevance_probability": 0.8554419279098511
+      }
     },
     {
       "id": "2609.39383",
@@ -126,7 +162,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8907
+      "score": 0.8907,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 10,
+        "rank_delta": -3,
+        "relevance_probability": 0.9836179912090302
+      }
     },
     {
       "id": "2609.39632",
@@ -146,7 +188,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8896
+      "score": 0.8896,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 16,
+        "rank_delta": -8,
+        "relevance_probability": 0.7591953277587891
+      }
     },
     {
       "id": "2609.39578",
@@ -164,7 +212,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.889
+      "score": 0.889,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 6,
+        "rank_delta": 3,
+        "relevance_probability": 0.9918965101242065
+      }
     },
     {
       "id": "2609.40303",
@@ -180,7 +234,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8886
+      "score": 0.8886,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 9,
+        "rank_delta": 1,
+        "relevance_probability": 0.9881139695644379
+      }
     },
     {
       "id": "2609.39702",
@@ -197,7 +257,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8885
+      "score": 0.8885,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 7,
+        "rank_delta": 4,
+        "relevance_probability": 0.9918965101242065
+      }
     },
     {
       "id": "2609.39882",
@@ -218,7 +284,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-30",
-      "score": 0.888
+      "score": 0.888,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 17,
+        "rank_delta": -5,
+        "relevance_probability": 0.7031349539756775
+      }
     },
     {
       "id": "2609.40169",
@@ -237,7 +309,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8875
+      "score": 0.8875,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 4,
+        "rank_delta": 9,
+        "relevance_probability": 0.9941248893737793
+      }
     },
     {
       "id": "2609.39967",
@@ -258,7 +336,13 @@
         "cs.AI"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8873
+      "score": 0.8873,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 8,
+        "rank_delta": 6,
+        "relevance_probability": 0.9902915358543396
+      }
     },
     {
       "id": "2609.39645",
@@ -280,7 +364,13 @@
       ],
       "submitted": "2026-09-30",
       "github_url": "https://github.com/zhansan114514/SEPAL.",
-      "score": 0.8869
+      "score": 0.8869,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 11,
+        "rank_delta": 4,
+        "relevance_probability": 0.978312075138092
+      }
     },
     {
       "id": "2609.39701",
@@ -300,7 +390,13 @@
         "cs.LG"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8864
+      "score": 0.8864,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 18,
+        "rank_delta": -2,
+        "relevance_probability": 0.3198183625936508
+      }
     },
     {
       "id": "2609.39912",
@@ -318,7 +414,13 @@
       ],
       "submitted": "2026-09-30",
       "github_url": "https://github.com/Jaasssoooonnnnn/TRACE.",
-      "score": 0.8857
+      "score": 0.8857,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 5,
+        "rank_delta": 12,
+        "relevance_probability": 0.9936013519763947
+      }
     },
     {
       "id": "2609.39740",
@@ -334,7 +436,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8856
+      "score": 0.8856,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 2,
+        "rank_delta": 16,
+        "relevance_probability": 0.997452586889267
+      }
     },
     {
       "id": "2609.39853",
@@ -355,7 +463,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8848
+      "score": 0.8848,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 19,
+        "rank_delta": 0,
+        "relevance_probability": 0.24837179854512215
+      }
     },
     {
       "id": "2609.39920",
@@ -375,7 +489,13 @@
         "cs.CL"
       ],
       "submitted": "2026-09-30",
-      "score": 0.8843
+      "score": 0.8843,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 20,
+        "rank_delta": 0,
+        "relevance_probability": 0.07443531509488821
+      }
     }
   ],
   "meta": {
@@ -384,6 +504,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
