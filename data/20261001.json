@@ -1,0 +1,389 @@
+{
+  "date": "2026-10-01",
+  "collected_at": "2026-10-01T14:19:25.942947+09:00",
+  "papers": [
+    {
+      "id": "2609.39765",
+      "title": "MemCodex: Self-Programming Hierarchical Memory for Language Agents",
+      "authors": [
+        "Xiaoqiang Wang",
+        "Bang Liu"
+      ],
+      "abstract": "Agent memory faces heterogeneous access needs: a single-hop question may require one piece of evidence, whereas a multi-hop question must combine evidence from multiple sources. Predefined memory workflows cannot adapt to these varying needs. Recent adaptive methods search or learn over memory components and their compositions, but the design space itself remains predefined. We introduce MemCodex, a self-evolving hierarchical memory system that organizes experience into executable memory programs for summaries, relational knowledge, reusable skills, and latent memory. Open-ended program evolution searches the open design space of layer programs by rewriting how each layer is constructed, indexed, retrieved, and routed, thereby adapting both within-layer implementations and cross-layer composition. At query time, reads traverse the hierarchy from coarse to fine and stop once sufficient evidence is found, descending to the original history when needed. We further develop MemArena, a unified runtime that places heterogeneous data and memory systems behind a common interface. MemCodex improves average task success by 10.1% relative to the strongest adaptive-memory baseline, while using 3.4x fewer context tokens and achieving 2.1x faster inference.",
+      "url": "https://arxiv.org/abs/2609.39765",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8964
+    },
+    {
+      "id": "2609.39929",
+      "title": "RoPE at the End of Its Rope? Theory, Diagnosis, and Mitigation of Long-Context Failures",
+      "authors": [
+        "Yuyang Wu",
+        "Yufeng Du",
+        "Hao Peng"
+      ],
+      "abstract": "Long-context failures of RoPE-based language models can arise from RoPE's intrinsic tradeoff between maintaining stable token preferences and distinguishing nearby positions. Determining which weakness to address, and how, requires a more precise characterization of RoPE's behavior in trained models across context lengths. We address a key limitation of prior theory by allowing unequal query-key scales across RoPE frequencies, which aligns well with practical empirical observations. Our theory makes both vulnerabilities measurable for individual heads and inputs, and quantifies how high-frequency components support positional sensitivity while potentially disrupting semantic stability. We also derive a theoretical context-length bound beyond which, under specified conditions, a fixed attention-score comparison cannot jointly avoid semantic reversal and positional insensitivity. Guided by our fresh theoretical insights, we introduce RoPE Profiler, a lightweight, plug-and-play diagnostic toolkit that augments existing evaluations with zero additional forward passes by reusing cached query and key activations. Reusing activations collected during evaluation, the toolkit incurs little overhead. It supplements standard benchmark scores with two diagnostic scores that reveal semantic and positional weaknesses and help users prioritize which aspect to address. Crucially, our evaluations across 49 long-context task settings reveal a distinct pattern where reasoning tasks predominantly suffer from semantic reversal, whereas retrieval tasks are primarily vulnerable to positional insensitivity. Guided by our theory and diagnostic profiles, targeted high-frequency rescaling achieves immediate gains without additional training, improving task accuracy by up to 20 percentage points on Qwen3-8B and 25 percentage points on Llama-3.1-8B-Instruct.",
+      "url": "https://arxiv.org/abs/2609.39929",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8959
+    },
+    {
+      "id": "2609.39801",
+      "title": "RATIO: Reasoning Analysis and Token-level Inference Optimization for Quantized Reasoning Models",
+      "authors": [
+        "Chengzhu Bao",
+        "Xianglong Yan",
+        "Tianao Zhang",
+        "Jiaqi Chen",
+        "Shaoqiu Zhang",
+        "Yulun Zhang"
+      ],
+      "abstract": "Post-training quantization (PTQ) has become a widely adopted technique for reducing the memory footprint and inference cost of large language models (LLMs). However, recent studies reveal that when applied to reasoning models, PTQ not only degrades reasoning performance but also exacerbates overthinking, leading to longer reasoning trajectories. These issues may offset the efficiency gains expected from lower-precision inference. Existing approaches mainly rely on complex optimization procedures. More recent lightweight inference strategies instead use predefined overthinking markers, limiting their adaptability across quantized models. To address these issues, we propose Reasoning Analysis and Token-level Inference Optimization (RATIO), a framework that identifies model-specific overthinking tokens and assigns each a tailored penalty. RATIO first introduces Quantization-aware Reasoning Behavior Analysis (QRBA) to identify overthinking tokens by analyzing discrepancies between full-precision and quantized models. It then adopts Token-Specific Penalty Determination (TSPD), which leverages full-precision guidance to derive token-specific penalties without additional training. Extensive experiments show that RATIO achieves a better accuracy-efficiency trade-off than existing token-level interventions. Specifically, RATIO achieves up to 9.8 points accuracy improvement and reduces chain-of-thought (CoT) length by up to 51.3% compared with quantized baselines. The code will be available at https://github.com/steven-bao1/RATIO.",
+      "url": "https://arxiv.org/abs/2609.39801",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "github_url": "https://github.com/steven-bao1/RATIO.",
+      "score": 0.8958
+    },
+    {
+      "id": "2609.39394",
+      "title": "Can Computation from Earlier Problems Help LLMs Solve New Ones?",
+      "authors": [
+        "Jipei He",
+        "Wenhui Tan",
+        "Xiaoyi Yu",
+        "Enver Sangineto",
+        "Fiorenzo Parascandolo",
+        "Rita Cucchiara",
+        "Ruihua Song"
+      ],
+      "abstract": "Large language models often solve independent problems in the same conversation. Can computation from earlier problems help them solve new ones? To answer this question, we first conduct preliminary experiments showing that retained history can raise or lower later-turn accuracy, even within the same domain. To understand these effects, we use controlled replay to isolate internal state changes specific to each problem-history pairing. Across different histories, these changes preserve similar relationships among current problems. To improve reasoning under retained history, we introduce STAIR (Stale-Token Attention for Inter-query Reuse). STAIR captures keys and values from earlier response generation in a fixed bank. It learns to redirect current queries when they read this bank during prompt processing. The base model remains frozen; only 12,288 parameters are trained. Across three Qwen models and four benchmarks, STAIR improves average later-turn accuracy by up to 11.67 percentage points over the unmodified model with history.",
+      "url": "https://arxiv.org/abs/2609.39394",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8941
+    },
+    {
+      "id": "2609.39551",
+      "title": "RankEvolve: A Reliable Multi-Agent Auto-Research Harness for Evolving Ranking Models",
+      "authors": [
+        "Zheng Chen",
+        "Linfeng Liu",
+        "Hong Li",
+        "Hong Yan"
+      ],
+      "abstract": "Auto-research agents, LLM systems that propose, implement, train, and evaluate model changes across iterations, promise to automate applied ML's experimental loop. Over long horizons, execution accuracy is a binding constraint: a change can silently leak held-out data, omit normalization, disconnect a gradient, or leave a train/eval flag unwired, invalidating expensive runs and compounding error across iterations. We present RankEvolve, an auto-research framework for evolving generative ranking models. An Executable Operating Protocol (EOP) declares phases, gates, branches, and loops, and the runtime enforces the compiled state machine. A meta-meta-harness composes complete black-box coding-agent products, including Claude Code and Codex, as execution-graph nodes that review and repair one another's work. In a budget-matched evaluation, heterogeneous composition raises all-oracle execution accuracy from the best single-product baseline of 45.8 percent to 62.5 percent (paired +16.7 points, 95 percent CI [6.6, 26.7]) while achieving a 10.4 percent silent critical-defect rate. An implemented knowledge layer carries findings, including negative results, across iterations. In a twelve-iteration deployment on the open-source HSTU recommender, RankEvolve reported NDCG@10 of 0.2192 on MovieLens-20M LARGE (+4.48 percent over the published anchor) and 0.1948 on BASE (+2.80 percent). ExecML-HSTU, seeded by incidents from that deployment, provides the oracle benchmark for the execution-accuracy evaluation. A pre-specified LitGPT transfer split replicates the heterogeneous-composition effect beyond recommendation (+12.5 points, 95 percent CI [3.0, 22.0]), and a paired ablation isolates per-step from full-protocol instruction injection. These results characterize when runtime-controlled composition of coding-agent products improves execution accuracy.",
+      "url": "https://arxiv.org/abs/2609.39551",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8929
+    },
+    {
+      "id": "2609.39420",
+      "title": "QuantCode Model: Specializing Language Models for Executable Algorithmic Trading Code",
+      "authors": [
+        "Alexey Chernysh",
+        "Orkhan Ekhtibarov",
+        "Dmitry Zmitrovich"
+      ],
+      "abstract": "Large language models are strong general-purpose code generators, but executable algorithmic trading remains a demanding specialization target: a model must translate a natural-language strategy specification into correct program logic for a specialized trading framework, execute on historical data, produce trades, and remain semantically faithful to the request. We study two complementary mechanisms for specializing language models for this setting: continued pretraining on algorithmic-trading framework code and supervised fine-tuning (SFT) on agent-validated request-to-code pairs. Evaluation is centered on QuantCode-Bench, our 400-task benchmark for Backtrader strategy generation, together with a repository-level SWE-bench-like track. Continued pretraining improves single-turn Judge Pass from 41.5% to 47.5% for Qwen3.5-397B-A17B and from 27.8% to 33.0% for Qwen3.6-35B-A3B. SFT applied after continued pretraining yields a larger gain for Qwen3.6-35B-A3B, reaching 58.2% Judge Pass and 83.5% successful backtests; in agentic evaluation it raises first-turn success from 22.3% to 58.3% and final success after up to 10 turns from 47.5% to 79.5%. Continued pretraining alone improves first-turn agentic success but lowers final success after repair from 47.5% to 32.5%, consistent with degraded instruction following, whereas SFT improves both. We also identify a capability-retention failure: domain specialization degrades parser-conformant structured tool calling, and targeted recovery SFT restores tool-call formatting but not the base checkpoint's repository-level agent performance. The results show that framework-oriented pretraining, validated SFT, and explicit capability-retention evaluation address distinct failure modes in domain-specific executable code generation.",
+      "url": "https://arxiv.org/abs/2609.39420",
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "q-fin.TR"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8928
+    },
+    {
+      "id": "2609.39383",
+      "title": "From Search to Signal: Online Post-Training in Automatic Heuristic Design",
+      "authors": [
+        "Yilun Yuan",
+        "Tianyu Zhou",
+        "Zhenzhou Tang"
+      ],
+      "abstract": "Large language model (LLM)-based automatic heuristic design (AHD) iteratively proposes and refines heuristics, pairing design rationales with executable code. Task-specific evaluators assess programs; execution outcomes and performance scores guide search. Many AHD systems keep the generator frozen; EvoTune and Co-Evolution of Algorithms and Language Model (CALM) instead update it from evaluated candidates. When such outcomes drive reinforcement learning with verifiable rewards (RLVR), they create a search-coupled loop: the evaluated candidate stream supplies both search-state updates and training signals for the model that generates future candidates. Yet validity and performance do not uniquely determine useful model updates; converting them into learning signals must account for the prompt and evolving search state that produced each candidate. We formulate online post-training of small open-weight LLMs in AHD as context-dependent signal construction and develop alternative mappings from program validity, task performance, and generation context to update signals. Using shared evaluated rollouts and matched update budgets, controlled experiments across AHD tasks and model families compare these mappings with online post-training baselines, testing their effects on validity, performance among valid proposals, and the yield of valid proposals that improve under contextual comparisons. Complementary checkpoint, frozen-search, and live-system evaluations assess whether proposal-level gains appear in updated checkpoint behavior and subsequent search, rather than arising solely from accumulated search state. A resource-matched comparison under pre-specified cost accounting tests whether online updating adds value beyond additional search with a frozen generator. Together, this design avoids treating end-to-end search gains alone as evidence of stronger heuristic-design capabilities.",
+      "url": "https://arxiv.org/abs/2609.39383",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8907
+    },
+    {
+      "id": "2609.39632",
+      "title": "Towards Better Exploration in Sequential Test-Time Scaling",
+      "authors": [
+        "Joseph Rance",
+        "Fabio Pizzati",
+        "Juil Sock",
+        "Woody Bayliss",
+        "Marc Górriz Blanch",
+        "Philip Torr",
+        "Adel Bibi"
+      ],
+      "abstract": "Test-time scaling improves language model reasoning by spending additional compute at inference. However, both classes of existing methods often fail to continue improving over long timescales. Parallel methods repeatedly sample independent answers from the model, scaling poorly on problems the model is unlikely to solve in a single attempt. In contrast, sequential methods build on previous answers to access new ideas, yet so far have not been shown to reach answers beyond those found by parallel scaling. First, we show that sequential scaling often stops improving because it becomes prematurely trapped in an attractor: a set of answers that prevents exploration of different answers once entered. Across 27 combinations of scaling methods, models, and benchmarks, we find that 53.8% of sequential scaling trajectories enter an attractor within four iterations. Second, we show that a simple model-mixing intervention helps escape attractors. This reduces the attractor hit rate by 21.2 percentage points on average, expands solution coverage beyond a compute-matched parallel baseline, and improves accuracy of recursive self-aggregation by at least 2.2 percentage points. Our results motivate refocusing long-horizon test-time scaling from parallel methods to sequential methods that improve previous answers.",
+      "url": "https://arxiv.org/abs/2609.39632",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8896
+    },
+    {
+      "id": "2609.39578",
+      "title": "Thinking Outside the Box: Can Language Models Rely on External Guidance Selectively?",
+      "authors": [
+        "Minghan Wang",
+        "Boyuan Wang",
+        "Jinhang Zuo",
+        "Yuxin Tao",
+        "Fang kong"
+      ],
+      "abstract": "Agent harnesses often improve language models with human-designed workflows, but as models grow more capable, unreliable guidance can increasingly constrain their execution. We call the ability to benefit from useful guidance while overriding unreliable guidance thinking outside the box. We introduce Box$^2$-Bench, which holds the model and task fixed while varying workflow reliability to isolate how models regulate their reliance on guidance. On Box$^2$-Bench, frontier models often benefit from reliable guidance but remain vulnerable when it is misleading or becomes unreliable. To test whether this capability can be learned, we train two open-weight models using bad workflows, reserving good workflows for evaluation. We explore two complementary training strategies: counterfactual supervised fine-tuning improves robustness, while outcome-based reinforcement learning can shift the balance toward greater use of helpful workflows. We further find that this behavior extends beyond workflows to other forms of external information, improving peer correction and robustness to corrupted memory. Together, our results identify selective reliance on fallible external information as a dimension of agent reliability not captured by task performance alone.",
+      "url": "https://arxiv.org/abs/2609.39578",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.889
+    },
+    {
+      "id": "2609.40303",
+      "title": "How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?",
+      "authors": [
+        "Kirill Brilliantov",
+        "Alejandro Hernández-Cano",
+        "Emmanuel Abbé"
+      ],
+      "abstract": "Recent autonomous machine learning engineering (MLE) agents have made significant progress on public leaderboards. Often motivated by progress stagnation over long-horizon cycles and limited Large Language Model (LLM) primitives, modern MLE agents are deployed on top of increasingly elaborate machinery: multi-agent orchestrators, dedicated retrieval subagents, and more. While such harnesses expand, the use of more primitive but improved coding agents - where LLMs have direct access to the execution environment through read, write, and bash primitives - has received little attention in the field. In this paper we find that, under an equal time budget and the same frontier LLM backbone, open-source state-of-the-art harnesses provide no advantages over a single session of a minimal-harness coding agent baseline, pointing to the backbone as the primary driver for performance. Via a series of large-scale systematic ablation studies, we argue that the machinery layers become redundant in the coding agent setting. We conclude that the effort spent elaborating hand-crafted harnesses around strong models yields poor returns for current MLE benchmarks.",
+      "url": "https://arxiv.org/abs/2609.40303",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8886
+    },
+    {
+      "id": "2609.39702",
+      "title": "A helps B while B hurts A: directed transfer in instruction-tuning mixture",
+      "authors": [
+        "Nima H. Siboni",
+        "Vahid Rostami"
+      ],
+      "abstract": "Adapting a language model to a specialized corpus means choosing which instruction-tuning tasks to train on under a fixed budget, and testing one choice costs a fine-tuning run. Common heuristics add more source tasks or pick sources similar to the target. The first assumes transfer is never negative; the second, that it is symmetric. We show that both assumptions fail: task $A$ can help task $B$ while $B$ hurts $A$, so helpfulness is a signed property of ordered source--target pairs. We introduce the transfer map, a signed estimate of how much each source helps or hurts each held-out target. We fit the map in hundreds of fine-tuning runs on Qwen3 and Mistral models from 0.6B to 32B parameters, with all sources drawn from one corpus and no training examples from the target. The map predicts a held-out target's accuracy on unseen mixtures: recorded before those runs, its predictions have less than half the error of a mixture-agnostic baseline. The map is specific to its target and corpus but transfers across model scale: a mixture selected in advance at one size beats training on all source tasks at every other size we tested. Transfer is thus a property of the data. The map selects the tasks that help and drops the one that interferes: accuracy on the reasoning targets (causal explanation, multi-hop questions and methodological critique) rises by up to 14 percentage points over training on all source tasks.",
+      "url": "https://arxiv.org/abs/2609.39702",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8885
+    },
+    {
+      "id": "2609.39882",
+      "title": "LLM Persona Unlearning",
+      "authors": [
+        "Kemou Li",
+        "Zhuan Shi",
+        "Qizhou Wang",
+        "Fengpeng Li",
+        "Negar Rostamzadeh",
+        "Golnoosh Farnadi",
+        "Jiantao Zhou"
+      ],
+      "abstract": "Pre-training equips large language models (LLMs) with a broad repertoire of behavioral patterns associated with roles, styles, values, and goals. Post-training teaches conditional enactment and makes a helpful Assistant the default, but it does not erase alternative modes from the weights; explicit prompts can therefore elicit personas that repeatedly shape judgment, language, and action. In open-weight settings, runtime controls can be removed, motivating persona unlearning: a weight-level edit that makes a designated persona difficult to elicit and enact on unseen contexts. We introduce PersonaUnlearnBench, a model-specific paired benchmark spanning six LLMs from three families and five personas, with aligned forget/retain sets, held-out instruction paraphrases, and four-axis evaluation. The benchmark shows that standard unlearning methods cannot reliably erase the target persona without sacrificing meaningful generation or general utility. We therefore propose PaCE, which compares target and desirable responses to the same questions to locate an internal behavior direction, then trains target-prompt states away from the target mode and toward the matched desirable response. Experiments show that PaCE consistently suppresses target personas with high response quality and useful counterpart behavior, at moderate utility cost. These results establish persona unlearning as a distinct behavior-level editing problem and a practical route toward persistent control of latent LLM response policies.",
+      "url": "https://arxiv.org/abs/2609.39882",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.888
+    },
+    {
+      "id": "2609.40169",
+      "title": "Learning from Research: Toward Lifelong Agent Harness Evolution",
+      "authors": [
+        "Jingbo Yang",
+        "Kwei-Herng Lai",
+        "Xiaowen Wang",
+        "Yaar Harari",
+        "Evgeniy Gabrilovich",
+        "Shiyu Chang"
+      ],
+      "abstract": "Language agents are expected to solve increasingly complex tasks, creating a growing need for continual improvement. One promising approach is to evolve the agent harness, the software that governs tool use, memory management, and task execution, while keeping the underlying language model fixed. Recent methods automate this process by using a meta coding agent to modify the harness based on execution feedback. However, relying on that agent's existing knowledge and observed failures can restrict exploration and make adaptation reactive. Inspired by how human experts learn from the research literature for new solutions, we introduce ScholarEvolve, a framework that automatically draws on state-of-the-art research to guide harness evolution. ScholarEvolve organizes the harness evolution directions into functional modules and uses topic modeling to identify distinct improvement strategies for each module. It implements these strategies and evaluates their combinations to improve task performance. Moreover, the framework is designed to incorporate new publications over time, allowing research advances to drive proactive lifelong evolution. Experiments demonstrate improvements on AppWorld and Tau2-Bench. ScholarEvolve raises Qwen3.5-27B task goal completion from 49.6% to 63.6% on AppWorld Challenge, and raises GPT-5.4-mini pass@1 from 72.7% to 81.9% on Tau2-Bench Telecom.",
+      "url": "https://arxiv.org/abs/2609.40169",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8875
+    },
+    {
+      "id": "2609.39967",
+      "title": "What Limits Recursive Reasoning Models: Optimization, Architecture and Test-Time Scaling",
+      "authors": [
+        "Yuliana Shakhvalieva",
+        "Dmitrii Kharchev",
+        "Viacheslav Bezrukov",
+        "Inessa Fedorova",
+        "Dmitry Bocharov",
+        "Ivan Oseledets",
+        "Valerii Ternovskii"
+      ],
+      "abstract": "Recursive reasoning models apply a small shared Transformer block many times to refine a latent state. This gives them large effective depth with few parameters and makes them strong on algorithmic tasks. Such compact solvers are natural candidates for tools that an LLM can call on narrow algorithmic subproblems. However, existing models such as HRM, TRM and URM differ in architecture, gradient propagation and training procedure simultaneously. This makes it hard to tell what drives their performance, and their optimization is still poorly understood and often unstable. In this work we address both of these gaps. First, we study these questions under a unified experimental pipeline spanning six algorithmic domains. Individual controlled ablations are performed on representative domains, while the resulting recipe is evaluated across the full suite. The study reveals a surprisingly simple recipe for stable and generalizable recursive reasoning: an intermediate gradient horizon, large physical batches and controlled updates of the recurrent state. An explicit hierarchical architecture is not needed. Second, we combine these findings into a stable 13.6M-parameter model that achieves the strongest overall performance among the evaluated recursive baselines, with particularly large gains on out-of-distribution generalization. It raises Arithmetic OOD accuracy to 71.2%, from 36.2% for the strongest baseline, while reaching 98.41% on Sudoku and 59.5% pass@2 on ARC-AGI-1. Our results show that, within the recursive architectures studied here, performance depends strongly on how recurrence is optimized and stabilized. More broadly, it shows how AI systems can be improved by optimizing their components one at a time.",
+      "url": "https://arxiv.org/abs/2609.39967",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8873
+    },
+    {
+      "id": "2609.39645",
+      "title": "SEPAL: Separated Expert Pairs with Answer-Level Fusion for Reliable LLM Collaboration",
+      "authors": [
+        "Weijie Ren",
+        "Yanwen Zhang",
+        "Hao Li",
+        "Zhuolin Qi",
+        "Hengyi Zhang",
+        "Naibo Wang"
+      ],
+      "abstract": "Multi-agent collaboration lets large language models (LLMs) improve question answering through deliberation and feedback. Yet shared discussion couples correction with exposure to the same mistakes, which can erode the diversity needed for voting. Self-consistency offers sampling diversity without feedback, while single-pair Actor-Critic collaboration refines only one candidate. We introduce SEPAL, which assigns three private Actor-Critic teams to direct reasoning, evidence grounding, and verification. Role-specific training gives the teams different reasoning objectives beyond sampling variation. Each Critic guides revisions within its own team, preventing feedback from carrying errors across candidates. Once revision ends, majority voting combines only the final answers, keeping the reasoning histories separate until the decision. Across five open-weight backbones and five question-answering benchmarks, SEPAL improves mean accuracy by 1.81 percentage points over a matched single Actor-Critic pair, with improvements across all five backbones. Code is available at https://github.com/zhansan114514/SEPAL.",
+      "url": "https://arxiv.org/abs/2609.39645",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "github_url": "https://github.com/zhansan114514/SEPAL.",
+      "score": 0.8869
+    },
+    {
+      "id": "2609.39701",
+      "title": "Values as Style: Disentangling Values from Semantics with One-Way Mixing for Low-Damage LLM Steering",
+      "authors": [
+        "Jiale Dai",
+        "Hongcan Deng",
+        "Liuxian Ma",
+        "Xiaoke Niu",
+        "Guojie Song"
+      ],
+      "abstract": "Value steering should change an LLM's normative priorities while preserving the scenario, facts, and task constraints underlying its answer. Conventional activation edits often change both. We introduce an editable semantic-value interface on frozen residual states, with a one-way semantic-to-value pathway that grounds value recognition in context. Stop-gradient blocks feedback through this pathway; swap consistency, topic de-confounding, and decorrelation encourage selective codes. At inference, editing the value code produces a residual delta while holding the semantic code fixed. On two instruction-tuned backbones, this interface improves semantic preservation and reduces benign refusals at comparable value alignment. A matched mixing-by-gating ablation separates representation learning from selective edit activation, and dimension-matched probes establish improved code selectivity. Against validation-selected prompting on LLaMA-3.1-8B, the method achieves comparable alignment (0.750 vs. 0.748), higher BERTScore (0.938 vs. 0.923), and fewer contradictions (5.1% vs. 7.6%). Human ratings and cross-taxonomy controls provide complementary evidence for low-damage value steering.",
+      "url": "https://arxiv.org/abs/2609.39701",
+      "categories": [
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8864
+    },
+    {
+      "id": "2609.39912",
+      "title": "TRACE: Trajectory Selection for Parallel Scaling of Search Agents",
+      "authors": [
+        "Qisheng Zhou",
+        "Zhen Xiong",
+        "Qiaoyu Tan"
+      ],
+      "abstract": "Parallel search may generate a correct answer that final-answer voting fails to select. We formulate this consolidation stage as trajectory selection and introduce TRACE (Trajectory Ranking with Aggregated Cross-Rollout Evidence), a lightweight learned selector that ranks completed trajectories using the search evidence behind their answers. TRACE preserves individual query and evidence occurrences, connects rollouts through shared content or document identity, and propagates information across these relations. Each candidate answer then reads the updated states of its own trajectory, preserving retrieval provenance while incorporating evidence from related rollouts. Trained with answer-level supervision over frozen text embeddings, TRACE returns an existing answer without additional search or autoregressive aggregation. One selector per search setting transfers across rollout policies and agent backbones without agent-specific fine-tuning, improving over voting across six WebQA policies and six long-horizon dataset-backbone combinations at $K=16$. On Qwen2.5-14B Base/SFT WebQA pools, TRACE achieves 45.2/49.2% EM, compared with 43.9/48.0% for the strongest Qwen3-32B generative aggregators. On long-horizon FRAMES, GAIA, and BrowseComp, it reaches 78.6% average accuracy, exceeding majority voting by 3.1 percentage points. On Base WebQA pools, TRACE with only 8 rollouts comes within 0.4 points of majority voting over 64. TRACE also achieves at least $10\\times$ higher processing throughput than SolAgg, SummAgg, and AggAgent across all seven WebQA benchmarks. These results show that reusing cross-rollout search evidence provides an effective and efficient alternative to heavyweight generative aggregation for parallel search. Code is available at https://github.com/Jaasssoooonnnnn/TRACE.",
+      "url": "https://arxiv.org/abs/2609.39912",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-09-30",
+      "github_url": "https://github.com/Jaasssoooonnnnn/TRACE.",
+      "score": 0.8857
+    },
+    {
+      "id": "2609.39740",
+      "title": "LatentHarness: Learning Latent Actions for Memory and Reasoning via Counterfactual Policy Distillation",
+      "authors": [
+        "Xiaoqiang Wang",
+        "Suyuchen Wang",
+        "Bang Liu"
+      ],
+      "abstract": "Long-context reasoning faces two complementary bottlenecks: retaining evidence across long inputs and sustaining computation across many reasoning steps. Existing approaches largely address them separately, with external memory extending access to distant evidence and latent reasoning compressing multi-step computation. We introduce LatentHarness, which unifies memory access and latent reasoning as sequential latent action selection. At each internal step, the model chooses THINK for further computation, RECALL from a fast-weight memory of input evidence and intermediate reasoning states, or EXIT to emit the next token. We train this policy with counterfactual policy distillation, which branches every action for one step and scores its effect on the emitted token. These gains teach the policy when memory is more useful than further reasoning, while gradients through counterfactual recall teach which intermediate states should be retained in memory for future use. Across six general and long-context reasoning benchmarks, LatentHarness at 1.4B improves on the strongest baselines by 2.8% and 10.0% relative, respectively, and runs 5.9x faster than the strongest long-context baseline.",
+      "url": "https://arxiv.org/abs/2609.39740",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8856
+    },
+    {
+      "id": "2609.39853",
+      "title": "Cognitive Enhancement: Rethinking the Necessity of Role-Playing for Large Language Models",
+      "authors": [
+        "Xingjie Zhuang",
+        "Jialong Tang",
+        "Chulun Zhou",
+        "Buchao Zhan",
+        "Zhirui Li",
+        "Junhui Li",
+        "Yazheng Yang",
+        "Jinsong Su"
+      ],
+      "abstract": "Role-playing prompting has become a popular yet simple technique for improving LLM reasoning and output quality. However, whether it consistently boosts performance across diverse domains remains unclear, as systematic validation is lacking. To fill this gap, we run multi-model, cross-domain, and multilingual experiments on MMLU and MMLU-Redux. We find that gains from role-play prompting depend heavily on model capacity, knowledge domain, and prompt language. Drawing on metacognition theory, we propose the persona-related cognitive alignment hypothesis: role-play works only when the LLM correctly grasps the designated persona and its associated knowledge domain. We test this hypothesis through persona information richness ablation, layer-wise entropy divergence analysis, and latent thought-space deflection observation. To reduce persona cognitive bias and stabilize role-play performance, we propose \\textbf{M}ixed-\\textbf{L}anguage \\textbf{C}oncatenate \\textbf{P}rediction \\textbf{(MLCP}), a simple, training-free, and efficient multilingual prompt concatenation strategy. It aggregates semantically equivalent role prompts to enrich complementary representational cues. Extensive experiments show that MLCP consistently outperforms vanilla role-play prompting across all tested LLMs.",
+      "url": "https://arxiv.org/abs/2609.39853",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8848
+    },
+    {
+      "id": "2609.39920",
+      "title": "MCD: Causal Distillation of Multimodal In-Context Learning in Large Vision-Language Models",
+      "authors": [
+        "Yanshu Li",
+        "Jiaqian Li",
+        "Canran Xiao",
+        "Xi Xiao",
+        "Tianyang Wang",
+        "Yongtai Liu"
+      ],
+      "abstract": "Large vision-language models (LVLMs) exhibit strong multimodal in-context learning (ICL) capabilities, yet this ability degrades substantially as model size decreases. Knowledge distillation offers a natural way to bridge this gap, but existing methods primarily align output distributions or hidden representations directly. Such alignment teaches the student what the teacher predicts without revealing which evidence in the complex context causally supports that prediction. Consequently, a student can imitate the teacher's answer while continuing to rely on language priors, prompt structure, or other spurious cues. To address this limitation, we introduce Multimodal Causal Distillation (MCD), a distillation framework that transfers how a strong teacher uses multimodal evidence during ICL. MCD uses structure-preserving token interventions to identify and verify causal evidence, then transfers how the teacher responds when that evidence is retained or removed. This design connects distillation to the causal patterns by which the model uses contextual evidence during multimodal ICL. Experiments across three LVLM families and seven benchmarks show that MCD improves student performance by 7.23 points on average and outperforms vanilla distillation by 4.68 points, while further analyses confirm the generalizability of these gains.",
+      "url": "https://arxiv.org/abs/2609.39920",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "submitted": "2026-09-30",
+      "score": 0.8843
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
