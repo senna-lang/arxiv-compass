@@ -1,0 +1,373 @@
+{
+  "date": "2026-10-05",
+  "collected_at": "2026-10-05T14:06:24.746970+09:00",
+  "papers": [
+    {
+      "id": "2610.03509",
+      "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability",
+      "authors": [
+        "Samuel Lewis-Lim",
+        "Xingwei Tan",
+        "Mario Sanger",
+        "Zhixue Zhao",
+        "Nikolaos Aletras"
+      ],
+      "abstract": "Chain-of-thought (CoT) reasoning allows humans to inspect how large language models reach their answers, and oversee model behaviour. This reasoning comes at an increased inference cost, motivating efficient methods that train models to solve tasks using fewer tokens. However, a common concern is that such training may cause models to skip important reasoning steps, so the CoT no longer faithfully reflects the model's decision. It is unclear whether or when this occurs in practice, since different efficiency methods apply length pressure to models' CoT in distinct ways, and faithfully explaining a model's decision takes more tokens on some tasks than others. To understand these dynamics, we fine-tune a variety of models with three methods that apply length pressure differently, namely a fixed generation budget, a per-example length target, and a group-relative length reward. We evaluate how efficient reasoning affects CoT faithfulness (i.e., how well the CoT reflects model decisions on related inputs) and monitorability (i.e., whether the CoT reveals when input interventions alter the output). We find that it affects faithfulness and monitorability differently. Faithfulness falls in most settings, primarily because the trained models are less consistent. Monitorability is more robust, as models keep acknowledging the influence on their answer even when the CoT is much shorter.",
+      "url": "https://arxiv.org/abs/2610.03509",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.9006
+    },
+    {
+      "id": "2610.03052",
+      "title": "The Geometry of Knowledge Accessibility in Large Language Models",
+      "authors": [
+        "Lihu Chen"
+      ],
+      "abstract": "Large language models (LLMs) contain broad knowledge, but they cannot access all of it reliably. We study this problem through knowledge accessibility, which describes whether the knowledge needed for a query can be recalled from the model. We find that knowledge accessibility has a simple geometric structure in the model's representation of the query alone, before any generation. More accessible queries are closer to a center in the representation space, while less accessible queries are farther away. This geometry reveals a knowledge boundary that separates more accessible queries from less accessible ones. Accessibility consistently decreases with distance from the center, and this distance-based ordering transfers across datasets even when the centers differ. Controlled experiments further show that the centered geometry is more closely related to knowledge accessibility than to reasoning difficulty. The geometry also reveals when different interventions are useful. Query rewriting helps more for accessible queries, chain-of-thought reasoning helps more near the boundary, and retrieval gives larger gains beyond the boundary. These findings not only provide a new geometric view of how knowledge is organized in language models, but also suggest a useful pre-generation signal for adaptive inference.",
+      "url": "https://arxiv.org/abs/2610.03052",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8949
+    },
+    {
+      "id": "2610.03136",
+      "title": "Investigating the Role of Reasoning-Language Alignment in Monolingual Retrieval-Augmented Generation",
+      "authors": [
+        "Oliver Hauck",
+        "Mario Sanz-Guerrero",
+        "Katharina von der Wense"
+      ],
+      "abstract": "Reasoning traces improve large language models (LLMs), but current models are trained to reason mostly in English. It has been shown that forcing a model to reason in another language degrades accuracy, even when the reasoning language matches the language of the prompt -- but only for a setting where the model reasons over a short prompt. Here, we ask whether the same holds for retrieval-augmented generation (RAG), where the model must read and integrate a large amount of retrieved evidence in the target language. To study this, we build a fully monolingual German RAG question-answering testbed over the fictional world of the tabletop role-playing game The Dark Eye, a domain that is richly documented in German but too niche for the model to answer from memory, so that it has to rely on retrieval. Varying the forced reasoning language of an agentic RAG system on this testbed, we find that aligning the reasoning language with the language of the query and the retrieved documents helps. Forced German reasoning outperforms forced French, although the model benchmarks higher in French, so the benefit comes from alignment and not from language proficiency. The advantage grows when the retrieved context is richer and structure-aware. However, forced German only reaches the level of the model's native, unconstrained English reasoning without surpassing it, showing that native multilingual reasoning is needed. We publicly release the testbed and QA benchmark.",
+      "url": "https://arxiv.org/abs/2610.03136",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8925
+    },
+    {
+      "id": "2610.03039",
+      "title": "HyperThink: Text-to-Parameter Hypernetworks for Efficient Reasoning",
+      "authors": [
+        "Donggyun Kim",
+        "Jack Lu",
+        "Chanwoo Kim",
+        "Mengye Ren",
+        "Seunghoon Hong"
+      ],
+      "abstract": "Long-form thinking traces can substantially improve the multi-step reasoning performance of large language models (LLMs), but they introduce high inference-time overhead, with latency dominated by sequential decoding. We propose HyperThink, a text-to-parameter approach that amortizes this reasoning computation into a single query-conditioned parameter update: a lightweight hypernetwork reads the question and predicts updates to a small subset of the base LLM's parameters, while a vector-quantized decoder constrains them to a finite set of reusable patterns to improve robustness and transfer. Trained end-to-end on outputs from the base model itself, HyperThink eliminates long thinking traces at test time: after one hypernetwork forward pass, the adapted model generates a concise step-by-step solution and final answer without an intermediate trace, using far fewer tokens while retaining strong reasoning performance. Empirically, HyperThink improves the low-latency region of the accuracy-latency trade-off on mathematical and general reasoning tasks, with its strongest gains in the near-non-thinking regime.",
+      "url": "https://arxiv.org/abs/2610.03039",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8903
+    },
+    {
+      "id": "2610.02858",
+      "title": "Harness-Aware Distillation for Small Language Model Agents",
+      "authors": [
+        "Moonseok Choi",
+        "Taehong Moon",
+        "Giung Nam",
+        "Juho Lee"
+      ],
+      "abstract": "Language model agents are deployed with a harness, the software around the model that manages its context, tools, and feedback. When such an agent is distilled into a smaller one, the harness stays in place, so the student mainly needs the teacher-specific abilities that the harness cannot provide, such as acting correctly on harness information. Standard distillation, however, imitates the teacher's full outputs and treats the harness as part of the input. We propose Harness-Aware Distillation (HAD), which focuses distillation on what the teacher adds beyond the harness. HAD complements on-policy distillation with two components: an action preference that contrasts the same teacher's actions with and without the harness information, scored after the student's own reasoning, and a validity check that drops preference pairs whose preferred action contradicts the harness records. We show that the contrast gives the student information that imitating the teacher alone cannot provide, and HAD needs no task rewards, success labels, or future information. Across multiple long-horizon agent benchmarks and models, HAD outperforms on-policy distillation baselines with the same fixed harness. Our analysis shows that HAD enters fewer unproductive loops and recovers from errors more often than the baselines, and suggests that it adaptively keeps learnable feedback in its weights while reading state information from the harness.",
+      "url": "https://arxiv.org/abs/2610.02858",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8901
+    },
+    {
+      "id": "2610.02835",
+      "title": "All Work And No Play Makes Jack a Dull Boy: Understanding and Preventing Catastrophic Strategy Collapse in RLVR",
+      "authors": [
+        "Qiyuan Huang",
+        "Tianshi Xu",
+        "Meng Li"
+      ],
+      "abstract": "During post-training of large language models (LLMs) with Reinforcement Learning with Verifiable Rewards (RLVR), GRPO-style algorithms can exhibit severe late-stage collapse. Prompt-based probing reveals that this is not benign strategic pruning, but a harmful contraction of effective strategy capacity that makes distinct reasoning strategies increasingly inaccessible. To characterize this phenomenon, we define strategies through trajectory-level policy-update interactions and develop a unified theoretical framework combining optimization dynamics and information theory. We prove that major RLVR objectives progressively concentrate probability mass onto a single strategy, while sustaining nontrivial task accuracy requires a minimum strategy capacity. The conflict between these two results provides a mechanistic explanation for catastrophic collapse. We further derive the {Mirrored Entanglement Index (MEI)} as a lightweight online warning signal. To prevent collapse, we propose \\textbf{Mesh Learning}, which exposes multiple reasoning strategies and prevents any single strategy from dominating optimization. Across AIME26, AIME25, MATH-500, GPQA, and LiveCodeBench, Mesh Learning consistently outperforms strong baselines across Qwen and Phi model families, with gains of up to 13.4 pp and 11.5 pp, respectively. These results establish strategy preservation as a key principle for stable RLVR. Code is available at https://github.com/Ayanami-0123/Open-Mesh-Learning.",
+      "url": "https://arxiv.org/abs/2610.02835",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-02",
+      "github_url": "https://github.com/Ayanami-0123/Open-Mesh-Learning.",
+      "score": 0.887
+    },
+    {
+      "id": "2610.02951",
+      "title": "Dynamic Expert Pruning for Multi-Agent Systems",
+      "authors": [
+        "Jabin Koo",
+        "Soheil Abbasloo",
+        "Sungjae Lee",
+        "Jungseul Ok"
+      ],
+      "abstract": "Mixture-of-Experts (MoE) architectures scale language models efficiently by activating only a few experts per token, but the saving is confined to computation: every expert must stay resident on the accelerator, so memory bounds where these models can be deployed. Expert pruning reduces this footprint, yet existing methods are static --- a single mask, calibrated offline, is applied to the model for every subsequent request. This assumption can fail when the workload is heterogeneous, most prominently in multi-agent systems, where one backbone serves many tasks and roles at once: our analysis shows that different tasks and roles recruit different experts, while static methods assign one fixed subset to all of them. We therefore propose Dynamic Expert Pruning (DEP), which rests on a finding we establish here: an agent's system and task prompts are by themselves sufficient to identify the experts that agent and its task require, since that text already describes what the agent will do. A lightweight predictor, trained once on workflow transcripts, turns those prompts into a specialized per-request mask in a single forward pass, with no per-configuration calibration. Across diverse tasks and roles, model scales, and MoE architectures, DEP achieves better overall accuracy than static pruning and merging baselines, and generalizes to workflows unseen in training without retraining. Its margin over those baselines is largest when few experts are retained, suggesting that the role specialization inherent to multi-agent systems permits sparser serving than static pruning allows.",
+      "url": "https://arxiv.org/abs/2610.02951",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8869
+    },
+    {
+      "id": "2610.03356",
+      "title": "ReFract: Benchmarking Perspective Awareness in Language Model Agents with Text World Models",
+      "authors": [
+        "Hainiu Xu",
+        "Vítor N. Lourenço",
+        "Mohnish Dubey",
+        "Yunfei Bai",
+        "Yulan He",
+        "Caroline Catmur",
+        "Aline Paes",
+        "Marco Caserta",
+        "Akash Chandrayan",
+        "Luca D'Angelo"
+      ],
+      "abstract": "Large Language Model (LLM) agents are increasingly deployed in high-stakes settings such as industrial maintenance and equipment fault troubleshooting, where workers occupy a variety of roles. A capable agent must therefore act in a way that is calibrated to user's role: taking actions and providing information that respect the role's knowledge and capability boundaries. Unlike coding, where mistakes are usually recoverable, agent responses in these settings are enacted on physical equipment, and can therefore cause irreversible equipment damage, production loss, or personnel harm. Existing benchmarks, however, largely overlook the need for agents to infer what a role intends and acting only through tools that role may legitimately use, a capability which we term Perspective Awareness. To this end, we introduce ReFract, a benchmark of 150 expert-validated entries in which an agent must act differently in response to the same query depending on user's role. Entries of ReFract are grounded in anonymized queries from domain support conversations, against which we construct Text World Models that simulate the agent's operating environments and assemble perspective-aware action trajectories. State-of-the-art LLMs solve at most 69% of the tasks with more than 50% of their trajectories contain attempts of taking perspective-violating actions. ReFract exposes perspective awareness as a distinct, largely unsolved axis of agent evaluation and motivates agents that calibrate not just how to act, but for whom.",
+      "url": "https://arxiv.org/abs/2610.03356",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8861
+    },
+    {
+      "id": "2610.03695",
+      "title": "Language Models that Play Chess and Explain Their Moves",
+      "authors": [
+        "Adithya Bhaskar",
+        "Jeffrey Cheng",
+        "Danqi Chen"
+      ],
+      "abstract": "Modern chess engines are silent experts: they play at a superhuman level, but do not offer explanations for their play. On the other hand, language models (LMs) can generate plausible-sounding explanations, but their weak playing strength limits the utility of their explanations. We introduce Queen, a 4B-parameter chess-language model that can explain its moves and plans while playing at the level of a typical Grandmaster. Our novel framework enables domain-specific reasoning through complementary components: an encoder-decoder architecture and an iterative distillation algorithm. This architecture integrates a silent expert chess encoder with an instruction-tuned LM through cross-attention, which we train via a question-answering curriculum to extract chess concepts from the encoder's representations. Building on this domain-adapted model, we iteratively improve its explanations with a natural-language analog of the Bellman update: the model analyzes the positions after its top candidate moves and consolidates them into an explanation of the current position, which is then distilled back into the model. Over seven iterations, our model gains over 900 Elo points (1782 to 2697), substantially surpassing all frontier models on both playing strength and puzzle accuracy, despite containing three orders of magnitude fewer parameters. Furthermore, LM-based evaluations show that our explanations are fluent and approach GPT-5.6-Sol (high) in coherence. The generality of our architecture and training procedure suggests a recipe for applying language models to domains where silent expert encoders are available, like games, robotics, and computer use.",
+      "url": "https://arxiv.org/abs/2610.03695",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8853
+    },
+    {
+      "id": "2610.02972",
+      "title": "CreateScore: Domain-Theory-Informed Bayesian Routing for LLM-Based CV Screening",
+      "authors": [
+        "Rupsa Roy"
+      ],
+      "abstract": "Large language models (LLMs) can support rubric-based screening of CVs, but applying a high-capability model to every candidate and criterion is costly. We present CreateScore, a domain-theory-informed Bayesian network for criterion-level LLM routing. A hand-specified directed acyclic graph with Dirichlet-multinomial conditional probability tables converts CV evidence into posterior uncertainty; low-uncertainty decisions are resolved by a local 8B model and uncertain ones are escalated to a 120B reference model. The graph is causally motivated, but the system performs standard Bayesian conditioning, not causal inference. The escalation threshold is calibrated on a training fold (target: 70% resolved locally) and then frozen. On 200 synthetic Data Science CVs (139 training and 61 test candidates, five criteria), 77.7% of criterion decisions were resolved locally (237 of 305). Relative to a reference condition in which the 120B model adjudicated every criterion, routed escalation reduced token use by 65.2% and raised exact score agreement from 32.8% (8B alone) to 42.6% (95% CI 31.0-55.1%); at n = 61 the gain was not statistically distinguishable. The uncertainty signal did not, however, identify the decisions on which the 8B model erred: disagreement with the reference was 16.2% among escalated and 19.4% among locally resolved decisions (AUROC 0.47, 95% CI 0.39-0.56), no better than random selection. We also document how an earlier evaluation was invalidated when truncated reasoning-model outputs were silently replaced by local labels, and we recommend safeguards for cascade evaluation. CreateScore is supported as an auditable cost-reduction mechanism, not yet as a targeted error detector, and is not an autonomous hiring system.",
+      "url": "https://arxiv.org/abs/2610.02972",
+      "categories": [
+        "cs.AI",
+        "stat.AP"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8841
+    },
+    {
+      "id": "2610.02844",
+      "title": "DNAlign: Dynamic Null-Space Safe Alignment for LLMs",
+      "authors": [
+        "Jisheng Dang",
+        "Yushuo Zhao",
+        "Dewei Liu",
+        "Junfeng Fang",
+        "Bimei Wang",
+        "Tiantian Rao",
+        "Hong Peng",
+        "Bin Hu",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "Ensuring the safe and reliable deployment of large language models (LLMs) remains a fundamental challenge. Existing safety alignment approaches either incur high computational cost or unintentionally disrupt the model's core knowledge, leading to degraded fluency and factual accuracy on benign tasks. This reveals a persistent trade-off between safety and utility. We propose DNAlign, a lightweight alignment framework that integrates control-theoretic optimization with null-space projection. By treating the LLM as a dynamic system, the proposed framework introduces controllable perturbations to steer generation toward safe behavior. A key component is the projection module, which restricts these perturbations to the harmful-related subspace derived from neutral hidden states, thereby preserving general knowledge and response quality. A value function trained on human preference data adaptively optimizes the control signals to align with human safety preferences. Extensive evaluations across multiple LLM backbones demonstrate that our framework consistently reduces harmful outputs while maintaining fluency, coherence, and factual utility. It achieves superior overall performance compared to prior alignment baselines without sacrificing generation diversity. These results indicate that the proposed framework provides an effective and practically deployable solution for safe LLM alignment. Code is available at https://anonymous.4open.science/r/DNAlign.",
+      "url": "https://arxiv.org/abs/2610.02844",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8841
+    },
+    {
+      "id": "2610.03329",
+      "title": "SyntaxBench: A Statistical Diagnostic Framework for Character-Level Reasoning in Large Language Models",
+      "authors": [
+        "Mohsen Larni",
+        "Sobhan Ebrahimi Azar",
+        "Pouyan Nahed",
+        "Kazem Taghva"
+      ],
+      "abstract": "Large language models are increasingly used where small syntactic errors matter, yet character-level reasoning is still evaluated mostly through isolated probes and aggregate accuracy. We introduce SyntaxBench, a diagnostic benchmark and statistical evaluation framework for character-level reasoning. It contains five core tasks, character counting, letter containment, palindrome detection, edit distance, and longest-string selection, plus index_to_span, a harder substring-extraction stress test. The five core tasks use paired English and character-length-matched random-string inputs. index_to_span documents share a 200-500 word band and are not character-length matched. All six tasks use zero-, one-, and four-shot prompts.\n  We evaluate eight open-weight models from 2B to 32B parameters across 11 reasoning-mode configurations. The framework reports exact-match and relaxed accuracy, Cohen's kappa, paired McNemar tests with odds ratios, bootstrap confidence intervals, Kendall's tau, class-conditional metrics, tokenization analysis, and multiple-comparison-corrected tests. Three findings stand out. First, tokenization shapes accuracy: random strings are more character-visible than English strings (1.892 vs. 3.169 characters per token), and character-counting accuracy falls as English words occupy more tokens. Second, reasoning mode is not uniformly helpful: Gemma4-31B is nearly unchanged across modes on the near-saturated tasks, while Qwen3.6-27B is worse with thinking on palindrome detection (0.952 non-thinking vs. 0.886 thinking at four-shot). Third, index_to_span remains largely unsolved; the best four-shot exact-match accuracy is 6.75%.\n  Character-level evaluation needs controlled inputs, paired tests, and analyses of tokenization and reasoning mode rather than aggregate accuracy alone.",
+      "url": "https://arxiv.org/abs/2610.03329",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.884
+    },
+    {
+      "id": "2610.02909",
+      "title": "Constraint-Aware Training",
+      "authors": [
+        "Jinwoo Kim"
+      ],
+      "abstract": "When generating programs with language models, constrained decoding can apply program analyses to exclude tokens that violate syntax, scope, or typing rules. However, there is a duplication: standard training already teaches the model to suppress the tokens rejected by these analyses. This duplication leads to the question: if we will perform some analysis to filter a set tokens out during inference anyways, can we avoid teaching the model the said analysis altogether during training, and does this externalization lead to more efficient models? This paper defines a general constraint-aware objective satisfying this externalization desideratum and formalizes the benefits of externalization into three concrete theorems about model size and data efficiency. We show, through a controlled synthetic experiment, that the theorems survive training dynamics: constraint-aware training yields lower prediction loss at a matched parameter count and data compared to ordinary cross-entropy training, motivating training objectives that incorporate the analyses used during generation.",
+      "url": "https://arxiv.org/abs/2610.02909",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8836
+    },
+    {
+      "id": "2610.03315",
+      "title": "Lightweight, Rubric-Guided Trajectory Evaluation for Production AI Agents",
+      "authors": [
+        "Linh-An Phan",
+        "MingXue Wang",
+        "Guangyu Wu",
+        "Feng Pan",
+        "Zhaoyu Pang",
+        "Yanbin Zhang"
+      ],
+      "abstract": "Trajectory evaluation is essential for improving the reliability of LLM-based agents, but production use makes it expensive to run repeatedly. Modern agents generate long traces containing tool calls, observations, retries, and external outputs, while not all raw tokens are equally useful for diagnosis. We present \\textit{LiteTrajEval}, a lightweight architecture for budget-bounded trajectory evaluation. LiteTrajEval derives compact domain-specific rule profiles offline, then preprocesses each trajectory online, marks heuristic failure signals, serializes it under a fixed global budget, and invokes a single rubric-guided LLM judge to produce structured diagnostic reports. Evaluated on public Magentic-One-style and $τ$-bench-style trajectory datasets, LiteTrajEval improves failure-localization alignment with human annotations by roughly 20--35 percentage points on Magentic-One and up to 23 percentage points on $τ$-retail compared with AgentRx, while reducing cost by about 6$\\times$ and evaluation time by more than 8$\\times$. This solution has also been deployed in our enterprise agentic platform.",
+      "url": "https://arxiv.org/abs/2610.03315",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8831
+    },
+    {
+      "id": "2610.03434",
+      "title": "Persona Guardrail: A Production-Grade Defense Framework for Agentic Systems",
+      "authors": [
+        "Bijeeta Pal",
+        "Sridhar Reddy Maddireddy",
+        "Muhaimin Bin Munir",
+        "Zoltan Puha",
+        "Max Zhurovich",
+        "Adi Raghavendra",
+        "Sean Tout"
+      ],
+      "abstract": "Large language model-based agents are increasingly deployed to perform domain-specific tasks by interacting with enterprise knowledge, tools, and external services. Existing runtime guardrails primarily target prompt injection and other attack-specific behaviors under a black-box threat model, but provide limited guarantees that agents operate within their intended functionality. As a result, production agents remain vulnerable to malicious requests and out-of-domain queries that existing defenses often fail to distinguish. We present Persona Guardrail, a production-grade runtime defense framework that enforces explicit functional boundaries for customer-facing agentic AI systems through synchronous input and output validation driven by semantic allowlist and blocklist specifications. We also introduce PAGE (Persona-Aware Guardrail Evaluation), a benchmark for evaluating function-specific guardrails across benign, adversarial, and out-of-domain interactions on both user and agent turns. Compared with a generic LLM-based guardrail, Persona Guardrail improves overall accuracy from 85.7% to 95.9%, increases out-of-domain detection from 57.3% to 93.5%, and reduces the false-approved rate from 25.0% to 4.7%. Currently deployed in production, Persona Guardrail meets its latency budget while sustaining a very low false-block and false-allow rate under realistic production workloads. These results demonstrate that Persona Guardrail provides a practical, scalable, and production-ready foundation for securing agentic AI systems.",
+      "url": "https://arxiv.org/abs/2610.03434",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8818
+    },
+    {
+      "id": "2610.03036",
+      "title": "WebFovea: When the Model Is Right but the Click Is Wrong -- Reliable Round Trips for Vision-Based Web Agents on Live Websites",
+      "authors": [
+        "Jiangang Han"
+      ],
+      "abstract": "We present WebFovea, a vision-based web agent that placed 2nd in the WebRetriever Challenge 2026 with a final score of 57.0 out of 100. The challenge evaluates agents end to end on Protocol III of the WebRetriever benchmark (arXiv:2607.06118): starting from an entry URL on a live website, the agent must operate the site's own interface and return a verifiable answer. A capable multimodal large language model (LLM) is necessary for this, but not sufficient. The model's decisions reach the browser through the harness, the code between the model and the page. At every step, four things must go right: the model's reply must be parsed into the intended action, the action must take effect on the page, the result must be reported back accurately, and the model must be shown the information it needs. On real websites, many of the failures we observed occurred at one of these four stages rather than in the model's reasoning. A coordinate-space mismatch placed every click at 3/4 of its intended coordinates; actions on native dropdowns, inside iframes, and in text boxes failed silently; and self-generated chat-template tokens contaminated 4.9% of task episodes. WebFovea hardens each stage and surrounds the loop with guardrails that keep the agent within the rules and its budget. The four-stage view does not depend on the model, although some individual fixes do. Because we used the same model in all four submissions, the rise of our official hidden-set score from 31.0 to 57.0 reflects changes to the harness, up to run-to-run variance on live sites. We describe the design, the evidence for each component (including negative results), a failure analysis, the limitations, and a roadmap that includes routing different steps to different models.",
+      "url": "https://arxiv.org/abs/2610.03036",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8816
+    },
+    {
+      "id": "2610.02853",
+      "title": "Bounded Reachability & Jailbreak Detection via Contraction-Constrained State Space Models",
+      "authors": [
+        "Omanshu Thapliyal"
+      ],
+      "abstract": "Safety heads are lightweight classifiers attached to pretrained language models for flagging harmful inputs before generation. Their empirical detection performance has been studied, but their formal robustness properties remain largely unexplored. We ask when a State Space Model (SSM)-based safety head can be certified to produce the same prediction for all inputs within a bounded embedding-space perturbation. We prove that the answer turns on a single condition: the $l_\\infty$ norm of the state transition matrix must satisfy $\\norm{A}_\\infty<1$ (the \\emph{contraction condition}), which enables exact interval bound propagation (IBP) certification for linear time-invariant classifiers. When the contraction condition holds, the reachable output interval has bounded steady-state width and examples can be certified as robustly classified. When it fails, the interval grows exponentially with sequence length and certification is impossible at any practical perturbation radius. We enforce contraction with a hinge penalty and show on toxic comment data that certified fraction improves from 41\\% to 59\\%, with a sharp empirical phase transition at $\\norm{A}_\\infty=1$ matching the theory. Applying a contraction-regularized S4 head to jailbreak detection on JailbreakBench, we achieve a zero-shot transfer to AdvBench (DR=0.994) and HarmBench (DR=0.988). A logistic regression on mean-pooled Mamba-130M embeddings matches or exceeds the S4 head on every detection metric, confirming that harmful intent is already linearly separable in the embedding space. The S4 safety head's contribution is not superior discrimination but the formal certification that no probe-based approach provides.",
+      "url": "https://arxiv.org/abs/2610.02853",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8808
+    },
+    {
+      "id": "2610.03007",
+      "title": "AvoKV-E: Payload-Aware KV Cache Eviction for Long Reasoning",
+      "authors": [
+        "Han Yu",
+        "Wenhui Zhu",
+        "Xiwen Chen",
+        "Zhipeng Wang",
+        "Hejian Sang",
+        "Han Shi",
+        "Menglin Zhou",
+        "Xuanzhao Dong",
+        "Minzhou Huang",
+        "Rui Cai",
+        "Hao Wang",
+        "Alborz Geramifard"
+      ],
+      "abstract": "Long-output reasoning shifts the KV-cache bottleneck from the fixed prompt to the generated trace. Existing reasoning-cache eviction methods largely treat cached entries as routing objects, estimating whether an old key will still be read, will recur, or can be replaced. This routing-only view overlooks two effects: low-attention entries can carry large value payloads whose removal changes future predictions, and newly generated states can appear stale before later queries have had a chance to read them. We introduce AvoKV-E, a training-free eviction policy that first delays eligibility for recent states and then ranks eligible entries using candidate-normalized read pressure, key redundancy, and value-payload potential. According to empirical evaluation across different models and datasets, AvoKV-E matches or exceeds redundancy-aware, recurrence-based, and thought-adaptive eviction baselines at matched active-KV budgets, with its largest gains in the tightest-cache regime. Component and counterfactual analyses further connect these gains to delayed observation, payload-aware scoring, redundancy, and scale-robust normalization. Together, the results show that long-reasoning KV eviction should preserve not only keys that are likely to be read, but also the value payloads that sustain the reasoning trajectory.",
+      "url": "https://arxiv.org/abs/2610.03007",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8806
+    },
+    {
+      "id": "2610.03631",
+      "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+      "authors": [
+        "Lijie Ding",
+        "Changwoo Do"
+      ],
+      "abstract": "Designing a scientific instrument tests whether language-model agents can do physics rather than recall it, provided the grading cannot be argued with. We introduce NeutronGym, to our knowledge the first executable environment for neutron instrument design: agents build instruments through validating tools, McStas ray-traces what they build, and a level-resolved ladder grades syntax, runtime, structure and science with no LLM judge. Procedural families supply unlimited instances of a fixed layout whose design parameters the agent must set, with held-out parameter regimes; a curated slice, McStasBench, adds 16 tasks from published instruments behind memorization probes and a sandbox. Seven models reproduce at most 7 of the 16, none retrieves a reference, and none meets an improvement target. The environment also trains. Reinforcement learning on its reward takes Qwen3-8B from 11% to 77% of held-out instances of a family whose targets come from a hidden design (69% at a second seed), past an untrained Qwen3-32B, and the recipe holds, at one seed each, on three further gated families. The analysis says what that gain is. Without the ladder's partial credit it collapses by 60 points. From reward alone the trained model reaches what a classical optimizer reaches, at the agent's simulation budget, only when handed the closed-form physics (77% against 81%, a gap that does not separate at this size), while frontier models still solve 98-99%. Getting a trustworthy result meant failing four task designs that no-model baselines could solve, and we release the probes that found them.",
+      "url": "https://arxiv.org/abs/2610.03631",
+      "categories": [
+        "cs.AI",
+        "physics.ins-det"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.8803
+    },
+    {
+      "id": "2610.02994",
+      "title": "Sentry: Learning to Recover from LLM Agent Failures at Test Time",
+      "authors": [
+        "Changxiu Ji",
+        "Amy Lu",
+        "Qizheng Zhang",
+        "Kunle Olukotun"
+      ],
+      "abstract": "LLM agents often fail mid-task due to invalid tool calls, repeated actions, or poorly grounded reasoning, and learning from these failures is a path to reliability. We find that how failure knowledge reaches the agent matters as much as what it contains. Failure lessons are conditional: kept in the agent's context, they misfire when their failure is absent, and removing them from an evolving playbook improves performance. Runtime interventions, in contrast, act only when a failure occurs but do not learn from their repairs. We argue that failure knowledge is conditional knowledge and should be conditionally exposed, and instantiate this principle in Sentry, a failure-management layer that runs alongside the agent. When Sentry detects a failure, it retrieves matching lessons from an external playbook to guide recovery, verifies without access to task rewards whether the agent recovered, and stores a new lesson only if it did; the full playbook never enters the agent's context. Across multiple agentic benchmarks, Sentry outperforms the strongest runtime-intervention baseline on every benchmark, by 37\\% on average, and the strongest context-evolution baseline by 39\\% on the two benchmarks where both are evaluated; combining Sentry with context evolution yields further gains. Learned lessons transfer to held-out tasks, and controlled experiments show that exposing the full playbook to the agent lowers performance even when relevant lessons remain available on demand.",
+      "url": "https://arxiv.org/abs/2610.02994",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-02",
+      "score": 0.88
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
