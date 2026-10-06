@@ -18,7 +18,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.892
+      "score": 0.892,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 8,
+        "rank_delta": -7,
+        "relevance_probability": 0.9633083641529083
+      }
     },
     {
       "id": "2610.06404",
@@ -37,7 +43,13 @@
         "stat.ML"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8897
+      "score": 0.8897,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 5,
+        "rank_delta": -3,
+        "relevance_probability": 0.991749107837677
+      }
     },
     {
       "id": "2610.06804",
@@ -59,7 +71,13 @@
       ],
       "submitted": "2026-10-05",
       "github_url": "https://github.com/ArminAzizi98/OPPD.",
-      "score": 0.8896
+      "score": 0.8896,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 12,
+        "rank_delta": -9,
+        "relevance_probability": 0.9462437331676483
+      }
     },
     {
       "id": "2610.06563",
@@ -78,7 +96,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8883
+      "score": 0.8883,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 3,
+        "rank_delta": 1,
+        "relevance_probability": 0.9939144253730774
+      }
     },
     {
       "id": "2610.06782",
@@ -99,7 +123,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8882
+      "score": 0.8882,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 11,
+        "rank_delta": -6,
+        "relevance_probability": 0.9532479345798492
+      }
     },
     {
       "id": "2610.06496",
@@ -120,7 +150,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8882
+      "score": 0.8882,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 16,
+        "rank_delta": -10,
+        "relevance_probability": 0.47164033353328705
+      }
     },
     {
       "id": "2610.06347",
@@ -147,7 +183,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8873
+      "score": 0.8873,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 10,
+        "rank_delta": -3,
+        "relevance_probability": 0.9569779634475708
+      }
     },
     {
       "id": "2610.06829",
@@ -168,7 +210,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8855
+      "score": 0.8855,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 4,
+        "rank_delta": 4,
+        "relevance_probability": 0.9936761856079102
+      }
     },
     {
       "id": "2610.06851",
@@ -189,7 +237,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8852
+      "score": 0.8852,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 2,
+        "rank_delta": 7,
+        "relevance_probability": 0.9944145679473877
+      }
     },
     {
       "id": "2610.06689",
@@ -212,7 +266,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8838
+      "score": 0.8838,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 6,
+        "rank_delta": 4,
+        "relevance_probability": 0.9836179912090302
+      }
     },
     {
       "id": "2610.06516",
@@ -228,7 +288,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8831
+      "score": 0.8831,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 14,
+        "rank_delta": -3,
+        "relevance_probability": 0.9199530482292175
+      }
     },
     {
       "id": "2610.06750",
@@ -250,7 +316,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8829
+      "score": 0.8829,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 13,
+        "rank_delta": -1,
+        "relevance_probability": 0.9451827704906464
+      }
     },
     {
       "id": "2610.05966",
@@ -275,7 +347,13 @@
       ],
       "submitted": "2026-10-05",
       "github_url": "https://github.com/FreedomIntelligence/HuatuoGPT-3.",
-      "score": 0.8828
+      "score": 0.8828,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 15,
+        "rank_delta": -2,
+        "relevance_probability": 0.7646226584911346
+      }
     },
     {
       "id": "2610.06269",
@@ -302,7 +380,13 @@
       ],
       "submitted": "2026-10-05",
       "github_url": "https://github.com/Human-Agent-Society/reef/tree/guidance-ttt-support.",
-      "score": 0.8824
+      "score": 0.8824,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 9,
+        "rank_delta": 5,
+        "relevance_probability": 0.9603196382522583
+      }
     },
     {
       "id": "2610.05978",
@@ -319,7 +403,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8823
+      "score": 0.8823,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 7,
+        "rank_delta": 8,
+        "relevance_probability": 0.9727402925491333
+      }
     },
     {
       "id": "2610.06413",
@@ -343,7 +433,13 @@
       ],
       "submitted": "2026-10-05",
       "github_url": "https://github.com/spatialchain/SpatialChainBenchmark.",
-      "score": 0.8815
+      "score": 0.8815,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 19,
+        "rank_delta": -3,
+        "relevance_probability": 0.11957005225121975
+      }
     },
     {
       "id": "2610.06824",
@@ -358,7 +454,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8806
+      "score": 0.8806,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 18,
+        "rank_delta": -1,
+        "relevance_probability": 0.17021723836660385
+      }
     },
     {
       "id": "2610.06637",
@@ -377,7 +479,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8803
+      "score": 0.8803,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 17,
+        "rank_delta": 1,
+        "relevance_probability": 0.2853938713669777
+      }
     },
     {
       "id": "2610.06481",
@@ -398,7 +506,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8799
+      "score": 0.8799,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 1,
+        "rank_delta": 18,
+        "relevance_probability": 0.9979369938373566
+      }
     },
     {
       "id": "2610.06251",
@@ -415,7 +529,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-05",
-      "score": 0.8796
+      "score": 0.8796,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 20,
+        "rank_delta": 0,
+        "relevance_probability": 0.07781221717596054
+      }
     }
   ],
   "meta": {
@@ -424,6 +544,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
