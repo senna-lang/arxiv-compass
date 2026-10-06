@@ -1,0 +1,429 @@
+{
+  "date": "2026-10-06",
+  "collected_at": "2026-10-06T14:53:24.335879+09:00",
+  "papers": [
+    {
+      "id": "2610.05976",
+      "title": "Can Language Models Learn to Reject Their Own Bad Reasoning Steps?",
+      "authors": [
+        "Siheng Xiong",
+        "Xiaoze Liu",
+        "Yiqiao Jin",
+        "Xiaoqian Wang",
+        "Jing Gao"
+      ],
+      "abstract": "Verifier-guided decoding can prevent harmful reasoning steps from contaminating subsequent generation, but typically relies on an external learned verifier. We ask whether a language model can instead reject its own bad reasoning steps. We define a prefix's recoverability as the probability that the frozen generator can complete it correctly. Diagnostics show that adjacent recoverability changes are often difficult to resolve with practical Monte Carlo budgets, while same-prefix candidates exhibit a sparse low-recoverability tail. We introduce Self-Step Rejection (SSR), which trains a lightweight LoRA acceptance gate on the generator backbone while keeping the base model frozen. SSR uses confidence-qualified first-passage supervision: steps before the first resolved crossing of a root-relative recoverability barrier are accepted, the crossing step is rejected, and unresolved steps and suffixes are excluded. Training combines pointwise classification, same-prefix pairwise learning, and group-relative policy refinement using final-answer correctness. At inference, SSR accepts candidates or resamples from the unchanged prefix under rejection budgets, without an external learned verifier. Across three reasoning models and five mathematical reasoning benchmarks, SSR improves macro-average accuracy over single-pass decoding by 5.4--10.1 points using 1.21--1.40x as many generated tokens, and achieves the highest macro-average accuracy among evaluated step-level methods. Full-solution scaling methods require 4.47--8.27x the single-pass token cost for comparable performance.",
+      "url": "https://arxiv.org/abs/2610.05976",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.892
+    },
+    {
+      "id": "2610.06404",
+      "title": "Quantifying the Stability of Multi-Step Reasoning via Error Amplification",
+      "authors": [
+        "Dongyue Li",
+        "Ziniu Zhang",
+        "Minxuan Duan",
+        "Hongyang R. Zhang"
+      ],
+      "abstract": "We consider the stability of multi-step reasoning processes, which have extensive applications in language models, including chain-of-thought and algorithmic reasoning. While longer sequences of reasoning can improve a model's generation capability at test time, the errors due to intermediate reasoning steps can accumulate in autoregressive generation, and thus grow substantially at the end. In this paper, we ask: What are the key factors determining the stability of multi-step reasoning? First, we show an inference error bound governed by the product of spectral norms of the Jacobians taken through the input space across generation steps. This product can be viewed as an error amplification factor, which could scale exponentially with the number of reasoning steps, serving as a quantitative measure of reasoning stability. Second, we analyze this measure in transformer models trained to predict simple tasks like linear and quadratic functions. We theoretically prove that the transformer model converges to a solution where the stability measure decays, thus yielding nearly zero inference loss over (arbitrarily) long steps. Finally, the stability analysis leads to several algorithmic implications for controlling the stability, through (i) chain-of-thought length compression that reduces the sensitivity of each step, and (ii) quantization-aware training that regularizes the input Jacobian norms. We validate the proposed algorithms by fine-tuning language models on graph-algorithmic reasoning tasks and symbolic state-tracking tasks. Across seven evaluations, our algorithms improve over baseline comparisons by 3.5% on average, and by 8.2% for longer-length inputs. Ablation analysis validates that the stability measure is drastically reduced by 3-8$\\times$, confirming the regularization effect on the spectral norms of the (input space) Jacobians.",
+      "url": "https://arxiv.org/abs/2610.06404",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8897
+    },
+    {
+      "id": "2610.06804",
+      "title": "Sharpen Without Search: On-Policy Distillation of Sequence-Level Power Distribution",
+      "authors": [
+        "Erfan Baghaei Potraghloo",
+        "Seyedarmin Azizi",
+        "Arya Fayyazi",
+        "Saeid Shokoufa",
+        "Mehdi Kamal",
+        "Souvik Kundu",
+        "Massoud Pedram"
+      ],
+      "abstract": "A language model can give a correct answer more probability than any single incorrect answer and still usually sample an incorrect one, because the incorrect answers together hold more probability. The power distribution raises each complete answer's probability to a power above one and renormalizes, shifting probability toward answers the model finds most likely (sharpening). Sampling from it improves reasoning without changing parameters, but needs many scored candidates per query. We show that a model can instead be trained to produce such answers in one generation. On-policy power distillation (OPPD) runs a sequential Monte Carlo sampler in which the model being trained generates candidates and a frozen teacher's power distribution weights them; the same probabilities weight each answer in a maximum-likelihood update. Training raises single-generation accuracy by up to 23.0 points on MATH500 and 27.3 on GSM8K over the untrained model at the same temperature, and one generation scores 2.4 and 3.5 points above published power sampling with 64 candidates, recovering 94 percent of the gain that 16 candidates give the untrained model. For context, against GRPO trained with verified rewards from the same checkpoint and budget, OPPD scores 3.8, 4.0 and 5.4 points higher on MATH500, GSM8K and AIME using no reference answers; the two are complementary, and OPPD applied after GRPO adds up to 9.3 points. Trained only on mathematics, OPPD raises HumanEval accuracy by up to 5.3 points. One loss coefficient moves the sharpening exponent the model absorbs between 1.19 and 2.02, against 1.14 for ordinary on-policy distillation, and it rises mostly on the model's own answers. Gains hold across model families and sizes, including a model already trained with verified rewards, where lowering the temperature gives nothing and OPPD adds 4.4 points on MATH500. Code: https://github.com/ArminAzizi98/OPPD.",
+      "url": "https://arxiv.org/abs/2610.06804",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "github_url": "https://github.com/ArminAzizi98/OPPD.",
+      "score": 0.8896
+    },
+    {
+      "id": "2610.06563",
+      "title": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention",
+      "authors": [
+        "Han Luo",
+        "Bingbing Wen",
+        "Guang Yang",
+        "Zora Zhiruo Wang",
+        "Pan Lu",
+        "Lucy Lu Wang"
+      ],
+      "abstract": "Large language model (LLM) agents are increasingly capable of acting in complex tool-use environments, yet they often fail to recognize when tasks are infeasible and no valid solution exists. Recent work has formalized this reliability gap as the problem of agentic abstention, and existing approaches typically optimize a model or agent harness against a fixed set of tasks, leading to limited generalization to unseen failure modes. We introduce HERA, a framework for harness-environment co-evolution for agentic abstention. HERA consists of (i) a pipeline to automatically construct verifiable pairs of feasible and infeasible tasks by applying controlled environment mutations that transform solvable tasks into cases requiring abstention, and (ii) a co-evolution procedure in which performance failures on previous tasks are used to drive harness adaptation and generate new execution environments and tasks geared towards previous weaknesses. On held-out evaluation tasks, an evolved harness from HERA improves abstention accuracy from 61.7% to 83.3% while improving feasible-task completion from 68.3% to 76.7%, achieving the highest abstention and feasible-task completion among the compared methods. The resulting best harness transfers across 19 other LLMs, improving abstention accuracy by 15.3 percentage points on average without any model-specific optimization, and enabling smaller models to match the performance of more powerful models at an estimated 85% lower cost.",
+      "url": "https://arxiv.org/abs/2610.06563",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8883
+    },
+    {
+      "id": "2610.06782",
+      "title": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search",
+      "authors": [
+        "Olga Tsymboi",
+        "Ramil Latypov",
+        "Aleksandr Medvedev",
+        "Danil Taranets",
+        "Dmitrii Stoianov",
+        "Nikita Gulyakov",
+        "Gleb Alektorov",
+        "Anatolii Potapov"
+      ],
+      "abstract": "We present T-Search, an open-weight agentic retriever for hard multi-step search. Given a question and a search tool over a fixed corpus, it runs a bounded multi-round search and returns a ranked list of evidence chunks with short justifications, leaving answer generation to a downstream model, so backend and generator can be swapped without retraining. T-Search is built on Qwen3.6-35B-A3B and trained on adversarially filtered synthetic search tasks with round-sliced supervised fine-tuning followed by GSPO on a recall reward. Averaged over seven English and Russian benchmarks with gold evidence annotations, it reaches 56.0 Recall@10 with one rollout, 14.4 points above its base, and 61.3 with three fused rollouts, outperforming larger open models. We release the model, harness, live demo, and three benchmarks, including TRuST, the first native-Russian hard-search benchmark.",
+      "url": "https://arxiv.org/abs/2610.06782",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8882
+    },
+    {
+      "id": "2610.06496",
+      "title": "You Changed Your Mind, The Model Didn't: Demystifying Intent in Multi-Turn Dialogue",
+      "authors": [
+        "Junle Chen",
+        "Wei Chen",
+        "Zhengjun Huang",
+        "Zhoujin Tian",
+        "Yuxuan Liu",
+        "Kai Wang",
+        "Rui Chen",
+        "Xiaofang Zhou"
+      ],
+      "abstract": "When a large language model handles a multi-turn task and a user proposes a change but ultimately rejects it, the model should continue as if nothing changed. We find a surprising failure: merely mentioning a rejected change can derail task execution, even when the user's final intent remains unchanged. To systematically study language model behavior under evolving user intent, we introduce Intent-Eval, a controlled benchmark spanning tool actions, code, databases, and mathematics. Across diverse tasks, models are vulnerable to both rejected proposals and superseded requirements, consistent with mentioned-as-in-effect confusion: conversational content is treated as active requirements even after it has been rejected or replaced. Accuracy degradation can deepen or persist as interaction continues, highlighting the need to distinguish what has been mentioned from what remains in effect. Building on this insight, we propose Intent-OPSD, a decision-conditioned on-policy self-distillation framework with Teacher and Student initialized from the same model. The frozen Teacher provides active-intent supervision from the complete task matching the user's decision, training the Student on the full dialogue to follow active requirements reflecting user intent.",
+      "url": "https://arxiv.org/abs/2610.06496",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8882
+    },
+    {
+      "id": "2610.06347",
+      "title": "ImproveAnyTask: An Autonomous Post-Training Harness for Iterative Model Self-Improvement",
+      "authors": [
+        "Xingbo Yao",
+        "Xiaoman Wang",
+        "Zhengwu Lei",
+        "Tinghui Luo",
+        "YiLin Zhang",
+        "Yuefeng Wu",
+        "Yijie Xu",
+        "Tianfu Wang",
+        "Qingyuan Zhan",
+        "Ye Guo",
+        "Daoxin Zhang",
+        "Zhe Xu",
+        "Jian Liu",
+        "Hui Xiong"
+      ],
+      "abstract": "Adapting general-purpose large language models to specific tasks requires substantial human effort in designing data and training strategies. Sustaining improvement is especially challenging because model updates change the error distribution, requiring strategies to be continually refined. We introduce ImproveAnyTask, an autonomous post-training harness that improves task performance under a limited compute budget. Drawing inspiration from gradient-based parameter optimization, the harness organizes adaptation into error attribution, update-direction selection, and executable model updates. It combines metric-level and case-level analysis to identify a focal problem, then investigates research-backed strategies and compares their reported gains and reproduction difficulty. The selected strategy is translated into training data and a training configuration, with small-scale execution checks preceding full post-training. Subsequent evaluation guides model selection and further adaptation, while validated strategies and scripts are retained for reuse. Across 11 tasks, ImproveAnyTask achieves mean gains of 18.29 and 11.97 percentage points on the Base and Instruct models, respectively, with a maximum gain of 41.96 points, under a 24-hour budget with resources equivalent to eight H20 GPUs.",
+      "url": "https://arxiv.org/abs/2610.06347",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8873
+    },
+    {
+      "id": "2610.06829",
+      "title": "CLIFT: Conformal Self-Verification for Web Agent Training and Test-Time Scaling",
+      "authors": [
+        "Yifan Zhang",
+        "Yutong Dai",
+        "Viraj Prabhu",
+        "Zhiyuan Hu",
+        "Ran Xu",
+        "Zeyuan Chen"
+      ],
+      "abstract": "Open-source web agents are now strong enough to execute realistic browser tasks, but training them with reinforcement learning still depends on weak supervision: binary task success is too sparse for credit assignment, while frontier-language-model judges are too expensive to call at every step and cannot be assumed available at deployment. We introduce CLIFT, a training and test-time scaling method built around conformal self-verification. During training, the agent answers natural-language verification questions about its own rollouts; a Compositional Conformal Certifier keeps only question signals whose URL-conditional evidence agrees with a training-time judge, assigns signed trust weights through polarity-aware lift, and blends the resulting verifier score into per-step rewards in a way that never subtracts from the judge baseline. At test time, the same certified bank is frozen and reused as structured evidence for Conformal Trajectory Selection (CTS): the agent samples a greedy rollout and one or more diverse retries, the self-verifier summarises each URL trace, and a conservative majority-vote rule chooses whether to swap away from the current incumbent without calling any external judge. This single mechanism supports three settings. On WebArena Infinity, CLIFT achieves state-of-the-art performance among open-source web agents. On VisualWebArena, a bank trained with the open model transfers to GPT-5.5 at test time and reaches state-of-the-art performance under the canonical harness. On Online Mind2Web, without training an agent on the benchmark, translating the certified question bank improves a live-web agent in zero-shot evaluation. Together these results position conformal self-verification as a way to turn costly judge feedback into a reusable training signal and a judge-free test-time scaling signal.",
+      "url": "https://arxiv.org/abs/2610.06829",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8855
+    },
+    {
+      "id": "2610.06851",
+      "title": "Base Models Can Reason By Taking a Cue From Training Data",
+      "authors": [
+        "Sophie L. Wang",
+        "Amil Dravid",
+        "Rulin Shao",
+        "Kevin Farhat",
+        "Sewon Min",
+        "Alexei A. Efros"
+      ],
+      "abstract": "In this paper, we study how training data creates associations between the tokens at the start of a base model's response and the reasoning behavior that follows. First, we demonstrate that fixing particular starting token cues makes a base model's performance competitive with that of its reinforcement learning (RL)-trained counterparts on math and coding. For instance, the cue \".\\n\\nOkay\" raises Olmo-3-7B's MATH-500 pass@1 accuracy from 42% to 78%, while \"Alright,\" raises Qwen3-14B's from 72% to 87%. Second, RL makes these cues more likely, while fixing them recovers much of its performance gain over the base model. Third, we trace the reasoning effects of token cues to the training data. We perform causal data interventions to turn an arbitrary word, such as \"chicken\", into an effective reasoning cue, or remove an existing cue's effect. A similar edit makes the prompt instruction \"Think duck duck goose\" as effective as \"Think step by step\" at eliciting reasoning. We also find that the hidden state representations induced by different cues correlate with different document types from the training set. Finally, we extend our study of token cues with a case study in language model safety, finding that different cues elicit distinct refusal and compliance behaviors that correspond to different types of training data.",
+      "url": "https://arxiv.org/abs/2610.06851",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8852
+    },
+    {
+      "id": "2610.06689",
+      "title": "Programmatic Search Agents: Extending Agentic Search Beyond Query Reformulation",
+      "authors": [
+        "Jiaming Qian",
+        "Huiyan Yang",
+        "Mandi Liu",
+        "Jie Liu",
+        "Wenkai Shen",
+        "Pengyang Zhou",
+        "Jing Jin",
+        "Jin Ma",
+        "Dezhi Ye",
+        "Chaochao Chen"
+      ],
+      "abstract": "Search agents adapt their queries, yet fixed search interfaces leave candidate processing and evidence presentation outside the agent's direct control. Our trajectory analysis shows that supporting passages can be retrieved yet never delivered to the agent; a same-page oracle intervention shows that changing the returned evidence can reduce subsequent search. We introduce Programmatic Search Agent (PSA), which makes a local executable computation over candidates the unit of a search action. PSA unifies a persistent candidate workspace, flexible primitive composition, and selective evidence presentation. It incrementally generates program cells that reuse candidates, execute dependent operations, and select what the agent inspects next. The runtime resolves specified data dependencies within each cell, while the agent adapts its search strategy across cells as new evidence arrives. We compare PSA with the Query-based Agent and Tool-based Agent on InfoSeek-Eval and BrowseComp-Plus using five policy backbones without task-specific training. All three interfaces share the search substrate, and the Tool-based Agent also shares PSA's primitives and persistent workspace. Relative to the Query-based Agent, PSA improves macro-averaged task success by 4.00 and 7.56 percentage points on the two benchmarks, respectively; within-backbone reductions in final-step tokens average 28.3% and 33.9%. These results support extending agent control beyond query reformulation to the processing and presentation of retrieved evidence. Code will be released subject to approval.",
+      "url": "https://arxiv.org/abs/2610.06689",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8838
+    },
+    {
+      "id": "2610.06516",
+      "title": "Test-Time Adaptation of Reasoning Strategies with Bayesian Nonparametric Memory",
+      "authors": [
+        "Keshav Ramji",
+        "Tahira Naseem",
+        "Ramón Fernandez Astudillo"
+      ],
+      "abstract": "While modern large language models (LLMs) have been trained to reason through verbalized chains-of-thought, the generation cost grows substantially due to suboptimal paths to reach the final answer. Furthermore, as new insights are discovered while observing various input queries (e.g. through self-reflection), limited mechanisms exist for carrying forward these findings to be applied to subsequent problems. One can view the list of such strategies or behaviors as a growing cheatsheet, with elements retrieved from this memory module at inference-time. In this work, we consider structured cheatsheets, with learned clusters of behaviors. We introduce a Hierarchical Dirichlet Process Gaussian Mixture Model (HDP-GMM) over behavior embeddings, which shares components across domains while allowing domain-specific mixing weights, and uses the posterior predictive to retrieve relevant behaviors for a query; we call this a $\\textit{Bayesian Cheatsheet}$. This mechanism allows for cheap adaptation in an online test-time training (TTT) setting, softly updating the mixture's sufficient statistics following each sample and enabling the creation of new components when the synthesized behaviors are sufficiently novel. We demonstrate that Bayesian Cheatsheet achieves clear performance gains relative to existing memory modules across reasoning benchmarks such as AIME'25, Omni-MATH, and PhysReason, even in the cold-start setting. We show that the Bayesian Cheatsheet is an adaptively reorganizing memory module, as behaviors can be re-assigned to components through a single step of collapsed Gibbs sampling. Our findings highlight the value of Bayesian-inspired memory modules for effective test-time adaptation and the role of structure in metacognitive reasoning.",
+      "url": "https://arxiv.org/abs/2610.06516",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8831
+    },
+    {
+      "id": "2610.06750",
+      "title": "Balancing Memory Pathways: Analyzing and Improving Memory Utilization in Hybrid LMs",
+      "authors": [
+        "Hyunji Lee",
+        "Joykirat Singh",
+        "Zaid Khan",
+        "Justin Chih-Yao Chen",
+        "Elias Stengel-Eskin",
+        "Alessandro Sordoni",
+        "Arman Cohan",
+        "Mohit Bansal"
+      ],
+      "abstract": "Recurrent-attention hybrid language models (LMs), which interleave attention and recurrent layers, are increasingly used to combine the efficiency of the recurrent layers with the strong performance of attention layers. Prior work suggests that attention and recurrent layers offer complementary pathways to use past information: attention supports precise memory recall from earlier tokens, while recurrent layers support consolidation of disparate information over long contexts. However, we observe that simply having access to both pathways does not mean that hybrid LMs are effectively using them. We find that they rely substantially more on attention than on the recurrent state. Standard supervised fine-tuning improves overall performance but does not improve how the two memory pathways are coordinated: the model becomes more reliant on information propagated by attention layers, while its use of information propagated by recurrent layers remains limited. To encourage better coordination between the two memory pathways, we add an auxiliary loss that limits attention's access to earlier context while the recurrent state propagates through the full sequence. This objective encourages the model to retain and use information through the recurrent pathway alongside attention. It improves overall performance, with particularly strong gains on tasks involving longer contexts or requiring information aggregation, consistent with the strengths of recurrent layers observed in analysis. Crucially, this imbalance and the benefit of our auxiliary loss generalize: they apply to multiple recurrent-attention LMs in question-answering and agentic tasks, as well as to attention-based LMs that combine different forms of memory. Together, our findings show that simply providing multiple memory pathways does not ensure their effective use, and that targeted supervision is needed to better coordinate them.",
+      "url": "https://arxiv.org/abs/2610.06750",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8829
+    },
+    {
+      "id": "2610.05966",
+      "title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
+      "authors": [
+        "Junying Chen",
+        "Xinyuan Xie",
+        "Ziniu Li",
+        "Wenyuan Gu",
+        "Jianquan Li",
+        "Xiang Wan",
+        "Guangjun Yu",
+        "Ruoyu Sun",
+        "Haizhou Li",
+        "Benyou Wang"
+      ],
+      "abstract": "Domain adaptation aims to turn a general-purpose large language model (LLM) into an expert for a target domain. While the dominant SFT+RL pipeline offers a convenient cold start, it may reduce exploration diversity and introduces additional complexity through multi-stage optimization. These limitations motivate RL-only adaptation. However, pure on-policy RL suffers from a cold-start problem, while mixed-policy RL still falls short: informative tokens in teacher outputs are learned too slowly in early training, and stale teacher outputs can hinder later improvement. We identify these two failure modes as Gradient Starvation and Teacher-Distribution Anchoring. To address them, we propose One-stage Policy Optimization (OnePO), which treats teacher outputs as transient guidance for policy improvement. OnePO combines Adaptive Objective Evolution to strengthen learning on informative low-probability teacher tokens and Teacher Retirement to discard teacher outputs once the current policy can surpass them. On medical adaptation, OnePO achieves 67.2 on HealthBench (Total) with only 20K training samples, outperforming SFT+RL and pure RL by 2.7 and 7.4 points, respectively. We further scale OnePO to produce HuatuoGPT-3, an open-source medical LLM series whose 27B variant reaches 70.1 on HealthBench (Total) and 71.4 on HealthBench Professional, surpassing frontier models such as GPT-6 Astra. Models and code are available at https://github.com/FreedomIntelligence/HuatuoGPT-3.",
+      "url": "https://arxiv.org/abs/2610.05966",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "github_url": "https://github.com/FreedomIntelligence/HuatuoGPT-3.",
+      "score": 0.8828
+    },
+    {
+      "id": "2610.06269",
+      "title": "Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries",
+      "authors": [
+        "Chonghe Jiang",
+        "Ao Qu",
+        "Siyuan Liu",
+        "Ruoyun Ma",
+        "Zijian Zhou",
+        "Dingyi Zhuang",
+        "Bo Liu",
+        "Han Zheng",
+        "Hanfei Yu",
+        "Baichuan Mo",
+        "Jinhua Zhao",
+        "Paul Pu Liang"
+      ],
+      "abstract": "Open-ended scientific discovery often requires repeatedly proposing and evaluating candidate solutions. LLM-based systems can support this process by generating and refining executable solutions from verifier feedback. Methods such as TTT-Discover use test-time training (TTT) to update the solution-generating LLM from verifier feedback, adapting its generation policy to improve subsequent proposals on the target problem. However, this becomes expensive when reliable execution requires a large model, since training must maintain gradients, optimizer states, and policy statistics while repeatedly generating long, structured outputs. It also complicates credit assignment: outcome-level verifier feedback must jointly evaluate the high-level strategy and its low-level implementation. In this work, we introduce Guidance-TTT, which separates these roles. A compact guidance model is trained at test time to propose high-level strategic changes, while a frozen execution model implements them as complete executable solutions. At each step, the system selects a promising previously discovered solution, proposes a change, executes and verifies it, and updates only the guidance model using an adaptive group-relative RL objective. This concentrates test-time learning on short strategic decisions while retaining the implementation capability of a substantially stronger model without adapting it. Without web access, Guidance-TTT produces strong solutions across four distinct domains: combinatorial optimization (Polyomino Packing), heuristic programming (AHC058), machine learning (Lasso), and GPU kernel optimization (TriMul). Across these tasks, it outperforms the best solutions reported in prior work while remaining competitive with state-of-the-art results on public online leaderboards. Code is available at https://github.com/Human-Agent-Society/reef/tree/guidance-ttt-support.",
+      "url": "https://arxiv.org/abs/2610.06269",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-05",
+      "github_url": "https://github.com/Human-Agent-Society/reef/tree/guidance-ttt-support.",
+      "score": 0.8824
+    },
+    {
+      "id": "2610.05978",
+      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+      "authors": [
+        "Jie Wang",
+        "Shiwei Luo",
+        "Qi Zhang",
+        "Yuanbin Wu"
+      ],
+      "abstract": "Tokenizer-free language models remove the inductive bias of fixed tokenizers by modeling text directly as bytes, but the resulting longer sequences substantially increase computation and eliminate explicit text abstractions. We ask whether this additional computation can be useful, and whether standard Transformers can learn the abstractions that tokenization provides. We study these questions on Transformers without specialized tokenization-related architectures. With token-superposition training and hash embeddings, byte Transformers consistently outperform subword Transformers as model size scales. We further find that byte Transformers build local text abstractions as external tokenizers: a set of segmentation-like positions are used to collect local context representations, and restricting up to $25\\%$ of intermediate layers to these local representations preserves downstream performance. Finally, these learned structures induce highly non-uniform generation difficulty, with uncertainty concentrated near local structure boundaries; exploiting them for speculative decoding yields $3.4\\times$ more accepted tokens than in subword Transformers.",
+      "url": "https://arxiv.org/abs/2610.05978",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8823
+    },
+    {
+      "id": "2610.06413",
+      "title": "SpatialChain: A Benchmark for Auditing Spatial Reasoning Faithfulness in VLMs",
+      "authors": [
+        "Rafael Teixeira Sousa",
+        "Vinícius Paulo Lopes de Oliveira",
+        "Elisa Ayumi Masasi de Oliveira",
+        "Luiza Martins de Freitas Cintra",
+        "Fernanda Bufon Färber",
+        "Igor Dias Aguiar",
+        "Julia Yasmim de Almeida Nobre",
+        "Arlindo Rodrigues Galvão Filho"
+      ],
+      "abstract": "Thinking-enabled vision-language models (VLMs) report ever-higher accuracy on spatial benchmarks, yet final-answer scores cannot reveal whether a correct prediction reflects faithful spatial reasoning or a linguistic shortcut. We introduce SpatialChain, a dataset of 28,350 training and 899 test examples pairing spatially-oriented GQA questions with scene-graph-grounded reasoning chains, retained only when the generated answer matches the symbolic ground truth, and a two-axis evaluation combining objective chain-overlap metrics with a scene-graph-aware LLM judge that scores faithfulness and completeness independently of the final answer. Applied to nine thinking-enabled VLMs, the protocol surfaces three findings invisible to standard accuracy: (i) four of nine models achieve $\\geq$79% VQA accuracy while exhibiting shortcut rates above 39%, i.e., correct answers whose reasoning the judge marks as unfaithful; (ii) chain quality significantly predicts answer correctness for seven of nine models, but the two exceptions (Claude Sonnet 4.6, InternVL3.5-8B) reveal qualitatively distinct failure modes, terse output vs. verbose-decorative reasoning, that benchmark accuracy alone conflates; (iii) SFT on SpatialChain improves Qwen3-VL-8B by +6.2 pp in-domain and reduces its shortcut rate to 22%, while a stylistic specialization effect on external benchmarks motivates replay-augmented training as mitigation. The faithfulness judge is validated against 198 human-annotated items, where judge-human agreement matches human-human agreement, and against a second judge from a different provider, which preserves the model ranking ($ρ$ = 0.88). Data, generation scripts, and evaluation code are released at https://github.com/spatialchain/SpatialChainBenchmark.",
+      "url": "https://arxiv.org/abs/2610.06413",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "github_url": "https://github.com/spatialchain/SpatialChainBenchmark.",
+      "score": 0.8815
+    },
+    {
+      "id": "2610.06824",
+      "title": "TasteVal: Measuring the Experimental Research Taste of AI Systems Against Human Experts",
+      "authors": [
+        "Oliver Jaffe",
+        "Dane Sherburn"
+      ],
+      "abstract": "We introduce TasteVal, a benchmark to evaluate the experimental research taste of frontier models. We define research taste as the ability to pick interesting problems to solve, design experiments, and interpret experimental results. TasteVal measures the experimental component of research taste; given a fixed research problem, we measure how well a model iteratively designs experiments and draws conclusions from their outcomes. We operationalize experimental research taste as compute efficiency; a Researcher who reaches the same score as an expert human using half the serial experimental compute has twice the experimental taste. Experimental taste thus acts as a multiplier on experimental compute, making it a key input to forecasts of AI progress. TasteVal consists of 8 novel, challenging, open-ended tasks representative of frontier AI R&D. To isolate taste from coding ability, the model under evaluation acts as a Researcher that iteratively designs experiments while a fixed Coder agent implements them and reports their results. The Researcher executes until either the 40 H100 hour or 120 wall-clock hour budgets are exhausted. We recruit 24 human experts, at least 2 per task, and take the best expert attempt per task as the expert baseline. We evaluate 20 models released between 2023 and 2026. The best-performing model, Opus 5.5, exceeds our expert baseline, with a compute multiplier of 2.3x (95% CI 1.15-4.37), at roughly 1/30 of our baseliners' average per-run cost. On TasteVal, the compute multiplier of frontier models has doubled approximately every 3.0 months since December 2025 (95% CI 1.7-5.0), up from every 14 months between 2023 and December 2025. Measured by final normalized performance, frontier models show no trend break, doubling every 14.6 months. To keep TasteVal uncontaminated, we do not release the tasks.",
+      "url": "https://arxiv.org/abs/2610.06824",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8806
+    },
+    {
+      "id": "2610.06637",
+      "title": "Long-Horizon Textual World Modeling through Structured Reasoning",
+      "authors": [
+        "Fangxin Wang",
+        "Xiang Gao",
+        "Yuguang Yao",
+        "Kaiwen Dong",
+        "Nikash Walia",
+        "Kamalika Das"
+      ],
+      "abstract": "World models must predict how an environment evolves under sequences of actions, enabling agents to compare possible futures and reason about counterfactual actions before acting. Long-horizon prediction is commonly obtained by recursively applying a one-step transition model, but intermediate errors can compound over time. Multi-step dynamics models instead condition on a sequence of future actions and predict their consequences directly, but become harder to learn as horizon grows: the model must track interacting state changes across the trajectory, endpoint supervision provides weak credit assignment, and intermediate predictions can remain plausible while losing information needed for later states. We show that these challenges can be addressed by casting the internal evolution of a multi-step transition as structured reasoning over textual world states: reasoning over sparse state changes reduces the burden of state tracking, a predictive-gain objective rewards the learned state for improving over a matched predictor that conditions on raw history instead, and intermediate predictive rewards supervise each state along the trajectory. Because these intermediate states are explicit textual representations of the world, they provide semantically meaningful targets that can be inspected, scored, and corrected during training. Across ScienceWorld, Jericho, and CEO-Bench, our approach achieves the strongest average long-horizon performance against recursive and non-recursive baselines that condition directly on raw history, with gains increasing at longer horizons. In a controlled counterfactual study, our model is also the only one with statistically significant sensitivity to future actions.",
+      "url": "https://arxiv.org/abs/2610.06637",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8803
+    },
+    {
+      "id": "2610.06481",
+      "title": "AECP: Artifact-Exclusive Communication Protocol for Multi-Agent Code Generation",
+      "authors": [
+        "Jiaqi Xue",
+        "Yanjun Wang",
+        "Xiangci Li",
+        "Lingbo Mo",
+        "Aritra Sengupta",
+        "Shweta Garg",
+        "Murali Krishna Ramanathan",
+        "Myeongsoo Kim"
+      ],
+      "abstract": "As AI agents increasingly tackle complex repository-level coding tasks, distributing work across multiple agents is a natural way to scale beyond the capabilities of a single agent. To coordinate their interdependent work, these agents share findings and agree on interfaces between modules. However, exchanged information often serves only as context, leaving individual agents to interpret it and incorporate it into subsequent work. Consequently, shared findings may go unused and deviations from interface agreements may go undetected, undermining the reliability and efficiency of collaboration. This motivates moving part of the coordination responsibility from individual agents to the execution harness. To make shared information actionable during execution, we introduce the Artifact-Exclusive Communication Protocol (AECP). AECP requires agents to communicate exclusively through structured artifacts and specifies how the harness processes them. The harness supplies findings when agents access relevant code, screens implementations for mismatches with recorded interface commitments, and requires affected agents to revisit revised agreements. These coordination steps become part of harness execution rather than actions that agents must initiate from prior messages. Across Doc2Repo, NL2Repo, and CodeProjectEval, using closed- and open-source models including Opus-4.8 and DeepSeek-V4-Flash, AECP improves average test pass rate by 28.2% and reduces average wall time by 16.5% relative to an agent team using free-form inter-agent messages. Artifact-exclusive communication also blocks the relay of malicious instructions between agents, reducing how often they reach other agents from 95% to 0% and how often those agents act on them from 40% to 0%.",
+      "url": "https://arxiv.org/abs/2610.06481",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8799
+    },
+    {
+      "id": "2610.06251",
+      "title": "Shared Stopping Decisions Change Answers in HQQ Cache Quantization",
+      "authors": [
+        "Seunghui Jwa",
+        "Minsu Oh",
+        "Chanjun Park",
+        "Yeo-Chan Yoon"
+      ],
+      "abstract": "Language-model systems batch questions for throughput, but unrelated questions should not change a target's answer when its input and numerical execution are fixed. We study compression of the key and value cache, which stores attention representations reused during generation. With request-local groups, Transformers' Half-Quadratic Quantization (HQQ) backend updates compression parameters separately but uses a shared average error to decide when all updates stop. Replacing only the question batched with the target changes four-bit HQQ answers in 170/384 test comparisons across two models. Replaying the other execution's update counts reproduces its complete answer and cache fingerprints in every changed pair, in both directions. Computing the stopping mean in FP32 reduces cache differences but leaves answer changes. Native HQQ also changes confirmed numerical correctness in eight arithmetic pairs. Fixed iterations and request-local stopping remove observed companion dependence under matched controls. Request-local stopping remains sensitive to synthetic padding changes at the tensor level. Fixing the original iteration budget removes this decision path without tuning. Neither repair has an established quality advantage, and natural rebatching still changes answers. Request-independence audits must cover stopping decisions as well as quantization groups.",
+      "url": "https://arxiv.org/abs/2610.06251",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-05",
+      "score": 0.8796
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
