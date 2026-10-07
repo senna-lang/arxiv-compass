@@ -1,0 +1,396 @@
+{
+  "date": "2026-10-07",
+  "collected_at": "2026-10-07T14:26:18.172007+09:00",
+  "papers": [
+    {
+      "id": "2610.08775",
+      "title": "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?",
+      "authors": [
+        "Ankit Sonthalia",
+        "Haritz Puerto",
+        "Alexander Rubinstein",
+        "Martin Gubri",
+        "Seong Joon Oh"
+      ],
+      "abstract": "Large language models (LLMs) can solve many narrow tasks, but querying them separately for millions of related instances can be prohibitively expensive. Can LLM agents autonomously create cheaper solutions for such workloads? We call this ability \"bottling\": the ability to turn general capabilities into task-specific solutions that balance answer quality and amortised cost. We introduce BOTTLED, a benchmark in which agents receive an entire unlabelled workload and must complete it under fixed time, compute and LLM API budgets. Agents choose their own approach, such as training a small model or writing a reusable program. Across ten models and three tasks, we find that strong zero-shot task performance does not reliably translate into strong bottling capabilities. Models with similar zero-shot scores can differ substantially after bottling, and 48 of 60 bottling runs score below the lower bound of the 95% confidence interval of their model's zero-shot performance. Moreover, 31 of 60 runs underperform the stronger of two small-model distillation baselines with the same token budget. Nevertheless, bottling can yield substantial savings: on query-product relevance classification, Opus 5 retains about 82% of its zero-shot macro-F1 at roughly 657 times lower reported cost. Bottling is also competitive with Jev, a \"system one\" model built especially for cheap, repetitive inference: Opus 5 on the same task recovers about 94% of Jev's macro-F1 at a quarter of Jev's projected full-workload cost. BOTTLED provides a basis for evaluating and improving agents' ability to invest limited resources in reusable solutions for large, repetitive workloads.",
+      "url": "https://arxiv.org/abs/2610.08775",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.902
+    },
+    {
+      "id": "2610.08018",
+      "title": "Structured but Silent: Probing Capability Requirements in LLM Hidden States",
+      "authors": [
+        "Kyojun Choo",
+        "Minsoo Song",
+        "Yunju Kang",
+        "Chanjun Park"
+      ],
+      "abstract": "Reliable tool use requires more than triggering a mechanism or matching a query to an API description. Before selecting a specific tool, an agent must first infer the capability requirements implied by the user query. In this paper, we investigate whether these query-side capability requirements are linearly decodable from LLM hidden representations prior to generation, and how this hidden-state accessibility compares with explicit verbal classification. We introduce TACIT, a framework that decomposes external requirements along three fundamental axes: Source, Transformation, and World Effect, defining eight structurally distinct capability classes. Using 1,600 balanced training queries from benchmarks, synthetic examples, and new domain scenarios, we train linear probes on pre-generation hidden states from four open-weight LLM families. Our empirical results demonstrate that fine-grained capability structures are linearly decodable with high accuracy across all models. Crucially, however, we expose a representation-to-verbalization gap: these same models are significantly less reliable when asked to explicitly classify the same queries in natural language. This disconnect indicates that information about required external capabilities is linearly accessible in LLM hidden representations but not reliably expressed, a phenomenon we define as \"structured but silent.\"",
+      "url": "https://arxiv.org/abs/2610.08018",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.896
+    },
+    {
+      "id": "2610.07816",
+      "title": "Do I Need the Cloud? Uncertainty-Aware Step-Level Handoff for Small Language Model Agents",
+      "authors": [
+        "Abolfazl Younesi"
+      ],
+      "abstract": "Small language models (SLMs) are attractive as local agent controllers because they reduce remote inference, latency, and deployment footprint, yet structured tool errors can cause an agent step to fail. Existing routers typically select a model once per query. However, agents expose sequential decision points whose difficulty dynamically changes based on intermediate observations. We propose STEPGATE, an uncertainty-aware handoff framework that scores each local SLM action and selectively escalates challenging steps to a stronger model. On a 52-task held-out single-step BFCL-derived test split, the Qwen2.5-1.5B/7B pair attains 82.7% task success with 30.8% escalation, versus 67.3% local-only and 75.4% random escalation (which uses 33.8% escalation). In a separate multi-turn evaluation, STEPGATE achieves 69.0% trajectory success and 84.0% action success using only 30.0% cloud actions, compared with 48.0%/70.5% local-only, 60.0%/78.2% random escalation, and 57.0%/77.1% query-level routing (strong-only achieves 82.0% trajectory success at 100% cloud actions). These results suggest that step-level escalation recovers a large share of the performance gap to the stronger Qwen2.5-7B backend at a matched cloud-action rate while transmitting fewer tokens remotely. However, our evaluation is limited to one model family, a single stronger backend, and scripted tasks. Furthermore, the test sets are small, multi-turn comparisons rely on paired intervals and statistical tests, and our risk tiers serve as research annotations rather than formal safety guarantees.",
+      "url": "https://arxiv.org/abs/2610.07816",
+      "categories": [
+        "cs.AI",
+        "cs.DC",
+        "cs.ET",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8925
+    },
+    {
+      "id": "2610.08102",
+      "title": "DSV-Mem: Evaluating Multimodal Memory in Professional Workflows for MLLM Agents",
+      "authors": [
+        "Jike Zhong",
+        "Ritwick Chaudhry",
+        "Xuanbai Chen",
+        "Tianchen Zhao",
+        "Linghan Xu",
+        "Yifan Xing",
+        "Nishant Sankaran"
+      ],
+      "abstract": "Conversational MLLM agents are increasingly expected to assist in professional workflows, from AI research and engineering design to product management and business operations. Yet this capability remains underexplored: existing benchmarks largely focus on informal, everyday interactions and personal-life scenarios featuring photographic natural images, isolated static artifacts, and recall-oriented questions. In contrast, professional scenarios often involve structured, information-heavy artifacts that undergo frequent revisions and authority updates, and compositional queries requiring reconciliation of many artifact versions while tracking state precisely. To address these challenges, we introduce DSV-Mem, a benchmark for evaluating Dense Stateful Visual Memory. DSV-Mem comprises expert-reviewed scenarios and 1,000 questions across five user-oriented categories (Current State, Past State, Derived State, Change History, and Conflict/Refusal). A Hartley-inspired criterion favors questions with broader visual-evidence inspection demands. We also introduce a generation harness that produces evaluation suites by decoupling state-transition synthesis from conversation filling. Evaluation over 27 configurations spanning frontier and open-weight models and memory management methods reveals that the strongest baseline scores below 45% on DSV-Mem. Analysis surfaces findings: 1) multimodality and information density both contribute to difficulty, but state evolution, particularly the number of governing updates, is the dominant tested factor. Raw conversation/haystack length, OCR, and arithmetic are not the primary bottlenecks; 2) models often fail to verify user premises against prior state updates before answering; 3) increased reasoning effort and memory management methods yield limited gains, whereas state-aware designs prove more effective. The benchmark and code will be publicly released.",
+      "url": "https://arxiv.org/abs/2610.08102",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.892
+    },
+    {
+      "id": "2610.07851",
+      "title": "RA-MoWE: Workflow-Affinity Embeddings for Query Clustering and Agentic Workflow Generation",
+      "authors": [
+        "Qi Cheng",
+        "Shengyu Chen",
+        "Wei Cheng",
+        "Yiqun Xie",
+        "Haoyu Wang",
+        "Haifeng Chen",
+        "Xiaowei Jia"
+      ],
+      "abstract": "Agentic workflows enable large language models (LLMs) to solve complex tasks by coordinating reasoning, tool use, and verification. However, a workflow optimized for an entire task collection can overlook differences in the reasoning strategies that individual queries need, while searching for a new workflow for every query repeats costly optimization. To address this tradeoff, we introduce RA-MoWE, a framework that uses workflow-affinity embeddings to cluster queries and guide the generation of reusable expert workflows. Each embedding records how well a fixed set of reference workflows solves a query, revealing similarities in which reasoning strategies are effective. RA-MoWE uses each cluster's queries and average embedding to initialize and refine a specialized workflow through execution feedback. An embedding encoder predicts these embeddings from query text, allowing new queries to select a generated expert without first executing the reference workflows. On a 300-query test set drawn from four benchmarks spanning mathematics, science, and programming, RA-MoWE improves average task score by 4.04 percentage points over selecting among the reference workflows, while using 27.7% fewer language-model calls at inference.",
+      "url": "https://arxiv.org/abs/2610.07851",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8916
+    },
+    {
+      "id": "2610.07860",
+      "title": "WorkflowOps: Learning Agent Collaboration Priors for Multi-Agent Workflow Orchestration",
+      "authors": [
+        "Qi Cheng",
+        "Shengyu Chen",
+        "Wei Cheng",
+        "Zhengzhang Chen",
+        "Xiaowei Jia",
+        "Haoyu Wang",
+        "Haifeng Chen"
+      ],
+      "abstract": "Multi-agent systems are increasingly deployed for complex knowledge work, yet their orchestration layers remain largely memoryless: each new task is decomposed, assigned, and executed from scratch with no benefit from prior successful executions. We present WorkflowOps, a multi-agent workflow orchestration framework that learns agent collaboration priors from historical workflows and expands its agent pool on demand to cover new capability requirements. Our approach introduces three coupled mechanisms. First, a transition probability matrix captures pairwise agent collaboration frequencies from past workflows and applies them as soft guidance during DAG workflow construction through intra-layer ordering optimization, probability-thresholded edge suggestion, and transitive reduction for parallelism maximization. Second, a sufficiency-driven agent creation loop detects capability gaps via semantic matching scores, generates specialized agents through an LLM, and simultaneously injects them into the collaboration matrix, so that newly created agents are immediately usable with predicted collaboration priors. Third, a layered semantic matching strategy uses pre-trained sentence embeddings for fast, deterministic capability matching as a first pass, invoking LLM verification only for low-confidence cases, thereby reducing LLM routing calls by over 80\\% compared to pure-LLM approaches. Experiments on mixed code, math, and question-answering suites show that WorkflowOps improves end-to-end pass rates over recent workflow-construction baselines, with the largest gains on structured, decomposable tasks where past agent handoff patterns transfer.",
+      "url": "https://arxiv.org/abs/2610.07860",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8909
+    },
+    {
+      "id": "2610.08463",
+      "title": "UNREAL: Unifying Retrieval and Long-Context with a Single Model",
+      "authors": [
+        "Edan Kinderman",
+        "Elad Hoffer",
+        "Yochai Blau",
+        "Brian Chmiel",
+        "Ron Banner",
+        "Daniel Soudry",
+        "Boris Ginsburg"
+      ],
+      "abstract": "Long-context inference and Retrieval-Augmented Generation (RAG) handle evidence selection at vastly different scales, from a single long prompt to an entire corpus. We ask whether a single model-internal mechanism can select evidence across this range. We introduce UNifying REtrieval And Long-Context with a Single Model (UNREAL), a model-native evidence selection framework to span corpus retrieval and long-context inference. UNREAL encodes chunks and derives retrieval queries directly from the frozen LLM's internal representations. It adds fewer than 500K trainable parameters and leaves the backbone unchanged. On a 3B-token, 21M-chunk Wikipedia index, all four dense and hybrid UNREAL backbones outperform state-of-the-art retriever-reranker systems. The best model raises recall from 49.1% to 73.2% on HotpotQA, from 31.7% to 60.1% on 2WikiMultiHopQA, and from 8.8% to 14.4% on MuSiQue. Applied to long-context tasks, the same selection mechanism removes distractors before generation, raising NoLiMa accuracy from 1.0% to 24.83% at its maximum context length of 128K tokens, and LV-Eval's F1 score from 49.97% to 54.66% at 256K. UNREAL also reduces FLOPs and time-to-first-token relative to full-context inference from roughly 32K tokens onward, with larger gains as context grows. Together, these results establish model-internal evidence selection as a common foundation for corpus retrieval and evidence-sparse long-context inference.",
+      "url": "https://arxiv.org/abs/2610.08463",
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8878
+    },
+    {
+      "id": "2610.08680",
+      "title": "A Systematic Study of Small Language Models on Abstract Reasoning Tasks",
+      "authors": [
+        "Nur A Zarin Nishat",
+        "Jens Lehmann",
+        "Andrei Aioanei",
+        "Sahar Vahdati"
+      ],
+      "abstract": "Endpoint accuracy on abstract-reasoning benchmarks does not reveal whether a language model has acquired a transferable rule or fit distribution-specific regularities. We study this distinction in small language models on the ARC-TGI benchmark, which organizes abstract grid transformations into controllable task families and supports resampling, spatial shifts, and cross-benchmark transfer. Across more than 1,000 runs, we profile decoder-only, encoder--decoder, and mixture-of-experts model families under supervised fine-tuning. We examine the efficiency and stability of skill acquisition, robustness beyond the training distribution, interactions with model family and task formulation, and layer-wise attention signatures that accompany behavioral differences. Substantial in-distribution accuracy is attainable, but acquisition is sensitive to optimization and unevenly distributed across task families. Performance deteriorates sharply outside the training distribution, including when the rule is retained but grid scale changes. Greater training-set depth and breadth yield uneven gains, while the effect of additional in-context examples depends on model family. Executable-rule induction also yields correct solutions not observed under direct grid generation. On selected tasks, attention diagnostics show distinct concentration and context-dependence profiles, but do not establish general causal mechanisms. Overall, abstract-reasoning scores are conditional on the model, adaptation regime, evaluation distribution, and response format.",
+      "url": "https://arxiv.org/abs/2610.08680",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8875
+    },
+    {
+      "id": "2610.08452",
+      "title": "Agentic AutoRAG: RAG Pipeline Optimization through Reasoning-Driven Agents",
+      "authors": [
+        "Lasse B. Strand",
+        "Robert Jakob",
+        "Kevin O'Sullivan",
+        "Markus Kreft"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) is a widely used approach for grounding large language models (LLMs) in external knowledge. However, configuring a pipeline is an expensive hyperparameter optimization problem over many interacting choices, from chunking and embedding model to reranking and generation. Existing optimizers, from greedy search to Bayesian optimization, reduce each trial to an aggregate score and search without modeling why a configuration performed as it did, even though the retrieved chunks already provide evidence about whether each failure occurred during retrieval or after it. We introduce Agentic AutoRAG, an LLM-agent optimizer for multi-objective RAG hyperparameter optimization with retrieval-versus-generation failure attribution. It proposes configurations scored on a frozen exam from the corpus: after each trial a Diagnoser attributes each failed question to retrieval or generation, and a Proposer, grounded in a knowledge base of model rankings and pricing, selects the next configuration, weighing accuracy against cost to trace a Pareto frontier. On three multi-hop QA benchmarks it reaches higher LLM-judge accuracy than every baseline we compare, and within its first 10 trials it matches or beats the statistical baselines' full 30-trial judge accuracy. In its cost-aware mode on a real-world healthcare corpus it reaches a median exam accuracy of 77%, above the strongest baseline's 71.5%, at about 58% of that baseline's cost per query, and it matches that 71.5% at about 22% of the cost.",
+      "url": "https://arxiv.org/abs/2610.08452",
+      "categories": [
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8874
+    },
+    {
+      "id": "2610.07803",
+      "title": "ThinkFuse: Trajectory-Aware Test-Time Fusion for Small Reasoning Models",
+      "authors": [
+        "Myunghoon Kang",
+        "Jungseob Lee",
+        "Jaehyung Seo",
+        "Heuiseok Lim"
+      ],
+      "abstract": "Small reasoning models (SRMs) have shown strong performance on complex reasoning tasks by generating extended chain-of-thought trajectories, but they often fail to recover once their reasoning enters an erroneous path. Existing test-time fusion methods rely on local fusion signals to determine when to trigger fusion, which can be misled by transient uncertainty fluctuations and may reinforce unstable reasoning trajectories. We propose ThinkFuse, a training-free test-time fusion framework that selectively intervenes in unreliable reasoning segments. ThinkFuse compares segment-level uncertainty shifts with trajectory-level uncertainty trends to identify unstable reasoning points and fuse auxiliary reasoning paths into the primary model's trajectory. Extensive experiments demonstrate that ThinkFuse outperforms baselines on mathematical and knowledge-intensive reasoning benchmarks, with consistent gains across model-family combinations, and remains robust with a smaller primary model. Our analysis shows that ThinkFuse requires fewer fusion triggers and generates fewer tokens, highlighting the efficiency of selective triggering. Our code is available at https://github.com/js-lee-AI/ThinkFuse.",
+      "url": "https://arxiv.org/abs/2610.07803",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-06",
+      "github_url": "https://github.com/js-lee-AI/ThinkFuse.",
+      "score": 0.8873
+    },
+    {
+      "id": "2610.08630",
+      "title": "Towards In-Parameter Memory Augmentation for Large Language Models",
+      "authors": [
+        "Haoyu Huang",
+        "Zhongwei Xie",
+        "Jiaxin Bai",
+        "Yisen Gao",
+        "Hong Ting Tsang",
+        "Wuganjing Song",
+        "Huihao Jing",
+        "Yufei Li",
+        "Yangqiu Song"
+      ],
+      "abstract": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusable memory information is represented in model parameters, adapters, or other parameter-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing parameter object is plugged into the forward pass during inference, whether it is acquired before or during deployment. We organize the landscape with two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We clarify boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
+      "url": "https://arxiv.org/abs/2610.08630",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8872
+    },
+    {
+      "id": "2610.07937",
+      "title": "Leveraging a four-quadrant approach for evaluating Redpine Science",
+      "authors": [
+        "Filip Dorm",
+        "Leonora Vesterbacka"
+      ],
+      "abstract": "Redpine Science gives models and agents a single access point to a wide range of peer-reviewed literature, queried directly through the Model Context Protocol (MCP) and an API. This report evaluates Redpine Science on two levels: the relevance of the retrieved chunks, and a model's answer when it has access to Redpine Science compared to web search. Both public and expert-validated benchmarks are used. Public benchmarks are a widely accepted way to test model development and are comparable across labs, but risk saturation and memorization. To address this, we complement them with an expert-validated question set. In total, this report presents four evaluations. On ScholarQABench SciFact, the public answer-quality benchmark reported here, an agent with Redpine Science answers 94.4% of claims correctly against 87.6% with no retrieval. On the expert-validated question set, an agent with Redpine Science states 80.1% of the required claims against 70.2% for an agent restricted to web search. On the 668 queries of a public retrieval benchmark whose gold paper Redpine holds, stripped of any model reasoning, Redpine Science places the correct source paper in its top ten results for 83.1% of queries (Recall@10), against 79.3% for the benchmark's creator. A blinded expert relevance panel places Redpine Science's Precision@5 at 75.2% against 39.8% for the PubMed search tool. We release the expert-validated question set and instructions to reproduce every headline result above, at https://github.com/redpine-ai/benchmarks.",
+      "url": "https://arxiv.org/abs/2610.07937",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-06",
+      "github_url": "https://github.com/redpine-ai/benchmarks.",
+      "score": 0.887
+    },
+    {
+      "id": "2610.07935",
+      "title": "SIGMA: Self-Improving Alignment Generalization from a Model Spec",
+      "authors": [
+        "Jingyu Zhang",
+        "Shruti Palaskar",
+        "Daniel Khashabi",
+        "Benjamin Van Durme",
+        "Leon A. Gatys",
+        "Joseph Yitan Cheng"
+      ],
+      "abstract": "LLM agents are increasingly capable of executing complex tasks and of recursively improving themselves on easy-to-verify objectives such as software engineering and mathematics. Since alignment is much harder to verify, this creates a growing risk of capabilities increasing without appropriate safety alignment, especially as capabilities expand to auto-research and cybersecurity. Existing approaches focus on capability self-improvement using verifiable feedback or on alignment training with supervision from stronger models or curated data, creating an external supervision bottleneck for alignment. We ask whether current models can improve their own safety alignment, and propose SIGMA, a data generation and training pipeline enabling alignment self-improvement that generalizes to out-of-distribution settings. Given only a \"Model Spec\" stating the model's desired behavior, SIGMA leverages a model's reasoning capabilities to strengthen its own safety reasoning. SIGMA first performs spec-guided task synthesis, using the candidate model as a task designer agent to generate diverse alignment dilemma scenarios and convert them into training tasks that stress-test its understanding of the Model Spec. Next, SIGMA conducts self-judged alignment training through supervised fine-tuning and rubric-based reinforcement learning with the model itself as the reward model. Despite training only on single-turn chat data, SIGMA improves safety alignment in multi-turn agentic environments (AgentHarm harmfulness decreases from 22.6 to 14.8; Agentic Misalignment decreases from 79.1 to 3.8), outperforms Deliberative Alignment and Constitutional AI baselines, and retains general capability. Analyses show that a Model Spec balancing harmlessness and helpfulness, test-time reasoning for safety deliberation, and high-quality rubrics from SIGMA's task designer agent are crucial for effective self-improvement.",
+      "url": "https://arxiv.org/abs/2610.07935",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.885
+    },
+    {
+      "id": "2610.08563",
+      "title": "Adaptive Power Sampling for LLM Reasoning",
+      "authors": [
+        "Bingnan Xiao",
+        "Chenhao Yang",
+        "Bingcong Li",
+        "Wei Ni",
+        "Xin Wang"
+      ],
+      "abstract": "Sequence-level power sampling has recently emerged as a training-free approach to reasoning by sampling from a sharpened output distribution of a base large language model (LLM). Nevertheless, existing methods typically sharpen the base model distribution uniformly across queries, overlooking variations in query difficulty and in how well the base model already handles each query. The goal of this work is to equip power sampling with query adaptivity. Theoretically, we show that the benefits of further sharpening are determined by the self-reward gap between correct and incorrect responses. Based on this insight, we propose \\emph{Adaptive Power Sampling} (APS), which adjusts the sharpening exponent on a per-query basis at test time using the relationship between answer agreement and the model's self-reward. Experiments across diverse reasoning tasks, including MATH500, HumanEval, and GPQA, show that APS consistently outperforms power sampling with a fixed sharpening exponent, without additional training.",
+      "url": "https://arxiv.org/abs/2610.08563",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8849
+    },
+    {
+      "id": "2610.07835",
+      "title": "DHCG: Dynamic Construction of Hierarchical Collaboration Graphs for LLM-Based Multi-Agent Reasoning",
+      "authors": [
+        "Jie Ren",
+        "Jiakang Yuan",
+        "Chenyu Huang",
+        "Hezeer Ma",
+        "Jiayuan Fan",
+        "Tao Chen"
+      ],
+      "abstract": "LLM-based multi-agent systems (MAS) have demonstrated strong capabilities in solving complex problems across diverse domains. Recently, the dynamic orchestration of agent systems has become an important research direction. However, existing methods suffer from limited composition, misaligned dependencies, and inflexible scale, restricting their ability to adapt to reasoning requirements during execution. To address these limitations, we reframe MAS design as a partially observable Markov decision process, in which both the composition and scale of the MAS are dynamically determined. We propose DHCG, a novel framework that coordinates three modules (Planner, Worker, and Generator) to progressively construct a dynamic hierarchical collaboration graph from scratch based on the query and evolving execution feedback. At each step, guided by feedback, the Planner generates a set of distinct and complementary roles tailored to the current reasoning needs and selectively routes relevant information to each role. It can also finalize the hierarchical collaboration graph early or progressively expand it when additional reasoning is required. We further introduce action-aware preference optimization to train the Planner to make more effective decisions when constructing hierarchical collaboration graphs. We systematically evaluate DHCG across code generation, mathematical reasoning, and domain-specific reasoning benchmarks. DHCG achieves state-of-the-art average performance among the compared methods, improving over the single-agent baseline by 13.06 points and outperforming both static and dynamic MAS baselines by 2.77-8.02 points. Additional experiments further demonstrate its generalization across different Planner backbones and unseen Worker models.",
+      "url": "https://arxiv.org/abs/2610.07835",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8842
+    },
+    {
+      "id": "2610.08327",
+      "title": "MedZERO: Self-Evolving Agents for Open-Ended Medical Reasoning Through Controlled Knowledge Accumulation",
+      "authors": [
+        "Xilin Dang",
+        "Weilin Ruan",
+        "Xue Yang",
+        "Jinghao Wang",
+        "Xiaowei Hu",
+        "Jinpeng Li",
+        "Pheng-Ann Heng"
+      ],
+      "abstract": "Large language models (LLMs) have shown promise in medical question answering and clinical reasoning, yet their improvement remains constrained by static parametric knowledge and costly expert supervision. Self-evolving agents offer a promising alternative by enabling models to improve through iterative task generation and problem-solving. However, most existing self-evolving methods are designed for easily verifiable domains such as mathematics and coding, where solutions can be checked by exact answers or executable programs. Medical reasoning is fundamentally different: it is open-ended, knowledge-intensive, and often only partially verifiable. We present MedZERO, a self-evolving framework for open-ended medical reasoning. MedZERO couples an Examiner that generates frontier medical question-option pairs with a Reasoner that solves them through evidence-grounded multi-turn reasoning with external knowledge tools. To support reliable, continual improvement, MedZERO adopts controlled knowledge accumulation, which maintains temporary exploratory knowledge and curated persistent knowledge in reasoning. We evaluate MedZERO on five public medical reasoning benchmarks using 4B- and 8B-scale base models under open-ended evaluation. Across all settings, MedZERO consistently outperforms the underlying base models and prior self-evolving baselines, achieving up to 13.7 average accuracy-point gains over the next-best self-evolving baseline.",
+      "url": "https://arxiv.org/abs/2610.08327",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8836
+    },
+    {
+      "id": "2610.08586",
+      "title": "MINDSET: Energy-based Schema Evolution for Long Conversational Agent Memory",
+      "authors": [
+        "Sujato Dutta",
+        "Sreekruthy Tummala",
+        "Shashank Vanga",
+        "Ayushmi Pavani"
+      ],
+      "abstract": "Long conversational agents have become essential in our daily lives. They must remember what was said long back in order to help us efficiently complete a task without needing the user to repeat instructions and context repeatedly. However, the main issue is that instructions and context change over time and so the agents must be able to adapt accordingly. A useful memory system should preserve both current and historical states, distinguish stale information from active knowledge, retrieve evidence appropriate to the query and avoid repeatedly invoking a large language model to rewrite prior interactions. We introduce MINDSET, a memory controller that stores a conversation as immutable episodes and organizes them into versioned schemas through minimum-energy state transitions. Each incoming episode may reinforce, supersede, split or create a schema. The transition decision balances representation distortion, contradiction, historical damage, fragmentation and internal inconsistency, while hysteresis prevents isolated contradictions from prematurely rewriting stable memory. We evaluate MINDSET against 5 memory systems on a reproducible sample of 850 questions (700 LoCoMo + 150 MemoryAgentBench). MINDSET obtains the highest observed LoCoMo answer F1 while significantly improving retrieval ranking (Recall@8, MRR and nDCG@8) over the second best method LightMem (p<0.01 after Holm correction). It obtains the highest observed scores on MemoryAgentBench although the relative difference is low. Ablations identify controlled fragmentation and schema-aware assignment as the largest contributors to answer quality. Additionally, a 700-question cross-model evaluation with GLM-4.7 and Gemma-4-31B supported model independence. These results show that long-term memory can be better handled as constrained state management rather than continual summarization.",
+      "url": "https://arxiv.org/abs/2610.08586",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.07940",
+      "title": "Hybrid Latent Attention for Looped Language Models",
+      "authors": [
+        "Yuhan Chen",
+        "Siyuan Zhang",
+        "Nan Wang",
+        "Feiyang Kang",
+        "Ruoxi Jia"
+      ],
+      "abstract": "Looped language models apply the same stack of layers T times to each token, which deepens the model without adding parameters but multiplies its key-value (KV) cache by T. The larger cache limits how many sequences a GPU can decode at once and slows each decoding step, which reads the whole cache. We propose Hybrid Latent Attention (HLA), which keeps exact keys and values within a sliding window of W recent tokens and stores each older token as a compact latent that the query of each loop reads directly, without reconstructing keys and values. We uptrain HLA on Ouro looped models (T=4) with 1.4B and 2.6B parameters, keeping the pretrained weights frozen and training only the added parameters to reproduce the original attention. The cache shrinks by 10.7x per token, fitting 4.0-8.8x as many concurrent sequences per GPU, and decoding throughput improves by 2.5x at 1K-token contexts and by up to 7.4x at 16K. HLA retains over 97% of the original accuracy on math, knowledge and reasoning benchmarks, and 96-100% on long-context retrieval up to 16K tokens. After supervised fine-tuning, it performs on par with the fine-tuned original model on competition-level math.",
+      "url": "https://arxiv.org/abs/2610.07940",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.08514",
+      "title": "How Much Evidence Should a Coding Agent's Self-Correction Carry? Adaptive Dirichlet Evidence for Self-Distillation",
+      "authors": [
+        "Yunbo Long",
+        "Guangya Hao",
+        "Yuhan Liu",
+        "Yiting Duan",
+        "Longyan Tan",
+        "Yunchen Long",
+        "Hao Wu"
+      ],
+      "abstract": "Execution feedback lets coding agents revise programs and learn from their own corrections. A correction's learning weight should reflect both the transitions supported by its executions and the amount of evidence behind that support. We introduce Effective-Evidence Self-Distillation (EESD), which represents these quantities separately. Normalized execution relevance determines relative transition support and an effective pseudo-count mass; a Dirichlet posterior then produces an uncertainty-penalized weight for KL-anchored correction learning. Under a symmetric prior, changing mass preserves category ordering, and effective mass yields a supervised coefficient bounded by its matched fixed-mass counterpart. Across four model-domain history sweeps, increasing visible observations from one to eight reduces future-outcome NLL by 55.0-59.3%. At eight observations, effective mass achieves lower NLL than fixed mass in all four comparisons. In the primary matched DeepSeek/RunBugRun study, argmax predictions agree on all 3,000 examples, with the largest NLL gain under concentrated relevance. After one correction-learning round, DeepSeek/CodeARC all-tests Pass@1 increases from 15.0% to 20.4%, with a paired 95% source-bootstrap interval of [+2.8, +8.0] percentage points. The twelve-setting downstream evaluation establishes the model-domain scope of this update. These results show how separating evidence support from evidence mass changes probability estimation and correction learning in coding agents.",
+      "url": "https://arxiv.org/abs/2610.08514",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8825
+    },
+    {
+      "id": "2610.08106",
+      "title": "ChartBmkAgent: Harness-Governed Multi-Agent Construction of Chart QA Benchmarks from Sparse Error-Taxonomy Specifications",
+      "authors": [
+        "Langxi Huang",
+        "Pingping Zhang",
+        "Lanyun Zhu",
+        "Chunyang Jiang",
+        "Jiawei Shao",
+        "Haocheng Yuan",
+        "Peilin Chen"
+      ],
+      "abstract": "Multimodal large language models (MLLMs) advance rapidly, while conventional benchmark development lags behind, delaying investigation of newly observed capability gaps. Such investigation requires an expressive task format and an on-demand construction process: information-rich charts make chart question answering (Chart QA) suitable for probing coupled perception and reasoning. Automated Chart QA construction is intended to shorten the benchmark-development cycle by turning identified gaps into targeted samples on demand. Current methods, however, commonly separate target guidance from scratch generation: target-guided systems often require prepared data, charts, or templates, while scratch-generation systems primarily ensure artifact validity, without explicitly controlling whether newly synthesized requirements and content remain aligned with an externally specified diagnostic target. We introduce ChartBmkAgent, which turns an identified capability gap into targeted diagnostic evidence by constructing complete Chart QA samples from sparse error-taxonomy specifications. Throughout construction, a central harness governs specialized agents, requires stage-specific evidence of alignment with the original error category, and records the basis for each acceptance decision. On 300 taxonomy-wide samples, MLLM accuracies ranged from 32.7% to 84.3% with distinct category profiles, showing that generated samples reveal capability differences. Across three source-model comparisons, targeted follow-ups scored 50.0% versus 82.2% on matched controls ($p=8.96\\times10^{-6}$); all six cross-model comparisons had the same direction, demonstrating targeted validation and diagnostic-data generation. Multiple evaluator models assessed whether each sample tested its specified error category; 86.4% met this criterion, providing empirical evidence of target preservation.",
+      "url": "https://arxiv.org/abs/2610.08106",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-06",
+      "score": 0.8824
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
