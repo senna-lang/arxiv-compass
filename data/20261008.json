@@ -20,7 +20,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.9017
+      "score": 0.9017,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 7,
+        "rank_delta": -6,
+        "relevance_probability": 0.991749107837677
+      }
     },
     {
       "id": "2610.10304",
@@ -37,7 +43,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8927
+      "score": 0.8927,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 10,
+        "rank_delta": -8,
+        "relevance_probability": 0.9768551290035248
+      }
     },
     {
       "id": "2610.09858",
@@ -56,7 +68,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8927
+      "score": 0.8927,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 4,
+        "rank_delta": -1,
+        "relevance_probability": 0.9937452971935272
+      }
     },
     {
       "id": "2610.09804",
@@ -74,7 +92,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8882
+      "score": 0.8882,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 6,
+        "rank_delta": -2,
+        "relevance_probability": 0.9924714863300323
+      }
     },
     {
       "id": "2610.10533",
@@ -94,7 +118,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8876
+      "score": 0.8876,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 12,
+        "rank_delta": -7,
+        "relevance_probability": 0.9586422145366669
+      }
     },
     {
       "id": "2610.09684",
@@ -120,7 +150,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8876
+      "score": 0.8876,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 18,
+        "rank_delta": -12,
+        "relevance_probability": 0.4706558883190155
+      }
     },
     {
       "id": "2610.10265",
@@ -135,7 +171,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8873
+      "score": 0.8873,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 13,
+        "rank_delta": -6,
+        "relevance_probability": 0.9399133324623108
+      }
     },
     {
       "id": "2610.10455",
@@ -157,7 +199,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8865
+      "score": 0.8865,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 17,
+        "rank_delta": -9,
+        "relevance_probability": 0.5152450650930405
+      }
     },
     {
       "id": "2610.10536",
@@ -174,7 +222,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8863
+      "score": 0.8863,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 16,
+        "rank_delta": -7,
+        "relevance_probability": 0.5600727796554565
+      }
     },
     {
       "id": "2610.09772",
@@ -190,7 +244,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8859
+      "score": 0.8859,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 3,
+        "rank_delta": 7,
+        "relevance_probability": 0.9958036243915558
+      }
     },
     {
       "id": "2610.10426",
@@ -217,7 +277,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8849
+      "score": 0.8849,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 1,
+        "rank_delta": 10,
+        "relevance_probability": 0.9984518587589264
+      }
     },
     {
       "id": "2610.10042",
@@ -238,7 +304,13 @@
       ],
       "submitted": "2026-10-07",
       "github_url": "https://github.com/LaoKuiZe/Knowledge-Weaver.",
-      "score": 0.8849
+      "score": 0.8849,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 8,
+        "rank_delta": 4,
+        "relevance_probability": 0.990828663110733
+      }
     },
     {
       "id": "2610.09624",
@@ -261,7 +333,13 @@
       ],
       "submitted": "2026-10-07",
       "github_url": "https://github.com/XijieGo/MI4ToolCalling.",
-      "score": 0.8846
+      "score": 0.8846,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 2,
+        "rank_delta": 11,
+        "relevance_probability": 0.9973024129867554
+      }
     },
     {
       "id": "2610.10478",
@@ -297,7 +375,13 @@
         "cs.SE"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8841
+      "score": 0.8841,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 5,
+        "rank_delta": 9,
+        "relevance_probability": 0.993110716342926
+      }
     },
     {
       "id": "2610.09759",
@@ -315,7 +399,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-07",
-      "score": 0.884
+      "score": 0.884,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 14,
+        "rank_delta": 1,
+        "relevance_probability": 0.8663749396800995
+      }
     },
     {
       "id": "2610.10091",
@@ -339,7 +429,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8834
+      "score": 0.8834,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 15,
+        "rank_delta": 1,
+        "relevance_probability": 0.6641221940517426
+      }
     },
     {
       "id": "2610.10345",
@@ -360,7 +456,13 @@
       ],
       "submitted": "2026-10-07",
       "github_url": "https://github.com/Stardust457/SLDR.",
-      "score": 0.8827
+      "score": 0.8827,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 19,
+        "rank_delta": -2,
+        "relevance_probability": 0.42432257533073425
+      }
     },
     {
       "id": "2610.10179",
@@ -380,7 +482,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8825
+      "score": 0.8825,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 20,
+        "rank_delta": -2,
+        "relevance_probability": 0.35077419877052307
+      }
     },
     {
       "id": "2610.10411",
@@ -398,7 +506,13 @@
         "stat.ML"
       ],
       "submitted": "2026-10-07",
-      "score": 0.8823
+      "score": 0.8823,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 11,
+        "rank_delta": 8,
+        "relevance_probability": 0.9732908606529236
+      }
     },
     {
       "id": "2610.09665",
@@ -416,7 +530,13 @@
       ],
       "submitted": "2026-10-07",
       "github_url": "https://github.com/Miaow-Lab/SAPD.",
-      "score": 0.8818
+      "score": 0.8818,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 9,
+        "rank_delta": 11,
+        "relevance_probability": 0.9814795255661011
+      }
     }
   ],
   "meta": {
@@ -425,6 +545,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
