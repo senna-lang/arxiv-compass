@@ -16,7 +16,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8956
+      "score": 0.8956,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 8,
+        "rank_delta": -7,
+        "relevance_probability": 0.9925357401371002
+      }
     },
     {
       "id": "2610.11552",
@@ -35,7 +41,13 @@
       ],
       "submitted": "2026-10-08",
       "github_url": "https://github.com/HKUST-KnowComp/E-LEDGER-WorldAbduct.",
-      "score": 0.8912
+      "score": 0.8912,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 11,
+        "rank_delta": -9,
+        "relevance_probability": 0.9799894988536835
+      }
     },
     {
       "id": "2610.11978",
@@ -56,7 +68,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8911
+      "score": 0.8911,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 14,
+        "rank_delta": -11,
+        "relevance_probability": 0.9097757339477539
+      }
     },
     {
       "id": "2610.12005",
@@ -78,7 +96,13 @@
       ],
       "submitted": "2026-10-08",
       "github_url": "https://github.com/kanghui-learning/test-time-compute-for-tabular-foundation-models.",
-      "score": 0.8877
+      "score": 0.8877,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 20,
+        "rank_delta": -16,
+        "relevance_probability": 0.09506746008992195
+      }
     },
     {
       "id": "2610.11655",
@@ -98,7 +122,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8866
+      "score": 0.8866,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 2,
+        "rank_delta": 3,
+        "relevance_probability": 0.9982475936412811
+      }
     },
     {
       "id": "2610.11678",
@@ -112,7 +142,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.886
+      "score": 0.886,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 6,
+        "rank_delta": 0,
+        "relevance_probability": 0.9944145679473877
+      }
     },
     {
       "id": "2610.12114",
@@ -127,7 +163,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8859
+      "score": 0.8859,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 9,
+        "rank_delta": -2,
+        "relevance_probability": 0.9904377460479736
+      }
     },
     {
       "id": "2610.12061",
@@ -149,7 +191,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8852
+      "score": 0.8852,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 3,
+        "rank_delta": 5,
+        "relevance_probability": 0.9971118271350861
+      }
     },
     {
       "id": "2610.12235",
@@ -175,7 +223,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.885
+      "score": 0.885,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 12,
+        "rank_delta": -3,
+        "relevance_probability": 0.9723434150218964
+      }
     },
     {
       "id": "2610.11578",
@@ -195,7 +249,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8843
+      "score": 0.8843,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 4,
+        "rank_delta": 6,
+        "relevance_probability": 0.9969446063041687
+      }
     },
     {
       "id": "2610.11592",
@@ -211,7 +271,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8836
+      "score": 0.8836,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 19,
+        "rank_delta": -8,
+        "relevance_probability": 0.13805174082517624
+      }
     },
     {
       "id": "2610.11727",
@@ -232,7 +298,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8828
+      "score": 0.8828,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 17,
+        "rank_delta": -5,
+        "relevance_probability": 0.41041065752506256
+      }
     },
     {
       "id": "2610.11602",
@@ -250,7 +322,13 @@
         "cs.SE"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8818
+      "score": 0.8818,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 5,
+        "rank_delta": 8,
+        "relevance_probability": 0.9962947368621826
+      }
     },
     {
       "id": "2610.12133",
@@ -265,7 +343,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8809
+      "score": 0.8809,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 7,
+        "rank_delta": 7,
+        "relevance_probability": 0.9927557408809662
+      }
     },
     {
       "id": "2610.12085",
@@ -283,7 +367,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8805
+      "score": 0.8805,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 15,
+        "rank_delta": 0,
+        "relevance_probability": 0.8168351650238037
+      }
     },
     {
       "id": "2610.11915",
@@ -302,7 +392,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.88
+      "score": 0.88,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 18,
+        "rank_delta": -2,
+        "relevance_probability": 0.18214544653892517
+      }
     },
     {
       "id": "2610.11899",
@@ -318,7 +414,13 @@
         "cs.SE"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8792
+      "score": 0.8792,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 16,
+        "rank_delta": 1,
+        "relevance_probability": 0.8078806102275848
+      }
     },
     {
       "id": "2610.12002",
@@ -335,7 +437,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8784
+      "score": 0.8784,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 13,
+        "rank_delta": 5,
+        "relevance_probability": 0.9364066123962402
+      }
     },
     {
       "id": "2610.12083",
@@ -352,7 +460,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8783
+      "score": 0.8783,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 1,
+        "rank_delta": 18,
+        "relevance_probability": 0.9984531402587891
+      }
     },
     {
       "id": "2610.11692",
@@ -371,7 +485,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-08",
-      "score": 0.8783
+      "score": 0.8783,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 10,
+        "rank_delta": 10,
+        "relevance_probability": 0.9847910404205322
+      }
     }
   ],
   "meta": {
@@ -380,6 +500,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
