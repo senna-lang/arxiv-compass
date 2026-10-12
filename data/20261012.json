@@ -24,7 +24,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.898
+      "score": 0.898,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 1,
+        "rank_delta": 0,
+        "relevance_probability": 0.9973024129867554
+      }
     },
     {
       "id": "2610.13627",
@@ -44,7 +50,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/nat-nischw/AMLworld-Compact.",
-      "score": 0.8913
+      "score": 0.8913,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 18,
+        "rank_delta": -16,
+        "relevance_probability": 0.3775406777858734
+      }
     },
     {
       "id": "2610.13078",
@@ -62,7 +74,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8909
+      "score": 0.8909,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 9,
+        "rank_delta": -6,
+        "relevance_probability": 0.9814795255661011
+      }
     },
     {
       "id": "2610.13416",
@@ -81,7 +99,13 @@
         "cs.IR"
       ],
       "submitted": "2026-10-09",
-      "score": 0.89
+      "score": 0.89,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 13,
+        "rank_delta": -9,
+        "relevance_probability": 0.9744639098644257
+      }
     },
     {
       "id": "2610.13058",
@@ -106,7 +130,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/whi497/ReTRAIL.",
-      "score": 0.8893
+      "score": 0.8893,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 15,
+        "rank_delta": -10,
+        "relevance_probability": 0.8801725804805756
+      }
     },
     {
       "id": "2610.13184",
@@ -126,7 +156,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8891
+      "score": 0.8891,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 19,
+        "rank_delta": -13,
+        "relevance_probability": 0.11957005225121975
+      }
     },
     {
       "id": "2610.13025",
@@ -147,7 +183,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8881
+      "score": 0.8881,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 2,
+        "rank_delta": 5,
+        "relevance_probability": 0.9970015585422516
+      }
     },
     {
       "id": "2610.13285",
@@ -166,7 +208,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8879
+      "score": 0.8879,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 11,
+        "rank_delta": -3,
+        "relevance_probability": 0.9780281782150269
+      }
     },
     {
       "id": "2610.13000",
@@ -180,7 +228,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8879
+      "score": 0.8879,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 4,
+        "rank_delta": 5,
+        "relevance_probability": 0.9896217882633209
+      }
     },
     {
       "id": "2610.13060",
@@ -197,7 +251,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/taiga333/eval-kv-repurpose.",
-      "score": 0.8877
+      "score": 0.8877,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 14,
+        "rank_delta": -4,
+        "relevance_probability": 0.9097757339477539
+      }
     },
     {
       "id": "2610.13064",
@@ -217,7 +277,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8862
+      "score": 0.8862,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 6,
+        "rank_delta": 5,
+        "relevance_probability": 0.9876604676246643
+      }
     },
     {
       "id": "2610.13348",
@@ -240,7 +306,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/OpenBMB/T2Mem.",
-      "score": 0.886
+      "score": 0.886,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 10,
+        "rank_delta": 2,
+        "relevance_probability": 0.9790681004524231
+      }
     },
     {
       "id": "2610.13485",
@@ -261,7 +333,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/XueyangFeng/POrchestra.",
-      "score": 0.8858
+      "score": 0.8858,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 3,
+        "rank_delta": 10,
+        "relevance_probability": 0.9936761856079102
+      }
     },
     {
       "id": "2610.13672",
@@ -279,7 +357,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8852
+      "score": 0.8852,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 12,
+        "rank_delta": 2,
+        "relevance_probability": 0.9755038321018219
+      }
     },
     {
       "id": "2610.13594",
@@ -299,7 +383,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8851
+      "score": 0.8851,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 7,
+        "rank_delta": 8,
+        "relevance_probability": 0.9876604676246643
+      }
     },
     {
       "id": "2610.13632",
@@ -320,7 +410,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8849
+      "score": 0.8849,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 17,
+        "rank_delta": -1,
+        "relevance_probability": 0.6652668118476868
+      }
     },
     {
       "id": "2610.13008",
@@ -338,7 +434,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8846
+      "score": 0.8846,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 16,
+        "rank_delta": 1,
+        "relevance_probability": 0.8394919037818909
+      }
     },
     {
       "id": "2610.13455",
@@ -355,7 +457,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8837
+      "score": 0.8837,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 20,
+        "rank_delta": -2,
+        "relevance_probability": 0.012339046690613031
+      }
     },
     {
       "id": "2610.12995",
@@ -376,7 +484,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-09",
-      "score": 0.8837
+      "score": 0.8837,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 8,
+        "rank_delta": 11,
+        "relevance_probability": 0.9843403697013855
+      }
     },
     {
       "id": "2610.13335",
@@ -396,7 +510,13 @@
       ],
       "submitted": "2026-10-09",
       "github_url": "https://github.com/Lexsi-Labs/AgentTune",
-      "score": 0.883
+      "score": 0.883,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 5,
+        "rank_delta": 15,
+        "relevance_probability": 0.9887003898620605
+      }
     }
   ],
   "meta": {
@@ -405,6 +525,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
