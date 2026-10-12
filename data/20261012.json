@@ -1,0 +1,410 @@
+{
+  "date": "2026-10-12",
+  "collected_at": "2026-10-12T14:27:55.466174+09:00",
+  "papers": [
+    {
+      "id": "2610.13075",
+      "title": "LongHarness: Advancing Agentic Reasoning over 100M-Token Corpora via Stateful Evidence Management",
+      "authors": [
+        "Songtao Huang",
+        "Zhijie Zhong",
+        "Xiaohan He",
+        "Shuaiyu Zhang",
+        "Zhiyin Yu",
+        "Li Kang",
+        "Heng Zhou",
+        "Yutao Fan",
+        "Xiangchao Yan",
+        "Bo Zhang",
+        "Shiyang Feng"
+      ],
+      "abstract": "Corpus-level long-context reasoning requires agents to acquire and integrate evidence across document collections that exceed their context windows. Existing agent harnesses enable incremental access to these corpora, but acquired evidence and evolving conclusions often remain entangled in a growing interaction history. This implicit state management can lead to two coupled failure modes: unbounded exploration, where retrieval expands the interaction history without resolving decision-relevant information gaps, and evidence-state drift, where previously acquired evidence or subsequent corrections fail to inform the current conclusion. We present LongHarness, a model-agnostic harness that makes the interaction between acquired evidence and evolving conclusions explicit. Its core mechanism, Evidence-Conclusion Coevolution, uses unresolved conclusions to guide exploration toward missing information, while newly acquired evidence strengthens or revises the conclusions that directed the search. LongHarness couples this process with Evidence Lifecycle Management, which keeps accumulated evidence current and traceable throughout the interaction. Together, these mechanisms focus retrieval on remaining information needs and keep conclusions aligned with current evidence. We evaluate LongHarness on OfficeQA Pro V1 and V2, AA-LCR, and LongBench v2 using GLM-5.3-Flash and Qwen3.8-Flash. Compared with direct reasoning using the same backbone, LongHarness improves GLM-5.3-Flash exact match on OfficeQA Pro from 15.8% to 60.2% on V1 and from 4.4% to 61.1% on V2. Against state-of-the-art agent harnesses, it surpasses Claude Code by 12.0 percentage points on V1 and Codex by 18.9 points on V2. With Qwen3.8-Flash, LongHarness reaches 61.7% on V1, outperforming Claude Code by 8.3 points and Codex by 12.0 points.",
+      "url": "https://arxiv.org/abs/2610.13075",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.898
+    },
+    {
+      "id": "2610.13627",
+      "title": "AMLworld-Compact: Importance-Weighted Downsampling for Cost-Effective LLM Evaluation and Error Diagnosis",
+      "authors": [
+        "Natapong Nitarach",
+        "Phume Ngampornsukswadi",
+        "Pittawat Taveekitworachai",
+        "Surapon Nonesung",
+        "Warit Sirichotedumrong",
+        "Kunat Pipatanakul"
+      ],
+      "abstract": "Evaluating large language models (LLMs) on AMLworld's smallest test splits is costly because each of over a million targets requires a separate graph prompt. Sampling reduces this cost, but small balanced subsets change unweighted precision and F1. We introduce AMLworld-Compact, an evaluation set that retains every illicit test transaction and samples benign transactions from supervised-score strata. Its HT-Coreset protocol reduces evaluation targets by 271x and 611x on HI-Small and LI-Small. Horvitz-Thompson weights give unbiased full-test confusion-count estimates for fixed predictions; recall is exact, while precision and F1 are ratio estimates. In a held-out study using Graph Feature Preprocessor (GFP) features, one boosted-tree family defines strata for evaluating the other over 500 draws per configuration. At the released sizes, F1 RMSE is 0.00-2.58 percentage points versus 4.44-7.41 for uniform sampling with HT weights; conservative intervals remain broad. Under the evaluated graph prompts, seven open-weight LLMs have weighted precision near the predict-all-illicit baseline. In an outcome-stratified audit of 1,000 HI-Small few-shot outputs from one run per model, lexical checks pass for 84.5% of correct and 56.2% of incorrect binary verdicts, so these markers do not establish correctness. We release the evaluation sets, construction code, and audit tools at https://huggingface.co/datasets/typhoon-ai/AMLworldCompactEval and https://github.com/nat-nischw/AMLworld-Compact.",
+      "url": "https://arxiv.org/abs/2610.13627",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/nat-nischw/AMLworld-Compact.",
+      "score": 0.8913
+    },
+    {
+      "id": "2610.13078",
+      "title": "Attention Sees, MLP Refuses: Tracing the Attention-to-MLP Safety Pathway in LLMs",
+      "authors": [
+        "Zixuan Weng",
+        "Haoqi He",
+        "Weifei Jin",
+        "Yue Huang",
+        "Yang Bai"
+      ],
+      "abstract": "Safety-aligned large language models (LLMs) remain vulnerable to jailbreaks and can over-refuse benign requests. Understanding these failures requires distinguishing harmfulness recognition from the computation that writes refusal. We reframe this as a pathway question and make it measurable on residual-stream updates in decoder-only Transformers, separating the harmfulness information a module update exposes from the change it produces in readable refusal evidence. Across 18 Base-Instruct pairs spanning Qwen, Llama, and Gemma, harmfulness is decoded more readily from attention updates, particularly in early layers, whereas MLP updates contribute more strongly to harm-selective refusal writing in aligned models. Post-training strengthens MLP refusal writing in all 18 pairs without systematically improving harmfulness decodability, while positive MLP writing becomes more concentrated in deeper layers after post-training. Across six reasoning-enabled models, harmfulness remains decodable during reasoning while strong refusal writing concentrates at answer onset, a pattern that persists with reasoning disabled. Causal interventions further support this pathway: resetting downstream MLP updates to their clean values substantially reduces the refusal shift caused by upstream attention interventions. Building on these findings, we introduce Sentinel, which combines an attention-derived perception score P with an MLP-derived decision score D. Their joint profiles characterize jailbreaks and over-refusals, and conditional routing with both signals achieves a lower aggregate error rate than single-signal routing and evaluated fixed reminders across eight models.",
+      "url": "https://arxiv.org/abs/2610.13078",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8909
+    },
+    {
+      "id": "2610.13416",
+      "title": "Web$hell: A Unified Interface for Agentic Web Access",
+      "authors": [
+        "Sunghwan Kim",
+        "Deogyong Kim",
+        "Sangam Lee",
+        "Donguk Kwon",
+        "Dongha Lee"
+      ],
+      "abstract": "Large language model (LLM) agents are becoming direct users of the open web. As they take on increasingly complex and information-intensive tasks, effective web access is becoming a core capability for agentic problem solving. Existing approaches have advanced agentic web access through different access models, including search-augmented agents, browser-based agents, and, more recently, filesystem-based agents. Nevertheless, as users expect agents to complete long-horizon, end-to-end tasks, they increasingly need to conduct broad information gathering, perform browser actions, and revisit acquired evidence within a single trajectory. Yet our preliminary analyses reveal that existing access models struggle to meet these demands. They primarily support either information gathering or browser interaction, while combining their capabilities can involve substantial costs or performance trade-offs. To this end, we present Web\\$hell, an interface that unifies web access under a single access model. Using a common schema defined by WebContract, WebCompiler compiles live webpages into addressable information and action objects. These objects are maintained in WebCache and handled through a shared set of operations, providing agents with consistent, operable, and persistent web access. Through extensive experiments across web search, web navigation, and deep research benchmarks, we show that Web\\$hell achieves strong task performance at lower cost. Our results further indicate the importance of interface design for effective web access, with Web\\$hell opening new possibilities for more capable and efficient LLM agents on the web.",
+      "url": "https://arxiv.org/abs/2610.13416",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.89
+    },
+    {
+      "id": "2610.13058",
+      "title": "Travel Back To Move Forward: Retrospective Exploration and Evolving for Long Horizon Agents",
+      "authors": [
+        "Ziang Ye",
+        "Wentao Shi",
+        "Lei Chen",
+        "Zhengzhou Cai",
+        "Yu Wang",
+        "Zhiyuan Yao",
+        "Zihan Wang",
+        "Xierui Song",
+        "Fuli Feng",
+        "Yixin Cao"
+      ],
+      "abstract": "Large language model agents increasingly operate in long-horizon environments where early mistakes can trigger cascading failures and trap agents in dead-end trajectories. Agents must therefore be able to proactively recover from such states and turn their exploratory experience into guidance for subsequent decisions. We introduce ReTRAIL, a framework that enables agents to rewind the environment to earlier states while preserving valid progress and carrying forward knowledge learned from abandoned exploration. The environment state moves backward while the agent's knowledge continues to move forward. ReTRAIL trains a shared policy with two complementary signals: State-Anchored GRPO compares alternative continuations from revisited states to improve execution, while a branch-advancement reward guides reflection through the progress of subsequent exploration. Experiments across four interactive benchmark MineSweeper, Sokoban, ALFWorld and ScienceWorld show that simply adding a rewind primitive provides limited benefit and can even degrade performance. In contrast, ReTRAIL enables agents to rewind from unproductive states and use insights from abandoned branches to guide subsequent exploration. These results demonstrate the value of coupling environment rewinding with experience reuse within an ongoing task for long-horizon task solving. The code is available at https://github.com/whi497/ReTRAIL.",
+      "url": "https://arxiv.org/abs/2610.13058",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/whi497/ReTRAIL.",
+      "score": 0.8893
+    },
+    {
+      "id": "2610.13184",
+      "title": "AdaC-GRPO: Towards Mastering Long-Horizon Visual Sudoku Puzzles via Adaptive Curriculum Learning",
+      "authors": [
+        "Sida Li",
+        "Yuanxin Liu",
+        "Linli Yao",
+        "Shicheng Li",
+        "Xu Sun",
+        "Haoli Bai",
+        "Xiaohui Li"
+      ],
+      "abstract": "While reinforcement learning with verifiable reward (RLVR) enhances reasoning in large language models, its efficacy in long-horizon multimodal tasks remains underexplored. Visual Sudoku puzzles pose a representative challenge, requiring multi-step deductive reasoning over both local constraints and global dependency chains. To this end, we introduce FG-Sudoku, a fine-grained benchmark categorized by grid size and required deductive steps. Evaluations reveal that frontier MLLMs fail on complex long-range dependencies (e.g., 9*9 puzzles). During post-training, this near-zero success rate causes severe reward sparsity, halting standard RLVR. We propose Adaptive Curriculum Group Relative Policy Optimization (AdaC-GRPO) to overcome this. Unlike rigid or prior-based schedules, AdaC-GRPO dynamically constructs training batches by tracking the model's \"Zone of Proximal Development\" via online rollout accuracy. Experiments demonstrate that AdaC-GRPO enables Qwen2.5-VL-7B to approach the performance of Gemini-2.5-Flash while bridging 62.2% of the overall accuracy gap to Gemini-2.5-Pro, with its generalizability further validated across InternVL-3.5 and Qwen3-VL.",
+      "url": "https://arxiv.org/abs/2610.13184",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8891
+    },
+    {
+      "id": "2610.13025",
+      "title": "Evo$^2$: Evolving the Evolver through Weight-Harness Co-Evolution",
+      "authors": [
+        "Chejian Xu",
+        "Shujian Zhang",
+        "Wenxuan Zhou",
+        "John Lambert",
+        "Beck Chen",
+        "Bo Li",
+        "Andrew Hard",
+        "Rajiv Mathews"
+      ],
+      "abstract": "Self-evolving agents are increasingly used to improve language model systems without human intervention through either weight updates or harness improvements. Existing approaches typically pursue these directions separately: some methods update model weights using self-generated experience, while others rewrite the harness that defines how an agent uses prompts, tools, context, and execution feedback. However, these approaches overlook the relationship between model weights and the agent harness. To connect these processes and ensure effective and smooth agent self-evolving, we propose Evo$^2$, a framework for weight-harness co-evolution. For harness updates, we design a unified dual-role pipeline that a single policy serves as both a Proposer, which writes harness edits, and a Reflector, which diagnoses their effects and guides revision. For weight updates, harness modifications and their execution outcomes guide the training of both the Proposer and the Reflector. We further develop EvoTIDE, a training pipeline that recovers usable trajectories through edit extraction and prefix continuation, then combines SFT with interleaved GRPO across the two roles. Extensive experiments across three coding benchmarks demonstrate that Evo$^2$ significantly outperforms existing self-evolution methods. It achieves 82.1% on Polyglot and 48.3% on SWE-bench Verified, compared with 62.6% and 41.0% for the strongest baseline, respectively. We also show that the evolved harnesses transfer to different tasks without further evolution and rank first in cross-benchmark evaluations. Our dual-role harness improvement framework is also able to extend to self-evolution with proprietary models, improving a GPT-5-mini agent's performance from 24.4% to 48.3%. These results demonstrate the applicability of the framework Evo$^2$ across domains and its broad transferability across models and tasks.",
+      "url": "https://arxiv.org/abs/2610.13025",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8881
+    },
+    {
+      "id": "2610.13285",
+      "title": "BoundaryEvo: Data-Model Co-Evolution at the Capability Boundary for Long-Chain Reasoning Distillation",
+      "authors": [
+        "Jiaming Su",
+        "Suorong Yang",
+        "Xudong Li",
+        "Tengchao Yang",
+        "Peng Ye"
+      ],
+      "abstract": "Distilling long-chain reasoning trajectories from large teacher models provides an effective way to improve the reasoning ability of small language models. However, existing methods typically select a fixed training set before distillation, overlooking that the usefulness of a reasoning example changes as the student evolves. This mismatch becomes especially costly when only a small number of teacher trajectories can be used for training. Besides, examples already mastered provide little new supervision, while examples far beyond the capability of student may be difficult to learn from. Training data should therefore adapt as model capability evolves, yet reliable data selection is difficult when the student is initially weak. To address these challenges, our key idea is to first establish the basic reasoning capability and then adapt the training data to the evolving capability boundary of the student. We propose BoundaryEvo, a two-stage data--model co-evolution framework. In Capability Priming, we directly distill a small set of teacher-generated long reasoning trajectories without using a separate model to judge and filter them, allowing the student to acquire an initial reasoning capability before capability-aware data selection. In Capability-Boundary Co-Evolution, we repeatedly select questions that the current student has not mastered but the expert can reliably solve, and update the training data as the student evolves. With only 1,000 training examples, BoundaryEvo consistently outperforms static and dynamic data selection baselines across 11 reasoning benchmarks, raising the original Qwen3.5-4B accuracy from 62.9 to 75.3 on IMO-AnswerBench and from 26.8 to 46.0 on AMO-Bench. The code and data will be made publicly available.",
+      "url": "https://arxiv.org/abs/2610.13285",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8879
+    },
+    {
+      "id": "2610.13000",
+      "title": "Hindsight Structured Advice Distillation: Steering Executor Agents with Advisors Trained on Their Failures and Task Characteristics",
+      "authors": [
+        "O. Ozan Koyluoglu"
+      ],
+      "abstract": "Language-model agents are used for specialized work such as financial research, healthcare and law. Such agents are often capable enough for a task but still miss its details. In finance, for example, these details include which filing reports a figure or how a company discloses a metric. Retraining the agent to learn these details is expensive, and often impossible when the agent is a closed or shared system. Writing the missing know-how into the agent's prompt makes the prompt long and identical for every input, although different inputs need different guidance. We propose to learn to generate this guidance instead. A small advisor model reads each input and writes structured advice, which is appended to the prompt of a frozen executor. The advisor is trained with hindsight, following work on distillation with privileged information. On a training pool with graded answers, we analyse the executor's failures, run it under several strategies to see which one worked on each input, and let a teacher that sees the grades and the traces write the advice that would have helped. The advisor then learns, by supervised fine-tuning, to write that advice from the input alone. Because the student is a separate small model rather than the executor, it is cheap to train and adds little latency. We call this approach hindsight structured advice distillation (HSAD). On FrontierFinance, a public benchmark of expert-written financial research queries, an 8B advisor raises the qualification rate of Samaya's proprietary research agent, which already leads the benchmark's leaderboard, from 52.9% to 56.6%. This is above the agent's own high-effort configuration, at 37% lower cost per query. We study the generalization of the proposed approach, and in particular show that HSAD also improves results on WebShop, BIRD text-to-SQL and ExpertLongBench.",
+      "url": "https://arxiv.org/abs/2610.13000",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8879
+    },
+    {
+      "id": "2610.13060",
+      "title": "KV-Repurpose: A Testbed for Evaluating Non-Prefix KV-Cache Reuse",
+      "authors": [
+        "Taiga Ikeda",
+        "Daisuke Miyashita",
+        "Jun Deguchi"
+      ],
+      "abstract": "KV-cache reuse in large language model serving is commonly limited to exact prompt prefixes, preventing reuse when the same retrieved document appears after different system prompts, conversation histories, or dynamic metadata. We present KV-Repurpose, an open-source, vLLM-based system for developing and evaluating segment-wise KV-cache reuse beyond exact prefixes. The system combines cache-aware segment scheduling, prompt construction, capacity management, workload generation, and runtime monitoring. Experiments on long-context benchmarks show that naive segment reuse largely preserves output quality for single-document question answering and summarization, while exposing clear limitations in cross-document reasoning. Under a Zipfian RAG-style workload in which 20% of requests share a fixed prefix, KV-Repurpose achieves a substantially higher token-level cache hit rate than prefix caching at the same 30 GB cache capacity, 63.9% versus 3.3%, resulting in lower TTFT. Even with 1 TB of cache capacity, prefix caching reaches only a 17.9% hit rate in this workload. Source code is available under the Apache-2.0 license at https://github.com/taiga333/eval-kv-repurpose.",
+      "url": "https://arxiv.org/abs/2610.13060",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/taiga333/eval-kv-repurpose.",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.13064",
+      "title": "CB-Orchestrator: Adaptive Workflow Optimization for LLM Agents via Contextual Bandits",
+      "authors": [
+        "Jiahang Sun",
+        "Zhiwei Shang",
+        "Zhipiao Liu",
+        "Hongwei Yang",
+        "Guoqing Xie",
+        "Shuang Qiu",
+        "Zhongxiang Dai"
+      ],
+      "abstract": "Large Language Model (LLM) agents have demonstrated remarkable capabilities in tackling complex tasks through agentic workflows. However, manually designing these workflows is labor-intensive and lacks flexibility to adapt to diverse queries. While automated workflow optimization is a promising direction, existing methods often incur expensive API costs during training-phase feedback collection. Furthermore, they fail to adaptively reuse high-quality workflows, which creates a bottleneck for both performance and cost-effectiveness. To address these limitations, we propose CB-Orchestrator, an adaptive framework that decouples workflow generation from selection. In the first stage, we construct a diverse pool of candidate workflows via evolutionary search. In the second stage, we formulate workflow selection as a Contextual Bandit problem, which enables sample-efficient learning by balancing exploration and exploitation, thereby significantly reducing the feedback required for training. During inference, the model adaptively selects the optimal workflow tailored to each query. Evaluations across five diverse benchmarks demonstrate that CB-Orchestrator consistently outperforms all baselines. Notably, on the MATH dataset, CB-Orchestrator achieves better performance than strong recent baselines while reducing training-phase API token overhead by no less than 40.55% and total end-to-end training (including workflow pool generation) token overhead by no less than 29.73%.",
+      "url": "https://arxiv.org/abs/2610.13064",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8862
+    },
+    {
+      "id": "2610.13348",
+      "title": "Test-Time Memory Construction",
+      "authors": [
+        "Zijun Wang",
+        "Yifan Ji",
+        "Haidong Xin",
+        "Zhenghao Liu",
+        "Yukun Yan",
+        "Zulong Chen",
+        "Yu Gu",
+        "Ge Yu",
+        "Maosong Sun"
+      ],
+      "abstract": "Large Language Models (LLMs) struggle to answer questions over long interaction histories, where relevant evidence may be scattered across distant sessions. Existing memory systems typically construct and maintain sophisticated memory representations offline, before user queries are observed, incurring substantial overhead and limiting their ability to adapt memory construction to query-specific information needs. In this paper, we propose T$^2$Mem, a Test-Time Memory construction framework that defers memory construction to inference and progressively builds memory along the reasoning process. Specifically, T$^2$Mem extracts lightweight episode-level metadata offline to capture key events and temporal associations as retrieval cues, while retaining links to the original interactions to facilitate the reconstruction of dependencies across episodes. At test time, the LLM adaptively retrieves and organizes metadata and raw interactions, progressively constructing query-specific memory as reasoning unfolds. Experiments on LoCoMo and LongMemEval show the effectiveness of T$^2$Mem by consistently outperforming strong baselines across different backbone LLMs while substantially reducing the overhead of memory construction. Further analysis demonstrates that deferring memory construction to inference enables the memory construction process to dynamically adapt to the information needs of individual queries. All code is available at https://github.com/OpenBMB/T2Mem.",
+      "url": "https://arxiv.org/abs/2610.13348",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/OpenBMB/T2Mem.",
+      "score": 0.886
+    },
+    {
+      "id": "2610.13485",
+      "title": "Proactive Agentic Orchestration",
+      "authors": [
+        "Xueyang Feng",
+        "Chaozhuo Li",
+        "Xiaohe Bo",
+        "Jiakai Tang",
+        "Chenxi Li",
+        "Qiwei Ye",
+        "Xu Chen"
+      ],
+      "abstract": "Agentic orchestration delegates tasks to sub-agents with independent contexts, providing a key path to extending the effective execution horizon of large language model agents. However, existing orchestration methods face two limitations: in execution, current methods fix sub-agents' goals and harnesses at creation time, limiting their adaptability to dynamic real-world environments; in optimization, sparse and delayed feedback constrains effective learning of the orchestration policy. To address these limitations, we introduce POrchestra, an on-the-fly proactive agentic orchestration framework. It allows sub-agents to proactively communicate with the orchestrator at any logical point to request harness adjustments while maintaining continuity of local execution. This mechanism not only enables sub-agents to adapt seamlessly to dynamic environments but also naturally inspires On-Policy Orchestration Distillation (OPOD) based on hindsight feedback. OPOD attributes sub-agents' proactive revision requests back to preceding orchestration decisions to derive targeted improvement signals, and leverages these signals as process supervision alongside the final reward to optimize the orchestration policy. We evaluate POrchestra on three long-horizon agent benchmarks spanning deep research, dynamic digital assistance, and software engineering. POrchestra improves task success by an average of 9.1% relative to the strongest baseline; combined with OPOD, it improves small-orchestrator success by an average of 10.0% relative to existing training baselines. POrchestra also achieves a more favorable cost-performance trade-off. Our code is publicly available at https://github.com/XueyangFeng/POrchestra.",
+      "url": "https://arxiv.org/abs/2610.13485",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/XueyangFeng/POrchestra.",
+      "score": 0.8858
+    },
+    {
+      "id": "2610.13672",
+      "title": "Inject a Turn, Not a Token: Learning Where to Redirect LLM Reasoning for Self-Correction",
+      "authors": [
+        "Jiwon Jeon",
+        "Myungsik Cho",
+        "Jeonghye Kim",
+        "Youngchul Sung"
+      ],
+      "abstract": "Large language models struggle to reliably identify and correct errors in their own reasoning. Unlike prior training-based approaches that fine-tune an LLM to generate revisions or feedback, we learn where to intervene in failed rollouts and determine how to redirect them. To choose where to intervene, we train a 130K-parameter MLP head on a frozen encoder using only final-answer correctness. For redirection, we find that under a fixed generation budget, the tested inline injections fail to reliably redirect reasoning, whereas presenting the same instruction in a new user turn changes the model's course. The resulting correction framework, UPTURN (User-Prompt TURN injection at a learned position), requires no LLM fine-tuning: it retains a selected prefix, injects an instruction as a new user turn, and regenerates the suffix. Across four reasoners and six math benchmarks, UPTURN improves average accuracy in every setting over a 32-rollout baseline. It outperforms self-correction and reflection-token injection baselines under matched correction budgets, transfers across reasoners and to GPQA-Diamond without retraining, and complements GRPO and self-correction methods.",
+      "url": "https://arxiv.org/abs/2610.13672",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8852
+    },
+    {
+      "id": "2610.13594",
+      "title": "MENTOR: Learning from Failure with On-Policy Pedagogical Intervention",
+      "authors": [
+        "Guanlan Yue",
+        "Hang Yu",
+        "Xiaoyong Huang",
+        "Ruipeng Li",
+        "Wei Zhang",
+        "Bingchang Liu",
+        "Rui Wang"
+      ],
+      "abstract": "Reinforcement Learning from Verifiable Rewards (RLVR) is a key driver for Large Reasoning Models, but it is vulnerable to \"zero-reward collapse\", a training failure where a sudden increase in task difficulty causes the learning signal to vanish. We argue that the conventional approach of discarding these failed trajectories is wasteful, as they contain valuable diagnostic information about the model's cognitive gaps, a bright side that can be leveraged for recovery. Existing solutions, however, often regress to static, \"off-policy-style\" interventions like pre-defined hint libraries or perform post-hoc refinement, failing to provide the adaptive, forward-looking guidance needed to escape the collapse. To address this, we propose a paradigm shift towards on-policy pedagogical intervention and introduce MENTOR, a multi-agent framework that acts as a live mentor. MENTOR diagnoses the root cause of failure in real-time and dynamically generates targeted, instructional prompts to guide the learning agent's next attempt. As a plug-and-play module, MENTOR integrates seamlessly into existing policy optimization pipelines like GRPO without modifying the training infrastructure. Extensive experiments on math and code generation show that MENTOR effectively mitigates zero-reward collapse, outperforming state-of-the-art baselines. Notably, it achieves massive average relative gains of up to 78.3% on Llama-3.2-3B-Instruct over its base model.",
+      "url": "https://arxiv.org/abs/2610.13594",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8851
+    },
+    {
+      "id": "2610.13632",
+      "title": "Humanize Olympiad Agents: A Multi-Session Workflow for Olympiad Problem Solving with Solve, Review, Wiki, Verify",
+      "authors": [
+        "Zhengyang Zhang",
+        "Jing Xiong",
+        "Hongzhou Lin",
+        "Juihui Chung",
+        "Zijian Zhang",
+        "Song Han",
+        "Sihao Liu",
+        "Ligeng Zhu"
+      ],
+      "abstract": "Large language model (LLM) agents are rapidly improving on long-horizon scientific and olympiad tasks. Recent systems have produced a Lean-formalized resolution of the Navier--Stokes problem and autonomous solutions to four open questions in the Erdős Conjectures database. Yet neither system releases both its underlying model and complete inference stack. More broadly, a single agent session remains brittle on difficult problems: early errors can propagate, missing domain knowledge can stall progress, and apparent success can mask a misinterpretation or weakening of the original task. We introduce HOA (Humanize Olympiads Agent), an open, flow-level framework that coordinates multiple agent sessions through three complementary feedback channels. First, an independent reviewer evaluates each candidate and provides actionable feedback. Second, a structured wiki supplies task-specific knowledge that may be missing or unreliable in model pretraining. Third, a verifier checks generated Lean proofs against trusted challenge statements. With GPT-5.6 Sol, HOA achieves perfect scores on the IMO, IPhO, and IOI 2026, near-full marks on the IChO 2026 problem set, and solves all 672 problems (100%) on PutnamBench. On the Lean-Eval leaderboard, HOA ranks first, solving 251 of 304 problems (82.6%). We further evaluate HOA with open models. Using Kimi-K3, HOA achieves full scores on the IMO, IPhO, and IOI, and a gold-level score of 97.1% on the IChO. These results closely match the closed-source GPT-5.6 Sol + /Goal baseline on the IMO and IPhO, while exceeding it on the IChO and IOI, demonstrating that systematic feedback can help bridge substantial differences in base-model capability.",
+      "url": "https://arxiv.org/abs/2610.13632",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8849
+    },
+    {
+      "id": "2610.13008",
+      "title": "Provenance-Aware Belief Updating in Human-AI Feedback Loops",
+      "authors": [
+        "Tianyi Huang",
+        "Eric Liu",
+        "Jay Chong",
+        "Emily Yin",
+        "Wanqi Zhao"
+      ],
+      "abstract": "In repeated human-AI interaction, a single observation can be quoted, summarized, and returned to a model as multiple reports, making repetition look like independent corroboration. We study whether language models can use supplied report lineage to update according to evidence provenance rather than report count. We introduce Latent Quotient Evidence Training (LQET), a relational objective that combines sparse Bayesian supervision with constraints that encourage stable predictions when reports add no new evidence and consistent updates to the same new evidence across relay histories. On a controlled binary benchmark, LQET reduces new-evidence update RMSE by 41-44% and log-odds drift after eight relay steps by 89-91% relative to task-only training across Qwen3-4B and Phi-4-mini, with three paired training seeds per backbone. The gains extend to a closed-loop simulation in which model confidence controls how many relayed reports re-enter the model's context in later rounds. By grounding belief updates in supplied provenance, LQET offers a route toward dynamic human-AI systems in which influence follows new evidence, not the number of times the same evidence returns.",
+      "url": "https://arxiv.org/abs/2610.13008",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8846
+    },
+    {
+      "id": "2610.13455",
+      "title": "Agentic Large Language Models",
+      "authors": [
+        "Max van Duijn",
+        "Michiel van der Meer",
+        "Aske Plaat",
+        "Niki van Stein"
+      ],
+      "abstract": "Large language models (LLMs) have taken the world by storm. Their ability to communicate with us in our own language, and to reason about our world, has made them a favorite tool for writing, answering questions, and much more. Their answers already influence our decisions and our actions. What would happen if LLMs themselves could act in the world directly? What would happen if LLMs could interact with each other? Agentic LLMs combine the power of large language models with the ability to act in the real world. In this book we will discuss how agentic LLMs work, how they act, how they interact, and what this means for us, as users.",
+      "url": "https://arxiv.org/abs/2610.13455",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8837
+    },
+    {
+      "id": "2610.12995",
+      "title": "What Should SFT Learn? Conditional Information Gain for Generalizable Post-Training",
+      "authors": [
+        "Yuxuan Gu",
+        "Kequan Niu",
+        "Xiaocheng Feng",
+        "Yun Li",
+        "Yiqiao Yang",
+        "Bing Qin"
+      ],
+      "abstract": "Supervised fine-tuning (SFT) remains a widely used approach for post-training large language models, because fixed demonstrations can directly introduce desired reasoning strategies and behavioral patterns. Yet forcing a model to imitate externally provided trajectories may also interfere with behaviors already supported by pretraining, limiting generalization beyond the training distribution. Recent dynamic SFT methods mitigate this issue by reweighting token-level supervision according to model-side signals such as predictive probability, prior support, or distributional compatibility. However, model compatibility is not equivalent to learning value: a token that is weakly supported by the current model may either be an undesirable mismatch or precisely the task-specific decision that the demonstration is intended to teach. We propose CIG-SFT, an information-theoretic framework that estimates the task-conditioned information carried by each demonstrated token. Under teacher forcing, we compare the token likelihood from a frozen reference model with and without access to the task input while keeping the gold solution prefix fixed. The resulting conditional information gain quantifies how much the task itself reduces uncertainty about the demonstrated decision. We then convert this information into a KL-regularized projection of the current policy and derive an equivalent scalar-weighted SFT objective whose logit gradient exactly matches that of the projected target. Across mathematical reasoning and code-generation benchmarks, CIG-SFT consistently outperforms standard SFT and recent adaptive fine-tuning baselines, with particularly strong improvements in generalization to challenging evaluation distributions, while requiring neither additional training data nor online rollouts.",
+      "url": "https://arxiv.org/abs/2610.12995",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8837
+    },
+    {
+      "id": "2610.13335",
+      "title": "AgentTune: A Unified Training Lifecycle for Tool-Using LLM Agents",
+      "authors": [
+        "R E Zera Marveen Lyngkhoi",
+        "Abhivansh Gupta",
+        "Vidushee Vats",
+        "Ram Mohan Rao Kadiyala",
+        "Vinay Kumar Sankarapu",
+        "Pratinav Seth"
+      ],
+      "abstract": "Tool-using agents increasingly require a common substrate for building, training, evaluating, distilling, and maintaining agentic systems, yet existing tooling typically addresses these stages in isolation. We present AgentTune, a source-available Python library that provides a unified framework for developing and optimizing tool-using agents. At its core, AgentTune introduces a two-tier EventLog representation that preserves agent trajectories while supporting consistent projections for training, evaluation, and auditing. Building on this substrate, the library provides a shared agent runtime, tool-calling reinforcement learning, agentic distillation, retrieval-augmented generation, decision workflows, evaluation utilities, and a designed path toward self-healing agents. These components are exposed through composable interfaces so that agent strategies, training methods, evaluation procedures, and recovery mechanisms can be combined without requiring separate representations or pipelines. We demonstrate the framework across agentic tasks including legal contract search and domain-specific applications, illustrating its use for trajectory-based optimization, tool-use evaluation, and cross-task agent development. AgentTune is released as a source-available library at https://github.com/Lexsi-Labs/AgentTune",
+      "url": "https://arxiv.org/abs/2610.13335",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/Lexsi-Labs/AgentTune",
+      "score": 0.883
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
