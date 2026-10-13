@@ -1,0 +1,403 @@
+{
+  "date": "2026-10-13",
+  "collected_at": "2026-10-13T15:25:19.568349+09:00",
+  "papers": [
+    {
+      "id": "2610.13238",
+      "title": "State-OPD: State-Grounded On-Policy Distillation for Multi-Turn Agents",
+      "authors": [
+        "Zhentao Zhang",
+        "Yanzhao Zheng",
+        "Yanlin Liu",
+        "Yuanqiang Yu",
+        "Tianze Xu",
+        "Chao Ma",
+        "Jihuai Zhu",
+        "Lelun Wu",
+        "Baohua Dong",
+        "Hangcheng Zhu",
+        "Ruohui Huang",
+        "Gang Yu"
+      ],
+      "abstract": "On-Policy Distillation (OPD) has emerged as a powerful paradigm for transferring reasoning capabilities from frontier models to smaller models, while extending its success to multi-turn agentic environments remains challenging. We study agentic OPD through interaction states, distinguishing the objective task and executed action-observation record from the internal semantic trajectory of student reasoning. Through this lens, we identify two roles of student reasoning in multi-turn OPD: prior reasoning distorts teacher supervision, while current reasoning shapes the action alternatives sampled at the same state. Specifically, at matched interaction states, removing prior student reasoning improves teacher continuation success and changes the teacher's token-level targets, with larger continuation gains at later turns. Meanwhile, resampling complete reasoning-action responses yields greater action diversity at the same state than resampling actions under a fixed reasoning trace. We introduce State-Grounded On-Policy Distillation, a framework that grounds teacher supervision in interaction states and reallocates the sampling budget to generate multiple complete reasoning-action responses at states with high response entropy, while retaining full-history student generation. Comprehensive evaluations across ALFWorld, ScienceWorld and WebShop demonstrate that State-OPD achieves the highest macro-average success rate among the evaluated methods for both Qwen3-1.7B and Qwen3-4B students. Notably, for Qwen3-4B, State-OPD raises macro-average success from 26.07\\% with the strongest baseline to 31.74\\% and surpasses its Qwen3-32B teacher on ALFWorld Seen. Further analyses reveal that State-OPD achieves higher task success with fewer supervised turn responses and substantially reduces persistent failed-action repetition; qualitative traces illustrate decision revision based on interaction feedback.",
+      "url": "https://arxiv.org/abs/2610.13238",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8824
+    },
+    {
+      "id": "2610.13660",
+      "title": "Pretraining and Test-Time Training Budgets Matter for ARC: A Controlled Study of VARC and TRM",
+      "authors": [
+        "Adrien Deliege",
+        "Marc Van Droogenbroeck"
+      ],
+      "abstract": "The Abstraction and Reasoning Corpus (ARC) is increasingly used to evaluate whether neural networks can infer task-specific transformations from few demonstrations. Recent ARC models differ in architecture, but also in broader training and evaluation protocols, including pretraining data, data augmentation, test-time setup, and optimization budgets, making conclusions about architecture benefits debatable. In this work, we study how the performance of the vision-inspired VARC and recursion-based TRM models is affected by pretraining and test-time training (TTT) budgets under a common inductive protocol on ARC-AGI-1. We cross five pretraining budgets with four TTT budgets for each test task. Each budget specifies a task-variant count and total sample presentations, defining the controlled training budgets. We observe that increasing TTT sample presentations improves the standard ARC pass@2 metric in all settings for both models. Increasing the TTT task-variant count consistently helps only TRM, whereas VARC often performs better with fewer variants. VARC also remains competitive without pretraining, while TRM benefits much more from it. These results show that pretraining and TTT budgets affect ARC evaluation and motivate reporting at comparable budgets.",
+      "url": "https://arxiv.org/abs/2610.13660",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.882
+    },
+    {
+      "id": "2610.13491",
+      "title": "EviRepair: Evidence-Driven Agents for Reliable Vulnerability Repair",
+      "authors": [
+        "Yilian Shi",
+        "Qingyu Liu",
+        "Tianyi Zhou",
+        "Wende Tan",
+        "Chenyang Si",
+        "Yueming Lyu",
+        "Xia Hu",
+        "Dongrui Liu"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) have enabled agent-based approaches for repository-level automated vulnerability repair (AVR), showing promising repair capabilities. However, an important issue has received limited attention: how can we ensure that the evidence generated during the repair process is reliable enough to support accurate vulnerability understanding and patch generation? In this paper, we propose EviRepair, an evidence-driven multi-agent framework for repository-level AVR. EviRepair introduces evidence review into the repair process by enabling agents to collaboratively collect vulnerability evidence, verify evidence consistency, and construct a reviewed vulnerability model for patch synthesis and validation. Extensive experiments on PatchEval and SecBench benchmarks with multiple agent frameworks and LLMs demonstrate that EviRepair consistently outperforms existing agent-based baselines, achieving average improvements of 16.37% and 40.33% in resolved rates on PatchEval and SecBench, respectively. Codes are available at https://github.com/lly-s/EviRepair",
+      "url": "https://arxiv.org/abs/2610.13491",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/lly-s/EviRepair",
+      "score": 0.8819
+    },
+    {
+      "id": "2610.13735",
+      "title": "Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers",
+      "authors": [
+        "Yuhong Chou",
+        "Zehao Liu",
+        "Yuqi Pan",
+        "Qian Liu",
+        "Xianwei Chen",
+        "Zhongzhu Zhou",
+        "Jibin Wu"
+      ],
+      "abstract": "Efficient attention mechanisms, such as linear and sliding window attention, aim to reduce the computational complexity of Transformers from quadratic to linear. However, their degraded in-context recall often necessitates interleaving full attention layers, leaving the quadratic bottleneck unresolved in long-context processing. To address this, we introduce Orthros attention, which shifts the efficiency paradigm from structural allocation to phase-aware decoupling. As a unified module, it dynamically switches its computation pattern across different phases of sequence processing, enabling linear complexity prefilling and full attention decoding. Our design grants Orthros attention a lower asymptotic complexity compared to vanilla Transformers in prevalent long-context scenarios characterized by heavy prefilling and light decoding. Beyond theoretical formulation and complexity analysis, extensive empirical evaluations demonstrate Orthros's superiority across multiple dimensions. First, we validate its fundamental language modeling capabilities, demonstrating scalability across varying model sizes and strong competitiveness in comprehensive architectural comparisons. Second, Orthros exhibits exceptional conversion feasibility via a data-efficient Transformer-to-Orthros conversion, yielding performance that even surpasses the original Transformer. Finally, Orthros achieves a $21.9\\times$ prefilling speedup over Transformers with end-to-end inference gains, while preserving long-context capabilities, as demonstrated by near-perfect 128K needle-in-a-haystack results and Transformer-level performance on real-world in-context recall tasks. Overall, these advantages in high performance, flexibility, and efficiency position Orthros as a promising candidate to succeed the Transformer in industrial applications.",
+      "url": "https://arxiv.org/abs/2610.13735",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8818
+    },
+    {
+      "id": "2610.13092",
+      "title": "When Faster Decisions Do Not Make Better Agents: An Empirical Study of Jev in Agent Workflows",
+      "authors": [
+        "Yuchen Ling",
+        "Shengcheng Yu",
+        "Zhenyu Chen",
+        "Chunrong Fang"
+      ],
+      "abstract": "AI agents depend on repeated decisions to accomplish tasks, with large language models (LLMs) commonly serving as their core decision makers. The recent emergence of Jev offers an opportunity to make these decisions faster and at lower cost. However, it remains unclear whether such local savings can be translated into efficient and reliable task completion. In this paper, we investigate this efficiency transfer across five agents in two representative application settings, embodied tasks in ALFWorld and mobile app use in AndroidWorld. Across 4,500 task executions, we jointly evaluate task effectiveness, decision-level and task-level resource use, and execution behavior. Experimental results show that Jev integration substantially reduces decision cost and latency across all five agents, with task-level gains varying by workflow. Task success remains close to baseline levels on ALFWorld and declines more substantially in two mobile agents. Auxiliary reasoning and additional interactions absorb decision savings, while failed recovery and premature completion limit successful delivery. Mean cost per successful outcome increases in one agent even as spending per attempt falls. These findings highlight the importance of preserving progress, supporting recovery, and verifying completion when integrating efficient decision models into agent workflows. Their practical value should be assessed through successful task delivery, recovery behavior, and resources per delivered outcome.",
+      "url": "https://arxiv.org/abs/2610.13092",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8811
+    },
+    {
+      "id": "2610.13277",
+      "title": "Beyond the Final Embedding: Retrieving Memories from Token-Level Evidence",
+      "authors": [
+        "Han Luo",
+        "Zhan Zhuang",
+        "Xu He",
+        "Jujia Zhao",
+        "Yu Li",
+        "Suqin Yuan",
+        "Dong Li",
+        "Lei Feng"
+      ],
+      "abstract": "Memory-augmented assistants retrieve evidence from stored conversations and documents to answer queries. Most embedding-based retrievers compare single-vector representations of queries and memories, even when relevance depends on a small part of the content. Such local evidence can be matched to queries using the contextual token representations already computed by the same embedding models. Our method uses sparse token matching to improve retrieval without additional training. Each query token retrieves a small set of matching tokens across candidate memories. The matching scores are aggregated for each memory and combined with whole-memory similarity to rank memories. An optional low-rank query adapter can be trained with supervision while keeping the encoder and stored memory representations fixed. Our method improves retrieval across eight benchmarks and multiple model families without additional training. Query adaptation further increases the gains to 13.3 and 14.3 percentage points in average Recall@10 and NDCG@10 on Qwen3-Embedding-4B. These retrieval gains translate into higher question-answering accuracy on long-term memory benchmarks.",
+      "url": "https://arxiv.org/abs/2610.13277",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8803
+    },
+    {
+      "id": "2610.13296",
+      "title": "PRIME: Pre-Retrieval Index Modeling Enhancement for Structured Document Retrieval-Real",
+      "authors": [
+        "Cheuk Hei Chung",
+        "Li Liu"
+      ],
+      "abstract": "High-precision retrieval over external knowledge bases is essential for LLM agents to operate effectively. However, existing Information Retrieval (IR) research primarily optimizes query-side retrievers (e.g., ColBERT, BGE) and generators (e.g., Self-RAG, GraphRAG), while reducing corpus-side representation to chunking. This leaves index-side quality an underexplored lever. We propose Pre-Retrieval Index Modeling & Enhancement (PRIME), an index-side optimization framework built on two complementary tracks: an LLM-driven Semantic Restructuring (SR) track that transforms long documents into structured, information-dense sections, and a deterministic Metadata Synthesis (MS) and Hierarchical Retrieval (HR) track that extracts semantic anchors and heading structure for coarse-to-fine section retrieval. Our evaluations show that deterministic metadata matches structure-aware chunking's retrieval quality while cutting embedding computation by 45.8 $\\times$ and index vector count by 22.4 $\\times$. On top of these gains, Semantic Restructuring (SR) further improves Answer-F1 by 13.7% in full deployment, with characterized quality-fidelity-cost trade-offs. Across QASPER, BRIGHT, and NFCorpus, we further characterize three qualitative regimes that determine whether index-side optimization helps or degrades retrieval, while showing that these index-side effects are neutralized under a strong reranker.",
+      "url": "https://arxiv.org/abs/2610.13296",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8797
+    },
+    {
+      "id": "2610.13166",
+      "title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+      "authors": [
+        "Shun Zou",
+        "Ziyu Ma",
+        "Yi Zou",
+        "Yong Wang",
+        "Lin Chen",
+        "Zehui Chen",
+        "Guanhua Chen",
+        "Xiangxiang Chu",
+        "Feng Zhao"
+      ],
+      "abstract": "Terminal agents are moving beyond local operations toward completing real-world professional tasks. Short trajectories can demonstrate commands and tool calls, but they do not fully show how agents accumulate evidence through exploration, use it to inform judgments, continually adjust strategies based on feedback, and turn intermediate results into final deliverables. High-quality long-horizon trajectories capture these agentic behavioral patterns and their connections within a single problem-solving process, providing richer experience for sustained autonomous work. However, environment synthesis may complete or simplify the key work underlying these patterns in advance and thus remove the need for exploration, implementation, and verification that the agent was meant to perform. To address this, we introduce TerminalHorizon, a fully automated data synthesis engine for long-horizon terminal agents. Starting from real-world professional work, it uses independent execution to identify key work omitted during construction and uses the resulting evidence to guide environment reconstruction. To extend these patterns across stages, it progressively expands tasks under the same goal, introducing new requirements that build on prior results and call for further exploration and improvement. Using this engine, we construct 1.5K task environments and perform supervised fine-tuning of Qwen3.5-27B on the resulting dataset to obtain TerminalHorizon-27B. We achieve substantial performance gains on all 12 benchmarks spanning coding-agent tasks, agentic tasks in real-world production settings, and general reasoning. Multiple RSI case studies, each with a 12-hour research budget, further demonstrate the model's ability to continue experimenting beyond an initial solution, improve its methods based on feedback, and retain effective improvements in its final deliverables.",
+      "url": "https://arxiv.org/abs/2610.13166",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8797
+    },
+    {
+      "id": "2610.13889",
+      "title": "RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics",
+      "authors": [
+        "Weiliang Chen",
+        "Song Liao"
+      ],
+      "abstract": "As AI agents increasingly rely on external tools, accurate retrieval is essential for reliable behavior. Existing methods optimize semantic relevance but largely ignore tool availability during execution. To address this gap, we propose RATED (Reliability-Aware Tool Retrieval via Execution Dynamics), a retrieval framework that combines robust semantic matching with dynamic reliability adaptation. RATED employs a frozen dual-encoder with contrastive fine-tuning for semantic matching, and a lightweight contextual bandit module that re-ranks candidates based on real-time execution feedback. This design enables rapid adaptation to runtime tool failures without expensive model retraining. We introduce EcoAgent, a benchmark of 5,172 real-world tools and over 210,000 query-tool pairs for offline retrieval and dynamic reliability evaluation. Experimental results demonstrate that RATED achieves a 52.2% relative MRR improvement over the ToolLLM API retriever on real-world queries, and reduces fault selection rate from 86.2% to 2.9% under severe API outage scenarios with a 30% failure rate, while incurring negligible latency overhead of less than 1 ms over encode-only inference. The code and dataset are available at https://github.com/Elliotes/EcoAgent.",
+      "url": "https://arxiv.org/abs/2610.13889",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/Elliotes/EcoAgent.",
+      "score": 0.8796
+    },
+    {
+      "id": "2610.13821",
+      "title": "Can Language Models Learn When to Abstain? Policy Learning and Calibrated Answer Selection",
+      "authors": [
+        "Juan Terven",
+        "Diana-Margarita Córdova-Esparza",
+        "Ruben Gomez",
+        "Carlos Miranda Rocha",
+        "Julio-Alejandro Romero-González",
+        "Edgar Chavez-Urbiola"
+      ],
+      "abstract": "A useful language model should know when to answer and when to say \"I don't know.\" Can we improve that decision by training the model itself or by training a separate component to check its answers? We study both approaches on Qwen3-14B for factual questions, using a score that rewards correct answers, penalizes mistakes, and allows abstention. Across three training seeds and two held-out confidence thresholds, a learned answer selector improves threshold-averaged utility over the original model's calibrated confidence filter. On TriviaQA, mean coverage increases from 20.2% to 30.9%, while the pooled error rate among scored answers decreases from 23.0% to 14.5% under exact-match grading. The tested reinforcement-learning changes do not establish consistent gains. On NQ-Open, the selector improves threshold-averaged utility over the filter but still performs worse than always abstaining. A partial human-reviewed audit preserves the TriviaQA finding. Our results support learning to select answers in this setting while showing that reliable abstention across datasets remains unresolved.",
+      "url": "https://arxiv.org/abs/2610.13821",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8795
+    },
+    {
+      "id": "2610.13152",
+      "title": "Quality, Not Just Outcome: A Structural Scoring Framework for Selecting Coding-Agent Trajectories for Supervised Fine-Tuning",
+      "authors": [
+        "Sida Li",
+        "Yuanxin Liu",
+        "Shicheng Li",
+        "Linli Yao",
+        "Xu Sun",
+        "Haoli Bai",
+        "Xiaohui Li"
+      ],
+      "abstract": "Open coding agents are commonly trained through supervised fine-tuning on interaction trajectories whose final patches pass the benchmark test suite. However, this outcome-level filtering criterion ignores process quality: trajectories that eventually succeed may still contain inefficient interaction patterns such as repetitive file inspection, unstable tool usage, or delayed modification behavior, all of which become part of the imitation target. We propose TQS (Trajectory Quality Score), a structural scoring framework for coding-agent trajectories that operates directly on trajectory structure, requires no LLM judge, and runs in linear time. TQS characterizes trajectory quality through structural signals organized around structured convergence: information focus, intent--action alignment, and policy dynamics. Using 155,144 successful trajectories from a public open-license corpus, we rank trajectories by TQS and fine-tune coding agents on filtered subsets. Models trained on top-ranked trajectories consistently outperform those trained on random or bottom-ranked subsets on SWE-Bench-Verified. Our results suggest that process-level trajectory quality is an important factor in coding-agent supervision and that structural trajectory filtering provides an effective and scalable alternative to LLM-based data selection.",
+      "url": "https://arxiv.org/abs/2610.13152",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8789
+    },
+    {
+      "id": "2610.13375",
+      "title": "From Structure to Validity: Mechanism-Guided Generation and Refinement of LLM Rubrics",
+      "authors": [
+        "Feifei Qian",
+        "Xuan Chen",
+        "Lixin Cui",
+        "Chaoyang Mei",
+        "Fanlin Meng",
+        "Shuyao Xiao",
+        "Ming Cui",
+        "Junxi Yin",
+        "Lu Bai"
+      ],
+      "abstract": "Rubrics have been widely used to evaluate and optimize language models on open-ended tasks. However, existing work primarily focuses on generating better rubrics, with limited understanding of what makes rubric design effective. In this work, we conduct a systematic mechanistic analysis of rubric design across criterion organization, criterion operationalization, and score aggregation. Our analysis shows that structural organization enables more comprehensive criterion construction, semantic specification alone does not ensure effective criterion-level judgments, and sophisticated score aggregation provides limited additional gains. Guided by these findings, we introduce Adaptive Rubric Tree Search with Hybrid refinement (ARTS-Hybrid), which combines adaptive tree construction with semantic-first, response-calibrated refinement. Experiments across benchmarks show that ARTS-Hybrid improves both end-to-end evaluation performance and intrinsic rubric quality. Further experiments suggest that, beyond evaluation, rubrics generated by ARTS-Hybrid provide effective signals for model optimization.",
+      "url": "https://arxiv.org/abs/2610.13375",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8786
+    },
+    {
+      "id": "2610.13356",
+      "title": "SWE-Critix: Post-Training Generalist Verifiers for Assessing Coding-Agent Trajectories",
+      "authors": [
+        "Jiajun Hu",
+        "Chun Yong Chong"
+      ],
+      "abstract": "Coding agents are increasingly deployed for end-to-end software engineering tasks, where a readily available oracle evaluator that defines the success criteria is often absent. This motivates verifications for coding agents that can reliably judge and explain their behavior. However, verification is non-trivial as coding agents are increasingly capable of solving long-horizon software engineering tasks. Their execution trajectories can be extremely long, containing hundreds of iterative interactions with code repositories and external tools. Existing verifiers either rely on general-purpose LLMs without specialized training or train dedicated critics that predominantly focus on producing scalar rewards, highlighting the relatively limited exploration of training-based generalist verification. We introduce SWE-Critix, a post-training pipeline for training generalist verifiers of coding-agent trajectories. Given a task and its execution trajectory, the learned verifier predicts the completion label and generates a natural-language analysis that explains its judgment. Our pipeline combines supervised fine-tuning (SFT) with reinforcement learning (RL) and trains a series of 30B models on trajectories from CodeForge-Preview. On a held-out test set, SWE-Critix improves classification accuracy from 57% for the base Qwen3-30B-A3B reasoning model to 66% after SFT and 78% after RL. We release our models, datasets, and training code to facilitate further research.",
+      "url": "https://arxiv.org/abs/2610.13356",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8786
+    },
+    {
+      "id": "2610.13810",
+      "title": "Tracing and Taming Hallucinated Terms via Subsequence-Association Filtering and Breadth-Aware Selection for LLM Query Expansion",
+      "authors": [
+        "Amit Kumar Jaiswal",
+        "Sagar Uprety",
+        "Prayag Tiwari"
+      ],
+      "abstract": "Large language models (LLMs) are now a standard source of query expansion terms but they hallucinate. They inject non existent entities and off-topic terms that add ranking noise and can hurt strong retrievers. Existing remedies such as corpus grounding, mutual verification and preference alignment treat hallucinated terms as an undifferentiated nuisance to be filtered by agreement heuristics, without a mechanistic account of why a given term appears or a principled criterion for how many terms to keep. We propose Subsequence-Association Filtered, breadth-aware query expansion (SAFE-QE), a training-free, retriever agnostic method that draws on the subsequence-association account of hallucination. We score each candidate expansion term by its corpus conditioned cross-context reproducibility, terms that reappear under randomised query contexts yet lack support in the pseudo-relevant set are flagged as products of dominant hallucinatory associations and down-weighted. Drawing on the characterisation of language generation as a trade-off between consistency (no hallucination) and breadth (coverage), we cast term selection as constrained coverage maximisation over the pseudo-relevant set, keeping a set that is approximately broad but consistent and stable across resampling. We also introduce the Hallucinated Expansion Term Rate, a query side faithfulness metric that counts injected expansion terms no relevant document supports. We evaluate our approach on benchmarked TREC and BEIR collections. Our SAFE-QE is statistically indistinguishable from generative and corpus-steered expansion on nDCG@10 while injecting fewer unsupported terms 4.3 per query against 27.8 for Query2doc and 57.5 for HyDE and on a strong learned sparse retriever, where every expansion method regresses. Faithfulness is therefore available at no measurable cost in ranking quality.",
+      "url": "https://arxiv.org/abs/2610.13810",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8781
+    },
+    {
+      "id": "2610.13081",
+      "title": "SWEAR: Section-Wise Efficient Audio Reasoning via Self-Rated Difficulty",
+      "authors": [
+        "Yixuan Li",
+        "Minghao Lv",
+        "Xuenan Xu",
+        "Zihao Zheng",
+        "Mengyue Wu"
+      ],
+      "abstract": "Recent work on large audio-language models (LALMs) explores adaptive reasoning to balance accuracy and efficiency. However, existing approaches often rely on coarse-grained difficulty estimation, overlooking the diverse factors that determine reasoning effort. We address this limitation by deriving five-dimensional difficulty scores and compressed reasoning traces from complementary offline assessments. Based on this characterization, we propose SWEAR, a difficulty-aware reasoning framework that learns difficulty signals during supervised fine-tuning and uses reinforcement learning to adapt reasoning allocation across reasoning stages. Experiments on MMAU-test-mini and MMAR show that SWEAR improves accuracy while substantially reducing generated tokens, shortening reasoning for easy instances without sacrificing performance on difficult ones.",
+      "url": "https://arxiv.org/abs/2610.13081",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8775
+    },
+    {
+      "id": "2610.13823",
+      "title": "Same Query, Different Answer: Run-to-Run Variance in Semantic Query Processing",
+      "authors": [
+        "Oktie Hassanzadeh",
+        "Dharmashankar Subramanian"
+      ],
+      "abstract": "Semantic query engines ask a large language model (LLM) to judge individual rows, and benchmarks compare these engines on the quality of a few executions at temperature 0. We measure how much another execution changes. We re-execute the text and tabular workloads of SemBench, LRO-Bench, and UDA-Bench through their own harnesses, log every one of 1.2 million model calls, and reanalyze SemBench's published executions. At temperature 0, between 0.07% and 10.2% of rows change their operator output over five executions, depending on the model, and up to 24.0% on one task. Plans amplify these changes exponentially in the number of rows an answer exposes, as a possible-worlds model predicts: on UDA-Bench, a few percent of extracted values change, but about two thirds of the answers do. In SemBench's published results, 21% of text results change quality between executions, including on engines whose plans are deterministic. Several per-query system comparisons, and 16 of 28 tests of LRO-Bench's implementation recommendations, are not settled by the executions the benchmarks run. Changing rows are rows on which models disagree with each other; identical requests within one execution disagree as often as across executions; and one execution's decision margin or reasoning length predicts which rows change. Voting reduces the variance but does not remove it, and a calibrated cascade keeps its guarantee while the rows it returns change. We derive reporting rules for benchmarks and design rules for engines.",
+      "url": "https://arxiv.org/abs/2610.13823",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8773
+    },
+    {
+      "id": "2610.13438",
+      "title": "Rollout-Time Intervention: Unlocking Agentic Reinforcement Learning Beyond Policy Limits",
+      "authors": [
+        "Chen Xi",
+        "Ding Ruixue",
+        "Wang Zhigaoyuan",
+        "Zhang Fanrui",
+        "Zhang Qiang",
+        "Chen Boli",
+        "Wang Shihang",
+        "Wang Tianfu",
+        "Ren Ailin",
+        "Wang Pengyong",
+        "Xie Pengjun",
+        "Xiong Hui"
+      ],
+      "abstract": "Reinforcement learning (RL) has emerged as a key paradigm for improving large language model (LLM) agents, enabling stronger reasoning, planning, and tool-use in interactive environments. However, existing agent RL methods remain fundamentally constrained by an on-policy reasoning bottleneck: when tasks exceed the model's current capability boundary, effective trajectories become extremely sparse and training often collapses. We introduce Rollout-Time Intervention (RTI), a technique designed to elicit successful trajectories beyond the policy's intrinsic exploration capacity. RTI operates by leveraging reward-side evidence (i.e., evaluation rubrics) during rollout to convert erroneous trajectories into successful ones, providing effective learning signals for tasks that the policy rarely solves on its own. Although intervention trajectories are inherently off-policy, we find that they can effectively guide policy optimization when trajectories with excessive distributional shifts are filtered out. Extensive experiments across five benchmarks demonstrate that RTI consistently outperforms RL baselines, enabling the post-trained policy to approach the performance of substantially stronger contemporary LLMs and, more importantly, transcend its original capability boundary. The code is available at https://github.com/Alibaba-NLP/qqr.",
+      "url": "https://arxiv.org/abs/2610.13438",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/Alibaba-NLP/qqr.",
+      "score": 0.8773
+    },
+    {
+      "id": "2610.13361",
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "authors": [
+        "Jiahao Wang",
+        "Hongjin Qian",
+        "Yuyang Hu",
+        "Jiajun Zhang",
+        "Zheng Liu"
+      ],
+      "abstract": "As the production of software passes into the hands of software itself, coding agents are increasingly commissioned to build agents fitted to their users' own workflows. This delegation carries a quiet assumption, that the delivered agent will faithfully serve the requirement it was built for, rather than merely appear to. No existing benchmark tests that assumption. We introduce AgentSWE, a benchmark for agent software engineering spanning three stages of the agent development lifecycle: Creation of a complete agent from a natural-language requirement, Editing of production agent codebases, and Optimization toward a measurable target. Each of its 25 tasks is framed as a commission rather than an exam: the builder iterates against a handful of illustrative cases, while acceptance exercises the frozen submission on held-out cases designed to span the full requirement, grading behavior against requirement-derived rubrics under hard pass/fail gates or, for Optimization, against the source benchmark's own objective. Evaluating a range of coding agents across models and harnesses, we find that none comes close to delivering what a requirement asks for: the gap between what a builder demonstrates and what it delivers is the norm, not the corner case. An accompanying empirical analysis of the failure trajectories identifies recurring failure modes, among them overfitting to the visible cases, hollow runtimes behind code that looks complete, and unsupported claims of completion, each a signal by which coding agents can learn to build the agents they are asked for.",
+      "url": "https://arxiv.org/abs/2610.13361",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8772
+    },
+    {
+      "id": "2610.13128",
+      "title": "Locate, Judge, Read: Role-Specialized Tool Agents over a Knowledge-Point Index for Open-Domain Multimodal Document QA",
+      "authors": [
+        "Wenlin Lin",
+        "Fanzhe Wei"
+      ],
+      "abstract": "Question answering over large heterogeneous document collections requires first finding the right passages and then reading them, yet current retrieval-augmented agents give one model both kinds of tools and let it schedule itself. We present KnowForge, a pipeline separated by job: a hybrid-retrieval knowledge-point index; a Locator agent that can only search; a code-scheduled bridge judge that forces the missing second hop; a typed, size-bounded evidence pool that merges every search's ranking; a Deep Reader agent that can only read text, images and tables; and a synthesizer with a format checker. With a self-hosted Qwen3.6-35B-A3B (3B active), KnowForge reaches F1 47.5 on the full open-domain M3DocVQA (2,441 questions, 3,368 PDFs), +11.0 over the published M3DocRAG system and +7.1 over one-shot retrieve-and-answer on the same index and model, and 53.5 with DeepSeek-V4-Flash. On MultiHop-RAG it reaches 73.5 accuracy, above the strongest published RAG and GraphRAG results (71.2); on the single-document MMLongBench-Doc it lifts the same model from 34.8 to 47.0, level with GPT-4o reading page images (46.3). Per-job ablations on the full benchmarks attribute the gain: the Deep Reader is worth 3.8, 9.8 and 0 points on the three corpora, tracking how visual each is; merging both agents into one with all tools and twice the rounds loses 1.9 F1 because it keeps searching instead of reading; a round-budget sweep shows a step at four Locator rounds and a plateau beyond; query latency scales with model calls rather than corpus size. We serve the three indexed benchmarks as read-only knowledge bases (free registration) and release all prompts and the runner code: https://github.com/metask-ai/knowforge-bench",
+      "url": "https://arxiv.org/abs/2610.13128",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-09",
+      "github_url": "https://github.com/metask-ai/knowforge-bench",
+      "score": 0.877
+    },
+    {
+      "id": "2610.13481",
+      "title": "Branching On-Policy Distillation",
+      "authors": [
+        "Dongyang Chen",
+        "Shudong Liu",
+        "Shubo Li",
+        "Duoxun Tang",
+        "Jinwei Liang",
+        "Zehuan Wu",
+        "Lewei Lu"
+      ],
+      "abstract": "On-policy distillation (OPD) provides teacher supervision on student-generated trajectories, but a single trajectory realizes only one continuation at each decision, limiting supervision coverage under a finite sampling budget. We propose BranchOPD (Branching On-Policy Distillation), which selects informative decision points using student uncertainty and teacher-student disagreement, resamples student-policy continuations from shared prefixes, and applies token-level teacher supervision to both main trajectories and branches. BranchOPD operates at token-level decisions in mathematics and within-turn decisions in agent tasks. Shared-prefix reuse reduces student-generated token costs by approximately 19% on ALFWorld and 31% on WebShop relative to seven independent trajectories. We also introduce protocol-boundary repair (PBR), which uses targeted supervision under protocol constraints to mitigate repetition and wasted generation. BranchOPD outperforms Vanilla OPD and Multi-Rollout OPD (n=7) across all evaluated benchmarks, with gains over Vanilla OPD of 18.55 percentage points in mean mathematics accuracy over 16 sampled answers (avg@16) and 13.8 points in mean ALFWorld ID/OOD success. Mechanistic analyses and selection ablations show that branching at uncertain decisions expands subsequent behavior coverage and outperforms random selection and turn-initial branching.",
+      "url": "https://arxiv.org/abs/2610.13481",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-09",
+      "score": 0.8765
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 280,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
