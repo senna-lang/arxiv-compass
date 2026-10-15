@@ -1,0 +1,425 @@
+{
+  "date": "2026-10-15",
+  "collected_at": "2026-10-15T13:08:53.773508+09:00",
+  "papers": [
+    {
+      "id": "2610.19705",
+      "title": "RouteWeaver: Weaving Mode Selection and Execution into Unified LLM Routing",
+      "authors": [
+        "Xiaohan Wang",
+        "Haozhen Zhang",
+        "Qingyuan Liu",
+        "Tao Feng",
+        "Wenya Wang"
+      ],
+      "abstract": "LLM routing dynamically selects and coordinates heterogeneous language models across diverse tasks. However, existing approaches are largely built around a predefined execution paradigm, such as single-round, multi-round, or agentic routing, which fixes how model calls are organized and limits adaptation to different query needs. We propose RouteWeaver, a unified routing framework that integrates these routing modes within a single LLM policy, jointly learning which mode to use and how to select models within that mode. To jointly optimize mode selection and within-mode execution, we develop COMET-GRPO (COordinated Mode-Execution Training), which decouples the trajectory-level advantage into separate signals for mode selection and within-mode execution, enabling more targeted credit assignment to each decision level. We further introduce progressive exploration, which gradually shifts training from externally assigned modes to autonomous selection, so that the router first learns how to execute each mode before deciding when to use it. We evaluate RouteWeaver across mathematics, coding, knowledge, logical reasoning, and factual recall. RouteWeaver achieves an average accuracy of 61.4%, an 11.03% relative improvement over the strongest baseline, and outperforms all compared baselines in each of the five domains. Ablations show that both COMET-GRPO and progressive exploration are important for adaptive routing; without progressive exploration, the routing policy collapses entirely to single-round execution.",
+      "url": "https://arxiv.org/abs/2610.19705",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.9002
+    },
+    {
+      "id": "2610.20350",
+      "title": "Lifted State Policy Optimization: Internalizing Self-Correction through Transition Geometry",
+      "authors": [
+        "Ren Zhuang",
+        "Ben Wang",
+        "Shuifa Sun"
+      ],
+      "abstract": "Preference optimization ranks final answers and trajectory RL maximizes aggregate returns, yet neither credits the local change that turns a flawed reasoning state into a better one. We introduce Lifted State Policy Optimization (LSPO), which establishes this finite, cost-adjusted transition as the primary unit of learning. Each textual answer is augmented with a learned continuous coordinate, forming a lifted state that an energy function evaluates and orders. A shaped reward drives energy descent net of edit and step costs, and an internalization loss absorbs selected low-energy answers into the direct generator. On Qwen3.5-27B, the resulting single-pass policy reaches 71.8% aggregate accuracy across mathematics, science, code, and logic benchmarks, matching test-time reflection at 71.9% with 28% lower latency and 25.8% fewer tokens. The pattern holds across dense and mixture-of-experts backbones, and matched controls confirm that transition credit and the lifted coordinate each contribute, as does answer internalization. Our code is available at https://github.com/Venomrko/lspo.",
+      "url": "https://arxiv.org/abs/2610.20350",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "github_url": "https://github.com/Venomrko/lspo.",
+      "score": 0.8933
+    },
+    {
+      "id": "2610.20099",
+      "title": "EvalBuilder: Can LLMs Build Efficient Benchmarks?",
+      "authors": [
+        "Huaisheng Zhu",
+        "Hangfan Zhang",
+        "Teng Xiao",
+        "Siyuan Xu",
+        "Shijie Zhou",
+        "Zhimeng Guo",
+        "Zhengyu Chen",
+        "Jingang Wang"
+      ],
+      "abstract": "Large language model (LLM) agents are increasingly used for long-horizon research and engineering, yet evaluating these capabilities remains expensive, time-consuming, and heavily dependent on human expertise. This motivates a natural question: can LLM agents themselves construct efficient benchmarks that preserve the conclusions of costly reference evaluations? We study this capability by formulating automatic benchmark development as a meta-evaluation problem, where an agent is given a task and an expensive reference benchmark and requested to construct a lower-cost proxy benchmark that faithfully distinguishes among candidate models and solutions. Based on this formulation, we introduce EvalBuilder, a framework for evaluating such benchmark-generation capabilities along three key dimensions: fidelity, efficiency, and robustness. Specifically, we assess whether generated benchmarks preserve model rankings, generalize to held-out models and freshly collected responses, and provide well-calibrated and discriminative scores while substantially reducing evaluation cost. We further provide an iterative environment in which agents can refine their benchmarks under a fixed time budget. Our framework provides a systematic testbed and benchmark for understanding when current LLM agents can develop useful evaluators and how benchmark construction itself can be increasingly automated.",
+      "url": "https://arxiv.org/abs/2610.20099",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8932
+    },
+    {
+      "id": "2610.20401",
+      "title": "Training Language Models to Fail Gracefully",
+      "authors": [
+        "Daman Arora",
+        "Xuecheng Liu",
+        "Himanshu Gaurav Singh",
+        "Fahim Tajwar",
+        "Abitha Thankaraj",
+        "Ruslan Salakhutdinov",
+        "Haiwen Feng",
+        "Yuda Song",
+        "Andrea Zanette"
+      ],
+      "abstract": "Reinforcement learning makes language models better at solving tasks, but the same mechanism also rewards guessing. When success is the only way to earn reward, opting for a safe fallback is always worse than a long-shot attempt. When a wrong action can corrupt a database or ship broken code, that incentive can be costly. Therefore, we propose training models to fail gracefully: to preserve successful behavior whenever possible while learning to execute a safe fallback policy when acting would be unreliable. However, naively using policy gradients with intermediate reward for fallback behavior is brittle due to unfavorable optimization dynamics. We address this challenge with GracefulRL, which reshapes the optimization landscape to promote graceful failure. Importantly, this behavior emerges directly from outcome-level reward signals, without annotations specifying when to fall back or additional inference-time machinery such as a verifier. Across a range of tasks and scales, we train models that largely preserve their task-solving capability while selectively falling back when acting would be unreliable. More broadly, our results show that reinforcement learning can not only incentivize models to succeed, but also to reason about the limits of their capabilities and change course when they determine that success is out of reach.",
+      "url": "https://arxiv.org/abs/2610.20401",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8916
+    },
+    {
+      "id": "2610.20116",
+      "title": "Maximising Transparency in Context Compaction Improves Retention of Facts and Commitments for Lightweight Coding Agents",
+      "authors": [
+        "Felix Woolford"
+      ],
+      "abstract": "Long coding agent sessions outgrow the model's context window, so agents compact: older history is replaced by something shorter, usually a model-written summary. A summary selects and rewords, and the agent cannot see what was lost. Existing work has explored a range of compaction techniques, but comparatively little attention has been paid to their effectiveness with lightweight models, including those deployed locally or used for high-volume workloads. Here, we present transparent-compact, a simple deterministic method for the open-source Pi coding agent, designed specifically for use with such models and with the purpose of maximising the transparency of the agent's view of its own compacted context. It guarantees that user and assistant prose in its context is unchanged by a model or algorithm, and explicitly flags where compaction has stripped information. We compare it with Pi's default model-written summary compaction and with pi-vcc, a popular deterministic method with similar methods but without verbatim retention of prose. Our benchmarks run on four models of varying performance levels, with emphasis on Qwen3.8-27B: a lightweight model at the top end of what consumer hardware can serve locally. On sets probing commitments (rules the user set which exist only in the conversation) and recall of facts, transparent-compact matched or outperformed both alternatives. In particular, it showed an advantage in avoiding confident blunders, i.e. assertion of false information as opposed to recognizing that something was not recalled. Even with a frontier model, its advantage was present but smaller. We argue that transparent-compact spares lightweight models from reasoning or searching their way around what compaction lost, and results in improved recall and application of information as a result, without the need for task or context-specific structuring of the session history.",
+      "url": "https://arxiv.org/abs/2610.20116",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8913
+    },
+    {
+      "id": "2610.20328",
+      "title": "Argument Graph Uncertainty: Quantifying Uncertainty from the Logical Structure of Reasoning Chains",
+      "authors": [
+        "Simon Baur",
+        "Sumire Honda",
+        "Wojciech Samek",
+        "Jackie Ma"
+      ],
+      "abstract": "Reliable uncertainty estimation is essential for deploying large language models in high-stakes reasoning tasks, yet most existing approaches rely on expensive sampling strategies or shallow token-level signals that ignore the internal logical structure of model outputs. We introduce Argument Graph Uncertainty, a post-hoc framework for multiple choice question tasks, that estimates model confidence directly from the logical structure of a single chain-of-thought reasoning trace. Our method uses either a lightweight instruction-tuned model or a simple deterministic rule to segment the reasoning chain into propositional units, then applies a NLI model to infer relational edges and construct two complementary argument graphs over these segments. The resulting edge scores are aggregated into a Dirichlet posterior over answer options, whose concentration yields calibrated uncertainty estimates reflecting both local step-to-step coherence and global logical consistency across the reasoning trace. Evaluated on GPQA, MMLU-Pro and TruthfulQA, our method consistently surpasses token-based and consistency-based uncertainty baselines across multiple reasoning models. We further demonstrate through extensive combination analyses that argument graph uncertainty captures an orthogonal signal to existing approaches, making it a complementary component in uncertainty ensembles. Crucially, our framework requires no additional calls to the evaluated model and relies entirely on small, efficient auxiliary models, producing fully interpretable, per-node uncertainty attributions at low computational cost.",
+      "url": "https://arxiv.org/abs/2610.20328",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8911
+    },
+    {
+      "id": "2610.19928",
+      "title": "MemDuet: Learning Dual-Process Memory for Long-Context Reasoning",
+      "authors": [
+        "Jiangcheng Song",
+        "Haodong Jing",
+        "Yulin Mu",
+        "Lesong Tao",
+        "Jixin Wang",
+        "Jin Cui",
+        "Tianjing Ren",
+        "Runxuan Xie",
+        "Yongqiang Ma",
+        "Nanning Zheng"
+      ],
+      "abstract": "Reasoning over infinitely long documents is becoming a reality with recurrent memory agents. However, increasing context length exacerbates the trade-off between reasoning performance and inference efficiency. Inspired by Kahneman's account of fast and slow thinking, we propose MemDuet, a dual-process memory framework that learns to coordinate a small language model for fast, parallel evidence selection from raw context chunks (System 1) with a large language model for memory-update verification and memory updates in document order (System 2). We train MemDuet in three stages: supervised fine-tuning of System 1 for evidence selection, Group Relative Policy Optimization (GRPO) of System 2 for verification and memory rewriting, and joint optimization of both policies to coordinate selection and updating for long-context reasoning. Experiments on diverse long-context reasoning benchmarks (RULER-HQA, LongBench v2, and 2WikiMultiHopQA) demonstrate a favorable accuracy-efficiency trade-off as context length grows. Averaged across evaluation settings on the three datasets, MemDuet achieves an end-to-end inference speedup of 9.74x and an output-token reduction of 73.91% relative to RL-MemAgent.",
+      "url": "https://arxiv.org/abs/2610.19928",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.891
+    },
+    {
+      "id": "2610.20497",
+      "title": "Hindsight-Privileged RLVR: Single-Rollout Token Credit Without Group Sampling",
+      "authors": [
+        "Wei Chen",
+        "Yubing Wu",
+        "Zhou Xu",
+        "Haoyue Zhang",
+        "Delu Zeng",
+        "Jiahao Wang",
+        "Junmei Yang",
+        "Pan tiewen",
+        "Jingfeng Liu",
+        "Zhiheng Zhou",
+        "Bo Li",
+        "Min Chen"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) trains language models from checked task outcomes, but assigning a terminal reward to individual reasoning tokens or actions remains difficult. Group-relative methods such as Group Relative Policy Optimization (GRPO) sample several attempts per prompt, but lose their reward-based learning signal when all attempts receive the same outcome. We propose Hindsight-Privileged RLVR (HP-RLVR), a single-rollout method that turns a completed trajectory's own future into token-level update weights. The generating policy snapshot scores each eligible token under its causal history and under a hindsight context containing the realized future and verifier feedback. A normalized Jensen--Shannon divergence between the two views weights the reward relative to a historical baseline, yielding bounded token credit for both successful and failed attempts, with no reference solution or learned critic. In paired Qwen3-8B runs over a shared $100$-step schedule, HP-RLVR trains $1.21\\times$, $1.46\\times$, and $2.30\\times$ faster than GRPO on mathematics, code generation, and ALFWorld, using one eighth the rollouts per prompt. Accuracy is comparable overall, with HP-RLVR ahead on mathematics at all three sizes and GRPO ahead on code and ALFWorld. In ALFWorld, $43.2\\%$ (4B) and $49.0\\%$ (8B) of GRPO's gradient-norm records are zero, versus none for HP-RLVR.",
+      "url": "https://arxiv.org/abs/2610.20497",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8909
+    },
+    {
+      "id": "2610.20057",
+      "title": "Beyond Correctness: Compute-Responsive Data Selection for Reasoning Model Post-Training",
+      "authors": [
+        "Liang He",
+        "Xiangyu Li",
+        "Yuxin Wang",
+        "Hanbin Zhang",
+        "Mingyu Cao",
+        "Zhaomiao Guo",
+        "Xilu Wang"
+      ],
+      "abstract": "Reasoning language models increasingly rely on test-time compute scaling, yet most existing work studies how to allocate inference computation while treating the model itself as fixed. We ask a complementary question: can reasoning models be post-trained to make better use of a given amount of test-time compute, and which examples are most useful for this goal? Our key observation is that reasoning problems differ substantially in their response to additional computation. Some are already solved under limited compute, others remain unresolved even after further reasoning, while a distinct subset changes from complete initial failure to success when additional reasoning is provided. We call these compute-responsive (CR) examples and introduce Compute-Responsive Data Selection (CRDS), a post-training data-selection principle that prioritizes examples with empirically demonstrated marginal utility from additional reasoning. On Qwen3-8B, SFT on CR examples recovers 45.3\\% of held-out low-compute failures, compared with 40.6\\% when training on already-solved examples. The advantage extends beyond the selected CR split: SFT-CR reaches 51.8\\% overall accuracy on an independently sampled test distribution, with the gain concentrated on compute-responsive problems. CR training also shifts the compute--accuracy frontier across inference budgets from 512 to 4,096 tokens, outperforming matched non-CR training throughout and reaching 48.1\\% recovery at the largest budget. The same pattern is supported across multiple data sources, remains visible under on-policy distillation, and extends to Llama-3.1-8B-Instruct when CR sets are reconstructed separately for that model. Better test-time compute utilization can therefore be learned through post-training, with recoverable responses to additional reasoning providing a particularly informative signal for selecting training examples.",
+      "url": "https://arxiv.org/abs/2610.20057",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.89
+    },
+    {
+      "id": "2610.20532",
+      "title": "ActiveEvidence: Decision-Focused Evidence Graphs with Verifiable Acquisition Gaps",
+      "authors": [
+        "Miaobo Hu",
+        "Shuhao Hu",
+        "Xiaobo Guo",
+        "Xin Wang",
+        "Bokun Wang",
+        "Peng Zhang",
+        "Daren Zha",
+        "Jun Xiao"
+      ],
+      "abstract": "A multimodal agent must decide whether visual evidence is worth acquiring, which candidate or resolution to query, and when further interaction can no longer change its decision. We study this problem under a strict free-metadata/paid-observation boundary, stochastic vector costs, and a frozen execution trace, and treat it as decision-certifiable active evidence acquisition. A Counterfactual Evidence Interaction Graph (CEIG) represents unary evidence value, signed second-order interaction, and directed conditional harm while maintaining explicit score enclosures for unresolved interactions; a decision-weighted enclosure objective tightens the bounds that can change action identity. Gap-directed refinement evaluates only interactions that can displace the incumbent acquisition and stops once an $ε$-decision certificate shows that unresolved terms cannot change the selected action beyond a declared tolerance. The certificate is model-relative: it verifies policy-consistent optimality under the pinned learned score, and semantic quality is measured separately through post-freeze labels. Paired continuation rollouts learn the downstream value of paid previews, an online operational cost filter is separated from independent finite-policy-family trajectory certification, and an acquisition monitor with an independently implemented verifier binds every certificate to the frozen trace. On 640 cases split into 384/128/128 training, validation, and test cases, the controller reaches task score 0.842, grounding F1 0.816, evidence recall 0.873, 1.74 accepted calls, 286.5K visual tokens, and 742ms p95 latency. Dense replay of issued certificates shows 0.992 action agreement and a 0.988 certificate rate while evaluating 19.6 instead of 191.4 expensive interaction terms per decision.",
+      "url": "https://arxiv.org/abs/2610.20532",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8889
+    },
+    {
+      "id": "2610.20221",
+      "title": "Scaling Multilingual Safety and Reasoning Evaluation through Reasoning-Guided Translation",
+      "authors": [
+        "Zahraa Al Sahili",
+        "Ioannis Patras",
+        "Matthew Purver"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed across languages, yet their safety and reasoning capabilities remain predominantly evaluated in English. Translating existing benchmarks offers a scalable approach to multilingual evaluation, but preserving task-specific meaning across languages presents significant challenges, particularly for harmful requests, mathematical reasoning, and conversational interactions. We introduce a reasoning-guided translation framework for constructing multilingual evaluations designed to preserve the structure and intended meaning of diverse benchmark tasks. Our approach separates translation strategy selection from large-scale generation, combining reasoning-guided configuration selection with task-aware validation, targeted repair, and independent quality screening. Using this framework, we develop a source-aligned evaluation collection spanning seven safety, conversational, and mathematical reasoning resources across 11 languages. The resulting collection achieves 99.94\\% coverage of intended item--language pairs in the two subsets requiring repair. Evaluations of open-source LLMs reveal distinct language-dependent vulnerabilities, including inconsistent refusal behaviour and substantial reasoning degradation in lower-resource languages. These findings highlight the importance of task-sensitive benchmark construction and systematic quality assessment for understanding multilingual model behaviour beyond English.",
+      "url": "https://arxiv.org/abs/2610.20221",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8886
+    },
+    {
+      "id": "2610.20334",
+      "title": "TreeFlex: Agents Navigating Their Own Search Trees",
+      "authors": [
+        "Dongzhuo Li",
+        "Fangzhou Cheng",
+        "Weiwei Li",
+        "Kevin Han",
+        "Haixu Ma",
+        "Zhongchang Sun",
+        "Ruiyi Li",
+        "Serena Li",
+        "Xiangjun Fan",
+        "Lizhu Zhang",
+        "Yuandong Tian"
+      ],
+      "abstract": "A ReAct-style agent accumulates observations, intermediate results, and failed attempts in a single context. As this context grows, stale and off-path information consumes its limited capacity and obscures relevant evidence, making focused reasoning increasingly difficult. We introduce TreeFlex, a framework in which the agent's own policy decides where to search. The agent records each intermediate state, with a short summary, as a node in a search tree maintained by the harness. The policy is a single language model that acts in two roles. In the Reflection role, it has a global view of the tree through these summaries and picks a node to resume, together with an instruction. In the Execution role, the harness restores the path that led to that node, and the model carries out the instruction with the usual task tools until it saves a new node or proposes a solution, which Reflection then approves or sends back to another node. Through these choices, the policy decides whether to deepen the current line, branch from or revisit an earlier state, verify a proposal, or stop, without a fixed traversal order or a score for each node. We train navigation, task actions, checkpointing, and proposal review jointly with a tree-aware adaptation of GRPO, using task-level outcome rewards augmented by process rewards. After small-scale RL of a 4B model, with the same active-context limit for all methods, TreeFlex reaches 48.8% accuracy on a challenging deep-research benchmark, versus 41.5% for flat ReAct and 42.8% for FoldAgent, and its Pass@8 is about ten points higher than either. On SWE-bench Verified, with all three systems trained with RL from the same 9B model, TreeFlex resolves 54.9% of tasks, versus 43.3% for FoldAgent and 45.2% for its step-wise variant.",
+      "url": "https://arxiv.org/abs/2610.20334",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8884
+    },
+    {
+      "id": "2610.19951",
+      "title": "AtomSearch: Evidence-Grounded Tree Search for Agent Skill Optimization",
+      "authors": [
+        "Jia Tong",
+        "Senyou Deng",
+        "Min Peng",
+        "Jianfeng Pan"
+      ],
+      "abstract": "Agent skills adapt frozen models through editable external instructions. Revising several rules at once makes changes difficult to inspect, while judging each local edit only by its immediate score can discard useful intermediate states. We introduce AtomSearch, which keeps revision actions local while using subsequent skill states to guide search. Contrastive atomic editing links each primitive rule edit to failed and successful executions, a behavioral hypothesis, and an intended scope. Skill-State Tree Search (STS) evaluates short edit compositions and selectively retains them as executable states that can be revisited and extended. Outcome memory supplies later proposals with observed repair and regression statistics. We evaluate AtomSearch across four tasks and five target models. With deepseek-v4-flash, it exceeds SkillOpt on three of four tasks, including a 9.68-percentage-point gain on LiveMathematicianBench, and SkillOpt's final skills contain 2.3-19.7 times as many characters. In 67% of completed searches, the best validation state passes through an ancestor that was not highest-scoring at its depth. These results show how local rule edits can support the exploration of useful revision paths and yield compact skills, with additional offline evaluations used to explore alternative states.",
+      "url": "https://arxiv.org/abs/2610.19951",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8882
+    },
+    {
+      "id": "2610.19827",
+      "title": "MAPLE: A Multi-Axis Parametric Knowledge Extraction Lens for LLM Evaluation",
+      "authors": [
+        "Minsuh Joo",
+        "Youna Kim",
+        "Choonghyun Park",
+        "Soo Kyung Kim",
+        "Hyunsoo Cho"
+      ],
+      "abstract": "LLMs absorb vast knowledge from training data, yet their inherently probabilistic nature offers no guarantee that this knowledge will surface in their outputs. To bridge this gap, Knowledge Extraction Enhancement (KEE) techniques such as activation steering, decoding adjustments, and prompting modify inference, potentially reinforcing existing predictions or surfacing less accessible answers. Yet their evaluations centered on aggregate accuracy, which obscures diverse effects by collapsing recovered failures and disrupted successes into a single score. We introduce MAPLE, a unified framework for characterizing how KEE techniques affect parametric knowledge extraction. Its diagnostic metrics disentangle these effects at the surface, probability, and beyond-sampling levels by measuring answer recovery and disruption, gold-token rank shifts on unrecovered failures, and recovery of answers missed by fixed-budget sampling. We evaluate six KEE techniques spanning decoding, activation steering, and prompting across three model families: OLMo2, Qwen2.5, and Llama3. Our analysis reveals distinct effects and trade-offs across techniques, highlighting the value of MAPLE for understanding and comparing KEE beyond aggregate accuracy.",
+      "url": "https://arxiv.org/abs/2610.19827",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8881
+    },
+    {
+      "id": "2610.19996",
+      "title": "Gray-Box Hallucination Detection in LLMs with Token Identities",
+      "authors": [
+        "Shaked Goldshtein",
+        "Yitzchak Grunbaum",
+        "Fabrizio Frasca",
+        "Guy Bar-Shalom",
+        "Haggai Maron"
+      ],
+      "abstract": "Large language models often produce fluent but factually incorrect output. Gray-box detectors identify such hallucinations from the token-probability statistics emitted during generation, avoiding the need for white-box access to hidden states that frontier models do not provide. These detectors, however, typically rely only on probability-derived representations and ignore the identities of the candidate tokens. They can therefore observe how uncertain the model is, but not what it is uncertain about. Consequently, they cannot distinguish between a model that is torn between \"big\" and \"small\" and one that is torn between \"big\" and \"huge\" when the two pairs receive the same probability distribution.\n  We introduce GURI (Gray-box Uncertainty Representations with Identity), a lightweight gray-box hallucination detector that combines candidate-token probabilities with per-token vector identifiers. This exposes which alternatives the model considered while preserving the accessibility and transferability of the gray-box setting. Across three open-weight models and three question-answering benchmarks, GURI increases mean test ROC-AUC from 72.09% to 79.09% over a probability-only baseline. On the closed-source GPT-4.1 model, mean ROC-AUC increases from 67.39% to 71.84%. Among the three open-weight models, GURI outperforms transferred probability-only baseline in 17 of 18 directed cross-model transfers without fine-tuning. For the three open-weight models, cross-dataset transfer between HotpotQA and TriviaQA with the model held fixed improves mean ROC-AUC over transferred LOS-Net by 3.76 points.",
+      "url": "https://arxiv.org/abs/2610.19996",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8878
+    },
+    {
+      "id": "2610.19687",
+      "title": "Function-Space Temporal Self-Distillation for Policy Optimization",
+      "authors": [
+        "Aryan Das",
+        "Arnab Bhattacharya",
+        "Vinay Kumar Verma"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) improves reasoning in language models, but scalar outcomes provide coarse supervision over response trajectories. Self-distillation offers denser token-level guidance by comparing an unassisted policy with a feedback-informed self-teacher, yet the teacher evolves with the student, creating unstable targets and motivating additional regularization. We introduce Function-Space Policy Optimization (FSPO), a single-policy framework that combines current privileged adaptation with function-space temporal consolidation. FSPO stores sparse historical next-token distributions as fixed temporal targets, providing temporal separation without maintaining a persistent teacher model. It further introduces privileged disagreement correction to explicitly suppress locally overvalued actions, reliability-adaptive grounding that strengthens reference supervision when self-generated evidence repeatedly fails, and quality and coverage-aware temporal memory that retains verified behaviors and improves privileged demonstrations. Across reasoning and tool-use benchmarks, FSPO achieves the highest average accuracy under a 5-hour training budget, improving over the strongest baseline by approximately 4% points on average while reducing peak memory from about 70 GB to 56 GB on Olmo3-7B-Instruct.",
+      "url": "https://arxiv.org/abs/2610.19687",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8871
+    },
+    {
+      "id": "2610.19741",
+      "title": "Does the Linguistic Register of Thinking Matter? Wenyan as a Compact Reasoning Register for Chinese LLMs",
+      "authors": [
+        "Minghan Li",
+        "Guodong Zhou"
+      ],
+      "abstract": "Visible reasoning traces of Chinese reasoning-oriented LLMs are typically written in modern vernacular Chinese, which may be verbose under limited decoding budgets. We ask whether the linguistic register of reasoning can be used to improve efficiency. We propose Wenyan Thinking, which emits intermediate reasoning in Classical Chinese (wenyanwen) while retaining a short direct-answer output. Starting from modern-Chinese reasoning traces, we rewrite only the reasoning field into wenyan and fine-tune Qwen3-4B-Thinking-2507 on the rewritten supervision. To distinguish register shift from generic compression, we construct a compact modern-Chinese control using the same source data, teacher family, base model, and SFT recipe. Across budget-sensitive evaluations on MMLU-ProX-Lite-ZH, CEVAL, and AGIEval-CN, Wenyan Thinking substantially reduces reasoning length and missing-answer rates under constrained decoding. Compact rewriting explains much of the efficiency gain, while wenyan consistently outperforms the compact modern-Chinese control on the primary benchmark and remains competitive across the additional benchmarks. These results identify linguistic register as a practical design axis for efficient visible reasoning in Chinese LLMs.",
+      "url": "https://arxiv.org/abs/2610.19741",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8864
+    },
+    {
+      "id": "2610.19910",
+      "title": "When Non-Adversarial Noise Hurts Learning: Benchmarking Skill Self-Evolution in Agents",
+      "authors": [
+        "Tao Yu",
+        "Zhongtian Luo",
+        "Yuchen Long",
+        "Yiheng Lu",
+        "Yuxuan Zhou",
+        "Yanpei Gong",
+        "Siyi Cao",
+        "Yuqing Wu",
+        "Haopeng Jin",
+        "Zhenghao Zhang",
+        "Yujia Yang",
+        "Jingmin Zhu",
+        "Yunyun Hou",
+        "Xinming Wang",
+        "Hongzhu Yi",
+        "Jiachen Liu",
+        "Sirui Wang",
+        "Nan Duan",
+        "Yan Huang",
+        "Liang Wang",
+        "Tianjin Huang",
+        "Yanyan Zou"
+      ],
+      "abstract": "Large language model agents increasingly improve by distilling experience into reusable skills, but errors in that experience can persist in learned rules and affect later tasks. Existing evaluations largely examine clean learning or perturbations encountered after skills are frozen, leaving robustness during self-evolution insufficiently understood. We introduce RSE-Bench, to our knowledge the first benchmark for evaluating skill self-evolution under ordinary, non-adversarial noise. It spans four domains and six benchmarks, with controlled perturbations to instructions, environmental evidence, execution records, and outcome--record pairings that preserve the underlying tasks and native scoring rules. The protocol separates noise during learning from input-side noise at evaluation, testing frozen skill stores on held-out tasks. We also introduce \\textsc{RSEClaw}, a method-agnostic framework supporting consistent noise injection and process diagnostics of actual exposure and skill updates. Across three methods and two backbones, noisy learning retains only $25.5\\%$--$42.1\\%$ of the aggregate gain achieved by clean self-evolution, depending on the noise type. Perturbations confined to execution records and outcome--record pairings cause average losses comparable to input-side noise, despite leaving the original executions and evaluations intact. Diagnostics further identify differences in candidate skill text that coexist with small changes in mean held-out performance.",
+      "url": "https://arxiv.org/abs/2610.19910",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8863
+    },
+    {
+      "id": "2610.19890",
+      "title": "Frustratingly Easy Majority Voting Using Length Conditioning",
+      "authors": [
+        "Fiorenzo Parascandolo",
+        "Enver Sangineto",
+        "Xiaoyi Yu",
+        "Wenhui Tan",
+        "Jipei He",
+        "Ruihua Song",
+        "Rita Cucchiara"
+      ],
+      "abstract": "Majority Voting (MV) is a simple and widely used strategy which improves the reasoning accuracy of Large Language Models (LLMs) by allocating additional inference-time computation. Specifically, in MV multiple Chain-of-Thoughts (CoTs) are independently sampled and the most frequent final answer is selected. In this work, we propose Length-Conditioned Majority Voting (LCMV), a Test-Time Training approach which improves MV leveraging an empirical observation that has recently been established in several studies: longer CoTs tend to be associated with a lower probability of correctness. We formulate this inductive bias as a length-conditioned prior probability, which is modeled by a simple logistic function. Moreover, we adapt this prior at test time using only unlabeled testing data and without fine-tuning the LLM. Finally, the adapted prior is used to weight the vote of each sampled answer. Extensive experiments across multiple LLMs and reasoning benchmarks show that LCMV consistently improves over both standard MV and existing length-based and confidence-based aggregation strategies, while retaining the simplicity and model-agnostic nature of MV. Our code is available at: https://github.com/aimagelab/LCMV.",
+      "url": "https://arxiv.org/abs/2610.19890",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-14",
+      "github_url": "https://github.com/aimagelab/LCMV.",
+      "score": 0.8858
+    },
+    {
+      "id": "2610.20483",
+      "title": "Decoupled Marginal Sharpening for Training-Free Inference-Time Scaling",
+      "authors": [
+        "Weixin Wang",
+        "Wei Deng",
+        "Anderson Schneider",
+        "Yuriy Nevmyvaka",
+        "Pan Xu",
+        "Andrew Bennett"
+      ],
+      "abstract": "We study how to improve LLM reasoning at inference time without updating model weights or using external reward models. Recent reward-free power-sampling methods define the sequence-level power target $π_α(y\\mid x)\\propto p_0(y\\mid x)^α$, where $α>1$, which increases the relative probability of completions that are already likely under the base model. Existing methods use Metropolis--Hastings or Sequential Monte Carlo (SMC) to approximately sample from this target. However, two challenges arise at different levels. At the target level, full-sequence sharpening can concentrate probability on a few exact reasoning--answer trajectories, suppressing alternative paths that support the same answer. At the sampler level, finite-particle SMC can suffer from path collapse when resampling repeatedly duplicates a few high-weight prefixes. To address these challenges, we propose Decoupled Marginal Sharpening (DMS), which separately controls how strongly the model favors particular reasoning paths and how strongly it favors final answers after aggregating support across those paths. At the target level, DMS first samples from a sharpened reasoning distribution, then marginalizes the model's answer probabilities over the resulting weighted reasoning population and sharpens the induced answer marginal. Separate exponents allow mild reasoning sharpening to encourage exploration of diverse paths, followed by stronger answer-marginal sharpening to concentrate probability on answers with greater aggregate support across those paths. At the sampler level, we develop Fully Adapted Annealed SMC, which combines an annealed sequence of power targets with locally fully adapted proposals and predictive ancestor resampling. Experiments on MATH500, GPQA-Diamond, HumanEval, and AIME24/25 across three base models show that DMS achieves the highest mean pass@1 among the compared methods in all tasks.",
+      "url": "https://arxiv.org/abs/2610.20483",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-14",
+      "score": 0.8853
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
