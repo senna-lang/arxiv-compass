@@ -18,7 +18,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-14",
-      "score": 0.9002
+      "score": 0.9002,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 12,
+        "rank_delta": -11,
+        "relevance_probability": 0.91855189204216
+      }
     },
     {
       "id": "2610.20350",
@@ -36,7 +42,13 @@
       ],
       "submitted": "2026-10-14",
       "github_url": "https://github.com/Venomrko/lspo.",
-      "score": 0.8933
+      "score": 0.8933,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 15,
+        "rank_delta": -13,
+        "relevance_probability": 0.8326112627983093
+      }
     },
     {
       "id": "2610.20099",
@@ -57,7 +69,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8932
+      "score": 0.8932,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 5,
+        "rank_delta": -2,
+        "relevance_probability": 0.9882581830024719
+      }
     },
     {
       "id": "2610.20401",
@@ -79,7 +97,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8916
+      "score": 0.8916,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 13,
+        "rank_delta": -9,
+        "relevance_probability": 0.8978489935398102
+      }
     },
     {
       "id": "2610.20116",
@@ -93,7 +117,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8913
+      "score": 0.8913,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 1,
+        "rank_delta": 4,
+        "relevance_probability": 0.9984518587589264
+      }
     },
     {
       "id": "2610.20328",
@@ -110,7 +140,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8911
+      "score": 0.8911,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 14,
+        "rank_delta": -8,
+        "relevance_probability": 0.8700670301914215
+      }
     },
     {
       "id": "2610.19928",
@@ -133,7 +169,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-14",
-      "score": 0.891
+      "score": 0.891,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 3,
+        "rank_delta": 4,
+        "relevance_probability": 0.9933489561080933
+      }
     },
     {
       "id": "2610.20497",
@@ -159,7 +201,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8909
+      "score": 0.8909,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 11,
+        "rank_delta": -3,
+        "relevance_probability": 0.9222819209098816
+      }
     },
     {
       "id": "2610.20057",
@@ -179,7 +227,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.89
+      "score": 0.89,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 7,
+        "rank_delta": 2,
+        "relevance_probability": 0.9723434150218964
+      }
     },
     {
       "id": "2610.20532",
@@ -202,7 +256,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8889
+      "score": 0.8889,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 9,
+        "rank_delta": 1,
+        "relevance_probability": 0.9475631713867188
+      }
     },
     {
       "id": "2610.20221",
@@ -219,7 +279,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8886
+      "score": 0.8886,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 20,
+        "rank_delta": -9,
+        "relevance_probability": 0.24266888201236725
+      }
     },
     {
       "id": "2610.20334",
@@ -244,7 +310,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8884
+      "score": 0.8884,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 2,
+        "rank_delta": 10,
+        "relevance_probability": 0.9979369938373566
+      }
     },
     {
       "id": "2610.19951",
@@ -263,7 +335,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8882
+      "score": 0.8882,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 4,
+        "rank_delta": 9,
+        "relevance_probability": 0.9887003898620605
+      }
     },
     {
       "id": "2610.19827",
@@ -282,7 +360,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8881
+      "score": 0.8881,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 16,
+        "rank_delta": -2,
+        "relevance_probability": 0.7415424585342407
+      }
     },
     {
       "id": "2610.19996",
@@ -300,7 +384,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8878
+      "score": 0.8878,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 19,
+        "rank_delta": -4,
+        "relevance_probability": 0.39480598270893097
+      }
     },
     {
       "id": "2610.19687",
@@ -319,7 +409,13 @@
         "stat.ML"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8871
+      "score": 0.8871,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 18,
+        "rank_delta": -2,
+        "relevance_probability": 0.4387703388929367
+      }
     },
     {
       "id": "2610.19741",
@@ -335,7 +431,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8864
+      "score": 0.8864,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 6,
+        "rank_delta": 11,
+        "relevance_probability": 0.9805581271648407
+      }
     },
     {
       "id": "2610.19910",
@@ -370,7 +472,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8863
+      "score": 0.8863,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 10,
+        "rank_delta": 8,
+        "relevance_probability": 0.9432550072669983
+      }
     },
     {
       "id": "2610.19890",
@@ -392,7 +500,13 @@
       ],
       "submitted": "2026-10-14",
       "github_url": "https://github.com/aimagelab/LCMV.",
-      "score": 0.8858
+      "score": 0.8858,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 17,
+        "rank_delta": 2,
+        "relevance_probability": 0.6067657172679901
+      }
     },
     {
       "id": "2610.20483",
@@ -411,7 +525,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-14",
-      "score": 0.8853
+      "score": 0.8853,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 8,
+        "rank_delta": 12,
+        "relevance_probability": 0.9659774303436279
+      }
     }
   ],
   "meta": {
@@ -420,6 +540,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
