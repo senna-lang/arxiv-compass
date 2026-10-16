@@ -25,7 +25,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8951
+      "score": 0.8951,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 3,
+        "rank_delta": -2,
+        "relevance_probability": 0.9961536824703217
+      }
     },
     {
       "id": "2610.22273",
@@ -46,7 +52,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8949
+      "score": 0.8949,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 10,
+        "rank_delta": -8,
+        "relevance_probability": 0.9791280329227448
+      }
     },
     {
       "id": "2610.22344",
@@ -71,7 +83,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8932
+      "score": 0.8932,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 15,
+        "rank_delta": -12,
+        "relevance_probability": 0.9432550072669983
+      }
     },
     {
       "id": "2610.21900",
@@ -87,7 +105,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8922
+      "score": 0.8922,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 4,
+        "rank_delta": 0,
+        "relevance_probability": 0.992840975522995
+      }
     },
     {
       "id": "2610.22209",
@@ -106,7 +130,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8917
+      "score": 0.8917,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 1,
+        "rank_delta": 4,
+        "relevance_probability": 0.9978975355625153
+      }
     },
     {
       "id": "2610.22031",
@@ -123,7 +153,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8914
+      "score": 0.8914,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 13,
+        "rank_delta": -7,
+        "relevance_probability": 0.9647983908653259
+      }
     },
     {
       "id": "2610.21405",
@@ -140,7 +176,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.891
+      "score": 0.891,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 14,
+        "rank_delta": -7,
+        "relevance_probability": 0.9567553699016571
+      }
     },
     {
       "id": "2610.21427",
@@ -165,7 +207,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8906
+      "score": 0.8906,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 8,
+        "rank_delta": 0,
+        "relevance_probability": 0.9849795997142792
+      }
     },
     {
       "id": "2610.22080",
@@ -185,7 +233,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8894
+      "score": 0.8894,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 9,
+        "rank_delta": 0,
+        "relevance_probability": 0.9849795997142792
+      }
     },
     {
       "id": "2610.22194",
@@ -220,7 +274,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8893
+      "score": 0.8893,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 17,
+        "rank_delta": -7,
+        "relevance_probability": 0.9199530482292175
+      }
     },
     {
       "id": "2610.21412",
@@ -242,7 +302,13 @@
       ],
       "submitted": "2026-10-15",
       "github_url": "https://github.com/JevAgentHarness/JevAgentHarness.",
-      "score": 0.8891
+      "score": 0.8891,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 6,
+        "rank_delta": 5,
+        "relevance_probability": 0.991160124540329
+      }
     },
     {
       "id": "2610.22019",
@@ -271,7 +337,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8884
+      "score": 0.8884,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 2,
+        "rank_delta": 10,
+        "relevance_probability": 0.9977491796016693
+      }
     },
     {
       "id": "2610.22029",
@@ -290,7 +362,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8865
+      "score": 0.8865,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 7,
+        "rank_delta": 6,
+        "relevance_probability": 0.9855450689792633
+      }
     },
     {
       "id": "2610.22192",
@@ -312,7 +390,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8859
+      "score": 0.8859,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 11,
+        "rank_delta": 3,
+        "relevance_probability": 0.9723434150218964
+      }
     },
     {
       "id": "2610.22160",
@@ -329,7 +413,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8855
+      "score": 0.8855,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 19,
+        "rank_delta": -4,
+        "relevance_probability": 0.44149892032146454
+      }
     },
     {
       "id": "2610.21553",
@@ -346,7 +436,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8843
+      "score": 0.8843,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 20,
+        "rank_delta": -4,
+        "relevance_probability": 0.14924417436122894
+      }
     },
     {
       "id": "2610.22290",
@@ -362,7 +458,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8835
+      "score": 0.8835,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 18,
+        "rank_delta": -1,
+        "relevance_probability": 0.7549149990081787
+      }
     },
     {
       "id": "2610.22244",
@@ -380,7 +482,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8835
+      "score": 0.8835,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 5,
+        "rank_delta": 13,
+        "relevance_probability": 0.992840975522995
+      }
     },
     {
       "id": "2610.21640",
@@ -403,7 +511,13 @@
         "cs.DC"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8829
+      "score": 0.8829,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 12,
+        "rank_delta": 7,
+        "relevance_probability": 0.9698478579521179
+      }
     },
     {
       "id": "2610.22289",
@@ -417,7 +531,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-15",
-      "score": 0.8825
+      "score": 0.8825,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 16,
+        "rank_delta": 4,
+        "relevance_probability": 0.9353692531585693
+      }
     }
   ],
   "meta": {
@@ -426,6 +546,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
