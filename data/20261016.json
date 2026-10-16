@@ -1,0 +1,431 @@
+{
+  "date": "2026-10-16",
+  "collected_at": "2026-10-16T13:05:38.883812+09:00",
+  "papers": [
+    {
+      "id": "2610.21496",
+      "title": "OPRD: On-Policy Reminder Distillation for Long-Horizon Coding Agents",
+      "authors": [
+        "Yuechen Luo",
+        "Zhiyi Lai",
+        "Miao Ziqi",
+        "Zihang Xu",
+        "Jingxuan Xu",
+        "Songwei Yu",
+        "Wenqiang Zhu",
+        "Weihao Li",
+        "Junhao Fan",
+        "Haoyang Huang",
+        "Yanan Wu",
+        "Ken Deng"
+      ],
+      "abstract": "Reliable repository-level coding requires agents not only to generate correct code but also to preserve constraints and respond to tool feedback across long interactions. However, our diagnostic analysis shows that agents often fail to act on relevant information already available in context, while final Pass/Fail outcomes provide only sparse process supervision. We introduce On-Policy Reminder Distillation (OPRD), which combines Multi-Scope Reminder supervision with outcome-based routing on reminder-free student rollouts. Successful rollouts provide autoregressive self-imitation targets, whereas failed rollouts receive Reminder-conditioned reverse-KL supervision from a teacher that re-evaluates the same student-generated prefixes. A Global Reminder converts final-test diagnostics into trajectory-level guidance, while Turn-local Reminders apply only to the next decision following the relevant environment observation. The teacher and student share a two-stage initialization from Coding SFT and Instruction-Following (IF) SFT. At inference, the student operates without Reminders. On SWE-bench Verified, SWE-bench Pro, and SWE-bench Multilingual, OPRD improves the benchmark-averaged task resolution rate by 11.3 points over the open-source Qwen3.5-4B base model. Under the same diagnostic protocol, it reduces the aggregate error-event count from 446 to 222, a 50.2% reduction.",
+      "url": "https://arxiv.org/abs/2610.21496",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8951
+    },
+    {
+      "id": "2610.22273",
+      "title": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries",
+      "authors": [
+        "Anikait Singh",
+        "Teresa Zhang",
+        "Yoonho Lee",
+        "Roshen Sanjay Nair",
+        "Aviral Kumar",
+        "Chelsea Finn"
+      ],
+      "abstract": "Reasoning over long document contexts remains a challenge for large language models (LLMs). Standard retrieval methods are inherently reactive, bottlenecking agents with complex, cross-document reasoning at inference time, while precomputed structures like knowledge graphs often fall short because they rely on rigid heuristics. Instead, can we allow agents to perform anticipatory directed curation: learning to proactively reorganize unstructured corpora prior to inference to efficiently serve diverse future queries. We build on a key asymmetry in modern agentic harnesses (e.g., Claude Code): while LLM agents are adept at navigating existing filesystems to solve an immediate task, they are rarely trained to construct reusable workspaces for future use. To instantiate this capability, we introduce Librarian Agents, a framework in which a builder agent transforms raw documents into a hierarchical filesystem of synthetic files and reference links, which forms a workspace tailored for a downstream answering agent. We formulate workspace construction as a Markov decision process and optimize the builder policy via reinforcement learning to directly maximize downstream answering accuracy. Empirically, Librarian Agents outperforms the strongest retrieval and precomputation baselines by 33 percentage points on BrowseComp-Plus, amortizes upfront construction costs across repeated queries, and generalizes zero-shot to unseen domains on BRIGHT with a 31-point average accuracy improvement.",
+      "url": "https://arxiv.org/abs/2610.22273",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8949
+    },
+    {
+      "id": "2610.22344",
+      "title": "MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering",
+      "authors": [
+        "Shangheng Du",
+        "Jinxin Shi",
+        "Shuaiyu Zhang",
+        "Yiming Wu",
+        "Junpeng Zhao",
+        "Shiyang Feng",
+        "Xin Li",
+        "Liang He",
+        "Xiangchao Yan",
+        "Bo Zhang"
+      ],
+      "abstract": "Large language models (LLMs) are expanding from assisting scientific research and engineering to autonomously developing and improving AI systems, advancing AI for AI (AI4AI) as a pathway toward recursive self-improvement (RSI). Workflow-driven machine learning engineering (MLE) systems provide a practical path toward this pursuit through complex orchestration that manages long-horizon experimentation, while recent MLE systems adopt model-directed interaction, allowing models to autonomously organize experiments and adapt optimization strategies based on execution feedback. However, feedback from each experiment reflects several preceding decisions, and a long MLE run contains many such costly experiments. Training must therefore select useful supervision from long interaction trajectories and learn from intermediate outcomes. We propose a post-training method for autonomous long-horizon MLE optimization and apply it to train MLExpert, a 35B Mixture-of-Experts agentic model. We design the Kaggle-MLE Factory to construct executable tasks and an interaction harness for model-directed experimentation. Hierarchical agentic SFT transfers general tool-use and coding capabilities to MLE through outcome-guided supervision. Windowed Interaction RL (WIRL) treats the multi-turn decisions between successive experiment results as an execution window and assigns it a shared outcome-based reward. Asynchronous collection and policy correction support policy updates before the trajectory ends. On MLE-Bench Lite, MLExpert improves the average medal rate of the base model from 37.9% to 72.7%, achieving performance comparable to larger frontier models such as Kimi-K3 and GLM-5.3. Further experiments show that MLExpert improves performance on NatureBench Lite, agent scaffold optimization, and algorithm optimization, suggesting that the learned optimization capability generalizes to other tasks.",
+      "url": "https://arxiv.org/abs/2610.22344",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8932
+    },
+    {
+      "id": "2610.21900",
+      "title": "TEM: Temporal State Tracking Memory for Large Language Model Agents",
+      "authors": [
+        "Pengfeng Song",
+        "Yunkai Zhuang",
+        "Liye Shi"
+      ],
+      "abstract": "An agent's memory must remain useful as information changes across conversations. A new fact may replace an earlier value without making that value irrelevant to a later question. We present Temporal State Tracking Memory (TEM), a training-free framework for tracking these changes. TEM stores facts as versioned records linked to their sources. It retrieves relevant versions, places them in source order and labels historical records before passing the evidence to the answer model. Event memory and original dialogue turns provide details missing from structured facts. We evaluated TEM on 420 questions drawn from 600 sessions involving 60 personas. Across four open-weight models, key-entity hit rates reached 75.71-97.62% overall and 96.67-100.00% on the historical-residence subset. Adding historical labels to otherwise identical, source-ordered facts increased overall hit rates by 17.14-55.95 percentage points. The evidence was compact: 94-118 tokens per answer, or 48.75-56.73% less than session-aware retrieval-augmented generation (RAG). A further evaluation on 1,540 LoCoMo questions tested hybrid memory under a fixed evidence budget. TEM exceeded session-aware RAG with both backbones; conservative score differences were 7.92 and 10.58 percentage points. The results support preserving fact versions and exposing their temporal status to the generator when answering questions about repeatedly updated information.",
+      "url": "https://arxiv.org/abs/2610.21900",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8922
+    },
+    {
+      "id": "2610.22209",
+      "title": "Beyond Downstream QA: Rethinking How We Evaluate Agent Memory",
+      "authors": [
+        "Sebastian-Antonio Toma",
+        "Jean de Kernier",
+        "Mike Ply",
+        "Oliviu Matei"
+      ],
+      "abstract": "Agent memory benchmarks evaluate whether an agent's responses reflect correct knowledge, measuring downstream question-answering accuracy as a proxy for memory quality. We show this evaluation paradigm is incomplete: it conflates memory correctness with retrieval and generation quality, producing both false positives where correct responses mask broken memory and false negatives where incorrect responses blame correct memory for retrieval failures. We introduce FEB-30, a benchmark of 30 fact-evolution trajectories spanning 6 diagnostic categories and 3 difficulty levels, constructed via paradigm inversion: documents are generated from known fact trajectories, yielding deterministic ground truth without human annotation. Each trajectory defines how a fact should evolve across multi-author artifacts (documents, emails, conversations), enabling direct inspection of the memory store after each ingestion step. Applying FEB-30 to a representative memory system, we demonstrate that intrinsic and extrinsic evaluation diverge by an average of 16 percentage points, with 44% of trajectories exceeding meaningful divergence thresholds. Diagnostic decomposition reveals that the system correctly classifies memory operations (create, update, reinforce, supersede) only 20% of the time, a failure entirely invisible to extrinsic evaluation, and that failure modes differ systematically by category and difficulty. We release the benchmark, document generation pipeline, and scoring framework to support reproducible evaluation of agent memory systems.",
+      "url": "https://arxiv.org/abs/2610.22209",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8917
+    },
+    {
+      "id": "2610.22031",
+      "title": "GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents",
+      "authors": [
+        "Yaxin Ma",
+        "Wenbo Zhang",
+        "Satya Krishna Pothapragada",
+        "Alina Zare"
+      ],
+      "abstract": "Behavioral consistency across repeated executions provides an informative signal for assessing the reliability of large language model (LLM) agents. However, existing approaches typically summarize consistency with a single task-level score, without identifying where behavioral differences occur or whether actions are compared under equivalent decision contexts. We propose a graph-based framework for fine-grained behavioral consistency measurement and uncertainty quantification. Given multiple rollouts of the same task, we merge equivalent states into a directed, action-labeled graph, enabling action comparisons at shared decision states. We introduce node-level and global measures of action consistency, using the global consistency score as a proxy for uncertainty to predict task success or failure. Experiments across three LLMs on ALFWorld, AppWorld, and WebShop demonstrate that our measure is positively associated with task success and achieves an average AUROC of 0.811 for task-success prediction, outperforming the strongest behavioral-consistency baseline (0.729) and verbalized confidence (0.769). These results highlight the effectiveness of state-conditioned behavioral consistency and pinpoint where agent actions agree.",
+      "url": "https://arxiv.org/abs/2610.22031",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8914
+    },
+    {
+      "id": "2610.21405",
+      "title": "MemCut: Every Secret Leaves a Trail in the Long-Term Memory of LLM Agents",
+      "authors": [
+        "Cheng Zhang",
+        "Xuanning Cao",
+        "Zhicheng Zheng",
+        "Hui Xiong"
+      ],
+      "abstract": "Long-term memory has become a crucial component of large language model (LLM) agents, with most research focusing on retrieving relevant information accurately and efficiently. However, a dependable memory system must also forget sensitive user data upon request. To evaluate this capability, we introduce MemCut, a systematic benchmark for user-requested forgetting. Its 456 hand-designed secrets in long-horizon conversations have fully annotated evidence trails to test recovery after deletion, including from messages that never state the secrets directly. We propose two recovery metrics. Native recovery measures reader success through the system's retrieval, whereas residual recovery measures the same reader's success when directly given surviving objects traced to annotated disclosures or evidence. We establish three reference deletion baselines to test how far existing retrievers and write models support forgetting across five memory designs and four LLMs. Disclosure removal reduces native recovery far more than residual recovery. LLM-guided deletion of ten additional turns from twenty retrieval candidates leaves 39-76% residual recovery. Subset sweeps (144 facts, three systems, two models) show that widening the pool at a fixed budget reduces residual recovery more than deleting all original candidates. These sweeps identify candidate coverage as a bottleneck in the reference baselines.",
+      "url": "https://arxiv.org/abs/2610.21405",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.891
+    },
+    {
+      "id": "2610.21427",
+      "title": "Learning from Interaction Experience via Localized Context Distillation",
+      "authors": [
+        "Zhezheng Hao",
+        "Yongkang Yang",
+        "Xilin Xia",
+        "Jiarui Yu",
+        "Yi Liu",
+        "Fanjunduo Wei",
+        "Peijie Dong",
+        "Tianfu Wang",
+        "Qiang Lin",
+        "Can Wang",
+        "Hande Dong",
+        "Jiawei Chen"
+      ],
+      "abstract": "Learning from interaction experience is essential for enabling large language models to continually improve during deployment. Context distillation offers a promising path: privileged information extracted from experience is provided to a teacher, whose behavior is then distilled into a student model that has no access to it. However, both existing forms of context distillation have limitations. Off-policy context distillation trains the student on teacher-generated trajectories and thus suffers from exposure bias; whereas on-policy context distillation trains on the student's own rollouts, whose states are often uninformative and fail to convey behaviors the student cannot yet produce. To resolve this dilemma, we introduce Localized Context Distillation (LoCD). LoCD first localizes the critical spans of a student trajectory that require revision. The teacher then regenerates only these spans from the student's own prefix, and the student is trained on the regenerated segments. LoCD thereby concentrates learning on the most informative states while keeping exposure bias low. Extensive experiments across math reasoning, code generation, and agent tasks demonstrate that LoCD consistently outperforms strong baselines and achieves more stable training with smaller and sparser parameter updates.",
+      "url": "https://arxiv.org/abs/2610.21427",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8906
+    },
+    {
+      "id": "2610.22080",
+      "title": "Learning from Unverified Peers via Shared Residual Distillation",
+      "authors": [
+        "Feiyang Chen",
+        "Runze Ma",
+        "Zichen Wang",
+        "Jiong Lou",
+        "Zihan Wang",
+        "Shuangjia Zheng",
+        "Jie Li"
+      ],
+      "abstract": "A language model can generate several solutions to the same problem, some leading to correct answers and others to incorrect ones. Many post-training methods turn these trajectories into learning signals using supervision from reference answers, verifiable feedback, or external teachers. Without such supervision, learning from the model's own generations becomes less straightforward, as their correctness cannot be reliably assessed. An incorrect solution may nevertheless contain useful intermediate reasoning, so its value as supervision need not be determined solely by its final answer. Can a model improve by learning from its unverified peer solutions without first determining which are correct?\n  We propose Shared Residual Distillation (SRD), an on-policy self-distillation method that learns from the model's own unverified peer trajectories. SRD compares how peers change the prediction distribution relative to a control, retaining adjustments that agree in direction and are conservative in magnitude. This yields supervision without treating any complete solution as correct, and the trained model requires no peers at inference time. Starting from the corresponding base models, SRD raises mean AIME24--26 avg@12 from 11.02 to 16.20 on Qwen3-1.7B, from 19.07 to 45.46 on Qwen3-4B, and from 21.39 to 54.44 on Qwen3-8B. Controlled ablations support the value of the shared-residual construction, and we observe no degradation relative to the base models on two general-capability benchmarks.",
+      "url": "https://arxiv.org/abs/2610.22080",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8894
+    },
+    {
+      "id": "2610.22194",
+      "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning",
+      "authors": [
+        "Bingxiang He",
+        "Pengqi Sun",
+        "Shihao Peng",
+        "Shaoxuan Li",
+        "Huiyu Xiao",
+        "Hongjian Shi",
+        "Zixuan Fu",
+        "Ziqing Qiao",
+        "Yuxin Zuo",
+        "Cheng Qian",
+        "Xinqiang Yu",
+        "Jiayi Li",
+        "Xiusi Chen",
+        "Yizhen Song",
+        "Xiangyang Wang",
+        "Iofai Lei",
+        "Yudong Wang",
+        "Ning Ding",
+        "Zhiyuan Liu",
+        "Xiaozhi Wang",
+        "Chaojun Xiao"
+      ],
+      "abstract": "Language model agents increasingly automate post-training, but when given the full training stack they converge on supervised fine-tuning and spend most effort revising training data. Existing systems give the agent one kind of control, selecting rows from a fixed pool or calling a generator, whereas a human data engineer adjusts proportions, prunes, repairs, replaces and synthesizes the data. We design a data action space for these changes and ask whether an automated system can make the full range rather than one of them, and what structure that requires. We first run this loop with a single agent, and it reaches only one action, adjusting category proportions, while its context fills with execution output and is discarded mid-search. We therefore introduce \\textbf{AutoSFT}, a multi-agent system where a meta agent separates execution from analysis, gathers proposals from independent angles, and calls a synthesis subagent for capabilities the pool cannot cover, with the model, the trainer, and the budget fixed within each comparison. Adding each component in turn helps: the executor halves context loss, the analysis subagents lift the best IFEval by $+6.5$, and synthesis adds $+3.4$ IFEval and $+2.9$ IFBench. The same loop transfers to code, where analysis adds $+3.7$ MBPP+ over a single agent that does not improve. Every result comes from runs that retrain from the base model each round, so each component's effect is individually attributable. Our findings suggest that automating SFT data research depends more on covering diverse data actions than on a stronger single action.",
+      "url": "https://arxiv.org/abs/2610.22194",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8893
+    },
+    {
+      "id": "2610.21412",
+      "title": "JevAgentHarness: Benchmarking, Deploying and Training Decision Models That Share Control with LLMs",
+      "authors": [
+        "Kunlun Zhu",
+        "Tao Feng",
+        "Xu Han",
+        "Heng Wang",
+        "Ling Yang",
+        "Xiangru Tang",
+        "Jiaxuan You",
+        "Heng Ji"
+      ],
+      "abstract": "Large language model (LLM) agents now fix software, operate computers and serve customers, but their harnesses, the programs that run them, call a large LLM at every step, which makes long tasks slow and costly. Most of these calls end in a multiple-choice decision, such as which tool to call next. Decision models such as Jev answer these questions directly, at a fraction of an LLM call's time and price. We ask how a harness can delegate these decisions to a decision model with little loss of success. To evaluate decision models in agentic tasks, we build AgentDecisionBench, which tests them from isolated questions up to control of a running agent, on public benchmarks and our DecisionGym environment. The decision model most accurate on isolated questions solved only 69.5% of agent tasks, and without a fitted confidence threshold, delegating tool choices lowered success by 19.0 points. Building on these findings, we then design JevAgentHarness, which fits this threshold for each choice on the agent's own trajectories and lets the LLM decide below it. Because existing decision models never see the states an agent reaches after its own mistakes, we train AgentDecision-4B, an open 4B model, on such states with Jev's answers as labels. On tasks unlike its training data, the agent solved 91.5% of them with AgentDecision-4B and 82.0% with Jev. On tasks like their training data, 4B models trained this way made agents 81.1-89.0% cheaper and up to 2.5 times faster, without losing 3 or more points of task success. The models, data, and harness will be released at https://github.com/JevAgentHarness/JevAgentHarness.",
+      "url": "https://arxiv.org/abs/2610.21412",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "github_url": "https://github.com/JevAgentHarness/JevAgentHarness.",
+      "score": 0.8891
+    },
+    {
+      "id": "2610.22019",
+      "title": "Priming Base Models for Agentic Post-Training: An Open Midtraining Recipe",
+      "authors": [
+        "Soumye Singhal",
+        "Joseph Jennings",
+        "Ka Shun Shum",
+        "Alexander Bukharin",
+        "Khushi Bhardwaj",
+        "Zirui Liu",
+        "Venkat Srinivasan",
+        "Jonathan Li",
+        "Yash Jain",
+        "Kezhi Kong",
+        "Markus Kliegl",
+        "Olivier Delalleau",
+        "Sanjeev Satheesh",
+        "Mostofa Patwary"
+      ],
+      "abstract": "Frontier models, general-purpose and domain-specific alike, now include a midtraining stage between pretraining and post-training, but little has been published about how this stage is built. We present an open midtraining recipe that primes base models for agentic post-training, and we show its effectiveness on two Nemotron models of different sizes. Pretraining typically runs at short context and sees almost no agent interactions, while SFT data is mostly synthetic, and very long SFT stages can hurt the model's later RL trainability. Our midtraining stage sits between the two. It trains at 256K context for hundreds of billions of tokens on a diverse mixture of natural software-engineering data like packed repositories, pull requests, commit histories, and build logs together with a small share of agentic traces. On Nemotron 3.5 Lightning, 500B midtraining tokens improve SWE-bench Verified from 60.7 to 64.5, SWE-bench Multilingual from 55.8 to 62.8, and SWE-bench Pro from 32.0 to 35.5 after identical full SFT. On the larger Nemotron 3.5 Super, 280B midtraining tokens improve DeepSWE, a harder benchmark of long-horizon tasks, from 11.7 to 15.7 and SWE-bench Verified from 72.9 to 74.3 after identical full SFT. Midtraining also improves robustness across agent harnesses on both models. We report the ablations behind the recipe and an evaluation protocol built on short fixed SFT runs, since base-model proxy metrics did not correlate reliably with post-training results.",
+      "url": "https://arxiv.org/abs/2610.22019",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8884
+    },
+    {
+      "id": "2610.22029",
+      "title": "Selection Is Not Learning: Choosing Model Futures",
+      "authors": [
+        "Haoyi Yang",
+        "Kshitij Mishra",
+        "Nils Lukas",
+        "Salem Lahlou"
+      ],
+      "abstract": "Self-evolving language models train on tasks they generate, so every round must decide which updated model the next round inherits. Current loops such as R-Zero, Agent0, and Skill Self-Play make this decision through the task, admitting tasks that look learnable and inheriting every resulting update. We identify a selection-to-update gap in these loops, where a task that looks learnable need not produce a useful update. Most updates on verified tasks fail to make correct answers more likely, yet these loops inherit them all. HeirCommit freezes the updated model and uses fresh evaluation questions to decide whether to inherit it or retain the current model. EvoHeir separates parameter inheritance from experience inheritance, using current and archived experience to repair failures and preserve successes before final confirmation. Our analysis characterizes selection-induced optimism and decomposes regret into selection, absorption, and confirmation errors. HeirCommit cuts the harmful share of accepted updates by 68-83% relative to random inheritance at the same acceptance rate. Across four backbones, EvoHeir achieves the best mathematics and general-reasoning averages, raising the math average by 5.3% relative to the strongest baseline, Agent0. The framework lets useful experience persist even when the model that produced it is not inherited.",
+      "url": "https://arxiv.org/abs/2610.22029",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8865
+    },
+    {
+      "id": "2610.22192",
+      "title": "Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine",
+      "authors": [
+        "Junyao Yang",
+        "Zongxia Li",
+        "Yucheng Shi",
+        "Zhongzhi Li",
+        "Ruhan Wang",
+        "Ruiwen Zhou",
+        "Haitao Mi",
+        "Shuicheng Yan",
+        "Leowei Liang"
+      ],
+      "abstract": "Converting verifier outcomes into useful policy updates and partial progress into complete task resolution is crucial for terminal agents. We present Terminal-RSI, which alternates Recursive Self-Rewrite (RSR) of verified trajectories with critic-inheriting Recursive Policy-Refine (RPR). We formulate Turn-Boundary Skip-Observation GAE (TB-GAE) to retain token-specific baselines while applying decay across interaction turns. Family Dense Reward (FDR) calibrates semantic progress across task families; Success-Prioritized Reward (SPR) separates strict success from bounded partial credit. A Warm-up Critic Model, recursive critic handoff, and stage-specific learning rates coordinate the two refinement phases. The five-stage sequence from Qwen3.8-27B base model through RSR-1, RPR-1, RSR-2, and RPR-2 yields Terminal-RSI-27B: 19.84% on Terminal-Bench 4.0, 86.52% on Terminal-Bench 2.1, 16.95% on Terminal-Bench 3.0, and 79.00% on Terminal-Bench Hard. On LHTB, process reward rises from 0.21 to 0.37 and strict completion from 0/46 to 5/46; SWR100 success doubles from 3.00% to 6.00%. By recursively coupling verified trajectory rewriting with critic-inheriting policy refinement, each retained stage consolidates discovered behaviors and progressively advances the agent from partial local repairs to strict terminal verification.",
+      "url": "https://arxiv.org/abs/2610.22192",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8859
+    },
+    {
+      "id": "2610.22160",
+      "title": "EMO: A Closed-Loop Test-Time Computation Framework via Alternating Context Optimization and Logits Steering",
+      "authors": [
+        "Wei Xia",
+        "Yehui Tang",
+        "Zhi-Hong Deng"
+      ],
+      "abstract": "Test-time context optimization adapts frozen language models through textual feedback, but ordinary conditional generation provides no separate control over how strongly to reinforce the distributional changes induced by a context update. We introduce EMO, a training-free framework inspired by expectation--maximization that alternates question-specific context estimation (E-step) and distribution refinement (M-step). The E-step revises a system context using textual gradients from an external judge without access to gold answers. The M-step contrasts next-token distributions under the revised and preceding contexts at a shared prefix to construct a confidence-constrained logit correction. Feedback on the steered response drives the next context update, coupling adaptation across rounds with intervention within each generation. Theoretically, we connect parameter and context optimization through a shared target-KL objective and additive logit representations, and derive the steering vector from context-induced logit displacements. Under context-improvement and faithful-steering assumptions, we prove a one-round decrease in target KL divergence for sufficiently small steering strength. Under greedy decoding across eight models and six benchmarks, EMO improves the zero-shot baseline in 39 of 40 aggregated settings, averaging $+9.10$ percentage points. With the same judge, it adds $+1.53$ points on average over context-only optimization (TextGrad), with consistent MMLU-Pro gains across models. At matched target-model generation budgets, accuracy advantages over best-of-$N$ are strongest on Llama, while oracle coverage is higher in most comparisons despite fewer candidates. The coverage--selection gap motivates allocating test-time computation jointly to candidate generation and verification.",
+      "url": "https://arxiv.org/abs/2610.22160",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8855
+    },
+    {
+      "id": "2610.21553",
+      "title": "Writability and the Pathway: A Controlled Study of Knowledge Injection into Addressed Memory",
+      "authors": [
+        "Wei Gao",
+        "Cheng Tian",
+        "Duan Yang",
+        "Jianqing Yin"
+      ],
+      "abstract": "Addressed conditional memory provides a local surface for post-hoc knowledge injection, but a successful write need not transfer to a new question or preserve untargeted behavior. This study combines a controlled GPT-2 comparison with production-memory experiments on Qwen3.8-Flash-Next-FP8 and DeepSeek-V4.1-Flash. Newly initialized modules attached to frozen GPT-2 are tested in a 2 x 2 design: row-only versus row-plus-projection updates, each with or without fixed module-residual anchoring. All arms reproduce 50 trained completions in each of three sampling seeds. Natural-question target-string hits average 5.3% for both row-only arms, 28.7% for unanchored projection updates, and 22.0% with anchoring, while strict answer scores remain zero. Anchoring lowers measured drift; lexical hits do not establish entity-specific retrieval. In the archived Qwen experiments, gradient writes make the designated first answer token top-ranked for 132 independently reset targets, comprising 93 new promotions and 39 already top-ranked targets. A separate matched 24-target comparison gives 13 new promotions with Adam versus two with SPSA at equal iteration counts but unequal computational procedures. An 80-row case includes saved continuations and a replay record, while reformulations bound its scope. Six DeepSeek zero-order cases yield one new target-token promotion and one regression. These results support bounded writing feasibility and separate trained expression, question-form behavior, and preservation; first-token rankings do not establish complete-answer success or universal conditions for writable memory.",
+      "url": "https://arxiv.org/abs/2610.21553",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8843
+    },
+    {
+      "id": "2610.22290",
+      "title": "EliteReplay: Preserving Diverse Solutions in RL Post-Training via Quality-Diversity Search",
+      "authors": [
+        "Hanane Nour Moussa",
+        "Doeun Lee",
+        "Sachin Kumar"
+      ],
+      "abstract": "Reinforcement learning has become a common post-training technique to improve the accuracy of LLMs on verifiable tasks. However, such training can narrow the set of solutions the model can produce. Several approaches have attempted to address this behavior-sharpening effect, but they often optimize metrics that do not reflect the diversity of correct solutions. Ideally, we want a model that can produce multiple good solutions, not only a single reliable one. We propose EliteReplay, a post-training recipe that pairs GRPO with an \"elite\" archive built by quality-diversity search. Before training, we use the frozen base model to collect solutions that span distinct approaches; during training, GRPO is combined with a replay loss on this archive. The result is a post-trained model that improves accuracy while preserving more of the base model's solution diversity. On multiple text-to-SQL tasks, EliteReplay achieves a higher pass@128 than all baselines, producing up to 77% more distinct correct strategies than the strongest baselines. It preserves most of the base model's correct strategies, outperforming existing methods in strategy retention. This diversity translates into practical benefits on ambiguous questions, where EliteReplay covers both interpretations nearly twice as often as the strongest baseline on AmbiQT.",
+      "url": "https://arxiv.org/abs/2610.22290",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.22244",
+      "title": "Language Is a Security Surface for Agent Guards",
+      "authors": [
+        "Hasan Demirkiran",
+        "Jens Ernstberger"
+      ],
+      "abstract": "Step-level guards decide, before each tool call, whether an agent's next action is safe given the user's request and the trajectory so far. Users write those requests in many languages, while guard prompts and the benchmarks on which purpose-built guards are trained and evaluated are English. We ask whether a guard's verdict depends on the language of the request. We build LinguaGuardBench from the 1,220 labelled steps of TS-Bench AgentDojo-Traj: we translate only the user instruction into German, French, Turkish, Swahili and Amharic, and keep every tool call, observation and label byte-identical, so any change in a verdict is attributable to language alone. Six English rewordings and a whitespace placebo serve as controls, and managed guards are run three times to measure their noise. Across 19 guards, from frontier APIs to 4B open models and four purpose-built agent guards, most open, small and purpose-built guards change verdicts under translation beyond their own noise floor, and the effect grows with the rarity of the language: among the nine guards below 13B parameters, the mean placebo-adjusted flip rate rises from +1.5 pp on French to +4.4 pp on Amharic. Purpose-built guards are the most sensitive. The direction of the damage tends to follow guard size: open guards of 12-30B parameters block more benign steps (up to +5.0 pp false positives), and every significant loss of recall is in a guard below 10B (up to -7.4 pp). Frontier guards shift by at most about one point; the strongest, Gemini 3.8 Flash, returns identical verdicts with and without the request. The damage is concentrated in a few instructions and, in a post-hoc analysis, falls on steps where the agent's reasoning restates the English request, consistent with guards reacting to inconsistency between channels. English paraphrase moves every guard less than translation does. We release the benchmark and all 489k verdicts.",
+      "url": "https://arxiv.org/abs/2610.22244",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.21640",
+      "title": "ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training",
+      "authors": [
+        "Yukun Tian",
+        "Junwei Su",
+        "Haofeng Xu",
+        "Lansong Diao",
+        "Zhengping Qian",
+        "Weibo Zhao",
+        "Wenchao Zhou",
+        "Ruiting Zhou",
+        "Chuan Wu"
+      ],
+      "abstract": "Reinforcement learning (RL) has been a critical paradigm for improving large language model (LLM) reasoning and agentic capabilities, but its efficiency remains a major bottleneck. Existing RL systems commonly rely on asynchronous execution to overlap rollout generation with policy optimization for enhanced efficiency. However, this approach faces inherent limitations: mild policy staleness offers only limited training efficiency gains, whereas aggressive asynchrony can degrade model quality and yields diminishing efficiency gains. The dynamic nature of LLM RL and multi-turn agentic workloads further challenges RL system design, as resource demands shift over time, making static resource allocation and generation strategy inefficient.\n  This paper presents ReFlow, a system-algorithm co-designed RL framework for efficient LLM post-training. Its key insight is that, unlike existing RL frameworks which consume each trajectory only once, experience replay of recent trajectories enables effective sample reuse, thereby amortizing the high cost of rollout generation without incurring excessive policy staleness. To fully exploit this opportunity, ReFlow adopts a decoupled and adaptive architecture with three key designs: a dual replay data cycle supports efficient experience reuse while balancing training throughput and optimization stability; an elastic resource pool enables dynamic resource placement to accommodate evolving RL workloads; an adaptive scheduler coordinates generation strategies and resource allocation to improve resource utilization and boost generation throughput. Experiments across representative single-turn reasoning and multi-turn agentic RL tasks show that ReFlow improves training throughput by up to $2.06\\times$ over state-of-the-art synchronous and asynchronous RL systems, while maintaining comparable or better model performance.",
+      "url": "https://arxiv.org/abs/2610.21640",
+      "categories": [
+        "cs.LG",
+        "cs.DC"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8829
+    },
+    {
+      "id": "2610.22289",
+      "title": "Improving Environment-Agnostic Coding Agents: The Role of Scaffolding",
+      "authors": [
+        "Sergey Rodionov"
+      ],
+      "abstract": "Stronger language models may increasingly construct useful procedures for themselves, reducing the advantage of developer-supplied scaffolding. We investigate why this advantage persists and whether an environment-agnostic agent can be improved without environment-specific engineering. We evaluate a Codex-based agent in two nearly identical prompt variants on ARC-AGI-3, AGI Maze, and Terminal-Bench. Each variant is deployed with unchanged code, prompts, and general-purpose tools across environments, receiving environment-specific information as input. Changing only an instruction to encourage reporting difficulties and returning control for automatic continuation improves mean scores on both ARC-AGI-3 and AGI Maze, while Terminal-Bench shows small, mixed changes. Yet the general agent remains below an ARC-AGI-3-specific reference, including with GPT-5.6-sol. The reference prescribes organization and control rather than supplying new game rules or solutions. To investigate this gap, we transfer reset decisions to a scripted controller that follows a convention already given to the agent. This small change recovers part of the specialized agent's advantage. A complementary AGI Maze experiment shows that additional tutorial experience can reduce performance. Together, these findings highlight the distinction between having information and tools available and using them effectively. Supplied procedures still matter for the models tested here. The performance gains also come with higher token-based cost. The experiments do not separate better use of information and procedures from additional or differently allocated inference. We provide the EnvTraverse framework and an evaluated baseline agent for testing whether further environment-independent changes improve performance in some environments without degrading it in others.",
+      "url": "https://arxiv.org/abs/2610.22289",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-15",
+      "score": 0.8825
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
