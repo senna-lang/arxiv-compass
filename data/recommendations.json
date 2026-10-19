@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T15:16:42.543228+09:00",
+  "generated_at": "2026-10-19T14:01:35.764554+09:00",
   "top_clusters": [
     {
       "label": "reasoning & trace & correct",
@@ -136,16 +136,6 @@
       "submitted": "2026-08-30"
     },
     {
-      "id": "2608.24024",
-      "title": "Beyond Confidence: Test-Time Scaling for Multi-Turn Search Agents via Retrieval Grounding",
-      "abstract": "Confidence-based voting aggregates parallel LLM rollouts by weighting each with internal signals such as token log probabilities, and has been actively studied for single-turn reasoning. However, modern LLMs increasingly act as multi-turn search agents that retrieve and condition on external documents. In this paper, we show that confidence-based voting transfers poorly to this multi-turn setting, and identify the underlying failure reason as copy inflation: when retrieved documents are appended to an agent's context, tokens copied from those documents receive systematically inflated log probabilities. This flattens confidence scores within each question and weakens the resulting weighted vote. To address this issue, we propose Retrieval-Grounded Voting (RGV), which scores each rollout by the lexical overlap between its final answer and the documents it retrieved. By computing the signal outside the contaminated context, RGV sidesteps both token log probabilities and additional LLM calls. Across four search-agent benchmarks and five LLMs, RGV consistently outperforms confidence-based voting, with gains of up to +5.4% accuracy and +35% on minority-correct questions, where the correct answer appears in only 1-2 of 8 rollouts.",
-      "url": "https://arxiv.org/abs/2608.24024",
-      "match_score": 0.9155,
-      "centroid_score": 0.9639,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-25"
-    },
-    {
       "id": "2608.19652",
       "title": "Can Agent Memory Systems Track Evolving State?",
       "abstract": "As LLM-based agents are deployed for longer and higher-stakes tasks, their memory systems continue to have crucial gaps. While existing memory benchmarks focus largely on recall-shaped tasks, we argue an effective memory system must track the evolving state of the world; as facts, constraints, and decisions are revised over a long interaction, answers must reflect the current state and not a superseded one. We define this capability as state tracking and instantiate it in StateMemBench, a benchmark of 234 multi-session scenarios spanning two conversation-length regimes. Its closed-pool grading scores whether an answer reflects the current state, the superseded state, or fails otherwise, separating state-tracking failures from other errors by construction. Our analysis shows that this task is challenging for existing memory systems, retrieval-augmented baselines, and long-context baselines. We then present StateMem, a state-first memory method that explicitly tracks supersession and relational dependencies, and show it improves current-state accuracy over the strongest same-backbone baseline by 1.8x (0.205 -> 0.363) on DeepSeek-V4-Flash and over the strongest memory system by 1.6x (0.149 -> 0.233) on Qwen-3.5-9B, while remaining competitive with the long-context baselines. Finally, we show the same state approach can be applied as a lightweight single-call wrapper over existing memory systems, lifting current-state accuracy by +32 to +67 points on StateMemBench across six memory and retrieval backends. A length- and cost-matched control attributes +15 to +32 of those points to state structure rather than added context.",
@@ -154,6 +144,16 @@
       "centroid_score": 0.9795,
       "matched_cluster": "agent & reasoning & conversational",
       "submitted": "2026-08-20"
+    },
+    {
+      "id": "2608.24024",
+      "title": "Beyond Confidence: Test-Time Scaling for Multi-Turn Search Agents via Retrieval Grounding",
+      "abstract": "Confidence-based voting aggregates parallel LLM rollouts by weighting each with internal signals such as token log probabilities, and has been actively studied for single-turn reasoning. However, modern LLMs increasingly act as multi-turn search agents that retrieve and condition on external documents. In this paper, we show that confidence-based voting transfers poorly to this multi-turn setting, and identify the underlying failure reason as copy inflation: when retrieved documents are appended to an agent's context, tokens copied from those documents receive systematically inflated log probabilities. This flattens confidence scores within each question and weakens the resulting weighted vote. To address this issue, we propose Retrieval-Grounded Voting (RGV), which scores each rollout by the lexical overlap between its final answer and the documents it retrieved. By computing the signal outside the contaminated context, RGV sidesteps both token log probabilities and additional LLM calls. Across four search-agent benchmarks and five LLMs, RGV consistently outperforms confidence-based voting, with gains of up to +5.4% accuracy and +35% on minority-correct questions, where the correct answer appears in only 1-2 of 8 rollouts.",
+      "url": "https://arxiv.org/abs/2608.24024",
+      "match_score": 0.9155,
+      "centroid_score": 0.9639,
+      "matched_cluster": "agent & reasoning & conversational",
+      "submitted": "2026-08-25"
     },
     {
       "id": "2608.05906",
@@ -240,6 +240,16 @@
   ],
   "serendipity": [
     {
+      "id": "2608.17587",
+      "title": "Write, Execute, Refine: From Skill Follower to Skill Optimizer via Reinforcement Learning from Execution Feedback",
+      "abstract": "Expert-written natural language skills can improve tool-using agents, yet agent-authored skills perform 8--11 points worse than using no skill. While inference-time loops can repair individual skills per task, they leave the underlying generator's refinement capability unimproved. We study how to organize execution experience from intermediate skills into training states for an optimizer. We introduce WER(Write, Execute, and Refine), a multi-phase framework that trains a Skill Optimizer outside a frozen executor. The optimizer proposes skills, a frozen agent executes each repeatedly, and a programmatic verifier scores the outcomes. These scores serve as group-relative rewards and filter for informative, mixed-outcome instances. Matched successful and failed trajectories from these records form the next phase's refinement states, so the optimizer learns from the consequences of its earlier outputs. On BFCL v4 multi-turn and tau2-bench, WER improves average Pass@1 over the no-skill baseline by 7.80 and 6.06 points, respectively. Under an identical refinement workflow, it outperforms the same backbone without optimizer training by 10.02 and 12.50 points. Notably, our trained 4B optimizer achieves 76.63\\% on BFCL v4, outperforming all evaluated off-the-shelf general-purpose LLMs in the same role on average. Our code is available at https://github.com/littlepkk/wer-training.",
+      "url": "https://arxiv.org/abs/2608.17587",
+      "match_score": 0.9136,
+      "centroid_score": 0.9774,
+      "matched_cluster": "agentic & agent & alfworld",
+      "submitted": "2026-08-18"
+    },
+    {
       "id": "2608.22631",
       "title": "Learning Generalizable Behaviors for Terminal Agents",
       "abstract": "Terminal agents are a compelling application of large language models (LLMs), with the potential to integrate deeply into users' daily workflows. Reinforcement learning (RL) is a key technique for improving their capabilities, making scalable training environments a central challenge. Since public real-user interaction data are scarce, synthetic environments provide a practical alternative, but often suffer from domain gaps and limited fidelity, leading to poor generalization. Existing work mainly scales the quantity and diversity of synthetic environments, while reward-signal quality and the mechanisms governing generalization remain under-explored. We study how RL improves terminal agents and propose the Agentic Compositional Generalization hypothesis: rather than teaching new domain-specific skills from scratch, RL primarily shapes high-level decision-making behaviors that compose and route low-level skills acquired during pre-training and supervised fine-tuning (SFT). This account is consistent with our empirical results and suggests that verifier quality, which determines which behaviors are reinforced, is more important than simply increasing environment quantity or diversity. Motivated by this insight, we propose River, a simple training recipe that improves reward quality by filtering low-quality environments and augmenting outcome rewards with process-level behavior regularization. Using this recipe, our RL-trained agent achieves the best performance among evaluated open-source RL-trained 8B models across four terminal-agent benchmarks. River also generalizes across model families, scales, agent harnesses, and RL objectives. Using fewer than 30% of the TMax training environments, River improves RL gains by 106% and 30% on average for models ranging from 2B to 27B on Terminal-Bench-Lite and Terminal-Bench-v2.1, respectively.",
@@ -278,16 +288,6 @@
       "centroid_score": 0.975,
       "matched_cluster": "agentic & agent & alfworld",
       "submitted": "2026-08-25"
-    },
-    {
-      "id": "2608.17587",
-      "title": "Write, Execute, Refine: From Skill Followers to Skill Optimizers via Reinforcement Learning from Execution Feedback",
-      "abstract": "Expert-written natural language skills can improve tool-using agents, yet agent-authored skills perform 8-11 points worse than using no skill. This gap suggests that following procedural guidance and improving it from execution evidence are distinct capabilities. Inference time loops can repair skills but do not improve the model that writes the next one. We study how to organize execution experience from intermediate skills into training states for an optimizer. We introduce WER (Write, Execute, and Refine), a multi-phase framework that trains a Skill Optimizer outside a frozen executor. The optimizer proposes skills, a frozen agent executes each repeatedly, and a programmatic verifier scores the outcomes. The scores provide relative credit and select mixed-outcome records. Matched successful and failed trajectories from these records form the next phase's refinement states, so the optimizer learns from the consequences of its earlier outputs. On BFCL v4 multi-turn and tau2-bench, WER improves average Pass@1 over the no-skill baseline by 7.80 and 3.85 points, respectively. Under an identical refinement workflow, it outperforms the same backbone without optimizer training by 9.35 and 10.29 points. The trained 4B optimizer reaches 76.63 percent on BFCL v4, outperforming all evaluated off-the-shelf general-purpose models used as skill optimizers on average.",
-      "url": "https://arxiv.org/abs/2608.17587",
-      "match_score": 0.9105,
-      "centroid_score": 0.9747,
-      "matched_cluster": "agentic & agent & alfworld",
-      "submitted": "2026-08-18"
     },
     {
       "id": "2608.19741",
