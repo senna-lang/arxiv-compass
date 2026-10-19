@@ -1,0 +1,393 @@
+{
+  "date": "2026-10-19",
+  "collected_at": "2026-10-19T13:11:36.903275+09:00",
+  "papers": [
+    {
+      "id": "2610.22894",
+      "title": "Competence-Based Evaluation of Logical Reasoning in Large Language Models",
+      "authors": [
+        "Jize Jiang",
+        "Chengxiang Zhai"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) have brought impressive performance across diverse tasks; however, shortcomings remain in logical reasoning, including inconsistencies under linguistic variation. To improve the reasoning capacity of LLMs, we must be able to accurately measure their reasoning capacity. Current benchmarks primarily report single accuracy numbers on selected reasoning tasks. Such a performance-based evaluation methodology says little about a model's generalization capacity in reasoning. To address this limitation, we argue for a different evaluation paradigm, called competence-based evaluation (CBE), which tests whether models reliably apply the same competence across a family of problems. A parameterized generator scales complexity while keeping the required competence fixed, and matched answer-preserving presentations test correctness beyond one formulation. We instantiate CBE on elementary ordering tasks, scaling input size while varying presentations of the same ordering rule. Across six GPT and Qwen models, performance is reasonably good over bounded complexity ranges, but even strong models fail the competence condition across the tested family. Chain-of-thought and GRPO extend strong performance without resolving all tested failures; supervised LoRA shows little held-out transfer. CBE provides diagnostic profiles and an evaluation protocol that can grow with future models.",
+      "url": "https://arxiv.org/abs/2610.22894",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.9011
+    },
+    {
+      "id": "2610.23036",
+      "title": "Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design",
+      "authors": [
+        "Benhao Huang",
+        "Chufan Shi",
+        "Junlin Chen",
+        "Shicheng Wen",
+        "Zhengzhong Liu",
+        "Eric Xing",
+        "Xuezhe Ma"
+      ],
+      "abstract": "Looped language models reuse physical Transformer blocks across logical depth, but established architectures entangle recurrence placement, input injection, and recurrent state organization. We isolate these axes in models trained from scratch at matched parameter scale, logical depth, and token budgets, and then test whether the resulting design principles transfer to resident- and active-parameter-matched Mixture-of-Experts (MoE) models. The prelude-recurrent block-coda sandwich architecture consistently improves performance on context extraction and reasoning-intensive tasks. Input injection primarily enhances knowledge retrieval and context utilization, whereas random initialization and separate H/L recurrent states provide mixed or negative returns. Taken together, these results favor the Huginn-style design: at the 730M-parameter and 336B-token scale, the complete Huginn architecture outperforms Ouro across all ten benchmarks. The advantages of Huginn over Ouro transfer to MoE models. At the 8BA0.8B (32BA3B when unrolled) scale trained on 500B tokens, Huginn outperforms Ouro on nearly all benchmarks spanning knowledge, reasoning, and coding, while also exhibiting more balanced expert routing. Under matched training and inference FLOPs, the Huginn-style model uses 75% fewer resident parameters than a 112-layer feedforward MoE baseline. Despite its smaller physical parameters, it outperforms the feedforward baseline on DROP and GSM8K, matches it on MATH500, and remains competitive on the other benchmarks.",
+      "url": "https://arxiv.org/abs/2610.23036",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.897
+    },
+    {
+      "id": "2610.22873",
+      "title": "Stealthy Poisoning Attacks via Reused KV Cache of Reasoning",
+      "authors": [
+        "L. Zhu",
+        "Y. Jung",
+        "S. Szyller"
+      ],
+      "abstract": "Modern large language model (LLM) systems reuse key-value (KV) caches to accelerate inference. Recent work has shown that reusing KV caches from reasoning traces can also improve task performance, similar to retrieval-augmented generation (RAG). We demonstrate that this form of KV cache reuse introduces new poisoning vulnerabilities. We propose R$^2$ECAP (Reused Reasoning-Cache Poisoning), a black-box attack that plants poisoned reasoning traces solely through interactions with a system's chat interface. R$^2$ECAP constructs two traces: a preceding trace that steers the model toward an adversarial target and a retained trace that carries this target. Because the retained trace is generated conditioned on the preceding trace, its KV cache preserves residual adversarial influence, even after the preceding trace and its cache entries are discarded. We evaluate R$^2$ECAP on three open-weight LLMs and three datasets. R$^2$ECAP achieves up to 79% attack success rate (ASR) and outperforms HijackKV, a state-of-the-art white-box KV poisoning attack, in 8 of 9 resource-constrained settings. It also achieves 46% ASR in a realistic reasoning-trace retrieval system. Finally, R$^2$ECAP remains stealthy, with only 1% of its retained responses detected by a popular prompt injection detector.",
+      "url": "https://arxiv.org/abs/2610.22873",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8956
+    },
+    {
+      "id": "2610.23443",
+      "title": "ScoutRoute: Efficient Mixture-of-Experts Routing Using Internal Language Model Signals",
+      "authors": [
+        "Rajdeep Pandhare",
+        "Delzaan Bharucha"
+      ],
+      "abstract": "Efficient expert routing is a fundamental challenge in Mixture-of-Experts (MoE) systems, particularly for heterogeneous collections of independently trained Large Language Mod els (LLMs). Existing routing approaches typically rely on jointly trained gating networks, prompt-based predictors, or computationally expensive multi-model inference, limiting their flexibility and efficiency. This paper presents ScoutRoute, a lightweight post-hoc routing framework that predicts expert competence using internal language model signals extracted from a single forward pass through an inexpensive scout model. Hidden-state representations are used to estimate cross-model competence through lightweight logistic probes, while logit-derived confidence measures are incorporated within a domain-aware routing strategy for efficient expert selec tion without modifying the underlying language models. ScoutRoute isevaluatedon fiveopen-weightlanguagemodels across fourbenchmark datasets covering mathematical reasoning, code generation, commonsense reasoning, and multidis ciplinary knowledge. Experimental results show that ScoutRoute consistently outperforms individual routing signals while requiring only a single scout-model inference. The proposed competence probes also achieve superior calibration compared with conventional confidence measures, demonstrating that internal language model representations provide transferable information for accurate and efficient expert routing across heterogeneous language models",
+      "url": "https://arxiv.org/abs/2610.23443",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8929
+    },
+    {
+      "id": "2610.23400",
+      "title": "On the Tip of the Tongue: First-Token Cueing as a Behavioral Probe of Recall Failures in LLMs",
+      "authors": [
+        "Jaewon Sok",
+        "Jewon Yeom",
+        "Seonghyeon Park",
+        "Jeongjae Park",
+        "Hwiyeong Lee",
+        "Taesup Kim"
+      ],
+      "abstract": "Large language models often answer factual questions incorrectly in closed-book settings, and such errors are usually attributed to missing knowledge. Yet models often encode answers they fail to produce. We show that many closed-book errors are first-token recall failures: the model commits to a wrong first token, but once given the right one it completes the answer and often recognizes it as correct. We study this with First-Token Cueing, a behavioral probe that prefills the response with the first token of the gold answer. Model uncertainty peaks at the first answer token, where it already predicts correctness, and among gold prefixes of any length the first token alone accounts for the largest share of recovered errors. Across 16 open models, this one token corrects between a fifth and a half of the errors on multi-token answers in English QA and improves accuracy in all seven languages of a multilingual benchmark. Most of the errors it corrects are also solved by the model's own sampled reasoning, a criterion for encoded knowledge, and models recognize correct starts they do not produce: they continue a correct start more confidently than an incorrect start of the same answer type and prior probability, yet rarely find it without the gold answer. These results locate a recoverable class of factual errors at the first decoding step, where inference-time methods may gain the most.",
+      "url": "https://arxiv.org/abs/2610.23400",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8929
+    },
+    {
+      "id": "2610.22858",
+      "title": "Uncertainty-Aware Budget Allocation for Efficient LLM Tree Search",
+      "authors": [
+        "Jianguo Huang",
+        "Zhiyi Lyu",
+        "Fuxiang Zhang",
+        "Yanchen Deng",
+        "Deheng Ye",
+        "Bo An"
+      ],
+      "abstract": "Tree search enhances multi-step reasoning in large language models (LLMs), yet prevailing methods expand every step with a fixed budget, irrespective of the marginal utility of expansion. We first show, across existing search algorithms, that continuations sampled from a shared intermediate state are largely duplicates and collapse to a few distinct answers. Critically, we find that the semantic dispersion of sibling actions predicts the redundancy of their downstream continuations, permitting a subtree's budget to be fixed before expansion. An information-theoretic analysis motivates this: treating the per-step budget as the Monte Carlo sample size for estimating a step's residual answer entropy, we derive a sufficient budget that shrinks with sibling dispersion. We accordingly propose $\\textbf{Uncertainty-Aware Allocation}$ (UAA), a training-free framework that decouples value from uncertainty: values determine which candidates are promising, while uncertainty, estimated from sibling dispersion at no additional model cost, determines how many merit expansion, via uncertainty-aware pruning and uncertainty-aware budgeting. Across mathematical reasoning, logical reasoning, and planning benchmarks, UAA reduces token usage by up to $90\\%$ and latency by up to $9\\times$ at comparable accuracy, generalizing across four tree search algorithms and both open- and closed-source LLMs.",
+      "url": "https://arxiv.org/abs/2610.22858",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8929
+    },
+    {
+      "id": "2610.23249",
+      "title": "Who Pays for Efficient Inference? Confidence-Based Small-to-Large LLM Routing Across Tasks and Languages",
+      "authors": [
+        "Md Sabbir Hossen",
+        "Anichur Rahman",
+        "Pabon Shaha",
+        "Airin Afroj Aishi",
+        "Andrew H. Sung",
+        "Md Shohel Rana"
+      ],
+      "abstract": "Small-to-large language model routing can reduce inference cost by escalating difficult inputs while retaining easier ones on a smaller model. Its success, however, depends on identifying examples that benefit from escalation, and the reliability of confidence across multilingual tasks remains unclear. We present a systematic evaluation of confidence-based routing across three model families, four languages, and three task types, covering 72 model, dataset, language, and scale configurations and 42,288 predictions. We compare global confidence routing with random routing, equal-quota confidence routing, and an oracle upper bound. Confidence identifies beneficial escalations on the Belebele reading comprehension and SIB-200 topic classification datasets, with mean correction-detection AUCs of 0.612 and 0.705. At 50% escalation, it improves over random routing by 1.40--4.67 percentage points on Belebele and 2.54--5.63 points on SIB-200. In contrast, the mean AUC on the MMLU-ProX-Lite knowledge and reasoning dataset is only 0.510, and routing provides no consistent improvement over random selection because small models often remain highly confident while incorrect. Global confidence routing also creates language escalation gaps up to 30.33 percentage points, whereas equal-quota routing removes this disparity with little aggregate accuracy cost. These results show that confidence routing is task-dependent and can allocate computation unevenly across languages. Code is available at https://github.com/sabbir5622r/multilingual-llm-routing",
+      "url": "https://arxiv.org/abs/2610.23249",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "github_url": "https://github.com/sabbir5622r/multilingual-llm-routing",
+      "score": 0.8927
+    },
+    {
+      "id": "2610.22892",
+      "title": "Bengali Hallucination Detection with Retrieval and Programs: A System Study",
+      "authors": [
+        "Shamim Hasan",
+        "Samiya Ahmed Chowdhury"
+      ],
+      "abstract": "Bengali hallucination detection must distinguish unsupported factual claims from incorrect reasoning, often without a supplied reference passage. We present and characterize an inference-only system that combines response-conditioned query rewriting, hybrid retrieval, and task-specific language-model judging. Six retrieval routes search question-answer and passage collections; a router directs each example to a 27B textual judge or a 14B agent that can compare retrieved answers, reason directly, or generate and execute Python. We characterize the system using version-specific code, saved predictions, execution traces, and corpus metadata from the Olikbochon challenge. Kaggle associates a displayed private macro-F1 of 0.956 with Version 2; its saved run processes 2,516 examples in 220.99 minutes on two T4 GPUs. Of 253 math-routed examples, 88 terminate through candidate matching, while execution traces expose 49 stderr-bearing run events across 35 examples. A later run changes six predictions despite identical core worker code. A bounded audit of 1,090 benchmark-related corpus records finds exact question or context overlap for 38 processed evaluation inputs, precluding an unqualified claim of corpus-independent generalization. The contribution is a concrete retrieval-and-computation judging architecture with an auditable operational characterization, not a controlled estimate of component gains. We distinguish the reported leaderboard result from independently recomputed diagnostics and identify the evidence needed for stronger effectiveness and reproducibility claims.",
+      "url": "https://arxiv.org/abs/2610.22892",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8919
+    },
+    {
+      "id": "2610.23583",
+      "title": "MARS: Memory-Aware Routing for Session-Level LLM Assistants",
+      "authors": [
+        "Minghan Wang",
+        "Jinhang Zuo",
+        "Zhongxiang Dai",
+        "Zhiyong Wang",
+        "Fang Kong"
+      ],
+      "abstract": "Long-term LLM assistants must repeatedly decide what prior context to expose and which model should answer as an interaction evolves. Existing memory systems and model routers usually make these decisions separately, although memory construction changes the evidence, distractors, and difficulty of the resulting input. We introduce MARS, a memory-aware routing framework that uses session state as a shared control interface between memory construction and model selection. A Query and Topic Manager (QTM) estimates compact decision-relevant state that guides a fixed state-conditioned memory policy and an online router, enabling each turn to receive an appropriate memory view and a suitable model under a quality-memory-cost trade-off. We evaluate MARS on RealMem and MultiChallenge with 16 system configurations each, covering long-history memory-driven interaction and bounded sessions with structured context interference. On RealMem, MARS preserves 98.2% of full-context GPT-4o's QA while using only 14.5% of its generation API cost, including both generation and controller calls for MARS, and achieves the strongest measured memory-recall and retrieval scores among compared systems. On MultiChallenge, MARS trails the strongest static system overall but approaches its performance at lower recorded cost on a mechanism-focused subset. Together, these results support a favorable quality-memory-cost trade-off for long-history, memory-dependent interaction.",
+      "url": "https://arxiv.org/abs/2610.23583",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8916
+    },
+    {
+      "id": "2610.22924",
+      "title": "Sep-Latent: Separator Tokens as Natural Compression Anchors for Implicit Reasoning",
+      "authors": [
+        "Yinlong Xu",
+        "Jianfeng Huang",
+        "Zhengdong Zhou",
+        "Mingjie Lin",
+        "Fuyu Lv",
+        "Dan Ou",
+        "Hongxia Xu",
+        "Jian Wu"
+      ],
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable success in complex reasoning through explicit Chain-of-Thought (CoT), but the associated computational overhead and token verbosity remain significant barriers to efficiency. While implicit reasoning in continuous latent spaces offers a promising alternative, existing methods like Coconut and CODI often rely on fixed-length latent sequences and suffer from representational collapse. In this paper, we propose Sep-Latent, an adaptive implicit reasoning framework that utilizes separator tokens as structural semantic anchors. By introducing an Attention-Decay mechanism, we force the model to aggregate and compress reasoning logic into these anchors during training. We then align explicit and implicit pathways through multi-level distillation across all layers to ensure logical consistency. Crucially, Sep-Latent enables dynamic reasoning depth by adaptively terminating the latent thinking phase based on query complexity. Experimental results on the GSM8k-Aug benchmark show that Sep-Latent achieves an accuracy of 56.8\\% with an average of only 5.4 tokens, significantly outperforming prior fixed-length implicit models in efficiency while narrowing the performance gap with explicit CoT. Further analysis via PCA and symbolic variant testing confirms that our method ensures semantic grounding and exhibits superior robustness to perturbations.",
+      "url": "https://arxiv.org/abs/2610.22924",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8904
+    },
+    {
+      "id": "2610.23344",
+      "title": "Language Models Learn to Improve Language Models",
+      "authors": [
+        "Minhua Lin",
+        "Zijun Wang",
+        "Zewen Liu",
+        "Zhaotian Weng",
+        "Bing He",
+        "Zhan Shi",
+        "Benoit Dumoulin",
+        "Xiang Zhang",
+        "Suhang Wang",
+        "Hanqing Lu"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to automate AI research, including language-model (LM) development, offering a potential path toward recursive self-improvement. However, turning experimental feedback into a learned ability to propose effective improvements across models faces two challenges. First, training such an ability with real feedback is expensive: reinforcement learning (RL) requires evaluating tens of thousands of proposals, each potentially requiring a full model-training run. Even at ten GPU-hours per run, reward collection alone would consume hundreds of thousands of GPU-hours, motivating a cheaper surrogate. Second, surrogate feedback can become unreliable as policy optimization favors overestimated proposals when the proposal distribution shifts. To address these challenges, we propose LM2LM, which trains LLMs with RL to generate effective LM improvement proposals. To provide scalable feedback, we use a research world model (RWM), a frozen LLM that predicts proposal gains from real experimental records provided in context, as the reward model for RL. To maintain feedback reliability, we periodically execute current-policy proposals ranked highly by the RWM and add their measured outcomes to its context. Across eight autoregressive and diffusion LM development environments, real-execution evaluations on held-out tasks show that LM2LM enables Qwen3.8-27B to outperform GPT-6-sol, even when GPT-6-sol is given 300 real experimental records in context, while requiring 33% lower data-generation cost. LM2LM also generalizes to a model family unseen during training.",
+      "url": "https://arxiv.org/abs/2610.23344",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8901
+    },
+    {
+      "id": "2610.23213",
+      "title": "Not All Test-Time Compute Is Evidence: Model-Specific Bias in LLM Reasoning",
+      "authors": [
+        "Ming Shen",
+        "Tianjun Yao"
+      ],
+      "abstract": "Test-time scaling methods implicitly assume that additional computation from the same model provides independent evidence. We show that this assumption fails within a single reasoning model: errors are correlated across repeated samples, across reasoning depth, and in the model's own self-evaluation, so more compute from the same model is not more evidence. We introduce DIA (Disagreement-triggered Independent Arbitration), which treats disagreement between an intermediate-stage and the final-stage prediction as a per-question signal of reasoning instability and resolves it by asking a small panel of heterogeneous models to solve the question independently, without seeing either candidate, and aggregating their answers directly. Across seven benchmarks and two base models, DIA outperforms full chain-of-thought in 12 of 14 settings, including a 7.00% gain on MuSiQue, while activating on only $\\sim 17\\%$ of examples and using up to 47.2% fewer tokens than a multi-agent baseline. Ablations show that both independent solving and solver heterogeneity are necessary for these gains.",
+      "url": "https://arxiv.org/abs/2610.23213",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8895
+    },
+    {
+      "id": "2610.23554",
+      "title": "SkillBrowser: Selective Skill Exposure for Scalable Skill-Using Agents",
+      "authors": [
+        "Jin Ye",
+        "Yifan Jiang",
+        "Lan-zhe Guo"
+      ],
+      "abstract": "Large language model agents increasingly rely on skills to extend their capabilities in complex tasks. However, scalable skill use requires Selective Skill Exposure (SSE): providing relevant procedural content when needed while avoiding unnecessary exposure that may disrupt reasoning. Existing paradigms fall short in complementary ways. Progressive disclosure exposes metadata for a growing skill library, introducing context pollution; retrieval limits catalog exposure, but static retrieval from the initial task query may be misaligned with capability needs that emerge during reasoning and may still inject unnecessary skills. We propose SkillBrowser, a Meta-Skill-managed framework that enables an agent to identify current capability needs, formulate targeted queries, and selectively load skills on demand. Across six SRA-Bench subsets and five LLMs, SkillBrowser improves aggregate accuracy over static retrieval and LLM-based selection, including multi-step tool use, and mitigates accuracy degradation on already-solvable instances. Benefits remain model- and task-dependent, with under-invocation of useful skills and additional latency as key limitations. These results demonstrate the viability of Meta-Skill-managed SSE for scalable skill repositories.",
+      "url": "https://arxiv.org/abs/2610.23554",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8893
+    },
+    {
+      "id": "2610.23613",
+      "title": "Trajectory-Triggered Sparse Collaborative Decoding",
+      "authors": [
+        "Amit Ranjan Trivedi",
+        "Sruthikesh Surineni",
+        "Kyong Ho Lee",
+        "Mohit Mittal",
+        "Steven Li",
+        "Rex Hill"
+      ],
+      "abstract": "Dense assistance methods such as speculative decoding repeatedly verify draft tokens with a target model, keeping target computation coupled to generation. We study sparse collaborative decoding, where a draft model generates most tokens and a target model is invoked only for short corrective segments. The key problem is deciding when to call the target. We show that local uncertainty is a weak trigger: entropy, negative log-likelihood, logit margin, top-$k$ mass, and velocity features give near-chance failure prediction, with AUC 0.50-0.53. In contrast, aggregate trajectory-shape features over the draft confidence path reach AUC 0.86 using a lightweight logistic predictor trained only from draft correctness labels. This induces a trigger-timing tradeoff: early calls have more leverage but weaker evidence, while later calls have stronger evidence but less ability to redirect the trajectory. Used online, learned sparse collaborative decoding improves over the best open-loop schedule by +5.3 to +20.0 accuracy points across five GSM8K draft-target pairs. On MATH-500, it gains 7.0-13.5 points when early prediction and target competence align, but loses when either is weak. On StrategyQA, it improves over open-loop by 5.0-8.3 points, showing transfer beyond arithmetics.",
+      "url": "https://arxiv.org/abs/2610.23613",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8886
+    },
+    {
+      "id": "2610.23511",
+      "title": "LocalIntent: Outcome-Specific Structured Generation for Backend-Compatible Smart Building Automation with Local LLMs",
+      "authors": [
+        "Tianyang Liu",
+        "Jiayue Wang",
+        "Zhanhao Cheng",
+        "Changyang Wang",
+        "Shaoshu Zhu",
+        "Zhenghao Wu",
+        "Hadi Tabatabaee Malazi"
+      ],
+      "abstract": "Locally deployed large language models (LLMs) can reduce reliance on remote cloud services for natural language smart building automation, but backend-facing processing requires correct outcome selection, alignment with local capabilities, and valid structured outputs. We investigate whether a complete outcome-specific prompting design improves compact-model outputs beyond generic route-then-generate prompting. The proposed LocalIntent approach routes requests to ordinary or persistent-rule branches: the former produces commands, clarifications, or rejections, while the latter generates trigger-action rules, followed by deterministic validation. We evaluate four locally executed Gemma and Qwen models spanning 2B-9B parameters on 101 non-persistent and 54 persistent-rule records, comparing Monolithic prompting, generic two-stage prompting, LocalIntent, and validation-guided repair. Across the evaluated datasets, LocalIntent achieves higher intent understanding, device identification, and action/parameter correctness than generic two-stage prompting, while clarification/mode correctness remains model-dependent. The largest gains occur for rules, where LocalIntent improves intent understanding from 26.4% to 80.6%, device identification from 59.3% to 84.7%, rule-mode correctness from 49.1% to 98.6%, and action/parameter correctness from 5.6% to 44.9%. For non-persistent requests, pooled gains are smaller: intent understanding increases from 39.6% to 53.2%, and action/parameter correctness from 30.7% to 42.8%.",
+      "url": "https://arxiv.org/abs/2610.23511",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.23313",
+      "title": "From Memory Hits to Answerable Evidence: Query-Conditioned Memory Compilation for Long-Term Agent Memory",
+      "authors": [
+        "Shangze Li",
+        "Yanyu Yao",
+        "Derong Xu",
+        "Zhi Zheng",
+        "Tong Xu"
+      ],
+      "abstract": "Long-term agent memory requires recovering answer-relevant evidence dispersed across turns and sessions. Existing systems increasingly use structured memories and adaptive retrieval, yet often pass retrieved or expanded units directly to the reader, coupling memory addressing with evidence presentation and leaving the final context redundant or incomplete. To address this gap, we propose MemCompile, a query-conditioned evidence compilation framework for long-term conversational memory. Given a query, the Address Plane locates relevant support through compact source-linked descriptors and capacity-aware Cells, while a normalization boundary resolves heterogeneous retrieval hits to stable SourcePacket identities. Its Evidence Plane then allocates a bounded evidence budget across complementary packets, admits limited additional support, and renders the retained claims associated with each selected packet into an answer-ready context. MemCompile achieves 80.52% Judge Accuracy on LoCoMo and extends the empirical quality-cost Pareto frontier to a higher-quality regime. Its strong performance on LongMemEval-S further suggests that the benefits of query-conditioned compilation generalize across long-term conversational-memory benchmarks.",
+      "url": "https://arxiv.org/abs/2610.23313",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.23134",
+      "title": "MetaCurate: Evolving Curation Filters for High-Quality Agentic Coding Data",
+      "authors": [
+        "Donghoon Kim",
+        "Seunghyuk Oh",
+        "Kevin Galim",
+        "Minseo Kim",
+        "Minjae Lee",
+        "Younghyun Kim",
+        "Wooseok Seo",
+        "Hyung Il Koo",
+        "Wonjun Kang"
+      ],
+      "abstract": "Supervised fine-tuning on agent trajectories is an effective way to improve coding agents, but selecting useful training examples requires more than identifying successful runs. A resolved patch may follow inefficient reasoning or unnecessary tool use, while a failed run may still contain useful intermediate steps. Training pipelines therefore rely on rules and qualitative assessments to filter trajectories, yet designing these filters typically requires substantial human expertise, and validating improvements through repeated training and evaluation is expensive. We introduce MetaCurate, a training-free framework that evolves executable trajectory curation filters using pairwise LLM judgments. Disagreements between the filter's rankings and the judge's preferences provide targeted feedback for jointly revising its rules, rubric, and aggregation policy. The resulting filter scores trajectories independently, so pairwise comparisons are required only during search. Starting from a blank filter, MetaCurate autonomously discovers a curation strategy that achieves competitive downstream performance without task-specific handwritten criteria. We validate downstream utility through controlled SFT experiments on our uncurated trajectory pool and the Nemotron v3 SWE dataset, with random selection and hand-authored filtering as baselines. In our experiments, MetaCurate achieves the highest mean SWE-Verified score among the compared methods, including hand-authored rule-based filtering and a training-loop baseline whose search costs 3.5x as much.",
+      "url": "https://arxiv.org/abs/2610.23134",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8871
+    },
+    {
+      "id": "2610.23818",
+      "title": "Acceptance Is Not Speed: Length Inflation in Training-Free Lossy Speculative Decoding",
+      "authors": [
+        "Chiatzen Wang",
+        "Bill Xu",
+        "Haochen Gu",
+        "Hongyang Zhang"
+      ],
+      "abstract": "Speculative decoding typically characterizes speedup by draft tokens accepted per verification round. Lossless verification preserves the target model's output distribution and thus expected completion length, making this metric a meaningful efficiency proxy. Relaxed (lossy) verification accepts tokens that lossless verification would reject, potentially altering that distribution. We identify a length inflation phenomenon: relaxed verification lengthens completions, primarily by extending reasoning traces, largely offsetting apparent gains in accepted tokens per round. We evaluate existing training-free relaxed verification rules on twelve target-drafter pairs against lossless verification on identical prompts, measuring completion length, verifier rounds, wall-clock time, and task accuracy. At each rule's most relaxed evaluated setting, relaxed verification on average accepts $1.34\\times$ as many tokens per round but produces $1.54\\times$ longer completions. For rules with higher acceptance lengths, tokens accepted only under relaxed verification tend to have low target-model probability, contributing to length inflation. For rules that reduce verifier rounds, accuracy typically drops substantially. Further analysis traces some failures to continued reasoning that exhausts the budget needed to deliver a final answer. Overall, accepted tokens per round alone is an unreliable measure of decoding speed under relaxed verification. Completion length and verifier rounds must also be reported to assess actual efficiency.",
+      "url": "https://arxiv.org/abs/2610.23818",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8859
+    },
+    {
+      "id": "2610.23599",
+      "title": "From Trajectories to Differentiated Skills: Cognitive Differentiation for Self-Improving Agents",
+      "authors": [
+        "Yewei Zhao",
+        "Derong Xu",
+        "Wei Chen",
+        "Yin Xu",
+        "Peilun Zhou",
+        "Xiaohan Wang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Mingjun Xiao"
+      ],
+      "abstract": "Large language model (LLM) agents tackle complex tasks through reasoning and interaction with external environments. Agent skills provide persistent, transferable capabilities that guide task planning, inform contextual decisions, support tool use, and enable executable procedures. Yet existing skill-evolution methods largely organize knowledge around skill artifacts, overlooking the functional heterogeneity within individual skills and its implications for knowledge maintenance and use. Inspired by cognitive science, we propose Cognitive Differentiation in Skill Evolution (CDSE), which evolves a unified skill through four functionally distinct yet coordinated components: Meta, Experience, Tool, and Script. CDSE extracts evidence-grounded semantic gradients from successful and failed trajectories, consolidates them by functional role, and applies component-specific updates and validation with cross-component coordination and adaptive invocation. An analysis of 500 top-ranked skill packages shows that 96.8% contain knowledge spanning at least two functional roles. Across six benchmarks, three agent models, and two execution harnesses, CDSE achieves the highest scores in all 36 settings, improving over the Base agent by 7.6 percentage points and the strongest competing method in each setting by 2.6 points on average. Ablation studies further support the importance of functional differentiation and adaptive invocation.",
+      "url": "https://arxiv.org/abs/2610.23599",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8855
+    },
+    {
+      "id": "2610.23234",
+      "title": "MultiAgent-OPD: End-to-End Training of Hierarchical Multi-Agent Systems with On-Policy Distillation",
+      "authors": [
+        "Yuhan Sun",
+        "Jiaxin Zhao",
+        "Yongdong Luo",
+        "Yibo Hu",
+        "Meiguang Jin",
+        "Junfeng Ma",
+        "Weixun Wang",
+        "Weihang Pan",
+        "Zhongan Bi"
+      ],
+      "abstract": "In a hierarchical multi-agent system, a Leader assigns tasks and subagents carry them out. Jointly training the Leader and the subagents is difficult because a final answer gives only indirect feedback to the subagents. An LLM judge can score the performance of the subagents, but these scores depend on the judge's own assessment of the quality of subagents' responses. We present MultiAgent-OPD, which combines on-policy distillation with reinforcement learning to jointly train a shared-parameter Leader-Searcher-Answerer team end to end. We first train a Teacher in a Searcher-Answerer workflow using answer correctness. During team training, the frozen Teacher scores student-generated search and summary tokens to provide local process supervision for the Searchers, while the Leader learns from team success and the Answerer from candidate correctness. Across seven datasets, the trained system reaches 38.68% macro avg@4, exceeding Prompted Critic by 4.06 percentage points and C-MAS + RL, the trained cascaded multiagent system, by 2.61 percentage points. The team also solves more questions within four attempts.",
+      "url": "https://arxiv.org/abs/2610.23234",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-16",
+      "score": 0.8851
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
