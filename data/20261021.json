@@ -1,0 +1,397 @@
+{
+  "date": "2026-10-21",
+  "collected_at": "2026-10-21T13:13:08.460220+09:00",
+  "papers": [
+    {
+      "id": "2610.27816",
+      "title": "RAG-NIMBF: A Non-Invasive, Modular Benchmarking Framework for Automated RAG Configuration Analysis",
+      "authors": [
+        "Niclas Hart",
+        "Nicolas Weeger"
+      ],
+      "abstract": "Retrieval-Augmented Generation (RAG) has become the dominant paradigm for grounding the outputs of large language models (LLM) in external knowledge. However, practitioners are faced with a vast configuration space comprising chunking, embedding, retrieval, reranking, prompting and generation models, and there is limited guidance on how these components interact. We present RAG-NIMBF, a modular benchmarking framework that attaches to existing RAG pipelines as a non-invasive evaluation layer. It evaluates the configuration space through controlled ablation with end-to-end experiment tracking. The evaluation combines LLM-based answer quality scores, retrieval correctness measures, and runtime indicators. This study validates the framework across multiple generation models on the SQuAD dataset. This process reveals non-obvious interactions and demonstrates how the experiments are tracked. The findings indicate that the retrieval balance of relevance and diversity substantially enhances the relevance and coverage of retrieved context in comparison to a conventional similarity search, with MMR raising nDCG@5 by +4 to +11 percentage points across the swept models. More detailed prompt instructions meaningfully increase how faithfully generated answers stick to the retrieved evidence, especially for capable and reasoning models (+10 to +13pp on Qwen3.6-27B, GPT-4o-mini and Qwen3.5-think, but negligible on the 20B generator). Overall, RAG-NIMBF transforms the configuration space of RAG into reproducible, comparable experiments. By attaching to existing production pipelines in a non-invasive way, it enables practitioners to systematically evaluate and improve deployed systems without disrupting existing workflows. This replaces ad hoc choices with evidence-based decisions.",
+      "url": "https://arxiv.org/abs/2610.27816",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8993
+    },
+    {
+      "id": "2610.27700",
+      "title": "Memory as Code: Declarative Retrieval over Codified Long-Term Memory",
+      "authors": [
+        "Aoting Zeng",
+        "Yuxin Du",
+        "Jianwei Wang",
+        "Yizhang He",
+        "Shan Jiang",
+        "Xuemin Lin",
+        "Kai Wang"
+      ],
+      "abstract": "In long-term memory systems, memories are constructed from interaction histories and retrieved in response to queries, enhancing the reasoning ability of LLM agents. In complex scenarios, facts are scattered across sessions and their relationships evolve over time, making it difficult for existing memory systems to compose them to adapt to diverse queries. Motivated by the modularity and composability of code, we propose Memory as Code (MaC), a unified memory framework that jointly designs memory construction and retrieval through a shared code abstraction. MaC couples codified construction, which establishes executable memory abstractions, with declarative retrieval, which translates queries into structured retrieval programs. Specifically, codified construction builds a three-layer executable memory structure that progresses from an atomic function layer, through a relational layer, to a modular composition layer. Declarative retrieval recasts retrieval from relevance-based fact selection into declarative query processing over memory. Experiments on LoCoMo and LongMemEval show relative gains of up to 15.91% in overall LLM-judge accuracy over the strongest baseline in each setting, while substantially reducing token consumption, highlighting the effectiveness of memory as code for long-horizon memory tasks.",
+      "url": "https://arxiv.org/abs/2610.27700",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8973
+    },
+    {
+      "id": "2610.27913",
+      "title": "ACE-Compression: An Ability-Centric Evaluation of Compressed Large Language Models",
+      "authors": [
+        "Jiahui Ning",
+        "Liang Chen",
+        "Yuchen Liang",
+        "Yi Zhang",
+        "Fenglei Fan"
+      ],
+      "abstract": "Model compression makes large language models deployable, but today's evaluation tells an incomplete story. Standard practice measures retained task performance and stops there. This misses a critical fact: compression perturbs the distributed knowledge embedded across billions of weights, and task scores alone cannot reveal which underlying abilities survive and which quietly collapse. To solve this question, we introduce ACE-Compression, an ability-centric evaluation framework. Instead of asking only \"does the compressed model still answer correctly?\", we ask \"which of its core abilities remain intact?\" Our framework probes four deployment-facing dimensions: procedural reasoning and constraint execution, knowledge grounding and truthfulness, social cognition and affective understanding, and persona fidelity and stylistic consistency. Across more than 35 compressed checkpoints from six open-weight LLMs-covering quantization and pruning-we find that compression redistributes ability profiles. Coarse, local, and surface-level signals often persist, while fine-grained, long-tail, and context-dependent abilities become fragile. Quantization consistently outperforms pruning in retention, but the practical meaning of that gap depends entirely on which ability an application requires. Based on our findings, deployers can choose compression methods by the ability profile their application needs, not just by a leaderboard average. And algorithm designers gain diagnostic signals to build compression methods that preserve what matters. We believe that ACE-Compression turns compression from a black-box accuracy drop into an interpretable intervention-one we can measure, understand, and ultimately improve.",
+      "url": "https://arxiv.org/abs/2610.27913",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8972
+    },
+    {
+      "id": "2610.27889",
+      "title": "Elicitation or Expansion? Demystifying Gains from Agent Harness Optimization",
+      "authors": [
+        "Younghyun Kim",
+        "Wooseok Seo",
+        "Minseo Kim",
+        "Seunghyuk Oh",
+        "Minjae Lee",
+        "Donghoon Kim",
+        "Hyung Il Koo",
+        "Jaehyung Kim",
+        "Wonjun Kang"
+      ],
+      "abstract": "Recent studies in harness optimization have shown substantial performance gains in language model agents without updating model weights. A well-designed harness more effectively leverages the underlying model's capabilities by shaping context, tool use, and execution workflows. However, naïve success rates alone do not fully characterize whether optimized harness yields more reliable success on tasks already within reach (elicitation) or a broader range of solvable tasks (expansion). This distinction is crucial for recursive self-improvement and evolutionary search, as expansion may provide a broader range of successful experiences to push the capability boundaries. Despite the growing significance, this distinction remains underexplored in harness optimization. We conduct a systematic analysis to study the effect of gains from harness optimization. Building on pass@k analyses in the reinforcement learning (RL) literature that compare models before and after RL training, we compare optimized harnesses with their pre-optimization counterparts. Specifically, we assess changes in reachable task coverage, compare harness optimization with model scaling and increased inference-time compute, and examine how gains vary with task difficulty. Across static prediction and dynamic tasks, we find that pass@1 advantages of harness over stronger interventions can reverse at larger attempt budgets and aggregate gains conceal shortfalls on hard tasks, underscoring the need for a fine-grained diagnosis.",
+      "url": "https://arxiv.org/abs/2610.27889",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8907
+    },
+    {
+      "id": "2610.27781",
+      "title": "GRADUS: Discovering and Recovering Agent Lessons from the Environment's Latent Syllabus",
+      "authors": [
+        "Qing Ping",
+        "Wei Yang",
+        "Panpan Xu",
+        "Johannes Kirmayr",
+        "Lukas Stappen",
+        "Junjie Tang",
+        "Jun Huan"
+      ],
+      "abstract": "Training LLM agents for policy-constrained tool environments, such as an airline backend with booking, refund, and cancellation policies, requires tasks that exercise the environment's rules individually and in combination. Existing synthesis pipelines let a model propose tasks and retain only those it immediately solves, biasing training data toward easier behaviors. We introduce Gradus (Graded Rungs of Ascending Difficulty from an Underlying System), which decouples what a task should teach from the concrete task and solution used to teach it. Without seed tasks, Gradus treats a fixed environment as a latent syllabus, extracting guarded behavioral operators that capture how actions depend on current conditions and how their effects reshape subsequent decisions. It composes these operators into increasingly demanding tasks while using corpus-level feedback to target missing outcome combinations. Crucially, Gradus jointly calibrates tasks and solutions against the environment: execution feedback identifies which side to refine while preserving the intended behavioral requirements. Verification thus becomes a recovery signal rather than a terminal filter, coupling coverage-guided exploration with the preservation of difficult examples. From off-the-shelf backbones, the resulting curriculum lifts a 30B model from 59% to 89% on $τ^2$-Bench and from 47% to 83% on CAR-Bench with an Opus 4.5 proposer, and to 76% and 62%, respectively, with an open-weight Qwen3-235B proposer. These results show the value of jointly controlling which behaviors are explored and which survive into verified training data.",
+      "url": "https://arxiv.org/abs/2610.27781",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8907
+    },
+    {
+      "id": "2610.27981",
+      "title": "Adaptive Stopping of Streamed Reasoning for Language Model Agents",
+      "authors": [
+        "JunHyeok Oh",
+        "Byung-Jun Lee"
+      ],
+      "abstract": "Reasoning-enabled language model agents can incur substantial computation before acting, although the reasoning needed varies across decisions. Existing stopping signals, such as confidence and intermediate-answer stability, can vary in effectiveness across reasoning models; signals obtained from hidden states or token probabilities also require internal access that may be unavailable or impractical. We introduce StreamStop, which learns model-specific stopping policies offline from prefix-level action agreement. A frozen prefix reader encodes available reasoning text for a lightweight stop head, allowing stopping without access to the reasoning model's internal signals. We construct and publicly release a dataset of agent reasoning trajectories with prefix-level action annotations. These annotations compare each prefix action with the full-reasoning reference action, enabling offline comparison of stopping rules and exact expected-return optimization of a discounted action-agreement objective. Conditioning the head on the discount factor allows the agreement-token trade-off to be adjusted at inference without retraining. In closed-loop evaluations on WebShop and ScienceWorld, StreamStop achieves higher observed success than most validation-selected fixed-budget settings while using fewer reasoning tokens than Full thinking. On WebShop with Qwen3.8-27B, it uses 42% fewer reasoning tokens per episode with similar observed task success.",
+      "url": "https://arxiv.org/abs/2610.27981",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8904
+    },
+    {
+      "id": "2610.28409",
+      "title": "Rewards for Budget-Aware Multi-Turn Agents That Adapt to Arbitrary Test-Time Constraints",
+      "authors": [
+        "Tom A. Lamb",
+        "Adam Golinski",
+        "Eleonora Gualdoni",
+        "Sinead Williamson",
+        "Michael Kirchhof"
+      ],
+      "abstract": "Large language model agents are often given an inference budget and asked to maximise success within it. A multi-turn agent has to allocate this budget across many environment interactions. An external harness can enforce the budget, but it remains unclear whether the agent itself can learn when and how much to spend. We ask whether agents can learn this allocation across dynamically specified budgets and which rewards best teach this behaviour. We adapt existing length penalties to budget constraints spanning multiple resource types, introduce new reward formulations, and compare eleven objectives in a shared training pipeline. We train Qwen3.5 models at 4B and 9B on AppWorld with budgets over tokens, API calls, and environment steps, and on the BabyAI gridworld with turn budgets. We train a separate policy for each environment and resource type, with each policy trained across budget values. Training with rewards that penalise overspending substantially improves within-budget success and natural compliance over untrained models and over training on task success alone, with agents learning to adapt their resource use to stated budgets and task difficulty. These gains extend to unseen budgets and, zero-shot, to a shifted task distribution and a new benchmark. Reward objectives trade off success within budget and natural compliance. A sigmoid penalty for overspending most often achieves the highest within-budget success at an individual budget, while a fixed negative reward for overspending generally yields the strongest natural compliance. Combining penalties for overspend frequency and magnitude gives the smallest average gap to the best method at each budget. Overall, we show that a single agent can learn to allocate resources across turns and adapt its behaviour to user-specified budgets using budget feedback without external budget-allocation controllers.",
+      "url": "https://arxiv.org/abs/2610.28409",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.27662",
+      "title": "When Can LLM Reasoning Reliably Reuse Intermediate Results?",
+      "authors": [
+        "Deyuan Liu",
+        "Zecheng Wang",
+        "Xuanyi Liu",
+        "Jungang Li",
+        "Yihao Hu",
+        "Mingjie Tang",
+        "Bryan Dai",
+        "Jie Fu"
+      ],
+      "abstract": "Sampling complete solutions gives large language models more chances to solve a problem, but each attempt starts again. For tasks with several subproblems, all required answers must be correct in the same attempt. Retaining intermediate results can avoid repeating correct work, but errors in those results may affect later attempts. We study when this reuse is reliable and how much computation it requires. For local retries that stop when no candidate passes within the retry budget, we give conditions for correct completion and bound the average number of attempts. We also show how checking cost and the chance of passing a check affect total computation. Experiments across eight reasoning models examine composite mathematics and arithmetic. Across four DeepSeek models, average success on the second subproblem is 36.2 percent without first-subproblem context, 57.2 percent with its answer, and 58.3 percent with its reasoning and answer. These scores measure second-subproblem coverage and include continuations made when selection fails. Arithmetic experiments show that similar first-attempt accuracies can lead to very different coverage after repeated attempts. Code is available at https://github.com/SempraETY/Intermediate-State-Reuse.",
+      "url": "https://arxiv.org/abs/2610.27662",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "github_url": "https://github.com/SempraETY/Intermediate-State-Reuse.",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.27714",
+      "title": "When Does Experience Memory Help Closed-Loop LLM Driving Agents? A Controlled Evaluation with Resampled Warmup Pools, Token-Matched Fillers, and Audited Baselines",
+      "authors": [
+        "Yingxin Jia",
+        "Xuanyi Li"
+      ],
+      "abstract": "When does experience memory help a closed-loop LLM driving agent? Published gains cannot say, because the two factors we find to matter most, which warmup experiences the pool contains and what any injected tokens do to the prompt, are controlled in none of them. We answer with a controlled evaluation on one audited HighwayEnv testbed (1Hz, gpt-4o-mini for the decisive contrasts). We treat the warmup pool as a resampled random factor (ten disjoint pools) and add token-matched irrelevant-filler controls, oracle-certified diagnostics, caution-pricing metrics, and quantified audits of the baseline ports. The probe suite spans flat-text retrieval (a DiLu port), a single-frame grid port (RESPOND-inspired), our episodic temporal-graph memory, a retrieval-free consolidated rulebook, and a flat K-step observation-history baseline. Four findings follow, each a property of this testbed. (1) Headline memory gains belong to the warmup draw. The reported pool is the best of ten for both retrieval memories, which beat No-Memory in only one pool of ten (sign test p=0.011), and even the rulebook's apparent pool-immunity collapsed on five fresh draws. (2) No retrieval design tested exceeds token-matched filler. The collision-only merge ceiling is reached by a single 15-token caution instruction, and metrics that price caution erase the rulebook's lead. (3) Representational sophistication is nowhere robustly operative. (4) Baseline port quality silently inverts conclusions. On this testbed, a single-pool comparison without filler controls would have reported memory gains that these controls reverse. We release the testbed, audited ports, seeds, and caches.",
+      "url": "https://arxiv.org/abs/2610.27714",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8873
+    },
+    {
+      "id": "2610.27813",
+      "title": "LatBridge: Efficient and Stable Model Replacement in Latent-Communication Multi-Agent Systems",
+      "authors": [
+        "Jiajun Zhu",
+        "Haobo Li",
+        "Zixin Chen",
+        "Huamin Qu",
+        "Wenshuo Zhang"
+      ],
+      "abstract": "Multi-agent systems rely on communication to complete tasks, and latent communication passes continuous representations to reduce text generation and re-encoding. However, multi-agent systems must reconfigure agent models, whereas existing latent-communication methods are built for fixed model combinations, so their interfaces may fail after replacement. Our pilot study confirms this interface failure and identifies the requirement for interface reuse after model replacement. We present LatBridge, which connects agent models through a shared Bridge and separate interfaces under a shared latent-communication protocol. After agent model replacement, LatBridge reuses unchanged interfaces, selects matching low-rank interfaces, and combines them through the Bridge, training only missing ones with all models frozen. The Bridge processes source representations in the basic mode and constructs target input without autoregressive generation in the accelerated mode. Experiments support effective communication after model replacement, with mean basic-mode accuracies of 14.8% on MATH and 27.3% on ALFWorld next-action prediction across eight small-model configurations. Analyses examine the factors supporting task accuracy and communication efficiency.",
+      "url": "https://arxiv.org/abs/2610.27813",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8872
+    },
+    {
+      "id": "2610.28522",
+      "title": "DecisionPivot: A Diagnostic Benchmark for Decision Models in LLM Systems",
+      "authors": [
+        "Xialie Zhuang",
+        "Mingcong Lei",
+        "Zunhai Su",
+        "Ri Liu",
+        "Jianjin Li",
+        "Peixian Ma",
+        "Jia Pan",
+        "Ngai Wong",
+        "Guanhua Chen",
+        "Chuan-Wei Kuo"
+      ],
+      "abstract": "Decision models support routing, guardrails, and output verification in LLM systems. However, item accuracy alone cannot establish whether models make correct decisions across controlled variations or assign reliable confidence to their predictions. We introduce DecisionPivot, a diagnostic benchmark comprising 48 tasks and 40,033 items across seven decision roles. Its core track contains 7,800 items from 13 generated task families, organized into contrast groups with computed answers verified by independently implemented solvers. The complementary reference track contains 32,233 items from 35 public test sets, preserving their original evaluation metrics. We evaluate 40 decision models and 14 general models using documented, model-specific protocols, assessing item and contrast-group accuracy, probability ordering, calibration, and empirical selective coverage. Our results reveal substantial differences obscured by aggregate scores: two 27B models separated by only 2.6 points on the reference track achieve contrast-group accuracies of 70.1% and 44.2%. Across 2,400 binary contrast pairs, Perplexity Decider correctly ranks the positive member above the negative member in 92.3% of pairs but answers both members correctly in only 74.1%, exposing a gap between probability ordering and decision correctness. Models with similar item accuracy also differ in the reliability of their high-confidence predictions. On a separate 1,296-item subset, GLM-5.3 achieves 93.5\\% contrast-group accuracy at a higher reasoning setting, compared with 81.5% at its lowest effort. By linking errors to pivotal details and difficulty levels, DecisionPivot provides fine-grained diagnostics of decision failures that aggregate evaluation alone cannot reveal.",
+      "url": "https://arxiv.org/abs/2610.28522",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8866
+    },
+    {
+      "id": "2610.28577",
+      "title": "Cache Engineering for Agents",
+      "authors": [
+        "Tianyu Fu",
+        "Ruoxi Wang",
+        "Zihan Min",
+        "Zhongqi Ren",
+        "Zhihao Li",
+        "Tengxuan Liu",
+        "Shengxu Mu",
+        "Hanling Zhang",
+        "Yu Wang"
+      ],
+      "abstract": "Large Language Model (LLM) agents can handle increasingly complex tasks, navigating long trajectories of observations and actions. As these trajectories grow, key-value (KV) cache I/O and storage become the dominant cost. Trajectories can also exceed the LLM's maximum context length, requiring control over active cache growth. Prior work uses context engineering to reduce cache size by trimming or summarizing history. However, modifying the trajectory prefix invalidates subsequent cached states and triggers costly re-prefilling of retained context. Task accuracy can also suffer when too little context is retained to limit re-prefill costs. We propose cache engineering as a new scheme. It allows agents to directly control their active KV cache without modifying the trajectory or re-prefilling retained context. Specifically, agents can proactively use drop to exclude selected cache from future attention and repos to adjust retained keys' position encodings. We formalize these cache operations and identify history dependence as a serving challenge: identical token sequences can yield different cache states under different cache operation sequences, making prefix matching insufficient for correct cache reuse. Thus, we co-design the AKV serving engine. It provides a stateless interface compatible with existing serving APIs, while internally managing stateful cache reuse, eviction, and restoration. Experiments show that a tool-response rolling-drop cache policy improves average benchmark scores by 1.7 points and reduces average cost by 27.7%, compared with conventional threshold-triggered summarization. With AKV, it achieves up to 1.2x the output throughput and a 1.5x speedup in P95 request latency. Recursive self-improvement of cache policies further reduces cost by 7.1% over expert design. Our code is at https://github.com/thu-nics/AKV.",
+      "url": "https://arxiv.org/abs/2610.28577",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "github_url": "https://github.com/thu-nics/AKV.",
+      "score": 0.8852
+    },
+    {
+      "id": "2610.28311",
+      "title": "From Abstraction to Action: DSLs for Natural Language Abstraction Interpretation and Execution",
+      "authors": [
+        "Amit Lisha",
+        "Reut Tsarfaty"
+      ],
+      "abstract": "Natural-language instructions often rely on high-level abstractions, such as asking an agent to ``stack blocks in a pyramid.'' Interpreting abstract instructions requires models to both identify the abstraction intended by the speaker, and unroll it into the many concrete actions that instantiate it. Language models struggle here: prior work has shown that performance degrades as the level of abstraction in the instruction rises. To bridge the gap between natural language abstraction and concrete actions, we propose to borrow from coding environments the notion of a {\\em domain-specific language} (DSL), an explicit representation layer whose documented primitives name recurring abstractions that expand into concrete actions. We demonstrate the efficacy of DSLs for NL interpretation on \\textsc{Hexagons}, a visually-grounded instruction-following task graded for abstraction. We further ask whether language models can induce such DSLs themselves from domain data. Our results show that while code generation consistently improves over direct inference, code generation over a human-curated DSL yields dramatic gains, up to 10 absolute F1 points, reaching the human skyline, with gains concentrated at {\\em higher} abstraction levels. We confirm this pattern on the \\textsc{Text2CAD} benchmark. At the same time, model-induced DSLs recover only part of this gain, remaining inconsistent across runs and short of their human-curated counterpart. Overall, the right representation closes much of the gap caused by high abstraction --- but inducing that layer of representation automatically is where models still fall short, and where we see a strong opportunity for the community to make progress.",
+      "url": "https://arxiv.org/abs/2610.28311",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.885
+    },
+    {
+      "id": "2610.27904",
+      "title": "Staged Continual Adaptation of Multimodal Foundation Models for Japanese Financial Documents",
+      "authors": [
+        "Genshin Kakimoto",
+        "Atsushi Yanagisawa"
+      ],
+      "abstract": "Staged post-training of multimodal foundation models chains vision-language alignment, reasoning distillation, and domain tuning, yet how each phase trades capabilities against the others remains under-characterised. Tracking an 8.4B-parameter model from an un-fine-tuned baseline through three training phases on Japanese financial documents (evaluated on five text-input benchmarks), we find the phases interact non-additively: math-only distillation overwrites the financial knowledge acquired earlier even as procedural math skill survives, and the domain phase repairs more than it installs. A skip-phase ablation is best for domain knowledge but forfeits numerical-reasoning gains, so per-phase contributions are not decomposable and the best checkpoint is task-dependent, with implications for checkpoint retention and scheduling rather than added stages.",
+      "url": "https://arxiv.org/abs/2610.27904",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8849
+    },
+    {
+      "id": "2610.28340",
+      "title": "DeclineCraft: A RAG Abstention Benchmark for Jointly Measuring Combined Retrieval and Parametric Knowledge",
+      "authors": [
+        "Atharva Thakur",
+        "Abulhair Saparov",
+        "Bruno Ribeiro"
+      ],
+      "abstract": "Reliable retrieval-augmented generation (RAG) requires recognizing when neither retrieved documents nor parametric knowledge supports an answer. We introduce DeclineCraft, a dynamic abstention benchmark whose unanswerable questions target Minecraft feature additions after a corpus cut-off, with audits of possible parametric exposure. Later cut-offs support evaluation of future models. Across 27 LLMs, we measure Correct Abstention Rate (CAR; how often models acknowledge insufficient knowledge on unanswerable questions), Answerable Attempt Rate and Answer Accuracy. We find that (1) single-shot retrieval significantly raises CAR in 38 of 40 configurations (model and thinking setting) versus no retrieval. (2) Iterative RAG, in which the model self-assesses its context and can request up to two further retrieval rounds, significantly lowers CAR versus single-shot RAG in 30 of 40 configurations (mean 46.4%), with little change in Answer Accuracy (68.5% to 69.3%). Adding query rewriting and reranking to hybrid (dense & sparse) retrieval lowers CAR for all 12 models tested. (3) Larger models answer more accurately (Spearman $ρ= +0.60$ with total parameters), but neither model size nor release date shows a significant association with CAR. (4) Without retrieval, enabling thinking on the same weights lowers CAR significantly for 8 of 13 models (by 14% points on average), and the responses shift from acknowledged uncertainty to premise denial.",
+      "url": "https://arxiv.org/abs/2610.28340",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8847
+    },
+    {
+      "id": "2610.28010",
+      "title": "RANGER: Retrieval Agent for Navigating Graphs with Semantic Evaluation Rewards",
+      "authors": [
+        "Artem Mikhaylov",
+        "Pavel Konoplev",
+        "Nikolay Efanov",
+        "Artyom Sorokin",
+        "Evgeny Burnaev"
+      ],
+      "abstract": "The integration of Large Language Models and Reinforcement Learning offers a promising direction for complex sequential decision-making tasks, such as multi-hop question answering over knowledge graphs. While LLMs provide strong semantic understanding and reasoning capabilities, they often struggle with precise, multi-step navigation in structured environments. Conversely, RL agents excel at learning navigation policies but are hindered by the difficulty of designing semantically meaningful reward functions. This paper introduces a novel hybrid approach in which an LLM serves as a mentor to an RL agent during training by providing dense, semantically informed reward signals. The RL agent, built on a Transformer-based policy and trained with Group Relative Policy Optimization, learns to navigate a knowledge graph to retrieve relevant information. The LLM evaluates the semantic relevance of the agent's traversed paths, generating reward signals that align the agent's behavior with the information needs expressed in a query. We integrate this Retrieval Agent for Navigating Graphs with Semantic Evaluation Rewards (RANGER) into a complete question-answering pipeline and evaluate it on the open question answering datasets. Experimental results show that the proposed approach outperforms both a baseline retrieval-augmented system with classical graph search and one using an RL agent trained with heuristic rewards, achieving a significant increase in NLP metrics and LLM-as-a-Judge scores. Our findings demonstrate that deep integration of LLMs into the RL training loop yields more effective and semantically aligned retrieval policies for complex reasoning tasks.",
+      "url": "https://arxiv.org/abs/2610.28010",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8847
+    },
+    {
+      "id": "2610.28489",
+      "title": "Asymmetric Looped Transformers: Fixed Global Representations for an Iterative Decoder",
+      "authors": [
+        "Cheng Liang",
+        "Tengfei Zhang",
+        "Wenjie DU",
+        "Jianyu Wu",
+        "Changlian Ma",
+        "Shuchen Pu",
+        "Ya Zhang",
+        "Yanfeng Wang",
+        "Zhouhan Lin"
+      ],
+      "abstract": "Looped Transformers increase effective depth by repeatedly applying shared layers, offering a way to scale computation without increasing parameter count. However, full-stack looping places context construction and iterative state refinement within the same recurrent computation, without explicitly distinguishing their roles. We introduce the Asymmetric Looped Transformer (AsymLoop), which separates single-pass context encoding from recurrent state refinement. A single-pass causal encoder produces layer-specific Global key-value (KV) caches that remain fixed across iterations, while a weight-tied recurrent decoder generates Local KV from its evolving state. Joint attention over both sources under a single softmax allows each update to integrate persistent contextual information with the current intermediate state. For training, we apply a heavy-tail-guided layerwise learning-rate method to the encoder and decoder. Experiments on FineWeb-Edu across four model scales, from 60M to 1B, show consistently lower validation perplexity and higher average downstream accuracy than Full Loop under matched effective depth and training token budgets. At 1B, AsymLoop improves average zero-shot accuracy across seven commonsense reasoning benchmarks from 49.58% to 50.85%. Further experiments extend these benefits to longer training budgets, an OLMo-style backbone, and sparse mixture-of-experts models. These results support asymmetric context encoding and state refinement as an effective design for recurrent language models.",
+      "url": "https://arxiv.org/abs/2610.28489",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8846
+    },
+    {
+      "id": "2610.27720",
+      "title": "Tracing Recurrent and Emergent Hallucination Patterns in Decomposed Text-to-SQL Generation",
+      "authors": [
+        "Hayden Moore",
+        "Abhinav Verma",
+        "Anshuman Dutt"
+      ],
+      "abstract": "Large language models can achieve strong Text-to-SQL benchmark performance while still producing schema and query-logic errors. Most evaluations characterize such failures only in the final generated query, making it difficult to determine whether a related error was also observed in an earlier, simpler step or appears only at the final stage. We present a drill-down evaluation framework that decomposes Text-to-SQL queries into progressively more complex executable sub-queries and corresponding natural-language questions, allowing rule-based hallucination categories to be examined across a generation path. We distinguish recurrent hallucinations, in which the same rule-based category is observed in an earlier step and again in the final query, from emergent hallucinations, in which the category is observed at the final step without an earlier detection in the same path. Across five LLMs evaluated on an expanded BIRD-mini benchmark, several categories show appreciable recurrence probabilities, while clause abuse shows comparatively higher conditional emergence. Under the conversational-history condition, recurrence probabilities are generally higher and emergence probabilities are generally lower. These observations indicate that the two conditional measures do not move uniformly in the same direction under additional context and motivate trajectory-level analysis in addition to final-output evaluation. Code and evaluation artifacts are available in the project repository. https://github.com/HaydenMM/bird-mini-drilldown",
+      "url": "https://arxiv.org/abs/2610.27720",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "github_url": "https://github.com/HaydenMM/bird-mini-drilldown",
+      "score": 0.8836
+    },
+    {
+      "id": "2610.27628",
+      "title": "PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking",
+      "authors": [
+        "Pan Wang",
+        "Yihao Hu",
+        "Guangyuan Dong",
+        "Yitong Lin",
+        "Hang Wang",
+        "Zimi Liu",
+        "Zhihao Wen",
+        "Jianshe Li",
+        "Jiang-Ming Yang",
+        "Wei Wu",
+        "Yongqi Tong"
+      ],
+      "abstract": "Looped language models can run more iterations at test time, but additional iterations need not help them solve longer problems. For sequential state tracking, final-answer supervision does not specify how far each iteration should advance, and repeated updates can change the scale of the recurrent state. We introduce \\textbf{Progress-Aligned Recurrence (PAR)}, which trains the prediction at iteration $k$ to match the state after the first $k$ operations and rescales recurrent states to their first-iteration norms. On swap-$S_5$, a Qwen2.5-0.5B model trained on at most 32 moves achieves 95.5\\% mean full-state accuracy at 512 moves, or $16\\times$ the training length, compared with 55.7\\% reported for RLT and 0.8\\% for explicit chain of thought on the same backbone. Controlled $S_5$ ablations show that removing norm anchoring reduces the extrapolation factor from $16\\times$ to below $2.2\\times$, and replacing progress-aligned targets with final-answer supervision reduces it to at most $8\\times$. A learned completion readout selects when to answer without a supplied stopping depth. When intermediate labels are unavailable, prefix self-distillation induces the correspondence from shorter problem prefixes using only final answers. The gains apply across sequential state-tracking tasks, establishing the task structure required for depth extrapolation. These findings support training intermediate predictions and state scale together to make additional recurrent depth useful for longer problems.",
+      "url": "https://arxiv.org/abs/2610.27628",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8834
+    },
+    {
+      "id": "2610.27901",
+      "title": "CollabSciReM: Aligning Language Models for Scientific Conversations via Science-Aware Reward Decomposition",
+      "authors": [
+        "Sasi Kiran Gaddipati",
+        "Gollam Rabby",
+        "Sören Auer"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly used as research collaborators for hypothesis refinement, methodological planning, and technical analysis across multi-turn interactions. In this setting, a useful assistant must be accurate, methodologically justified, logically consistent, and token-efficient. Current alignment approaches rarely achieve all of these together. Instruction-tuned models gain conversational quality through verbosity, and we show that science-agnostic general collaborative rewards compress responses at the expense of scientific rigor. We propose CollabSciReM, a goal-conditioned reward framework that decomposes the session-level reward into conversational quality, scientific rigor, and structural efficiency. We also introduce SciQuality, a pairwise evaluation of multi-turn research conversations grounded in 300 held-out scientific papers and scored on six dimensions: methodological soundness, justification, logical consistency, factual correctness, novelty, and responsiveness. Fine-tuned on 8.62K synthetic research conversations, CollabSciReM is preferred on SciQuality over a science-agnostic reward baseline trained on the same data for all four Llama and Qwen models, including a 65.3% win rate at matched response length. For the 7B and 8B models, CollabSciReM outperforms the science-agnostic reward baseline on the primary metric in 8 of 10 single- and multi-turn benchmark settings. In a blind study, domain experts rated CollabSciReM significantly higher on novelty than the general-reward variant and reported fewer hallucinated responses than both the general-reward variant and the base model.",
+      "url": "https://arxiv.org/abs/2610.27901",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-20",
+      "score": 0.8833
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
