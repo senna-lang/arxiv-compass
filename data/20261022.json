@@ -18,7 +18,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8961
+      "score": 0.8961,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 11,
+        "rank_delta": -10,
+        "relevance_probability": 0.9597440958023071
+      }
     },
     {
       "id": "2610.29722",
@@ -35,7 +41,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8944
+      "score": 0.8944,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 9,
+        "rank_delta": -7,
+        "relevance_probability": 0.9744639098644257
+      }
     },
     {
       "id": "2610.29518",
@@ -51,7 +63,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8942
+      "score": 0.8942,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 15,
+        "rank_delta": -12,
+        "relevance_probability": 0.7051186263561249
+      }
     },
     {
       "id": "2610.29767",
@@ -75,7 +93,13 @@
         "cs.SE"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8935
+      "score": 0.8935,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 17,
+        "rank_delta": -13,
+        "relevance_probability": 0.5000000298023224
+      }
     },
     {
       "id": "2610.29443",
@@ -94,7 +118,13 @@
       ],
       "submitted": "2026-10-21",
       "github_url": "https://github.com/Miaow-Lab/DynaWeave.",
-      "score": 0.8926
+      "score": 0.8926,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 3,
+        "rank_delta": 2,
+        "relevance_probability": 0.9849795997142792
+      }
     },
     {
       "id": "2610.30132",
@@ -110,7 +140,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8919
+      "score": 0.8919,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 7,
+        "rank_delta": -1,
+        "relevance_probability": 0.9773906767368317
+      }
     },
     {
       "id": "2610.29823",
@@ -125,7 +161,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8919
+      "score": 0.8919,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 1,
+        "rank_delta": 6,
+        "relevance_probability": 0.9861526489257812
+      }
     },
     {
       "id": "2610.29250",
@@ -145,7 +187,13 @@
         "cs.CL"
       ],
       "submitted": "2026-10-21",
-      "score": 0.891
+      "score": 0.891,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 14,
+        "rank_delta": -6,
+        "relevance_probability": 0.8662376999855042
+      }
     },
     {
       "id": "2610.29346",
@@ -162,7 +210,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8897
+      "score": 0.8897,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 13,
+        "rank_delta": -4,
+        "relevance_probability": 0.9199530482292175
+      }
     },
     {
       "id": "2610.29734",
@@ -179,7 +233,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8889
+      "score": 0.8889,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 8,
+        "rank_delta": 2,
+        "relevance_probability": 0.9773906767368317
+      }
     },
     {
       "id": "2610.29792",
@@ -201,7 +261,13 @@
       ],
       "submitted": "2026-10-21",
       "github_url": "https://github.com/NEUIR/MAPS.",
-      "score": 0.887
+      "score": 0.887,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 20,
+        "rank_delta": -9,
+        "relevance_probability": 0.23443425446748734
+      }
     },
     {
       "id": "2610.29472",
@@ -231,7 +297,13 @@
         "cs.LG"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8863
+      "score": 0.8863,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 19,
+        "rank_delta": -7,
+        "relevance_probability": 0.31131284683942795
+      }
     },
     {
       "id": "2610.30026",
@@ -249,7 +321,13 @@
         "cs.IR"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8862
+      "score": 0.8862,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 5,
+        "rank_delta": 8,
+        "relevance_probability": 0.9799894988536835
+      }
     },
     {
       "id": "2610.29751",
@@ -270,7 +348,13 @@
         "cs.SE"
       ],
       "submitted": "2026-10-21",
-      "score": 0.886
+      "score": 0.886,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 4,
+        "rank_delta": 10,
+        "relevance_probability": 0.9815278351306915
+      }
     },
     {
       "id": "2610.29139",
@@ -290,7 +374,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8851
+      "score": 0.8851,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 6,
+        "rank_delta": 9,
+        "relevance_probability": 0.9799894988536835
+      }
     },
     {
       "id": "2610.29501",
@@ -310,7 +400,13 @@
       ],
       "submitted": "2026-10-21",
       "github_url": "https://github.com/JiaruQian/DPT.",
-      "score": 0.8849
+      "score": 0.8849,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 16,
+        "rank_delta": 0,
+        "relevance_probability": 0.5463333129882812
+      }
     },
     {
       "id": "2610.29331",
@@ -326,7 +422,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8848
+      "score": 0.8848,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 12,
+        "rank_delta": 5,
+        "relevance_probability": 0.949683666229248
+      }
     },
     {
       "id": "2610.29491",
@@ -349,7 +451,13 @@
         "cs.AI"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8843
+      "score": 0.8843,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 18,
+        "rank_delta": 0,
+        "relevance_probability": 0.4692714214324951
+      }
     },
     {
       "id": "2610.29303",
@@ -371,7 +479,13 @@
         "stat.ML"
       ],
       "submitted": "2026-10-21",
-      "score": 0.8843
+      "score": 0.8843,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 10,
+        "rank_delta": 9,
+        "relevance_probability": 0.9643052220344543
+      }
     },
     {
       "id": "2610.30116",
@@ -391,7 +505,13 @@
       ],
       "submitted": "2026-10-21",
       "github_url": "https://github.com/LLM-Duels/EnvDuels.",
-      "score": 0.8842
+      "score": 0.8842,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 2,
+        "rank_delta": 18,
+        "relevance_probability": 0.9861526489257812
+      }
     }
   ],
   "meta": {
@@ -400,6 +520,21 @@
     "source": "fetch_daily",
     "n_candidates": 300,
     "n_ratings": 47,
-    "alpha": 0.94
+    "alpha": 0.94,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
