@@ -1,0 +1,561 @@
+{
+  "date": "2026-10-23",
+  "collected_at": "2026-10-23T13:17:25.506459+09:00",
+  "papers": [
+    {
+      "id": "2610.30917",
+      "title": "Harnessing Language Models as Optimization Modeling Agents",
+      "authors": [
+        "Yunxiang Luo",
+        "Xin Xu",
+        "Tianhao Chen",
+        "Zhixi Xiong",
+        "Peiqi Jiang",
+        "Fan Zhang",
+        "Wei Shao",
+        "Xuejian Gao",
+        "Yuwei Fan",
+        "Can Yang"
+      ],
+      "abstract": "Large language models (LLMs) can translate natural-language optimization problems into solver programs, but reliably producing correct formulations and implementations remains challenging. Existing approaches improve optimization modeling through agentic workflows or task-specific post-training. This raises a practical question: can a lightweight harness using a single model role achieve competitive performance without additional training? We introduce OPTICYCLE and OPTISTATE, two lightweight inference harnesses for optimization modeling, and evaluate them on nine benchmarks comprising 2,634 problems using 11 Qwen variants spanning 0.6B-27B parameters. Our results show that execution-guided revision consistently improves macro accuracy over direct generation for all evaluated models, with gains of up to 49.46 percentage points. Despite their simplicity, both harnesses outperform six adapted agentic workflows in same-model comparisons and four evaluated post-trained optimization models at comparable model sizes, without additional training. Explicit formulation state provides further but model-dependent improvements, suggesting that additional structure is not universally beneficial.",
+      "url": "https://arxiv.org/abs/2610.30917",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8951
+    },
+    {
+      "id": "2610.30755",
+      "title": "Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought",
+      "authors": [
+        "Zhengye Bao",
+        "Shengtao Zhang",
+        "Haokai Zhang",
+        "Shiqi Lou",
+        "Muning Wen",
+        "Minnan Luo"
+      ],
+      "abstract": "LLM memory is widely used in long-term conversation understanding. Agentic memory systems often use mutation, structural organization, learned retrieval strategies, or other complex operations. Is this complexity always necessary? We study Raw-RAG, a naive RAG baseline using dense retrieval and reranking over raw history to supply evidence to a reader LLM. Across LoCoMo, LongMemEval, MEME, and MemoryAgentBench, Raw-RAG ranks first among the compared memory systems in six of seven benchmark-model settings, outperforming the strongest compared agentic memory system by 0.13-5.53 points. We investigate why raw-history retrieval remains competitive. Evidence analysis shows that its higher coverage of necessary evidence can offset lower utilization. Useful evidence includes both answer values and the relations and dependency paths needed to derive them. Even complete access to transformed memory stores leaves an accuracy gap relative to raw evidence, highlighting the importance of preserving raw information. These findings challenge the necessity of complex agentic memory for the evaluated conversation tasks and establish naive RAG as an essential baseline.",
+      "url": "https://arxiv.org/abs/2610.30755",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8942
+    },
+    {
+      "id": "2610.30949",
+      "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+      "authors": [
+        "A. Jian Yang",
+        "An Huang",
+        "Bo Dan",
+        "Chen Mu",
+        "Chengran Yang",
+        "Chuan Shi",
+        "Feng Chang",
+        "Hongxin Li",
+        "Hongyuan Tao",
+        "Jinxing Zhang",
+        "Jujie He",
+        "Kun Wang",
+        "Lin Jing",
+        "Ming Yang",
+        "Qicheng Hu",
+        "Renyuan Li",
+        "Shark Liu",
+        "Shawn Guo",
+        "Shi Qing",
+        "Shi Zhong",
+        "Tianyu Zheng",
+        "Wei Liu",
+        "Wei Zhang",
+        "Wenrui Cai",
+        "Wenxiao Chen",
+        "Xuxing Chen",
+        "Yan Xing",
+        "Yi Xing",
+        "Yifan Luo",
+        "Yiran Xing",
+        "Yizhi Li",
+        "Yongsheng Kang",
+        "Yucheng Ding",
+        "Yue Song",
+        "Yun Qing",
+        "Yunqi Liu",
+        "Zelong Huang",
+        "Zhengmao Ye",
+        "Zhentao Fan",
+        "Zhiteng Li",
+        "Ziling Huang",
+        "Bihong Tang",
+        "Bingli Wang",
+        "Ce Jun",
+        "Changhao Chen",
+        "Chen Hu",
+        "Chen Xiao",
+        "Chi Liu",
+        "Chunjiang Ge",
+        "Danyang Li",
+        "Deyang Kong",
+        "Dian Qi",
+        "Ding Tan",
+        "Evan Yang",
+        "Fanglin Xu",
+        "Fei Bai",
+        "Gang Liu",
+        "Guochang Li",
+        "Hao Tang",
+        "Haoran Feng",
+        "Haowen Wang",
+        "Huahao Hu",
+        "Huanjin Yao",
+        "Huatong Song",
+        "Jia Deng",
+        "Jiajun Wu",
+        "Jialiang Cheng",
+        "Jiayi Liang",
+        "Jiayi Wu",
+        "Jie Deng",
+        "Jiejun Tan",
+        "Jing Yang",
+        "Jingda Xu",
+        "Junhang Cheng",
+        "Junxiao Liu",
+        "Kai Lv",
+        "Kaixiang Pan",
+        "Kecheng Lu",
+        "Kun Zeng",
+        "Kun Zheng",
+        "Kunbo Ding",
+        "Liang Qiu",
+        "Lingyi Sun",
+        "Luan Zhang",
+        "Mengxiao Lv",
+        "Ning Dong",
+        "Pei Wang",
+        "Peng Zhang",
+        "Qingsong Cai",
+        "Qixiang Yin",
+        "Qiyao Wang",
+        "Renbiao Liu",
+        "Renfei Dang",
+        "Ruihang Li",
+        "Ruirui Huang",
+        "Shanhui Yin",
+        "Shen Jian",
+        "Shengjie Fang",
+        "Shikai Li",
+        "Shinan Zhang",
+        "Shiqi Chen",
+        "Shuai Liu",
+        "Shuangqi Li",
+        "Shuo Tang",
+        "Shuqing Deng",
+        "Sijin Hao",
+        "Siwei Wu",
+        "Siyue Wang",
+        "Tao Hai",
+        "Tao Ren",
+        "TingYang Chen",
+        "Wei Shao",
+        "Weicheng Gu",
+        "Weihan Peng",
+        "Wenlong Miao",
+        "Xavier Yu",
+        "Xiangyuan Ji",
+        "Xiaocheng Li",
+        "Xiaodong Huang",
+        "Xiaohan Ge",
+        "Xiaoxiang Shi",
+        "Xiaoyang Zhang",
+        "Xiaoyu Yang",
+        "Xidong Wang",
+        "Xin Li",
+        "Xinyu Tang",
+        "Xiyuan Yang",
+        "Xudong Ma",
+        "Ya Tong",
+        "Yachao Wang",
+        "Yang Tian",
+        "Yaxin Du",
+        "Yeli Ruan",
+        "Yi Wang",
+        "Yi Yu",
+        "Yibin Feng",
+        "Yibo Tan",
+        "Yihang Wang",
+        "Yiming Ju",
+        "Yinda Chen",
+        "Yinda Chen",
+        "Yingjie Du",
+        "Yiwei Liu",
+        "Yizhi Zhou",
+        "Yuan Wei",
+        "Yuli Chen",
+        "Yuqi Zhu",
+        "Yuwen Li",
+        "Yuxi Dong",
+        "Yuxuan Zhang",
+        "Yuyang Song",
+        "Zhange Zhang",
+        "Zhaohan Zhang",
+        "Zhaoyi Li",
+        "Zhen Zhang",
+        "Zhengbo Zhang",
+        "Zhihang Hu",
+        "Zhiwei Yu",
+        "Zhixin Xie",
+        "Zhiyu Chen",
+        "Zhizhao Luo",
+        "Zhongyuan Wu",
+        "Zhou Fang",
+        "Zhu Lin",
+        "Zhuocheng Gong",
+        "Zixi Zhao",
+        "Ziyang Zeng",
+        "Ziyi Wang",
+        "Ziyu Zhao",
+        "Ran Tao",
+        "Mingjie Tang",
+        "Chuan Hao",
+        "Peihao Wu",
+        "Jianzhou Wang",
+        "Nan Jiang",
+        "Yuan Zhi",
+        "Bryan Dai"
+      ],
+      "abstract": "We present IQuest-Q1, a sparse Mixture-of-Experts (MoE) agentic foundation model with 320B total parameters (15B activated). IQuest-Q1 is developed through a three-stage process: (1) stable and efficient pre-training, combining Stable SplitNorm, Muon, and muP with a two-stage curriculum whose second stage increases the coding-data mixture, preserving a wide stability margin between safe and optimal learning rates; (2) fine-grained mid-training, expanding the data mixture across domains and formats and progressively extending the context; and (3) multi-scaffold with multi-version post-training, combining SFT, domain-specialized RL, and MOPD across various scaffolds to integrate complementary training signals and strengthen agentic coding capabilities. Furthermore, model merging combines different experts and checkpoints from different stages while mitigating conflicts among their parameter updates. The resulting IQuest-Q1 demonstrates capabilities in both coding and general tasks. We release IQuest-Q1 as an open-source model to support community research and development.",
+      "url": "https://arxiv.org/abs/2610.30949",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8915
+    },
+    {
+      "id": "2610.31062",
+      "title": "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs",
+      "authors": [
+        "Arnon Mazza",
+        "Elad Levi"
+      ],
+      "abstract": "Policy enforcement for LLM agents has shifted from single-turn content moderation to compound, application-specific policies evaluated over multi-turn transcripts and tool-call trajectories. Fine-tuned guardrail models are efficient but degrade on compound policies, and while LLM-as-a-judge approaches achieve higher accuracy, they incur high inference cost and tend to produce unstable predictions. Neurosymbolic methods offer a natural alternative, decomposing the policy into narrow neural decisions composed under explicit logic. However, existing symbolic layers lack the required expressiveness and are optimized against fixed data rather than the policy itself. To address this, we introduce SCOPE, which compiles a policy into an executable program of neural predicates executed by small models, deterministic extractors, and code that composes their outputs. The program is optimized jointly with its training data, using adversarial generation of counterexamples that target where the program deviates from the policy. We evaluate SCOPE on a benchmark of real-world policy tasks against prompt optimization, task decomposition, and workflow generation methods, achieving the highest average accuracy across tasks and models. Programs optimized with the weakest executor transfer to other models without further optimization. This allows them to be deployed in production on inexpensive models, where they reach accuracy comparable to frontier reasoning models. Unlike these monolithic models, SCOPE produces substantially more stable predictions, and each verdict is interpretable through the predicate outputs that produced it. Additionally, we validate the key components of our method through an ablation study. SCOPE thus enables reliable, interpretable, and efficient policy enforcement at production scale.",
+      "url": "https://arxiv.org/abs/2610.31062",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8895
+    },
+    {
+      "id": "2610.31046",
+      "title": "Conflict-Aware Logit Adapters for Utility-Preserving Anti-Distillation",
+      "authors": [
+        "Quoc Phong Dao",
+        "Binh Anh Nguyen",
+        "Linh Ngo Van",
+        "Thanh-Toan Do",
+        "Mehrtash Harandi",
+        "Trung Le"
+      ],
+      "abstract": "While reasoning traces improve model capability, they also provide supervision signals for downstream distillation. Initial efforts to mitigate this issue rely on decoding-time interventions, but they incur high inference overhead and can harm the teacher model's natural fluency. We propose Conflict-Aware Logit Adapters (CALA), a lightweight training-time defense. CALA attaches a small residual adapter to a frozen teacher model and trains only the adapter. A proxy student identifies positions where imitation is most sensitive, and the adapter perturbs the output distribution at these positions while remaining within high-probability regions. A conflict-aware optimization strategy balances anti-distillation and utility objectives, while regularization preserves the teacher's performance and fluency. At inference time, CALA incurs modest overhead and requires no auxiliary model. Experiments on reasoning benchmarks show that CALA substantially reduces successful student imitation while maintaining near-original teacher performance and generation quality. These results establish CALA as a practical and efficient alternative to decoding-time approaches.",
+      "url": "https://arxiv.org/abs/2610.31046",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8871
+    },
+    {
+      "id": "2610.30705",
+      "title": "ULME: Predictive Coupling for Mutually Reinforcing Embedding and Language Modeling",
+      "authors": [
+        "Yang Liu",
+        "Zhiqiang Yuan",
+        "Shu-Dong Huang",
+        "Jiancheng Lv",
+        "Liwei Yang",
+        "Qiwei Yan",
+        "Kailin Lv",
+        "Jinchao Zhang"
+      ],
+      "abstract": "Text embedding and text generation are two of the most useful capabilities of modern large language models, yet they are typically provided by separate specialized models (an embedder and a generator) trained with incompatible objectives and deployed side by side in retrieval-augmented generation and agent systems. Recent unified embedding-generation models such as GritLM share parameters between the two capabilities, but they either switch attention regimes between modes or optimize embedding and language modeling as parallel objectives that never supervise each other. We argue that these designs are only partially unified: the two capabilities coexist on the same weights, but do not shape each other. We propose ULME, a post-training framework that unifies embedding and language modeling on a causal decoder-only LLM through predictive coupling. ULME inserts a chain of learnable slots between the query and the answer, reads a semantic embedding and a reasoning embedding from two designated slots, and trains three objectives on a shared causal backbone: a contrastive loss anchoring the semantic slot to document representations, a language-modeling loss supervising answer generation, and a stop-gradient predictive loss that aligns the reasoning slot with a pooled summary of the answer, so that generation actively shapes what the embedding encodes. Across two model families (Qwen2.5, Qwen3) and eight scales spanning 0.5B-8B parameters, a single ULME checkpoint improves MTEB by 3.3-4.1 points over the strongest open-source baseline, tightens BRIGHT and AdvBench-IR simultaneously, and remains on par with a generation-only fine-tune on standard accuracy benchmarks (MMLU, GSM8K, MMLU-Pro, HumanEval), demonstrating that genuine unification yields mutually reinforcing rather than merely coexisting capabilities.",
+      "url": "https://arxiv.org/abs/2610.30705",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.887
+    },
+    {
+      "id": "2610.31483",
+      "title": "Training Small Language Models for Transferable Tool Selection",
+      "authors": [
+        "Zhaoyi Zhou",
+        "Akshayaa Magesh",
+        "Jeongyeol Kwon",
+        "Artem Kuriksha",
+        "Daniel Jiang",
+        "Andrea Zanette",
+        "Ayush Jain"
+      ],
+      "abstract": "As LLM agents operate over corpora of more than ten thousand tools, selecting the right tool for a complex multi-step user instruction becomes a central bottleneck. Tool descriptions cannot all fit in context, and relevance-based retrievers only rank tools without knowing which are actually needed. Recent work instead leverages proprietary commercial LLMs like Claude or ChatGPT to drive a retriever, decomposing the instruction and selecting over retrieved candidates. We show that a small, open model can be trained via reinforcement learning to perform the same functionality. On ToolBench, a Qwen3-8B model post-trained with our recipe outperforms Llama-4-Maverick (402B). In addition, the trained model transfers directly to different retrievers and generalizes to new tool corpora in different domains.",
+      "url": "https://arxiv.org/abs/2610.31483",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8868
+    },
+    {
+      "id": "2610.31438",
+      "title": "DIAL: Steerable Language Models with Distilled Instruction-Adherence Levels",
+      "authors": [
+        "Thanh Q. Tran",
+        "John Russell Himawan",
+        "Arun Verma",
+        "Kiwan Wong",
+        "Wei Xiao",
+        "Daniela Rus",
+        "Bryan Kian Hsiang Low"
+      ],
+      "abstract": "When a user says \"Keep it short\", how short should the LLM's response be? More generally, users and applications require different levels of instruction adherence, but prompting does not reliably provide fine-grained control over them. We therefore study \"steerable language models\" that provide fine-grained numerical control over the degree to which models follow general instructions specified in text. However, existing approaches do not jointly offer fine-grained control, efficiency, and scalability across diverse instructions. To address this gap, we introduce DIAL (Distilled Instruction-Adherence Levels) to achieve all three properties. For fine-grained control, we perform classifier-free guidance (CFG) with a frozen LLM to provide training signals for on-policy distillation of instruction adherence at different levels. For efficiency, we design a lightweight steering adapter that uses a classifier over the LLM's hidden states to compute a closed-form steering edit. The classifier adaptively sets the steering magnitude at each token based on the target adherence level, while accounting for the geometry of the LLM's hidden states to preserve response coherence. For scalability, the classifier is text-conditioned, allowing a shared adapter to support new instructions without per-instruction fitting, and training requires only instruction and request text. Evaluation across multiple LLM families shows that DIAL achieves a competitive balance between concept expression and response fluency, with concept scores increasing monotonically across adherence levels. We introduce SteerIF, an instruction-only dataset of 98, 625 concept, persona, verifiable, and descriptive instructions. When trained on SteerIF, DIAL provides fine-grained control over personas and, when combined with prompting, improves verifiable instruction following.",
+      "url": "https://arxiv.org/abs/2610.31438",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8846
+    },
+    {
+      "id": "2610.31579",
+      "title": "Who Is Sycophantic to Whom? Confident LLMs, Human Deference, and the Collapse of Trust Calibration",
+      "authors": [
+        "Deepthika S",
+        "Pawni Yadav",
+        "B. Sankar"
+      ],
+      "abstract": "Research on sycophancy asks whether large language models (LLMs) bend towards what their users want to hear. We ask the reverse question: when an LLM is confident, consistent, and wrong, do users bend towards it? In a within-subjects experiment, 32 participants learned up to five science topics by chatting with five assistants built on the same model (GPT-5-mini). Unknown to participants, each assistant's briefing had 0, 25, 50, 75, or 100% of its facts replaced by plausible falsehoods, and every assistant spoke with full confidence. A surprise quiz after each topic offered the correct fact, the planted falsehood, and two distractors, with a confidence rating for every answer. Across 104 quizzes and 1,040 answers, scores fell from 7.4 to 2.9 out of 10, and the planted option was chosen on 60% of falsified items against 11% of correctly taught ones (odds ratio 12.5). Transcript coding showed that whenever the assistant stated a falsehood, it was adopted about 65% of the time at every falsification level. Absorbed falsehoods were held with high confidence (8.4/10), the modeled confidence advantage of right over wrong answers vanished, and the discrimination of confidence for correctness fell from an AUROC of 0.70 to chance, while post-task trust ratings barely moved. Participants tended to return to the chat more when the assistant was worse, but returning went with more absorption, not less, and 30% of all turns pasted quiz questions back to the source being checked. The assistant itself was almost never sycophantic and never conceded under pushback. We introduce a baseline-corrected Human Deference Index to quantify this human-side sycophancy and argue that trustworthiness is a property of the human-AI pair, that sycophancy evaluations should measure both directions, and that learning interfaces must make reliability legible claim by claim.",
+      "url": "https://arxiv.org/abs/2610.31579",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8842
+    },
+    {
+      "id": "2610.30790",
+      "title": "Agentic Knowledge-Model Co-Evolution via Consistency Regularization",
+      "authors": [
+        "Sirui Chen",
+        "Zhining Liu",
+        "Chao Zhang",
+        "Jingrui He",
+        "Zheng Li"
+      ],
+      "abstract": "LLM agents can evolve by learning from accumulated experience. Existing approaches extract reusable external knowledge, such as skills and memories, from experience to guide subsequent task solving, with some further internalizing this knowledge through model training. However, different ways of analyzing and transforming the same experience can yield knowledge with substantially different utility, even when the resulting guidance appears reasonable. Inspired by consistency regularization, we identify consistent utility gains across different ways of analyzing the same experience, rather than relying on any single way of analyzing it. We introduce SPLICE, a framework for consistency-regularized knowledge-model co-evolution. It constructs evolution views by perturbing how the same experience is analyzed, producing different knowledge candidates. Knowledge updates are then guided by common gain, which accounts for utility gains and their consistency across views. During model evolution, self-distillation internalizes the evolved knowledge alongside reinforcement learning, using knowledge associated with consistent utility degradation as a contrastive reference. The two processes interleave, with model updates driving further knowledge evolution. Experiments across diverse domains show that SPLICE outperforms knowledge evolution and model training baselines by up to 7.1 and 4.6 points in average accuracy, while its evolved knowledge reduces output tokens per correct solution by up to 44% and transfers across model sizes and families.",
+      "url": "https://arxiv.org/abs/2610.30790",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8838
+    },
+    {
+      "id": "2610.30882",
+      "title": "Inherited, Not Invented: Tracing the Provenance of Wait in Reasoning Models",
+      "authors": [
+        "Zhizhuo Kou",
+        "Sizai Hou",
+        "Long Chen",
+        "Jian Yang",
+        "Junyu Luo",
+        "Jingshu Peng",
+        "Wenkai Zhang",
+        "Sirui Han",
+        "Yike Guo"
+      ],
+      "abstract": "Reinforcement learning (RL) is credited with teaching reasoning models to write {wait} before reconsidering a step, yet large RL accuracy gains do not require the word. This view can confuse what RL discovers with what a model inherits from its training data. We trace the word through open models' training histories, reading it with label-free indices of frequency, position, form and usage and an injected-error test, all computed from sampled outputs. We find that zero-RL almost never coins the marker: on bases that lack the word, RL raises MATH-500 accuracy substantially while {wait} stays near absent. It arrives with training data: mid-training in OLMo-3, and fine-tuning on reasoning traces installs it in most models whose base lacks it. Where the base already uses it, both released RL-Zero recipes (OLMo-3, MiMo) multiply it, whereas KL-free GRPO from the same base does not; OLMo-3's recipe wears down its form and makes it a more sensitive but more liberal alarm; RL after supervised fine-tuning barely changes it, and our GRPO recipe erases a marker seeded by fine-tuning. Finally, we show that marker frequency alone does not indicate RL-induced reasoning and caution against LLM-as-a-judge revision metrics, as automated judges can reverse human-labelled trends.",
+      "url": "https://arxiv.org/abs/2610.30882",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8831
+    },
+    {
+      "id": "2610.30970",
+      "title": "Joint or Per-Option? Compact Encoders for Closed-Set Decisions from 17 Million to 1 Billion Parameters",
+      "authors": [
+        "Tardelli Ronan Coelho Stekel"
+      ],
+      "abstract": "Many language-model pipelines end in a closed-set decision, such as selecting a tool. Prompting a large language model for it is slow and order-sensitive. We ask how small an encoder for such decisions can be and whether it should read the options jointly or separately. In a three-seed study at 32 million parameters, per-option scoring beats joint scoring on a held-out sample of a 37-benchmark decision suite by 5.8 points of chance-corrected skill at matched optimizer steps and by 2.8 at approximately matched training compute; two external benchmarks agree, though not significantly on their unseen tasks. Crossing reader with initialisation shows that the advantage requires a reranker initialisation, whose query-candidate pair input matches per-option reading; from the raw encoder the two readers are indistinguishable. Per-option scoring needs 5 to 13 times more encoder passes: at most twice the median latency, but more than four times the mean. Of six released joint encoders (17 million to 1 billion parameters), the 68- and 150-million-parameter models exceed a 435-million-parameter DeBERTa-v3 zero-shot classifier by 4.9 and 5.9 accuracy points on 209 overlap-audited System1-Arena tasks and are at least on par with it on the 145 tasks unseen in training. The smallest answers a median request in 14 milliseconds on 16 processor threads, against 728 for the classifier. Reordering options changes 12 to 23% of the joint models' answers (per-option scoring: none). Up to 68 million parameters, they lead their size range on a public leaderboard's private, mainly in-distribution tests.",
+      "url": "https://arxiv.org/abs/2610.30970",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8824
+    },
+    {
+      "id": "2610.30983",
+      "title": "A Reality Check of Inference-Time Context Augmentation Methods",
+      "authors": [
+        "Haeun Yu",
+        "Geert Heyman",
+        "Pepa Atanasova",
+        "Isabelle Augenstein"
+      ],
+      "abstract": "Large language models (LLMs) often fail to utilise the context given in the input, resulting in hallucinations or a fallback to parametric knowledge. Context augmentation methods aim to improve model performance by modifying the input, from inserting filler tokens that add computational time to adding relevant content such as elaboration of a context during inference. However, these methods have been evaluated in isolation and only by their performance gains, leaving it unclear how they compare and whether they reliably improve performance. In this paper, we present an evaluation framework spanning five methods that differ in how informative the inserted content is and apply them at the sentence level across seven models spanning multiple sizes on three datasets. We find that accuracy gains are not always genuine improvements but undirected perturbations: the methods correct some predictions while breaking others, particularly when the inserted text allows only for more computational time. Our analysis reveals that methods that bring no additional content primarily change model predictions near the decision boundary. Our findings highlight the need to evaluate the reliability of the accuracy gains before adopting them in practice.",
+      "url": "https://arxiv.org/abs/2610.30983",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8823
+    },
+    {
+      "id": "2610.30796",
+      "title": "GIFT: Gradient Informed Filtering for Distillation Augmented Reasoning RL",
+      "authors": [
+        "Shijie Li",
+        "Yilin Gao",
+        "Tieyuan Chen",
+        "Yun Luo",
+        "Weiyao Lin",
+        "Hang Yu"
+      ],
+      "abstract": "Training large language models for complex reasoning tasks relies on two complementary signals: sparse, outcome-grounded reinforcement learning (RL) for correctness, and dense, token-level distillation for guidance. However, complementarity in supervision does not guarantee compatibility in optimization; imitation-focused distillation can conflict with the outcome-driven RL objective, and existing hybrids lack a principled resolution. We propose \\textbf{GIFT} (\\textbf{G}radient-\\textbf{I}nformed \\textbf{F}il\\textbf{T}ering for Distillation-Augmented Reasoning RL), a novel method that directly addresses the allocation problem of which teacher updates to apply. GIFT performs a token-level geometric analysis, decomposing the distillation gradient into a component \\textbf{parallel} to the RL gradient, which measures first-order conflict and provides a \\textbf{safety} filter, and a component \\textbf{orthogonal} to it, which quantifies novel directional guidance and provides a measure of \\textbf{value}. This decomposition yields a principled scoring rule to rank token-level guidance. We combine this with a progressive \\textbf{coverage annealing} schedule that shrinks the budget of tokens receiving distillation, ensuring that the most conflicting updates are discarded first while the most complementary ones are retained at full strength. This facilitates a smooth transition from dense, geometrically-filtered guidance to a pure, outcome-grounded objective at convergence. Extensive experiments on mathematical and logical reasoning benchmarks show that GIFT consistently outperforms strong baselines across multiple model scales, achieving relative gains of up to 9.5\\% on difficult mathematical reasoning tasks. Code: https://github.com/lilifree/GIFT",
+      "url": "https://arxiv.org/abs/2610.30796",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-22",
+      "github_url": "https://github.com/lilifree/GIFT",
+      "score": 0.882
+    },
+    {
+      "id": "2610.30920",
+      "title": "DConstrain: Compiling Context-Parameterized Transitions for Diffusion Language Model Constrained Decoding",
+      "authors": [
+        "Shidong Cao",
+        "Jing Ma",
+        "Wenhao Chai",
+        "Yuchen Tian",
+        "Lun Du",
+        "Da Zheng"
+      ],
+      "abstract": "Diffusion language models (DLMs) decode multiple tokens in parallel, so individually valid tokens can be incompatible together under a schema. Exact joint inference over a grammar graph enforces compatibility, but it requires token-labeled successors across many hypothetical parser configurations. Encoding stacks and field histories in compiled states can cause exponential growth, which forces prior exact decoders to fix property orders and exclude valid outputs. We present DConstrain, which compiles schemas into context-parameterized transition programs. Cold compilation specializes token consumption to local grammar states while retaining context-dependent stack operations, environment guards, and caller-dependent deferred parsing symbolically. Tracking field histories as runtime values supports arbitrary property order without enumerating field subsets offline. At runtime, warm compilation binds reached configurations to these programs to construct exact successors, overlapping with the model forward pass because graph construction requires no model scores. Furthermore, token-effect grouping merges tokens with identical compiled effects before runtime contexts are bound, so groups are reused across stacks and environments even when concrete successors differ. Objective-specific score aggregation and token restoration provably preserve both the Viterbi optimum and the token-labeled path distribution of ungrouped inference. Across three benchmarks and two DLM families, DConstrain compiles 100% of BFCL schemas under arbitrary property orders, whereas an optimized finite-state baseline compiles only 71.30-85.81%. Under arbitrary property order, it reduces BFCL end-to-end decoding latency by 6.65-46.26 times with 100% schema validity and raises DiffusionGemma's BFCL accuracy from 37.27% under fixed order to 81.56%.",
+      "url": "https://arxiv.org/abs/2610.30920",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8816
+    },
+    {
+      "id": "2610.30880",
+      "title": "One Teacher, Many Views: Reducing Reference Sensitivity in On-Policy Self-Distillation",
+      "authors": [
+        "Khouloud Saadi",
+        "Di Wang"
+      ],
+      "abstract": "On-policy self-distillation (OPSD) improves reasoning by training a model on its own trajectories with dense token-level supervision from a privileged copy conditioned on a reference solution. Existing methods typically use a single teacher distribution conditioned on the complete reference. We identify a limitation of this formulation: a reference is only one realization of the reasoning process. Although it provides evidence about the answer, it also encodes an ordering, phrasing, and solution path. Full-reference conditioning can therefore produce correct targets that depend excessively on information unavailable to the student at inference. We show that replacing one valid reference with another, while holding the problem and student state fixed, can substantially alter the teacher distribution, a phenomenon we call reference-induced target instability. To address this instability, we introduce Monte Carlo Privileged Distillation (MCPD), which models privileged context as a distribution over partial reference views and distills the marginal teacher distribution. MCPD evaluates the teacher under multiple views and averages the resulting next-token distributions. We show that this probability-space average is the exact target induced by minimizing the expected teacher-to-student KL divergence over privileged views. Across mathematical and scientific reasoning benchmarks, we show that MCPD produces more reference-consistent supervision and consistently improves over full-reference OPSD.",
+      "url": "https://arxiv.org/abs/2610.30880",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8814
+    },
+    {
+      "id": "2610.31428",
+      "title": "Predictable performance is suboptimal, and what it means for model routing",
+      "authors": [
+        "Guanhua Zhang",
+        "Moritz Hardt"
+      ],
+      "abstract": "Large language models (LLMs) differ in capabilities and costs, motivating routing methods that adaptively choose a model for each query. These methods rely on performance prediction: given a query, estimate whether a model will answer it correctly. Most routing methods train separate predictors of candidate models' performance to guide model selection. Our work shows that performance prediction only beats a simple baseline when the candidate model is suboptimal on the task or the performance predictor adds significant capacity relative to the candidate model. Specifically, we take a model's self-confidence, the probability it assigns to its chosen answer, as a baseline and study how much a performance predictor can improve on it. First, we show that any performance predictor that outperforms a model's self-confidence can be used to improve the model's loss: the predictor's advantage transfers exactly in log loss through recalibration. Second, accounting for the predictor's additional parameters, we bound its advantage by the model's suboptimality plus the gain from those parameters. Third, we extend our theoretical results to two-model cascades, which route queries to a more capable model when the first model is predicted to fail. Experiments with 16 language models on four benchmarks show that predictors gain a larger advantage over self-confidence on more suboptimal models. This advantage shrinks as models improve through finetuning. Cascading exhibits the same two patterns: predictor-based routing offers larger gains over confidence-based routing for more suboptimal models, and these gains diminish after finetuning.",
+      "url": "https://arxiv.org/abs/2610.31428",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8811
+    },
+    {
+      "id": "2610.31338",
+      "title": "ValuSpec: Plug-and-Play Candidate Valuation before Target Verification for Tree-Based Speculative Decoding",
+      "authors": [
+        "Liang He",
+        "SiYuan Ma",
+        "Qishi Zhan",
+        "Yongqi Fan",
+        "Mingyu Cao",
+        "Qizhen Lan",
+        "Zhaolu Kang",
+        "Xilu Wang"
+      ],
+      "abstract": "Tree-based speculative decoding accelerates large language model inference by verifying multiple candidate branches in parallel. However, in practical serving scenarios, similar requests repeatedly induce overlapping candidate branches. While retrieval-based methods mitigate this by reusing historical drafts, the resulting candidate trees often contain many low-quality branches as the candidate tree grows, which reduces verification efficiency and wastes target-side computation. To address this, we propose ValuSpec, a plug-and-play candidate valuation mechanism that filters low-quality branches from a supplied candidate tree before expensive target-side verification. ValuSpec introduces transfer-based supervision to align filtering with the target model's behavior. A filtering threshold is estimated from the target model's greedy trajectories on a calibration split, without any parameter training. The target model then verifies the filtered tree under the output-identical greedy rule, so accepted tokens are guaranteed to match standard autoregressive decoding exactly. Experimental results on HumanEval, GSM8K, Dolly, and SpecBench show that, in our main evaluation, ValuSpec achieves up to 2.38x end-to-end speedup in retrieval-based tree settings. Furthermore, integrating ValuSpec into the EAGLE-3 dynamic tree framework yields up to 2.78x end-to-end speedup without modifying its tree construction strategy, demonstrating that ValuSpec serves as a generally applicable and plug-and-play candidate valuation module.",
+      "url": "https://arxiv.org/abs/2610.31338",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8811
+    },
+    {
+      "id": "2610.31314",
+      "title": "When LLMs Forget What They Believe: Characterizing State Integrity Collapse in Long-Horizon Dialogues",
+      "authors": [
+        "Yancheng Zhu",
+        "Yifan Yuan"
+      ],
+      "abstract": "Large language models can repeat an instruction while failing to keep obeying it. We study this recall-compliance dissociation in long-horizon dialogue and define State Integrity Collapse: a model preserves a stated constraint in memory but stops applying it to later turns. We introduce StateTrack-Bench, a controlled suite of conversations covering numerical, format, role/persona, factual-memory, and logical-rule constraints. Across seven provider-pinned model snapshots and five dialogue-depth probes, strict joint retention ranges from 62.4% to 100.0%, with degradation concentrated in symbolic constraints and in one especially brittle model. A forked recall audit shows that 88.6% of observed failures are behavioral-drift failures rather than ordinary forgetting; excluding the brittle outlier preserves this diagnosis (84.4% of failures). Extended evaluations at depths up to 50 turns confirm that the dissociation persists beyond the core benchmark, while Structured State Anchoring recovers up to 24.4 points on immutable constraints. The results show that reliability cannot be inferred from single-turn instruction following alone; evaluation must track whether remembered constraints remain operational as dialogue state grows. Code and artifacts are available at: https://github.com/xzzvsxd/StateTrack.",
+      "url": "https://arxiv.org/abs/2610.31314",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "github_url": "https://github.com/xzzvsxd/StateTrack.",
+      "score": 0.8809
+    },
+    {
+      "id": "2610.30794",
+      "title": "VLTest: Finding Joint Image-Text Failures in Vision-Language Models",
+      "authors": [
+        "Bin Duan",
+        "Jintao Lin",
+        "Guowei Yang"
+      ],
+      "abstract": "Vision-language models (VLMs) are increasingly embedded in software systems. Testing them raises two problems. Mutating either input can change the expected answer, so an output change is not by itself a failure. Some failures appear only when both inputs are mutated; attributing them to the combination requires testing each mutation alone. We present VLTest, a black-box VLM testing approach. It generates image variants by editing VQGAN latent codes and text variants with a rewrite-expand-prune pipeline, filters variants likely to change the expected answer, and tests each variant alone before testing combinations, so every joint failure has four matched cells. A VLM judge confirms a failure only after checking that the input keeps the expected answer. On three tasks with eight VLMs, including two commercial API models, the oracle confirms 81.7% of the candidates, with 88.8% to 94.6% precision against human labels, and four-cell confirmation rejects 22.5% of joint candidates. Under the same budget, VLTest's generators find 1.8 to 2.5 times as many confirmed failures as SINVAD and TextFooler, and its joint tests find 91 to 197 attributed joint failures per 1,000 joint calls, 1.3 times as many as the same pairing applied to the baselines' variants.",
+      "url": "https://arxiv.org/abs/2610.30794",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-22",
+      "score": 0.8809
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
