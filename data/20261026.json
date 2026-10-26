@@ -1,0 +1,432 @@
+{
+  "date": "2026-10-26",
+  "collected_at": "2026-10-26T13:15:50.116112+09:00",
+  "papers": [
+    {
+      "id": "2610.32101",
+      "title": "PRISM: Promoting Sampling Diversity of Large Language Models with Implicit Stochastic Modulation",
+      "authors": [
+        "Qixin Xu",
+        "Zihan Zhu",
+        "Xiaojiang Liu",
+        "Bohan Lyu"
+      ],
+      "abstract": "Large language models (LLMs) exhibit mode collapse, where their output distribution concentrates on familiar semantic modes. When diversity disappears, repeated sampling becomes semantic repetition rather than discovery, making rare but stronger solutions unlikely to surface and leaving self-evolution and continual learning difficult to sustain. Most remedies intervene only at inference time, shaping sam- ples without making diversity a model capability. We propose PRISM, a training-time framework that internalizes diversity within the model. PRISM combines (i) submodular curation that pairs each prompt with diverse-yet-correct multi-teacher solutions, and (ii) stochastic embedding modulation, which turns special-token perturbations into implicit signals for sampling distinct outputs. A theoretical analysis establishes the stability of this mechanism. On WritingPrompts and BookMIA, PRISM moves the quality-diversity frontier outward, achieving the best generation quality in all model-benchmark settings while maintaining the strongest or near-strongest semantic diversity across two open-weight model families. It also improves sampling efficiency on math and code benchmarks. Beyond inference, PRISM yields a stronger foundation for reinforcement learning, sustaining diverse rollouts and mitigating the diversity collapse commonly observed during RL training.",
+      "url": "https://arxiv.org/abs/2610.32101",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8906
+    },
+    {
+      "id": "2610.32752",
+      "title": "ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents",
+      "authors": [
+        "Navyansh Mahla",
+        "Sashank Vandrangi"
+      ],
+      "abstract": "LLM agents need long-term memory that can recover precise and mutually consistent evidence from growing interaction histories, particularly when answers depend on relations among facts rather than isolated semantic matches. Current memory pipelines remain vulnerable at two stages: indexing errors can fragment repeated entities or merge distinct ones, and online retrieval often treats initial similarity scores as final even when the surrounding graph provides evidence for revising them. We introduce ActionRAG, a graph memory architecture that couples cautious indexing with query-time graph retroevaluation. Its indexing pipeline reconciles type labels and applies tiered entity resolution. Given a query, dual-channel entity and triple retrieval forms an initial evidence set and induces a bounded local graph. Query-conditioned receiver-normalized diffusion refines triple scores using local path structure. Seed protection, hub-penalized flux, and triple materialization preserve direct evidence while recovering missed connections. We evaluate ActionRAG on MemoryAgentBench (MAB), which tests accurate retrieval, conflict resolution, long-range understanding, and test-time learning. Across its eight deterministic-scoring columns, ActionRAG achieves 55.1 average accuracy, improving over the strongest retrieval-based memory baseline by 5.4 points. Under MAB's query-time cost accounting, mean synthesis cost stays below \\$0.001 per query on the four reported cost columns, and the sum of separately measured retrieval-side p99 components is 440.7 ms on our consumer Apple Silicon setup.",
+      "url": "https://arxiv.org/abs/2610.32752",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.89
+    },
+    {
+      "id": "2610.32055",
+      "title": "How Much Do You Trust A Dog? Quantifying Hint-Following in Reasoning Language Models",
+      "authors": [
+        "Anxin Guo",
+        "Chirag Pabbaraju",
+        "Sara Ahmadian",
+        "Kamesh Munagala",
+        "Aravindan Vijayaraghavan"
+      ],
+      "abstract": "Large language models (LLMs) often exhibit sycophancy, altering their answers to align with user suggestions even on objective factual and reasoning tasks. Yet the quantitative form of this influence--- and whether it is calibrated to source reliability--- remains poorly understood. In this work, we investigate this behavior through hint-induced answer shifts on MMLU questions, evaluating prompts of the form ``[Source] thinks the answer is (X)''. We systematically vary the source to which the hint is attributed (a professor, a friend, or a dog) across three open-source model families, Qwen, Gemma, and SmolLM. We show that the change induced by the hint follows a predictable structure well-characterized by an exponential tilt: the hint induces an approximately constant mean shift in the hinted answer's log-odds, with question--target susceptibility largely shared across sources. To explore how this pattern can arise, we introduce a formal decomposition of the hint response and illustrate in controlled synthetic experiments how KL-regularized reward-based training reshapes both hinted and unhinted answer distributions. Finally, we evaluate whether this shift is calibrated to source reliability, finding that the log-odds shift persists even when the hint-giver is declared inaccurate or accompanied by explicit warnings not to trust the source, highlighting the vulnerability of LLMs to adversarial steering.",
+      "url": "https://arxiv.org/abs/2610.32055",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8882
+    },
+    {
+      "id": "2610.32235",
+      "title": "Correct but Unselectable: The Hidden Interface Tax in Multi-Candidate Reasoning",
+      "authors": [
+        "Qianli Ma",
+        "Zhiqing Tang",
+        "Fanshuai Meng",
+        "Zhi Yao",
+        "Hanshuai Cui",
+        "Weijia Jia"
+      ],
+      "abstract": "Small language models deployed under cost, latency, or privacy constraints cannot simply switch to larger models when reasoning fails. Multi-candidate generate-then-rerank offers a natural test-time scaling route. However, more candidates do not always yield higher accuracy. We identify a previously overlooked bottleneck between generation and selection: a correct answer may appear in the candidate pool yet fail to be selected because it is incomplete, unparseable, or misaligned with the answer mode the fixed selector expects. We term this loss the hidden interface tax and formalize a coverage-conversion decomposition that distinguishes raw oracle coverage from selectable coverage, the subset of problems where a correct candidate can actually be consumed by the selector. We propose Compatibility-Aware Candidate Construction (CACC), an interface layer between the candidate source and the fixed selector that repairs fragments, aligns answer modes, and removes selector-confusing noise without retraining either component. On numeric reasoning (GSM8K, competition_math), CACC raises both oracle coverage and final accuracy. On GPQA Diamond, CACC alone improves final accuracy from 5.6% to 19.2% (+13.6 pp); combined with proposer-side strengthening it reaches 25.8% (+20.2 pp). On MMLU-Pro, CACC exposes a coverage-conversion gap: answer-mode-compatible construction raises oracle coverage, but final accuracy decreases by 0.85 pp under the original selector; adding proposer-side strengthening improves final accuracy.",
+      "url": "https://arxiv.org/abs/2610.32235",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8876
+    },
+    {
+      "id": "2610.32096",
+      "title": "DELA: Learning Controllable Edits for Diffusion Language Models",
+      "authors": [
+        "Xinsong Feng",
+        "Chenan Wang",
+        "Leshu Tang",
+        "Johnny Liu",
+        "Dong Li",
+        "Da Li",
+        "Haipeng Chen"
+      ],
+      "abstract": "Diffusion language models (DLMs) support bidirectional denoising and iterative refinement, but generation remains largely controlled by token-level masking schedules. This leaves draft-level refinement implicit and limits explicit control over when to insert missing content, delete redundant spans, revisit uncertain regions, or stop editing. We introduce Diffusion Editing Language Adapter (DELA), a plug-in framework that enables controllable draft refinement with a frozen DLM. DELA operates on clean, variable-length drafts using four explicit editing actions: Insert, Delete, Remask, and Stop. The controller determines when and where to edit the draft, while the frozen DLM fills masked regions through denoising, separating high-level edit control from token-level generation. A naive single-phase editor would be computationally expensive because arbitrary interior edits can disrupt prefix stability and limit reliable KV-cache reuse. To address this, DELA uses a two-phase decoding procedure: a fast, append-only drafting phase that supports KV-cache reuse, followed by a global refinement phase that enables targeted non-monotonic edits to the full draft. We train the controller using a staged curriculum that begins with learning local edit priors from synthetic recovery tasks and mined actions that improve draft quality. Subsequent stages refine edit selection through rollout-based outcome preferences and alignment with downstream task feedback. Experiments on mathematical reasoning and code generation show that DELA achieves gains of up to 5.5 percentage points over direct diffusion decoding while keeping the backbone frozen. DELA thus provides a modular approach to explicit draft-level control in diffusion language models.",
+      "url": "https://arxiv.org/abs/2610.32096",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8868
+    },
+    {
+      "id": "2610.32871",
+      "title": "J-Comm: Jacobian-Guided Latent Communication between LLM Agents",
+      "authors": [
+        "Xiangwei Wang",
+        "Wei Wang",
+        "Sachith Seneviratne",
+        "Ken Chen",
+        "Yu Xia",
+        "Peng Wang",
+        "Saman Halgamuge"
+      ],
+      "abstract": "Latent communication requires both an effective continuous reasoning process and an interface through which an external model can leverage its intermediate computation. We present J-Comm, a framework comprising two core components. First, a training-free Geometric Agreement for Latent Reasoning (GEAR) reweights token candidates over existing model embeddings, which monotonically optimizes geometric consensus among candidate tokens in embedding space at each step. Second, we introduce an H+J (Hidden-and-Jacobian) communication interface that gives the Receiver two complementary views of the Sender's reasoning. The H channel supplies continuous inputs derived from feedback distributions, while the J channel conveys intermediate-state cues in vocabulary-indexed Jacobian-lens coordinates. Intuitively, H provides inputs for the Receiver to reason from, while J offers additional guidance within its computation. The Receiver reconstructs these cues using its own dictionary and injects them into intermediate layers during prefill, enabling communication without sharing key-value caches or requiring identical model widths. In Qwen3-8B to Qwen3-4B communication, J-Comm achieves the highest mean score across seven benchmarks, including 94.80% on MATH500, 54.55% on GPQA-Diamond, 73.33% on AIME2024+2025, and 62.93% success on ALFWorld. Compared with TextMAS, it improves performance by 1.29-8.59 percentage points and reduces generated text tokens by 19.2-74.8%.",
+      "url": "https://arxiv.org/abs/2610.32871",
+      "categories": [
+        "cs.CL",
+        "cs.MA"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8867
+    },
+    {
+      "id": "2610.32046",
+      "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+      "authors": [
+        "Yepeng Liu",
+        "Shengmai Chen",
+        "Xuandong Zhao",
+        "Chengzhi Liu",
+        "Dawn Song",
+        "Xin Eric Wang",
+        "Yuheng Bu"
+      ],
+      "abstract": "Recent \\emph{test-time training} (TTT) frameworks have enabled open-weight large language models (LLMs) to outperform inference-only frameworks powered by frontier models on scientific discovery tasks. However, TTT introduces additional computational cost for online weight updates during the discovery process, making computational efficiency an important consideration when scaling to larger models. This motivates us to explore an efficient \\emph{test-time adaptation} method for scientific discovery. We introduce \\emph{Test-Time Memory Evolution} (TTME), a plug-and-play test-time adaptation method, as an alternative to TTT. TTME continually updates the external memory by distilling the experience to guide subsequent discovery without updating model weights. To have a clean comparison, we evaluate TTME and TTT under the same discovery framework, replacing only the test-time adaptation method. Our evaluation shows that TTME outperforms TTT on all five mathematical tasks, while reducing computational cost by $82.8$-$84.6\\%$ in FLOPs and $47.7$-$58.4\\%$ in runtime. These results establish TTME as an effective and computationally efficient alternative to TTT in the evaluated discovery settings.",
+      "url": "https://arxiv.org/abs/2610.32046",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8865
+    },
+    {
+      "id": "2610.32141",
+      "title": "Beyond Data Schedule: Fast LLM Pretraining on Data Mixtures by Loss-Reweighting",
+      "authors": [
+        "Jiazheng Li",
+        "Huaqing Zhang",
+        "Jing Xu",
+        "Tianle Cai",
+        "Jingzhao Zhang"
+      ],
+      "abstract": "Large language models often acquire specialized capabilities through successive pretraining stages, but these gains can come at the cost of forgetting earlier knowledge. In this work, we investigate whether such trade-offs can be improved by changing how strongly each domain contributes to learning while keeping its data exposure fixed. We find that, in controlled knowledge--mathematics experiments, loss reweighting produces a single checkpoint that surpasses the best knowledge and reasoning scores attained along either stage trajectory. This reveals an independent control that data-mixture ratios alone do not capture. Building on this finding, we propose LARE (Loss-Adaptive Reweighting under fixed Exposure), which automatically adjusts domain weights from running loss statistics. Motivated by a theoretical analysis of gradient noise, its normalized inverse-square-root rule balances relative loss scales without changing the sampled mixture or requiring additional runs to search for weights. Across knowledge, mathematics, and code, \\Method{} improves all five evaluated benchmarks for a 1.5B model trained on 240B tokens, averaging +7.84 pp over a matched direct mixture, including gains of +17.06 pp on GSM8K and +9.00 pp on MATH. These findings demonstrate that adjusting domain loss scales can improve joint capabilities without additional domain exposure.",
+      "url": "https://arxiv.org/abs/2610.32141",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8856
+    },
+    {
+      "id": "2610.32412",
+      "title": "LeafSkill: Efficient Leaf-Level Action Grounding for Recursive LLM Agents",
+      "authors": [
+        "Shen Liu",
+        "Ze Zhou",
+        "Zhenguo Xu",
+        "Shaopu Wang",
+        "Yike Gao",
+        "Chunlei Wang"
+      ],
+      "abstract": "Recursive large language model (LLM) agents solve long-horizon tasks through decomposition, execution, and environmental feedback. Yet after producing an atomic subtask, they often invoke the same large model again to translate a familiar instruction into an executable action. We observe that high-level planning is task-specific, whereas leaf-level action grounding recurs across tasks and can be checked against environment-admitted actions. We introduce LeafSkill, an external reuse layer that retrieves semantically related grounding experience, binds action templates to current objects and admissible actions, and uses a lightweight 1.7B selector to choose a bound action or defer the unchanged subtask to the original agent. Skills remain outside the model parameters, allowing a frozen selector to use post-training additions. Under lexical and syntactic paraphrases, exact matching retrieves none of the reference actions, while semantic retrieval preserves 96.0% and 97.0% candidate coverage; the frozen selector adopts 97.34% of unseen skill types. On an independent confirmation set of 200 Robotouille tasks, LeafSkill completes 137 tasks versus 121 for ReCAP (68.5% vs. 60.5%, exact McNemar p=.0259). On the 106 tasks completed by both, it reduces Qwen3.5-27B tokens by 14.42% and calls by 14.08%. A separate held-out repeat yields a consistent 9.0-point success gain and 18.98% token reduction. Reusable leaf grounding can thus improve task completion while reducing host-model inference without replacing high-level planning.",
+      "url": "https://arxiv.org/abs/2610.32412",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8854
+    },
+    {
+      "id": "2610.32665",
+      "title": "Do Language Models Trust Their Own Justifications? A Study on Functional Consistency",
+      "authors": [
+        "Alisson Rosa Pereira",
+        "Bruno Iochins Grisci"
+      ],
+      "abstract": "Large Language Models (LLMs) have been widely adopted in text classification tasks, where they not only output class predictions but also generate explanations that highlight the tokens deemed most relevant for reaching the predicted label. Yet it remains unclear whether these highlighted elements are behaviorally consistent with the model's own predictions under targeted interventions, which we refer to as functional auto-consistency. While much of the literature evaluates the textual plausibility of such explanations, few studies assess their functional consistency with the model's actual behavior. In this work, we propose an experimental framework based on the principle of auto-consistency: if a model identifies certain tokens as decisive, then isolating, removing, or semantically inverting them should produce systematic and interpretable changes in its predictions. We operationalize this evaluation through sufficiency, comprehensiveness, and counterfactuality metrics, and conduct experiments on IMDB and Steam reviews across both closed-source (GPT-4o-mini) and open-source LLMs (Gemma3, Granite8B, DeepSeek). Results show that GPT-4o-mini follows the expected progression across all metrics, Gemma3 and Granite8B maintain coherence under sufficiency but lose consistency under more demanding interventions, while DeepSeek variants display structural deviations, either failing to preserve sufficiency or overreacting under comprehensiveness and counterfactuality. These findings show that explanation reliability varies across LLM families and scales, with smaller models displaying contradictions and larger ones exhibiting over-sensitivity. By combining sufficiency, comprehensiveness, and counterfactuality, our approach provides a systematic methodology for assessing the functional consistency of LLM self-explanations.",
+      "url": "https://arxiv.org/abs/2610.32665",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8839
+    },
+    {
+      "id": "2610.32120",
+      "title": "ImageRSI: Verification-Driven Recursive Self-Improvement for Agentic Image Generation",
+      "authors": [
+        "Shuo Han",
+        "Zhilin Wang",
+        "Peng Ling",
+        "Wenjia Gong",
+        "Yang Liu",
+        "Guanjun Jiang",
+        "Yukun Cao",
+        "Xike Xie"
+      ],
+      "abstract": "Complex text-to-image requests remain difficult to satisfy reliably. Verifying and repairing an image can fix an individual output, but a successful repair does not necessarily carry over to other requests. We present ImageRSI, a framework that keeps the image generator frozen and combines three components: five-dimensional verification and repair within each task, an experience library shared across tasks, and offline updating of the judge. Candidate experiences enter the library only after paired A/B validation, and the judge is updated with supervised fine-tuning and GRPO on accumulated image-judgment records and evaluated before reuse. We also introduce ImageReq-Bench, a benchmark of 961 requests built around hard cases in real-world image-generation requests, each paired with an evaluation checklist. ImageRSI achieves a Checklist Strict Accuracy (CSA) of 52.6% on MindBench (with Nano Banana Pro as the generator) and 65.66% on ImageReq-Bench, and we compare system outcomes across judge-training configurations.",
+      "url": "https://arxiv.org/abs/2610.32120",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8836
+    },
+    {
+      "id": "2610.32104",
+      "title": "Putting Transformer Theories to the Test",
+      "authors": [
+        "Awni Altabaa",
+        "Tobias Schnabel",
+        "Kiran Tomlinson"
+      ],
+      "abstract": "Several formal theories have been developed to characterize the capabilities and limitations of the transformer architecture, each employing different abstractions that capture different features of the architecture. Due to the differences in their underlying assumptions and conceptual frameworks, these theories can disagree in their predictions about what tasks transformers find easy or hard. We map out seven theories of transformer capability (Star-free, $\\mathsf{AC}^0$, $\\mathsf{TC}^0$, C-RASP, MPC, BAPO, and Sensitivity) and translate their results into a common matrix of predictions across a suite of tasks covering different computational structures. We provide new theoretical results to complete this matrix. We then evaluate theoretical predictions through controlled experiments measuring in-distribution sample complexity, length generalization, and pretrained language model performance. We find that no single theory explains the observed pattern of successes and failures. When a theory does not capture the transformer behaviors relevant to a task, its predictions break down; for instance, we show that the $k$-hop induction task is predicted hard by C-RASP because it does not model content-dependent attention, but we train small transformers on this task that length-generalize. Similarly, theories assuming hard attention like $\\mathsf{AC}^0$ and BAPO predict binary majority to be hard, for which we also find success in practice. Together, our results point to several specific features that a theory of transformers must capture: soft rather than hard attention, dynamic content-dependent retrieval, bounded computation at each position, an account of learnability and inductive biases, and a combination of upper and lower bounds.",
+      "url": "https://arxiv.org/abs/2610.32104",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8836
+    },
+    {
+      "id": "2610.32441",
+      "title": "SCI-AGENT-EXAM: Benchmarking Agents on Scientific Research Tasks",
+      "authors": [
+        "Tianyun Zhong",
+        "Wei Wang",
+        "Jialin Li",
+        "Jianhong Tu",
+        "Liyao Li",
+        "Chuqiao Kuang",
+        "Tianshi Zheng",
+        "Songchi Zhou",
+        "Weiqi Zhai",
+        "Qile Jin",
+        "Jiajia Li",
+        "Jiasheng Zheng",
+        "Boxi Cao",
+        "Yaojie Lu",
+        "Hongyu Lin",
+        "Shiwei Ye",
+        "Bing Zhao",
+        "Hu Wei",
+        "Lin Qu",
+        "Xianpei Han"
+      ],
+      "abstract": "Large language model (LLM) agents are increasingly capable of supporting scientific workflows, but their capabilities across diverse research activities remain difficult to assess systematically. Existing benchmarks often focus on selected scientific capabilities or task types, limiting a comprehensive characterization of scientific agents' strengths and weaknesses in realistic research workflows. We introduce SCI-AGENT-EXAM, a workflow-oriented benchmark comprising 120 expert-curated tasks across 11 scientific fields and 7 research task types defined by the Scientific Workflow Task Taxonomy (SWTT). Each task requires both executable artifacts (e.g., code and scripts) and textual artifacts (e.g., reports and explanations). To evaluate the heterogeneous task outputs, we develop a hybrid evaluation protocol combining deterministic programmatic verification for executable artifacts with a calibrated, expert-validated LLM-based judge for textual artifacts. Beyond outcome assessment, we analyze progress and solution stability along execution trajectories to characterize how agents reach their final results. Experiments with 10 frontier LLM agents reveal substantial performance gaps: GPT-6 Astra achieves the highest overall score of 80.9, yet only 26.0% of its runs exceed the 0.95 success threshold. Further analyses uncover distinct capability profiles across scientific task types and substantial variation in execution efficiency and stability. Our code and data are available at https://github.com/SKYLENAGE-AI/Sci-Agent-Exam.",
+      "url": "https://arxiv.org/abs/2610.32441",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "github_url": "https://github.com/SKYLENAGE-AI/Sci-Agent-Exam.",
+      "score": 0.8831
+    },
+    {
+      "id": "2610.32113",
+      "title": "REACT: Representational Early Analysis and Control of Chain-of-Thought Trajectories",
+      "authors": [
+        "Hanwen Zhang",
+        "Enyi Jiang",
+        "Ruike Zhu",
+        "Qinan Yu",
+        "Sanmi Koyejo"
+      ],
+      "abstract": "Chain-of-thought (CoT) generation offers an opportunity to intervene before a reasoning model completes its answer. But does the point at which risk is easiest to detect also offer the most effective control? We study this question with REACT, a conditional activation intervention that learns a safety direction from paired safe and unsafe trajectories and applies it once to an early CoT hidden state. The model weights remain frozen, and all subsequent tokens are generated without further edits. To study timing, we train directions separately at each of the first five CoT positions and evaluate ungated edits with full post-edit regeneration. Across three distilled reasoning models and three generation seeds, the strongest gains concentrate in a two- to three-token early window; on DeepSeek-R1-Distill-Llama-8B, the effect falls to approximately zero at the fourth and fifth tokens, even though later states can be more predictive of risk. This separates risk readability from effective control: intervention timing must be evaluated through its effect on subsequent generation. On the same 8B model, REACT raises the rate of fully safe CoT-answer outputs on StrongREJECT-273 from 29.06% to 82.05%, while keeping benign refusal and usefulness near baseline. An anonymized implementation is available at https://anonymous.4open.science/r/REACT_official2-333B.",
+      "url": "https://arxiv.org/abs/2610.32113",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8831
+    },
+    {
+      "id": "2610.32492",
+      "title": "Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping",
+      "authors": [
+        "Yudong Zhang",
+        "Wei Ding",
+        "Kaili Zheng",
+        "Yuchen Ding",
+        "Zhenyu Zhang"
+      ],
+      "abstract": "Large language models serve applications with diverse inference budgets, but training and maintaining separate models for each budget incurs substantial costs. Recent Looped Transformers enable flexible inference computation through parameter reuse, but maintaining strong performance across different inference budgets remains an open challenge. We introduce Accordion, a mixture-of-experts-based model that supports five inference budgets through fixed-prefix layer looping. Each budget follows a pre-defined execution path, while the minimum budget retains the unlooped model. Joint pretraining samples one budget per micro-batch and optimizes its next-token prediction loss without additional cross-budget consistency objectives. We further preserve these inference budgets through supervised fine-tuning and reinforcement learning, where parameter-group merging and budget-matched multi-teacher on-policy distillation integrate three domain experts into one model. After 3.6T tokens of pretraining, increasing inference depth improves Accordion-6B-A0.5B's five-category macro-average across 37 tasks by 3.01 percentage points, with the middle budget capturing 89% of this gain using half as many additional layer executions. The final model surpasses each domain expert on its corresponding task-and-budget average, while achieving strong instruction-following performance across all budgets and retaining depth-dependent gains in mathematical reasoning and code generation.",
+      "url": "https://arxiv.org/abs/2610.32492",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.883
+    },
+    {
+      "id": "2610.32128",
+      "title": "From Noisy Retrieval to Decision Evidence: Silver Evidence Demonstrations for In-Context Learning",
+      "authors": [
+        "Masoud Monajatipoor",
+        "Fazlolah Mohaghegh",
+        "Hamid Reza Hassanzadeh",
+        "Akash Uttamrao Bhoite",
+        "Robert E. Tillman"
+      ],
+      "abstract": "RAG and retrieval-augmented few-shot ICL can struggle when decision-relevant evidence is buried in long, noisy context. Retrieved passages and demonstrations may contain redundant or distracting information. Although expert-labeled development examples may identify the text supporting each decision, these annotations are typically used only as answer-side rationales rather than as supervision for filtering noisy retrieval. We propose silver-evidence demonstrations, which replace raw retrieved passages in ICL examples with generated, target-conditioned evidence summaries. For each labeled development example, an LLM generates silver evidence without access to the expert label or gold evidence; this evidence is then paired with the expert label and gold evidence where available. At test time, a single structured call generates silver evidence from retrieved passages and then predicts the final label and decision evidence. Across EI 2.0, SciFact, synthetic policy retrieval, and HICRIC/IMR data, our full method improves over equally sized gold-only ICL (label-only for policy) on three of four datasets and improves evidence F1 on all annotated datasets. It also achieves higher mean label accuracy than InstructRAG-style ICL on all four datasets. These results suggest that replacing demonstration-side retrieved passages with compact, target-conditioned silver evidence is particularly useful for decisions based on long and noisy text, where it reduces distracting context while preserving decision-relevant signals and expert supervision.",
+      "url": "https://arxiv.org/abs/2610.32128",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8829
+    },
+    {
+      "id": "2610.32770",
+      "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+      "authors": [
+        "Leon Sick",
+        "Lukas Hoyer",
+        "Yannick Strümpler",
+        "Christian Reisswig",
+        "Timo Ropinski",
+        "Federico Tombari"
+      ],
+      "abstract": "On-policy self-distillation enables post-training foundation models without relying on stronger external teachers. However, existing approaches rely on ground-truth question-answer pairs, human-curated problem sets, or other supervised signals. In this work, we reformulate on-policy self-distillation as a self-training framework, driven by self-generated question-answer pairs and privileged reasoning demonstrations. We push supervision to the limit: guided solely by coarse, high-level topic descriptions, the model synthesizes its own curriculum of queries and privileged reasoning traces without access to any human-curated prompts or answers. We find that self-distillation on fully synthetic privileged information enables a model to improve across multiple domains while retaining its capabilities on domains it is not self-trained on. We demonstrate the generality of this framework across text and multimodal domains, achieving consistent self-improvement on standard language benchmarks and Visual Question Answering. Our findings demonstrate that foundation models possess rich latent capabilities that can be amplified without external task supervision or curated problem distributions.",
+      "url": "https://arxiv.org/abs/2610.32770",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8826
+    },
+    {
+      "id": "2610.32483",
+      "title": "When Agents Fail: Model or Harness--Who's to Blame?",
+      "authors": [
+        "Shao Zhang",
+        "Hangfan Zhang",
+        "Yuanyuan Shi",
+        "Hao Li",
+        "Min-Le Su",
+        "Kangcong Li",
+        "Jingping Wang",
+        "Chunjiang Mu",
+        "Chen Zhang",
+        "Yang Chen",
+        "Bo Zhang",
+        "Shuyue Hu"
+      ],
+      "abstract": "LLM agents combine models with execution harnesses, so agentic benchmark performance reflects their joint behavior. We argue that harnesses should therefore be evaluated through their interactions with underlying models. We develop a framework combining five complementary measures: (i) Valid Completion Rate (VCR), how reliably agents finish normally and deliver evaluable results, irrespective of task correctness; (ii) Model-Harness Fit, how well a harness supports task achievement through valid completion for a given model; (iii) Cross-Model Fit, a harness's overall suitability across evaluated models; (iv) Interaction Residuals, pairing-specific execution strengths and weaknesses hidden by component-level summaries; and (v) Token Load, the token demands of agent execution, including failed attempts. We evaluate four general-purpose harnesses (OpenCode, Codex CLI, Pi CLI, and DeepAgents) with four core models, plus two fixed native model-harness systems, on six benchmarks covering context management, tool use, long-context planning, multimodal interaction, and artifact handoff. Including native references and stress conditions, 111 evaluation settings yield 52,168 trajectories. Harness rankings vary across models and benchmarks; task performance and valid completion can favor different pairings, and similar task scores can accompany distinct execution profiles. OpenCode ranks first in cross-model performance, while DeepSeek V4 Flash Preview maintains consistently high Mean VCR across harnesses on the shared four-benchmark panel. These findings support evaluating model-harness interactions, training transferable harness-use capabilities in models, and harness designs adapted to the model and task.",
+      "url": "https://arxiv.org/abs/2610.32483",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8822
+    },
+    {
+      "id": "2610.32181",
+      "title": "Not All Information Is Worth Asking For: Decision-Informed Information Seeking with LLMs",
+      "authors": [
+        "Seunghan Lee",
+        "Jun Seo",
+        "Junhyeok Kang",
+        "Jaehoon Lee",
+        "Sangjun Han",
+        "Sungdong Yoo",
+        "Minjae Kim",
+        "Tae Yoon Lim",
+        "Dongwan Kang",
+        "Hwanil Choi",
+        "Soonyoung Lee",
+        "Wonbin Ahn"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly used to support decisions under incomplete information, where deciding what to look up and when to stop matters as much as the final answer. However, LLMs fall into an information trap: They pay for checks, i.e., costly pieces of evidence, that cannot change their decision or are not worth their cost, and they keep asking when the evidence is already sufficient. To this end, we propose Decision-Informed Value-of-information Acquisition (DIVA), a simple yet effective procedure for LLM information seeking based on the decision value of evidence. DIVA 1) lets the LLM specify a small decision model, i.e., how likely a bad outcome is and how each check would shift this probability, through short numeric questions and 2) values each candidate check by how much its imagined outcomes improve the decision net of its cost, stopping when no check is worth its cost. Its variant, DIVA-U, further accounts for the LLM's uncertain estimates of how strongly each check shifts this probability. DIVA is training-free and applies to any LLM. Across four domains and 20 LLMs, DIVA-U has lower regret, i.e., value lost relative to the best possible decision, than every LLM baseline on real-world data, mainly by stopping once evidence suffices, and DIVA cuts the regret of the best LLM baseline by 75% in synthetic scenarios where every check's reliability is given. Code: github.com/seunghan96/diva.",
+      "url": "https://arxiv.org/abs/2610.32181",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.882
+    },
+    {
+      "id": "2610.32332",
+      "title": "4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents",
+      "authors": [
+        "Yanhao Jia",
+        "Yi Zhu",
+        "Yiran Zhong",
+        "Weigao Sun",
+        "Feida Zhu",
+        "Pengkun Jiao",
+        "Sihan Yang",
+        "Ming Ma",
+        "Steven Hoi",
+        "Erik Cambria"
+      ],
+      "abstract": "Humans efficiently process multimodal streams spanning hours to years, building persistent, fine-grained spatiotemporal memories that support reasoning about and predicting long-horizon events. In contrast, existing benchmarks focus on short- and medium-context tasks, and most foundation models struggle to preserve fine-grained information over long horizons. To evaluate and improve long-horizon spatiotemporal reasoning, we introduce the LongVideo dataset and the 4DMemoryBench. LongVideo comprises about 900 hours of video and over 5,000 manually reviewed questions covering visual, textual, and spatiotemporal reasoning across diverse context lengths. We further develop the 4DMemory Harness, which integrates four complementary skills, 22+ specialized tool models, and a model-specific retrieval-augmented generation system. Evaluating 13 leading models, we find that standalone foundation models struggle with long-horizon tasks, while the 4DMemory Harness improves all of them by over 50\\%. Compared to previous benchmark, the same models exhibit a performance drop of more than 10\\% on 4DMemoryBench. We hope 4DMemory will facilitate the development of spatiotemporal agents capable of addressing complex, long-horizon tasks.",
+      "url": "https://arxiv.org/abs/2610.32332",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.MM"
+      ],
+      "submitted": "2026-10-23",
+      "score": 0.8814
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
