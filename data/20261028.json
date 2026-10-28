@@ -1,0 +1,426 @@
+{
+  "date": "2026-10-28",
+  "collected_at": "2026-10-28T14:06:30.545231+09:00",
+  "papers": [
+    {
+      "id": "2610.36774",
+      "title": "Batching the Reflective Optimization Loop: Parallel Proposals Make GEPA Faster and Better",
+      "authors": [
+        "Jialin Zhang",
+        "Lakshya A Agrawal",
+        "Shangyin Tan",
+        "Donghyun Lee",
+        "Lutfi Eren Erdogan",
+        "Dan Klein",
+        "Koushik Sen",
+        "Alex Dimakis",
+        "Matei Zaharia"
+      ],
+      "abstract": "Reflective text optimization makes agentic systems better, but the optimization loop is itself a resource-hungry workload whose sequential structure leaves parallel evaluation capacity idle. We extend the open-source GEPA optimizer to propose and evaluate a batch of candidates on each optimization step instead of one candidate at a time. In our sweep on two tasks, most batched runs finished in half the wall-clock time or less, and the fastest in about a quarter to a third. Batched settings also achieved higher held-out test scores, from 68.9% to 72.1% on LiveBench-Math (with $2\\times2$) and from 49.0% to 60.0% on HoVer (with $8\\times1$). A simple runtime model explains the measured speedups under a finite worker pool, and batched settings also spend their metric-call and dollar budgets more efficiently. We frame the axes along which a reflective optimization step can scale in parallel, a first look at allocating a fixed optimization budget across them.",
+      "url": "https://arxiv.org/abs/2610.36774",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8946
+    },
+    {
+      "id": "2610.36918",
+      "title": "TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces",
+      "authors": [
+        "Mingyu Zhang",
+        "Zixu Li",
+        "Zhiheng Fu",
+        "Zhiwei Chen",
+        "Jinhe Bi",
+        "Yupeng Hu"
+      ],
+      "abstract": "Large language model (LLM) agents rely on memory systems to leverage long-term interactions, yet existing systems typically retrieve memories based on their relevance to the current query and use them as contextual evidence. However, relevance alone does not characterize how a memory contributes to task solving: the same memory may serve different roles across tasks, such as directly supporting the answer or linking to complementary memories with weaker semantic relevance but necessary information. We therefore reframe agent memory systems as Task-Oriented Role-Adaptive Workspaces, where memories are selected and organized by their task-oriented roles and relations. Based on this view, we propose TrawMem, which organizes interaction histories into local threads and constructs task-oriented workspaces by assigning roles and jointly selecting complementary memories. Experiments on LoCoMo and MemGallery with four open- and closed-source backbones show consistent improvements over representative memory systems, with macro-F1 gains of 2.23-3.14 points. On LoCoMo, TrawMem improves the LLM-Judge score over SimpleMem by 4.07 and 4.31 percentage points on Qwen3.5-9B and DeepSeek-V4-Flash, respectively, while requiring approximately 12.8% and 5.1% fewer context tokens, respectively.",
+      "url": "https://arxiv.org/abs/2610.36918",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8935
+    },
+    {
+      "id": "2610.36901",
+      "title": "HiLo-RD: Cross-Budget Self-Distillation for Masked Diffusion Language Models",
+      "authors": [
+        "Xiang Li",
+        "Chengting Yu",
+        "Jungang Li",
+        "Yilun Zheng",
+        "Junzhuo Li",
+        "Xingyao Zhang",
+        "Wenbo Su",
+        "Xuming Hu"
+      ],
+      "abstract": "We propose HiLo-RD (High-to-Low Budget Representation Distillation) to improve masked diffusion language models (MDLMs) under a limited generation budget. Unlike autoregressive models, MDLMs choose both what to generate and where to commit it. This creates two coupled challenges: predicting useful content before reasoning is complete, and deciding when to fix answer tokens that shape later predictions. We identify budget-induced premature commitment: even when a correct solution fits, the model can fix answer fragments near the window boundary before resolving intermediate steps. These fragments become context for later predictions and redirect subsequent reasoning. Existing post-training methods do not directly transfer the stronger trajectories that the same model follows with a larger window. HiLo-RD addresses this gap by (1) pairing large-window teacher states with cropped small-window views and (2) matching their hidden representations at committed positions. This supervision guides both token prediction and commitment order without an external teacher. Across mathematics benchmarks, HiLo-RD improves low-budget accuracy and shortens responses; these gains extend to code generation without code-domain training. On GSM8K, accuracy rises by 9.4 percentage points as mean readable length falls by about 25%. Attention diagnostics and fixed-budget order interventions support the proposed mechanism. Together, these results show that large-window reasoning can improve small-window decoding.",
+      "url": "https://arxiv.org/abs/2610.36901",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8933
+    },
+    {
+      "id": "2610.37175",
+      "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
+      "authors": [
+        "Brian Ko",
+        "Han Wang",
+        "Hejia Geng",
+        "Li Erran Li",
+        "Sherry Yang"
+      ],
+      "abstract": "AI research agents can propose, execute, and improve programs that solve machine learning tasks. However, executing each candidate program requires training and evaluating ML models, limiting how many candidates an agent can explore at each step. We introduce MLE-World, a world model finetuned from Qwen3.5-4B that predicts a program's terminal output (error traces, training logs, and validation scores) from its code and data description without executing it, together with a confidence score estimating the prediction's correctness. Because a prediction costs one inference call rather than a training run, MLE-World makes test time scaling (TTS) affordable for these agents. We build five TTS policies, guided by MLE-World, that compare several candidates per step by their predicted outputs: Sequential revision, Best-of-N, Pairwise judging, Fusion, and a UCB style rule that also adds an exploration bonus from this confidence score. Since predictions can be wrong, we run a candidate for real only when its confidence score is low. On 17 MLE-bench Lite tasks, MLE-World matches the real terminal output on 77.9% of held out programs, versus 41.1% for much larger prompted models. MLE-World guided TTS achieves up to 22.1% higher observed mean performance than the agent without a world model, with less real execution. Project webpage: https://mle-world.github.io/.",
+      "url": "https://arxiv.org/abs/2610.37175",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8927
+    },
+    {
+      "id": "2610.36734",
+      "title": "CAMR: Compatibility-Aware Memory Replay for Continual Learning in Large Language Models",
+      "authors": [
+        "Jingpu Yang",
+        "Tianhao Li",
+        "Fengxian Ji",
+        "Yufeng Wang",
+        "Shuxin Zheng",
+        "Xiaoqing Zhang"
+      ],
+      "abstract": "Continual learning requires large language models to acquire new knowledge and capabilities while retaining what they have learned. Fine-tuning and replay support acquisition and retention, but deciding whether incoming examples need supervision and which historical examples to revisit remains a challenge. We propose Compatibility-Aware Memory Replay (CAMR), an adaptive framework that jointly controls current-example supervision and historical replay. CAMR combines compatibility checks with a learned memory gate to guide an online policy over three actions: learning incoming examples with general replay, jointly reinforcing compatible related examples, and skipping direct supervision of verified mastered duplicates. The policy learns from acquisition, retention, and training-cost feedback under a bounded per-arrival replay budget. We evaluate CAMR with Qwen3-8B-Base on continual factual updating and cross-task and cross-domain learning. On WikiBigEdit, CAMR consistently leads evaluated methods in Original Match from 3K to 100K facts, reaching 93.66% after just 3K facts and surpassing Full-history Replay (LoRA) after 100K facts. It also achieves the highest final scores on all four selected TRACE tasks and maintains or improves earlier-task performance relative to post-acquisition levels in a sequence spanning financial question answering, mathematical reasoning, code generation, and summarization.",
+      "url": "https://arxiv.org/abs/2610.36734",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8901
+    },
+    {
+      "id": "2610.36811",
+      "title": "Weakness Localization Is Not Enough: State-Aware Recursive Knowledge Improvement for Large Language Models",
+      "authors": [
+        "Runze Jiang",
+        "Yan Wang",
+        "Boran Jin",
+        "Bingyu Zhu",
+        "Longtao Huang"
+      ],
+      "abstract": "Knowledge improvement in large language models is shifting from predefined knowledge incorporation pipelines toward evaluation-guided updating. Existing methods use evaluation to localize model-specific knowledge weaknesses and guide targeted post-training. However, identifying what to improve does not necessarily provide sufficient information for deciding how to improve it. The same localized weakness can be compatible with distinct operational knowledge states: the relevant knowledge may be unavailable, available but difficult to access reliably, or accessible but ineffective for downstream use. We call this ambiguity knowledge-state aliasing. When compatible states favor different interventions, greater diagnostic resolution alone is insufficient for intervention selection. Moreover, model updates can change the underlying knowledge state before the observed weakness disappears, such that an intervention appropriate in one round may no longer address the bottleneck in the next. To address these challenges, we propose Recursive Knowledge Improvement (RKI), which formulates knowledge improvement as a sequential, state-aware intervention process. RKI organizes knowledge into graph-structured units that provide a shared basis for diagnostic evaluation and targeted intervention across rounds. At each round, RKI localizes knowledge weaknesses, estimates the model's operational knowledge state from diagnostic evidence and intervention history, selects a corresponding intervention, and re-evaluates the updated model before determining the next intervention. On HotpotEval and SafeInternalEval, RKI outperforms existing knowledge incorporation methods by 18.41 points on average. Further analyses show that knowledge states provide additional guidance for intervention selection beyond weakness localization and can change across model updates even when the observed weakness persists.",
+      "url": "https://arxiv.org/abs/2610.36811",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8884
+    },
+    {
+      "id": "2610.37642",
+      "title": "Metacognitive Decoding: Efficient Inference for Diffusion Language Agents",
+      "authors": [
+        "Mingyu Zhao",
+        "Shuhang Lin",
+        "Ligong Han",
+        "Xiaojing Yu",
+        "Zhenting Wang",
+        "Yifei Pang",
+        "Yang Zhou",
+        "Dimitris N. Metaxas"
+      ],
+      "abstract": "Diffusion language models offer a promising path to efficient agents through parallel token generation. However, efficient interaction requires adapting both where computation is spent and how much text is generated. We introduce a metacognitive controller that guides diffusion generation according to the needs of the current response and the agent's interaction with the environment. It learns when to finalize tokens and how far generation should extend, reducing overall computation within responses. Our controller, a lightweight plug-in for the diffusion backbone, is trained on agent trajectories to balance correctness and generation cost. This approach connects the agent's generation process to the interaction the agent serves. Experiments across five benchmarks demonstrate that our approach reduces inference FLOPs by 20.6% on average compared with the most efficient baseline, while maintaining competitive task accuracy. Ablation studies further validate the effectiveness of our approach.",
+      "url": "https://arxiv.org/abs/2610.37642",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8883
+    },
+    {
+      "id": "2610.37405",
+      "title": "Clearing the FoG: Training KG Agents to Retrieve the Evidence Behind Their Answers",
+      "authors": [
+        "Zongyuan Sun",
+        "Shuai Zhao",
+        "Yingjun Du",
+        "Ke Shu",
+        "Ziyue Zhu",
+        "Haoran Luo"
+      ],
+      "abstract": "Large language models (LLMs) can answer many factual questions correctly, but a correct answer is not necessarily a supported one. For an LLM agent, a knowledge graph (KG) plays two roles: as a source of answers, it supplies facts that the model lacks; as a source of evidence, it supplies the supporting triples that make an answer traceable and auditable. However, existing KG agents treat the KG only as a source of answers: their training data carries answers but not evidence, and their training rewards check the answer but not the retrieved evidence, so agents often answer correctly without retrieving the supporting triples. We propose FoG, a framework that trains KG agents to retrieve the evidence behind their answers. FoG consists of evidence-grounded synthesis, a KG interaction agent, and an evidence-coverage process reward (ECPR): the synthesis recursively hides explicit entities behind verifiable sub-questions, so that every question carries its supporting triples by construction; the agent records the triples returned by the KG; and ECPR credits each supporting triple to the turn that first retrieves it. Experiments on three KGQA benchmarks demonstrate that FoG enables 3B--4B open-source agents to outperform substantially larger baselines in answer accuracy and evidence coverage, with zero-shot cross-KG transfer.",
+      "url": "https://arxiv.org/abs/2610.37405",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8879
+    },
+    {
+      "id": "2610.37375",
+      "title": "Agent-Conditioned Routing: Diverse Reasoning Paths Within One Frozen Model",
+      "authors": [
+        "Ananth Kalyanasundaram",
+        "Ankush Kadu",
+        "Athira Gopal",
+        "Aswanth Krishnan"
+      ],
+      "abstract": "Generating several solutions can expose alternative methods, but additional trajectories often paraphrase one dominant approach. We investigate whether the conditional capacity of a frozen sparse mixture-of-experts (MoE) model can provide such diversity from one problem prompt, without user-assigned roles, prescribed methods, fine-tuning, or model copies. Agent-Conditioned Routing (ACR) assigns $m$ parallel trajectories persistent, untrained shared/private expert-eligibility masks while preserving the learned, input-dependent token router. On a screened 126-question multi-mode mathematics and physics benchmark, with model judges reading the reported derivations in full, we count the number of problems yielding at least two distinct primary methods among soft-correct solutions in four trajectories. ACR reaches approximately twice as many such problems as the strongest temperature setting under GLM 5.3 (37.3 versus 18.7), and 1.67 times as many under GPT-5.6 Sol (45.00 versus 27.00), at matched output budgets. A blinded four-expert audit on a stratified sample of 30 problems also finds more multi-method solutions with ACR on both backbones, with lower correctness. Matched-eligibility ablations show modest multi-method count advantages for ACR, while token-resampled masks attain higher correctness. An informed sequential prompt elicits more diversity still, using previous solutions and explicit requests for alternative methods. ACR adds about 160 KiB of mask state. In a three-problem microbenchmark capped at 1,024 tokens, its latency and peak VRAM usage remain within 3% of batched temperature sampling.",
+      "url": "https://arxiv.org/abs/2610.37375",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8879
+    },
+    {
+      "id": "2610.36589",
+      "title": "InfraDev: Can Coding Agents Develop AI Infrastructure, and How Can We Tell?",
+      "authors": [
+        "Yangshen Deng",
+        "Jiaqi Ruan",
+        "Yeqi Huang",
+        "Nick Lau",
+        "Guangming Sheng",
+        "Luo Mai"
+      ],
+      "abstract": "Coding agents are beginning to develop the production-grade AI infrastructure that trains and serves large models, yet existing benchmarks cover only single kernels or single-GPU tasks, and grade with tests and prompts that misjudge both correct and incorrect patches. We introduce InfraDev, a benchmark of 36 tasks built from real-world pull requests to Megatron-LM, vLLM, and verl, covering infrastructure development for training, inference, and reinforcement learning. Each task asks an agent to reimplement a real change that spans many files and must run correctly across many GPUs. To grade such changes, we jointly synthesize hidden probes, which enforce the requirements the original tests leave unchecked, and a prompt that states every interface the probes call without revealing the solution. We also design a shared execution environment that reuses dependencies and artifacts across tasks, cutting storage by 52-57% and build time by 13-14% on Megatron-LM and vLLM. Across six frontier models, the best resolves only 38.9% of the tasks; the probes reject 32% of the submissions that pass every official test, and with the original pull request descriptions as prompts, no model resolves a single task. Failure analysis shows that structural and state errors dominate and that agents' own tests rarely check memory, time, or traffic. Turning these findings into an agent skill raises the resolved rate of a frontier model on the Megatron-LM tasks by 10.5%.",
+      "url": "https://arxiv.org/abs/2610.36589",
+      "categories": [
+        "cs.AI",
+        "cs.DC"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8878
+    },
+    {
+      "id": "2610.37471",
+      "title": "PerceptRL: Making Visual Perception Rewardable in MLLMs from Answers to Interactions",
+      "authors": [
+        "Tongkun Guan",
+        "Zhibo Yang",
+        "Mingkun Yang",
+        "Haocheng Wang",
+        "Wei Shen",
+        "Xiaokang Yang"
+      ],
+      "abstract": "Fine-grained visual perception remains a bottleneck during post-training of multimodal large language models (MLLMs), as perceptual errors can constrain gains from reasoning-focused optimization. Although image-caption pre-training improves perception, its influence can weaken as subsequent stages change data mixtures and objectives. Continuing caption supervision during post-training is challenging because subjective, information-dense descriptions complicate verifiable reward design. We present PerceptRL, which strengthens perception at two complementary levels. Perception RL uses a multi-agent pipeline to extract verified errors from dense image captions and convert the corresponding visual facts into QA pairs with fixed answer labels and rule-based rewards. Chain QA links correlated errors, while multiple-choice QA combines unrelated errors. A specialized route targets high-error domains with tailored verification, and a domain-agnostic general route covers errors beyond these domains. Perception Agentic RL addresses fine-grained and dense cases unresolved by single-turn Perception RL through multi-turn inspection with visual tools. We observe coordinate drift even in models trained to use tools, where incorrect crops or annotations distort evidence and propagate errors. Coordinate Injection corrects spatial operations in cold-start trajectories, while a grounding-aware process reward supervises intermediate spatial fidelity alongside final-answer correctness. Training proceeds through shared cold-start SFT, single-turn Perception RL, and multi-turn Perception Agentic RL. Across seven benchmarks under a shared tool-use protocol, PerceptRL achieves 71.6% average accuracy, surpassing the base model with the same tools and the strongest evaluated frontier VLM by 15.7 and 5.2 percentage points, respectively.",
+      "url": "https://arxiv.org/abs/2610.37471",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8876
+    },
+    {
+      "id": "2610.37369",
+      "title": "Uncovering Why LLMs Fail: From Internal Mechanisms to Adversarial Reasoning Trajectories",
+      "authors": [
+        "Zirui Ding",
+        "Xinxin Fan",
+        "Hao Yuan",
+        "Shaoye Luo",
+        "Men Niu",
+        "Yunfeng Lu"
+      ],
+      "abstract": "Large language models (LLMs) are usually evaluated by final-output correctness or safety, yet an endpoint label does not reveal how a failure develops throughout the reasoning process. We therefore ask whether ordinary reasoning failures and adversarially induced failures can be characterized using the same internal coordinates. Towards this end, we in this paper study a white-box diagnostic framework CauTrace to disclose the root-cause of why LLM fails from three fundamental inspections: Functional States, Propagation of Representation, Temporal-State Coordination and Reasoning Trajectory. First, seven functional states are creatively defined to represent the support and constraint processing in LLMs. Second, the propagation of representation change measures how the changes among the seven states persist across subsequent Transformer blocks. Third, temporal-state coordination and trajectory topology characterize when the commitment and verification occur relative to the support, and how the dominant state sequence evolves over the full inference process. Finally, we evaluate CauTrace on both clean reasoning failures and paired adversarial perturbations. Across Qwen and LLaMA-family models, the failed traces show weaker Attention-MLP agreement on support-state updates and less verification activity relative to commitment, while the exact representation-level signatures and timing shifts vary by architecture. Held-out repair and steering tests demonstrate consistent operational signals that were in line with our claims for certain models and specific settings, with aligned steering producing the predicted directional changes in process measures. Overall, CauTrace provides a unified diagnostic framework for analyzing failure dynamics through changes in support, commitment, and verification, which would shed light on the in-depth research on LLM security.",
+      "url": "https://arxiv.org/abs/2610.37369",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8873
+    },
+    {
+      "id": "2610.37276",
+      "title": "Where Should the Evaluation Budget Go in LLM-Driven Agent Scaffold Evolution?",
+      "authors": [
+        "Sichun Luo",
+        "Yi Huang",
+        "Mukai Li",
+        "Haochen Luo",
+        "Guanzhi Deng",
+        "Haibo Wang",
+        "Jian Xu",
+        "Zefa Hu",
+        "Junlan Feng",
+        "Qi Liu"
+      ],
+      "abstract": "Large language model (LLM)-driven agent scaffold evolution improves agent workflows through iterative candidate generation and evaluation. Evaluation both guides subsequent search and determines the final scaffold, but evaluating every candidate on the full task set incurs substantial execution costs. We investigate how evaluation budgets can be allocated across these two roles. Our experiments show that sparse feedback can sustain productive evolution, while additional targeted evaluation improves final selection. Replay analyses further show that shared informative items and a common scoring reference support comparisons among closely matched candidates. Motivated by these findings, we propose \\method, an evaluation allocation framework that combines sparse search-time feedback with targeted final confirmation. A short fully evaluated warm-up establishes a shared informative core and calibrates a response model whose item parameters remain fixed during search. After search, \\method refits the model and applies paired successive halving, reusing accumulated observations and executing only missing evaluations. Across four benchmarks and two evolution frameworks, \\method achieves higher mean performance than full evaluation in most settings while using approximately half as many evaluation cells.",
+      "url": "https://arxiv.org/abs/2610.37276",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8859
+    },
+    {
+      "id": "2610.36759",
+      "title": "DocSkill: Skill-Integrated Agentic Reasoning for Multilingual Multi-Hop Document Question Answering",
+      "authors": [
+        "Jing Huang",
+        "Zhiya Tan",
+        "Changtao Miao",
+        "Shutao Gong",
+        "Yang Wang",
+        "Joey Tianyi Zhou",
+        "Jianshu Li",
+        "Ying Yan"
+      ],
+      "abstract": "Multilingual multi-hop document question answering (MMHop-DocQA) requires locating and integrating evidence across complex layouts, document pages, and diverse languages. Existing approaches include single-pass processing and adaptive tool use, but learning to coordinate evidence acquisition, cross-page integration, and answer verification remains challenging. To address this challenge, we present DocSkill, an agentic framework with a learned skill-orchestration policy for adaptive evidence acquisition and reasoning. The policy selects, revisits, or skips skills according to the evolving evidence state. To construct supervision for skill orchestration, bounded Monte Carlo Tree Search (MCTS) explores alternative skill trajectories offline. These trajectories provide demonstrations for supervised fine-tuning (SFT) and preference pairs for Direct Preference Optimization (DPO). We further introduce MMHop-DocBench, a multilingual multi-hop document QA dataset with training and test splits, containing 60K QA pairs across 10 languages and eight document domains. Its HopGen pipeline builds hierarchical page-element graphs to derive traceable cross-page evidence paths and generate grounded QA pairs with page- and element-level evidence annotations. Experiments show that DocSkill with Qwen3-VL-8B achieves 41.0 accuracy and 49.2 F1 on MMHop-DocBench, exceeding the strongest evaluated baseline by 5.5 and 6.3 points, respectively, and achieving competitive performance on MMLongBench-Doc and DocBench.",
+      "url": "https://arxiv.org/abs/2610.36759",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8859
+    },
+    {
+      "id": "2610.37651",
+      "title": "GEPA-Curator: Curated Learning for Self Improving Agents",
+      "authors": [
+        "Zack Yu",
+        "Nicholas Lee",
+        "Minjae Lee",
+        "Lakshya Agarwal",
+        "Luca Manolache",
+        "Wonjun Kang",
+        "Matei Zaharia",
+        "Michael W. Mahoney",
+        "Kurt Keutzer",
+        "Sehoon Kim",
+        "Amir Gholami"
+      ],
+      "abstract": "Large Language Models (LLMs) are increasingly used in multi-turn agentic workloads that require sustained interaction with complex environments. Existing reflective prompt optimizers such as GEPA learn from failed rollouts, but agentic failures can also come from prompt weaknesses, harness limitations, stochastic execution, or noisy judges. We argue that such failures may not provide useful learning signal, and may even be harmful; and thus it is essential to curate which tasks are provided to the prompt optimizer for better performance. We introduce GEPA-Curator, a framework that augments the prompt optimizer to select which agent experiences should shape prompt optimization. In particular, GEPA-Curator consists of two components: task curation, which filters out tasks that are likely to provide noisy or unreliable learning signals, and prior success retrieval, which selectively retrieves past successful trajectories for a task and provides them as additional context to the prompt optimizer. We evaluate GEPA-Curator on GoBrowse, ALFWorld, AppWorld, and $τ$-bench, using both Gemini 3.1 Pro and Claude Opus 5 as optimizer models. GEPA-Curator matches or exceeds the mean performance of both baselines, with gains of up to 20.7% over GEPA and 21.2% over ACE.",
+      "url": "https://arxiv.org/abs/2610.37651",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8851
+    },
+    {
+      "id": "2610.37571",
+      "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
+      "authors": [
+        "Chanwoo Park",
+        "Jaywoong Jeong",
+        "Zachary Wojtowicz",
+        "Yubin Kim",
+        "Taekyun Lee",
+        "Kaiqing Zhang",
+        "Asuman Ozdaglar"
+      ],
+      "abstract": "Many real-world decisions require teams to integrate information distributed across participants. Yet AI agents are still primarily trained and benchmarked in isolation. We introduce TeamGym, an environment for evaluating and training language model-based agents on team decision-making problems constructed from real-world legal, finance, medical, and software engineering corpora. TeamGym introduces a method to identify a minimal set of facts, each element of which is necessary and all of which are collectively sufficient for a correct final decision, which we call pivotal information. This enables TeamGym to both control the distribution of pivotal information and track how well agents identify and integrate pivotal information when making team decisions. Examining 8 language models on 12 source corpora, we find that current AI agents often fail to effectively share information: Distributing pivotal information across participants lowers success rate by 22.9 percentage points on average relative to giving the same information to a single model (a communication gap). We also document that participants do not effectively retrieve decision-relevant information on their own: A team's success rate is lowered by a further 19.9 points when participants must identify and extract pivotal information from source material rather than receiving it directly (a retrieval gap). To help remedy these deficits, we use TeamGym to train policies through reinforcement learning on team decision loss. Across two policy-training experiments, we find that training improves final-decision quality and induces emergent coordination in participation, speaker selection, and communication, even though the reward evaluates only the final decision.",
+      "url": "https://arxiv.org/abs/2610.37571",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8847
+    },
+    {
+      "id": "2610.37648",
+      "title": "Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis",
+      "authors": [
+        "Andrew Szot",
+        "Samira Abnar",
+        "Omar Attia",
+        "Abbas Kazerouni",
+        "Michael Kirchhof",
+        "Cheng-Yu Hsieh",
+        "Raviteja Vemulapalli",
+        "Alexander Toshev"
+      ],
+      "abstract": "We explore how to build performant large language model (LLM) tool-use agents that complete complex, multi-step tasks. Specifically, we study how data composition in synthetically generated tool-use environments affects the training of such agents. To do so, we propose the SynthAPI pipeline, which explicitly controls the diversity of generated environments along the axes of tools, tasks, and the databases on which the tools operate. By systematically varying SynthAPI's generation controls in 458,752 tasks across 849 trained models of four different sizes, we derive a scaling law that predicts downstream tool-use agent generalization based on the scale and composition of the synthesized environments. These predictable relationships reveal several lessons for scaling tool-use agent data. As data budgets grow, scaling tool and database diversity becomes more effective than increasing the number of tasks, and increasing data complexity yields larger gains. Scaling according to these findings yields agents that outperform models trained on data from prior work in large-scale tool-use agent and synthetic environment generation across four evaluation benchmarks.",
+      "url": "https://arxiv.org/abs/2610.37648",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8838
+    },
+    {
+      "id": "2610.36849",
+      "title": "When All Rollouts Fail: Policy-Compatible Joint Decoding for Hard-Problem Reasoning",
+      "authors": [
+        "Zehao Wang",
+        "Hanzhu Chen",
+        "Runquan Gui",
+        "Zhe Wang",
+        "Lin Yang"
+      ],
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) derives its learning signal from binary rewards via on-policy exploration and becomes a powerful paradigm for improving the reasoning of large language models. Yet it faces a learning cliff on problems beyond model's current ability: when every rollout fails, the samples reveal nothing about a correct solution, and group-relative estimators (e.g., GRPO, RLOO) collapse the update to zero advantage. Expert trajectories offer a remedy, but they are incompatible with the current policy and often lie in the student's low-probability regions, so the surviving updates demand large parameter shifts and decay into surface-level imitation rather than transferable reasoning. We argue that a useful learning signal on hard problems must be both verifiably correct and sufficiently compatible with the current policy. We propose Policy-Compatible Reinforcement Learning (PICO), which performs distribution-constrained joint decoding: expert data guides decoding at the token level while preserving the student's relative token probabilities, and a dynamic top-k mechanism confines the sampling distribution under a finite divergence budget, yielding trajectories that are verified and policy-compatible by construction. These trajectories are optimized jointly with on-policy rollouts under a mixed-behavior objective that mitigates their distribution mismatch via importance sampling. Experiments across reasoning diverse datasets and agentic benchmarks demonstrate that PICO consistently outperforms standard RLVR and prior off-policy baselines.",
+      "url": "https://arxiv.org/abs/2610.36849",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8838
+    },
+    {
+      "id": "2610.37166",
+      "title": "LiveSearch: Questions as Executable Verifier Code for a Live Benchmark of Professional-Source Financial Search Agents",
+      "authors": [
+        "Sinuo Wang",
+        "Wentao Zhao",
+        "Jiacheng Lu",
+        "Rui Sun",
+        "Beidi Luan",
+        "Qiming Shi",
+        "Jing Li",
+        "Daxin Jiang",
+        "Zuo Bai"
+      ],
+      "abstract": "In finance, the answer that matters is usually the current one: prices, rates, and disclosures hold only as of a given day, so retrieving up-to-date facts is a core capability of a financial agent. Yet most financial benchmarks overlook timeliness. They fix each answer at annotation time, so the gold goes stale as markets move and, once leaked into training data, rewards recall rather than search and analysis. We introduce LiveSearch, a live benchmark that stores each question as executable verifier code: a typed program of calls to a professional financial data service, followed by a declarative extractor. The question is frozen, while its gold answer is determined by executing the program against professional financial data at evaluation time, and a daily job re-executes it with no human or language model in the loop. A memorized answer is thus likely outdated, and a model must reach the current one through tools and analysis. Construction is equally automatic: a language model only verbalizes programs enumerated from real tool responses and never chooses an answer. Under general web search, six contemporary tool-calling models reach 70.9% to 76.7% answer accuracy. Over three consecutive days, 70% of served questions change their gold value, and even under tolerance-aware matching, a literally reused earlier snapshot fails on a majority of questions within a single day. Per-question tracking uncovers dynamic shifts in correctness masked by aggregate accuracy.",
+      "url": "https://arxiv.org/abs/2610.37166",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8837
+    },
+    {
+      "id": "2610.37649",
+      "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
+      "authors": [
+        "Zhen Yang",
+        "Wen Wang",
+        "Xander Xu",
+        "Ying-Cong Chen"
+      ],
+      "abstract": "Scientific discovery often begins with an unexpected observation that prompts a new research question. In a world with altered physical laws, can large language models (LLMs) notice unexpected behavior, such as heavier objects falling more slowly, and discover the law through experiments without being told what to investigate? To evaluate this ability, we introduce LongChang, an automated framework that creates simulated worlds with altered physics, where one or more laws differ from ordinary physics. The evaluated LLMs act as explorers, manipulating objects and building tools to investigate their own questions without research tasks or hints about these laws. Separate LLM agents generate and review scenes, review tool designs, and evaluate reports for correctness and experimental support using the altered physical laws and exploration records. These records guide scene evolution for further exploration, allowing the full cycle to run without human intervention. Among 12 LLMs, GPT-6-Astra achieves a discovery rate of 16.7%, while the other 11 score 0%. The exploration records reveal uninvestigated anomalies and only partial identification of the altered physical laws.",
+      "url": "https://arxiv.org/abs/2610.37649",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-10-27",
+      "score": 0.8819
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
