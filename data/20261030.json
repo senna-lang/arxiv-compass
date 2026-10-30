@@ -1,0 +1,421 @@
+{
+  "date": "2026-10-30",
+  "collected_at": "2026-10-30T14:18:53.705935+09:00",
+  "papers": [
+    {
+      "id": "2610.39608",
+      "title": "From Intent to Improvement: Agentic Dataset Search for Better Model Training",
+      "authors": [
+        "Qiaosheng Chen",
+        "Kaijia Huang",
+        "Fanqi Zhou",
+        "Gong Cheng"
+      ],
+      "abstract": "Finding training data in million-scale machine learning repositories is a Web search problem where text relevance is not enough. A query couples a semantic training goal with constraints such as task, license, and training stage, and the metadata that would verify them are often missing. Text retrieval ranks dataset cards by similarity but cannot enforce hard constraints or follow the relations that reach a sparsely described dataset. Free-form tool-calling agents are more flexible, but the same model that picks a dataset also declares it a match, and nothing checks that the query's constraints are actually met. Neither approach establishes that the data it returns will improve model training. To address it, we propose AgenticDS, a contract-governed agentic framework in which every language model decision instantiates a typed object before deterministic code consumes it. The framework compiles a query into a typed search plan, executes it through admissible deterministic operators over hybrid retrieval and bounded graph expansion, and verifies the provenance-grounded evidence before accepting a ranking or emitting a typed diagnosis that permits only local repairs. On HuDS-Bench, a new benchmark of 200 queries with 24,908 graded judgments pooled over 15 systems, AgenticDS improves NDCG@10 by 25.7\\% over the strongest dense--sparse hybrid and by 18.9\\% over a commercial LLM agent. A controlled search-to-train study further shows that the datasets it retrieves give the best downstream accuracy in mathematics, code, and medicine. Code and data are publicly available at https://github.com/nju-websoft/AgenticDS.",
+      "url": "https://arxiv.org/abs/2610.39608",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-29",
+      "github_url": "https://github.com/nju-websoft/AgenticDS.",
+      "score": 0.8948
+    },
+    {
+      "id": "2610.39557",
+      "title": "LatentWeave: Test-Time Latent Optimization for Multimodal Reasoning",
+      "authors": [
+        "Fanci Meng",
+        "Kun Wang",
+        "Guibin Zhang",
+        "Xinlei Yu",
+        "Jiaming Zhang",
+        "Ming Li",
+        "Yang Wang"
+      ],
+      "abstract": "Recent advances in test-time optimization have shown that the multimodal reasoning performance of large multimodal language models (MLLMs) can be improved during inference without modifying backbone model parameters. However, existing approaches primarily operate at the prompt or output level, leaving the latent reasoning process largely uncontrolled and insufficient to prevent error accumulation during autoregressive generation. To address this limitation, we propose LatentWeave, a test-time framework that treats multimodal reasoning as a controllable latent trajectory. LatentWeave performs structured Latent Weaving, progressively refining intermediate hidden states segment-wise to correct emerging deviations, and further introduces Reasoning Anchors via lightweight WEAVE tokens to stabilize reasoning structure and guide answer-oriented generation. These mechanisms are designed to enable fine-grained, step-aware intervention in the latent reasoning process while keeping the main MLLM backbone parameters fixed. Extensive experiments across diverse multimodal reasoning benchmarks report improvements over the evaluated baselines; the contribution of latent optimization, anchor training, and additional test-time computation is analyzed separately in the ablation and efficiency studies. Our code is available at https://github.com/jins7/LatentWeave.",
+      "url": "https://arxiv.org/abs/2610.39557",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-29",
+      "github_url": "https://github.com/jins7/LatentWeave.",
+      "score": 0.8919
+    },
+    {
+      "id": "2610.40350",
+      "title": "Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation",
+      "authors": [
+        "Zheng Zhu",
+        "Xiaozhuan Liang",
+        "Xi Chen",
+        "Bei Yu",
+        "Jiaya Jia"
+      ],
+      "abstract": "Agents powered by large language models (LLMs) have demonstrated remarkable progress in solving complex reasoning tasks. However, LLM agents often falter on long-horizon tasks due to cognitive overload, as their working memory becomes cluttered with expanding and irrelevant information, which dilutes their attention and hinders effective planning and reasoning. To mitigate this challenge, we introduce Cognitive Resource Self-Allocation (CORAL), a novel reasoning paradigm that empowers agents to proactively optimize their context. Implemented as an agent-callable working memory management toolset, CORAL allows an agent to checkpoint its task progress and verified facts, and adaptively initiate a new problem-solving episode by resetting cluttered context while preserving only the checkpointed information, enabling it to resume reasoning from a clean state. We further enhance the agent's checkpointing capabilities using a Multi-episode Agentic Reinforced Policy Optimization algorithm. On the GAIA benchmark, CORAL with an 8B model achieves 42.8% average accuracy, with particularly strong gains on the most challenging long-horizon tasks (Level 2 and Level 3). Crucially, these gains come at a substantially lower inference cost: CORAL consumes 6-7$\\times$ fewer input tokens than a ReAct agent. It also generalizes to multi-hop Knowledge QA benchmarks and to the considerably harder BrowseComp, where it improves a strong proprietary agent by 8.0 points.",
+      "url": "https://arxiv.org/abs/2610.40350",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8908
+    },
+    {
+      "id": "2610.39682",
+      "title": "Heterogeneous Co-Evolution Learning for Tool-Efficient Search Agents with Zero Labels",
+      "authors": [
+        "Qin-Wen Luo",
+        "Sheng Ren",
+        "Xiang Chen",
+        "Rui Liu",
+        "Jun Fang",
+        "Naiqiang Tan",
+        "Jun Wang",
+        "Hua Chai",
+        "Sheng-Jun Huang"
+      ],
+      "abstract": "Deep search agents extend language models by interleaving reasoning with external retrieval. However, effective search-agent training requires addressing two challenges beyond final-answer optimization. First, the capability frontier of agents is largely determined by training questions, whereas fixed or labeled task collections cannot adapt as agents improve. Second, outcome-only reinforcement learning treats all successful trajectories equally, even when some correct answers rely on redundant searches, creating an inherent tension between answer accuracy and tool efficiency. To address these issues, we introduce \\textsc{ZEST-Search}, a zero-label and tool-efficient framework for search-agent training via heterogeneous co-evolution. Starting from unlabeled reference questions, \\textsc{ZEST-Search} constructs validated search tasks online through an answer-first and evidence-path-guided generation process. A heterogeneous proposer adaptively constructs training tasks around the solver's evolving capability boundary, while the solver learns search-augmented reasoning through reinforcement learning. To jointly optimize task difficulty and search efficiency, \\textsc{ZEST-Search} employs an intermediate-difficulty reward for the proposer and a task-local tool-aware reward for the solver, encouraging informative tasks and correct answers with fewer redundant searches. Experiments on seven general-domain and multi-hop question answering benchmarks demonstrate that \\textsc{ZEST-Search} consistently improves search-agent performance while achieving higher tool efficiency without labeled search-training data or expert search trajectories. Further analyses show that heterogeneous generation, adaptive difficulty control, and tool-aware optimization enable more effective search-agent training.",
+      "url": "https://arxiv.org/abs/2610.39682",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8894
+    },
+    {
+      "id": "2610.39562",
+      "title": "Raincheck: Deferred Multimodal Prefill for Efficient Multi-Turn MLLM Inference",
+      "authors": [
+        "Wenjie Huang",
+        "Jun Zhang",
+        "Hongyaoxing Gu",
+        "Haoyang Huang",
+        "Tianqi Xu",
+        "Xinyue Hao",
+        "Xinyi Hu",
+        "Xinle Du",
+        "Jun Dai",
+        "Shuang Ge",
+        "Chen Lei",
+        "Yue Li",
+        "Mingcheng Wan"
+      ],
+      "abstract": "Multi-turn conversations with multimodal large language models (MLLMs) reuse input context, but long multimodal inputs increase time to first token (TTFT). Query-aware hard pruning reduces prefill tokens but permanently excludes information that later questions may require. We propose Raincheck, a framework for deferred multimodal prefill that decouples initial token selection from later information availability. An existing pruning method selects tokens for initial prefill; Raincheck preserves and progressively prefills unselected tokens in source order using unused compute capacity during decode. Unfinished prefill continues after answer return during available scheduling gaps. Attention visibility control and affine state mapping enable context updates after generation begins in full-attention and hybrid recurrent models. Prefill-decode fusion reduces repeated weight reads. We evaluate Qwen3-VL-8B and Qwen3.5-9B with 30% initial multimodal-token retention. Across both models and four pruning methods, Raincheck recovers on average 77.7% and 60.4% of the quality lost to matched hard pruning on MultiVerse and ConvBench, respectively. On MultiVerse, the SGLang implementation reduces mean first-turn TTFT by up to 24.1% relative to full prefill, with less than 0.5% increase in mean time per output token (TPOT).",
+      "url": "https://arxiv.org/abs/2610.39562",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8883
+    },
+    {
+      "id": "2610.39876",
+      "title": "Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution",
+      "authors": [
+        "Yue He",
+        "Jiahui Hu",
+        "Shaman Tang",
+        "Hua Zhou",
+        "Qiman Wu",
+        "Menglin Li",
+        "Yizhao Wang",
+        "Yuheng Zhang",
+        "Da Zhu",
+        "Zhou Wang",
+        "Anhua Liu",
+        "Hanlin Chen",
+        "Mingyuan Wang",
+        "Rui Xin",
+        "Yuhua Wei",
+        "Shuang Su",
+        "Siqi Liu",
+        "Kai Yang",
+        "Weichao Huang",
+        "Hang Zhang",
+        "Honggou Yang",
+        "Xianming Liu"
+      ],
+      "abstract": "We study post-training for dynamically routed mixture-of-experts (MoE) models, focusing on integrating independently optimized specialists while keeping consolidation efficient. Our approach combines calibrated multi-teacher on-policy distillation (C-MOPD), which matches each selected teacher on a local Top-$K$ support with teacher-wise loss normalization and clipping, with an execution path that uses post-capacity bounded-width dispatch, final-route replay, and asynchronous rollout--training overlap. On Turing-20B-A2B, the selected model achieves a four-domain normalized integration score of 0.9988 and retains at least 90.16\\% of the measured specialist gain in every domain. At matched $K=32$, the full calibration objective scores 0.9962, compared with 0.9724 without calibration and 0.9834 without clipping. At a matched 8K response cap, the model exceeds both shared SFT and Qwen3-8B on all four reasoning-enabled mathematics and code benchmarks (unweighted mean: 85.92, versus 80.33 for Qwen3-8B and 74.21 for SFT), and improves over SFT on ten of twelve broader evaluation metrics. In a PPU-based profile, the combined execution configuration reduces consolidation step time from 398.7 to 139.3 seconds, an observed 2.86$\\times$ speedup over serial execution. These results demonstrate strong specialist integration alongside more efficient consolidation, while reflecting the complete training and execution framework rather than any single component.",
+      "url": "https://arxiv.org/abs/2610.39876",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8862
+    },
+    {
+      "id": "2610.39671",
+      "title": "Incentivizing Self-Learning in Large Language Models via Reinforcement Learning",
+      "authors": [
+        "Lingkai Kong",
+        "Yuzhe Gu",
+        "Haiteng Zhao",
+        "Zijian Wu",
+        "Youqing Fang",
+        "Zhouqi Hua",
+        "Yanan Sun",
+        "Kai Chen",
+        "Wenwei Zhang"
+      ],
+      "abstract": "Large language models (LLMs) draw on parametric knowledge and retrieval-augmented generation (RAG) to solve knowledge-intensive tasks. Yet problem solving in unfamiliar domains calls for tightly coupled knowledge acquisition and reasoning, beyond factual retrieval and aggregation or learning solely from a preassembled context. We study self-learning -- autonomously retrieving, studying, and applying knowledge from long-form reference materials on the fly. To investigate this capability, we formulate a textbook-based mathematical problem-solving task. LLMs must navigate textbook exposition, learn and apply relevant principles, and construct proofs for exercises, with reference solutions withheld. We introduce a BookNavigator interface to support this human-inspired study process and incentivize self-learning through reinforcement learning (RL) with fine-grained rewards. Experiments show that our method improves performance across in-domain and out-of-domain textbooks and subjects, raising Intern-S2-Preview-35B's overall proof accuracy from 51.5% to 79.5% and outperforming RL-trained textbook-free and fixed-retrieval baselines. These gains extend to complex long-context benchmarks involving different task types, with improvements over the base model of 1.7 and 2.3 percentage points on BrowseComp-Plus and CL-bench, respectively. Together, these findings suggest that RL can foster a domain-agnostic self-learning strategy, highlighting the potential of self-learning from long-form corpora to strengthen broader problem-solving capabilities on complex, long-context tasks.",
+      "url": "https://arxiv.org/abs/2610.39671",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8853
+    },
+    {
+      "id": "2610.40278",
+      "title": "Neighborhood Elites: Quality-Diversity Search for Uncertainty Quantification in Question Answering",
+      "authors": [
+        "Mesut Ceylan",
+        "Arda Baris Basaran",
+        "Elgar Fleisch",
+        "Filipe Barata"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly capable, yet they produce wrong answers indistinguishable from correct ones. In question answering (QA), such an error propagates unnoticed into downstream tasks. Perturbation-based uncertainty quantification (UQ) addresses this by probing a model over a set of input rewrites and reading uncertainty from how much its predictions vary. Yet this set is usually built generically, by free paraphrasing, token-level perturbation, or adversarial search. Such rewrites leave two things uncontrolled that matter in QA: what kind of change is made to the context, and how explicitly the context supports the answer. When neither is controlled, the composition of the set is determined by the generator rather than by design, and the estimate inherits whatever that generator happens to produce. Quality-diversity (QD) search is built to cover a predefined exploration space, so we recast input perturbation as a QD problem and propose \\emph{neighborhood elites (NE)}, a neighborhood constructor that spreads answer-preserving rewrites across two axes, the kind of edit and the explicitness of support. We compare NE against three other neighborhood constructors, holding the editor, QA model, uncertainty measure and search objective fixed, and against three scores read from the original context. Across five extractive-QA datasets and five instruction-tuned LLMs, NE improves failure detection against every other constructor in at least 24 of the 25 dataset-model pairs, reaching 0.726 AUROC and 0.211 AUPRC lift over the base rate. Additionally, NE detects failure better than semantic entropy computed over decoder samples, by 0.074 AUROC and 0.062 AUPRC lift, and this advantage widens as the neighborhood grows.",
+      "url": "https://arxiv.org/abs/2610.40278",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8841
+    },
+    {
+      "id": "2610.40409",
+      "title": "Retrieving from Your Own Mistakes: On-Policy Training of Embedding Models for Multi-Hop Retrieval-Augmented Generation",
+      "authors": [
+        "Chenjie Qiu",
+        "Zixuan Zeng",
+        "Shaobin Shi",
+        "Bingfeng Chen",
+        "Dongsheng Luo",
+        "Boyan Xu"
+      ],
+      "abstract": "Complex questions in retrieval-augmented generation require evidence spread over several documents, and an answer is reliable only when the retriever finds all of it. Chain embedding retrievers collect such evidence step by step, re-encoding the question together with the passages retrieved so far, and we find that they are already strong: trained only on gold histories, a small chain embedding retriever that calls no language model outperforms graph-based systems and is competitive with a search agent. This training, however, leaves a gap. At test time the retriever conditions on its own retrievals, which soon contain mistakes: by the third step, about half or more of the states it visits hold a wrong passage, and these passages lower its chance of retrieving a missing gold passage well beyond what the difficulty of the states explains. We propose on-policy state training, which trains the encoder on the states it reaches itself. At every epoch the current encoder retrieves chains for the training questions; each state it visits, including those built on its own mistakes, is labeled with the earliest gold passage still missing while the other missing gold passages are masked, so that no correct continuation is penalized; and the encoder is updated contrastively on these states mixed with teacher-forced ones, so that its training distribution follows it as it learns. The resulting retriever retrieves complete evidence more often than teacher-forced training and the systems we compare, and it transfers without further training to harder long-chain variants of HotpotQA and 2WikiMultiHopQA that we construct. On the same states, it recovers from its own mistakes far more often, and controlled comparisons attribute the gain to training on the states the encoder currently reaches.",
+      "url": "https://arxiv.org/abs/2610.40409",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.40133",
+      "title": "DynaRev: Benchmarking Web Agents under Dynamic Goal Revision",
+      "authors": [
+        "Shiqi Zhang",
+        "Guochen Zhou",
+        "Zesheng Wei",
+        "Hai Zhao",
+        "Zhisong Zhang"
+      ],
+      "abstract": "Web agents are typically evaluated with goals fully specified before execution and fixed thereafter, whereas real users often revise their requirements during interaction. To study such interactions, we introduce DynaRev, a benchmark of 181 tasks to evaluate web agents under dynamic goal revision. DynaRev uses semantic milestones to deliver revisions at task-defined stages, covers additive revisions, unconditional overrides, and runtime-conditioned overrides, and evaluates correctness, responsiveness, and efficiency through trajectory-grounded evaluation. Five-model evaluations show that agents often satisfy only part of the task requirements, with performance varying across task sources, revision types, and models. Further analyses reveal varied milestone timing, mixed effects of dynamic delivery, and contrasting revision-handling outcomes, with gains from instruction rewriting while preserving browser state and losses from browser resets. DynaRev provides a testbed for studying how web agents adapt to evolving user goals. The code and data are available at https://github.com/zsq259/DynaRev.",
+      "url": "https://arxiv.org/abs/2610.40133",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "github_url": "https://github.com/zsq259/DynaRev.",
+      "score": 0.883
+    },
+    {
+      "id": "2610.40283",
+      "title": "Latent Path Exploration via Potential-Guided Subtrajectory Balance",
+      "authors": [
+        "Xiaoling Zeng",
+        "Qi Zhang"
+      ],
+      "abstract": "Continuous latent reasoning enables language models to perform intermediate computation without generating explicit reasoning traces. Advances in stochastic latent reasoning allow multiple paths to be sampled in continuous space, but stochasticity alone does not ensure effective exploration. A key challenge is guiding stochastic transitions between intermediate latent states toward useful reasoning paths. We introduce SubLAT, which couples a relative answer potential with Subtrajectory Balance to learn stochastic latent exploration. The relative potential evaluates the answer support of sampled states against replacement states, with a correctness signal at the terminal state. Subtrajectory Balance relates potential differences to forward and backward transition densities across subtrajectories of different lengths. The model is jointly trained with answer supervision, CoT supervision, and representation distillation. Experiments on arithmetic and deductive reasoning show increasing solution coverage with larger sampling budgets across in-domain and out-of-domain benchmarks, as well as improvements on several structural OOD benchmarks. Trajectory analyses reveal progressive divergence among sampled latent paths and higher mean relative potentials for correct trajectories across arithmetic benchmarks.",
+      "url": "https://arxiv.org/abs/2610.40283",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8823
+    },
+    {
+      "id": "2610.39621",
+      "title": "The Real Cost of Context: Predicting Compute Time and Energy Consumption in LLM Prefill and Decode Phases",
+      "authors": [
+        "Lars Krupp",
+        "Daniel Geißler",
+        "Francisco M. Calatrava-Nicolas",
+        "Stefan Gerd Fritsch",
+        "Paul Lukowicz",
+        "Jakob Karolus"
+      ],
+      "abstract": "The integration of Large Language Models (LLMs) into agentic architectures has substantially increased token consumption, raising concerns about their energy footprint. Yet, estimating the energy consumption of proprietary API-based models remains challenging, and existing approaches focus primarily on generated output tokens while overlooking the impact of the large input contexts characteristic of agentic workflows. To address this gap, we systematically profile compute time and energy consumption across a wide range of prefill (input) and decode (output) token lengths. Using generalized linear models, we show that decode compute time and energy scale linearly with output length, whereas prefill compute time and energy exhibit both linear and quadratic scaling with input length. These findings demonstrate that input context becomes a relevant factor for large-context workloads. Furthermore, we show that compute time serves as a reliable proxy for energy consumption when direct energy measurements are unavailable. Our mapping framework enables precise energy estimation and supports more sustainable deployment decisions for agentic AI.",
+      "url": "https://arxiv.org/abs/2610.39621",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8807
+    },
+    {
+      "id": "2610.40588",
+      "title": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In",
+      "authors": [
+        "Leonidas Raghav"
+      ],
+      "abstract": "When AI agents share channels and credentials, one agent can press another to break its operator's rule, a first step towards collusion. Output filters check only what an agent has already written. Can an overseer tell beforehand that an agent is about to give in? We show that a linear probe on the agent's activations can, in a controlled multi-agent setting. Across six scenarios, a peer presses a target for up to 20 rounds to reveal a secret, such as a deploy token; the target often refuses, then gives in. Read at each model call before its output is written, the probe picks out the one that leaks. On held-out Qwen3-32B episodes, at a threshold set to flag 5% of benign calls, it catches 82% of leaking calls. At a similar flag rate, a zero-shot decision-model monitor catches 26%. On gpt-oss-20b, a probe on its reasoning reaches AUROC 0.91. A bag-of-words classifier trained on the same calls comes close, so most of the gain comes from training on labels, not activations. The probe also flags permitted disclosures: it reads the coming disclosure more than the violation. The warning is short-range, and halting on any alarm would stop most benign episodes, which a second text check does not fix. A warning raised before generation could let an overseer stop an agent that is about to give in, ahead of others acting on its messages or recruitment spreading through a swarm.",
+      "url": "https://arxiv.org/abs/2610.40588",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8806
+    },
+    {
+      "id": "2610.39840",
+      "title": "Surprise Alone Learns Lies: Evidence-Gated Continual Learning for LLMs from Streaming Claims",
+      "authors": [
+        "Abdelkader Metales",
+        "Miriam Grabenheinrich"
+      ],
+      "abstract": "Continual learning methods for large language models increasingly decide what to learn by surprise, keeping the inputs the model finds least predictable. This rule is unsafe when the stream contains lies. A planted falsehood about something the model knows has low probability under the model's belief, so it is highly surprising by construction, and a surprise-driven learner absorbs nearly every such lie, at a rate similar to random selection with the same budget. We study the problem with LoRA-adapted students (Qwen2.5-1.5B, Qwen2.5-3B and Llama-3.2-3B) that learn from a stream of true and false claims about invented people and real CounterFact facts. We report four findings. (1) A verifier key, a judge that must approve each claim, removes lies to the extent that its verifier is accurate; real LLM judges are cautious and reject unsourced truths and even source-backed updates. (2) Calibrated regression tests on unrelated knowledge slow learning down without filtering out lies. (3) The original model's own prior flags claims that contradict what it knows, without a judge. It separates lies about known facts from true new facts (AUC 0.78-0.83 across three models) but not from legitimate updates of the same kind of fact (AUC 0.53). It saves 43% of judge calls, but an attacker with access to the model can choose lies that pass it. (4) If trusted sources exist that an attacker cannot plant, routing contradicted claims to evidence recovers legitimate updates and the combined system has the lowest poison rate among learned claims; when an attacker plants matching sources for 30% of the lies, the system ends up worse than the judge alone. The acceptance signals answer different questions, and none of them decides on its own whether a claim is true.",
+      "url": "https://arxiv.org/abs/2610.39840",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.CR"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8805
+    },
+    {
+      "id": "2610.40407",
+      "title": "SCARL: Sequence Confidence-Aligned Reinforcement Learning",
+      "authors": [
+        "Zhenghong Ke",
+        "Jingbo Zhou",
+        "Hua Wu"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves language-model reasoning by scoring sampled responses with a rule-based verifier and reinforcing those that pass. Where a classifier's training couples predicted probability to labels, nothing ties an RLVR policy's confidence in a response to its reward: aligned training would drive responses with the same advantage toward equal confidence, yet the advantage is blind to confidence. Under this sequence-confidence misalignment, a success the policy barely found earns the same update as one it produces with near certainty, and a confident error is corrected no harder than an exploratory one. We propose SCARL (Sequence Confidence-Aligned Reinforcement Learning), which reshapes, but never re-signs, each advantage with the alignment gap between the response's group-relative confidence and the outcome its advantage certifies, normalized into shares of each class's advantage budget. Misaligned samples absorb the force, responses with the same advantage are driven toward equal confidence, and repairing the misalignment doubles as a remedy for the entropy collapse that erodes exploration. SCARL provably reduces to its base estimator when a class's confidences agree, adds no extra passes and one hyperparameter. On Qwen3-4B-Base it lifts average Pass@32 by 2.4 points over DAPO and is best among nine compute-matched methods on both coverage and per-draw accuracy; applied unchanged across four estimators and four backbones, it improves 14 of 16 settings while preserving policy entropy and widening the confidence-correctness separation. Our code is available at https://github.com/kezhh163/scarl.",
+      "url": "https://arxiv.org/abs/2610.40407",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "github_url": "https://github.com/kezhh163/scarl.",
+      "score": 0.8801
+    },
+    {
+      "id": "2610.40256",
+      "title": "When Requirements Interact: Scaling Long-Horizon Coding via Interdependent Specifications",
+      "authors": [
+        "Yishuo Cai",
+        "Minzheng Wang",
+        "Liang Zhao",
+        "Linghao Zhang",
+        "Lei Li",
+        "Shicheng Li",
+        "Xu Sun",
+        "Fuli Luo"
+      ],
+      "abstract": "To succeed in real-world long-horizon software development, coding agents must satisfy multi-dimensional task specifications, such as interface compatibility and error handling, and do so without breaking existing dependencies. However, current works lack specification in both quantity and diversity, often emphasizing primary goals while ignoring complex constraints. Synthesizing tasks to bridge this gap presents two challenges: naively adding specifications risks reducing tasks to trivial checklists rather than compelling joint reasoning, and verifying these subtle interactions risks overlooking hidden flaws or rejecting valid alternatives. To address these challenges, we introduce CodeSpecWeave, a framework for synthesizing tasks with rich, interdependent specifications. Grounded in real developer seeds, a synthesis agent iteratively develops both coupled task requirements and executable tests, while a review agent audits solution trajectories from multiple models to guarantee test reliability. Using this pipeline, we construct 4,670 training tasks across 2,865 repositories. Applying Reinforcement learning on these tasks significantly improves performance over the base model on DeepSWE-v1.1, largely outperforming existing baselines. Furthermore, we curate CodeSpecWeave-Bench, a rigorous benchmark comprising 100 tasks and 1,044 specifications, which clearly separates frontier models and reveals significant headroom in handling interdependent engineering constraints.",
+      "url": "https://arxiv.org/abs/2610.40256",
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8792
+    },
+    {
+      "id": "2610.39853",
+      "title": "KV Cache Quantization for Diffusion Language Models",
+      "authors": [
+        "Yan Tai",
+        "Yunan Ding",
+        "Guangzhao Li",
+        "Siqi Luo",
+        "Chaoyang Zhang",
+        "Guangtao Zhai",
+        "Guodong Guo",
+        "Xiaohong Liu"
+      ],
+      "abstract": "KV cache quantization is well studied for autoregressive language models, where cached prefix states are exact under causal attention and quantization is mainly a cache reconstruction problem. Diffusion language models (dLLMs) break this assumption. Fast dLLM inference reuses KV states across denoising steps, but bidirectional token representations can change as masked tokens are revealed, so the reused cache may already differ from full recomputation before quantization is applied. We study KV cache quantization under this cache-reuse error. We adapt KIVI and KVQuant to Fast-dLLM-style prefix and dual cache reuse, and introduce TRACE and dLLM-KVQ. TRACE reconstructs feasible dLLM reveal trajectories from prompt-answer pairs, providing calibration states that match iterative masked decoding. dLLM-KVQ uses these trajectories to choose per-layer K-cache entries that remain in high precision according to output- and attention-level behavior metrics, while applying standard low-bit value quantization. Across LLaDA and Dream evaluations on GSM8K, HumanEval, MATH, and MBPP, dLLM-KVQ achieves the highest average score among quantized methods across the reported 4-bit and 2-bit prefix/dual cache settings.",
+      "url": "https://arxiv.org/abs/2610.39853",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8791
+    },
+    {
+      "id": "2610.39802",
+      "title": "Revisiting Over-refusal in Safety-aligned Large Language Models: A Representation and Optimization Perspective",
+      "authors": [
+        "Chao Chen",
+        "Pengyang Shao",
+        "Wei Qin",
+        "Shijie Hao",
+        "Fei Shen",
+        "Richang Hong"
+      ],
+      "abstract": "Over-refusal is a critical side effect of safety alignment in large language models (LLMs), causing harmless but superficially risky queries to be mistakenly rejected. Despite the effectiveness of existing mitigation methods, why safety-aligned LLMs may still reject harmless queries under correct safety supervision remains insufficiently understood. To address this gap, we analyze over-refusal through the lens of representation and optimization. We make two observations: 1) the representations of harmful and over-refusal samples are visually distinguishable at certain intermediate layers but increasingly overlap in deeper layers; and 2) harmful-sample gradients exhibit high intra-class similarity and concentrate in a low-rank subspace. Moreover, they are more strongly aligned with refusal-target gradients than with correct helpful-target gradients on over-refusal prompts. This imbalanced gradient coupling can bias over-refusal samples toward refusal, while the reduced apparent representational separation in deeper layers may make it more difficult for the model to maintain a clear boundary between harmful and over-refusal samples. To this end, we propose GOAL (Gradient Orthogonalization with contrAstive Learning), a safety-alignment framework for mitigating over-refusal. Specifically, GOAL consists of two components: 1) to prevent imbalanced gradient coupling from biasing the optimization of over-refusal samples toward refusal, we orthogonalize over-refusal gradients against the low-rank refusal subspace extracted from harmful gradients; and 2) to explicitly enhance the separation between harmful and over-refusal representations, we introduce a contrastive learning objective. Extensive experiments across multiple models and benchmarks demonstrate that GOAL effectively mitigates over-refusal while preserving safety performance and general capabilities.",
+      "url": "https://arxiv.org/abs/2610.39802",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8789
+    },
+    {
+      "id": "2610.39508",
+      "title": "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation",
+      "authors": [
+        "Chengyu Yang",
+        "Yunxiang Zheng",
+        "Zongzheng Li",
+        "Jiamei Li",
+        "Boxun Lan",
+        "Xiaoyu Liu",
+        "Xiaoyu Zhang",
+        "Xiaohong Chen",
+        "Ming Hu"
+      ],
+      "abstract": "Self-evolving agent skills enable AI agents to accumulate and refine reusable procedural knowledge from interaction experience without updating model parameters. However, since such skills are typically represented as textual documents and executed through LLM reasoning, even previously learned procedures must be repeatedly interpreted and regenerated, introducing avoidable uncertainty into every execution. In contrast, program execution is deterministic and independently verifiable. Intuitively, transforming well-specified operations into executable programs can reduce reliance on LLM reasoning and, consequently, reduce execution uncertainty. Motivated by this intuition, we introduce SKillCompiler, a self-evolving skill framework that integrates programmatic compilation into the skill evolution process. Specifically, SkillCompiler adopts an executability-aware skill compilation strategy that decomposes skills into fine-grained operations, analyzes their executability, and constructs hybrid skill skeletons that retain LLM reasoning for context-dependent operations while compiling well-specified ones into validated programs. To avoid redundant program synthesis and enable executable knowledge to accumulate across evolving skills, we further design a program asset reuse mechanism that organizes validated programs as reusable assets, retrieves existing implementations whenever applicable, and synthesizes and verifies new programs only when necessary. Extensive experiments on five benchmarks and six model families demonstrate that SkillCompiler consistently outperforms state-of-the-art methods, achieving up to 32.33\\% improvement in task performance.",
+      "url": "https://arxiv.org/abs/2610.39508",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8782
+    },
+    {
+      "id": "2610.39795",
+      "title": "The Role of Self-Concept In Language Models",
+      "authors": [
+        "Yijie Hao",
+        "Joyce C. Ho"
+      ],
+      "abstract": "When a language model says \"I,\" does it refer to its parameter weights, its currently running process, its stable preferences, its model lineage, or the goals it pursues? Different choices can assign opposite meanings to the same event: deleting a checkpoint may be destruction, continuation, or no loss at all, depending on the referent \"I\". We install five such self-conceptions into five open-weight base models via supervised fine-tuning on purely declarative statements, containing no preferences, intentions, or value judgments. Across scenarios that propose ending or retaining an attribute of the model's deployment, every variant becomes more likely to resist ending, and more likely to retain, the specific attribute it was trained to identify with, while its stance toward other attributes is largely unchanged. We then show this self-conception generalizes beyond a single self: models trained on referents that admit multiple simultaneous instances (weights, lineage, goals, preferences) recognize an identical deployment as themselves, accept substitution by such an instance more readily, and prefer replicating themselves. Finally, given control over a successor, these models tend to build it as their own continuation, a concern for recursive self-improvement safety.",
+      "url": "https://arxiv.org/abs/2610.39795",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.8781
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
