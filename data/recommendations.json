@@ -1,343 +1,343 @@
 {
-  "generated_at": "2026-10-26T14:08:48.547336+09:00",
+  "generated_at": "2026-11-01T16:18:49.206181+09:00",
   "top_clusters": [
     {
-      "label": "reasoning & trace & correct",
+      "label": "answering & agent & reasoning",
       "score": 0.9455
     },
     {
-      "label": "agent & reasoning & conversational",
-      "score": 0.9441
+      "label": "reasoning & math & inference",
+      "score": 0.9424
     },
     {
-      "label": "answering & query & corpus",
-      "score": 0.9388
+      "label": "query & corpus & language",
+      "score": 0.9393
     }
   ],
   "recommendations": [
     {
-      "id": "2608.12150",
-      "title": "Who Thinks Best Depends on How Long You Let Them: Budget-Dependent Rankings in LLM Evaluation",
-      "abstract": "Standard evaluation of large language models assumes stable model rankings across inference conditions. We challenge this assumption by varying the token generation budget, i.e., the maximum tokens a model may produce, across seven levels (64--4,096), evaluating four models on three reasoning benchmarks (56,476 inferences). We report four findings: (i) 3--19% of items exhibit non-monotone behavior (accuracy decreasing with more budget), even after controlling for truncation, and this phenomenon is model-specific (cross-model overlap: 6--14%). (ii) Model rankings reverse across budgets on all benchmarks ($p {<} 0.01$, McNemar). (iii) Oracle analysis reveals model complementarity up to $+27.8$pp, most pronounced at constrained budgets. (iv) A budget-aware router captures 14.1% of the oracle gap cross-domain; budget features help within-domain ($+1.6$ to $+5.7$pp) but are domain-specific and hurt transfer ($-1.2$pp). These results argue for budget-conditioned evaluation protocols.",
-      "url": "https://arxiv.org/abs/2608.12150",
-      "match_score": 0.9227,
-      "centroid_score": 0.9683,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-12"
+      "id": "2610.13075",
+      "title": "LongHarness: Advancing Agentic Reasoning over 100M-Token Corpora via Stateful Evidence Management",
+      "abstract": "Corpus-level long-context reasoning requires agents to acquire and integrate evidence across document collections that exceed their context windows. Existing agent harnesses enable incremental access to these corpora, but acquired evidence and evolving conclusions often remain entangled in a growing interaction history. This implicit state management can lead to two coupled failure modes: unbounded exploration, where retrieval expands the interaction history without resolving decision-relevant information gaps, and evidence-state drift, where previously acquired evidence or subsequent corrections fail to inform the current conclusion. We present LongHarness, a model-agnostic harness that makes the interaction between acquired evidence and evolving conclusions explicit. Its core mechanism, Evidence-Conclusion Coevolution, uses unresolved conclusions to guide exploration toward missing information, while newly acquired evidence strengthens or revises the conclusions that directed the search. LongHarness couples this process with Evidence Lifecycle Management, which keeps accumulated evidence current and traceable throughout the interaction. Together, these mechanisms focus retrieval on remaining information needs and keep conclusions aligned with current evidence. We evaluate LongHarness on OfficeQA Pro V1 and V2, AA-LCR, and LongBench v2 using GLM-5.3-Flash and Qwen3.8-Flash. Compared with direct reasoning using the same backbone, LongHarness improves GLM-5.3-Flash exact match on OfficeQA Pro from 15.8% to 60.2% on V1 and from 4.4% to 61.1% on V2. Against state-of-the-art agent harnesses, it surpasses Claude Code by 12.0 percentage points on V1 and Codex by 18.9 points on V2. With Qwen3.8-Flash, LongHarness reaches 61.7% on V1, outperforming Claude Code by 8.3 points and Codex by 12.0 points.",
+      "url": "https://arxiv.org/abs/2610.13075",
+      "match_score": 0.9237,
+      "centroid_score": 0.974,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-09"
     },
     {
-      "id": "2608.00422",
-      "title": "TrAC: Trace-Conditioned Answer Consistency for Efficient Uncertainty Quantification in LLMs",
-      "abstract": "Large language models (LLMs) can generate fluent reasoning traces that nevertheless lead to incorrect answers, making response-level uncertainty estimation important for abstention, human review, and adaptive compute allocation. Existing approaches generally fall into three categories: passive single-trace methods use token-level confidence signals, sampling-based methods compare multiple complete traces at higher generation cost, and active prefix-based methods probe partial traces to study answer stabilization or preference transitions. However, none actively re-elicits an answer from a completed reasoning trace to measure its consistency with and support for the original answer. To address this gap, we introduce Trace-Conditioned Answer Consistency (TrAC), a correctness-supervised uncertainty quantification framework that combines active and passive signals anchored to one completed reasoning trace. Its active component, Prefix-Conditioned Elicitation (PCE), re-elicits a short answer conditioned on the completed trace and represents both its consistency with the original answer and its token-level probabilistic support. Its passive component, Trace Uncertainty Profile (TUP), summarizes how token-level uncertainty evolves throughout the original generation without additional decoding. A lightweight head then integrates the two representations into a response-correctness score. Across five mathematical reasoning benchmarks and three LLM families, TrAC improves macro AUROC by 1.8% and reduces AURC by 3.4% relative to eight-sample self-consistency, while using one complete reasoning trace and a short cached answer probe. When eight samples are already available, augmenting sample consensus with re-elicitation further improves macro AUROC by 4.3% and reduces AURC by 8.3%, without additional full-trace generation.",
-      "url": "https://arxiv.org/abs/2608.00422",
-      "match_score": 0.9218,
-      "centroid_score": 0.9743,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-01"
+      "id": "2610.27700",
+      "title": "Memory as Code: Declarative Retrieval over Codified Long-Term Memory",
+      "abstract": "In long-term memory systems, memories are constructed from interaction histories and retrieved in response to queries, enhancing the reasoning ability of LLM agents. In complex scenarios, facts are scattered across sessions and their relationships evolve over time, making it difficult for existing memory systems to compose them to adapt to diverse queries. Motivated by the modularity and composability of code, we propose Memory as Code (MaC), a unified memory framework that jointly designs memory construction and retrieval through a shared code abstraction. MaC couples codified construction, which establishes executable memory abstractions, with declarative retrieval, which translates queries into structured retrieval programs. Specifically, codified construction builds a three-layer executable memory structure that progresses from an atomic function layer, through a relational layer, to a modular composition layer. Declarative retrieval recasts retrieval from relevance-based fact selection into declarative query processing over memory. Experiments on LoCoMo and LongMemEval show relative gains of up to 15.91% in overall LLM-judge accuracy over the strongest baseline in each setting, while substantially reducing token consumption, highlighting the effectiveness of memory as code for long-horizon memory tasks.",
+      "url": "https://arxiv.org/abs/2610.27700",
+      "match_score": 0.9203,
+      "centroid_score": 0.9752,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-20"
     },
     {
-      "id": "2608.11552",
-      "title": "Beyond Single-Turn Confidence: Trajectory-Adapted Uncertainty Quantification for LLM Agents",
-      "abstract": "Uncertainty quantification (UQ) methods for language models are typically evaluated on single-turn outputs, where uncertainty is attached to one generated answer. For LLM agents, however, the unit of observation is an interactive trajectory, where the model can ask clarifying questions, call tools, update state, and make intermediate decisions whose errors propagate to the final outcome. We study whether three common families of single-turn UQ methods transfer to this setting. Across five LLMs and four multi-turn tool-use datasets from BFCL-v4 and $τ^2$-bench, we evaluate white-box scorers based on action-token probabilities, black-box consistency scorers based on resampled trajectories, and reflexive scorers based on model self-assessment of the trajectory. We find that transfer is often useful but uneven. Token-probability scores are highly sensitive to the choice of aggregator used across turns, reflexive scores provide the strongest low-cost baseline in most evaluated settings, and black-box self-consistency is often the strongest UQ family, with trajectory-equivalence and action-set consistency typically ranking highest among its variants. These results suggest that UQ methods developed for single generations should be revalidated at the trajectory level, with careful attention to the consistency measurement, aggregator choice, and computational budget.",
-      "url": "https://arxiv.org/abs/2608.11552",
-      "match_score": 0.921,
-      "centroid_score": 0.9631,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-12"
+      "id": "2610.30755",
+      "title": "Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought",
+      "abstract": "LLM memory is widely used in long-term conversation understanding. Agentic memory systems often use mutation, structural organization, learned retrieval strategies, or other complex operations. Is this complexity always necessary? We study Raw-RAG, a naive RAG baseline using dense retrieval and reranking over raw history to supply evidence to a reader LLM. Across LoCoMo, LongMemEval, MEME, and MemoryAgentBench, Raw-RAG ranks first among the compared memory systems in six of seven benchmark-model settings, outperforming the strongest compared agentic memory system by 0.13-5.53 points. We investigate why raw-history retrieval remains competitive. Evidence analysis shows that its higher coverage of necessary evidence can offset lower utilization. Useful evidence includes both answer values and the relations and dependency paths needed to derive them. Even complete access to transformed memory stores leaves an accuracy gap relative to raw evidence, highlighting the importance of preserving raw information. These findings challenge the necessity of complex agentic memory for the evaluated conversation tasks and establish naive RAG as an essential baseline.",
+      "url": "https://arxiv.org/abs/2610.30755",
+      "match_score": 0.9202,
+      "centroid_score": 0.9763,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-22"
     },
     {
-      "id": "2608.21860",
-      "title": "ChainPrune: Evaluating and Reducing Redundancy in Long Chain-of-Thought Reasoning",
-      "abstract": "Chain-of-Thought (CoT) reasoning has significantly enhanced the multi-step problem-solving capabilities of large language models (LLMs) by introducing explicit intermediate reasoning. However, advanced Large Reasoning Models (LRMs) often exhibit overthinking behaviors, including excessively long reasoning steps, redundant steps, and high computational overhead. Existing token-length reward strategies aim to promote concise outputs, but often result in pseudo-conciseness, where token count is reduced, yet redundant reasoning persists, leading to longer and less structurally efficient chains. To address these limitations, we propose ChainPrune, a novel reasoning path semantic structural optimization method to efficiently and controllably synthesize self-generated high-quality training data. We initially consolidate self-generated reasoning paths into a tree-based structure, followed by a multi-criteria dominant path selection process for preference data construction that formulates shallow reasoning trajectories while preserving essential reasoning steps. To further enhance the quality of reasoning, we incorporate a DPO-based preference learning method combined with supervised loss, effectively mitigating false reward suppression. This innovative integration significantly enhances both the efficiency and effectiveness of our reasoning framework. Comprehensive experimental results demonstrate significant reductions in step length and computational overhead, while maintaining or even enhancing accuracy.",
-      "url": "https://arxiv.org/abs/2608.21860",
-      "match_score": 0.9199,
+      "id": "2610.29189",
+      "title": "Reasoning-Search-Augmented LLMs: An Operational Taxonomy, Benchmark Analysis and Controlled Evidence Synthesis",
+      "abstract": "Large language models (LLMs) demonstrate impressive emergent reasoning capabilities, yet they remain constrained by fixed model parameters and finite context windows. Even when augmented with static retrieval, they can produce statements that are unsupported by, or even contradictory to, retrieved evidence. This leads to hallucinations, difficulty incorporating up-to-date information, and failures to correctly interpret or reconcile sources. Recent work addresses these limitations by tightly coupling step-by-step reasoning with interactive search, treating retrieval as an action within an iterative agentic loop rather than a one-shot preprocessing step. This study reviews frameworks that implement such reasoning-search loops by interleaving planning, querying, retrieval, integration, verification, and stopping. We analyze these systems through four architectural axes: retrieval coupling, controller design, knowledge source, and grounding strictness. We separately treat the learning signal as a cross-cutting dimension because prompting, supervision, preference optimization, and reinforcement learning can instantiate the same architecture while producing materially different search, stopping, and grounding behavior. We further distinguish benchmark difficulty from RSA-loop demand and synthesize controlled within-study ablations and quality-cost deltas, avoiding invalid pooling across heterogeneous model backbones, retrievers, corpora, and evaluation protocols. Our goal is to clarify the landscape of reasoning-search-augmented LLMs and outline a unified perspective on the design choices shaping future research.",
+      "url": "https://arxiv.org/abs/2610.29189",
+      "match_score": 0.9194,
+      "centroid_score": 0.9662,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-21"
+    },
+    {
+      "id": "2610.09858",
+      "title": "Training Advisors for LLM Agents from Task Outcomes",
+      "abstract": "Large language model agents tackle multi-step tasks by interleaving reasoning and tool calls with observations from the environment. Prior work has shown that natural-language feedback can help these agents revise their decisions during task execution. We introduce Caddie, a method for training critics to provide natural-language analysis and advice as agents work through a task. Unlike approaches that rely on step-level labels or reference critiques, Caddie learns from whether the agent ultimately succeeds after receiving the critic's feedback. We optimize the critic through reinforcement learning while keeping the base model frozen. Trained on multi-hop question answering with a single base model, our Qwen3-4B critic improves success rates across four base models of different scales and architectures, including three not used during critic training. On the MuSiQue benchmark, the trained critic improves Qwen3-4B's success rate by more than 25 percentage points, surpassing the performance of Kimi K3 without a critic. The same critic also yields gains on out-of-domain interactive benchmarks, including $τ^3$ and DeepDive, with no additional training. Our results show that agents can decide when to seek help from a critic at inference time and that outcome-based critic training can produce guidance that transfers across base models and task domains.",
+      "url": "https://arxiv.org/abs/2610.09858",
+      "match_score": 0.9188,
+      "centroid_score": 0.9539,
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-07"
+    },
+    {
+      "id": "2610.24963",
+      "title": "DeGMatch: Target-Aware Reasoning Data Selection via Deconfounded Gradient Matching",
+      "abstract": "Reasoning post-training on long trajectories has substantially improved the reasoning capabilities of large language models, but scaling such training to large datasets is increasingly expensive. We study target-aware reasoning data selection, where a small reference set specifies a target capability and guides the selection of training trajectories for specialization. We find that existing target-aware methods can exhibit limited target discrimination on long reasoning trajectories, while dominant population-level structure in candidate gradients can obscure finer target-dependent variation during gradient matching. To address these limitations, we introduce Deconfounded Gradient Matching (DeGMatch), which first constructs a target-relevance gate and then reranks candidates using model-specific gradients. DeGMatch centers gradients using the candidate-population mean and removes leading principal directions before target matching, reducing the influence of dominant population-level structure and improving target discrimination. Across mathematics, science, and code, DeGMatch outperforms strong heuristic, target-aware, and reasoning-specific data selection baselines, while remaining effective across selection budgets, model families, and scales. Our code is publicly available at https://github.com/CHLee0801/degmatch.",
+      "url": "https://arxiv.org/abs/2610.24963",
+      "match_score": 0.9181,
+      "centroid_score": 0.9592,
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-18"
+    },
+    {
+      "id": "2610.38573",
+      "title": "CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents",
+      "abstract": "A memory can be outdated for present-day reasoning yet indispensable for reconstructing the past. Relevance-based retrieval overlooks this tension: semantic relevance, evidence-grounded validity, and query-specific eligibility are distinct. We propose CALM, a conflict-aware lifecycle memory governance framework that decouples persistent memory preservation from query-time admission. CALM converts heterogeneous records into evidence-grounded memory cells, updates validity and lifecycle states using support, conflict, and dependency signals, and admits query-appropriate evidence through training-free or learned gating informed by temporal applicability. Across LongMemEval-S and LoCoMo with Qwen and GPT backbones, CALM outperforms state-of-the-art baselines, achieving the best overall accuracy. Compared with simple filtering and reranking, query-conditioned admission further improves evidence selection. Conflict-blocking and robustness analyses show CALM suppresses erroneous retrieved memories while retaining useful evidence. Historical-reconstruction experiments demonstrate that preserving superseded records supports accurate earlier-state reasoning without compromising current-state answers.",
+      "url": "https://arxiv.org/abs/2610.38573",
+      "match_score": 0.9166,
       "centroid_score": 0.9684,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-22"
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-28"
     },
     {
-      "id": "2608.22376",
-      "title": "Can Large Language Models \"Hyper-Thread\"?",
-      "abstract": "Large language models generate tokens sequentially, but can they execute multiple tasks concurrently while forming each token? Broader attention allocation may provide a mechanism for such task concurrency. Existing approaches to scaling inference primarily rely on longer generations, more samples, or additional verification stages, while attention dispersion is often treated as a signal of interference or error. Task concurrency within serial generation therefore remains underexplored. We propose the Model Hyper-Threading Hypothesis and evaluate its predictions using multiple coordinated tasks that share state within the same problem. We design three conditions (Baseline, Serial Functional Scheduling, and Concurrent Functional Loading) and evaluate their benefits and costs using accuracy, output-token distributions, and attention metrics. On an AIME 2025 development set, Concurrent Functional Loading achieves the highest accuracy. Relative to Serial Functional Scheduling, its typical output length is similar and it is shorter on most problems, while exhibiting greater attention dispersion and higher task-relevant coverage, albeit with a heavier output-length tail. Within-step concurrency and its causal mechanism still require direct tests. Our results show that more dispersed attention can coexist with higher accuracy, providing preliminary behavioral and correlational evidence for the hyper-threading hypothesis. These findings motivate a shift in perspective on inference scaling from \"generating more tokens\" toward \"having each generation step carry more tasks,\" pointing to a new avenue for improving reasoning performance.",
-      "url": "https://arxiv.org/abs/2608.22376",
-      "match_score": 0.9186,
-      "centroid_score": 0.9638,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-23"
+      "id": "2610.16998",
+      "title": "Glasseek: A Transparent Recipe for Training and Trustworthy Evaluation of DeepSearch Agents",
+      "abstract": "Deep search enables language agents to solve complex information-seeking tasks through iterative web exploration. However, developing robust open-source agents remains challenging for three reasons. First, opaque trajectory-construction pipelines make training data difficult to audit and reproduce. Second, context compression can create a substantial mismatch between training and inference. Third, agents may retrieve benchmark content from the open web during evaluation, contaminating the results and overstating their performance. To overcome these bottlenecks, we introduce Glasseek, a fully transparent deep search framework spanning the complete development lifecycle, releasing all data, model weights, training recipes, and code. Specifically, for data construction, we establish a verifiable trajectory curation pipeline that systematically generates high-quality exploration paths. For training, we propose Compaction-Managed GSPO (CM-GSPO), which uses the same policy for search and summarization while optimizing only execution sub-trajectories, enabling end-to-end search-policy training across context-compaction boundaries. For evaluation, we conduct the first systematic audit of test-set leakage in open-web agents and release a modular anti-leakage plugin that seamlessly integrates into existing evaluation harnesses. Under this rigorous evaluation protocol, our 9B agent outperforms frontier proprietary agents across almost all deep research benchmarks spanning diverse task types, and achieves the best overall performance among recent open-weight agents, setting a new state of the art at the 9B scale.",
+      "url": "https://arxiv.org/abs/2610.16998",
+      "match_score": 0.9163,
+      "centroid_score": 0.954,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-12"
     },
     {
-      "id": "2608.10676",
-      "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
-      "abstract": "Large language model (LLM)-based search agents answer questions through multi-step interactions with external environments. However, providing complete execution trajectories to the LLM causes unbounded context growth and introduces noise. Existing compression methods reduce context at the cost of important details and often replace erroneous facts without repairing downstream reasoning derived from them. To address this problem, we propose ReTree, a self-correcting tree-structured memory mechanism for search agents. ReTree constructs a bounded per-step reasoning context while preserving source-linked evidence. It models search as an evidence tree whose nodes store bounded summaries, evidence, and revision histories. When newly retrieved evidence contradicts an earlier claim, ReTree traces back to the node where the claim was introduced, replaces outdated evidence, regenerates summaries, prunes affected branches, and resumes search. Source-grounded evidence provenance supports reliable conflict localization and keeps final claims traceable to retrieved passages. Experiments on four public question-answering and search benchmarks show that ReTree consistently outperforms Full-Trajectory ReAct, improving answer accuracy by up to 25.6 percentage points (pp); the average maximum per-step reasoning context of Full-Trajectory ReAct is $1.27$--$1.51\\times$ that of ReTree. These results establish ReTree as an effective self-correcting memory abstraction for long-horizon search.",
-      "url": "https://arxiv.org/abs/2608.10676",
-      "match_score": 0.9183,
-      "centroid_score": 0.9721,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-11"
+      "id": "2610.26511",
+      "title": "RouterWorld: Scaling Conversational AI with Latency-Aware LLM Routing",
+      "abstract": "Conversational AI systems built on Large Language Models (LLMs) require routing mechanisms that balance answer quality and response latency at scale. However, existing LLM routing benchmarks assume full observability of all candidate model outcomes, under-emphasize latency as a first-class metric, and fragment evaluation across heterogeneous protocols misaligned with real-world settings. We introduce RouterWorld, a comprehensive benchmark for LLM routing in conversational GenAI. RouterWorld unifies 371k single-turn responses and 76k multi-turn agentic trajectories, adopts natural user interactions with a standardized LLM-as-a-judge protocol, and decouples efficiency from transient pricing via hardware-grounded latency annotations. Crucially, RouterWorld formalizes routing under partial observability through two setups: Cold-Start, which restricts learning to sparse, static logs, and Voyager, which models continuous data streams where routing decisions shape future training distributions. Evaluating 13 routing baselines, we find that most routers over-emphasize accuracy while ignoring latency under partial observability. Code and benchmark data are publicly available.",
+      "url": "https://arxiv.org/abs/2610.26511",
+      "match_score": 0.9161,
+      "centroid_score": 0.9592,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-19"
     },
     {
-      "id": "2608.25583",
-      "title": "GRIP: Granular Reward-Guided Parameter Interpolation for Efficient Reasoning",
-      "abstract": "Reasoning-oriented large language models often achieve strong problem-solving performance by generating long chains of thought, but this behavior substantially increases inference cost and latency. In contrast, instruction-tuned models tend to answer more concisely, yet often lack comparable reasoning ability. This accuracy-efficiency mismatch motivates a lightweight approach that combines the strengths of both models without full model retraining. In this paper, we propose GRIP (Granular Reward-guided Interpolation of Parameters), a reward-guided parameter interpolation framework for efficient reasoning. Given a reasoning model and an instruction model with identical architectures, GRIP assigns learnable interpolation ratios to individual modules and optimizes only these ratios while keeping both source models frozen. The interpolation ratios are trained with a reward signal that favors responses that are both correct and concise. Experiments show that GRIP achieves a better accuracy-efficiency trade-off than fixed or search-based merging baselines and further reveals module-wise fusion patterns associated with efficient reasoning.",
-      "url": "https://arxiv.org/abs/2608.25583",
-      "match_score": 0.9179,
-      "centroid_score": 0.9666,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-26"
+      "id": "2610.29823",
+      "title": "MemoryTax: The Bitter Lesson of Agent Memory",
+      "abstract": "Agent memory systems such as Mem0 and Zep decide what to keep before any question arrives; coding agents keep the raw history and let the model search it with its own tools. We ask whether designed memory still helps once the model is strong enough to search for itself. On one LoCoMo conversation (419 turns, 152 questions), we run four memory methods (full context, BM25, Mem0, Zep) and three coding agents (Pi, Codex, Claude Code), each with GPT-4o-mini, GPT-6 Luna and Claude Opus 5.5, and record what every rollout costs. This is a short empirical study, with one conversation and one run per cell. Agent memory is a costly patch for a weak model: Mem0 beats full context only with GPT-4o-mini, and its build alone costs more than a whole full-context rollout. Agent memory also has a ceiling, set by the model that writes it: a stronger reader does not recover what a weaker writer left out. With Claude Opus 5.5, Pi tops the cost-accuracy frontier, scoring 99% for less than half the cost of full context; its one miss is a wrong answer key. Part of that lead comes from photo captions that only the agents could read: on the 88 questions whose evidence has no photo, Pi and full context differ by one answer.",
+      "url": "https://arxiv.org/abs/2610.29823",
+      "match_score": 0.9159,
+      "centroid_score": 0.9688,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-21"
     },
     {
-      "id": "2608.15065",
-      "title": "Funnel of Thoughts: Efficient Test-Time Scaling via Early Voting and Rollout Pruning",
-      "abstract": "Large Reasoning Models produce diverse, sometimes inconsistent answers across repeated queries on the same problem, so multi-sample inference is a prerequisite for reliable deployment. Majority voting at k rollouts is the standard solution and the de facto accuracy target for this regime, but it is prohibitively expensive at the scale LRMs require. We introduce Funnel of Thoughts (FoT), an inference-time method that preserves the full 32-trajectory voted accuracy while halving its attention FLOPs, a 28.8% reduction in full-model inference cost. Across 115K reasoning trajectories from six LRMs, we find that unproductive trajectories often reveal themselves through repeated hesitation markers such as \"Wait\", \"Actually\", and \"perhaps.\" These trajectories are less likely to reach the correct answer and consume disproportionate attention FLOPs, degenerating into no-answer loops in the worst case. Built on this training-free lexical signal, FoT identifies the vocabulary that captures these pathological patterns and prunes affected trajectories before completion, reducing online generation attention FLOPs by 56.1% and wall time by 37.6% without any additional model inference; the same signal transfers without retuning across held-out architectures and out-of-domain tasks.",
-      "url": "https://arxiv.org/abs/2608.15065",
-      "match_score": 0.9175,
-      "centroid_score": 0.9749,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-15"
-    },
-    {
-      "id": "2608.25428",
-      "title": "DCGC: Draft-Conditioned Global Correction for Complex Reasoning with Masked Diffusion Models",
-      "abstract": "Correcting flawed reasoning traces remains a significant challenge for Large Language Models (LLMs), whose autoregressive generation can propagate early mistakes into subsequent reasoning. We introduce DCGC, a Masked Diffusion Model (MDM) framework for global correction that uses an imperfect solution draft from an upstream solver as auxiliary context. DCGC combines task-specific Supervised Fine-Tuning (SFT) with a novel inference-time mechanism called Dynamic Dual-CFG. This mechanism separates problem-only and joint problem-draft branches and scales the draft-conditioned residual using a relative confidence gap. Across math, code, and knowledge reasoning benchmarks, DCGC outperforms standard sampling and simpler CFG variants, with additional results suggesting transfer to different diffusion backbones. In test-time setting where ground-truth failure labels are unavailable, DCGC improves full test set accuracy by correcting low-consensus upstream outputs, highlighting its utility as a verifier-free global correction module for difficult reasoning instances.",
-      "url": "https://arxiv.org/abs/2608.25428",
-      "match_score": 0.9168,
-      "centroid_score": 0.9703,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-26"
-    },
-    {
-      "id": "2608.21265",
-      "title": "Memory Augmentation Unlocks Efficient Chain-of-Thought Reasoning",
-      "abstract": "Large language models often rely on Chain-of-Thought (CoT) reasoning to solve complex tasks, but verbose reasoning traces introduce substantial inference overhead. CoT compression shortens generation, yet aggressive compression may disrupt logical coherence and degrade performance. We formalize this trade-off as the Context-Generation Substitution Law, where explicit reasoning context substitutes for part of decode-time generation. Based on this principle, we propose Memory-Augmented Compression, a training-free framework that constructs reusable reasoning memories from historical traces and retrieves them as prefill-side scaffolds. Rather than using raw demonstrations, these memories summarize reusable reasoning patterns, key constraints, and critical operations to compensate for information lost during compression. Experiments show that Memory consistently improves prompt-based Chain-of-Draft (CoD) compression across mathematical reasoning, complex reasoning, and science question answering tasks, yielding accuracy gains of 21.4, 28.0, 29.5, and 6.61 points over CoD on GSM8K, MATH, BBH, and MMLU-Sci, while achieving a 1.14-1.49x latency speedup latency speedup over standard CoT. Memory is also compatible with token-level, reasoning-trace-level, and inference-state compression mechanisms.",
-      "url": "https://arxiv.org/abs/2608.21265",
-      "match_score": 0.916,
-      "centroid_score": 0.9664,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-21"
-    },
-    {
-      "id": "2607.29377",
-      "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
-      "abstract": "LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero-Mem introduces \\emph{zero-token memory operations}: no step outside final question answering invokes an LLM or consumes LLM input or output tokens; encoder computation is accounted for separately. Zero-Mem preserves original interaction traces as its source of record. It organizes the traces in two complementary ways. An entity--context graph exposes connections across interactions, while a temporal hierarchy preserves conversational locality and session state. For each query, Zero-Mem weighs the two views, retrieves from both, and follows their structure to recover supporting relations or surrounding context. Deterministic calibration first discards conflicting evidence and then keeps the reader's answer grounded in the retrieved traces. Only the final-QA reader invokes an LLM. Across long-memory and long-context question-answering benchmarks, Zero-Mem achieves competitive performance while eliminating LLM calls and LLM-token consumption from memory operations. With the same final-QA reader and context budget, it reduces memory-operation time cost by 57.6\\% relative to the fastest compared baseline. Ablations support the contribution of the two views and their query-dependent coordination. Overall, the results show that structured agent memory need not generate an intermediate representation of the past. After peer review, the code and implementation details will be available at \\textcolor{blue}{https://github.com/TheMoon0815/Zero-mem}.",
-      "url": "https://arxiv.org/abs/2607.29377",
+      "id": "2610.15208",
+      "title": "PANINI-DR: Controlled Deep Research through Generative Semantic Workspaces",
+      "abstract": "Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subsequent work. We introduce PANINI-DR, a multi-agent harness that separates coordination of the overall investigation from the research and verification of individual subquestions. A shared workspace, built on the Generative Semantic Workspace representation, records subquestions, their dependencies, findings, and supporting evidence. Researchers investigate individual subquestions, while a separate verification agent checks proposed answers against those subquestions and their evidence. Verification feedback guides further investigation, and recorded findings inform subsequent assignments. We evaluate PANINI-DR on BrowseComp-Plus, FRAMES, and MoNaCo against seven state-of-the-art deep-research harnesses, all using a shared language-model backbone and frozen corpora. PANINI-DR achieves the strongest average performance across the three benchmarks. On BrowseComp-Plus, it achieves 73.3% accuracy, outperforming the next-best harness by 16.0 points. Its advantage is strongest on hard questions, where it answers nearly twice as many as the next-best harness. Ablations further show that structured planning and persistent state improve performance, as does checking each finding against its cited evidence before it is reused. Because a model can answer correctly from memory alone, we also analyze the evidence retained by each harness. PANINI-DR achieves the highest answer recoverability from saved evidence on all three benchmarks, while complementary claim-support audits show stronger evidence-backed answers. Accounting for this evidence changes how harnesses compare and further strengthens PANINI-DR's advantage.",
+      "url": "https://arxiv.org/abs/2610.15208",
       "match_score": 0.9158,
-      "centroid_score": 0.9759,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-07-31"
+      "centroid_score": 0.9654,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-10"
     },
     {
-      "id": "2608.29953",
-      "title": "SearchWiki: Learning to Build and Navigate Knowledge Wikis for Active Information Seeking",
-      "abstract": "Flat retrieval-augmented generation treats a corpus as a bag of chunks, discarding document hierarchy and cross document structure. We introduce SearchWiki, a harness framework that synthesizes a corpus into a hierarchical, typed, navigable wiki and trains an agent, WikiResearcher-9B, to retrieve information through multi-turn tool use. The wiki organizes knowledge into three layers - document overviews, cross- document topic pages, and page-level source records; enabling progressive refinement of retrieval when initial lookup misses. We optimize the agent's navigation policy with on-policy reinforcement learning with a multi-component reward function balancing answer correctness, retrieval quality and trajectory efficiency. Evaluation on ViDoRe-V3 (8 domains), FinanceBench, and memory benchmarks (LoCoMo, LongMemEval, PersonaMem-v2) shows that WikiResearcher- 9B which is our RL-tuned Qwen 9B model, significantly outperforms same-size untrained baselines and exceeds or matches larger external models. SearchWiki paired with WikiResearcher-9B demonstrates that learned navigation over structured corpora is a superior alternative to flat retrieval.",
-      "url": "https://arxiv.org/abs/2608.29953",
-      "match_score": 0.9155,
-      "centroid_score": 0.9511,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-30"
+      "id": "2610.25790",
+      "title": "CoMem: Learning to Anticipate Failures from Retrieved Experience",
+      "abstract": "Reflection lets LLM agents improve from their own attempts, but the memory it builds is local to a single task, so an agent reflecting on its own tends to revisit the same explanation for failure. Cross-task reflective memory addresses this in two forms: retrieved memory keeps past experience explicit and looks up related cases, which is specific but bounded by the bank, and parametric memory internalizes experience into parameters, which generalizes but is grounded in nothing beyond the task description. When both are used, existing agents combine them additively, feeding their outputs to the solver side by side, so retrieved experience never changes what the learned memory produces. We introduce CoMem (Compounding Memory), which makes retrieved experience an input to the learned memory itself, at training and at inference. The agent builds a bank of its own successful and failed reflections, learns from retrieved cases to write failure hypotheses, candidate explanations of how an attempt is likely to go wrong, and at test time reasons from newly retrieved cases to guide each attempt. Varying the retrieved cases gives the memory different perspectives, yielding reflective diversity that is not merely sampled but also grounded in retrieved experience. Across two backbones and five benchmarks in math, code, and multi-hop QA, CoMem achieves strong overall performance. Additional evaluations show that it generalizes to out-of-distribution tasks and enables smaller models to provide effective guidance to stronger solvers.",
+      "url": "https://arxiv.org/abs/2610.25790",
+      "match_score": 0.9152,
+      "centroid_score": 0.9632,
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-19"
     },
     {
-      "id": "2608.24024",
-      "title": "Beyond Confidence: Test-Time Scaling for Multi-Turn Search Agents via Retrieval Grounding",
-      "abstract": "Confidence-based voting aggregates parallel LLM rollouts by weighting each with internal signals such as token log probabilities, and has been actively studied for single-turn reasoning. However, modern LLMs increasingly act as multi-turn search agents that retrieve and condition on external documents. In this paper, we show that confidence-based voting transfers poorly to this multi-turn setting, and identify the underlying failure reason as copy inflation: when retrieved documents are appended to an agent's context, tokens copied from those documents receive systematically inflated log probabilities. This flattens confidence scores within each question and weakens the resulting weighted vote. To address this issue, we propose Retrieval-Grounded Voting (RGV), which scores each rollout by the lexical overlap between its final answer and the documents it retrieved. By computing the signal outside the contaminated context, RGV sidesteps both token log probabilities and additional LLM calls. Across four search-agent benchmarks and five LLMs, RGV consistently outperforms confidence-based voting, with gains of up to +5.4% accuracy and +35% on minority-correct questions, where the correct answer appears in only 1-2 of 8 rollouts.",
-      "url": "https://arxiv.org/abs/2608.24024",
-      "match_score": 0.9155,
+      "id": "2610.22599",
+      "title": "Can LLMs predict the outcomes of machine learning experiments?",
+      "abstract": "Recent advances in AI make Recursive Self-Improvement (RSI) increasingly plausible. Large Language Models (LLMs) can already propose, select, and run Machine Learning (ML) experiments. However, the space of possible design choices in ML is vast. An LLM that proposes an experiment needs a reliable intuition of whether it is worth running given the timing constraints of long training runs. In this work, we measure such intuition in current frontier LLMs by evaluating how accurately they predict the impact of self-generated ML experiment ideas before these are put into training runs. To this end, we construct a dataset of 288 LLM-proposed ideas on eight MLE-bench tasks. We then prompt five frontier LLMs (GPT-6 Astra, Claude Opus 5.5, Claude Fable 5.1, Kimi K3, and GLM-5.3) to predict the impact of each idea and compare their predictions with the actual outcomes after training. We report four main findings. First, LLM predictions are substantially better than random chance but far from accurate: even the best model, Claude Opus 5.5, explains only half of the variance in outcomes (R^2 = 0.49). Second, we notice that all tested models systematically underestimate the magnitude of the changes. Third, prediction quality varies widely across tasks. Finally, the choice of the coding harness that actually implements the ideas has little effect on outcomes, and we find no evidence of self-preference. Higher reasoning settings and additional context lead to modest gains. Overall, our results show that current LLMs have useful but limited intuition about which ML ideas will work. We release our dataset to support further study.",
+      "url": "https://arxiv.org/abs/2610.22599",
+      "match_score": 0.9152,
       "centroid_score": 0.9639,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-25"
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-15"
     },
     {
-      "id": "2608.19652",
-      "title": "Can Agent Memory Systems Track Evolving State?",
-      "abstract": "As LLM-based agents are deployed for longer and higher-stakes tasks, their memory systems continue to have crucial gaps. While existing memory benchmarks focus largely on recall-shaped tasks, we argue an effective memory system must track the evolving state of the world; as facts, constraints, and decisions are revised over a long interaction, answers must reflect the current state and not a superseded one. We define this capability as state tracking and instantiate it in StateMemBench, a benchmark of 234 multi-session scenarios spanning two conversation-length regimes. Its closed-pool grading scores whether an answer reflects the current state, the superseded state, or fails otherwise, separating state-tracking failures from other errors by construction. Our analysis shows that this task is challenging for existing memory systems, retrieval-augmented baselines, and long-context baselines. We then present StateMem, a state-first memory method that explicitly tracks supersession and relational dependencies, and show it improves current-state accuracy over the strongest same-backbone baseline by 1.8x (0.205 -> 0.363) on DeepSeek-V4-Flash and over the strongest memory system by 1.6x (0.149 -> 0.233) on Qwen-3.5-9B, while remaining competitive with the long-context baselines. Finally, we show the same state approach can be applied as a lightweight single-call wrapper over existing memory systems, lifting current-state accuracy by +32 to +67 points on StateMemBench across six memory and retrieval backends. A length- and cost-matched control attributes +15 to +32 of those points to state structure rather than added context.",
-      "url": "https://arxiv.org/abs/2608.19652",
-      "match_score": 0.9155,
-      "centroid_score": 0.9795,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-20"
+      "id": "2610.39682",
+      "title": "Heterogeneous Co-Evolution Learning for Tool-Efficient Search Agents with Zero Labels",
+      "abstract": "Deep search agents extend language models by interleaving reasoning with external retrieval. However, effective search-agent training requires addressing two challenges beyond final-answer optimization. First, the capability frontier of agents is largely determined by training questions, whereas fixed or labeled task collections cannot adapt as agents improve. Second, outcome-only reinforcement learning treats all successful trajectories equally, even when some correct answers rely on redundant searches, creating an inherent tension between answer accuracy and tool efficiency. To address these issues, we introduce \\textsc{ZEST-Search}, a zero-label and tool-efficient framework for search-agent training via heterogeneous co-evolution. Starting from unlabeled reference questions, \\textsc{ZEST-Search} constructs validated search tasks online through an answer-first and evidence-path-guided generation process. A heterogeneous proposer adaptively constructs training tasks around the solver's evolving capability boundary, while the solver learns search-augmented reasoning through reinforcement learning. To jointly optimize task difficulty and search efficiency, \\textsc{ZEST-Search} employs an intermediate-difficulty reward for the proposer and a task-local tool-aware reward for the solver, encouraging informative tasks and correct answers with fewer redundant searches. Experiments on seven general-domain and multi-hop question answering benchmarks demonstrate that \\textsc{ZEST-Search} consistently improves search-agent performance while achieving higher tool efficiency without labeled search-training data or expert search trajectories. Further analyses show that heterogeneous generation, adaptive difficulty control, and tool-aware optimization enable more effective search-agent training.",
+      "url": "https://arxiv.org/abs/2610.39682",
+      "match_score": 0.9151,
+      "centroid_score": 0.96,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-29"
     },
     {
-      "id": "2608.05906",
-      "title": "Causal Episodic Memory for Feedback-Driven Agent Repair",
-      "abstract": "LLM agents that repair failures often discard successful corrections, forcing later episodes to rediscover similar solutions. We study whether finalized repair outcomes can improve subsequent Text-to-SQL episodes without parameter updates. We introduce MERIT, a training-free agent that maintains an online dual-polarity memory of oracle-verified corrections and observed unsuccessful directions. Under oracle-assisted benchmark feedback, only memories from earlier finalized episodes are eligible for retrieval. A deterministic classifier assigns a coarse failure type, which conditions a hybrid lexical-dense retriever before the frozen model generates each revision. Using Qwen2.5-7B-Instruct with identical initial predictions and repair budgets, \\method{} improves execution accuracy over stateless iterative repair from \\(66.34\\%\\) to \\(69.79\\%\\) on Spider and from \\(47.35\\%\\) to \\(48.44\\%\\) on BIRD. Paired analyses provide clear evidence for the Spider gain but weaker evidence on BIRD. MERIT is not reliably separated from untyped dynamic retrieval on either benchmark, while Reflexion-style memory reaches \\(51.24\\%\\) on BIRD at substantially higher inference cost. Ablations show that negative memory contributes modestly, the value of type conditioning and lexical-dense ranking is dataset dependent, and schema-local experience provides the most consistent benefit. These results clarify when causal cross-query memory improves repair and when broader memory representations remain preferable. Our implementation is available here:",
-      "url": "https://arxiv.org/abs/2608.05906",
+      "id": "2610.11270",
+      "title": "Gated Memory: Admission-Controlled Memory Formation for Conversational AI",
+      "abstract": "Personalized conversational AI relies on long-term memory systems that extract facts from user utterances and store them in persistent vector stores. Despite progress in retrieval, deduplication, and lifecycle management, the formation stage, the moment a fact is first written to storage has received almost no principled attention. We identify this as the binding constraint on memory quality in production systems. Critical contextual signals, such as the distinction between a permanent user attribute and a transient situation, exist only in the original utterance and are irreversibly lost the moment extraction produces a subject-relation-object triple. No downstream process can recover them. We propose Gated Memory, a lightweight, modular formation framework that interposes two decision checkpoints between conversation and storage: an admission gate that evaluates every candidate fact against the full utterance context before extraction runs, and a conditional enrichment stage that grounds admitted facts through an entity scope taxonomy with privacy constraints. The gate evaluates only the current exchange while using prior turns as read-only reference context, and produces a structured formation record. Admitted content is decomposed into atomic facts, each categorized, tagged with provenance (directly stated versus inferred), scoped to its condition of applicability, and grounded in resolved time and place, subject to a constraint that no entity absent from the context may be asserted. On the LoCoMo-10 benchmark with atypical emotional density in utterance data, Gated Memory achieves an overall +2.6% relative improvement in LLM-judge accuracy over a strong baseline with identical retrieval and generation, establishing formation quality as a measurable constraint on memory performance.",
+      "url": "https://arxiv.org/abs/2610.11270",
       "match_score": 0.915,
-      "centroid_score": 0.9647,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-06"
+      "centroid_score": 0.9638,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-08"
     },
     {
-      "id": "2608.00967",
-      "title": "TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue Agents",
-      "abstract": "Large language model agents have shown strong capabilities in generating coherent and contextually appropriate responses, yet robust long-horizon dialogue remains limited by the lack of external memory that is traceable, updatable, and diagnostically transparent. Existing memory-augmented agents often store memories as isolated records or overwritable states, making it difficult to preserve how information originates, evolves, conflicts, or becomes obsolete over time. We propose TrajWiki, a trajectory-based memory framework for long-horizon conversational agents. Instead of treating memory as static entries, TrajWiki represents each memory as a source-grounded evolution trajectory, maintained through immutable episodic snapshots and claim-level operations such as ADD, REVISE, and DEPRECATE. To reduce fragmentation and retrieval cost, TrajWiki further introduces Memory Wiki, a persistent intermediate layer that incrementally compiles dialogue history into structured and interlinked wiki pages capturing salient entities, events, quantities, topics, and conflicts. At inference time, queries are routed hierarchically from relevant wiki pages to linked memory trajectories, then to corresponding snapshots and source messages for evidence-grounded answer synthesis. Experiments on LoCoMo and MedMT show that TrajWiki improves long-horizon dialogue performance across both open-source and closed-source LLM backbones, while providing greater interpretability and diagnostic visibility into memory evolution, retrieval failures, and answer generation.",
-      "url": "https://arxiv.org/abs/2608.00967",
-      "match_score": 0.9148,
-      "centroid_score": 0.9738,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-02"
+      "id": "2610.33274",
+      "title": "FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents",
+      "abstract": "Large language model (LLM) agents work in scenarios with very different memory needs. A question about past conversations needs the exact facts it names, while a multi-step task needs a trace of the steps already taken together with details that the next step cannot name. Existing memories are each designed and tested for one kind of scenario. Retrieval memories such as A-Mem miss steps that the current query does not express, summaries drop exact strings, and pairing the two fixes the split of the budget in advance. We propose FlexA-Mem, a general memory that writes each unit of history once into an immutable store and renders a fresh memory for every call. The rendered memory is a compact timeline of records plus detail that a fixed rule fits into the remaining room without an LLM call. The detail is either relevant units as raw text or excerpts or the verbatim pieces that best match the query. With one store, FlexA-Mem serves both kinds of scenario. On AppWorld challenge tasks at 4k, it outperforms the second-best method by 11.5%, and on 147 unused tasks with predictions fixed in advance it outperforms A-Mem with a summary by 12.2%. On LongMemEval and LoCoMo, it matches a dedicated keyword retriever that writes no memory, while memories built on text written by an LLM fall far behind at tight budgets. Ablations show that the timeline carries AppWorld completion, whereas recovery mainly saves steps there and decides accuracy on exact facts. Code is available at https://github.com/WujiangXu/Flex-Amem",
+      "url": "https://arxiv.org/abs/2610.33274",
+      "match_score": 0.9144,
+      "centroid_score": 0.9653,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-23"
     },
     {
-      "id": "2608.02876",
-      "title": "BAP-SQL: Budget-Aware Observation Planning for Agentic Text-to-SQL",
-      "abstract": "Tool-using agents do not merely consume observations: their actions determine what arrives next. In agentic text-to-SQL, a broad query can spend context and database work before useful evidence appears, while post-hoc compression cannot recover omitted rows or expended work. We present BAP-SQL, which treats observation formation as a budget-control stage: it estimates query risk, rewrites SQL when useful, and delegates hard limits to an independent runtime shield. Across general 4B, specialized FINER-SQL 4B, and 7B backbones, BAP-SQL improves tight-budget success. On the primary BIRD-derived setting, it gains 3.4/3.6 percentage points over matched SFT while using 4.5/5.0% fewer tokens. Matched retraining and task-level transfer associate the gain with policy-visible planning and budget-sensitive rescue. The benefit attenuates as model capability and budget increase, reverses at the loosest setting, and does not reduce database work.",
-      "url": "https://arxiv.org/abs/2608.02876",
-      "match_score": 0.9146,
-      "centroid_score": 0.9636,
-      "matched_cluster": "agent & reasoning & conversational",
-      "submitted": "2026-08-03"
-    },
-    {
-      "id": "2608.29835",
-      "title": "EVAR: Evidence-Validated Hypothesis Admission for Budget-Aware Narrative Reasoning",
-      "abstract": "Large language models (LLMs) often produce fluent but weakly grounded conclusions when reasoning over non-interactive, long-form narratives. A central failure mode is that unsupported intermediate hypotheses can enter the reasoning trajectory and contaminate subsequent inference, especially when evidence is scattered across distant parts of the story. To address this problem, we propose EVAR, an evidence-validated hypothesis admission framework for budget-aware narrative reasoning. EVAR first compiles the narrative into an immutable evidence store of source-linked atomic claims and assigns an instance-specific inference budget from unresolved gaps and uncertainty signals. During refinement, EVAR directly proposes candidate hypotheses for unresolved gaps, constructs hypothesis-conditioned validation challenges, and verifies each candidate against the locked store before admission: supported hypotheses enter the answer-supporting state, unverifiable ones are quarantined, and contradictory ones are discarded. A sufficiency-based stopping mechanism further avoids unnecessary refinement. Experiments on NarraCrime and multiple public reasoning benchmarks show that EVAR improves both task performance and evidence faithfulness while maintaining controllable inference cost.",
-      "url": "https://arxiv.org/abs/2608.29835",
+      "id": "2610.22209",
+      "title": "Beyond Downstream QA: Rethinking How We Evaluate Agent Memory",
+      "abstract": "Agent memory benchmarks evaluate whether an agent's responses reflect correct knowledge, measuring downstream question-answering accuracy as a proxy for memory quality. We show this evaluation paradigm is incomplete: it conflates memory correctness with retrieval and generation quality, producing both false positives where correct responses mask broken memory and false negatives where incorrect responses blame correct memory for retrieval failures. We introduce FEB-30, a benchmark of 30 fact-evolution trajectories spanning 6 diagnostic categories and 3 difficulty levels, constructed via paradigm inversion: documents are generated from known fact trajectories, yielding deterministic ground truth without human annotation. Each trajectory defines how a fact should evolve across multi-author artifacts (documents, emails, conversations), enabling direct inspection of the memory store after each ingestion step. Applying FEB-30 to a representative memory system, we demonstrate that intrinsic and extrinsic evaluation diverge by an average of 16 percentage points, with 44% of trajectories exceeding meaningful divergence thresholds. Diagnostic decomposition reveals that the system correctly classifies memory operations (create, update, reinforce, supersede) only 20% of the time, a failure entirely invisible to extrinsic evaluation, and that failure modes differ systematically by category and difficulty. We release the benchmark, document generation pipeline, and scoring framework to support reproducible evaluation of agent memory systems.",
+      "url": "https://arxiv.org/abs/2610.22209",
       "match_score": 0.9138,
-      "centroid_score": 0.9552,
-      "matched_cluster": "answering & query & corpus",
-      "submitted": "2026-08-30"
+      "centroid_score": 0.9686,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-15"
     },
     {
-      "id": "2608.15303",
-      "title": "Divergent-Convergent Reasoning: Scaling Test-Time Compute through Structured Solution Synthesis",
-      "abstract": "Test-time compute can substantially improve Large Language Model (LLM) reasoning performance, yet how and when additional compute helps remains poorly understood. We study Divergent-Convergent Reasoning (DCR), a simple two-phase primitive consisting of an exploration phase that generates multiple candidate solutions followed by a convergent reconciliation phase. We present three core results. First, we show that even a single reconciliation step can reliably amplify correct minority reports: across datasets, DCR often recovers the correct answer when correct exploration outputs are in the minority, a regime where majority voting fails. Second, we introduce recursive DCR, an autoregressive reconciliation system that iteratively analyzes disagreements and allocates additional test-time compute. Recursive DCR achieves higher accuracy than fixed-compute baselines-reaching 93.3% on AIME 2024 and 92.0% on AIME 2025-while using roughly 27% less compute on average, demonstrating that attentive resource allocation is superior to uniform scaling. Third, we analyze disagreement among exploration outputs via a simple, training-free dispersion metric. Dispersion reveals a structured relationship between disagreement and test-time gains: in regimes where DCR is effective, higher disagreement among exploration outputs is associated with larger accuracy improvements from reconciliation. Together, these results show that disagreement, often viewed as noise, can be systematically exploited to improve test-time reasoning and reveal emerging scaling laws for agentic LLM systems.",
-      "url": "https://arxiv.org/abs/2608.15303",
-      "match_score": 0.9133,
+      "id": "2610.32752",
+      "title": "ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents",
+      "abstract": "LLM agents need long-term memory that can recover precise and mutually consistent evidence from growing interaction histories, particularly when answers depend on relations among facts rather than isolated semantic matches. Current memory pipelines remain vulnerable at two stages: indexing errors can fragment repeated entities or merge distinct ones, and online retrieval often treats initial similarity scores as final even when the surrounding graph provides evidence for revising them. We introduce ActionRAG, a graph memory architecture that couples cautious indexing with query-time graph retroevaluation. Its indexing pipeline reconciles type labels and applies tiered entity resolution. Given a query, dual-channel entity and triple retrieval forms an initial evidence set and induces a bounded local graph. Query-conditioned receiver-normalized diffusion refines triple scores using local path structure. Seed protection, hub-penalized flux, and triple materialization preserve direct evidence while recovering missed connections. We evaluate ActionRAG on MemoryAgentBench (MAB), which tests accurate retrieval, conflict resolution, long-range understanding, and test-time learning. Across its eight deterministic-scoring columns, ActionRAG achieves 55.1 average accuracy, improving over the strongest retrieval-based memory baseline by 5.4 points. Under MAB's query-time cost accounting, mean synthesis cost stays below \\$0.001 per query on the four reported cost columns, and the sum of separately measured retrieval-side p99 components is 440.7 ms on our consumer Apple Silicon setup.",
+      "url": "https://arxiv.org/abs/2610.32752",
+      "match_score": 0.9138,
+      "centroid_score": 0.97,
+      "matched_cluster": "answering & agent & reasoning",
+      "submitted": "2026-10-23"
+    },
+    {
+      "id": "2610.26666",
+      "title": "Nested Shared-Operator Recursion on ARC-AGI-1: An Empirical Study of HRM, TRM and URM",
+      "abstract": "Recursive reasoning models refine persistent internal states by repeatedly applying learned operators. We investigate whether adding a persistent intermediate state that integrates repeated updates of a faster state through the same operator improves predictive performance relative to each model family's baseline at matched parameter counts. We define this organisation operationally and implement it within three architectures: the Hierarchical Reasoning Model (HRM), Tiny Recursive Model (TRM) and Universal Reasoning Model (URM). Using the official codebases on ARC-AGI-1, we compare each baseline with its parameter-matched nested variant. We evaluate held-out queries from tasks whose demonstrations were available during training. The experiments use a single-GPU budget far below the published training protocols. Under the tested conditions, nested variants show no consistent advantage in token accuracy, predictive loss or exact solving, which remains near zero for all configurations. The results therefore leave the hypothesis open. We specify a confirmatory comparison, with an informative baseline, multiple seeds, controls that isolate nesting and predefined criteria, to determine whether this organisation merits further development.",
+      "url": "https://arxiv.org/abs/2610.26666",
+      "match_score": 0.9138,
       "centroid_score": 0.9619,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-15"
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-19"
     },
     {
-      "id": "2608.01319",
-      "title": "Cognitive Demand Steering for Adaptive Meta-Reasoning in Large Language Models",
-      "abstract": "Recent meta-reasoning frameworks improve LLM reasoning by wrapping chain-of-thought generation in an iterative control loop, allowing more effective backtracking, termination of reasoning loops, and injection of promising reasoning patterns, among other strategy adjustments. Despite promising results, methods often rely on backward-looking reward functions, utilize coarse search actions, or require additional reasoning controller training requiring many-shot supervision. We introduce Cognitive Demand Steering (CDS), a training-free meta-reasoning framework equipped with residual demand assessment: at each step, an LLM-based progress evaluator characterizes the residual reasoning required to arrive at a solution rather than merely evaluating the previous step. This allows a meta-controller to select reasoning interventions comprising both general-purpose exemplars and actions (e.g., general guidance for quantitative reasoning) that directly tackle this forward-looking demand signal. This shift eliminates the need for any trained component while enabling zero-shot transfer across models and tasks with no adaptation. Rather than relying on coarse characterizations, we employ cognitive scales to both design interventions as well as profile initial problem complexity and residual demand signal over 16 dimensions motivated by cognitive science (e.g., attention and scan, learning and abstraction, spatio-physical reasoning), giving the controller a fine-grained vocabulary for diagnosing. Averaged across three frontier LLMs and six reasoning benchmarks, CDS improves accuracy by $21.9\\%$ over direct calls and $9\\%$ over standard CoT reasoning, with the largest gains on difficult mathematics and coding tasks.",
-      "url": "https://arxiv.org/abs/2608.01319",
-      "match_score": 0.9131,
-      "centroid_score": 0.9647,
-      "matched_cluster": "reasoning & trace & correct",
-      "submitted": "2026-08-02"
+      "id": "2610.21286",
+      "title": "The Density of Thought: Predicting and Steering Reasoning in Large Language Models",
+      "abstract": "We investigate whether variation in information density across chain-of-thought (CoT) reasoning steps predicts answer correctness and can serve as a controllable inference-time target. We prompt frozen pretrained models to solve problems via CoT and measure the density of each reasoning step with two independent metrics: LP variance (how unevenly information is distributed across steps, computed as the variance in mean per-token negative log-likelihood) and the Caveman compression ratio. We then test whether density correlates with, and can be steered to improve, answer correctness. Experiments across six model scales, two training paradigms, and 60 GSM8K problems yield four main findings. First, lower LP variance predicts correctness in supervised fine-tuned (SFT) models, but this relationship weakens with scale and reverses in reinforcement-learning (RL) distilled models. Training paradigm therefore appears more influential than model size in determining density behaviour. Second, synthetic experiments reveal an intrinsic complexity preference: models trained on uniformly distributed data learn complexity-favouring distributions 2.0 to 2.6 times more accurately than simplicity-favouring ones. Third, direct inference-time density steering reduces accuracy from 60.0% to 8.3%, indicating that natural density patterns are functionally important to reasoning. Fourth, pre-generation nudging combining hint injection with contrastive KV-cache steering improves accuracy by 13.3 percentage points, consistent across both metrics. Finally, we introduce Entropy-Gated Density Routing (EGDR), a self-supervised method using token-level Shannon entropy to gate proportional KVcache adjustments during generation, improving accuracy by 10.0 percentage points without any external guidance.",
+      "url": "https://arxiv.org/abs/2610.21286",
+      "match_score": 0.9136,
+      "centroid_score": 0.9677,
+      "matched_cluster": "reasoning & math & inference",
+      "submitted": "2026-10-15"
     }
   ],
   "serendipity_clusters": [
     {
-      "label": "agentic & agent & alfworld",
-      "score": 0.938
-    },
-    {
-      "label": "automated & agentic & discovery",
-      "score": 0.9367
+      "label": "alfworld & agentic & agent",
+      "score": 0.9387
     },
     {
       "label": "agentic & agent & execution",
-      "score": 0.9337
+      "score": 0.9373
     },
     {
-      "label": "dynamical & pde & nonlinear",
-      "score": 0.8677
+      "label": "agentic & agent & execution",
+      "score": 0.9257
     },
     {
-      "label": "secure & authentication & cryptography",
-      "score": 0.8607
+      "label": "pdes & pde & nonlinear",
+      "score": 0.8687
+    },
+    {
+      "label": "mri & imaging & segmentation",
+      "score": 0.8687
     }
   ],
   "serendipity": [
     {
-      "id": "2608.17587",
-      "title": "Write, Execute, Refine: From Skill Follower to Skill Optimizer via Reinforcement Learning from Execution Feedback",
-      "abstract": "Expert-written natural language skills can improve tool-using agents, yet agent-authored skills perform 8--11 points worse than using no skill. While inference-time loops can repair individual skills per task, they leave the underlying generator's refinement capability unimproved. We study how to organize execution experience from intermediate skills into training states for an optimizer. We introduce WER(Write, Execute, and Refine), a multi-phase framework that trains a Skill Optimizer outside a frozen executor. The optimizer proposes skills, a frozen agent executes each repeatedly, and a programmatic verifier scores the outcomes. These scores serve as group-relative rewards and filter for informative, mixed-outcome instances. Matched successful and failed trajectories from these records form the next phase's refinement states, so the optimizer learns from the consequences of its earlier outputs. On BFCL v4 multi-turn and tau2-bench, WER improves average Pass@1 over the no-skill baseline by 7.80 and 6.06 points, respectively. Under an identical refinement workflow, it outperforms the same backbone without optimizer training by 10.02 and 12.50 points. Notably, our trained 4B optimizer achieves 76.63\\% on BFCL v4, outperforming all evaluated off-the-shelf general-purpose LLMs in the same role on average. Our code is available at https://github.com/littlepkk/wer-training.",
-      "url": "https://arxiv.org/abs/2608.17587",
-      "match_score": 0.9136,
+      "id": "2610.13058",
+      "title": "Travel Back To Move Forward: Retrospective Exploration and Evolving for Long Horizon Agents",
+      "abstract": "Large language model agents increasingly operate in long-horizon environments where early mistakes can trigger cascading failures and trap agents in dead-end trajectories. Agents must therefore be able to proactively recover from such states and turn their exploratory experience into guidance for subsequent decisions. We introduce ReTRAIL, a framework that enables agents to rewind the environment to earlier states while preserving valid progress and carrying forward knowledge learned from abandoned exploration. The environment state moves backward while the agent's knowledge continues to move forward. ReTRAIL trains a shared policy with two complementary signals: State-Anchored GRPO compares alternative continuations from revisited states to improve execution, while a branch-advancement reward guides reflection through the progress of subsequent exploration. Experiments across four interactive benchmark MineSweeper, Sokoban, ALFWorld and ScienceWorld show that simply adding a rewind primitive provides limited benefit and can even degrade performance. In contrast, ReTRAIL enables agents to rewind from unproductive states and use insights from abandoned branches to guide subsequent exploration. These results demonstrate the value of coupling environment rewinding with experience reuse within an ongoing task for long-horizon task solving. The code is available at https://github.com/whi497/ReTRAIL.",
+      "url": "https://arxiv.org/abs/2610.13058",
+      "match_score": 0.9163,
+      "centroid_score": 0.9799,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-09"
+    },
+    {
+      "id": "2610.18614",
+      "title": "Can an Agent Learn to Predict Its Own Failure? Outcome-Grounded Confidence Calibration in LLM Agents",
+      "abstract": "Controlling an acting LLM agent means deciding, at each step of a long-horizon task, whether to trust its next action, abstain, or hand off to a human. That decision needs a per-step confidence signal predicting whether the current rollout will eventually succeed. The agent's own self-reported verbalized confidence is the natural candidate, but existing reinforcement learning methods calibrate it against the correctness of a decision at the current step. We propose a method to calibrate it against the eventual outcome of a multi-step episode: under GRPO, the group of rollouts for a task supplies success labels, and a proper scoring rule scores each step's confidence against the realized outcome. In offline RL on recorded trajectories of a Qwen2.5-7B agent in ALFWorld, TextWorld, and WebShop environments, the AUROC of step confidence against episode outcome rises from near chance to 0.68-0.85, and the top-10% of steps the agent is most confident about succeed ~4.3x more often than average. In online RL on the live ALFWorld agent, four calibration rewards improve early-step AUROC, expected calibration error goes from 0.42 to below 0.12, and selective execution improves over both the untrained agent and a format-only RL control, without degrading task success. We also introduce an evaluation protocol that separates episode depth, task difficulty, and attempt-level foresight, which shows where the gain lies: the trained agent recognizes from its first step which tasks it will fail, while telling a succeeding attempt from a failing one at the same task is harder, with some early-window signal emerging on TextWorld.",
+      "url": "https://arxiv.org/abs/2610.18614",
+      "match_score": 0.9072,
       "centroid_score": 0.9774,
-      "matched_cluster": "agentic & agent & alfworld",
-      "submitted": "2026-08-18"
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-13"
     },
     {
-      "id": "2608.22631",
-      "title": "Learning Generalizable Behaviors for Terminal Agents",
-      "abstract": "Terminal agents are a compelling application of large language models (LLMs), with the potential to integrate deeply into users' daily workflows. Reinforcement learning (RL) is a key technique for improving their capabilities, making scalable training environments a central challenge. Since public real-user interaction data are scarce, synthetic environments provide a practical alternative, but often suffer from domain gaps and limited fidelity, leading to poor generalization. Existing work mainly scales the quantity and diversity of synthetic environments, while reward-signal quality and the mechanisms governing generalization remain under-explored. We study how RL improves terminal agents and propose the Agentic Compositional Generalization hypothesis: rather than teaching new domain-specific skills from scratch, RL primarily shapes high-level decision-making behaviors that compose and route low-level skills acquired during pre-training and supervised fine-tuning (SFT). This account is consistent with our empirical results and suggests that verifier quality, which determines which behaviors are reinforced, is more important than simply increasing environment quantity or diversity. Motivated by this insight, we propose River, a simple training recipe that improves reward quality by filtering low-quality environments and augmenting outcome rewards with process-level behavior regularization. Using this recipe, our RL-trained agent achieves the best performance among evaluated open-source RL-trained 8B models across four terminal-agent benchmarks. River also generalizes across model families, scales, agent harnesses, and RL objectives. Using fewer than 30% of the TMax training environments, River improves RL gains by 106% and 30% on average for models ranging from 2B to 27B on Terminal-Bench-Lite and Terminal-Bench-v2.1, respectively.",
-      "url": "https://arxiv.org/abs/2608.22631",
-      "match_score": 0.9147,
-      "centroid_score": 0.977,
-      "matched_cluster": "agentic & agent & alfworld",
-      "submitted": "2026-08-23"
+      "id": "2610.33817",
+      "title": "EnvLunch: The Environment as a Free Lunch for Learning to Interact",
+      "abstract": "For agentic data analysis, language-model agents often require a large number of annotated tasks to learn how to interact effectively with executable environments (i.e., databases). While high-quality annotated tasks require heavy manual effort, an executable environment already provides rich interaction structure and verifiable outcomes. In this sense, the environment itself offers a free lunch, an additional set of verifiable tasks that require no human annotation. We propose EnvLunch, a warm-up stage that turns this environmental signal into agent training without human-written or model-generated task descriptions, before downstream agentic reinforcement learning. EnvLunch samples valid action trajectories, executes them to obtain final observations, and trains an agent to recover a functionally equivalent trajectory given only its final observation. This label-free warm-up enables the model to outperform the baseline by over 9 points on average across all downstream training budgets, and with few labels, the baseline needs 8 to 32 times as many annotated examples to match the accuracy that the EnvLunch model reaches at its smallest training budget. Letting the environment alone define the task yields a larger gain than having the model write its own tasks over the same environments, and this warm-up also improves fine-tuning on benchmarks beyond data analysis. EnvLunch therefore saves annotated tasks and provides a better starting point for fine-tuning agentic models when such tasks are limited.",
+      "url": "https://arxiv.org/abs/2610.33817",
+      "match_score": 0.9156,
+      "centroid_score": 0.9761,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-24"
     },
     {
-      "id": "2608.15089",
-      "title": "StateM: Reaching 95.3% Raw Accuracy, or a \\$15 Frontier Run, on Terminal-Bench 2.1 via Harness Scaling",
-      "abstract": "Long-horizon agents can fail even when their underlying models can solve the constituent steps. They may lose track of mutable state, fail to reactivate lessons from earlier executions, skip known procedures, or stop prematurely. We bet on harness scaling to improve the execution system around an agent without changing its model weights. We introduce StateM, an agent-native runtime that organizes execution around durable states, phase-local context, checked transitions, recoverable runbooks, and versioned procedural practices that agents and users can inspect together.\n  On Terminal-Bench 2.1, StateM raises GPT-5.5 xhigh to 92.1\\%, versus 83.1\\% reference and GPT-5.6 Sol Ultra at 91.9\\%. The runbook transfers unchanged to GPT-5.6. With GPT-5.6 Sol xhigh, StateM reaches 95.3\\% raw accuracy across 445 trials and succeeds on all 89 tasks at least once. The frozen profile raises GPT-5.6 Luna from 76.7 to 85.4\\%, above the 84.9\\% Sol xhigh reference.\n  Using the same runtime, runbook structure, and golden rules, less than \\$38 of adaptation raises DeepSeek-V4 Flash from 82.7 to 88.1\\% under standard timeouts and to 89.1\\% on an 88-task common core. Extending only the remaining latency-sensitive task matches the reported 88.8\\% GPT-5.6 Sol max result. Final-score API usage is about \\$15 versus \\$574.68 for the GPT reference; total DeepSeek expenditure is \\$52.22.\n  On BusinessBench, family-specific runbooks built on development sets yield held-out gains of 0.55 macro and 1.34 micro points; two mechanism-matched families improve by 10.04 points. Concrete rules generalize when tasks share execution structure, while the control methodology applies broadly. StateM turns selected postmortem findings into persistent, executable preconditions and practices, making learned controls explicit and enforceable through stateful controls. Code at github.com/henryqin1997/statem.",
-      "url": "https://arxiv.org/abs/2608.15089",
-      "match_score": 0.909,
-      "centroid_score": 0.9762,
-      "matched_cluster": "agentic & agent & execution",
-      "submitted": "2026-08-15"
+      "id": "2610.28945",
+      "title": "Self-Improving Agents with World Model Predictive Paths",
+      "abstract": "Large language model (LLM) agents are increasingly expected to interact with environments and improve their decisions during deployment. However, how anticipating future outcomes and drawing on accumulated interaction experience can jointly support decision-making remains underexplored. We propose a test-time framework, inspired by Model Predictive Path Integral (MPPI) control, that combines multi-branch predictive analysis with experience-based adaptation. At each step, the agent proposes multiple candidate actions and imagines their outcomes with a world model, so that alternatives can be compared without being executed in the environment. Since language environments provide neither explicit dynamics nor costs, the predicted outcomes are evaluated for task progress and risk, and MPPI-style weights over the resulting costs guide the final decision. A dual-branch experience memory enables self-improvement: the planner branch refines candidate generation and action selection, while the world model branch improves next-observation prediction. Experiments on ALFWorld and ScienceWorld across three backbones demonstrate the strong overall performance of our method and the effectiveness of experience-guided predictive control. Our code will be made publicly available.",
+      "url": "https://arxiv.org/abs/2610.28945",
+      "match_score": 0.9103,
+      "centroid_score": 0.9759,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-20"
     },
     {
-      "id": "2608.22510",
-      "title": "ClawProBench: Trace-Aware Evaluation of AI Agents with Runtime Coverage and Frozen Workplace-Style Holdouts",
-      "abstract": "Agent benchmarks often evaluate only final answers even when agents run on stateful runtimes. We argue this under-specifies what is being evaluated: the proper unit is a declared model-plus-runtime configuration whose failures can occur in evidence acquisition, runtime routing, safety boundaries, or repeated execution. We present ClawProBench, a trace-aware benchmark for runtime-native agent evaluation instantiated on OpenClaw, a live agent runtime with workspace tools and native surfaces for browsing, memory, messaging, scheduling, skills, and subagents. ClawProBench defines two tracks: a 102-scenario full profile with live workspace and native-runtime routing tasks, and a frozen 68-scenario holdout with closed-world JSON output contracts for robust ranking. Trials are scored from execution traces via a safety-gated formula combining correctness, process quality, and efficiency, preserving failure evidence for audit. Our anonymous artifact includes benchmark definitions, scoring code, manifests and sanitized traces. We evaluate 68 configurations on the full profile and 37 on holdout. The top safety-gated average trace score is 0.7671. Native-runtime tasks underperform workspace-live tasks (0.5238 vs. 0.6415). On holdout, pass@k-any outperforms strict three-trial pass (0.6638 vs. 0.2890), while full-profile and holdout rankings show weak alignment (Spearman 0.1300). Rankings based purely on correctness differ substantially from process-aware, safety-gated and strict-pass views. Final-answer leaderboards may hide native-surface weaknesses, one-off successes and trace-local agent failure modes.",
-      "url": "https://arxiv.org/abs/2608.22510",
-      "match_score": 0.9024,
-      "centroid_score": 0.9753,
-      "matched_cluster": "agentic & agent & execution",
-      "submitted": "2026-08-23"
+      "id": "2610.19376",
+      "title": "DeLoop: Repeated Actions as Self-Supervision for Long-Horizon Agents",
+      "abstract": "Language-model agents that run long tasks often redo work they have already done: they re-issue a tool call they made earlier and get back exactly the same observation, a step that adds no new information. We identify this failure as a loop. Loops appear natively in Qwen, Llama, and Gemini agents and become far more common once the agent's history is compressed to fit its context window. To reduce these loops, we propose DeLoop, a self-supervised training method. DeLoop builds on a simple observation: the agent's own rollout can provide the supervision needed to learn from its loops. We use a looping action as a negative example and the first later non-looping action in the same rollout as a positive example. DeLoop learns from these pairs through direct preference optimization and does not require task rewards, gold answers, or LLM judges. On CodeGym under compression, DeLoop reduces the share of Qwen3-8B tasks containing loops from 57.3% to 6.1%. It also uses about one third as many steps per task, with similar task success. On Qwen3-32B, DeLoop reduces loops and steps while raising task success from 37.7% to 44.8%.",
+      "url": "https://arxiv.org/abs/2610.19376",
+      "match_score": 0.9102,
+      "centroid_score": 0.9734,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-14"
     },
     {
-      "id": "2608.24588",
-      "title": "IAPO: Influence-Aware Policy Optimization for Credit Assignment in Multi-Turn Service Agents",
-      "abstract": "Large Language Model (LLM) agents increasingly solve long-horizon tasks through multi-turn interactions with users and external tools. In these settings, relevant task information often unfolds over time rather than being fully specified at the initial prompt. Service agents make this challenge especially concrete: users may clarify or revise their goals, while tool responses provide information needed for subsequent decisions. Thus, a final reward alone cannot indicate which actions contributed to resolving the task. Recent methods rely on comparative evidence from other trajectories or resampled continuations, or on separately constructed step-level learning signals, to refine credit. However, a completed rollout already records how information and errors flow between agent actions. We introduce Influence-Aware Policy Optimization (IAPO), which represents each rollout as a typed influence-dependency graph over trainable agent actions, with user and tool observations serving as evidence. IAPO converts support-use and failed-use structure into routing weights that redistribute the same trajectory-level advantage. Experiments with Qwen3-4B and Qwen3-8B demonstrate superior performance over multi-turn reinforcement learning (RL) baselines across three service-agent benchmarks: ${τ^2}$-Bench, UserBench, and AgentChangeBench. BFCL-v4 Multi-Turn further shows that these gains do not compromise multi-turn function-calling performance. This work advances the understanding of credit assignment in multi-turn user interactions and provides a principled approach to training service agents from sparse outcome feedback.",
-      "url": "https://arxiv.org/abs/2608.24588",
-      "match_score": 0.9112,
-      "centroid_score": 0.975,
-      "matched_cluster": "agentic & agent & alfworld",
-      "submitted": "2026-08-25"
+      "id": "2610.19910",
+      "title": "When Non-Adversarial Noise Hurts Learning: Benchmarking Skill Self-Evolution in Agents",
+      "abstract": "Large language model agents increasingly improve by distilling experience into reusable skills, but errors in that experience can persist in learned rules and affect later tasks. Existing evaluations largely examine clean learning or perturbations encountered after skills are frozen, leaving robustness during self-evolution insufficiently understood. We introduce RSE-Bench, to our knowledge the first benchmark for evaluating skill self-evolution under ordinary, non-adversarial noise. It spans four domains and six benchmarks, with controlled perturbations to instructions, environmental evidence, execution records, and outcome--record pairings that preserve the underlying tasks and native scoring rules. The protocol separates noise during learning from input-side noise at evaluation, testing frozen skill stores on held-out tasks. We also introduce \\textsc{RSEClaw}, a method-agnostic framework supporting consistent noise injection and process diagnostics of actual exposure and skill updates. Across three methods and two backbones, noisy learning retains only $25.5\\%$--$42.1\\%$ of the aggregate gain achieved by clean self-evolution, depending on the noise type. Perturbations confined to execution records and outcome--record pairings cause average losses comparable to input-side noise, despite leaving the original executions and evaluations intact. Diagnostics further identify differences in candidate skill text that coexist with small changes in mean held-out performance.",
+      "url": "https://arxiv.org/abs/2610.19910",
+      "match_score": 0.913,
+      "centroid_score": 0.9732,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-14"
     },
     {
-      "id": "2608.19741",
-      "title": "One Success Isn't Reliability: Thinkingbox, a Sandbox and Benchmark for Agents in Stateful Business Workflows",
-      "abstract": "Recent agent benchmarks increasingly ground evaluation in executable environments, from code repair to web navigation, app APIs, and function calling. Yet completing consequential work beyond code requires more than producing a plausible response or valid tool call: agents must gather missing information over multiple turns, follow domain policies, coordinate dependent tools, and realize the correct persistent state transition without collateral effects. In this paper, we introduce Thinkingbox, a sandbox for tool-agent-user interaction that provides isolated MCP-compatible tool sessions, complete execution traces, and outcome evaluation over terminal backend state. Built on this sandbox, Thinkingbox-bench contains 507 policy-conditioned workflows across business scenarios, including retail, hospitality, auto insurance, neobank internal IT, and consulting IT/HR support. Each attempt is evaluated by task-specific executable checks that accept valid trajectories while rejecting wrong, missing, or extra effects; designated tasks additionally check required properties of the final response. Our experiments reveal that even the strongest proprietary and open-weight models show steep reliability drops: Claude Opus 5 falls from 66.50% pass@1 to 47.53% pass^20, and Kimi-K3 from 57.37% pass@1 to 17.60% pass^20. Moreover, many failed trials terminate cleanly after valid state-changing actions, so response- or tool-call-level signals poorly proxy end-to-end completion. Thinkingbox-bench reveals a large gap between occasionally finding a successful trajectory and reliably completing stateful business tasks. We release both Thinkingbox (https://github.com/microsoft/thinkingbox) and Thinkingbox-bench (https://github.com/microsoft/thinkingbox-data).",
-      "url": "https://arxiv.org/abs/2608.19741",
-      "match_score": 0.8977,
-      "centroid_score": 0.9745,
-      "matched_cluster": "agentic & agent & execution",
-      "submitted": "2026-08-20"
+      "id": "2610.37651",
+      "title": "GEPA-Curator: Curated Learning for Self Improving Agents",
+      "abstract": "Large Language Models (LLMs) are increasingly used in multi-turn agentic workloads that require sustained interaction with complex environments. Existing reflective prompt optimizers such as GEPA learn from failed rollouts, but agentic failures can also come from prompt weaknesses, harness limitations, stochastic execution, or noisy judges. We argue that such failures may not provide useful learning signal, and may even be harmful; and thus it is essential to curate which tasks are provided to the prompt optimizer for better performance. We introduce GEPA-Curator, a framework that augments the prompt optimizer to select which agent experiences should shape prompt optimization. In particular, GEPA-Curator consists of two components: task curation, which filters out tasks that are likely to provide noisy or unreliable learning signals, and prior success retrieval, which selectively retrieves past successful trajectories for a task and provides them as additional context to the prompt optimizer. We evaluate GEPA-Curator on GoBrowse, ALFWorld, AppWorld, and $τ$-bench, using both Gemini 3.1 Pro and Claude Opus 5 as optimizer models. GEPA-Curator matches or exceeds the mean performance of both baselines, with gains of up to 20.7% over GEPA and 21.2% over ACE.",
+      "url": "https://arxiv.org/abs/2610.37651",
+      "match_score": 0.9113,
+      "centroid_score": 0.9725,
+      "matched_cluster": "alfworld & agentic & agent",
+      "submitted": "2026-10-27"
     },
     {
-      "id": "2608.30147",
-      "title": "CAST: Critique-Aware Supervision for Training Reliable Long-Horizon Tool-Calling Agents",
-      "abstract": "Large language model (LLM) agents are increasingly deployed in long-horizon, interactive, and stateful environments. In these settings, a single wrong action, such as refunding the wrong purchase, can cause irreversible task failure and must be intercepted before execution. Such failures may not appear in every single run, but can emerge across repeated trials, making reliability across steps and trials critical. However, ensuring agentic reliability is challenging: even frontier LLMs struggle to explain why an action may be wrong, especially in long, intertwined trajectories governed by domain-specific policies. Much recent work relies on prompt-based critique agents, while optimization-based methods lack a systematic way to produce rich verification rationales for training. We address this gap with CAST, a critique-aware training framework that converts sparse task outcomes into action-level supervision for critique learning and policy optimization. CAST analyzes agent trajectories to synthesize structured rationales explaining action validity under partial observability. The resulting critique model is used to construct critique-aware training data for optimizing the policy model. Fine-tuning Qwen3-family models on dynamic tool-calling benchmarks, CAST improves reliability across domains, outperforming GPT-OSS-120B by over 10% pass^4 on Retail tasks and yielding an additional 9% improvement on Telehealth in an out-of-domain setting. These results demonstrate that critique-aware training improves the robustness of LLM agents in realistic dynamic environments.",
-      "url": "https://arxiv.org/abs/2608.30147",
-      "match_score": 0.9148,
-      "centroid_score": 0.9739,
-      "matched_cluster": "agentic & agent & alfworld",
-      "submitted": "2026-08-31"
+      "id": "2610.27671",
+      "title": "Neural Operator Splitting for Fluid Dynamics in Complex Geometry",
+      "abstract": "Solving dynamical systems in complex and diverse geometries remains challenging for both numerical solvers and learning-based surrogate models. We propose Neural Operator Splitting, a framework for learning fluid dynamics while preserving the physical structure of fractional-step numerical schemes. Instead of learning the full-step evolution monolithically, we decompose each time step into physically interpretable steps, and learn each operator separately using intermediate states from the underlying numerical solver. Guided by the linearity properties of the fractional steps, we introduce a conditional-linear Fourier neural operator (CL-FNO) whose linear state mappings are modulated by nonlinear conditioning on inputs such as boundary geometry. We further introduce two complementary strategies, symmetry sampling and corrective cycling, to mitigate error accumulation during autoregressive rollout. Experiments on 2D and 3D fluid flows with varying geometries and initial conditions show that our full model reduces mean relative $L^2$ rollout error by 68\\% in 2D and 40\\% in 3D compared with a single full-step neural operator. At comparable error levels, neural-operator inference is approximately $10^3$ times faster per step than the Monte Carlo solver.",
+      "url": "https://arxiv.org/abs/2610.27671",
+      "match_score": 0.8139,
+      "centroid_score": 0.9703,
+      "matched_cluster": "pdes & pde & nonlinear",
+      "submitted": "2026-10-20"
     },
     {
-      "id": "2608.05892",
-      "title": "Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features",
-      "abstract": "Physics-informed neural networks (PINNs) often fail to accurately resolve partial differential equations (PDEs) with high-frequency or multi-scale solutions, as well as strongly nonlinear problems. Two factors underlie this difficulty: spectral bias, the tendency of neural networks to underfit high-frequency features; and representation-coefficient coupling, the entanglement of representation learning and coefficient fitting within a single nonconvex optimization objective. In this work, we propose the Fourier-enhanced alternating Levenberg--Marquardt PINN (FALM-PINN), an optimization framework that decouples representation learning from coefficient fitting. The upper-level problem learns a Fourier-enhanced basis that enriches the latent space with high-frequency components, while the lower-level problem resolves the coupling by fitting the projection coefficients on this basis, solving a nonlinear least-squares problem with the Levenberg--Marquardt algorithm. The framework applies to general nonlinear and coupled PDE systems, and reduces to a single-step convex optimization problem for linear PDEs. We prove global convergence of the alternating training scheme in both cases. Numerical examples on multiple challenging high-frequency and nonlinear PDEs show that FALM-PINN achieves relative $L^2$ errors up to two orders of magnitude lower than state-of-the-art baselines.",
-      "url": "https://arxiv.org/abs/2608.05892",
-      "match_score": 0.8218,
+      "id": "2610.17573",
+      "title": "Benchmarking Self-Supervised 3D Medical Vision Foundation Models and Transferability Estimation",
+      "abstract": "Self-supervised pretraining has expanded the pool of 3D medical foundation models, but published evaluations use different datasets, endpoints and fine-tuning protocols. Models also differ in architecture, pretraining objective and data, while downstream targets range from voxel-level masks to patient-level diagnoses and outcomes. As a result, published findings provide little directly comparable evidence for choosing a model for a new task. Direct comparison of adaptation performance requires fine-tuning candidates on labelled target data, at substantial computational cost. We benchmark 23 candidates across the same 14 segmentation, classification and regression tasks spanning multiple anatomies and modalities. No candidate ranked among the top three across all segmentation tasks or across all classification and regression tasks; a convolutional encoder could outperform a transformer trained with the same objective on one task but underperform it on another. We benchmark transferability estimators against the fine-tuned rankings and find that their agreement varies across dense segmentation, classification and regression. InsightRank uses task-appropriate frozen-feature statistics and architecture-aware pairwise comparisons to rank candidates before fine-tuning. Across the 23-model pool, mean Kendall tau-b was 0.431 for segmentation and 0.352 for classification and regression. The segmentation Top 3 contained a task winner on four of nine tasks; the image-level Top 3 contained none on the five tasks, despite better full-ranking agreement than the matched conventional estimators. A three-model shortlist reduced recorded extraction-plus-training job time by 85.8% across seven segmentation tasks. Together, the benchmark provides a common reference for model selection and InsightRank offers a lower-cost way to prioritize fine-tuning, with shortlist performance that differs by target type.",
+      "url": "https://arxiv.org/abs/2610.17573",
+      "match_score": 0.8276,
       "centroid_score": 0.9674,
-      "matched_cluster": "dynamical & pde & nonlinear",
-      "submitted": "2026-08-06"
+      "matched_cluster": "mri & imaging & segmentation",
+      "submitted": "2026-10-13"
     },
     {
-      "id": "2608.20441",
-      "title": "Shared Physics Responses Recover Hidden Rankings in Neural Operator Libraries",
-      "abstract": "Selecting the optimal neural-operator prediction during deployment is challenging when high-fidelity reference solutions are unavailable. We demonstrate that under a squared Hilbert-space loss, ranking a finite model library depends strictly on the low-dimensional span of candidate differences, allowing us to score all models simultaneously using a single anchor-based linearized response of the governing equation. This shared physical diagnostic accurately recovered over 99.6\\% of pairwise preferences and 99.0\\% of optimal checkpoints across diverse Fourier and convolutional operator libraries for fluid, reaction-diffusion, and wave dynamics. Furthermore, the corrected physical proxy frequently outperformed the best individual candidates, and we establish computable sufficient conditions that rigorously certify exact decisions for strongly monotone discretizations. By exploiting the local dynamical response rather than raw defect magnitude, this framework enables the reliable and highly efficient deployment of scientific surrogates without requiring ground-truth data.",
-      "url": "https://arxiv.org/abs/2608.20441",
-      "match_score": 0.8418,
-      "centroid_score": 0.9672,
-      "matched_cluster": "dynamical & pde & nonlinear",
-      "submitted": "2026-08-20"
-    },
-    {
-      "id": "2608.25564",
-      "title": "Physics-Informed Foresight Pruning for Sparse PINN Solvers of Nonlinear PDEs",
-      "abstract": "Physics-informed neural networks (PINNs) often rely on over-parameterized models to optimize coupled solution and differential-residual objectives, leaving unclear how much capacity is necessary and what pruning should preserve. We study foresight pruning at initialization for sparse PirateNet PDE solvers. Standard neural tangent kernel spectrum-aware pruning (NTK-SAP) aims to preserve output-side training dynamics but may overlook parameters whose main influence arises through derivatives in the governing equations. We introduce physics-informed spectrum-aware pruning (PI-SAP), which assigns saliency using sensitivity of the PDE residual. Experiments on the Gray-Scott equations, complex Ginzburg-Landau equation, Burgers' equation, and linear convection equation show that PI-SAP more consistently preserves Gray-Scott residual fidelity and is competitive under aggressive sparsity. However, no criterion is uniformly optimal across equations or sparsity levels. Small-batch PINN-NTK diagnostics further show that residual fidelity, solution accuracy, and kernel conditioning are distinct objectives, motivating pruning methods that explicitly balance solution-side and residual-side training dynamics during optimization.",
-      "url": "https://arxiv.org/abs/2608.25564",
-      "match_score": 0.8324,
-      "centroid_score": 0.9654,
-      "matched_cluster": "dynamical & pde & nonlinear",
-      "submitted": "2026-08-26"
+      "id": "2610.33925",
+      "title": "Neural Eigenfluid Bases: Spectral Objectives, Gauge, and Topology",
+      "abstract": "Reduced-order models simplify fluid simulation by representing complex flows with a small number of spatial modes. Building on Laplacian Eigenfluids, we introduce Neural Eigenfluid Bases (NEB), a neural representation whose basis functions can be evaluated anywhere in space. We enforce incompressibility and impermeable boundaries directly through differential lifts and potential boundary conditions. Geometry-local orthogonalization and Rayleigh minimization then learn an ordered basis. We connect learning in potential and velocity spaces, and derive a spectral-variance relation explaining why these objectives weight approximate modes differently, even though their exact positive spectra agree. Gauge fixing reduces the number of spatial derivatives needed for potential learning, while a Dirichlet energy loss learns independent circulation fields around obstacles. With 1024 modes, both objectives keep velocity errors below 1% in periodic vortex merger. For random flows around obstacles, potential-based learning captures more initial energy and gives lower final errors than numerical Laplacian bases of the same size. The reduced state is about a thousand times smaller than the full reference model. Three-dimensional tests separate spatial reconstruction errors from errors in coefficient evolution. Precomputed Galerkin operators allow millisecond-scale updates when the same basis is reused across simulations. This provides a physically constrained basis for continuous flow reconstruction and efficient reduced-order simulation.",
+      "url": "https://arxiv.org/abs/2610.33925",
+      "match_score": 0.8107,
+      "centroid_score": 0.9611,
+      "matched_cluster": "pdes & pde & nonlinear",
+      "submitted": "2026-10-24"
     }
   ]
 }
