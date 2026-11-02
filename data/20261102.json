@@ -1,0 +1,392 @@
+{
+  "date": "2026-11-02",
+  "collected_at": "2026-11-02T14:30:14.434790+09:00",
+  "papers": [
+    {
+      "id": "2610.41909",
+      "title": "Structure-Aware Skill Retrieval and Arbitration for Optimization Modeling",
+      "authors": [
+        "Anran Liu",
+        "Benzhao Hou",
+        "Zongsheng Cao",
+        "Daichao Wang",
+        "Lang Chen",
+        "Shitong Chen"
+      ],
+      "abstract": "Large Language Models (LLMs) can turn natural-language optimization tasks into solver-checked answers, but current agents remain brittle under narrative rewrites and often store reusable experience at the instance level. We introduce \\textsc{ArchOR}, an archetype-centric skill agent that builds on \\textsc{OptSkills} by adding two retrieval-focused modules. \\emph{Centroid-Aware Representation Learning} (CARL) refines the ordering of cached skill representations through a low-rank prototype residual. \\emph{Signature-Guided Retrieval} (S\\textsuperscript{3}R) attaches open-dimensional structural signatures to skills, prioritizes candidates by weighted Jaccard overlap, and bounds semantic re-ranking to a top-$K$ set. A baseline-preserving arbitration rule determines when the structural route should replace the original selector. With the same DeepSeek-V4.1-Flash backbone and released skill library, \\textsc{ArchOR} reaches 65.00\\% Micro-Avg.\\ Pass@1 across five benchmarks, improving over \\textsc{OptSkills} by 1.64~pp Micro-Avg.\\ and 2.68~pp Macro-Avg.",
+      "url": "https://arxiv.org/abs/2610.41909",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8962
+    },
+    {
+      "id": "2610.41143",
+      "title": "TalentRL: Strategy-Guided Reinforcement Learning for Hierarchical Skill Routing",
+      "authors": [
+        "Huancheng Chen",
+        "Xiaodi Sun",
+        "Zhaoqiong Huang",
+        "Michelle Chang",
+        "Jingwen Lu"
+      ],
+      "abstract": "Natural-language skills enable large language model (LLM) agents to reuse procedures across tasks, yet most systems retrieve individual skills from a flat SkillBank without explicitly modeling the high-level strategy that governs their selection and use. We introduce TalentRL, a strategy-guided reinforcement learning framework for hierarchical routing over procedural memory. Coarse-grained talents represent recurring strategies for skill use, while fine-grained skills provide executable procedures. For each task, the policy model selects a talent that guides execution and softly prioritizes its associated skills during similarity-based retrieval. However, since task outcomes depend jointly on talent selection, retrieved skill context, and downstream execution, terminal rewards alone cannot isolate the contribution of the routing decision. TalentRL therefore trains talent routing with reward contrasts between rollouts of the same task under matched interventions on the talent-conditioned context, and optimizes downstream execution with group-relative advantages. Across seven open-domain and multi-hop question-answering benchmarks, talent-aware supervised fine-tuning improves average success rate by 7.53%, 6.71%, and 9.21% over the corresponding zero-shot baselines for Qwen2.5-7B, Qwen3-8B, and Llama-3.1-8B, respectively. Reinforcement learning further improves these SFT checkpoints by 7.58% to 9.32%, and TalentRL achieves the highest average success rate among all compared methods on all three backbones. On the agentic benchmarks ALFWorld and WebShop, TalentRL achieves the highest ALFWorld success rate (99.3%) and the highest WebShop score (90.7) among all compared methods.",
+      "url": "https://arxiv.org/abs/2610.41143",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8929
+    },
+    {
+      "id": "2610.42112",
+      "title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+      "authors": [
+        "Leon Lufkin",
+        "Cutter Dawes",
+        "Alexander Speicher",
+        "Kamesh Krishnamurthy",
+        "Tomás Figliolia",
+        "Beren Millidge"
+      ],
+      "abstract": "The quadratic scaling of attention is a fundamental bottleneck limiting the long-context capabilities of large language models (LLMs). A variety of approaches have attempted to circumvent this, but they either fail to match attention's expressiveness (e.g., sliding-window or linear attention variants with fixed-size state) or only achieve constant-factor speedups (e.g., sparse attention methods whose indexers themselves scale quadratically). In this paper, we derive an asymptotically subquadratic sparse attention method based on a hierarchical, tree-structured indexer, which we call Zyphra Hierarchical Attention (ZHA). ZHA constructs a tree of recursively compressed key summaries over the KV cache, which future queries traverse from the top down to retrieve a sparse subset of keys. Crucially, by iteratively growing the tree's depth, the total cost including routing and final attention grows sublinearly in sequence length, resulting in overall subquadratic (but superlinear) scaling for attention. We demonstrate that ZHA can be cheaply applied to existing pretrained models with only a short KL distillation training stage over a few billion tokens, and maintains performance on long-context retrieval and challenging reasoning, mathematical, and agentic coding evaluation tasks. Moreover, we show that our method is highly robust to tree geometry including very deep trees of up to 6 levels. Finally, we develop a detailed performance model and show that our approach scales subquadratically, dramatically outperforms competing methods beyond 1 million context, and ultimately has the potential to extend effective context windows to the hundreds of millions or billions of tokens.",
+      "url": "https://arxiv.org/abs/2610.42112",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8928
+    },
+    {
+      "id": "2610.41172",
+      "title": "Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses",
+      "authors": [
+        "Zhichang Yu",
+        "Baining Cao",
+        "Sbaaoui Idriss",
+        "Qi Wang",
+        "Gangqiang Xu",
+        "Ling Qin",
+        "Xiaoling Jin",
+        "An Liu",
+        "Shaohao Cai",
+        "Xiaoyang Bao",
+        "Shengle Chen",
+        "Changchang Ding",
+        "Pengfei Zhu",
+        "Jingxiang Xu",
+        "Yifeng Mao",
+        "Lu Liu",
+        "Hai Jin",
+        "Yingfeng Zhang"
+      ],
+      "abstract": "Retrieval-augmented generation is becoming agentic. A search harness writes queries, reads results, reformulates, and decides when to stop. This largely solves accuracy: a harness with only BM25/grep and MiniMax M3 answers 85% of BrowseComp-Plus and 91% on multi-hop FRAMES in our runs, without compiled or vector indexes. It exposes a context problem: an undisciplined loop repeats queries, rereads documents, and fills the window with unused passages. The missing layer is knowledge compilation: a configurable ingestion pipeline where LLMs enrich documents with context no chunk contains alone--navigation hierarchies with claim-evidence leaves, entity graphs, timelines, mind maps, ontologies, wikis, and memory. Compilation is not a better retriever: under a competent harness, structural artifacts gave no detectable accuracy gain on FRAMES, and a PageIndex-style outline degraded at scale. It is a supply layer. A navigation tree whose leaves are claim-evidence pairs--the mechanism we measure--cuts query tokens by 91% when evidence suffices and adds 1.9% when it does not, a 38% average reduction; this implies a 2% break-even sufficiency rate and a measured rate near 43%. A decision gate cuts latency from 140 s to 30 s, though substitution's token saving is bought with retrieval rounds and carries its own latency cost. Other artifacts--ontology, graph, wiki, timeline, mind map, memory--pay off in deployment (governance, integration, onboarding, temporal orientation, continuity) where accuracy benchmarks cannot see them. We describe RAGFlow's pipeline and harness (open source at https://github.com/infiniflow/ragflow), which turns the loop into five disciplined stations and keeps the context entering the model the smallest sufficient set; together they form an agent-native database: a store that hands the agent compiled, governed context instead of a ranked list of passages.",
+      "url": "https://arxiv.org/abs/2610.41172",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "github_url": "https://github.com/infiniflow/ragflow",
+      "score": 0.8922
+    },
+    {
+      "id": "2610.41177",
+      "title": "TraceSpec: Understanding and Improving Speculative Decoding for LLM Agents",
+      "authors": [
+        "Jihao Zhao",
+        "Shuaishuai Zu",
+        "Pengfei Li",
+        "Biao Qin",
+        "Guanghuan Fang",
+        "Ben Feng",
+        "Baochuan Yang"
+      ],
+      "abstract": "LLM agents execute tasks through repeated model calls over evolving histories of reasoning, actions, and tool feedback. Aggregate speculative-decoding metrics merge these distinct decisions, providing limited guidance on where draft supervision is needed. We present TraceSpec, a framework connecting trajectory evaluation with adaptive draft training. It combines dynamic execution with fixed-prefix replay and introduces TraceSpec-Traj, a corpus of 10,000 training states and 2,500 test states spanning browsing and software engineering. Analysis of five speculative baselines reveals that aggregate acceptance can rise with context length while declining within matched late browsing actions. Workload and phase further distinguish these trends, motivating supervision guided by trajectory conditions. TraceSpec trains on intermediate assistant turns and allocates a fixed prediction budget using state-conditioned estimates of prefix-aware acceptance gaps. Across three target sizes and two temperatures, it improves replay throughput by 12.5% to 22.6% over its DSpark base. Qwen3-4B ablations show that adaptive allocation increases accepted length by 3.3% to 10.0% over fixed full-turn supervision, with additional comparisons substantiating the roles of state conditioning and consecutive-token agreement. The resulting evaluation resources, trajectory findings, and training strategy connect the analysis of agent execution to practical draft improvement.",
+      "url": "https://arxiv.org/abs/2610.41177",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8913
+    },
+    {
+      "id": "2610.41296",
+      "title": "Self-Improvement with Auxiliary Rewards: Learning from Verified Traces and Evaluating Transfer",
+      "authors": [
+        "Minju Gwak",
+        "Alan Ritter"
+      ],
+      "abstract": "Answer-level rewards cannot distinguish reasoning traces with equally correct outcomes. We study whether auxiliary trajectory preferences improve small-language-model self-improvement and transfer under limited supervision. We compare confidence-based (SC) and entropy-based metrics (UID-Conj.), which combines global entropy variation and local smoothness, through online reward augmentation and offline training on correct responses. Online experiments adapt Qwen3-1.7B on 30 AIME problems without reference answers; offline experiments use historical AIME problems. UID-Conj. improves the online macro-average across the adaptation benchmark and three transfer benchmarks by 2.08 percentage points over unmodified TTRL. The strongest evidence comes from offline weighted SFT: UID-Conj. exceeds uniform weighting on the same response pool by 1.93 points, with a paired prompt-bootstrap 95\\% CI of [0.44, 3.44]. Benefits are task-dependent: SC rewards judged trace quality and instruction following, while UID-Conj. rewards yield stronger training outcomes in several settings. We find that auxiliary preferences can expose learning value among equally correct traces not captured during inference time, motivating their evaluation through downstream gains.",
+      "url": "https://arxiv.org/abs/2610.41296",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8902
+    },
+    {
+      "id": "2610.41769",
+      "title": "Stepwise-Querying: Distilling Reasoning without Access to Teacher Chain-of-Thought",
+      "authors": [
+        "Dicong Yu",
+        "Wenhua Wang",
+        "Tian Wang"
+      ],
+      "abstract": "Reasoning distillation is widely used to transfer the reasoning capabilities of large language models to smaller students through teacher-generated supervision. In the black-box setting, however, teachers may expose only final answers and brief solutions, leaving intermediate calculations and validity conditions unavailable and thus limiting the reasoning supervision available for distillation. We propose Stepwise Querying, which elicits step-specific explanations without requiring access to the teacher's internal chain-of-thought (CoT) traces. Independent queries to the same teacher request intermediate derivations, validity checks, and corrections for individual steps, the assembled solutions are then used for standard supervised fine-tuning. Across two teachers, two students, and four mathematics and code benchmarks, our method achieves the highest score in 14 of 16 comparisons with three baselines. We further introduce Stepwise Explanation Information Gain (SEIG), a diagnostic based on the log-ratio of a frozen student's probabilities of correct step completion under stepwise and global explanations. Analyses on GSM8K show that incorrect-answer trajectories can remain useful when they preserve valid intermediate reasoning, while further decomposition yields limited additional gains.",
+      "url": "https://arxiv.org/abs/2610.41769",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8896
+    },
+    {
+      "id": "2610.41056",
+      "title": "Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents",
+      "authors": [
+        "Runze Zhao",
+        "Dongruo Zhou",
+        "Sumit Kumar Jha",
+        "Nathaniel D. Bastian",
+        "Ankit Shah"
+      ],
+      "abstract": "Since large language model (LLM) agents rely on long-term memory, what they store now shapes what they do later. A memory manager decides how each input changes this memory and which records the agent acts on. It can fail in two ways: keeping a fact that has since changed (outdated memory), or storing a planted passage or injected instruction (memory poisoning). Most prior work studies them separately, yet they call for opposite write decisions, so no fixed write rule handles both. We therefore formalize memory robustness as handling both without doing worse on other inputs. Since accuracy checks only the answer, we measure robustness with evidence-conditioned accuracy (ECA), which also checks that the records the manager selects include all the evidence the answer needs, updated and free of attacks. However, existing memory systems and defenses are not more robust than an untuned manager on our test sets. We improve robustness with a simple one-shot recipe that fine-tunes the manager on episodes synthesized around a single conversation with inserted changes and attacks. On three backbones, it improves every category score on our test sets and more than doubles the untuned manager's overall ECA, though robustness remains incomplete.",
+      "url": "https://arxiv.org/abs/2610.41056",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-29",
+      "score": 0.889
+    },
+    {
+      "id": "2610.41089",
+      "title": "CIRCE Divines LLM Task Complexity from Constraint Structure",
+      "authors": [
+        "Chenhao Hong",
+        "Jiakai Xu",
+        "Kaushiki Singh",
+        "Yusen Zhang",
+        "Eugene Wu"
+      ],
+      "abstract": "Estimating whether a problem is too complex for a large language model (LLM) before the model attempts it can guide model routing, how to allocate test-time compute, and suggest the need for new tools to aid the agent. While existing estimators rely on the problem text, LLM-annotated task difficulty labels, or signals obtained after a model attempts to solve the problem, such as its hidden states, none explicitly leverage the constraint structure inherent in the problem: the variables to assign and how the constraints over them interact.\n  We introduce CIRCE, which extracts a problem's structure by using a cheap LLM to construct a Constraint Intermediate Representation that deterministically compiles into the constraint graph. Across seven reasoning benchmarks (including SAT, logic, and math) and four LLMs, even a randomly initialized GNN encoder improves predictions of LLM response correctness, reducing negative log-likelihood from 0.465 to 0.423 and increasing AUROC from 0.691 to 0.727 relative to the strongest baseline for each metric.",
+      "url": "https://arxiv.org/abs/2610.41089",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8887
+    },
+    {
+      "id": "2610.41813",
+      "title": "RECAST: REconstruction of Chain-of-Thought via Auditable Structured Traces",
+      "authors": [
+        "Qi Wang",
+        "Kang Xu",
+        "Chengcheng Wan",
+        "Jiangtao Wang"
+      ],
+      "abstract": "Large closed-source reasoning models expose only their final answers. The intermediate reasoning that produces those answers is hidden behind API surfaces, tool-call policies, and safety filters. Existing chain-of-thought (CoT) extraction methods assume a side channel: a visible reasoning field, a scratchpad carried through tool calls, or a signed/encrypted reasoning block. We reproduce three representative state-of-the-art extraction methods and find that, on Claude-Sonnet-5.5 accessed through the standard chat-completions interface, all three return zero CoT tokens. The failure is structural rather than a bug: the reasoning field is absent, named tool selection is rejected, free-text scratchpad arguments are filtered, and no replayable reasoning block is exposed. We therefore take a different route. We present RECAST, a reconstruction-based framework that conditions a decoder on the question and the target model's final answer, reconstructs a first-person structured rationale, cleans it, and builds SFT-ready data. To the best of our knowledge, RECAST is the first system to reconstruct CoT from frontier closed models such as Claude-Sonnet-5.5, GPT-6.1, and Gemini 3 without using hidden reasoning channels. We instantiate RECAST on Claude-Sonnet-5.5 and additionally obtain successful qualitative reconstructions on GPT-6.1 and Gemini 3 with the same answer-only protocol. The system is open-source and packaged as an agent skill: one prompt deploys it and runs the complete pipeline to produce SFT-ready CoT data. This preprint describes the system, its threat model, and a controlled artifact validation; it does not claim large-scale benchmark improvements.",
+      "url": "https://arxiv.org/abs/2610.41813",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.888
+    },
+    {
+      "id": "2610.41169",
+      "title": "ImplicitHop: Evaluating knowledge integration across context and memory",
+      "authors": [
+        "Alexander Detkov",
+        "Dashiel Karish",
+        "Matthew Oleynikov",
+        "Matt Thomson"
+      ],
+      "abstract": "The ability to integrate new information and deduce its consequences is central to learning, understanding, and reasoning in large language models (LLMs). Whether information arrives during training or in-context, models must not only store local facts, but propagate their long-range implications globally. To explore information integration in LLMs, we introduce two complementary natural language benchmarks for large-scale evaluation of deductive reasoning as a function of inference depth. The first is a formal graph benchmark enabling controlled evaluation over a wide range of graph topologies and integration tasks; the second is a knowledge composition benchmark grounded in real-world knowledge graphs. We use these benchmarks to compare knowledge integration from information encoded in context versus information encoded in model weights during pretraining, evaluating a set of open models implicitly, without chain of thought. We find that accuracy decays sharply with increased composition length for both pretrained and in-context knowledge. Information presented in-context, however, substantially outperforms deduction over information encoded in weights. These results quantify a fundamental limitation of current models with direct implications for prompt-based control of agent behavior and for continual learning strategies, and they provide a foundation for developing training, prompting, and integration methods that support deeper reasoning.",
+      "url": "https://arxiv.org/abs/2610.41169",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8877
+    },
+    {
+      "id": "2610.42066",
+      "title": "The Knowledge Layer Model (KLM): Evidence-Visible AI Output, Routing Diagnostics, and Negative Results",
+      "authors": [
+        "Omer Asim Ozturk",
+        "Cihan Aydiner"
+      ],
+      "abstract": "AI answers require more than apparent correctness: reviewers need to inspect their recorded basis. We introduce the Knowledge Layer Model (KLM), an open, implementation-neutral specification for inference records with versioned epistemic assessments, evidence relations, and explicit unknowns. SEDIM, the knowledge and evidence architecture of Nage AI OS, is a reference implementation. We reference KLM v0.3 (repository tag v0.3.0). Empirical material consists of separate internal experiments, not end-to-end validation. A historical platform-domain routing benchmark reports 137/150 classifications across 15 classes (91.3%; nominal 95% Wilson interval 85.7-94.9%); the numerator is recovered from a rounded summary, and historical example membership is unverified. A native-model weight-path configuration yielded 0/15 successful answers in a corrected two-source test. A capacity-growth comparison could not establish a reliable effect because of a defective legacy scorer and missing original outputs. Lexical and scoped diagnostics each yielded AUC 0.008 for silent-versus-contradicted examples, below the registered minimum of 0.65. Legacy packing lost gold-containing text in 118/221 selected cases; repaired packing retained it in 221/221. These measure text presence, not answer quality. Python and TypeScript verifiers reportedly agreed on six checks per synthetic fixture; a separate production disclosure was not accepted. Restoration, re-derivation, human-rubric support, boundary isolation, and bounded-response evaluations remain proposed. Findings are internal and author-reported; historical observations are distinguished from later reproductions. Evidence visibility does not establish correctness, causal reliance, security, or regulatory compliance. Independent replication and a complete public audit package remain future work.",
+      "url": "https://arxiv.org/abs/2610.42066",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8867
+    },
+    {
+      "id": "2610.42054",
+      "title": "CRoS: Causality Reward on Scrambled CoTs Improves Accuracy and Reasoning Faithfulness",
+      "authors": [
+        "Xiao Yu",
+        "Justin Chih-Yao Chen",
+        "Zaid Khan",
+        "Hyunji Lee",
+        "Mohit Bansal"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become the standard method for training language models to reason. However, RLVR typically relies solely on outcome correctness, which does not guarantee that the CoT causally contributes to the final answer. Without this connection, outcome rewards may fail to reinforce high-quality reasoning. Existing causality metrics assess CoT causality by perturbing the CoT, such as deleting reasoning steps or injecting errors, and measuring changes in the final answer. However, these perturbations inevitably alter information in each step. Consequently, high causality scores may reflect sensitivity to information changes introduced by perturbation rather than true causality. Such confounding effects further induce undesirable reasoning behaviors when these metrics are used as training rewards, including generating less informative CoTs and reducing exploration and self-correction. To address this problem, we propose CRoS (Causality Reward on Scrambled CoTs), a novel CoT causality metric that perturbs the order of reasoning steps without altering content, thereby preserving information within each step. On Reasoning Gym with Gemma-3-4B, CRoS outperforms existing causality and outcome rewards in out-of-domain accuracy, CoT quality, and CoT faithfulness. Specifically, CRoS achieves 46.8% accuracy on five unseen logic and games datasets, outperforming the strongest baseline (43.8%). It also achieves better CoT quality, consistently outperforming baselines in CoT-Pass@K from K=1 to 128, averaging 43.4% vs. 41.4%. For CoT faithfulness, CRoS achieves a hint acknowledgment score of 34.0% vs. 20.2%.",
+      "url": "https://arxiv.org/abs/2610.42054",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8857
+    },
+    {
+      "id": "2610.41480",
+      "title": "KV-Cache Patching: Tracing How and Where Fine-Tuned Behaviors Arise",
+      "authors": [
+        "Jonas Loos",
+        "Oliver Eberle"
+      ],
+      "abstract": "Fine-tuning a language model changes how it responds, but where is this fine-tuned behavior instantiated? To better understand this, we evaluate whether the change in model behavior arises only during the generation of the answer tokens where the change manifests, or whether altered processing of previous tokens causes it via the attention mechanism. For this, we patch the KV cache from a LoRA fine-tuned model into the unmodified base model, and vice versa. Our results show that for some behaviors, like responding in German or emergent misalignment, patching the KV cache can indeed transfer them from the fine-tuned to the base model. Correspondingly, patching the KV cache from base to fine-tune can partially or fully remove fine-tuned behavior. Furthermore, we find that the effect of patching grows with how much of the KV cache is patched and concentrates at a few pivotal positions, with system-prompt and chat-template tokens having disproportionate influence.",
+      "url": "https://arxiv.org/abs/2610.41480",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8857
+    },
+    {
+      "id": "2610.42148",
+      "title": "Flide: Accelerating Decision Inference with Exact State Forking",
+      "authors": [
+        "Bobo Li",
+        "Jiajia Song",
+        "Hao Fei",
+        "Wynne Hsu",
+        "Mong Li Lee"
+      ],
+      "abstract": "Decision models such as Jev have emerged as a highly promising paradigm for LLM agent systems, providing lightweight and reliable categorical reasoning for rapid System One execution. However, existing generation-oriented inference engines fail to support these workloads effectively, suffering from severe prefix recomputation overheads or distorted output probabilities. To address this challenge, we propose Flide, an efficient and exact inference engine that decouples the logical tree structure of a decision request from its physical execution within a single flattened token stream. Through ForkAttention, Flide navigates request dependencies using GPU-resident indices across both standard attention and recurrent Gated DeltaNet layers, guaranteeing in exact arithmetic that every query branch evaluates identically to an isolated forward pass. By expressing branch topologies directly in GPU-resident metadata, Flide accommodates diverse request mixtures with a compact set of pre-recorded execution graphs while enabling expanding agent histories to resume from checkpoints saved in earlier passes. Extensive evaluations on public hybrid and decision models demonstrate that Flide answers queries up to 9.5 times faster than vLLM and SGLang while staying closest to a float32 reference in total variation distance. By unifying physical execution throughput with mathematical exactness, Flide establishes a principled foundation for scalable, latency-critical decision intelligence in agent systems.",
+      "url": "https://arxiv.org/abs/2610.42148",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8854
+    },
+    {
+      "id": "2610.41375",
+      "title": "From the Zoo to the BULLPEN: Sample-Efficient LLM Profiling via Multi-Channel Model Embeddings",
+      "authors": [
+        "Russell Ro",
+        "Qiming Cui",
+        "Reza Abbasi-Asl"
+      ],
+      "abstract": "Choosing among the hundreds of thousands of available large language models (LLMs) requires a thorough understanding of each candidate model's properties. In practice, each property is measured by its own benchmark suite, so profiling a model on many properties means paying for many separate evaluations. To address this, model embeddings compress each model into a fixed-length vector from which many properties can be predicted. Existing methods, such as EmbedLLM, build these vectors from correctness patterns and question features, and often need large probe batteries to do so. However, many behaviors that are important when choosing a model, such as its verbosity, safety and style, show up more in how it answers than in whether it is correct. We introduce BULLPEN (Behavioral Understanding of Large Language models via Profile ENcodings), a framework that extends EmbedLLM in three ways. First, BULLPEN organizes the downstream tasks that prior work uses and adds 20 task benchmarks we built on behavior, style and provenance. Second, it is the first framework to read a model's own answer text jointly with its correctness and the question text. Third, it encodes models from a few hundred questions instead of the full 24,118-question pool. Across 260 open-weight models, our answer-text encoder scores 0.48 +/- 0.10 on the new tasks against 0.35 +/- 0.10 for the best prior encoder. Our encoders that read answer text keep at least 91% of their full-pool skill from only 400 questions (1.3% of the inference compute of the full question pool), while a correctness-only baseline keeps 83% with the same 400 questions. Because these embeddings need only model outputs, they support behavioral auditing and low-cost profiling, and could extend to API-only models. Code and data: https://github.com/wcquesera/bullpen",
+      "url": "https://arxiv.org/abs/2610.41375",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-10-30",
+      "github_url": "https://github.com/wcquesera/bullpen",
+      "score": 0.8838
+    },
+    {
+      "id": "2610.42147",
+      "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
+      "authors": [
+        "Ales Kubicek",
+        "Andrea Caciolai",
+        "Liangzu Peng",
+        "Sukrit Sumant",
+        "Benjamin Hoover",
+        "Fraser Greenlee",
+        "Ruairidh M. Battleday",
+        "Radim Urban",
+        "Torsten Hoefler",
+        "James C. R. Whittington"
+      ],
+      "abstract": "Agentic workflows are increasingly shifting towards long-horizon tasks, such as open-ended scientific work, where models benefit from long context windows. However, at ultra-long context (above 1M tokens), full attention is prohibitively expensive. A promising approach is sparse attention, in which a dedicated indexer selects a subset of keys for the attention. Yet current methods of indexing either still have quadratic cost in context size or lose accuracy at ultra-long context scale. We address this with Latent Sparse Attention (LSA), an efficient attention method that maintains accuracy at ultra-long context. In LSA, keys are hierarchically clustered in a learned latent space, and queries score the hierarchy of clusters instead of scoring every key, making prefill, decode and training faster at long context. We propose two variants, Distilled-LSA (D-LSA), which can be applied to pre-trained models via distillation, and Native-LSA (N-LSA), which is trained natively on the next-token loss alone. On GLM-5.3-FLASH (QWEN-3.8-27B) at 10M tokens, D-LSA speeds up one attention layer by 22.7x (72.4x) in prefill and 4.6x (42.5x) in decode over its original sparse attention (full attention), while keeping similar accuracy across a variety of tasks. N-LSA matches the accuracy of full attention with a training speedup of 1.6x per layer at 128k tokens. LSA offers practical and efficient attention for models to benefit from ultra-long context.",
+      "url": "https://arxiv.org/abs/2610.42147",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8835
+    },
+    {
+      "id": "2610.41564",
+      "title": "Verify--Backtrack Loop: Structured Precondition Recovery for Long-Horizon Language Agents",
+      "authors": [
+        "Mingyang Liu",
+        "Qingcan Kang",
+        "Shixiong Kai",
+        "Tao Zhong",
+        "Mingxuan Yuan",
+        "Xin Li",
+        "Linqi Song"
+      ],
+      "abstract": "Language agents increasingly tackle long-horizon tasks in interactive environments, where actions often depend on latent preconditions. The core difficulty is not trajectory length but recovery: when a prerequisite is missing or an earlier decomposition fails, trying another plausible action rarely helps. ReAct and later reflection or adaptive-planning methods support local correction, but express recovery as free-form text, with no explicit control state linking the terminal goal, the active goal, and the failure source. We introduce the Verify--Backtrack Loop (VBL), a training-free extension of ReAct that turns precondition discovery and failure diagnosis into structured planning-state updates. VBL maintains the task decomposition as a bounded goal stack and, on goal activation, execution failure, or material state change, jointly verifies two horizons---whether the active goal contributes to the terminal goal and whether it is feasible in the current state. These dual-horizon judgments, combined with typed failure attribution, trigger explicit operations---Push, Pop, retry, or BacktrackTo the parent. We evaluate VBL with Qwen3.5-9B, GPT-4o, and DeepSeek-V3.2 on AppWorld, ALFWorld, and ScienceWorld. VBL improves over ReAct and reflection-based control on every backbone--benchmark pair. On the challenging AppWorld setting, it improves task success by up to 22.07 percentage points over ReAct. Ablations show that removing either verification or diagnosis degrades performance, in several settings below ReAct, confirming that the two mechanisms are complementary. These results show that reliable long-horizon interaction benefits from revising the planning state, not merely the next action.",
+      "url": "https://arxiv.org/abs/2610.41564",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8833
+    },
+    {
+      "id": "2610.41308",
+      "title": "SERIAL-7: Deriving, Realizing, and Preserving Machine-Verifiable Outputs Across Representations",
+      "authors": [
+        "Youngkyung Seo",
+        "MiHyeon Kim",
+        "Jisoo Lee",
+        "Hwijung Ryu"
+      ],
+      "abstract": "Large language models increasingly generate structured outputs consumed by programs and downstream systems, where semantic correctness alone does not guarantee reliable execution. We introduce SERIAL-7, a Korean-English benchmark built around an executable verification framework for machine-verifiable generation across seven representations. Using 177 validated canonical artifacts, SERIAL-7 separates semantic derivation (Derive), constrained artifact generation (Realize), and cross-representation preservation (Preserve). Its 43 atomic representation constraints are paired with executable checks over format, structure, and task-specific semantics, enabling progressively stricter verification from representation compliance to full artifact validity. Across ten models, REALIZE-L3 HSR ranges from 42.0% to 93.9%, while Full Compliance exposes additional artifact-level failures beyond correct final answers and valid representations. These results show that reliable structured generation requires explicit, executable verification of how artifacts are realized and preserved across representations.",
+      "url": "https://arxiv.org/abs/2610.41308",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8833
+    },
+    {
+      "id": "2610.41157",
+      "title": "Lineage Is Memory: Parent Inheritance and Feedback Disclosure in Short-Budget LLM-Guided Optimization",
+      "authors": [
+        "Shanglin Yang",
+        "Zhan Shi"
+      ],
+      "abstract": "Iterative language-model optimizers refine prompts and programs by evaluating a candidate, showing a proposer model a sample of failing cases, and keeping revisions that improve performance. Recent work attributes the limits of this loop to narrow single-round reflection, introducing full-set error clustering, targeted minibatches, or larger proposer models so the optimizer sees more failure modes per step. Yet every existing evaluation tests these mechanisms exclusively inside lineage-preserving search, where each revision edits a surviving parent, leaving the contribution of parent inheritance confounded with the breadth of per-round feedback. Across 1,750 pre-registered runs spanning nine prompt and program synthesis benchmarks, we separate parent inheritance from feedback disclosure under matched evaluation budgets. We find that greedy parent inheritance drives the vast majority of optimization progress, outperforming seed-reset resampling even when seed-reset proposals receive a clustered summary of all failures in every round or use a larger proposer model. While full-set error clustering and diverse failure selection improve single-step rewrites from the seed and accelerate the opening rounds of search, sequential parent inheritance rapidly closes this gap as solved error modes are retained in the candidate and filtered from subsequent failure lists. Moreover, decomposing token expenditure in GEPA reveals that proposer reflection accounts for only a small fraction of total cost whereas validation and minibatch gating consume nearly the entire budget, showing that greedy parent inheritance over raw failures captures the gains of complex reflective loops at a fraction of their compute.",
+      "url": "https://arxiv.org/abs/2610.41157",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-10-30",
+      "score": 0.8824
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
