@@ -1,0 +1,385 @@
+{
+  "date": "2026-11-03",
+  "collected_at": "2026-11-03T15:09:57.819477+09:00",
+  "papers": [
+    {
+      "id": "2611.02387",
+      "title": "EviCast: Forecasting Retrieval Gains Through Shared Response Calibration",
+      "authors": [
+        "Yibo Wang",
+        "Jisheng Dang",
+        "Bimei Wang",
+        "Jiongpei Hou",
+        "Jingwen Zhao",
+        "Wenjun Ma",
+        "Fei Shen",
+        "Juncheng Li",
+        "Meng Wang",
+        "Qi Tian",
+        "Bin Hu",
+        "Tat-Seng Chua"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) extends large language models with external evidence, yet relevant evidence does not ensure that a generator can use it. Indiscriminate retrieval can degrade task performance while adding retrieval and long-context inference costs. Existing methods neither determine before large-scale execution whether a generator, task distribution, and retriever configuration is worth deploying nor diagnose multiple candidate retrievers under a shared budget. We introduce EviCast, a framework that forecasts retrieval value through interventional evidence-state decomposition. EviCast measures a generator's response to controlled evidence states once and combines this shared profile with the offline evidence-state distribution of each candidate retriever, yielding the end-to-end net utility and its 95% lower confidence bound without executing every RAG configuration. A state-refinement analysis characterizes when its binary and topology-aware instantiations are exact and when shared calibration is statistically more efficient than per-retriever calibration. In frozen evaluations, EviCast correctly decides all 14 HotpotQA retrieval configurations with a forecast error of 2.75 F1 points while reducing diagnostic generation calls by 80%, and it attains the lowest forecast error among seven predictors in the low-budget regime. Its topology-aware instantiation, EviCast-T, captures the complementarity between terminal and bridge evidence, correctly deciding all 16 configurations on MuSiQue and HotpotQA and 23 of 24 after prospective transfer to a third dataset. These results show that retrieval deployment depends on both evidence availability and the generator's ability to convert evidence structure into stable net utility. Code is available at https://github.com/YiboWang2002/EviCast.",
+      "url": "https://arxiv.org/abs/2611.02387",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "github_url": "https://github.com/YiboWang2002/EviCast.",
+      "score": 0.8981
+    },
+    {
+      "id": "2611.02368",
+      "title": "Beyond Accuracy: How Quantization Affects Coding Agents",
+      "authors": [
+        "Areej Mehboob",
+        "Muhammad Ali Shafique",
+        "Muhammad Usman Qadeer",
+        "Hamza Farooq"
+      ],
+      "abstract": "Agents are increasingly used for coding tasks, but the inference cost of large language models (LLMs) limits where they can run. Quantization reduces model size, but its effects on coding agents that execute and revise programs remain underexplored. We compare BF16 with 4-bit AWQ and GPTQ for Qwen2.5-Coder-Instruct (7B, 14B, and 32B) and Devstral-Small-2507 (24B) on OJBench coding problems across three seeds. We detect no statistically significant accuracy loss for any of the coding agents. However, final accuracy can conceal substantial behavioral changes: AWQ reduces Qwen-7B one-shot solves from 17 to 0 while increasing loop-based solves from 10 to 25. All Qwen-32B successes involve tool use, whereas Devstral rarely makes a valid executor call. Failure profiles also differ: Qwen-32B produces far more compilation errors than the smaller Qwen models, rising slightly under quantization, while Devstral's failures shift significantly from runtime errors toward wrong answers and timeouts. These findings indicate that quantization robustness in coding agents should be assessed through solution trajectories, tool use, and failure modes, in addition to final accuracy.",
+      "url": "https://arxiv.org/abs/2611.02368",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8966
+    },
+    {
+      "id": "2611.02278",
+      "title": "Concise-9B: Removing the Slack from a Reasoning Model's Thinking",
+      "authors": [
+        "Alexander Boesgaard Lorup"
+      ],
+      "abstract": "Reasoning models answer better when they think longer, but a thinking trace keeps going well after its answer has formed. We measure this slack in Qwen3.5-9B and remove most of it with concise self-training: two rounds of on-policy rejection-sampling fine-tuning that keep the shortest correct samples, plus a small share of answer-synthesis targets, giving Concise-9B. On 8,983 held-out problems (competition and hard mathematics, SuperGPQA, a five-area confirmation set and MMLU-Pro), Concise-9B generates 0.66x the tokens of Qwen3.5-9B at a 32K thinking budget, with accuracy equivalent within +/-1 point (-0.20 [-0.77, +0.36] points). Forcing each trace on the hard and confirmation sets to answer every 2,048 thinking tokens, we find that 54-64% of Qwen3.5-9B's thinking tokens come after the point from which every forced answer equals the final one (41-48% for Concise-9B). Stopping there would keep every answer at 0.35-0.44x the base model's tokens, but finding that point takes hindsight: stopping when three consecutive forced answers agree costs the base model 2.4-9.2 points. Concise self-training removes slack without that cost: 86% [83, 90] of the thinking tokens it saves come after the answer has formed. It has a limit: with traces continued to 80K tokens, Concise-9B solves 25 fewer of 1,276 hard problems (-25 [-49, -1]), mostly in competition mathematics. The measurement also yields a cheap commit signal for adaptive sampling that matched two-sample escalation within +/-1 point at 0.67x its tokens in a pre-registered test. Results on Qwen3.5-4B, on which the recipe was developed, and a replication on Olmo-3-7B-Think suggest that the saving depends on how verbose the base model is.",
+      "url": "https://arxiv.org/abs/2611.02278",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-01",
+      "score": 0.8907
+    },
+    {
+      "id": "2611.02672",
+      "title": "Chain of Faith: Policy-Internal Rewards for Reasoning Reliance",
+      "authors": [
+        "Fanyu meng",
+        "Zhaodan Kong",
+        "Xin Liu"
+      ],
+      "abstract": "Chain-of-thought (CoT) explanations can sound plausible while having little influence on a model's final answer. We study four rewards that use the policy's own signals to encourage reliance on generated reasoning: gradient sensitivity, confidence gaps, progressive confidence gains, and reasoning--prompt swaps. We add each reward to group relative policy optimization (GRPO) and evaluate two small instruction-tuned models on GSM8K and StrategyQA using reasoning edits, paraphrases, and prompt hints. Several configurations increase answer reliance to reasoning edits, while effects on accuracy and paraphrase robustness vary. We also observe answer copying at a high reward weight and high reliance in decomposition settings with poor task accuracy. The study compares practical objectives for reasoning reliance, confirms the trade-off between reliance and performance, and proposes four lightweight rewards that can improve reasoning reliance.",
+      "url": "https://arxiv.org/abs/2611.02672",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.89
+    },
+    {
+      "id": "2611.02253",
+      "title": "Can LLMs Reliably Evaluate Themselves? A Probabilistic VC Framework",
+      "authors": [
+        "Jae Oh Woo",
+        "Mengdie Flora Wang",
+        "Rahul Ghosh",
+        "Baishali Chaudhury",
+        "Mun Young Kim"
+      ],
+      "abstract": "As large language models (LLMs) find increasing use in critical applications, evaluating their ability to assess their own outputs has become crucial. We present a theoretical and empirical framework that examines whether LLMs can differentiate between correct and incorrect solutions while maintaining properly calibrated confidence. Building on classical Vapnik-Chervonenkis (VC) theory, we adapt it to probabilistic predictors through two complexity metrics: Probabilistic VC (PVC), which measures a model's ability to confidently classify across problem types, and Calibration-aware PVC (C-PVC), which additionally demands alignment between confidence scores and actual success rates. Unlike Expected Calibration Error (ECE) and Actual Error (AE), these measures give an integrated assessment of self-evaluation expressiveness and calibration, with sample complexity bounds and generalization guarantees comparable to classical VC theory. We test eleven 7-8B models on 360 original mathematical reasoning problems, TruthfulQA, and CommonsenseQA. Each model chooses between two of its own generated solutions and reports its confidence, with ground truth determined by an ensemble of larger models. The results show a systematic inverse relationship: models with greater self-evaluation expressiveness have weaker calibration. s1.1-7B and Qwen2.5-7B-Instruct achieve the highest PVC-VUS scores, while JiuZhang3.0-7B is best calibrated, with the lowest ECE and the smallest PVC-VUS gap. The trade-off persists across architectures, training paradigms, and domains, pointing to a fundamental challenge in developing self-reflective LLMs, and our framework offers practical tools for diagnosing it.",
+      "url": "https://arxiv.org/abs/2611.02253",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-01",
+      "score": 0.8896
+    },
+    {
+      "id": "2611.02612",
+      "title": "Scalaris: A Scalable Enterprise Memory Architecture for Conversational AI Assistants",
+      "authors": [
+        "Devarsh Gandhi",
+        "Sarthak Pawar",
+        "Hemprasad Badgujar",
+        "Vaibhav Rathore",
+        "Siddharth Sureka",
+        "Neha Bhargava"
+      ],
+      "abstract": "Enterprise conversational systems require memory to personalize interactions, retain information across sessions, and maintain conversational coherence. At enterprise scale, however, memory must not only retrieve relevant information accurately but also provide it efficiently to the answer-generation model. Existing memory systems face a trade-off between retrieval accuracy and context efficiency. Retrieving more context can improve recall but increases inference cost and latency. We present Scalaris, a scalable enterprise memory architecture that addresses this trade-off through a unified long-term and short-term memory design. We propose that user interactions and assistant responses possess distinct characteristics and roles in a conversation: user interactions capture evolving knowledge about the user and provide value across sessions, whereas assistant responses must be stored efficiently so that only information relevant to the current query is retrieved. We therefore treat them separately and support each with specialized representations and ingestion/retrieval pipelines. Scalaris reaches 92.2 % accuracy on LongMemEval-S and 90.77 % on LoCoMo using Qwen3-32B, state-of-the-art results on both benchmarks, while supplying the answer-generation model with approximately 10 times fewer retrieved context tokens than Hindsight, a leading memory system for conversational AI. When integrated with our proprietary closed-source AI assistants, Scalaris improved overall response quality by 36 %. Together, these results establish Scalaris as a cost-effective framework for building scalable, personalized conversational AI systems.",
+      "url": "https://arxiv.org/abs/2611.02612",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8867
+    },
+    {
+      "id": "2611.02318",
+      "title": "A Capitulation Direction Emerges With Scale and Is Causally Load-Bearing Where Validation Is Strong: Eight Models, Two Families, and Five Measurement Hazards",
+      "authors": [
+        "Saad Aamir",
+        "Muhammad Awais Bin Adil"
+      ],
+      "abstract": "Sycophancy in language models is well documented as a behaviour but poorly localised as a mechanism. We ask whether capitulation under user pushback, the abandonment of a correct answer when a user objects, corresponds to a linear direction in the residual stream, and whether such a direction emerges with scale. Across eight instruction-tuned models spanning 0.5B to 14B parameters in two families, under a pre-registered protocol with leave-one-question-out cross-validation, within-question permutation nulls, and a positive control, we find no usable direction below 7B and a direction that clears our validation gate at 7B, 8B and 14B. Ablating that direction in Qwen2.5-7B reduces the rate at which the model reverses a correct answer by 4.8 percentage points, roughly a quarter in relative terms, while the identical intervention on a gate-failing direction and on a marginally passing one produces no effect. Probe quality, not statistical significance, predicts causal relevance. Behaviourally, pushback destroys three to five times more correct answers than it repairs at 1B and reaches parity by 7B, falsifying our own pre-registered prediction, and a sign-reversing crossover between pushback types survives an order of magnitude of scale in Qwen and holds at 8B in Llama, with marginalisation over five paraphrases per type. We additionally quantify five measurement hazards, including a numerical-precision effect that changes roughly one episode label in ten.",
+      "url": "https://arxiv.org/abs/2611.02318",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8866
+    },
+    {
+      "id": "2611.02208",
+      "title": "Test-Time Scaling for Open-Ended Reasoning at Small Model Scale",
+      "authors": [
+        "Adam Y. Ahmed",
+        "Abdullah G. Elafifi"
+      ],
+      "abstract": "A vote over a model's samples can only help when the samples disagree. For open-ended generation the binding question is therefore not how to combine samples but whether a model produces samples worth combining, a question test-time scaling has answered for math but not for free-form text. We study it at small scale with semantic cluster voting, a judge-free aggregator that groups a small instruct model's samples by meaning and returns the largest cluster's representative, with no reward model or self-judging. On a 250-prompt benchmark with three tiers of answer checkability, the same pattern holds across three model families (Qwen2.5-3B, Llama-3.2-3B, Gemma-2-2B) and two generation seeds: voting raises accuracy on the math control, where samples vary but stay checkable (a gain of +10 to +29 points across the three models), yet adds at most +0.30 judge points on open-ended text. On a larger 200-problem MATH-500 run with the primary model, the math gain is +8.5 points (95% CI [+4.0, +13.0]). Almost every open-ended sample falls into one meaning cluster, so there is little to select over. The collapse is consistent with instruction-tuning rather than model size, and raising decoding temperature does not recover usable diversity, because it costs more quality than it adds (net -0.64 judge points, 95% CI [-0.93, -0.37]).",
+      "url": "https://arxiv.org/abs/2611.02208",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-01",
+      "score": 0.8859
+    },
+    {
+      "id": "2611.02361",
+      "title": "Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon",
+      "authors": [
+        "Tianhao Guo",
+        "Chongyao Guo"
+      ],
+      "abstract": "Can a language model that reads the full history of an access log say whether a service may act now? On an executable benchmark of grants, withdrawals, reinstatements, expiries, groups and change windows under a known policy, scored on pairs of histories that differ only in the order or one field of the deciding events, open models of 7 to 32 billion parameters fall from 72 to 86 percent after eight or sixteen events to 48 to 55 percent after 256, while reasoning-trained 32B models reading the current state reach 96 and 98 percent. A reasoning model of 120 billion parameters trails the state by four and seven points at 256 and 512 events and by about ten at 1,024, so the length beyond which explicit state outlasts long context grows with the reader. We treat agent memory as recursive filtering. The decision depends on the history only through a state whose size is set by the number of tracked keys. A store holding fewer component records than the state forgets on a time scale set by its capacity, and a reader model predicts its accuracy within 0.02 on average in a registered test. Retaining log lines without regard to time order errs with probability approaching one half, a bound that is attained. A filter in which a model parses each line and an explicit rule applies the updates answers 80 to 89 percent at 256 events and beats relevance retrieval, model-kept ledgers, a reimplementation of StateMem and the Mem0 library. A retriever that selects at query time the lines the queried state depends on matches it at 256 events on the first domain, so what decides is selection by the state's dependencies, which the filter performs when writing, without the query. Applying parsed updates themselves, the models fall to 58 and 59 percent. A frozen replication on a second domain with fresh wording reproduces the horizon.",
+      "url": "https://arxiv.org/abs/2611.02361",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8851
+    },
+    {
+      "id": "2611.02455",
+      "title": "RLiD: Reinforcement Learning in the Decision Plane for Language Agents and LLMs",
+      "authors": [
+        "Ziyi Chen",
+        "Yan Zhang",
+        "Jianhui Wei",
+        "Jianing Yin",
+        "Daoan Zhang"
+      ],
+      "abstract": "Reinforcement learning (RL) has improved the capabilities of large language models (LLMs) across a wide range of tasks. However, token-level RL assigns an action's advantage to the entire generated response, including tokens specifying the parsed action, reasoning chains, and malformed content. Although the environment executes only the parsed action, variation in how the action is expressed in natural language can introduce additional variance into policy-gradient estimates. We propose RLiD (Reinforcement Learning in the Decision plane), a framework that directly optimizes the probabilities of executable action options. RLiD compiles observations, an optional compact memory, and a labeled action menu into the model input, and uses a large decision model (LDM) to select an action in a single forward pass. By eliminating autoregressive token generation and bypassing action parsing, RLiD avoids invalid action outputs and improves RL rollout efficiency. Our analysis shows that, within a fixed text policy, marginalizing over alternative realizations of the same action removes a zero-mean gradient component without changing the expected update. We further distill trained LDM policies into generative LLMs through supervision on their action trajectories. Experiments on ARC, Countdown, and Sokoban demonstrate improved performance or lower computational cost across several settings. On ALFWorld, the complete training and distillation pipeline reaches 99.3% success in 12.7 H100 GPU-hours, compared with 86.6% in 17.3 GPU-hours for token-level RL of the same LLM. With compiled memory, our strongest Qwen2.5-1.5B LDM and distilled generative LLM achieve 100% success on all 134 unseen and 140 seen ALFWorld evaluation games.",
+      "url": "https://arxiv.org/abs/2611.02455",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8847
+    },
+    {
+      "id": "2611.02791",
+      "title": "PGuard: A Native, Streaming, and Plug-in Guardrail for Multimodal Large Language Models",
+      "authors": [
+        "Junyu Lin",
+        "Mengjie Wu",
+        "Yonghao Dong",
+        "Yuchuan Fu",
+        "Jinfeng Li",
+        "Xiaodan Li",
+        "Xiaohan Yuan",
+        "Yicheng Liu",
+        "Yuefeng Chen",
+        "Hui Xue",
+        "Jingyi Wang",
+        "Yitong Yang",
+        "Jiyuan Fu",
+        "Qinga He"
+      ],
+      "abstract": "As streaming generation becomes the dominant serving paradigm for both text-only and multimodal large language models, ensuring safety throughout the generation process has become a critical challenge. We introduce PGuard, a native, streaming, and plug-in guardrail that transforms safety monitoring from an external serving dependency into an integrated capability of the backbone model. PGuard directly leverages the backbone's intermediate representations for token-level safety detection, without altering its original inference pathway or generation behavior. Specifically, dynamic layer gating selectively aggregates residual-stream representations across layers to extract safety-relevant signals during both prefill and autoregressive decoding. To balance detection accuracy and computational efficiency, PGuard supports multiple representation-modeling architectures, including a lightweight stateless variant and sequence-aware variants built on multi-scale causal EMA-attention and GRU-based recurrent modules. Its design also accounts for the execution characteristics of LLM serving frameworks, such as SGLang, optimizing computation and data access to minimize additional runtime and synchronization overhead. As a result, PGuard incurs only 0.82-2.26% end-to-end overhead on the hundred-billion-parameter backbone Qwen3.5-122B-A10B served by SGLang. Extensive evaluations across more than 30 benchmarks spanning text and multimodal safety, jailbreaks, cyber and CBRN risks, multilingual scenarios, and real-world traffic demonstrate state-of-the-art performance among native guardrails. On text queries with Qwen3.5-9B, PGuard achieves an average F1 score of 0.836, approaching dedicated external guardrails, while supporting deployment-time configuration of category-specific thresholds and enforcement actions.",
+      "url": "https://arxiv.org/abs/2611.02791",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8846
+    },
+    {
+      "id": "2611.02950",
+      "title": "Action Verification through Conjecture and Refutation for Language Model Agents",
+      "authors": [
+        "Minhyeon Oh",
+        "Chiyeong Heo",
+        "Geonwoo Noh",
+        "Hoyoung Kim",
+        "Jangwon Son",
+        "Jungseul Ok"
+      ],
+      "abstract": "Language model agents increasingly act on users' behalf by manipulating external environments through tools, often from high-level instructions that leave critical task- and environment-specific context unstated. To prevent resulting misaligned actions, recent work verifies proposed actions before execution, largely by establishing whether the conditions supporting them hold. We argue that this confirmation-oriented view leaves a fundamental blind spot: a wrong action often passes every check that asks whether it is right. This motivates a different question for verification: rather than asking what evidence supports an action, can the agent find evidence that refutes it? We pursue this direction with BlackSwan, a refutation-oriented, expect-suspect-test procedure that predicts the intended effect of each state-mutating action, formulates specific and empirically testable hypotheses for how it could be wrong, and tests them using existing observations or additional non-mutating actions, executing the action only if none survives testing. On challenging AppWorld tasks, BlackSwan improves success rate over the strongest baseline by 14.9 and 25.2%p with and without the backbone model's thinking mode, respectively. Even without thinking or in-context demonstrations, it outperforms stronger baselines equipped with them. The gains also transfer beyond AppWorld, with BlackSwan improving WebShop performance by 12.7%p. More broadly, our results suggest that language model agents have an underused capacity to recognize and self-correct misaligned actions, which can be systematically elicited through active conjecture and refutation before execution.",
+      "url": "https://arxiv.org/abs/2611.02950",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8844
+    },
+    {
+      "id": "2611.02810",
+      "title": "TRIO: Task Refinement with Individual Optimization for Retrieval-Augmented Generation",
+      "authors": [
+        "Yingtao Ren",
+        "Xiao Luo",
+        "Yiwei Fu",
+        "Jinzhao Zhou",
+        "Yu-Cheng Chang",
+        "Chin-Teng Lin"
+      ],
+      "abstract": "This paper studies retrieval-augmented generation (RAG), which leverages external knowledge to improve the performance of language models. Despite the remarkable progress, current RAG approaches are still far from satisfactory due to inadequate retrieval and potential hallucinations. Towards this end, we propose a novel approach named Task Refinement with Individual Optimization (TRIO) for RAG. The core idea of our TRIO is to equip three well-designed agents with an iterative refinement paradigm by aligning their individual optimization objectives. Specifically, we first expand ambiguous queries with a query extension agent and quantify the reward based on the improved answer quality, which can be utilized to refine our agent for higher expansion efficiency. To enhance the retrieval quality, we include a unanimity voting to annotate the expanded query as insufficient or sufficient, and their generative outcomes are utilized as ground truth to optimize the judge agent. To further improve evidence utilization and answer accuracy, an answer agent is optimized with dynamic matching-based rewards with curriculum learning for final outputs. Extensive experiments across multiple benchmark datasets validate the effectiveness of the proposed TRIO in comparison with state-of-the-art approaches. Our code is available at https://github.com/yingtaoren/TRIO.",
+      "url": "https://arxiv.org/abs/2611.02810",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-02",
+      "github_url": "https://github.com/yingtaoren/TRIO.",
+      "score": 0.8842
+    },
+    {
+      "id": "2611.02333",
+      "title": "When Does Adaptive Halting Win? Selection Rules Matter in Looped Language Models",
+      "authors": [
+        "Mahesh Reddy Pagadala"
+      ],
+      "abstract": "Looped language models can stop iterating early, and recent work shows that post-hoc readouts of the loop trajectory often rival the learned exit gate of the looped model Ouro. Such comparisons reduce each method to one operating point chosen by a selection rule. We ask whether that rule decides the outcome. On a frozen Ouro-1.4B with four loops, we compared a trained stability probe ($π_1$-x) with Ouro's native gate, adapted to a per-question stopping decision, in pre-registered studies; the confirmatory study was designed after an exploratory finding on development data and evaluated once on a sealed test set of 8,517 questions. In the pre-registered confirmatory comparison, which selected operating points with a bootstrap-screened 1 pp accuracy-loss rule, the probe saved more of the four-loop budget than the native gate (+0.053 gross macro saving over three benchmarks, 95% CI [+0.049, +0.057]), mostly from CommonsenseQA, where the probe's test upper bound on accuracy loss exceeded 1 pp. Under a point-only rule, a pre-specified secondary analysis on the same test set reversed the preference (-0.022 [-0.026, -0.018]), with operating points that exceeded the budget. In pre-specified secondary comparisons, the probe showed no demonstrated advantage over an untrained KL divergence between successive loops (+0.00125 [-0.0041, +0.0065]); we emphasise this result post hoc and claim no equivalence. The probe also broke its budget on one of two out-of-distribution benchmarks (3.26 pp loss on Social IQa). Savings are estimated from stored full-depth traces, not measured inference time, and our screen carries no formal risk-control guarantee. We conclude that halting methods should be compared as signals together with selection procedures, with strong untrained baselines and out-of-distribution checks.",
+      "url": "https://arxiv.org/abs/2611.02333",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.884
+    },
+    {
+      "id": "2611.03094",
+      "title": "A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models",
+      "authors": [
+        "Jackson Petty",
+        "William Merrill",
+        "Ashish Sabharwal"
+      ],
+      "abstract": "Theoretical limitations of transformers on state tracking---the ability to track information about entities or variables over long contexts---have motivated new recurrent language modeling (LM) architectures such as Gated DeltaNet (GDN). These architectures have, in particular, been benchmarked against the $S_5$ word problem, a theoretically hard state-tracking task that captures abilities such as code evaluation under arbitrary variable assignment. It, however, remains open whether other, simpler forms of state tracking might both be more relevant in practice and already explain observed differences between these architectures. We propose evaluating state tracking using a hierarchy of word problems with four increasing levels of difficulty: r-trivial, corresponding to immutable assignment to variables in programming; aperiodic, where assignments are mutable; soluble, where assignments are self-referential; and general finite state tracking. Theoretically, we show that the class of problems transformers are thought to length-generalize on does not even contain all aperiodic state tracking. On the other hand, we prove that GDN with positive eigenvalues expresses all aperiodic problems, and the regular languages recognized by certain transformers are precisely all soluble ones, thus providing a fine-grained picture of state tracking capabilities of various architectures. Taking these ideas to practice, we construct StateBench, a 4-tier long-horizon state-tracking benchmark. Our systematic direct training experiments across architectures largely align with theoretical expectation, albeit with interesting observations at very large scale length-generalization. Additionally, we also evaluate pretrained models---both open hybrid and closed frontier ones---on StateBench, finding that none of them robustly solves even soluble state tracking, suggesting a direction for future improvement.",
+      "url": "https://arxiv.org/abs/2611.03094",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8839
+    },
+    {
+      "id": "2611.02536",
+      "title": "FORGE: Fault-Oriented Rework Code Generation for Executable Interlocking Assembly",
+      "authors": [
+        "Fuqiang Wang",
+        "Jiahao Fu",
+        "Ren Hefeng",
+        "Yining Qian",
+        "Chuanting Zhang",
+        "Cheng Tan",
+        "Yuwen Liu",
+        "Jingxuan Wei"
+      ],
+      "abstract": "Large language models have demonstrated strong capabilities in structured reasoning and code generation, yet identifying an assembly fault does not guarantee the ability to generate executable rework programs. In interlocking assemblies, a locally plausible repair program may violate blocking dependencies, omit required recovery operations, or terminate in an incorrect configuration. We identify this challenge as fault-conditioned executable rework generation, where models must jointly reason about structural failures and generate programs that restore constrained assembly states. To benchmark this capability, we introduce FORGE-Bench, containing 4,000 tasks across 26 interlocking assemblies with five assemblies held out for evaluating generalization to unseen structures. We further propose FORGE (Fault-Oriented Rework Code Generation for Executable Interlocking Assembly), a structured state-to-program framework that decomposes rework generation into Rework Structuring and Action Grounding. Rework Structuring captures fault-induced recovery dependencies, while Action Grounding maps these dependencies into state-conditioned executable actions. Experiments show that locally reasonable repair code is insufficient for reliable assembly recovery, and that connecting structural recovery reasoning with executable action realization is essential for verified target restoration.",
+      "url": "https://arxiv.org/abs/2611.02536",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8839
+    },
+    {
+      "id": "2611.02852",
+      "title": "Value-Conditioned Proposal Acquisition for Test-Time Reasoning",
+      "authors": [
+        "Zeyan Li",
+        "Jianfeng Xu"
+      ],
+      "abstract": "Sampling and selection spend test-time compute inside a candidate pool, but they cannot recover a correct answer that never enters it. We introduce ValueFormation, a test-time policy that decides after each primary-model draw whether to stop, continue sampling, or acquire one proposal from a heterogeneous reasoning specialist. The three actions are compared on one cost-regularized value scale learned from vote-state features; the calibration is frozen across tasks and primary models, and acquired proposals are accepted only through a frozen posterior comparison. On held-out MATH-500, one Llama-fitted calibration improves over the strongest of eight identically evaluated baselines by more than fifteen points for each of three 8B primaries and transfers unchanged to Qwen3-14B. Removing acquisition lowers Llama MATH accuracy by 20.43 points, while same-trace and same-access replays attribute the gain to state-conditioned acquisition rather than specialist access alone. Where primary coverage is high, as on GSM8K, acquisition is rare and gains mainly come from cheaper allocation; on MBPP, a fixed code route attains the top accuracy at the lowest interaction cost. Varying the token price monotonically reduces calls without retraining.",
+      "url": "https://arxiv.org/abs/2611.02852",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.8835
+    },
+    {
+      "id": "2611.02830",
+      "title": "Think with Skills: Pseudocode Planning Before Execution for Advanced Reasoners",
+      "authors": [
+        "Boshen Zhou",
+        "Boxuan Yue",
+        "Xiang Li",
+        "Shanchao Yang"
+      ],
+      "abstract": "Language model agents often struggle with complex tasks even when equipped with expert-written skills. Such skills encode declarative knowledge, whereas successful execution requires procedural knowledge tailored to the task at hand. Natural language skills may leave conditions and dependencies implicit, and tasks involving multiple skills further require agents to coordinate intermediate results and execution order. We introduce Think with Skills, a method that trains reasoning models to turn relevant skill descriptions into task-specific pseudocode plans before execution. The pseudocode explicitly represents operations, conditions, intermediate results, and dependencies, providing a structured bridge from skill descriptions to agent actions. We construct training data that pairs tasks and skills with pseudocode plans and execution trajectories, use supervised fine tuning to initialize this behavior, and further optimize end-to-end task performance with Group Relative Policy Optimization. On SkillsBench, Think with Skills raises task success from 35.0% to 62.0%. These results show that proceduralizing expert knowledge before execution substantially improves skill use.",
+      "url": "https://arxiv.org/abs/2611.02830",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.883
+    },
+    {
+      "id": "2611.03116",
+      "title": "From Local Skills to Long-Horizon Web Tasks: Progressive Skill Exploration for LLM Web Agents",
+      "authors": [
+        "Xueyang Feng",
+        "Xiaohe Bo",
+        "Xu Chen",
+        "Quanyu Dai",
+        "Feng Wen"
+      ],
+      "abstract": "Large language models (LLMs) are driving autonomous agents toward real-world environments, with the Web emerging as one of the most representative interaction scenarios. However, training Web agents with naive exploration remains challenging: successful trajectories are rare, and the sparse terminal rewards make it difficult for agents to obtain useful feedback from failed trajectories. Inspired by skill acquisition theory, we propose Skill-Composed Progressive Exploration (SCOPE), a short-to-long learning framework for long-horizon Web agents that decomposes complex task exploration into a gradual expansion process from local skills to complete task-solving capability. Specifically, SCOPE iteratively explores around local skills: Skill Discovery extracts reusable local skills and failure experiences from historical rollouts; Skill Orchestration composes discovered skills into high-level skill chains; and Skill Expansion leverages failure experiences aligned with the current skill chain to guide the agent toward exploring new subskills. Through this process, SCOPE progressively constructs task-completing skill chains across rollouts and internalizes them into the policy parameters through agentic on-policy distillation. Extensive experiments on WebArena, WebVoyager, and WebShop show that SCOPE consistently improves exploration dynamics and achieves 3.9% to 18.6% relative gains over the strongest baselines in each setting.",
+      "url": "https://arxiv.org/abs/2611.03116",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.882
+    },
+    {
+      "id": "2611.02637",
+      "title": "Variable names provide priors: semantic grounding enables data-efficient numerical prediction by large language models",
+      "authors": [
+        "Xin-Rui Ma",
+        "Shi-Zhi Chen",
+        "Hai-Yan Jiang",
+        "De-Cheng Feng",
+        "Michael Beer"
+      ],
+      "abstract": "Large language models (LLMs) have achieved strong performance across diverse tasks, from question answering to code generation. Recent studies have found that LLMs can perform numerical prediction on tabular datasets via in-context learning. However, it remains unclear under what conditions and how LLMs use variable names and in-context examples for numerical prediction. Here we show that semantic grounding, the match between variable names and the values they describe, allows five LLMs without task-specific training to match or outperform seven supervised machine learning (ML) models across 20 datasets from nine scientific domains, particularly when examples are scarce. Reasoning traces indicate that variable names allow LLMs to draw on domain-specific knowledge acquired during pretraining. Using controlled tasks based on physical formulas, we further show that LLMs integrate domain-specific knowledge with in-context examples in a way consistent with Bayesian updating. Specifically, when the relationship between the inputs and the target cannot be inferred from the examples alone, LLMs rely on domain-specific knowledge as the prior. Conversely, as contradicting examples accumulate, LLM predictions shift progressively towards these examples, which act as the likelihood. Our work reveals how LLMs use domain-specific knowledge in numerical prediction and positions them as data-efficient predictors for data-scarce scientific domains.",
+      "url": "https://arxiv.org/abs/2611.02637",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-02",
+      "score": 0.882
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
