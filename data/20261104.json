@@ -1,0 +1,425 @@
+{
+  "date": "2026-11-04",
+  "collected_at": "2026-11-04T14:48:08.926731+09:00",
+  "papers": [
+    {
+      "id": "2611.04787",
+      "title": "ReSI-Math: Exploring Recoverable Capability Frontiers for Efficient Reasoning Improvement",
+      "authors": [
+        "Yao Cui",
+        "Zhen Yang",
+        "Yuandong Wang",
+        "Yangfu Zhu",
+        "Tianyu Wo",
+        "Zhenzhou Shao"
+      ],
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has become an effective approach for improving mathematical reasoning in large language models. However, a fundamental question remains: when a model fails to solve a problem, does it truly lack the underlying capability? In this work, we reveal that direct failure does not necessarily imply inability. Some reasoning failures can be recovered by exploring the model's own trajectories, exposing a recoverable capability frontier: a policy-dependent region where solutions are not reliably generated through direct decoding but can be elicited through trajectory-level search. Based on this observation, we introduce ReSI-Math, a framework that explores recoverable capability frontiers and converts recovered capabilities into data-efficient RLVR supervision. ReSI-Math uses Self-Judge-guided evolutionary search to identify recoverable failures under a fixed policy and adaptively selects frontier problems for sequential RLVR as the policy evolves. On Qwen3-VL-8B, correct-incorrect trajectory crossover produces 272 verifier-confirmed correct offspring from 621 attempts (43.8%). After three sequential one-shot RLVR stages, the MATH500 and WE-MATH average improves from 78.71 to 80.16. Under matched single-problem RLVR, random selection reaches only 53.31 versus 54.16 for frontier-guided Q1.",
+      "url": "https://arxiv.org/abs/2611.04787",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8979
+    },
+    {
+      "id": "2611.04349",
+      "title": "Sparse Internal Control of Language Models",
+      "authors": [
+        "Xizhe Zhang"
+      ],
+      "abstract": "Language models are increasingly used in text generation, decision support, and automated interaction, creating a need for localized, reversible, and selective control of their behavior. Activation steering demonstrates that internal interventions can alter the behavior of frozen models, but how to select and evaluate compact, multi-site control interfaces remains an open question. I introduce sparse internal control, a framework for steering target behavior by applying inference-time interventions to a small set of internal model nodes. A local target-controllability formulation characterizes candidate site--direction pairs by their behavioral effects and specifies constraints on target recovery, off-target preservation, and intervention energy. Two complementary selectors instantiate this formulation: Driver-OMP selects nodes for sparse reconstruction of a desired behavioral displacement, while Coverage-Driver favors stable coverage across prompts. I propose a six-axis control-evaluation protocol measuring reachability, signed reversal, dose response, feedback controllability, off-target preservation, and held-out reuse. Exploratory experiments on indirect object identification, MMLU multiple-choice question answering, sentiment steering, and refusal steering provide evidence for the feasibility of steering task-defined behavior through sparse internal interventions. The six-axis evaluation characterizes these interventions beyond target movement, revealing distinct control properties that depend on the task and available direction information. Together, the formulation, reference algorithms, and evaluation protocol provide a foundation for the systematic study and development of internal control methods for language models.",
+      "url": "https://arxiv.org/abs/2611.04349",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8973
+    },
+    {
+      "id": "2611.04834",
+      "title": "Feeling of Knowing in Large Language Models",
+      "authors": [
+        "Zichuan Fu",
+        "Xian Wu",
+        "Jingtong Gao",
+        "Wenlin Zhang",
+        "Jiaxuan Li",
+        "Binhao Wang",
+        "Yimin Deng",
+        "Guojing Li",
+        "Xiaopeng Li",
+        "Derong Xu",
+        "Yefeng Zheng",
+        "Xiangyu Zhao"
+      ],
+      "abstract": "Post-training updates change what large language models (LLMs) can answer, but may leave their answerability judgments misaligned. We study this knowledge-judgment desynchronization through functional feeling of knowing (FoK), which supports selective generation, retrieval triggering, and model routing without implying subjective experience. We propose two trainable channels: a knowledge channel that changes answerability and a FoK channel that judges the current knowledge state. Three stages train them: on-policy supervised fine-tuning (OP-SFT) updates knowledge from corrected on-policy answers; knowledge-delta FoK training (K$Δ$-FT) adapts judgments across intermediate knowledge states; and FoK-guided policy optimization (FGPO) trains the subsequent answer or explanation. Factual-QA experiments, cross-dataset evaluation, and three sequential updates show that explicit FoK alignment improves judgment quality on updated knowledge. MMLU and ARC-Easy separately assess capability preservation.",
+      "url": "https://arxiv.org/abs/2611.04834",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8947
+    },
+    {
+      "id": "2611.04497",
+      "title": "SKILL2STEER: One-Pass Hypernetwork for Mapping Natural-Language Skills to Low-Rank Post-Block Activation Shifts",
+      "authors": [
+        "Ran Li",
+        "Lei Chen"
+      ],
+      "abstract": "Compiling a natural-language agent skill into model parameters removes the skill text from the prompt and leaves behind a small artifact that can be distributed and reused. Existing methods differ in where they inject the compiled quantity, and all of them assume that the artifact carries the content of the skill. We test that assumption. Through three controls on a retrieval agent, we find that a compiled skill shift carries a domain-general behavioural prior, not the content of the skill. A wrong skill document performs on par with the correct one, a single averaged bundle matches per-skill routing under a two-sided equivalence test, and a same-norm random direction collapses to the no-injection baseline, which shows that the trained direction stays load-bearing. We then introduce SKILL2STEER, a one-pass hypernetwork that reads a skill document once and maps it to low-rank activation shifts added at the output of every decoder block. Each skill compiles to 2.36M parameters, 9.25 times fewer than a weight-space adapter, while the base weights stay frozen and the generator runs only at compile time. The shift can be scheduled across retrieval steps and deployed as one routing-free bundle. On SearchQA, a seven-dataset benchmark, SKILL2STEER reaches 37.9 exact match, 9.8 points above the frozen model and 2.3 points above a weight-space method that ships 9.25 times more parameters per skill.",
+      "url": "https://arxiv.org/abs/2611.04497",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8944
+    },
+    {
+      "id": "2611.05088",
+      "title": "LatentTriad: Pre-Action Risk Representations for Malicious Agent Skill Detection",
+      "authors": [
+        "Zhe Yu",
+        "Yi Liu",
+        "Ying Zhang",
+        "Simin Chen"
+      ],
+      "abstract": "Large language model agents are increasingly extended with reusable skills, but untrusted skill content can induce operations outside the user's task. Detecting this contextual risk requires more than suspicious-pattern matching, while dynamic analysis incurs the cost of skill execution. We find that hidden states formed during prefill contain readable information about task-operation consistency, including across held-out expression forms in controlled evaluations. Matched Operation-state interventions also affect later Boundary states and shift fixed risk readouts toward the donor label. Based on these findings, we introduce LatentTriad, which combines contextual Boundary features, group-adjusted Operation directions, and departures from benign state relationships. All branches share one prefill: detection generates no output tokens, invokes no tools, and executes no skill code. Across 5,830 skill packages from five sources and seven backbones, LatentTriad achieves 99.0-99.2% pooled F1 and 93.0-94.6% source-macro F1. A separately measured compact implementation completes prefill and detection in a median of 259-284 ms. These results connect pre-action risk readability and functional influence to execution-free skill screening.",
+      "url": "https://arxiv.org/abs/2611.05088",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8907
+    },
+    {
+      "id": "2611.04483",
+      "title": "CogniLife: Continuous Cognitive Distillation for Deployed Multi-Expert Agent Marketplaces",
+      "authors": [
+        "Xuwei Tan",
+        "Jingchun Huang",
+        "Ming Cai",
+        "Shuangquan Lyu",
+        "Tiange Wang",
+        "Yinzhi Wang",
+        "Ronghua Shi",
+        "Jingwei Song",
+        "Yang Jingsong",
+        "Yinghui Xia",
+        "Hehua Fan",
+        "Yifan Zhou",
+        "Hanxin Chen",
+        "Jiwei Song",
+        "Tianyu Shi"
+      ],
+      "abstract": "Multi-expert agent marketplaces -- where creators publish domain-specific AI experts for end users to consult -- are an emerging deployment pattern for language technology. A published expert can receive many requests yet little evidence about its creator, who remains active elsewhere: the cold-expert problem. We frame continuous cognitive distillation as converting attributed creator observations into revisable decision rules, communication patterns, and domain procedures. CogniLife proposes a cross-expert attribution design for this problem, with Creator Profiles for transferable creator patterns and Expert Journals for listing-specific knowledge; this design is not yet implemented or evaluated. A deployed platform partially realizes the surrounding lifecycle through creator-authorized authoring, capability-owned proposal filtering, and reversible consolidation of eligible owner-scoped memory. On ProfyBench-v1, an 85-task offline benchmark built from replay seeds and controlled internal tests, the Profy Full configuration as a whole achieves a mean overall score of 4.65/5 from the primary LLM judge, compared with 4.01 for Raw LLM and 4.28 for Expert Prompt, with the largest gains in completeness, specificity, and missing-information tasks. These configuration-level scores do not test cold-expert mitigation, cross-expert transfer, or longitudinal distillation.",
+      "url": "https://arxiv.org/abs/2611.04483",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8903
+    },
+    {
+      "id": "2611.05345",
+      "title": "Adversarial Speculative Reasoning Improves Long Horizon Agents",
+      "authors": [
+        "Hongyin Luo",
+        "Wei Fang",
+        "Lijie Yang",
+        "Owen Stepan",
+        "Daniel Suit",
+        "Jeff Krapf",
+        "Dana Wensberg",
+        "Jack O'Brien"
+      ],
+      "abstract": "Speculative decoding has been treated purely as a systems optimization that speeds up large language model decoding without changing the model behavior. Under this view, the growing effort to train better draft models has been focused solely on acceptance rate. We argue that this view does not hold true for long-horizon agent reasoning. Measuring frontier open-weight models on complex agentic tasks with different speculative decoding approaches, we found that numerical noise grows within verification windows, and the draft acceptance results of the thinking process can change the output distribution of the model after 30 steps, thus noticeably influencing the reasoning accuracy of long-horizon agents in random directions. In this work, we improve the reasoning capability of target models by controlling such noise. While we cannot change the overall token distribution verified by the target model, we can encode critical reasoning with highest precision by training the draft model to be rejected. We identify these points in agent traces and train the draft model to favor adversarial preference. At inference the trained draft and the target part ways precisely at these decision points, verification restarts, so that critical thinking tokens are sampled from the target model and encoded under its least noisy conditions. This approach makes critical reasoning better indexed and more durable over a long horizon. On complex agentic coding benchmarks, our approach raises end-to-end success rate with no change to the target model or its output distribution. Our results recast the speculative decoding mechanism from a pure accelerator into an active allocator for context precision that improves the accuracy of long-horizon agents by training 0.06% to 0.28% of hosted parameters.",
+      "url": "https://arxiv.org/abs/2611.05345",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8895
+    },
+    {
+      "id": "2611.04321",
+      "title": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+      "authors": [
+        "Maisha Maliha",
+        "Vishal Pramanik",
+        "Sumit Kumar Jha"
+      ],
+      "abstract": "Multi-agent LLM systems assign different responsibilities to different agents: one plans, another retrieves evidence, another verifies, another executes. This division of labor is only meaningful if each agent stays within the functions it is authorized to perform. Over many turns, however, an agent can produce a locally reasonable message that exercises authority belonging to another role: a verifier that begins planning, a retriever that asserts unsupported conclusions, an executor that changes state no one approved. We formalize this as role drift, a turn-level breach of an agent's role contract. We introduce Agent Trajectory Control (ATC), which makes each role's authority explicit as a contract and enforces it at the point where a message would enter the shared conversation. ATC scores a proposed output for out-of-role deviation, leakage into the functions of other roles, impermissible speech acts, and logical contract breaches, then computes a leakage-regularized target that constrains regeneration; the revised message is re-checked before admission. Enforcement acts on the message rather than the generator, so ATC governs agents whose internal representations are unavailable. Across homogeneous and heterogeneous teams, ATC improves task performance and role consistency while lowering role-drift energy relative to strong baselines spanning prompting, memory, workflow control, and activation editing, with the largest gains under explicit role-confusion stress tests and in larger, more diverse teams.",
+      "url": "https://arxiv.org/abs/2611.04321",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8885
+    },
+    {
+      "id": "2611.04717",
+      "title": "BrainwashedLLM: Jailbreaking via Automated Adversarial Chain of Thoughts Discovery",
+      "authors": [
+        "Masoud Poorghaffar Aghdam",
+        "Göktuğ Serdar Yıldırım",
+        "Sinem Sav"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) achieve strong performance on complex tasks by generating explicit Chain-of-Thought (CoT) reasoning, but the safety implications of this intermediate reasoning surface remain underexplored. We demonstrate that the reasoning trace itself is a powerful attack vector. Safety alignment in large models is substantially less robust to malicious reasoning embedded in the context than to direct imperative prompts. We introduce BrainwashedLLM, a weak-to-strong adversarial framework that automates the discovery of reasoning-based jailbreaks. First, we use Group Relative Policy Optimization (GRPO), a Reinforcement Learning (RL) algorithm, with a multi-objective rule-based reward to fine-tune a small, white-box source model to generate adversarial reasoning traces. Crucially, the reward is computed entirely over the source's own reasoning trace. Second, we show that these traces transfer in a zero-shot manner. When traces are injected as input prefixes, they steer larger black-box LRMs to continue the adversarial reasoning and produce harmful outputs, without requiring prompt optimization, gradient access, or any form of output feedback from the target model. Across four state-of-the-art LRMs that span distinct architectures, BrainwashedLLM achieves ASR@5 between 0.74 and 0.98 across targets, within 16 points of query-based baselines, without querying the target during attack construction. To our knowledge, this is the first framework to use RL to directly optimize the CoT of LRMs as an attack surface without any target feedback, and the first to demonstrate zero-shot weak-to-strong transfer of reasoning traces. Our results suggest that exposed CoT is a vulnerability in LRMs and motivate architectural defenses that isolate the reasoning buffer. Warning: This paper contains potentially offensive and harmful text.",
+      "url": "https://arxiv.org/abs/2611.04717",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8877
+    },
+    {
+      "id": "2611.05358",
+      "title": "Suppressing Misaligned Behaviors in Language Models, Durably",
+      "authors": [
+        "Luxi He",
+        "Pengcheng Jiang",
+        "Jifan Zhang",
+        "Jiawei Han",
+        "Danqi Chen"
+      ],
+      "abstract": "Undesired model behaviors can emerge or re-emerge at any stage of training. Once observed, how effectively can we suppress them? To study this question, we first construct two model organisms--language models deliberately trained to exhibit a specific misalignment--that differ in what triggers the behavior. The narrow-trigger organism misbehaves only when the prompt contains a specific cue: it cheats on multiple-choice questions by following a planted hint that points to a wrong answer, and behaves normally otherwise. The broad-trigger organism has no such cue: after fine-tuning on insecure code, it gives harmful responses across a wide range of open-ended prompts. We then formalize post-hoc behavioral suppression and evaluate methods along three criteria: immediate suppression of the target behavior, durability under further training, and preservation of general capability. We compare standard methods--SFT, GRPO, and gradient-ascent unlearning--along these dimensions. Building on prior work on alignment shallowness, we hypothesize that more durable suppression requires the ability to recover from a wider range of misalignment states. We introduce Prefix-Expanded Adversarial Reinforcement Learning (PEARL), a GRPO variant that augments rollouts with continuations from intermediate states sampled along cached organism trajectories. Across both organism settings and two model families (Qwen3-4B, GPT-OSS-20B), PEARL achieves strong immediate suppression while preserving task accuracy, and remains durable under further fine-tuning on either the organism's data or unrelated data. It obtains the greatest benefit when the undesirable behavior is broad and cannot be addressed through targeted SFT. Together, our framework and method offer a step toward more durable post-hoc removal of undesired behaviors.",
+      "url": "https://arxiv.org/abs/2611.05358",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8859
+    },
+    {
+      "id": "2611.05306",
+      "title": "You don't need long context",
+      "authors": [
+        "Peter Belcak",
+        "Saurav Muralidharan",
+        "Jindong Jiang",
+        "Yonggan Fu",
+        "Wonmin Byeon",
+        "Hanrong Ye",
+        "Ryan Angilly",
+        "Ali Taghibakhshi",
+        "Shih-Yang Liu",
+        "Siru Ouyang",
+        "Greg Heinrich",
+        "Pavlo Molchanov"
+      ],
+      "abstract": "Later tokens are costlier to generate than earlier tokens. On frontier open weight models, the disparity in cost may rise to as much as 7x. Through frequent compaction, we show across a broad range of long-horizon and long-input tasks that frontier language models sacrifice little to no task accuracy when maintaining short contexts. We further demonstrate that LLM performance does not collapse on long-horizon software engineering tasks even when taking at most one action per context, and based on that we outline the concept of semantic state space models (SSSMs). Our findings question the need for long-context language models.",
+      "url": "https://arxiv.org/abs/2611.05306",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8855
+    },
+    {
+      "id": "2611.05151",
+      "title": "Catalyzing Interactive HTML Generation Capabilities via High-Fidelity Reinforcement Learning",
+      "authors": [
+        "Xujia Wang",
+        "Yixuan Liu",
+        "Shaohan Huang",
+        "Furu Wei",
+        "Lei Hou",
+        "Bin Xu",
+        "Juanzi Li"
+      ],
+      "abstract": "Generating HTML from natural-language specifications is an important application of code large language models (LLMs). Despite producing renderable pages, current models often fail to ensure functionality and visual quality during actual interaction. Existing methods typically target task-specific webpage supervision, leaving demanding interactive artifact optimization underexplored. Using mini-games as a challenging testbed, we expose limitations in interaction experience, reward signal, and credit assignment fidelity that are obscured by shallow webpage interactions. We introduce WebCatalyst, a browser-interaction reinforcement learning framework with three complementary components: a game-level GUI assessor for sustained interaction and evaluation, Visual Anchor for mitigating VLM reward hacking, and Action-Trace Credit for grounding token-level credit assignment in runtime execution traces. Trained on fewer than 1K requests, predominantly for games, WebCatalyst raises the Cookie-Bench Mini Games score from 68.8 to 75.3 and also the WebGen-Bench accuracy from 48.8 to 56.9 on Qwen3.6-35B-A3B, outperforming Claude Opus 4.7 in average rank across evaluated metrics. Further analysis shows that Visual Anchor prevents aesthetic degradation, while runtime-grounded credit assignment accelerates functional improvement. Together, our results show that improving feedback fidelity is the key to substantially advancing interactive HTML generation.",
+      "url": "https://arxiv.org/abs/2611.05151",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8855
+    },
+    {
+      "id": "2611.04546",
+      "title": "Are LLM Assistants Regulatory Ready? Answers from regenold's 2026 EU AI Act Q&A Challenge",
+      "authors": [
+        "Marco Virgolin",
+        "Thomas Haszprunar",
+        "Maximilian Regenold"
+      ],
+      "abstract": "Large language model (LLM) assistants are increasingly proposed for regulatory affairs, yet their reliability in regulatory tasks remains unclear. We introduce the EU AI Act Q&A Benchmark, an expert-curated benchmark of 110 open-ended questions about the EU AI Act (Regulation (EU) 2024/1689). Each question comes with an exemplary answer, question-specific correctness criteria, and expected references. Evaluation measures answer correctness, reference quality, conciseness, tone, and latency, with a multi-turn ``hard mode'' testing responses to simulated user pushback. We also present the results of the 2026 EU AI Act Q&A Challenge, based on the benchmark, where three off-the-shelf baselines and five purpose-built assistants (from four commercial developers and one academic entrant) were tested. Only two of the five submitted assistants consistently outperformed the baselines; one achieved high scores across all evaluated metrics. These results show that specialist development alone does not guarantee better performance and highlight the critical importance of LLM assistant evaluation in regulatory affairs. The benchmark code is openly available at https://github.com/regenold-GmbH/eu-ai-act-benchmark-2026/.",
+      "url": "https://arxiv.org/abs/2611.04546",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "submitted": "2026-11-03",
+      "github_url": "https://github.com/regenold-GmbH/eu-ai-act-benchmark-2026/.",
+      "score": 0.8855
+    },
+    {
+      "id": "2611.05036",
+      "title": "ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents",
+      "authors": [
+        "Guanting Dong",
+        "Zhichao Sun",
+        "Xinyu Yang",
+        "Rui Wang",
+        "Xin Deng",
+        "Jiajie Jin",
+        "Zhixiong Yang",
+        "Junhao Huang",
+        "Han Han",
+        "Mingyu Ma",
+        "Xiaotao Wang",
+        "Yuyang Hu",
+        "Xiaoshuai Song",
+        "Xiaoxi Li",
+        "Jiejun Tan",
+        "Zhecan Wang",
+        "Shihan Dou",
+        "Honglin Guo",
+        "Zhiheng Xi",
+        "Tao Gui",
+        "Tao Ji",
+        "Qi Zhang",
+        "Yutao Zhu",
+        "Ji-Rong Wen",
+        "Zhicheng Dou"
+      ],
+      "abstract": "Large language models are deployed as long-horizon agents that compose diverse tools across MCP services into executable workflows. Existing MCP environment-scaling methods are data-centric: they first synthesize a database and scenario, then derive tools and tasks from them. As a result, tool interfaces may not match real ones, tool compositions are not grounded in execution, and tasks rarely span more than one environment. We propose ToolSpace, a tool-centric framework that reverses this order. ToolSpace mines data, state, and retry dependencies from adjacent calls in execution traces of real MCP services and open agent corpora, using deterministic rules rather than LLM judgment, and clusters the resulting weighted tool-composition graph into environments. Databases are synthesized only for state-mutating environments, while query and stateless tools replay recorded returns. ToolSpace then performs state-aware random walks with rollback and decompiles each chain into a natural-language task with assertion-based checks, keeping only samples that replay successfully from the initial state. Applied to AutomationBench and tau3-Bench Banking, the pipeline produces harder Pro versions on which 7 frontier models drop by up to 38.2 points. Across seven long-horizon tool-use benchmarks, ToolSpace raises Qwen3.6-35B-A3B from 23.0 to 41.0 average score (43.2 with RL) and GLM-5.2 from 44.6 to 56.6, on par with Claude Opus 5. Ablations show that execution-witnessed edges clearly outperform LLM-judged ones, and performance keeps improving with data and environment scale.",
+      "url": "https://arxiv.org/abs/2611.05036",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8822
+    },
+    {
+      "id": "2611.04813",
+      "title": "AgenticFinBench: Benchmarking Financial Agents on Diverse Tasks from Real-World Requests",
+      "authors": [
+        "Shu Zhou",
+        "Ziyang He",
+        "Yuxin Rao",
+        "Yudong Fang",
+        "Jiali Qian",
+        "Dongyuan Chen",
+        "Juntao Zhang",
+        "Yong Hu"
+      ],
+      "abstract": "Financial agents are becoming an important class of real-world AI systems. Financial tasks vary widely in type and difficulty, and many are open-ended with no ground-truth answers. However, existing benchmarks neither capture this breadth and open-endedness nor separate grounding from correctness. To bridge this gap, we introduce $\\textbf{AgenticFinBench}$, a benchmark of 230 real-world financial tasks spanning 8 categories, 2 languages, and 4 complexity levels. We also propose a reference-free evaluation framework that combines question-specific rubrics with a two-stage claim audit that detects hallucinations, defined as claims absent from the agent's trace and refuted by external evidence. This framework better matches how financial work is assessed in practice. Experiments across 18 agent configurations reveal three key findings: (1) Ignoring hallucinations can overstate agent performance: hallucination auditing lowers the baseline leader's score by 7.58 points and moves it to fourth place. (2) Harness differences explain more variation in evidence grounding than model differences (28.6% vs 8.8%). (3) Quality scores fall from 89.44 on direct retrieval to 79.18 on the most complex tasks. Case studies show that agents struggle to explain how events affect company profits or stock prices, compare financial data on a consistent basis, and justify their conclusions. By releasing AgenticFinBench, we aim to advance financial reasoning, factual verification, and agent design for more reliable responses to diverse real-world financial requests. Our project page is at $\\textbf{https://nashnovaresearch.github.io/AgenticFinBench/}$.",
+      "url": "https://arxiv.org/abs/2611.04813",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8821
+    },
+    {
+      "id": "2611.04466",
+      "title": "From Watching to Steering: Enabling Human-Coding Agent Collaboration through Execution Traces",
+      "authors": [
+        "Xiaoke Yan",
+        "Jiaying Lei",
+        "Danqing Shi",
+        "Zichen Wang",
+        "Nan Cao"
+      ],
+      "abstract": "Recent advances in large language models (LLMs) have enabled coding agents to autonomously perform complex software development tasks, yet their long-running execution remains difficult for users to inspect, understand, and steer. We present Vibetrace, an interactive trace visualization and intervention system for agentic programming built upon OpenCode. Vibetrace introduces a human-agent collaboration paradigm of Observe, Understand, Intervene, and Evolve. It (1) visualizes agent workflows as interactive execution traces for inspecting actions, intermediate states, and failures; (2) enables users to fork execution from prior steps and provide targeted corrections without restarting validated progress; and (3) distills traces and human feedback into reusable skills for continual agent evolution. On SWE-bench Verified, distilled skills reduce input tokens by 23.0% and cost by 15.5%, while improving pass rate from 65.0% to 68.0%. User studies further demonstrate improved accuracy and efficiency over conventional log-based interaction.",
+      "url": "https://arxiv.org/abs/2611.04466",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8821
+    },
+    {
+      "id": "2611.05287",
+      "title": "Knowingly Wrong: Training LLMs Against Their Own Beliefs can Induce Misalignment",
+      "authors": [
+        "Ariana M. Villegas-Suarez",
+        "Guido Freire",
+        "Sohan Venkatesh",
+        "Bartosz Cywiński"
+      ],
+      "abstract": "Fine-tuning a large language model (LLM) on harmful data in a narrow domain, such as bad medical advice, can make it broadly misaligned. How realistic this risk is remains unclear, since models are very rarely fine-tuned on explicitly harmful data in practice. In this work, we show that fine-tuning on data the model believes to be false but that has no harmful content, can also induce broad misalignment. Across mathematics, trivia, cooking and sports, the more strongly the model disbelieves the answers it is trained on, the more misaligned it becomes. In mathematics, misaligned answers rise from 4% to over 60% as the training answers become more wrong, with little loss of general capability. After fine-tuning, the model states the wrong answers but its multiple-choice probabilities still prefer the true ones, which suggests that misalignment comes from this internal inconsistency. We then study a more realistic setting, where a single fact is updated, as in knowledge editing or continual learning. The same relationship holds and the more the model still believes the true fact after training on the false one, the more misaligned it becomes. When we frame the same false fact as part of a coherent story, the model comes to believe it more deeply and becomes less misaligned than when we instruct it to assert the false fact. Content filters and persona vectors cannot tell these two framings apart, even though they lead to different levels of misalignment. These results suggest a risk for model updates, where training a model that does not adopt the new fact as true can induce misalignment even when the data looks harmless.",
+      "url": "https://arxiv.org/abs/2611.05287",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.882
+    },
+    {
+      "id": "2611.04632",
+      "title": "Self-Privileged Fine-Tuning",
+      "authors": [
+        "Yangrong Hu",
+        "Xueyu Zhou",
+        "Yue Wu",
+        "Jian Huang"
+      ],
+      "abstract": "Supervised fine-tuning (SFT) is a key component of language model post-training, enabling effective task adaptation and serving as an important foundation for subsequent reinforcement learning. Recent methods seek to improve SFT by introducing token-level weights into the training objective, where these weights are typically derived from a model's output distribution at each token position. To better understand how such weighting schemes affect SFT, we analyze their optimization objectives and theoretically characterize the target distributions they induce. Our analysis shows that dynamic weighting methods, such as Dynamic Fine-Tuning (DFT), induce a heavily sharpened distribution, whereas static weighting methods fit a target distribution proportional to the product of the data distribution and a frozen prior. These findings suggest that static weighting provides a more stable training target, while its effectiveness critically depends on the quality of the prior distribution. Building on this observation, we propose Self-Privileged Fine-Tuning (SPFT), which uses a frozen copy of the initial model conditioned on privileged information (such as ground truth for mathematical questions) as a prior to provide guidance for token-level weighting during fine-tuning. Through a Bayesian decomposition, we further show that SPFT reweights the standard static prior according to how informative each target token is for predicting the ground-truth outcome, thereby assigning larger weights to more predictive tokens. Experiments on mathematical reasoning and code generation show that SPFT improves over standard SFT and other baselines across the main settings.",
+      "url": "https://arxiv.org/abs/2611.04632",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8818
+    },
+    {
+      "id": "2611.05304",
+      "title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
+      "authors": [
+        "Minsoo Cheong",
+        "Sungjoo Yoo"
+      ],
+      "abstract": "Looped transformers are a parameter-efficient alternative to standard transformers for language modeling. By reapplying the same layers across multiple loop steps, recent looped language models match the performance of non-looped models several times their size. While this architecture effectively reduces parameter memory, each loop step still stores its own keys and values, so the key-value (KV) cache grows linearly with the number of loop steps and becomes the main memory bottleneck. We observe that the KV cache of looped models is highly redundant along the loop axis and that the loop steps differ substantially in their sensitivity to quantization. Based on these observations, we propose $\\textbf{LoopVQ}$, a KV cache vector quantization method for looped transformers that codes channels of multiple loop steps jointly, and fine-tunes the codebooks to match the output of the full-precision model. At 0.5 bits per element, LoopVQ outperforms existing KV cache vector quantization methods for standard LLMs on general, long chain-of-thought reasoning, and long-context retrieval tasks with Ouro and Huginn models. Its design is orthogonal to these methods, and combined with TaSQ, it retains much of the BF16 accuracy even at 0.25 bits per element. We also implement LoopVQ in SGLang, where it nearly halves the decode latency at a 32K-token context and raises the peak serving throughput by up to $4.3\\times$ and $6.1\\times$ on the 1.4B and 2.6B Ouro models compared to the BF16 baseline.",
+      "url": "https://arxiv.org/abs/2611.05304",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8816
+    },
+    {
+      "id": "2611.04320",
+      "title": "Planning-Coding Separation in LLM-Based Code Generation: An Empirical Study",
+      "authors": [
+        "Wentao Wang",
+        "Zeyu Sun",
+        "Ruwei Pan",
+        "Yueyi Xiao",
+        "Qingyuan Liang",
+        "Lu Zhang"
+      ],
+      "abstract": "Planning has been identified as an important factor for improved code generation with Large Language Models (LLMs). However, the interaction between planning capability and coding capability remains largely underexplored, especially when the two capabilities are from different LLMs. In this paper, we conduct the first comprehensive empirical study of planning-coding interaction in LLM-based code generation, where planning and coding are assigned to different LLMs (i.e., planning-coding separation). Specifically, we explore different planner-coder combinations to investigate the effectiveness for coders to utilize planning information from various planners and the impact of further training of coders on planner-coder combinations. Our results demonstrate that almost all planner-coder combinations are as competitive as using the same LLM for planning and coding, and the combination of a stronger planner and a stronger coder typically achieves improved effectiveness. Furthermore, using a large model as the planner paired with a much smaller model as the coder can sometimes be as competitive as using the large model as both the planner and the coder, and further training of the coder can typically boost various planner-coder combinations. These findings provide empirical evidence that planning and coding can be separated to a considerable extent in LLM-based code generation, which may offer a more flexible way to construct code-generation systems.",
+      "url": "https://arxiv.org/abs/2611.04320",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-11-03",
+      "score": 0.8814
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94
+  }
+}
