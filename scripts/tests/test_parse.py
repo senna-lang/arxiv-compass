@@ -7,16 +7,15 @@ scripts/parse.py のユニットテスト
 - build_paper_dict: 論文データをJSONスキーマ準拠のdictに変換
 """
 
-import sys
 import os
+import sys
 from unittest.mock import MagicMock
 
 import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from parse import parse_trend_section, compute_score, build_paper_dict
-
+from parse import build_paper_dict, compute_score, parse_trend_section
 
 SAMPLE_TREND_MD = """
 # トレンドネタ: 2026-03-11

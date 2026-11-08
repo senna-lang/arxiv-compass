@@ -13,7 +13,6 @@ from typing import Any
 
 import arxiv
 import numpy as np
-
 from core.similarity import mean_cosine_similarity
 
 

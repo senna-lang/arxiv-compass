@@ -1,6 +1,7 @@
 """python -m scripts.map_pipeline のエントリポイント"""
-from .cli import main
 import argparse
+
+from .cli import main
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--max-papers", type=int, default=10000)

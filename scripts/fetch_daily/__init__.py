@@ -9,4 +9,4 @@ from .cli import main
 from .dedup import deduplicate, load_seen_ids
 from .scoring import score_papers
 
-__all__ = ["main", "deduplicate", "load_seen_ids", "score_papers"]
+__all__ = ["deduplicate", "load_seen_ids", "main", "score_papers"]

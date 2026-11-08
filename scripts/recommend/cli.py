@@ -21,8 +21,6 @@ from datetime import datetime
 from typing import Any
 
 import numpy as np
-from modal_app import app, build_encoder
-
 from core.config import JST, ROOT, load_config
 from core.io import append_jsonl, save_json
 from core.ratings import load_ratings
@@ -30,6 +28,7 @@ from core.similarity import cosine_similarity as _cosine_similarity
 from core.similarity import max_cosine_similarity
 from core.topics import load_topics
 from fetch_daily.scoring import pick_topic_reservations
+from modal_app import app, build_encoder
 
 from .cluster_ranking import (
     compute_alpha,

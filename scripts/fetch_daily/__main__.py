@@ -1,8 +1,10 @@
 """python -m scripts.fetch_daily のエントリポイント"""
-from .cli import main
-from datetime import datetime
-from core.config import JST
 import argparse
+from datetime import datetime
+
+from core.config import JST
+
+from .cli import main
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--date", default=datetime.now(JST).strftime("%Y%m%d"))

@@ -9,11 +9,17 @@ scripts/fetch_daily/dedup.py のユニットテスト
 import json
 import os
 import sys
+from datetime import datetime, timedelta
 from pathlib import Path
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from core.config import JST
 from fetch_daily.dedup import deduplicate, load_seen_ids
+
+
+def _stamp(days_ago: int) -> str:
+    return (datetime.now(JST).date() - timedelta(days=days_ago)).strftime("%Y%m%d")
 
 
 class TestDeduplicate:
@@ -46,8 +52,8 @@ class TestDeduplicate:
 class TestLoadSeenIds:
     def test_collects_ids_from_json_files(self, tmp_path: Path):
         data = {"papers": [{"id": "2603.00001"}, {"id": "2603.00002"}]}
-        (tmp_path / "20260314.json").write_text(json.dumps(data), encoding="utf-8")
-        (tmp_path / "20260313.json").write_text(
+        (tmp_path / f"{_stamp(0)}.json").write_text(json.dumps(data), encoding="utf-8")
+        (tmp_path / f"{_stamp(1)}.json").write_text(
             json.dumps({"papers": [{"id": "2603.00003"}]}), encoding="utf-8"
         )
 
@@ -59,7 +65,7 @@ class TestLoadSeenIds:
     def test_non_date_files_ignored(self, tmp_path: Path):
         (tmp_path / "map.json").write_text(json.dumps({"papers": [{"id": "9999.99999"}]}))
         (tmp_path / "ratings.json").write_text(json.dumps({"ratings": []}))
-        (tmp_path / "20260314.json").write_text(
+        (tmp_path / f"{_stamp(0)}.json").write_text(
             json.dumps({"papers": [{"id": "2603.00001"}]})
         )
 
@@ -72,12 +78,13 @@ class TestLoadSeenIds:
         assert ids == set()
 
     def test_days_limit_excludes_old_files(self, tmp_path: Path):
-        (tmp_path / "20260315.json").write_text(
+        (tmp_path / f"{_stamp(0)}.json").write_text(
             json.dumps({"papers": [{"id": "new.00001"}]})
         )
-        (tmp_path / "20260101.json").write_text(
+        (tmp_path / f"{_stamp(2)}.json").write_text(
             json.dumps({"papers": [{"id": "old.00001"}]})
         )
 
         ids = load_seen_ids(tmp_path, days=0)
         assert "old.00001" not in ids
+        assert "new.00001" in ids

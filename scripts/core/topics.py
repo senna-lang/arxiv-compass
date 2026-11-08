@@ -1,8 +1,12 @@
 """Added topics. Separate basis; alpha does not zero them."""
-import json, os, urllib.request
+import json
+import os
+import urllib.request
 from pathlib import Path
 from typing import Any
+
 from core.config import ROOT as _DEFAULT_ROOT
+
 
 def load_topics(config: dict[str, Any], root: Path = _DEFAULT_ROOT) -> list[dict[str, Any]]:
     url = os.environ.get("TOPICS_URL") or config.get("topics_url", "")
@@ -17,7 +21,7 @@ def _fetch(url: str) -> dict[str, Any] | None:
     try:
         with urllib.request.urlopen(url) as res:
             return json.loads(res.read())
-    except Exception as e:
+    except (OSError, ValueError) as e:
         print(f"[WARN] Failed to fetch topics from {url}: {e}")
         return None
 

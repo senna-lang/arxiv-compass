@@ -9,7 +9,6 @@ import re
 from typing import Any
 
 import arxiv
-
 from core.arxiv_client import build_category_query, strip_version
 
 

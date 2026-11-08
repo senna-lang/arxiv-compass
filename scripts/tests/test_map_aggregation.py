@@ -14,7 +14,11 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from map_pipeline.aggregation import build_cluster_dict, build_map_output, generate_label
+from map_pipeline.aggregation import (
+    build_cluster_dict,
+    build_map_output,
+    generate_label,
+)
 
 SAMPLE_KEYWORDS = ["inference", "latency", "throughput", "serving", "quantization"]
 SAMPLE_CENTROID = list(np.random.default_rng(0).random(768).tolist())

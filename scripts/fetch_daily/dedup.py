@@ -39,7 +39,8 @@ def load_seen_ids(output_dir: Path, days: int = 30) -> set[str]:
             for p in data.get("papers", []):
                 if "id" in p:
                     seen.add(p["id"])
-        except Exception:
+        except (OSError, ValueError) as e:
+            print(f"[WARN] Failed to read seen ids from {path}: {e}")
             continue
 
     return seen

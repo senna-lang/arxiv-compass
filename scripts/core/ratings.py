@@ -33,7 +33,7 @@ def load_ratings(
             with urllib.request.urlopen(ratings_url) as res:
                 data = json.loads(res.read())
             return data.get("ratings", [])
-        except Exception as e:
+        except (OSError, ValueError) as e:
             print(f"[WARN] Failed to fetch ratings from {ratings_url}: {e}")
 
     ratings_path = output_dir / "ratings.json"

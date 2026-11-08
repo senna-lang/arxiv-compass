@@ -8,14 +8,20 @@ scripts/recommend.py のユニットテスト
 - rank_clusters: クラスタをfinal_scoreで降順ソート
 """
 
-import sys
+import itertools
 import os
+import sys
 
 import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from recommend import compute_instance_score, compute_alpha, compute_final_score, rank_clusters  # re-exported from recommend package
+from recommend import (  # re-exported from recommend package
+    compute_alpha,
+    compute_final_score,
+    compute_instance_score,
+    rank_clusters,
+)
 
 
 class TestComputeInstanceScore:
@@ -58,7 +64,7 @@ class TestComputeAlpha:
 
     def test_monotonically_increasing(self):
         alphas = [compute_alpha(n, 50) for n in range(0, 55, 5)]
-        assert all(a <= b for a, b in zip(alphas, alphas[1:]))
+        assert all(a <= b for a, b in itertools.pairwise(alphas))
 
 
 class TestComputeFinalScore:

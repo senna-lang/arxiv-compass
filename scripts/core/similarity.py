@@ -6,7 +6,7 @@
 - mean_cosine_similarity(vec, vecs): 1対多のcos類似度平均（空リストは0.0）
 """
 
-from typing import Sequence
+from collections.abc import Sequence
 
 import numpy as np
 

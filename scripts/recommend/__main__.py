@@ -1,6 +1,7 @@
 """python -m scripts.recommend のエントリポイント"""
-from .cli import main
 import argparse
+
+from .cli import main
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--top-clusters", type=int, default=3)

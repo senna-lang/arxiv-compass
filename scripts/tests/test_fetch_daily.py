@@ -12,13 +12,23 @@ import json
 import os
 import sys
 import tempfile
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from fetch_daily import deduplicate, load_seen_ids, score_papers  # re-exported from fetch_daily package
+from core.config import JST
+from fetch_daily import (  # re-exported from fetch_daily package
+    deduplicate,
+    load_seen_ids,
+    score_papers,
+)
+
+
+def _stamp(days_ago: int) -> str:
+    return (datetime.now(JST).date() - timedelta(days=days_ago)).strftime("%Y%m%d")
 
 
 class TestDeduplicate:
@@ -167,8 +177,8 @@ class TestLoadSeenIds:
                     {"id": "2603.00002"},
                 ]
             }
-            (p / "20260314.json").write_text(json.dumps(data), encoding="utf-8")
-            (p / "20260313.json").write_text(
+            (p / f"{_stamp(0)}.json").write_text(json.dumps(data), encoding="utf-8")
+            (p / f"{_stamp(1)}.json").write_text(
                 json.dumps({"papers": [{"id": "2603.00003"}]}), encoding="utf-8"
             )
 
@@ -183,7 +193,7 @@ class TestLoadSeenIds:
             p = Path(tmpdir)
             (p / "map.json").write_text(json.dumps({"papers": [{"id": "9999.99999"}]}))
             (p / "ratings.json").write_text(json.dumps({"ratings": []}))
-            (p / "20260314.json").write_text(
+            (p / f"{_stamp(0)}.json").write_text(
                 json.dumps({"papers": [{"id": "2603.00001"}]})
             )
 
@@ -200,15 +210,13 @@ class TestLoadSeenIds:
         """days=0 のとき今日分だけを対象とする（古い日付は除外される）"""
         with tempfile.TemporaryDirectory() as tmpdir:
             p = Path(tmpdir)
-            # 未来の日付（今日以降）
-            (p / "20260315.json").write_text(
+            (p / f"{_stamp(0)}.json").write_text(
                 json.dumps({"papers": [{"id": "new.00001"}]})
             )
-            # 古い日付（days=0 なら today のみ）
-            (p / "20260101.json").write_text(
+            (p / f"{_stamp(2)}.json").write_text(
                 json.dumps({"papers": [{"id": "old.00001"}]})
             )
 
             ids = load_seen_ids(p, days=0)
-            # days=0 → 今日以降のみ含める。20260101 は除外
             assert "old.00001" not in ids
+            assert "new.00001" in ids

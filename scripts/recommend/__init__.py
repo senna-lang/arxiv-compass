@@ -14,9 +14,9 @@ from .cluster_ranking import (
 from .serendipity import select_serendipity_papers
 
 __all__ = [
-    "compute_instance_score",
     "compute_alpha",
     "compute_final_score",
+    "compute_instance_score",
     "rank_clusters",
     "select_serendipity_papers",
 ]

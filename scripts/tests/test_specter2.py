@@ -8,8 +8,8 @@ scripts/specter2.py のユニットテスト
 - バッチ分割が正しく動く
 """
 
-import sys
 import os
+import sys
 from unittest.mock import MagicMock, patch
 
 import numpy as np

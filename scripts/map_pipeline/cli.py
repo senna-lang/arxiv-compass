@@ -20,10 +20,9 @@ from datetime import datetime
 from typing import Any
 
 import numpy as np
-from modal_app import app, build_encoder
-
 from core.config import JST, ROOT, load_config
 from core.io import append_jsonl, save_json
+from modal_app import app, build_encoder
 
 from .aggregation import build_cluster_dict, build_map_output
 from .clustering import build_bertopic_model

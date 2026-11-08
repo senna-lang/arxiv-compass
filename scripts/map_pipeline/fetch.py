@@ -12,7 +12,6 @@ from pathlib import Path
 from typing import Any
 
 import arxiv
-
 from core.arxiv_client import build_category_query
 from core.config import JST
 

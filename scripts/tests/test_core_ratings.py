@@ -8,6 +8,7 @@ scripts/core/ratings.py のユニットテスト
 import json
 import os
 import sys
+import urllib.error
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -53,7 +54,7 @@ class TestLoadRatings:
         ratings_file.write_text(json.dumps(data), encoding="utf-8")
 
         config = self._make_config(str(tmp_path), ratings_url="https://example.com/api/ratings")
-        with patch("urllib.request.urlopen", side_effect=Exception("network error")):
+        with patch("urllib.request.urlopen", side_effect=urllib.error.URLError("network error")):
             result = load_ratings(config, root=tmp_path.parent)
 
         assert result == data["ratings"]
@@ -65,8 +66,10 @@ class TestLoadRatings:
         mock_response.__enter__ = lambda s: s
         mock_response.__exit__ = MagicMock(return_value=False)
         config = self._make_config(str(tmp_path), ratings_url="https://config.example/api/ratings")
-        with patch.dict(os.environ, {"RATINGS_URL": "https://env.example/api/ratings"}):
-            with patch("urllib.request.urlopen", return_value=mock_response) as opened:
-                result = load_ratings(config, root=tmp_path.parent)
+        with (
+            patch.dict(os.environ, {"RATINGS_URL": "https://env.example/api/ratings"}),
+            patch("urllib.request.urlopen", return_value=mock_response) as opened,
+        ):
+            result = load_ratings(config, root=tmp_path.parent)
         opened.assert_called_once_with("https://env.example/api/ratings")
         assert result == body["ratings"]
