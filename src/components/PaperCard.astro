@@ -43,6 +43,12 @@ const jevTooltip = "Jev relevance rank among today's 20 papers. Card order remai
       <span class="category">{firstCategory}</span>
       <span class="sep">·</span>
       <span class="score">score {scorePercent}%</span>
+      {paper.matched_topic && (
+        <>
+          <span class="sep">·</span>
+          <span class="score">topic {paper.matched_topic}</span>
+        </>
+      )}
       {
         paper.jev && (
           <>

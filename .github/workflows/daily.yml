@@ -54,6 +54,7 @@ jobs:
         run: PYTHONPATH=scripts USE_MODAL=1 modal run -m fetch_daily.cli --log
         env:
           RATINGS_URL: ${{ secrets.RATINGS_URL }}
+          TOPICS_URL: ${{ secrets.TOPICS_URL }}
 
       - name: Build
         run: bun run build

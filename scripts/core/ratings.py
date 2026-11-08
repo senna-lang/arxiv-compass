@@ -6,6 +6,7 @@ ratings データ取得ユーティリティ
 """
 
 import json
+import os
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -24,7 +25,7 @@ def load_ratings(
         config: load_config() の返り値
         root: リポジトリルートパス（テスト時に上書き可能）
     """
-    ratings_url: str = config.get("ratings_url", "")
+    ratings_url: str = os.environ.get("RATINGS_URL") or config.get("ratings_url", "")
     output_dir = root / config["output_dir"]
 
     if ratings_url:

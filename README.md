@@ -147,16 +147,20 @@ match_score = α × cos_sim(paper, highly-rated papers) + (1-α) × cos_sim(pape
 ```
 
 Early on when ratings are few, similarity to interest_profile dominates;
-as ratings accumulate, similarity to the actual rating data takes over.
+as ratings accumulate, that prior fades and stars take over.
+Topics added later are a separate basis and do not fade.
+Each topic is embedded with `adhoc_query` and matched against the paper's query vector, not mixed into the star average.
+The daily list stays 20 papers. Up to `fetch_daily.topic_slots` of those slots are held for papers that match an added topic and would otherwise be dropped. Unused slots go back to the star ranking.
+Weekly recommendations append the same kind of match when it already sits in a top cluster. They do not search outside the map.
 
-Describe your interest areas in natural language in `interest_profile` in `config.jsonc` (7 items).
+Describe the cold-start areas in `interest_profile` in `config.jsonc`. Add later topics from the daily page; they are stored apart from stars.
 
 ### Choosing between SPECTER2 adapters
 
 | Adapter | Purpose |
 |---|---|
 | `proximity` | Paper-to-paper similarity (embedding abstracts) |
-| `adhoc_query` | Query→paper retrieval (embedding interest_profile) |
+| `adhoc_query` | Query→paper retrieval (embedding interest_profile and added topics) |
 
 ## Experimental shadow ranking
 

@@ -15,6 +15,7 @@ export type Paper = {
   categories: string[];
   submitted: string;
   score: number;
+  matched_topic?: string | null;
   github_url?: string;
   /** shadow mode の Jev 結果。meta.jev.status === "complete" の日だけ全論文に付く */
   jev?: JevRank;
@@ -81,6 +82,15 @@ export type RatingsData = {
   ratings: Rating[];
 };
 
+export type Topic = {
+  text: string;
+  added_at: string;
+};
+
+export type TopicsData = {
+  topics: Topic[];
+};
+
 export type Cluster = {
   id: number;
   keywords: string[];
@@ -137,6 +147,7 @@ export type Recommendation = {
   match_score: number;
   matched_cluster: string;
   submitted: string;
+  matched_topic?: string | null;
 };
 
 export type TopCluster = {

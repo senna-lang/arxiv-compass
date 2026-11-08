@@ -24,10 +24,12 @@ from modal_app import app, build_encoder
 from core.config import JST, ROOT, load_config
 from core.io import append_jsonl, save_json
 from core.ratings import load_ratings
+from core.similarity import max_cosine_similarity
+from core.topics import load_topics
 
 from .dedup import deduplicate, load_seen_ids
 from .fetch import fetch_recent_papers
-from .scoring import score_papers
+from .scoring import score_papers, select_with_topic_slots
 
 
 def main(date_str: str, log: bool = False) -> None:
@@ -89,7 +91,21 @@ def main(date_str: str, log: bool = False) -> None:
     alpha = min(1.0, len(high_rated) / alpha_threshold)
     print(f"[INFO] alpha={alpha:.2f} (n_high_rated={len(high_rated)})")
 
-    papers = score_papers(candidates, vecs, rated_vecs, profile_vecs, alpha, top_n)
+    topics = load_topics(config)
+    topic_texts = [t["text"] for t in topics]
+    topic_slots = int(fetch_cfg.get("topic_slots", 4)) if topic_texts else 0
+    topic_min = float(fetch_cfg.get("topic_min_score", 0.55))
+    if topic_texts:
+        print(f"[INFO] Embedding {len(topic_texts)} topics (adhoc_query)...")
+        topic_vecs = list(enc.encode(topic_texts, adapter="adhoc_query"))
+        for paper, qvec in zip(candidates, enc.encode(texts, adapter="adhoc_query")):
+            score, idx = max_cosine_similarity(qvec, topic_vecs)
+            paper["topic_score"] = round(score, 4)
+            paper["matched_topic"] = topic_texts[idx]
+    scored = score_papers(candidates, vecs, rated_vecs, profile_vecs, alpha, len(candidates))
+    papers = select_with_topic_slots(scored, top_n, topic_slots, topic_min)
+    star_ids = {p["id"] for p in scored[:top_n]}
+    n_topic_slots = sum(1 for p in papers if p["id"] not in star_ids)
 
     date_formatted = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
     output: dict[str, Any] = {
@@ -103,6 +119,8 @@ def main(date_str: str, log: bool = False) -> None:
             "n_candidates": len(candidates),
             "n_ratings": len(high_rated),
             "alpha": round(alpha, 4),
+            "n_topics": len(topic_texts),
+            "n_topic_slots": n_topic_slots,
         },
     }
 
@@ -118,6 +136,8 @@ def main(date_str: str, log: bool = False) -> None:
             "n_candidates": len(candidates),
             "n_ratings": len(high_rated),
             "alpha": round(alpha, 4),
+            "n_topics": len(topic_texts),
+            "n_topic_slots": n_topic_slots,
             "n_papers": len(papers),
             "score": {
                 "min": round(min(scores), 4) if scores else None,

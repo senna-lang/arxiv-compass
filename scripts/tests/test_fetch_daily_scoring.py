@@ -12,7 +12,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from fetch_daily.scoring import score_papers
+from fetch_daily.scoring import score_papers, select_with_topic_slots
 
 
 class TestScorePapers:
@@ -88,3 +88,18 @@ class TestScorePapers:
             alpha=1.0, top_n=10,
         )
         assert abs(result[0]["score"] - 0.0) < 1e-6
+
+
+class TestTopicSlots:
+    def test_alpha_one_still_reserves_topic_match(self):
+        papers = [
+            {"id": "star", "score": 1.0, "topic_score": 0.0, "matched_topic": None},
+            {"id": "mid", "score": 0.5, "topic_score": 0.1, "matched_topic": None},
+            {"id": "topic", "score": 0.0, "topic_score": 0.9, "matched_topic": "interpretability"},
+        ]
+        star = select_with_topic_slots(papers, top_n=2, topic_slots=0)
+        assert [p["id"] for p in star] == ["star", "mid"]
+        reserved = select_with_topic_slots(papers, top_n=2, topic_slots=1, topic_min_score=0.55)
+        assert [p["id"] for p in reserved] == ["star", "topic"]
+        assert reserved[1]["matched_topic"] == "interpretability"
+        assert len(reserved) == 2

@@ -29,3 +29,15 @@ def mean_cosine_similarity(vec: np.ndarray, vecs: Sequence[np.ndarray]) -> float
         return 0.0
     sims = [cosine_similarity(vec, v) for v in vecs]
     return float(np.mean(sims))
+
+
+def max_cosine_similarity(vec: np.ndarray, vecs: Sequence[np.ndarray]) -> tuple[float, int]:
+    """
+    vec と vecs の cos 類似度の最大値と、そのインデックスを返す。
+    vecs が空の場合は (0.0, -1)。
+    """
+    if not vecs:
+        return 0.0, -1
+    sims = [cosine_similarity(vec, v) for v in vecs]
+    idx = max(range(len(sims)), key=sims.__getitem__)
+    return sims[idx], idx

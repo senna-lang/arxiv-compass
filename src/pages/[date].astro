@@ -11,10 +11,11 @@ import PaperCard from "../components/PaperCard.astro";
 import RecommendSection from "../components/RecommendSection.astro";
 import SerendipitySection from "../components/SerendipitySection.astro";
 import { extractDates } from "../lib/data";
-import type { DailyData, RatingsData } from "../lib/types";
+import type { DailyData, RatingsData, TopicsData } from "../lib/types";
 
 const dailyFiles = import.meta.glob<DailyData>("/data/????????.json", { eager: true });
 const ratingsFile = import.meta.glob<RatingsData>("/data/ratings.json", { eager: true });
+const topicsFile = import.meta.glob<TopicsData>("/data/topics.json", { eager: true });
 
 export function getStaticPaths() {
   const files = import.meta.glob("/data/????????.json");
@@ -41,6 +42,7 @@ const prevDate = idx > 0 ? dates[idx - 1] : null;
 const nextDate = idx < dates.length - 1 ? dates[idx + 1] : null;
 
 const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}`;
+const initialTopics = topicsFile["/data/topics.json"]?.topics ?? [];
 ---
 
 <MainLayout title={`arxiv compass ${displayDate}`}>
@@ -247,6 +249,54 @@ const displayDate = `${date.slice(0, 4)}-${date.slice(4, 6)}-${date.slice(6, 8)}
       <a href="/map">map</a>
     </nav>
   </header>
+
+  <form class="topics">
+    <span class="topics-label">Topics</span>
+    <ul class="topic-list" data-initial={JSON.stringify(initialTopics)}></ul>
+    <input class="topic-input" type="text" maxlength="200" placeholder="Add a topic, e.g. interpretability" aria-label="Add a topic" />
+  </form>
+  <script>
+    const list = document.querySelector(".topic-list");
+    const input = document.querySelector(".topic-input");
+    const bounce = () => { location.href = `/api/topics?next=${encodeURIComponent(location.href)}`; };
+    function render(topics) {
+      list.replaceChildren();
+      if (!topics.length) {
+        const empty = document.createElement("li");
+        empty.className = "topic-empty";
+        empty.textContent = "No added topics. Stars still rank the list.";
+        list.append(empty);
+        return;
+      }
+      for (const topic of topics) {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button"; btn.className = "topic-remove"; btn.dataset.text = topic.text; btn.textContent = topic.text;
+        li.append(btn);
+        list.append(li);
+      }
+    }
+    render(JSON.parse(list.dataset.initial || "[]"));
+    async function send(method, text) {
+      try {
+        const res = await fetch("/api/topics", { method, credentials: "include", headers: { "Content-Type": "application/json" }, body: text ? JSON.stringify({ text }) : undefined });
+        if (res.status === 401 || res.status === 403) return bounce();
+        if (res.ok) { if (method === "POST") input.value = ""; render((await res.json()).topics ?? []); }
+      } catch { bounce(); }
+    }
+    send("GET");
+    document.querySelector(".topics").addEventListener("submit", (e) => { e.preventDefault(); if (input.value.trim()) send("POST", input.value.trim()); });
+    list.addEventListener("click", (e) => { const btn = e.target.closest(".topic-remove"); if (btn) send("DELETE", btn.dataset.text); });
+  </script>
+  <style>
+    .topics { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin: 0 0 0.8rem; padding-bottom: 0.45rem; border-bottom: 1px solid #ebebeb; }
+    .topics-label, .topic-input, .topic-remove, .topic-empty { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; }
+    .topics-label, .topic-empty { color: #999; }
+    .topic-list { display: flex; flex-wrap: wrap; gap: 0.3rem; list-style: none; margin: 0; padding: 0; }
+    .topic-remove, .topic-input { border: 1px solid #ebebeb; background: #fff; color: #555; }
+    .topic-remove { cursor: pointer; padding: 0.1rem 0.35rem; }
+    .topic-input { padding: 0.15rem 0.35rem; min-width: 16rem; }
+  </style>
 
   <p class="count">{papers.length} papers</p>
 

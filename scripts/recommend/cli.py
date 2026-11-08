@@ -27,6 +27,9 @@ from core.config import JST, ROOT, load_config
 from core.io import append_jsonl, save_json
 from core.ratings import load_ratings
 from core.similarity import cosine_similarity as _cosine_similarity
+from core.similarity import max_cosine_similarity
+from core.topics import load_topics
+from fetch_daily.scoring import pick_topic_reservations
 
 from .cluster_ranking import (
     compute_alpha,
@@ -75,6 +78,11 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
     # interest_profile のEmbedding: adhoc_query アダプタ（クエリ→論文検索）
     profile_texts: list[str] = config["interest_profile"]
     profile_vecs: list[np.ndarray] = list(enc.encode(profile_texts, adapter="adhoc_query"))
+    topics = load_topics(config)
+    topic_texts = [t["text"] for t in topics]
+    topic_vecs = list(enc.encode(topic_texts, adapter="adhoc_query")) if topic_texts else []
+    topic_slots = int(config.get("fetch_daily", {}).get("topic_slots", 4)) if topic_texts else 0
+    topic_min = float(config.get("fetch_daily", {}).get("topic_min_score", 0.55))
 
     alpha = compute_alpha(len(high_rated), t["alpha_ratings_threshold"])
     print(f"[INFO] alpha={alpha:.2f} (ratings={len(high_rated)})")
@@ -102,8 +110,10 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
                 continue
             texts = [f"{p.title} [SEP] {p.summary}" for p in papers]
             vecs_list: list[np.ndarray] = list(enc.encode(texts, adapter="proximity"))
+            query_vecs = list(enc.encode(texts, adapter="adhoc_query")) if topic_vecs else [None] * len(papers)
             centroid = np.array(cluster["centroid"])
-            for paper, vec in zip(papers, vecs_list):
+            for paper, vec, qvec in zip(papers, vecs_list, query_vecs):
+                topic_score, topic_idx = max_cosine_similarity(qvec, topic_vecs) if qvec is not None else (0.0, -1)
                 centroid_score = _cosine_similarity(centroid, vec)
                 instance = compute_instance_score(vec, rated_vecs)
                 profile = compute_instance_score(vec, profile_vecs)
@@ -118,6 +128,8 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
                     "centroid_score": round(centroid_score, 4),
                     "matched_cluster": cluster["label"],
                     "submitted": paper.published.strftime("%Y-%m-%d"),
+                    "topic_score": round(topic_score, 4),
+                    "matched_topic": topic_texts[topic_idx] if topic_idx >= 0 else None,
                 })
         return candidates
 
@@ -126,13 +138,21 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
 
     # 上位クラスタ内の論文をスコアリング
     min_match: float = rec_config["min_match_score"]
-    recommendations = _score_cluster_papers(top)
+    scored_top = _score_cluster_papers(top)
     recommendations = [
-        r for r in recommendations
+        r for r in scored_top
         if r["centroid_score"] >= min_match and r["id"] not in rated_ids
     ]
     recommendations.sort(key=lambda r: r["match_score"], reverse=True)
     recommendations = recommendations[:top_n]
+    recommendations.extend(
+        pick_topic_reservations(
+            scored_top,
+            {r["id"] for r in recommendations} | rated_ids,
+            topic_slots,
+            topic_min,
+        )
+    )
 
     # セレンディピティ論文
     ser_min_match: float = rec_config.get("serendipity_min_match_score", 0.80)
@@ -175,6 +195,7 @@ def main(top_clusters: int, top_n: int, log: bool = False) -> None:
         log_entry = {
             "ts": datetime.now(JST).isoformat(),
             "n_ratings": len(high_rated),
+            "n_topics": len(topic_texts),
             "alpha": round(alpha, 4),
             "top_clusters": [{"label": c["label"], "score": c["score"]} for c in top],
             "n_recommendations": len(recommendations),

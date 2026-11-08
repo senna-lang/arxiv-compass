@@ -57,3 +57,16 @@ class TestLoadRatings:
             result = load_ratings(config, root=tmp_path.parent)
 
         assert result == data["ratings"]
+
+    def test_ratings_url_env_overrides_config(self, tmp_path: Path):
+        body = {"ratings": [{"id": "2301.00004", "rating": 3}]}
+        mock_response = MagicMock()
+        mock_response.read.return_value = json.dumps(body).encode()
+        mock_response.__enter__ = lambda s: s
+        mock_response.__exit__ = MagicMock(return_value=False)
+        config = self._make_config(str(tmp_path), ratings_url="https://config.example/api/ratings")
+        with patch.dict(os.environ, {"RATINGS_URL": "https://env.example/api/ratings"}):
+            with patch("urllib.request.urlopen", return_value=mock_response) as opened:
+                result = load_ratings(config, root=tmp_path.parent)
+        opened.assert_called_once_with("https://env.example/api/ratings")
+        assert result == body["ratings"]

@@ -32,6 +32,7 @@ if (!data || data.recommendations.length === 0) {
           <div class="rec-meta">
             <span class="matched-cluster">{rec.matched_cluster}</span>
             <span class="match-score">match {Math.round(rec.match_score * 100)}%</span>
+            {rec.matched_topic && <span class="match-score">topic {rec.matched_topic}</span>}
           </div>
           <h3 class="rec-title">
             <a href={rec.url} target="_blank" rel="noopener noreferrer">
