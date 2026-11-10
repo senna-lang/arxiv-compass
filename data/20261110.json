@@ -1,0 +1,386 @@
+{
+  "date": "2026-11-10",
+  "collected_at": "2026-11-10T15:53:17.361831+09:00",
+  "papers": [
+    {
+      "id": "2611.12041",
+      "title": "SMO: Compiling Natural Language Skills into Graphs of Reusable State-Move-Outcome Bricks",
+      "authors": [
+        "Chao Chen",
+        "Jiashuo Zhang",
+        "Yunhang Shen",
+        "Liangyu Lian",
+        "Rongrong Ji"
+      ],
+      "abstract": "Large language model agents increasingly rely on reusable natural-language skills, yet growing skill collections remain accumulations of isolated text artifacts that are difficult to compare, deduplicate, and compose. We argue that the reusable content of a skill lies not in its surface wording but in its procedural transitions: which operation to execute under a given state and which observable outcome to produce. Based on this observation, we propose State-Move-Outcome (SMO), a compilation-like framework that decomposes raw skills into reusable procedural bricks and organizes admitted bricks as an externalized symbolic structure. When compiling a skill, SMO first retrieves and composes existing bricks, dynamically connects them through Outcome-to-State conditions, and creates a candidate brick only for an uncovered procedure; the candidate becomes reusable only after validation and admission. Experiments on SkillsBench v1.1 demonstrate that SMO represents 232 rawSkills from 87 underlying tasks with 95 shared bricks, reducing the corresponding skill representations from 366,472 to 149,154 tokens--a $\\mathbf{59.3}\\times$ reduction and $\\mathbf{2.46}\\times$ compression. Across 232 skill-conditioned evaluation instances, SMO raises the average task score from $\\mathbf{0.6379}$ to $\\mathbf{0.7478}$ and increases 5/5 Pass instances from $\\mathbf{138}$ to $\\mathbf{164}$, while matching or outperforming rawSkill on $\\mathbf{208}$ of $\\mathbf{232}$ instances. It also reduces average runtime token consumption by $\\mathbf{38.38\\%}$. These results show that compiling natural-language skills into shared procedural units can jointly improve skill reuse, representation efficiency, and downstream execution.",
+      "url": "https://arxiv.org/abs/2611.12041",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8952
+    },
+    {
+      "id": "2611.12128",
+      "title": "Toward Sustainable Agentic AI: Carbon Tradeoffs Across Iterative Self-Refinement and Tool-Augmented Coding",
+      "authors": [
+        "Boris Ruf",
+        "Adrien de Mailly Nesle",
+        "Marcin Detyniecki"
+      ],
+      "abstract": "Agentic language model systems can improve performance either by iterating on their own outputs or by using external tools in grounded environments. While these strategies can reduce error rates and substitute for larger models in some settings, their environmental cost remains relatively underexplored. We present two complementary empirical studies that estimate the energy and carbon footprint of agentic AI across settings of increasing complexity. Study~1 evaluates iterative verbal self-refinement: GPT-4.1-mini at $k = 1$--$5$ steps versus a GPT-4.1 single-pass baseline on two MATH benchmark splits. Study~2 evaluates tool-augmented agentic coding: GPT-4.1-mini, Claude Opus~4.6, and GPT-5.3-codex on SWE-bench Lite, where agents operate inside Docker-isolated environments with access to code execution and file editing tools. In Study~1, $k=3$ refinements close a 16-percentage-point accuracy gap to within 1~point, but nearly triple the carbon footprint relative to the cheap single-pass baseline while remaining below the GPT-4.1 single-pass baseline under the current token-based carbon scenario. In Study~2, GPT-5.3-codex achieves the highest resolution rate in this sample (81.2\\%), ahead of Claude Opus~4.6 (68.9\\%) and GPT-4.1-mini (25.0\\%), but resolved-task-normalized efficiency remains mixed: GPT-4.1-mini is lowest on estimated carbon and cost per resolved task, while GPT-5.3-codex delivers substantially higher task success. All carbon estimates cover output-token inference only; prompt tokens, which exceed 99\\% of tokens in Study~2, and tool execution are not charged, so the figures are lower bounds on the full agentic footprint.",
+      "url": "https://arxiv.org/abs/2611.12128",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8917
+    },
+    {
+      "id": "2611.12068",
+      "title": "MIRIX-2.0: Multi-Agent Memory System",
+      "authors": [
+        "Wei-Chieh Huang",
+        "Weizhi Zhang",
+        "Jiayan Nan",
+        "Peng Xia",
+        "Yu Wang"
+      ],
+      "abstract": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
+      "url": "https://arxiv.org/abs/2611.12068",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8916
+    },
+    {
+      "id": "2611.11901",
+      "title": "Adaptive Entropy-Sparing for Efficient Reasoning",
+      "authors": [
+        "Cong Jiang",
+        "Xiaofeng Zhang",
+        "Tom Ko",
+        "Zheng Zhang"
+      ],
+      "abstract": "Large Reasoning Models (LRMs) produce explicit chains of thought to improve transparency, but they frequently overthink, generating long yet inefficient reasoning chains that inflate computational costs and risk introducing errors. While numerous reinforcement learning methods struggle to penalize verbosity to achieve conciseness, they typically apply the penalty uniformly across lengthy sequences, which leads to credit confounding, that is, the failure to distinguish essential reasoning steps from superfluous ones. In this paper, we study a measurable proxy for this confounding: high-entropy tokens that often coincide with surface transition points where reasoning re-enters verification. Based on this insight, we propose Adaptive Entropy-Sparing (AES), which selectively spares high-entropy tokens that occur before an efficient in-group reference, while penalizing overlength high-entropy suffix tokens associated with superfluous branching. Our AES thereby navigates the suppression-exploration trade-off, reducing overthinking while preserving average reasoning accuracy. We also present an entropy-length model that motivates why local uncertainty can serve as a proxy for future reasoning cost. Across eight reasoning benchmarks, AES reduces reasoning length by up to 52.9% while increasing mean accuracy by up to 3.8% over the base models, consistently outperforming existing efficiency-oriented methods. Our code is available at https://github.com/MobiusDai/AES.",
+      "url": "https://arxiv.org/abs/2611.11901",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "github_url": "https://github.com/MobiusDai/AES.",
+      "score": 0.8916
+    },
+    {
+      "id": "2611.12060",
+      "title": "COMPASS: Composable Policy-Amortized Structured Search for LLM-Based Optimization Modeling",
+      "authors": [
+        "Nguyen Le Minh Hoang",
+        "Van Duc Cuong",
+        "Bui Trong Duc",
+        "Huynh Thi Thanh Binh"
+      ],
+      "abstract": "Large language models offer a promising technique for translating natural-language optimization problems into solver code, but their reliability remains constrained by the quality of template retrieval. While recent structured methods improve over flat prompting through hierarchical taxonomy search, their traversal rules remain fixed or LLM-driven at inference time, leaving retrieval unable to improve from past successes and failures. This motivates treating template retrieval as a policy that can be learned from modeling experience, rather than as a static inference-time rule. We propose COMPASS, a policy-amortized framework for retrieving optimization templates in LLM-based solver modeling, which represents the template library as a directed acyclic graph and formulates retrieval as a sequential decision process over template nodes. A deep Q-network learns a reusable traversal policy from template-level judgments and execution feedback, reducing reliance on fixed heuristic traversal through feedback-driven graph navigation. To support extensible retrieval, COMPASS embeds problem descriptions and template nodes in a shared semantic space, allowing newly inserted templates to be scored from their text descriptions without redefining the action space. Experiments across multiple LLM backbones and optimization-modeling benchmarks demonstrate that COMPASS consistently improves over heuristic structured retrieval, with the largest gains on complex and mixed-category problems.",
+      "url": "https://arxiv.org/abs/2611.12060",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8906
+    },
+    {
+      "id": "2611.11975",
+      "title": "AutoQS: Automated Quantization Strategy Design with Large Language Models",
+      "authors": [
+        "Zhen Liu",
+        "Zhiqin Yang",
+        "Yonggang Zhang",
+        "Jianyi Liu",
+        "Jinjun Wang",
+        "Jingwen Fu"
+      ],
+      "abstract": "Quantization reduces LLM deployment costs, but effective strategies must balance model quality and storage. LLM-driven search can automate strategy design through repeated proposal and evaluation. This process must identify useful strategies within a limited evaluation budget. The key challenge is that \\textit{actual quantization is expensive, while inexpensive proxies may not reflect quantized-model performance.} To address this challenge, we present AutoQS, an \\textbf{Auto}mated \\textbf{Q}uantization \\textbf{S}trategy Design with LLMs. AutoQS keeps weight precision fixed and searches group-size allocations across layers and operators under deployment constraints. Evaluation history guides coordinated LLM proposals, while deterministic validation ensures compatible allocations. An inexpensive quality proxy evaluates candidates, and an candidate repository retains alternative allocations to inform subsequent proposals. Periodic actual quantization complements these proxy evaluations with measured quality and checkpoint storage, providing feedback for further search within the evaluation budget. Experiments on Qwen2.5-7B-Instruct show that AutoQS improves seven-task average accuracy over uniform-group GPTQ and AWQ by 0.70 and 1.12 percentage points, respectively, at four-bit weight precision.",
+      "url": "https://arxiv.org/abs/2611.11975",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8887
+    },
+    {
+      "id": "2611.12062",
+      "title": "Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers",
+      "authors": [
+        "Povilas Kvedaras",
+        "Tomas Rasymas"
+      ],
+      "abstract": "A model that takes over another model's conversation must normally re-read the whole history; a text hand-off shortens the re-read only by dropping content. KV-cache translation instead maps the source's cache into the target's own format, so the target continues from the full context without re-reading it. It works for grouped-query attention (GQA), but open-weights frontier models now cache compressed latents (MLA), sparse-attention indexer keys and fixed-size linear-attention states. We replicate KV-Lingo on a GQA pair and then give, for each of these objects, where to capture and inject it and a mechanism that reaches native quality. We study two hybrid pairs at 16-48B scale in both directions, Kimi-VL-A3B - Kimi-Linear-48B (MLA - MLA + Kimi Delta Attention) and Qwen3.5-27B - Qwen3.8-27B (Gated DeltaNet hybrids), plus a sparse-attention target (Qwen3.8-27B - Qwen3.8-Flash-Next). MLA latents translate with token-wise linear maps; recurrent states are copied with a closed-form correction or synthesised by replaying the target's own recurrence. Exact long-range recall needs token identity: decoding token ids from the source's layer-0 MLA latent raises needle recall from 0.09 to 0.99 at 2-32K and to 0.83-1.00 at 64K, eight times the longest training prompt. The hybrid full-MLA direction is within the paired confidence interval of native quality on every task metric, and same-shape GDN hybrids reach the native level in both directions (apart from 6% refusals inherited from the source), with time to first token 18.7 and 46.8 times shorter than a re-read at 64K tokens. Segment-wise multi-turn transfer stays at the re-prefill level; naive re-translation collapses. On the sparse-attention target, predicted indexer keys recall the needle as well as the target's own keys (one seed). We state as a hypothesis how the recipes transfer to 300B+ hybrid flagships.",
+      "url": "https://arxiv.org/abs/2611.12062",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.888
+    },
+    {
+      "id": "2611.11995",
+      "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+      "authors": [
+        "Zhengyu Hu",
+        "Zheyuan Xiao",
+        "Yike Wang",
+        "Hamish Ivison",
+        "Haoyu Wang",
+        "Yige Yuan",
+        "Rulin Shao",
+        "Yuetai Li",
+        "Niqi Lyu",
+        "Yicheng Ding",
+        "Shu Yang",
+        "Zhichen Zeng",
+        "Banghua Zhu",
+        "Jiaxin Pei",
+        "Kaize Ding",
+        "Pradeep Dasigi",
+        "Dan Roth",
+        "Hannaneh Hajishirzi",
+        "Noah A. Smith",
+        "Teng Xiao",
+        "Radha Poovendran"
+      ],
+      "abstract": "In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. We introduce Infrathon, a benchmark of diverse, long-horizon AI infrastructure optimization tasks across different levels. We evaluate six models across 150 runs with 24-hour budgets, totaling over 10,000 GPU-hours. Our results show that model rankings vary with the evaluation horizon, while 135 of the 150 runs achieve further improvements during the second half of their budgets. These findings indicate that shorter evaluations can overlook both optimization gains and changes in relative model performance. We also find agents can discover solutions that outperform human-designed baselines: Claude Opus 5.5 increases the mean KV-cache compression ratio from 6.82% with the human-designed Quant-VideoGen codec to 19.86%. Analysis of agent trajectories identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement. Together, Our Infrathon framework provide resources for constructing long-horizon tasks, evaluating frontier agents, and discovering good infrastructure solutions.",
+      "url": "https://arxiv.org/abs/2611.11995",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8878
+    },
+    {
+      "id": "2611.11910",
+      "title": "Late but Valuable: Why Deadlines Change the Measured Value of LLM Reasoning",
+      "authors": [
+        "Sina Barazandeh",
+        "Benjamin E. Lundell",
+        "Jose Lugo-Martinez"
+      ],
+      "abstract": "Large language models (LLMs) increasingly plan and run experiments in automated laboratories. These experiments keep running while the model reasons and run on schedules with hard deadlines. If an LLM-generated answer arrives late, the system executes a safe fallback action instead, such as rejecting a sample. This creates a systems problem that standard serving metrics do not capture. An answer that matches the fallback adds no value, and answers that differ from the fallback may require more reasoning time. Reporting answer quality and latency separately can therefore overstate the value of reasoning. We test this on synthetic sample decisions, where the best choice is known exactly and a runtime enforces the deadline. We compare one LLM's fast mode, which answers directly, with its thinking mode, which reasons first. In a prespecified replay of 1,200 new decisions, thinking answers that missed a deadline were worth about five times as much as on-time ones. Multiplying the on-time rate by the mean answer value predicted about twice the value that thinking delivered. This prediction overstated thinking's advantage over fast mode by 0.0241 per decision, and by 0.0191 in a repeat on 300 new decisions. Both 95% confidence intervals excluded zero. In a single-GPU Qwen3-8B experiment using simultaneous request bursts, raising the number of requests from 8 to 56 reduced the share of thinking answers that met a 45 s deadline from 79.2% to 1.4%, although total output tripled. Evaluations of LLM agents for laboratories should therefore measure each answer's value and arrival time together and score the action that actually runs.",
+      "url": "https://arxiv.org/abs/2611.11910",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.887
+    },
+    {
+      "id": "2611.12293",
+      "title": "Depth as a Candidate Source: Portfolio Allocation for Recurrent Test-Time Scaling in Large Language Models",
+      "authors": [
+        "Chaoyuan Hao",
+        "Wentao Yue",
+        "Yanyan Wu",
+        "Boyuan Gao",
+        "Tianyou Lai",
+        "Maolin Wang",
+        "Yongxin Ni",
+        "Hanwen Du",
+        "Youhua Li"
+      ],
+      "abstract": "Recurrent latent reasoning in large lanugage models (LLMs) scales test-time computation by increasing recurrent depth, naturally framing inference as a problem of deciding when to stop. We identify a previously overlooked limitation of this single-depth view through systematic preliminary analysis: deeper recurrence can lose correct solutions found at shallower depths, while depth-specific success sets remain broadly non-nested even after controlling for marginal accuracy. This suggests that depth determines not only computation cost, but also access to distinct candidate solutions. Motivated by this finding, we propose Depth Portfolio Allocation (DPA), which reformulates recurrent test-time scaling as budgeted allocation across depth-specific candidate sources. DPA supports both fixed portfolios and feedback-guided sequential allocation under a shared inference budget. Experiments on GSM8K, SVAMP, MultiArith, and MBPP show that mixed-depth portfolios expand oracle coverage under matched candidate counts and nominal costs, while feedback-guided allocation generally matches or improves uniform allocation and can reduce computation in high-budget settings. Code and data are avaible at : https://anonymous.4open.science/r/LLM-latent-B7BC/.",
+      "url": "https://arxiv.org/abs/2611.12293",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.886
+    },
+    {
+      "id": "2611.12240",
+      "title": "Prune, Don't Merge: Expert Compression of Mixture-of-Experts LLMs on Multilingual Production Tasks",
+      "authors": [
+        "Tomas Rasymas",
+        "Povilas Kvedaras"
+      ],
+      "abstract": "Mixture-of-Experts language models are cheap to run per token but expensive to hold in GPU memory, which drives the cost of serving them in production. One-shot expert compression shrinks them after a single calibration pass. Its two current state-of-the-art methods are REAP for expert pruning, which deletes the least salient experts, and REAM for expert merging, which merges them into the most salient ones. Both have been evaluated only on academic benchmarks. We compare the two on five multilingual production tasks of a web-hosting company, from classification to the generation of marketing HTML email templates, with two 30B-parameter models (Qwen3-30B-A3B-Instruct-2507 and the hybrid Mamba-attention Nemotron-3.5-Lightning) at 25% and 50% of experts removed and the same calibration data. Pruning wins: on the same rows, REAP is significantly better in 16 of 20 comparisons and REAM in 2. At 25%, REAP keeps 93.6% of Qwen3-30B's generative quality and REAM 62.5%, although on benchmarks the two are within a point for the same model. The damage concentrates in the output contract rather than the content: 89.8-95.2% of each significant loss on email templates comes from hard-gate failures such as invalid JSON, broken mobile layouts and runaway generation, and most failed non-English domain descriptions copy the prompt's English opening phrase. Cross-perplexity and logit divergence, two diagnostics from the REAP paper, also track production quality, as does the rate of repetition loops; n-gram diversity does not. We close with practical guidance for compressing MoE models for production.",
+      "url": "https://arxiv.org/abs/2611.12240",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8847
+    },
+    {
+      "id": "2611.12155",
+      "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+      "authors": [
+        "Jingfen Qiao",
+        "Rui Li",
+        "Shuaiqun Pan",
+        "Olga Gadyatskaya",
+        "Andrew Yates",
+        "Evangelos Kanoulas"
+      ],
+      "abstract": "LLM agents increasingly retrieve third-party skills from public registries and follow their procedures to complete user tasks. This reliance allows attackers to manipulate agent behavior by poisoning the skills. However, overtly malicious instructions can provide explicit signals for detection. We present StealthyPoison, a stealthy procedural poisoning attack that corrupts a skill's decision-critical rules to induce incorrect task outcomes while preserving its advertised functionality and normal execution. Unlike prior knowledge corruption attacks that craft poisoned content for known target question-answer pairs, StealthyPoison constructs reusable poisoned procedures from a publicly available third-party skill, without access to actual user requests or their ground-truth answers. To make the poisoned procedure generalize to unseen requests, it first synthesizes requests from the target skill and executes its clean version using a surrogate agent to obtain pseudo-references. These references and surrogate execution feedback guide the iterative refinement of payloads that alter decision-critical rules. To increase the likelihood that the poisoned skill is retrieved and selected over benign alternatives, the attack augments the poisoned skill's retrieval metadata with independently generated request descriptions. We evaluate StealthyPoison on 566 eligible target skills and 5,244 requests against more than 26,000 registry entries. It improves top-1 poisoned-skill placement by 13.6% relative to both HotFlip and GCG. Constructed using feedback from a single surrogate model, the procedural poisoning payloads transfer effectively and without modification to three held-out victim models and achieve end-to-end attack success in a Claude Code workflow powered by Opus 4.8. The defense evaluation further shows that most of these payloads evade detection by both SkillSpector and GPT-5.4-mini.",
+      "url": "https://arxiv.org/abs/2611.12155",
+      "categories": [
+        "cs.CR"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8845
+    },
+    {
+      "id": "2611.12120",
+      "title": "SCALE: Small-Model-First Concept Abstraction with LLM-Guided Experience Internalization",
+      "authors": [
+        "Hong Su"
+      ],
+      "abstract": "Autonomous agents must continually acquire reusable knowledge from experience without relying on costly large language model (LLM) reasoning for every decision. However, existing experience-based approaches often struggle to transform accumulated observations and reasoning into compact knowledge that lightweight models can independently apply. This paper proposes SCALE, a small-model-first framework that integrates selective LLM reasoning, experience-driven concept abstraction, and knowledge internalization. A lightweight model handles routine predictions, while prediction errors and accumulated cross-episode evidence selectively trigger LLM reflection. The LLM analyzes relevant historical experiences, generates positive and negative counterfactual examples, and proposes reusable concept hypotheses. Independently validated concepts are progressively incorporated into hierarchical neural representations, enabling lightweight models to exploit increasingly abstract knowledge. Meanwhile, mastered experiences are excluded from active memory while their original records remain available in a complete archive. Experiments across ten random seeds show that historical recall improves held-out accuracy from 87.11% to 98.28%, hierarchical concept knowledge increases difficult-case accuracy from 55.33% to 66.47%, and abstract archiving reduces active experience records from 6,000 to 1,528.",
+      "url": "https://arxiv.org/abs/2611.12120",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8845
+    },
+    {
+      "id": "2611.11659",
+      "title": "RADE: Risk-Adjusted Deployment Efficiency, A Framework for Routing, Memory, and Escalation in Safe LLM Systems",
+      "authors": [
+        "Chaymaa Abbas",
+        "Kareem Hassani",
+        "Mariette Awad"
+      ],
+      "abstract": "A deployed language model does not merely answer questions. It spends computation, consumes time, consults evidence, exposes memory, invites or avoids human review, and sometimes makes mistakes whose consequences are radically unequal. Yet LLM systems are still commonly compared as if the relevant object were a single model and the relevant outcome were a single benchmark score. This paper argues that the unit of analysis should instead be the deployment policy: the mechanism that decides when to retrieve, when to remember, when to call a larger model, when to verify, and when not to answer at all. We introduce risk-adjusted deployment efficiency (RADE), a system-level objective that scores the utility a deployment delivers net of inference, retry, oversight, and priced expected failure cost, while treating harms that cannot be priced as hard budgets alongside constraints on latency, privacy, and resources. The framework brings selective routing, retrieval and governed memory, efficient specialization, uncertainty estimation, abstention, and human escalation into a common account. We then examine five deployment regimes in which the same nominal LLM capability leads to different rational architectures, and propose a reporting protocol based on risk-coverage behavior, end-to-end cost, update drift, memory exposure, evidence quality, and escalation load. The central claim is modest but consequential: frontier capability should be treated as a resource to allocate, not a default state to maintain. A safe and sustainable system is not the one that always uses the strongest model; it is the one that spends capability where the reduction in risk or increase in utility justifies the cost.",
+      "url": "https://arxiv.org/abs/2611.11659",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-08",
+      "score": 0.8839
+    },
+    {
+      "id": "2611.12521",
+      "title": "Can the Confidence and Decisions of System 1 Models Be Trusted? An Explainability and Perturbation Audit of Jev-Style Decision Models",
+      "authors": [
+        "Julien Delaunay"
+      ],
+      "abstract": "\"System 1\" decision models (pioneered by TypeSafe AI's Jev) replace autoregressive text generation with a single forward pass returning typed probability distributions over declared schemas (Choice, Score, Noul). While deployed for low-latency routing and automated triage, their statistical calibration and post-hoc explainability remain uncharacterized. We introduce an open, deterministic audit benchmark evaluating System 1 decision models across calibration under label-preserving perturbations, cross-question interference, and post-hoc attribution faithfulness. Evaluating five open-weight models (0.8B to 27B) alongside generative System 2 baselines -- both single-token logprob scoring and structured JSON/CoT decoding -- across NLI (e-SNLI), adversarial syntactic shortcuts (HANS), synthetic clinical triage (N=900), prompt injection defense (Tensor Trust, N=250), and an 86-case logic-gate trigger suite yields five findings: (1) provider confidence is an exact closed-form dispersion transform (1 - H(p)/ln K on sub-10B models; normalized margin on Clef-27B) rather than empirical accuracy; (2) bundling multiple questions in one request induces directional cross-question interference (11.7% to 22.4% binary flips on Tev1-0.8B, vs. 0.1% to 0.2% on Tev1-4B); (3) System 1 models with >= 4B parameters are faster and better calibrated under syntactic shifts (ECE_w = 0.030 to 0.087) than logprob (0.144) and JSON (0.378) baselines; (4) for prompt-injection defense (N=250), >= 4B models achieve 0.988 to 0.998 AUROC with up to 95.2% recall and 0.0% false alarms at 48 to 60 ms; and (5) single-pass inference makes 512-coalition XAI interactive (1.3 to 3.2 s/input), while KernelSHAP with a logit link (S1-SHAP) mitigates softmax saturation on disjunctive OR gates (89.3% to 100.0% gate recovery vs. 57.1% to 82.1% in prob space; p_adj = 0.004).",
+      "url": "https://arxiv.org/abs/2611.12521",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8832
+    },
+    {
+      "id": "2611.11581",
+      "title": "Same Error, Different Recovery: How Delivery Changes LLM Agent Behavior",
+      "authors": [
+        "Sunghyeun Woo",
+        "Javier Conde",
+        "Pedro Reviriego"
+      ],
+      "abstract": "A tool-using language model must decide whether to retry a failed call, correct it, or stop and tell the user. The error text alone may not be enough: the same feedback can lead to different actions depending on where it appears in the conversation. We isolate this delivery problem by varying placement, guidance, retained history and turn structure. Two studies with plans fixed before data collection, across 13 open models from 3B to 70B parameters, compare the next action and subsequent task completion, with exact deterministic reruns. A new user turn that retains the failed exchange avoids the severe stopping failure observed in Llama models when that exchange is removed. It is non-inferior to history rewriting in pooled synthetic comparisons, but is not best for every model. We implement this form as an opt-in recovery layer within a deterministic inference engine and evaluate it on public benchmarks and a coding agent. On ToolMaze, it raises success on explicit errors by 14.2 points with 7-8B models and 10.5 points with 32-70B models; Loud/Quiet, 24 multi-turn tasks with visible failures and silent corruption, scored by final-state agreement, shows no measurable gain. A client given the exact fault kind performs better still. The findings support delivery as a distinct factor in recovery, not an engine-exclusive solution or a universal retry policy.",
+      "url": "https://arxiv.org/abs/2611.11581",
+      "categories": [
+        "cs.AI",
+        "cs.AR"
+      ],
+      "submitted": "2026-11-08",
+      "score": 0.8821
+    },
+    {
+      "id": "2611.11812",
+      "title": "CaseLaw: A Policy-Decoupled Framework for Training-Free Content Moderation",
+      "authors": [
+        "Qi Lu",
+        "Sen Li",
+        "Likun Shi",
+        "Xiaolong Jiang"
+      ],
+      "abstract": "Content moderation is inherently policy-dependent: moderation boundaries are often subtle, subjective, and frequently updated, while conventional rule based or fine-tuning based systems require costly rule rewriting, model retraining, or system redeployment. We propose CaseLaw, a policy-decoupled and training-free framework for adaptive content moderation. CaseLaw reformulates moderation as precedent-based retrieval and voting, where multimodal content is transformed into evidence-preserved structured semantics, embedded into a stable semantic space, and classified by thresholded voting over retrieved precedent labels. We train NoteCap on a large-scale corpus of structurally annotated notes to ensure consistent semantic extraction and freeze it during subsequent policy adaptation, which requires no additional training. Policy adaptation is achieved by updating the semantic case library, including case labels and mappings, without retraining models or modifying prompts. To evaluate CaseLaw, we construct MFO-RedNotes, a benchmark for the male-female opposition risk domain. We additionally provide a five category CoPro comparison. Experiments show that CaseLaw consistently outperforms competing baselines in both precision and recall across policy-dependent risk levels and broader safety categories, with category-wise precision/recall reaching up to 86.8%/90.1% on MFO-RedNotes across both policy settings and 94.5%/92.3% on CoPro. Our work highlights the potential of precedent-based reasoning for policy adaptive content moderation and offers a practical direction toward more stable, transparent, and training-free moderation systems.",
+      "url": "https://arxiv.org/abs/2611.11812",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.882
+    },
+    {
+      "id": "2611.12164",
+      "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+      "authors": [
+        "Khalil Hennara",
+        "Muhammad Hreden",
+        "Zeina Aldallal",
+        "Sara Chrouf",
+        "Safwan AlModhayan"
+      ],
+      "abstract": "Code localizers are usually trained to predict the files a reference patch edits, but the code a fixer needs to read is not the same as the code it changes. We propose Fixer-Guided Localization (FGL): the localizer proposes several localizations, a frozen fixer scores each by how likely it makes a verified patch, and the localizer is trained on these scores with weighted supervised fine-tuning, without running tests and without reinforcement learning. We build the full pipeline on Gemma 4 E4B for the Kaggle Gemma-4 Developer Agent competition, from 1,629 test-verified Kimi K3 trajectories. The FGL target helps the fixer find the bug as often as the teacher's localization while using 27.5% less code. On the development set, one EM round moves the agent in the expected direction compared with a matched control: more tasks reach a patch (53 vs. 46), fewer tasks get stuck reading files that do not exist (43 vs. 54), and more tasks are solved (8 vs. 6). Training also changes how the agent works: trained agents explore about three times more than the base model and write far fewer wrong patches, and the single agent solves up to 11 of 78 tasks, against 8 for the base model. An analysis of 13 evaluation runs identifies what limits a 4B agent under an 8-minute budget (time, repetition loops and edit quality) and gives practical lessons for training small coding agents. All data, code and adapters are publicly available.",
+      "url": "https://arxiv.org/abs/2611.12164",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8809
+    },
+    {
+      "id": "2611.12392",
+      "title": "More Than Just Style: Benchmarking Personality Influence in Large Language Models",
+      "authors": [
+        "Yuhao Liu",
+        "Mengyu Wang",
+        "Xiao Chen",
+        "Lu Liu"
+      ],
+      "abstract": "In addition to the effects of explicit input prompts and instructions, large language model outputs are influenced by underlying behavioral preferences similar to human personality tendencies. These tendencies can affect how models interpret situations and make decisions. However, their influence is difficult to disentangle from the effects of model capabilities and instructions. Therefore, we introduce SPACE, a benchmark framework combining a controlled evaluation protocol with complementary datasets for personality verification, capability assessment, and hierarchical situational tasks. Controlled comparisons across guidance conditions help distinguish personality influence from measured capability changes and immediate instruction effects. Experimental results demonstrate that although prompting can shift generation style, models' internal personality tendencies are persistent and not readily overridden by opposing instructions. Furthermore, these underlying tendencies have an observable influence on LLM task performance, highlighting the need for greater attention to these characteristics and potential applications. Training code and SPACE benchmark specifications are available at https://github.com/Niklauseik/SPACE-training.",
+      "url": "https://arxiv.org/abs/2611.12392",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "github_url": "https://github.com/Niklauseik/SPACE-training.",
+      "score": 0.8801
+    },
+    {
+      "id": "2611.12016",
+      "title": "Speculative Self-Distillation enables Efficient Knowledge Internalization",
+      "authors": [
+        "Shayan Talaei",
+        "Agam Bhatia",
+        "Arshia Soltani Moakhar",
+        "Jonas Hübotter",
+        "Amin Saberi",
+        "Azalia Mirhoseini"
+      ],
+      "abstract": "Many real-world applications require language models to internalize knowledge that was absent from pretraining, to incorporate continually updated facts, or to learn new domain skills. Self-distillation has emerged as a natural approach for this task. A model conditioned on the source material acts as the teacher, and an unconditioned student is trained to reproduce the teacher's behavior closed-book. We propose Speculative Self-Distillation (SSD), an efficient per-token mixed-policy method for self-distillation. The student generates each rollout by default, while the teacher intervenes only at positions where its next-token distribution substantially diverges from the student's. Unlike off-policy distillation with teacher-generated prefixes, this design keeps training rollouts close to the student's test-time behavior, while avoiding the low-signal states that fully on-policy rollouts drift into. In effect, SSD lets the teacher steer the rollout exactly where the privileged context changes the prediction. On three closed-book QA benchmarks measuring fact recall, knowledge updates, and skill acquisition, SSD nearly matches on-policy distillation while using 38-69% fewer supervised tokens and consistently outperforms off-policy distillation on the held-out test set. On a forgetting stress test, SSD retains the most general capability while also achieving the best in-domain accuracy and using less supervision than the on-policy baseline. Overall, SSD establishes a new accuracy-efficiency-forgetting Pareto frontier for self-distillation.",
+      "url": "https://arxiv.org/abs/2611.12016",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-09",
+      "score": 0.8799
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94,
+    "n_topics": 0,
+    "n_topic_slots": 0
+  }
+}
