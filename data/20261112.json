@@ -21,7 +21,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8785
+      "score": 0.8785,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 1,
+        "rank_delta": 0,
+        "relevance_probability": 0.9968735873699188
+      }
     },
     {
       "id": "2611.14355",
@@ -37,7 +43,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8777
+      "score": 0.8777,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 19,
+        "rank_delta": -17,
+        "relevance_probability": 0.10270144231617451
+      }
     },
     {
       "id": "2611.13680",
@@ -55,7 +67,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8771
+      "score": 0.8771,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 6,
+        "rank_delta": -3,
+        "relevance_probability": 0.9882581830024719
+      }
     },
     {
       "id": "2611.13578",
@@ -74,7 +92,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8768
+      "score": 0.8768,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 14,
+        "rank_delta": -10,
+        "relevance_probability": 0.22936570644378662
+      }
     },
     {
       "id": "2611.13975",
@@ -95,7 +119,13 @@
       ],
       "submitted": "2026-11-10",
       "github_url": "https://github.com/ydyjya/Neuron-Level-Specialization-in-MoE",
-      "score": 0.876
+      "score": 0.876,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 15,
+        "rank_delta": -10,
+        "relevance_probability": 0.2004527822136879
+      }
     },
     {
       "id": "2611.13414",
@@ -119,7 +149,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8755
+      "score": 0.8755,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 8,
+        "rank_delta": -2,
+        "relevance_probability": 0.9584679901599884
+      }
     },
     {
       "id": "2611.13577",
@@ -139,7 +175,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8754
+      "score": 0.8754,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 12,
+        "rank_delta": -5,
+        "relevance_probability": 0.5774215757846832
+      }
     },
     {
       "id": "2611.13524",
@@ -155,7 +197,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8754
+      "score": 0.8754,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 9,
+        "rank_delta": -1,
+        "relevance_probability": 0.9552432000637054
+      }
     },
     {
       "id": "2611.14492",
@@ -179,7 +227,13 @@
         "cs.MA"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8752
+      "score": 0.8752,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 5,
+        "rank_delta": 4,
+        "relevance_probability": 0.988679438829422
+      }
     },
     {
       "id": "2611.14106",
@@ -197,7 +251,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8748
+      "score": 0.8748,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 7,
+        "rank_delta": 3,
+        "relevance_probability": 0.9830178618431091
+      }
     },
     {
       "id": "2611.14019",
@@ -218,7 +278,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8746
+      "score": 0.8746,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 3,
+        "rank_delta": 8,
+        "relevance_probability": 0.992840975522995
+      }
     },
     {
       "id": "2611.13543",
@@ -234,7 +300,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8746
+      "score": 0.8746,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 2,
+        "rank_delta": 10,
+        "relevance_probability": 0.9943107664585114
+      }
     },
     {
       "id": "2611.14505",
@@ -248,7 +320,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8744
+      "score": 0.8744,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 11,
+        "rank_delta": 2,
+        "relevance_probability": 0.6513549089431763
+      }
     },
     {
       "id": "2611.13557",
@@ -264,7 +342,13 @@
         "cs.DC"
       ],
       "submitted": "2026-11-10",
-      "score": 0.874
+      "score": 0.874,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 17,
+        "rank_delta": -3,
+        "relevance_probability": 0.13467995822429657
+      }
     },
     {
       "id": "2611.14010",
@@ -283,7 +367,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8739
+      "score": 0.8739,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 18,
+        "rank_delta": -3,
+        "relevance_probability": 0.11744960024952888
+      }
     },
     {
       "id": "2611.14015",
@@ -301,7 +391,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8735
+      "score": 0.8735,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 10,
+        "rank_delta": 6,
+        "relevance_probability": 0.9256235957145691
+      }
     },
     {
       "id": "2611.13454",
@@ -319,7 +415,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8734
+      "score": 0.8734,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 16,
+        "rank_delta": 1,
+        "relevance_probability": 0.18781601637601852
+      }
     },
     {
       "id": "2611.13788",
@@ -333,7 +435,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8721
+      "score": 0.8721,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 13,
+        "rank_delta": 5,
+        "relevance_probability": 0.43782350420951843
+      }
     },
     {
       "id": "2611.14413",
@@ -350,7 +458,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-10",
-      "score": 0.871
+      "score": 0.871,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 4,
+        "rank_delta": 15,
+        "relevance_probability": 0.9894367754459381
+      }
     },
     {
       "id": "2611.13843",
@@ -366,7 +480,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-10",
-      "score": 0.8704
+      "score": 0.8704,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 20,
+        "rank_delta": 0,
+        "relevance_probability": 0.09880121424794197
+      }
     }
   ],
   "meta": {
@@ -377,6 +497,21 @@
     "n_ratings": 47,
     "alpha": 0.94,
     "n_topics": 0,
-    "n_topic_slots": 0
+    "n_topic_slots": 0,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
