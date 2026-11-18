@@ -1,0 +1,397 @@
+{
+  "date": "2026-11-18",
+  "collected_at": "2026-11-18T15:54:55.493757+09:00",
+  "papers": [
+    {
+      "id": "2611.22511",
+      "title": "LMLineage: Content Lineage and Context Governance for LLM Agents",
+      "authors": [
+        "Wei Hou",
+        "Jingxin Geng",
+        "Xin Chen",
+        "Zheqing Jiang"
+      ],
+      "abstract": "Interpretability for AI agents should not be confined to understanding the model's internal weights. It must also cover the agent's reasoning and decision-making process over multi-source context. We present LMLineage, an out-of-band system that attributes every output sentence of an agent session to its supporting input spans with calibrated confidences, without requiring white-box access to the model or any additional inference passes. On top of the lineage metadata, we build concept-drift micro compaction: instead of waiting for the context-length limit and summarizing everything, the system detects when previously used input documents have stopped being referenced (\"drifted\") and surgically compacts only those, preserving user instructions verbatim. We evaluate on a multi-tier corpus: 71 gold annotated sentences from 10 Chinese web-QA cases, plus 90 turns of independently collected multi-turn sessions across three generator models (gpt-4o-mini, qwen3.8-27b, deepseek-v4-flash). Results show that (i) window-level embedding similarity is far better aligned with LLM paraphrasing than whole document or lexical matching; (ii) the greedy-window fast path is both faster and more accurate on average than exhaustive line-matching (a multiple-comparisons bias in the latter inflates web recall at the cost of overall accuracy); (iii) per-turn attribution completes in 1s on a single GPU, remaining stable as context accumulates to 40 turns; and (iv) concept-drift detection is conservative (0% false compaction) with recall bounded by attribution accuracy. We further describe the concept-drift micro compaction design and an interactive incident-tracing/memory-cleaning case study. A companion patent application covers the lineage construction method.",
+      "url": "https://arxiv.org/abs/2611.22511",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8989
+    },
+    {
+      "id": "2611.22539",
+      "title": "JET: Just-Enough Exploration Tuning for Efficient Tool-Calling Agents in Repository-Level Question Answering",
+      "authors": [
+        "Yoonho Choi",
+        "Taehyeon Han",
+        "Seonghyeon Lee"
+      ],
+      "abstract": "In repository-level question answering (QA), an agent explores a code repository with tools and should answer a question once enough information is gathered. Nevertheless, we find that LLM agents often continue to invoke tools even after the gathered information is already sufficient to answer. We call this phenomenon over-exploration. Moreover, even though existing methods improve task performance through supervised fine-tuning (SFT) on expert trajectories, SFT also propagates the over-exploration in the trajectories to the agent. To mitigate over-exploration, we propose Just-Enough Exploration Tuning (JET), a fine-tuning method that trains the agent to answer once the gathered information is sufficient. JET truncates each training trajectory at the step where the gathered information becomes sufficient, inserts a rationale that explains why the agent can answer at that step, and fine-tunes the agent with a higher loss weight on the rationale. Experiments on two repository-level QA benchmarks with two open-weight 8B models demonstrate that JET reduces tool calls by 11 to 33% on self-generated trajectories while largely preserving the score. On expert trajectories, JET makes 18 to 28% fewer tool calls than SFT while retaining most of the score gain of SFT. In both cases, JET also lowers the inference cost.",
+      "url": "https://arxiv.org/abs/2611.22539",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.893
+    },
+    {
+      "id": "2611.22148",
+      "title": "Long-Context Generation Is a Sampling Problem (When You Turn Up the Heat)",
+      "authors": [
+        "Allen G. Roush",
+        "Minh Nhat Nguyen",
+        "Ravid Shwartz-Ziv",
+        "Judah Goldfeder",
+        "Sanjay Basu"
+      ],
+      "abstract": "Open-weight language models are widely observed to get worse the longer they generate. Often, attempts to fix this involve more training. At high temperature, The sampler, i.e. the rule that picks the next token out of the model's probabilities, decides whether long and agentic generation survives and/or thrives. We test 29 open-weight models from 1B to 122B parameters on ten established benchmarks plus needle retrieval out to one million tokens, covering SWE-bench Verified coding agents, long chain-of-thought reasoning, long-form writing, long structured output and long-context reading. Samplers that keep their pool of candidate tokens small and steady as temperature rises don't lose accuracy. Samplers that let in low-probability tokens fall apart. At temperature 2, coding agents running top-p, top-k or Top-H resolve 0 of 100 GitHub issues, while the same agents running top-nsigma resolve 46 to 62 and win every issue the two samplers disagree on, on three Qwen3.5 models. Over all benchmarks top-nsigma keeps a median 100% of its temperature-1 score where top-p keeps 26%. Counting how many tokens each sampler lets through explains why. In one Llama-3.1-8B story, going from temperature 1 to 2 grows top-p's pool from 4 tokens to 51,845 while top-nsigma stays at 3. Across 133 combinations of sampler setting and temperature, the typical pool size predicts judged quality (Spearman correlation of -0.77), and when we pick the pool at temperature 1 and only apply temperature afterwards, Top-H, min-p and p-less stop collapsing. At the default temperature of 1 most samplers perform about the same, We release all code and data to the public.",
+      "url": "https://arxiv.org/abs/2611.22148",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.893
+    },
+    {
+      "id": "2611.23074",
+      "title": "Runtime Verification of Multiple Natural Language Criteria for Agent Governance",
+      "authors": [
+        "Silviu Pitis",
+        "Parand A. Alamdari",
+        "Jessica Tang",
+        "Toryn Q. Klassen",
+        "Sheila A. McIlraith"
+      ],
+      "abstract": "AI agents are governed by hundreds of natural language criteria, yet existing verifiers cannot efficiently evaluate an agent's output against a large set of such criteria and report which are satisfied, violated, or inapplicable. We introduce the VFM, a tree-attention verifier that encodes the shared context and target text, and scores N natural language criteria in parallel, returning independent per-criterion ternary verdicts. The VFM is pretrained on CriteriaBank, a corpus of 394K (context, target, criterion, verdict) tuples spanning over 321K distinct criterion strings. A finetuned VFM-4B outperforms GPT-5.4 on a synthetic governance benchmark. On the DynaBench multi-criterion benchmark, it outperforms DynaGuard-4B on trace-level failure detection, and its per-criterion verdicts localize the violated rule and support focused escalation to a larger chain-of-thought judge. We show that CriteriaBank pretraining improves cross-domain transfer, particularly in the low-data regime, while matching a strong direct-finetuning control at full data. On a single H100, VFM-4B evaluates 1,000 criteria against a 4K-token context in under 2s at <11 GB VRAM, making it suitable for runtime verification.",
+      "url": "https://arxiv.org/abs/2611.23074",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8914
+    },
+    {
+      "id": "2611.22432",
+      "title": "Think Once, Act Fast: Cost-Effective Recursive Self-Improvement for Decision Model Harness",
+      "authors": [
+        "Siqi Lai",
+        "Haitao Li",
+        "Hao Liu"
+      ],
+      "abstract": "Fast System-1 models enable responsive actions but struggle with complex or unfamiliar tasks. Large language model (LLM)-based System-2 provides strong reasoning capabilities, yet repeated invocation incurs substantial latency and computational costs. To bridge this gap, we propose JevRSI, a System-1/System-2 collaboration framework that transforms LLM reasoning into transferable decision support through recursive harness improvement. A Jev-style System-1 model enables low-latency action selection, while an asynchronous System-2 LLM develops a modular harness. The harness integrates procedures, state memory, and world models to provide decision contexts spanning the past, present, and future. Utility-driven retrieval selects modules based on both contextual relevance and their utility on previous tasks. Environmental feedback guides targeted revisions and enables recursive self-improvement. Experiments across three datasets show that JevRSI consistently improves decision quality, matching or surpassing LLM agents in several settings. It preserves low-latency execution with favorable performance-cost trade-offs. Moreover, System-2 development interventions decrease as the harness evolves, amortizing System-2 costs through continuous improvement. Our project is available at https://github.com/usail-hkust/JevRSI.",
+      "url": "https://arxiv.org/abs/2611.22432",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "github_url": "https://github.com/usail-hkust/JevRSI.",
+      "score": 0.8908
+    },
+    {
+      "id": "2611.22576",
+      "title": "ReMaRL: Learning to Unmask and Remask in Frozen Diffusion Language Models",
+      "authors": [
+        "Egor Shibaev",
+        "Danila Biktimirov",
+        "Ivan Klimov",
+        "Artem Makoian",
+        "Viacheslav Meshchaninov",
+        "Dmitry Vetrov"
+      ],
+      "abstract": "Masked diffusion language models generate tokens in parallel, and the order in which tokens are unmasked affects final-answer accuracy. Several methods learn unmasking policies from task rewards, but these policies cannot remask earlier predictions. Remasking lets the model correct those predictions using newly generated context. Heuristic rules guide both unmasking and remasking, while supervised remaskers learn to detect token errors. Neither approach directly optimizes these decisions for final-answer correctness. To address this gap, we introduce ReMaRL (Remasking with Reinforcement Learning), a lightweight policy that learns which tokens to unmask, retain, or remask. We train this roughly 0.3M-parameter policy with Group Relative Policy Optimization (GRPO) from final-answer rewards while keeping the diffusion model frozen. With LLaDA-8B-Instruct, ReMaRL achieves the highest scores among the compared unmasking and remasking policies within the tested inference budgets of 4-32 model calls on math and 8-16 calls on code.",
+      "url": "https://arxiv.org/abs/2611.22576",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8897
+    },
+    {
+      "id": "2611.22179",
+      "title": "RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't",
+      "authors": [
+        "Jingyu Liu",
+        "Zongze Li",
+        "Zach Xu",
+        "Zhanhui Zhou",
+        "Tahseen Rabbani",
+        "Dawn Song",
+        "Ce Zhang"
+      ],
+      "abstract": "Agentic memory research has accumulated extraction, supersession, reflection, and graph synthesis on top of retrieval-augmented generation. However, we found that almost none of those primitives earn their cost in our tested memory benchmarks: we show this with BRIDGE, a deliberately minimal RAG memory with chained observation notes, hybrid BM25 with cosine retrieval, and chronological rendering, which reaches parity within bootstrap CI with the prior SOTA on LongMemEval-S and BEAM, and beats the best memory baseline on EverMemBench by 5.7-6.3 points at matched reader. It runs at ~5-7K reader-prompt tokens per query, using a single LLM call for each ingestion or query. We argue that this parity is itself the result: standard benchmarks score what memory retrieves, not what memory enables when the agent acts. To test the latter, we introduce five adversarial probes (Rule Application +-, Pattern Induction Style / Procedural, Dynamic Multiturn) judged at generation time by a cross vendor verification chain, where each query can only be solved by applying a remembered rule or pattern it never mentions. Across 5 probes x 20 scenarios, no architecture wins universally: atomic fact extractors (LangMem) win rule application, while BRIDGE's block-summary memory wins pattern induction. This result holds across four domains, three graders, and three reader families. Each design fails where the other wins, for reasons a recall benchmark cannot see: atomic-fact extractors discard the form a demonstrated pattern takes, while block-summary memory retrieves the rule but the reader does not act on it, a gap that presenting the rule more prominently largely closes. What separates memory designs is not what they retrieve but what they enable an agent to do, and that is what agentic memory should be evaluated on.",
+      "url": "https://arxiv.org/abs/2611.22179",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8897
+    },
+    {
+      "id": "2611.22203",
+      "title": "EGS: A Complementary Safety Framework for Educational LLMs",
+      "authors": [
+        "Zexuan Fei",
+        "Zhengnan Guo",
+        "Yiming Luo",
+        "Kaiyi Huang",
+        "Aimin Zhou",
+        "Bo Jiang",
+        "Fei Tan"
+      ],
+      "abstract": "Large Language Models (LLMs) offer strong potential for personalized education, but adolescent-facing deployment raises risks of toxic, biased, misleading, or developmentally inappropriate content. We argue that educational safety should move beyond binary refusal: student queries are often ambiguous or curiosity-driven, requiring contextual guidance rather than simple blocking. We introduce the Educational Guardrail System (EGS), a lightweight, model-agnostic runtime framework that complements intrinsic alignment through query moderation, scenario-aware pedagogical guidance, and response moderation. EGS triages inputs by risk level, redirects gray-zone queries with category-specific educational interventions, and audits outputs before delivery. Experiments across general and education-specific benchmarks show that EGS improves moderation performance, refusal quality, and jailbreak robustness across diverse LLMs. These findings suggest that defense-in-depth guardrails can strengthen safety while preserving the pedagogical utility required in educational LLMs. Our code and model weights will be publicly available to support community adoption.",
+      "url": "https://arxiv.org/abs/2611.22203",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8895
+    },
+    {
+      "id": "2611.23045",
+      "title": "ForecastGym: A Live, Controlled, and Replayable Benchmark for Forecasting Agents",
+      "authors": [
+        "Yicheng Tao",
+        "Yuante Li",
+        "Zipei Fan"
+      ],
+      "abstract": "Agents built on large language models (LLMs) increasingly forecast real-world events by searching the Web and reasoning over what they find. How well such an agent forecasts depends on both the retrieved evidence and the model, making control over that evidence essential for evaluation. Live evaluations can mix retrieval with reasoning when each system searches on its own, while retrospective search can leak later information through date filters or today's ranking of historical pages. Comparing models, search sources, and memory strategies requires both fixed evidence and a record of how it evolved before resolution. We introduce ForecastGym, which records what four commercial web search APIs return for open prediction-market questions every two days and replays this frozen evidence offline once outcomes are known, comparing models, memory, and captured search sources under a fixed evidence-acquisition policy. Its first release covers 150 questions, 614 evidence states, one per question and collection time, and 131k search results. Rerunning the same queries after settlement returns results that all but state the outcome for up to 92% of the questions, despite the tested date filters. On the frozen evidence, all tested LLMs trail the market in forecasting accuracy. Our diagnostic analysis suggests that missed public information contributes more to the gap in high-gap states than misreading does. Switching the search API changes a model's Brier score by up to 0.043, more than the spread across models, while persistent notes score similarly to rereading all evidence at half the input tokens. The evidence a forecaster sees can matter as much as the model that reads it.",
+      "url": "https://arxiv.org/abs/2611.23045",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8894
+    },
+    {
+      "id": "2611.22425",
+      "title": "LMMR: Learned Multigranular Memory Retrieval for Small Language Model Agents",
+      "authors": [
+        "Pengfeng Song",
+        "Yunkai Zhuang",
+        "Liye Shi"
+      ],
+      "abstract": "Small language model agents have limited space to read the memory needed for multi-hop questions. Relevant facts are often scattered across records whose surrounding text consumes much of that space. We propose LMMR, a learned multigranular memory retrieval method that selects both the next source and how much of it to read. LMMR links paragraphs and sentence fragments to their original sources and pairs views that supply the same missing support during training. Relevant distractors and repeated information provide contrasting examples. At inference, the reranker scores what each candidate adds to an anchor passage, and a selector chooses the evidence within a token budget. On 22,398 official validation questions from HotpotQA, 2WikiMultihopQA, and MuSiQue, a frozen 2B answer model reaches 61.47, 43.26, and 30.58 F1 under a 400-token budget. The gains over query expansion are 3.06, 2.14, and 4.55 points, while memory input decreases by 23.1-26.9%. LMMR also uses 23.5-27.7% fewer input tokens than a coarse retriever trained on the same questions. Against that retriever followed by LLMLingua-2 at comparable input lengths, F1 gains reach 3.99 points and are significant on HotpotQA and 2WikiMultihopQA after Holm correction. All eight small answer models evaluated on HotpotQA improve over query expansion and MMR in both F1 and exact match.",
+      "url": "https://arxiv.org/abs/2611.22425",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8894
+    },
+    {
+      "id": "2611.22307",
+      "title": "Learning to Edit IFC Building Models: Verifiable Checkers as the Training Signal for Dependency-Aware Editing Agents",
+      "authors": [
+        "Jiaxin Zhang",
+        "Yao Luo",
+        "Yuze Dan",
+        "Yunqin Li",
+        "Bowen Wang"
+      ],
+      "abstract": "Editing a building information model in the Industry Foundation Classes (IFC) schema requires propagating changes to dependent elements while preserving unrelated entities. Existing language-model agents for IFC editing use prompted models without learning from edit outcomes. Target-file comparisons do not specify which alternative edits are allowed or which unrelated entities must remain unchanged. We present IfcGym, a CodeAct environment in which a language model edits IFC through executable code and four checkers verify validity relative to the input model, intent, dependency and preservation against a task specification. Their conjunction is strict success. IfcEdit distils verified teacher episodes into a Qwen3.5-9B student through supervised fine-tuning (SFT), then applies Group Relative Policy Optimization (GRPO) with strict success as the reward. On IfcEditBench, 1,990 editing tasks on 13 held-out real projects, the final student reaches 86.78% strict success, from 79.15% after SFT. The paired confidence interval for the difference from its teacher includes zero; the same recipe on a 27B model reaches 91.76% and exceeds the teacher. On the public benchmarks BIM-Edit and BIBIMBAP the final student scores 55.19 and 54.50. On IfcEditBench, the students outperform all prompted models except the teacher under matched tool access; both evaluated frameworks also score lower. Rewarding all four checkers yields 4.83 points more strict success than rewarding intent and validity alone.",
+      "url": "https://arxiv.org/abs/2611.22307",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.889
+    },
+    {
+      "id": "2611.22161",
+      "title": "What RL on Expert-Built Tasks Teaches Nemotron 3.5 Super",
+      "authors": [
+        "Sushant Mehta",
+        "Edwin Chen"
+      ],
+      "abstract": "We post-train NVIDIA's Nemotron 3.5 Super (120B total, 12B active parameters) with reinforcement learning (RL) on five expert-built task datasets, one at a time: real-world software engineering, complex constraints, long-horizon tool use, professional chart understanding and enterprise document reasoning. Each run trains a fresh rank-32 LoRA adapter with CISPO on Tinker, with no supervised stage, and each adapter is compared with the base model on the same tasks, harness and settings. On twelve headline benchmarks, eight built by other groups and four by Surge AI, the gains range from +4.5 points on IFBench to +13.8 on GDP_pdf, which rises from 10.4% to 24.2%; SWE-bench Pro V2 rises from 86.9% to 92.1%, Terminal-Bench 2.1 from 63.9% to 70.3%, MultiChallenge from 58.3% to 66.6%, AutomationBench from 14.8% to 27.5% and Chartography from 39.4% to 50.6%. The document adapter, trained without API tools, also gains +8.0 points on AutomationBench. In attempts read side by side with the base model's on tasks each adapter newly solves, the base model's failures recur in a few modes, and each adapter does more often what the base model missed: the tool-use adapter finds the data and the rules before acting, the coding adapter writes its own test or scratch files on SWE-bench Pro V2, the constraints adapter carries earlier turns into its answers, the chart adapter measures the marks in code, and the document adapter reads AutomationBench's spreadsheets.",
+      "url": "https://arxiv.org/abs/2611.22161",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.SE"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.889
+    },
+    {
+      "id": "2611.22841",
+      "title": "Verifying Agents in Rubric-Graded Environments",
+      "authors": [
+        "Markus Dücker",
+        "Vaibhav Kumar",
+        "Yi Liu",
+        "Ronak Chaudhary",
+        "Andreas Plesner",
+        "Francisco Guzmán",
+        "Anish Athalye"
+      ],
+      "abstract": "As AI agents take on increasingly open-ended and complex tasks, verifying their outputs has proven to be difficult. Rubric-graded agent environments, where a verifier judges multiple natural-language criteria against the deliverables and environment state changes produced by the agent, have emerged as a popular paradigm. We conduct the first systematic study of verifiers for rubric-graded agent environments. First, we create BankerVerifierBench (BVB), a meta-evaluation dataset of 2,464 human-judged rubric criteria across 24 investment-banking tasks. Next, we develop a methodology that derives from any rubric corpus the capabilities a verifier should possess, yielding a nine-capability taxonomy that we distill into three general design principles---reactive verification, environment alignment, and domain guidance---which we implement in Gandalf, an open-source verifier. Finally, we evaluate Gandalf against three existing verifiers on BVB. Gandalf matches or exceeds every baseline's F1 at lower cost: with Gemini 3 Flash it matches the strongest baseline's F1 (0.864 vs. 0.852) at one-fifth of its cost, and with GPT-5.4 models it improves F1 by over 0.12 at lower cost. Gandalf also generalizes to OpenClaw, a structurally different personal-productivity environment, where it again achieves the highest F1 (0.955 vs. 0.934 for the best baseline). We release BVB, Gandalf, and the code and data to reproduce our experiments.",
+      "url": "https://arxiv.org/abs/2611.22841",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8881
+    },
+    {
+      "id": "2611.22262",
+      "title": "OfficePrism: Benchmarking Agents on Single-Domain Operations Across Enterprise Business Functions",
+      "authors": [
+        "Hanfeng Liu",
+        "Zhenyu Luo",
+        "Dongchao Zhang",
+        "Zexi Liu",
+        "Zulong Chen",
+        "Jinxin Hu",
+        "Jia Xu",
+        "Zeyi Wen"
+      ],
+      "abstract": "Broad workplace scores can mix competence within one business function with the extra cost of coordinating across functions and systems, making failures hard to localize. OfficePrism evaluates this prerequisite through 420 single-domain enterprise tasks spanning seven business functions under shared, benchmark-defined L1--L3 task-structure levels. Each task runs in a fresh environment combining a shared synthetic organization with one function-specific domain and yped state access. Our pipeline uses grounded records, business rules, and tool schemas to jointly construct a Chinese-language ticket, a hidden executable reference witness, and an expected response, followed by automated filtering and human curation. The same task set is evaluated through full-schema and search-and-dispatch packages. Across 124 model--harness--package configurations, the per-case joint natural-language-and-database pass rate ranges from 22.6% to 76.4%, with a median of 67.9%. L1 is highest in all 124 configurations, and L2 exceeds L3 in 122. Among 50 configurations sharing the same harness and model labels across both packages, search scores higher in 30, ties in one, and scores lower in 19.",
+      "url": "https://arxiv.org/abs/2611.22262",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8876
+    },
+    {
+      "id": "2611.23154",
+      "title": "Learning Stratified Policies for Inference-Time Objectives",
+      "authors": [
+        "Mridul Mahajan",
+        "Xuezhou Zhang",
+        "Aldo Pacchiano"
+      ],
+      "abstract": "Inference-time scaling improves the performance of large language models by sampling multiple responses and evaluating their collective utility. However, many existing approaches obtain these samples by repeatedly sampling from a single policy. In this work, we study if the sample budget at inference time can instead be allocated across a population of policies. We introduce stratified policies, where each of $k$ learned policies contributes one response to a $k$-sample inference-time objective. We realize this policy population using separate LoRA adapters on a shared language model backbone and optimize it for pass@$k$. We theoretically motivate the approach by analyzing the linear setting; a population of LoRAs can achieve zero best-of-$k$ approximation error in settings where every single LoRA has strictly positive prediction error. Empirically, we demonstrate that stratified policies consistently improve pass@$k$ over a single-policy baseline across multiple reasoning tasks. Overall, our results highlight how distributing samples across complementary policies can be a more effective use of sample budget than repeated i.i.d. sampling from a single policy at inference time.",
+      "url": "https://arxiv.org/abs/2611.23154",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8875
+    },
+    {
+      "id": "2611.22310",
+      "title": "EviDARL: Evidence-Centric Dual-Agent Reasoning via Alternating Reinforcement Learning for Multi-Table Question Answering",
+      "authors": [
+        "Dunhan Li",
+        "Leilei Gan",
+        "Lirong Gao",
+        "Wenyan Fan",
+        "Yongwei Wang",
+        "Sheng Guo",
+        "Fei Wu"
+      ],
+      "abstract": "Despite advances in LLM-based table reasoning, most studies focus on single-table settings. Multi-table QA requires multi-hop reasoning over complex table relationships and evidence dispersed across long contexts, often without verifiable intermediate traces. To address these challenges, we introduce EviDA, an evidence-centric dual-agent framework comprising an Evidence Construction Agent and a Reasoning and Answering Agent. The Evidence Construction Agent generates and executes table-manipulation programs over complete tables to produce question-specific evidence and verifiable intermediate traces, simplifying subsequent reasoning. The Reasoning and Answering Agent then performs multi-hop reasoning over this evidence to derive final answers. We further introduce EviDARL, which combines agent-specific fine-grained rewards with parameter-efficient alternating reinforcement learning to improve collaboration between the agents. By optimizing each agent in turn while holding the other fixed, EviDARL enables bidirectional adaptation between evidence construction and answer reasoning. Experiments on MMQA and TQA-Bench demonstrate that EviDARL substantially outperforms competitive open-model and multi-table reasoning baselines under constrained model and training budgets.",
+      "url": "https://arxiv.org/abs/2611.22310",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8862
+    },
+    {
+      "id": "2611.23138",
+      "title": "RSI-Prime: Training Models to Train Models",
+      "authors": [
+        "Dewu Zheng",
+        "Yang Ye",
+        "Hongyu Zhang",
+        "Jun Yu",
+        "Yanlin Wang"
+      ],
+      "abstract": "Enabling large language models (LLMs) to autonomously conduct training and improve target models is an important foundation for recursive self-improvement (RSI). As LLMs expand their role from being trained to conducting training, their model-training capability warrants dedicated study and systematic development. To this end, we construct RSI-Prime, a dataset for improving model-training capability, comprising 350 complete experimental trajectories across seven task categories. To help LLMs learn to make high-quality experimental decisions from training practice, we perform fine-grained decision identification and quality annotation, then apply decision-level loss masking to exclude supervision on low-quality behavior. Experiments with GLM-5.3 on PostTrainBench, a benchmark for autonomous post-training, show that training on RSI-Prime yields a 31.95% relative improvement in overall performance over the original GLM-5.3, highlighting a path toward future RSI systems in which models autonomously sustain their own advancement.",
+      "url": "https://arxiv.org/abs/2611.23138",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8851
+    },
+    {
+      "id": "2611.22238",
+      "title": "Context Has a Price: Adding and Removing Context for LLM Coding Agents under Prefix Caching",
+      "authors": [
+        "Zerui Yang",
+        "Miaomiao Dong",
+        "Quan Xue",
+        "Chaorui Zhang",
+        "Xuanyu Zheng",
+        "Xiyuan Wang",
+        "Haolin Ruan",
+        "Xueyan Niu",
+        "Guangcheng Song",
+        "Weixi Zhang",
+        "Wei Han",
+        "Bo Bai"
+      ],
+      "abstract": "Coding agents repeatedly send their conversation history to a language model. Adding useful code may reduce search, while removing old tool outputs may shorten later prompts. But do these changes reduce the cost of solving a task? We study this as a measurement problem in more than 20,000 runs of open models on SWE-bench Verified, SWE-bench and Loc-Bench. We account separately for uncached input, cached input and output tokens. Three findings emerge. First, in our main evidence-package experiments, retrieved code reduces read and search commands by 18--34%, but increases cost by 33--42% when cached input costs one tenth of uncached input, without a measurable improvement in resolution. Second, removing old observations can either save money or increase cost: the same approach saves 19--36% without a cache discount but increases cost by 38--116% with a tenth-price cache. Third, shorter prompts do not guarantee cheaper runs because agents may respond by taking more steps. We also find that concurrent experiments can share cached prefixes and distort cost comparisons. These results show why context-management methods should be evaluated using both token prices and the agent's subsequent behavior.",
+      "url": "https://arxiv.org/abs/2611.22238",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8849
+    },
+    {
+      "id": "2611.22288",
+      "title": "ConfGuard: a physics-grounded reference monitor for predictive-maintenance large-language-model agents",
+      "authors": [
+        "Arunkumar V",
+        "Gangadharan G. R.",
+        "S. Senthilkumar"
+      ],
+      "abstract": "Large-language-model agents now close the industrial predictive-maintenance loop, reading sensor windows, retrieving procedures and dispatching work orders. Two attack channels meet there: injected text in a retrieved document can hijack the decision, and a bounded sensor perturbation can corrupt the remaining-useful-life estimate behind it. Recent agent defenses police data provenance and tool privilege but cannot tell whether a prognostic quantity is physically plausible. ConfGuard is a reference monitor with a physics-grounded policy. Its conformal monitor tests each prediction, anchored to the asset's admitted history, against degradation physics: capped remaining life never rises and falls at most one cycle per cycle. Calibrating its threshold over whole asset trajectories lets the operator set the expected share of a clean asset's windows the running monitor escalates. A physics-policy validator checks the agent's maintenance-urgency decision against the decision a deterministic policy derives from the same interval. On all 10,196 C-MAPSS test windows the monitor cuts a covert attacker's reach on healthy assets from 0.529 to 0.046 and closes suppression of failing assets (0.151 to 0), escalating 0.027 of clean windows against a 0.05 target, while the fixed physical range it replaces leaves both attacks open. Behind a Qwen3-14B planner the composed monitors hold urgency-class injection to 0.00 and the universal sensor attack to 0.12, against 0.29 and 0.54 for a defended prompt. An adaptive attacker defeats a Mahalanobis detector on 0.504 of windows and adversarial training on 0.485. We report an attack class the projection misses.",
+      "url": "https://arxiv.org/abs/2611.22288",
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8842
+    },
+    {
+      "id": "2611.22766",
+      "title": "StitchRAG: Constructing Compact and Evidence-Preserving Contexts for RAG with Diffusion-Based Stitching",
+      "authors": [
+        "Minsang Kim",
+        "Junpyo Lim",
+        "Heeje Cho",
+        "Seungjun Baek"
+      ],
+      "abstract": "Retrieval-augmented generation (RAG) improves factuality by grounding large language models (LLMs) in external evidence. However, long retrieved contexts incur computational overhead and can even hurt performance due to noisy or irrelevant content. We propose \\textsc{StitchRAG}, a framework for constructing compact context in RAG. \\textsc{StitchRAG} builds a faithful, information-dense context while dynamically compressing the retrieved passages. We adapt the size reduction ratio to each passage by formulating a utility maximization trading-off the retained information and computation costs. We then extract answer candidates and query-related keywords from passages as anchors and collect passage sentences containing anchors under the derived size constraint. Finally, we connect or stitch the collected sentences together using text diffusion to form a coherent and natural context. Experiments on five open-domain QA benchmarks show that \\textsc{StitchRAG} consistently outperforms diverse multi-step and compression baselines. Extensive ablations show the effectiveness of dynamic size allocation, anchor preservation, and diffusion-based stitching.",
+      "url": "https://arxiv.org/abs/2611.22766",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-17",
+      "score": 0.8825
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94,
+    "n_topics": 0,
+    "n_topic_slots": 0
+  }
+}
