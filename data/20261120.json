@@ -1,0 +1,601 @@
+{
+  "date": "2026-11-20",
+  "collected_at": "2026-11-20T15:46:09.133988+09:00",
+  "papers": [
+    {
+      "id": "2611.26423",
+      "title": "Seer: Guiding Small Deep-Research Agents with Shared Decision Models",
+      "authors": [
+        "Yuhao Zhou",
+        "Yang Zhou",
+        "Yuanxi Li",
+        "Jindi Lv",
+        "Dan Si",
+        "Qing Ye",
+        "Jiancheng Lv"
+      ],
+      "abstract": "Deep-research agents repeatedly decide what to search, read, and verify, often using large cloud-hosted language models for action proposal. However, privacy and local control motivate running agents on users' devices, where limited memory and compute favor smaller models and complicate on-device training. Yet inference-time guidance faces three obstacles: exploring alternatives through real execution adds tool calls, prompted self-evaluation is bounded by the agent's judgment, and model-specific guidance risks repeated adaptation costs. We introduce Seer, an inference-time framework providing local guidance that separates the agent's action proposal from learned consequence prediction and value estimation. From a shared corpus of real research trajectories, we train two models: a tool-response simulator on observed call--response pairs and a value estimator on histories labeled with discounted terminal correctness. The simulator and estimator are trained offline and reused across agents without further training. Moreover, Seer executes only the selected action and adds only real tool responses to the committed history, avoiding tool calls on discarded candidates at additional inference cost. Across multiple deep-research benchmarks, Seer substantially improves agent performance for different language models. For instance, GAIA accuracy rises from 13.6% to 41.7% for Qwen3.5-4B and from 22.3% to 50.5% for Qwen3.5-9B. Furthermore, our analyses suggest that broader candidate coverage can compensate for imperfect simulation, while prediction and scoring errors limit the benefits of wider imagined search. These findings highlight the potential of reusable models for prediction and evaluation to strengthen small research agents through extra local computation without the real execution of the discarded candidates.",
+      "url": "https://arxiv.org/abs/2611.26423",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8996
+    },
+    {
+      "id": "2611.25818",
+      "title": "Anchor and Check: Deterministic Cross-Prompt, Cross-Model Reconciliation for Auditable LLM Decisions",
+      "authors": [
+        "Sivakameswara Reddy Chejarla"
+      ],
+      "abstract": "Pipelines that let a large language model (LLM) make discrete decisions need to know which decisions they may act on unattended, and a record that explains each one. We study a small, fully specified reconciliation contract: commit the target model's greedy answer (the anchor), draw one or two greedy checks that reach the answer by a different route (an alternate prompt, or a model from another family), and let a pure function return one of five outcomes, of which only Agree is acted on. On 48,000 model-item evaluations over 6,000 questions, with every method given access to verbalized confidence as a tie-breaker, the main finding concerns where calls come from: pooling another family's samples raises semantic entropy's AUROC by 1.7 to 4.0 points at every budget, and a same-model temperature check is the weakest design. As complete pipelines, the point estimates of the three-call contract and pooled semantic entropy over 3 or 5 samples differ by less than one point, with intervals containing zero. As detectors of the anchor's errors, the contract is ahead of pooled entropy with 3 and 5 samples under both tie-breaker conventions; with 10 samples the point estimates differ by less than one point and the sign depends on the convention. Under the strict Agree gate it automates 70% of items and still acts on 16% of errors. What the contract adds is a fixed committed answer, an explicit outcome and a decision replayable from its record; generation itself was not reproducible on the hosted API.",
+      "url": "https://arxiv.org/abs/2611.25818",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8967
+    },
+    {
+      "id": "2611.25673",
+      "title": "CompAct-Bench: A Benchmark for Working-Context Compaction in Long-Horizon Agent Tasks",
+      "authors": [
+        "Jiayi Chen",
+        "Lizhe Chen",
+        "Yujia Chen",
+        "Shihan Dou",
+        "Ming Zhang",
+        "Chendi Ge",
+        "Shiguang Ni",
+        "Tao Gui",
+        "Qi Zhang",
+        "Xuanjing Huang",
+        "Maxm Pan"
+      ],
+      "abstract": "As language-model agents are applied to increasingly extended tasks, their working context continuously accumulates interaction history, tool observations, intermediate decisions, and task progress. Context compaction offers a practical way to reduce this growing history while allowing execution to continue, yet the compaction ability of modern LLMs remains insufficiently understood. We introduce CompAct-Bench, a benchmark for evaluating working-context compaction through its downstream effect on agent task completion. Starting from successful agent trajectories, we insert compaction boundaries at different stages of execution, compress the preceding working context with the model under evaluation, and let the same executor continue the original task. To enable fair comparison across compactors, we evaluate them under controlled retention ratios using a lightweight iterative ratio-adjustment procedure. CompAct-Bench covers information-seeking, software-engineering, and workspace-oriented tasks through BrowseComp, SWE-bench, and an internal CompanyBench evaluation. Our experiments show that working-context compaction remains highly lossy even for frontier models: Claude- and GPT-family models perform strongest overall, yet substantial degradation in downstream task accuracy persists under aggressive compaction. Further analysis reveals that failures are often caused not only by omitted information, but also by distorted task state, such as turning unresolved issues into apparent conclusions or forgetting previously established results, which can lead to incorrect decisions or redundant execution. These findings highlight working-context compaction as a distinct and still challenging ability for LLMs operating in extended agent tasks.",
+      "url": "https://arxiv.org/abs/2611.25673",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8902
+    },
+    {
+      "id": "2611.25613",
+      "title": "Can an LLM Fix a Language Model Without Training It?",
+      "authors": [
+        "Bharath Kumar Bolla",
+        "Raghavender Surya Upadhayula",
+        "Vishnu Surya Reddy Nandi",
+        "Ramesh Nandipalli"
+      ],
+      "abstract": "Although an external language model can select and test repairs to another model's weights, behavior can also be recovered through fixed numerical edits. We assessed the value of interactive selection in a controlled study of Transformer repair. After inspecting predictions, activation summaries, and weight statistics, the editor selects projection recipes to apply to the target without gradient updates. We analyzed 20 recorded sessions involving five masked and causal language models, comparing the selected edits with fixed projections, scripted and matched-budget black-box search, and low-rank adaptation. Under the core two-layer fault, live selection matches black-box search on SmolLM2 and Qwen2.5. For Pythia, live selection achieves 65.62% completion accuracy, compared with 0% for black-box search and 66.15% for a fixed projection. Under a separate compound fault affecting attention and feed-forward weights, both scripted and LLM-guided selection increase the descriptive five-checkpoint mean from 24.89% to 71.25% using the same operator family. On unmodified checkpoints, scripted projection yields small gains or losses on a separate set of framed questions. The experiments identify cases in which feedback changes an edit decision, operator coverage accounts for recovery, or supervised adaptation performs better. Combined with measurements of parameter restoration and preservation, these comparisons establish the scope of controller-guided repair for the tested faults and completion tasks.",
+      "url": "https://arxiv.org/abs/2611.25613",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8902
+    },
+    {
+      "id": "2611.25853",
+      "title": "TableRoute: Capability-Aware Routing for Scalable Table Question Answering",
+      "authors": [
+        "Yuxiang Wang",
+        "Junhao Gan",
+        "Jianzhong Qi"
+      ],
+      "abstract": "Table question answering with large language models remains difficult to scale: tables range from compact to million-token sizes, while questions require precise grounding of columns, values, and computations. Existing methods often specialize in a fixed inference strategy, which is brittle across different table scales and model capabilities. Full-table reading is efficient for compact inputs but suffers from irrelevant context. Table reduction helps long inputs but depends on reliable evidence localization, while execution is required when tables exceed the model context window and remains sensitive to schema and value grounding errors. We propose TableRoute, a capability-aware routing framework with evidence-conditioned inference for scalable TableQA. TableRoute first generates validated question--table evidence and identifies the required operations, then routes each instance among these three strategies according to serialized table length and calibrated estimates of how reliably the base model handles these operations. The validated evidence supports the selected route by grounding columns, values, and conditions. Across WikiTQ, WTQ-L, BirdQA, and TableBench, TableRoute consistently improves accuracy through complementary routing and evidence conditioning across table scales, while reducing online token cost. Code will be made available upon publication.",
+      "url": "https://arxiv.org/abs/2611.25853",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8887
+    },
+    {
+      "id": "2611.26282",
+      "title": "What If Chain-of-Thought Is Not Enough?",
+      "authors": [
+        "Marc Jansen"
+      ],
+      "abstract": "Reasoning capabilities in large language models have evolved from prompting-based methods to internalized model behaviors. In this paper, we investigate whether the internal thinking model of an LLM can be deliberately changed and whether such a change is beneficial. Instead of relying on Chain-of-Thought, we train models to follow Question--Option--Criteria (QOC), a structured decision process that decomposes a task into explicit questions, competing options, and evaluation criteria. We present a three-generation development pipeline that ranges from a basic QOC decision core to richer answer synthesis and statistically enriched QOC reasoning. We then evaluate the resulting models with respect to both internal consistency and output quality. Across the reported experiments, QOC-based fine-tuning improves answer quality relative to non-fine-tuned base models and yields particularly strong gains once models are large enough to execute the underlying QOC computations reliably. The results suggest that the internal thinking model of an LLM is trainable and that structured alternatives to Chain-of-Thought can provide a promising path toward more reliable, interpretable, and task-adapted decision support.",
+      "url": "https://arxiv.org/abs/2611.26282",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8881
+    },
+    {
+      "id": "2611.26020",
+      "title": "FrontierReplay: Split-Free Exact Prefix Caching for Hybrid Language Models",
+      "authors": [
+        "Zekun Wang",
+        "Yizhuo Wang"
+      ],
+      "abstract": "Hybrid language models combine self-attention with recurrent layers whose in-place state updates restrict prefix reuse to exact saved positions. Saving states on a coarse grid wastes reusable prefixes, whereas existing fine-grained exact caches must cut the prefill forward pass at each mid-prompt checkpoint, adding scheduler steps that outweigh the reuse gains under load.\n  We observe that across multi-turn chat, agent loops, document question answering, and tree search, prefix reuse almost always ends at structural boundaries predictable in advance, such as turn ends and known branch points. We present FrontierReplay, a prefix caching system that materializes exact checkpoints at these boundaries without cutting the prefill. While the forward pass runs uncut, FrontierReplay logs a short window of recurrent-layer inputs and invokes a cross-layer, state-only replay kernel to build the target state 6-37x cheaper per token than full recomputation without host synchronization. A frontier-aware retention policy prioritizes active anchors and proven branches while lending dead checkpoint slots to the attention KV cache.\n  Across diverse hybrid architectures, model scales, and workloads, FrontierReplay delivers clear gains over existing exact caches, lowering median time to first token (TTFT) by 16-89% (up to 8.9x), raising 80% service-level objective (SLO) capacity by up to 1.73x, and improving goodput by up to 4.26x (3.67x at larger scales). Compared with approximate replay methods, FrontierReplay delivers up to 1.54x higher goodput while preserving exact task accuracy, avoiding the up to 17% accuracy drop suffered by approximation on long contexts.",
+      "url": "https://arxiv.org/abs/2611.26020",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8877
+    },
+    {
+      "id": "2611.25861",
+      "title": "Decoupled Knowledge Retrieval and Compact Memory Enable Reliable Lifelong Model Editing",
+      "authors": [
+        "Yue Che",
+        "Jingze Wang",
+        "Chen Guoyi",
+        "Yujie Wu",
+        "Xuming Ran",
+        "Mingkun Xu"
+      ],
+      "abstract": "Lifelong model editing requires continuously incorporating new facts into deployed large language models (LLMs) without expensive retraining or compromising existing capabilities. Memory-based editors offer an appealing solution by keeping the base parameters untouched, yet their practical use is hindered by linearly growing storage requirements and deteriorating retrieval performance as edits accumulate. To tackle these problems, we introduce BiSpace, a lifelong model editing framework that decouples memory retrieval from knowledge injection across two distinct representation spaces. BiSpace routes queries and identifies relevant edits in an external semantic space, while injecting the corresponding knowledge into the internal representation space of the LLM through sparse and storage-efficient updates. Extensive experiments show that BiSpace shrinks each entry's storage to only about 10.2% of the original and shows strong resilience to long edit sequences of up to 16K edits. On a more challenging benchmark, BiSpace further improves Overall Performance by more than 23% over existing methods. These results advance memory-based editing toward reliable long-term model maintenance at scale.",
+      "url": "https://arxiv.org/abs/2611.25861",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8873
+    },
+    {
+      "id": "2611.26361",
+      "title": "How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents",
+      "authors": [
+        "K. R. Jayaram",
+        "Vatche Isahagian",
+        "Aswath Vaithinathan Aravindan",
+        "Vinod Muthusamy",
+        "Punleuk Oum",
+        "Gaodan Fang",
+        "Michal Ulewicz",
+        "Gegi Thomas",
+        "Evelyn Duesterwald"
+      ],
+      "abstract": "LLM agents on long-horizon tasks fail in recurring, procedural ways. They mis-paginate an API, resolve the wrong entity, or answer when no answer was asked. We built a pipeline that lets an agent learn from its own history. It first mines short \\emph{lessons} from the agent's own trajectories, one to three per episode. It then consolidates those lessons into a smaller set of \\emph{guidelines}, where each guideline records how many lessons it merged. At inference the agent receives either all guidelines or a selected subset. The pipeline ships in the open-source altk-evolve library and is deployed in IBM's CUGA agent and watsonx Orchestrate platform. We report what we learned building, measuring, and productizing it. Our primary instrument is the AppWorld benchmark, across models spanning 40--92\\% baseline task completion. The central finding is that the right amount of memory is a property of the model, not the memory. A strong model keeps improving as guidelines are added. DeepSeek-V3.2 gains +9.5 points of task completion and +16.1 points of scenario completion with its full 191-guideline set. A weak model gains less from the same full set than from a small selected subset. gpt-oss-120b starts at 39.9\\% task completion. It reaches 51.2\\% with all 199 of its guidelines but 55.4\\% (mean of two runs) with a selected subset of about 29. Around that result we report what went wrong: a high-support guideline that backfired, provenance silently dropped during consolidation, a swallowed API error that failed every task while producing a plausible log, and a baseline confound that nearly produced a misleading comparison with a prior method. We distill these into recommendations for teams deploying agent memory.",
+      "url": "https://arxiv.org/abs/2611.26361",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8872
+    },
+    {
+      "id": "2611.26358",
+      "title": "Beam Model Technical Report",
+      "authors": [
+        " Reflection Team",
+        "Adam Abdulhamid",
+        "Osama Abuelsorour",
+        "Yasmin Alameddine",
+        "Carlo Alfano",
+        "Duarte Alves",
+        "Brandon Amos",
+        "Selvaraj Anandaraj",
+        "Arseni Anisimovich",
+        "George Antoniadis",
+        "Ioannis Antonoglou",
+        "Sheila Babayan",
+        "Neeraj Bahl",
+        "Märt Bakler",
+        "Vidhisha Balachandran",
+        "Cameron Banks",
+        "Thibaut Barroyer",
+        "Navroop Bath",
+        "Irwan Bello",
+        "Jeremy Berman",
+        "Fernanda Bernaldo",
+        "Mrityunjay Bhadauria",
+        "Sanyam Bhutani",
+        "Tolga Bolukbasi",
+        "Anudhyan Boral",
+        "Joseph Brennan",
+        "Ethan Brooks",
+        "Sam Buchanan",
+        "Anton Bulyenov",
+        "John Cai",
+        "Catherine Cang",
+        "Eason Chan",
+        "Elijah Chanakira",
+        "Nathan Chandrasekaran",
+        "Hao Chen",
+        "Hong-You Chen",
+        "Jeffrey Chen",
+        "Saurav Chhatrapati",
+        "Ting-Rui Chiang",
+        "Brian Tiger Chow",
+        "Aakanksha Chowdhery",
+        "Timothy Chung",
+        "Rob Claire",
+        "John D. Co-Reyes",
+        "Anthony Conte",
+        "Eduardo Coronado-Montoya",
+        "Julien Crozon",
+        "Drew Csillag",
+        "Joe Cummings",
+        "Jeff Da",
+        "Samira Daruki",
+        "Tim Dawson",
+        "Charlie Deck",
+        "Arash Delijani",
+        "Ousmane Dia",
+        "Randy Dodgen",
+        "Ryan Douglas",
+        "Omar El-Kishky",
+        "Ben Ellis",
+        "Gamaleldin Elsayed",
+        "Simon Fan",
+        "Patrick Fernandes",
+        "Gabriel Ferns",
+        "Nick Fram",
+        "Ankush Garg",
+        "Florent Gbelidji",
+        "Iaroslav Geraskin",
+        "Behrooz Ghorbani",
+        "Ivan Glushkov",
+        "Neil Gollapudi",
+        "Scott Goodfriend",
+        "Yoni Gozlan",
+        "Christopher Grimm",
+        "Suriya Gunasekar",
+        "Shruti Gupta",
+        "Joel Gustafson",
+        "Emre Guven",
+        "Jon Hackmann",
+        "Jeremy Hadidjojo",
+        "Jess Hamrick",
+        "Ethan Hellman",
+        "Joscha Hoche",
+        "Spurthi Amba Hombaiah",
+        "Uzair Honda",
+        "Zijian Hu",
+        "Dzmitry Huba",
+        "Nancy Hung",
+        "Vladimir Ivanov",
+        "Shomik Jain",
+        "Mojan Javaheripi",
+        "Kevin Martin Jose",
+        "Aymen Kallala",
+        "Amog Kamsetty",
+        "Min Hyung Kang",
+        "Steven Kapturowski",
+        "Ramtin Keramati",
+        "Samuel Kessler",
+        "Sabina Kim",
+        "Seonghyeon Kim",
+        "Ivan Komarov",
+        "Agni Kumar",
+        "Thanard Kurutach",
+        "Jessica Landon",
+        "James Larochelle",
+        "Michael Laskin",
+        "Jonathan Lee",
+        "Jonathan Leung",
+        "Chenyu Li",
+        "Haoran Li",
+        "Rongzhao Li",
+        "Michelle Light",
+        "Boyan Lin",
+        "Hai Lin",
+        "Xiayue Charles Lin",
+        "Michael Linden",
+        "Ollie Liu",
+        "Wei Liu",
+        "Zichang Liu",
+        "Brian Lui",
+        "Amr Mahdi",
+        "Raunak Manjani",
+        "Kobe Martin",
+        "Lucas Maystre",
+        "Francis McCann",
+        "Brendan McLaughlin",
+        "Isabel Mehta",
+        "Alishah Momin",
+        "Gerard Moreno-Torres Bertran",
+        "Adriana Murga",
+        "Swarnashree Mysore Sathyendra",
+        "Ashley Nagaki",
+        "Vishal Nandavanam",
+        "Swaroop Nath",
+        "Jake Nations",
+        "Angus Ng",
+        "Thien Nguyen",
+        "Tyler Nichols",
+        "Anaelia Ovalle",
+        "James Pelly",
+        "Michelle Pieszko",
+        "Sashank Pisupati",
+        "Oleksandr Polozov",
+        "Piyush Prasad",
+        "Drew Proud",
+        "Salman Quazi",
+        "Asfandyar Qureshi",
+        "Marko Radmilac",
+        "Mohit Raghavendra",
+        "Vikash Rai",
+        "Ralph Recto",
+        "Anurag Reddy",
+        "Aksel Reedi",
+        "Abby Reider",
+        "David Renardy",
+        "Matthias Reso",
+        "Pierre Roux",
+        "David Rubinstein",
+        "Paul Ruh",
+        "Ildar Safarov",
+        "Himanshu Sahni",
+        "Adrian Samatan",
+        "Simon Sandrew",
+        "Adriel Saporta",
+        "Rohan Savargaonkar",
+        "Vlad Savinov",
+        "Nick Schank",
+        "Jonathon Schwartz",
+        "Tim Seah",
+        "Ahmad Sharif",
+        "Miriam Shlimovich",
+        "Hamid Shojanazeri",
+        "Yusuf Sindi",
+        "Teak Sittipunt",
+        "Kurt Smith",
+        "Nicolas Sonnerat",
+        "Joe Spisak",
+        "Raunak Srivastava",
+        "Richard Steigerwald",
+        "Adam Stein",
+        "Stu Stewart",
+        "Arnaud Stiegler",
+        "Jingtong Su",
+        "Alicia Sun",
+        "Zoey Sun",
+        "Jakub Sygnowski",
+        "Douglas Teixeira",
+        "Chetan Tekur",
+        "Zachary Tellman",
+        "Helen Thatcher",
+        "Romal Thoppilan",
+        "Anil Tolwani",
+        "Konstantin Topaloglou-Mundy",
+        "Dmitry Ulyumdzhiev",
+        "Meet Vadakkanchery",
+        "Christopher Vanderschuere",
+        "Balaji Varadarajan",
+        "Rohan Varma",
+        "Balaji Veeramani",
+        "Andreas Verdelis",
+        "Risto Vuorio",
+        "Tom Walshe",
+        "Allen Wang",
+        "Ewen Wang",
+        "Taiyi Wang",
+        "Zach Wentz",
+        "Peter Wiese",
+        "Travis Wilson",
+        "Jason Winters",
+        "Sam Wiseman",
+        "Arvin Wu",
+        "Jin Wu",
+        "Kai Wu",
+        "Kenneth Xu",
+        "Mira Yadav",
+        "Xianjun Yang",
+        "Yao-Yuan Yang",
+        "Xiaolan You",
+        "Renault Young",
+        "Christina Yu",
+        "Biao Zhang",
+        "Gavin Zhang",
+        "Mingrui Zhang",
+        "Shenao Zhang",
+        "Jiesi Zhao",
+        "Mengjun Zhao",
+        "Xingchen Zhao",
+        "Mike Zhou",
+        "Tong Zhou",
+        "Zhenpeng Zhou",
+        "Tina Zhu"
+      ],
+      "abstract": "Beam is a sparse Mixture-of-Experts (MoE) model with 501.3B total parameters and 23.4B active parameters, specifically built and optimized for coding, reasoning, and agentic workloads. Beam delivers frontier level reasoning, while requiring 3-4x less inference compute than many models of its class. Pretrained on 23.8T diverse, curated, high-quality tokens, Beam features a 1M-token context window achieved through a novel two-stage midtraining phase, built on verifiable, correctness-anchored data. Post-training leveraged a large-scale, fully asynchronous reinforcement learning (RL) campaign across 10.5K GB300 GPUs, generating over 100M rollouts over 4 weeks of training. We believe this is one of the largest scale RL runs conducted by any open lab to date. Across our evaluation suite, capabilities continued to improve as we increased RL compute, with no sign of a plateau. Supported by deep hardware-model co-design, FP8/NVFP4 quantization, and a 1.93B-parameter speculative decoding drafter (DFlash 2), Beam maximizes serving throughput with efficient, flexible deployment. Averaged across conversation turns and harm categories, Beam refuses or pivots on 88.9% of harmful requests while complying with 81.5% of harmless requests, achieving the highest refusal/pivot rate on harmful requests among open-weight models on the Pareto frontier.",
+      "url": "https://arxiv.org/abs/2611.26358",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8871
+    },
+    {
+      "id": "2611.25896",
+      "title": "The Price of an Explanation: What Demanding Verifiable Artifacts Costs, and What It Buys Back",
+      "authors": [
+        "Edgar A. Duéñez-Guzmán",
+        "Eduardo Dueñez",
+        "Edgar Said Hernandez Sanchez",
+        "Suzanne Sadedin"
+      ],
+      "abstract": "Generative models produce many candidate solutions but provide no intrinsic signal by which to rank them. One mitigation is to demand a \\emph{verifiable artifact}: a program that can be executed against the available evidence. A common concern is that requiring executable verification incurs costs in both solution quality and computational budget. We measure these two costs on the $120$-task ARC-AGI-2 evaluation set. Demanding a verifiable artifact from an LLM reduced the score from $93$ to $68$ of $120$ tasks ($77\\%$ to $57\\%$). Of those $25$ tasks, $21$ were reached by no program-producing configuration we ran, at any budget, by sampling or by search; yet for $27$ of the $28$ tasks that only the answer-only arm solved, some program arm held a program that reproduced every demonstration and still failed the test. The bottleneck is obtaining an explanation that \\emph{generalizes}, not finding one. A short evolutionary search over two already-sampled programs, at no additional model cost, beats best-of-$2$ sampled code by $9.2 \\pm 1.4$ tasks, and over a single sampled program beats $1$-shot sampling by $9.9 \\pm 1.3$. Moreover, because a program can be checked against the training examples, any program-producing protocol can terminate early once a task is explained: under the same stopping rule, best-of-$n$ sampling declines up to $38\\%$ of its budget and the evolved arm up to $49\\%$, whereas an answer-only baseline cannot terminate early. Applying the same methodology to decoder synthesis for quantum error correction yields interpretable decoders evaluated against a certified panel of published decoders on held-out exam shots.",
+      "url": "https://arxiv.org/abs/2611.25896",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8867
+    },
+    {
+      "id": "2611.26221",
+      "title": "Sightline: Calibrated Data-Flow Summaries for LLM-Integrated Applications",
+      "authors": [
+        "Zihao Xu",
+        "Yuekang Li",
+        "Ruitao Feng",
+        "Haifeng Shen"
+      ],
+      "abstract": "Programs increasingly call large language models (LLMs), filling prompt placeholders with program values and consuming the output. Such a call crosses the boundary between natural language and programming language (NL/PL). To follow data across it, an analysis needs a data-flow summary of which placeholders the output uses, but no code describes what the model does. Analyses of these LLM-integrated applications therefore taint every output with every input, creating spurious flows, or ask a second model to label each call, which is costly. We prove, and mechanize in Lean 4, that a placeholder flows to the output of a transformer, to first order, only through the attention that reads it (no reading, no flow), and that a faint reading or sensitivity cannot certify that a placeholder does not flow. Unlike reading, the log-probability gradients and Fisher signals of existing methods vanish on confident outputs, and single-span removal fails on duplicated content. Our tool, Sightline, reads a recorded call in one forward pass, learns from labels which reads are uses, and calibrates the pruning to miss at most a chosen fraction $α$ of true flows, on average over call sites, when deployment is exchangeable with calibration. On 2,103 unseen repository families and four models, Sightline is the most accurate summary against the seven closest methods and a hidden-state probe. Calibrated at $α$ = 1%, it misses about 1% of true flows and prunes 43.9-65.6% of spurious flows, 1.6 to 2.6 times as many as the best baseline, and still 43.8-60.1% when calibrated on another collection. Through an open surrogate, it reads models treated as closed about as accurately as they read themselves, without their labels. In the information-flow control of an LLM agent, it removes about half of the labels from inputs that do not flow.",
+      "url": "https://arxiv.org/abs/2611.26221",
+      "categories": [
+        "cs.PL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8856
+    },
+    {
+      "id": "2611.25763",
+      "title": "Closing Performance Gap for Diffusion Language Models under Low Inference Budgets",
+      "authors": [
+        "Hao Wu",
+        "Sipeng Chen",
+        "Jingwen Fu",
+        "Yuwang Wang"
+      ],
+      "abstract": "Diffusion language models offer an architectural route to low-budget generation by updating multiple tokens in parallel, which can reduce the number of sequential decoding steps relative to token-by-token autoregressive decoding. However, realizing this advantage at low budgets is challenging, as generation quality often declines when the number of denoising and refinement steps is reduced. Editable diffusion models address this quality loss through post-draft refinement, but useful intermediate results may still be lost before final submission. We introduce CaRR (Commitment-aware Refinement and Recovery), a training-free framework which improves submission quality from a fixed editable checkpoint through updated-context refill and trajectory-based recovery within its existing forward schedule. Token Commitment Remasking (TCR) remasks selected native pure replacements and refills them on the next scheduled edit forward using the updated context. Submission Commitment Recovery (SCR) uses the resulting refinement trajectory to recover supported candidates when the final response does not satisfy task-specific output requirements. Both modules operate within the native mask/edit schedule without additional backbone forwards. Experiments on code generation and mathematical reasoning show consistent gains in average accuracy over native ME-DLM across four inference budgets, with the largest gains under tight budgets. At one-eighth of the full scheduled forward budget, CaRR improves the six-metric average accuracy by 7.44 pp, including gains of 11.37 and 10.05 on MBPP and MBPP+.",
+      "url": "https://arxiv.org/abs/2611.25763",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8853
+    },
+    {
+      "id": "2611.26427",
+      "title": "MemFolder: Structure-Guided Memory Folding for Efficient Agent Memory Management",
+      "authors": [
+        "Xuyang Liu",
+        "Chenwen Lu",
+        "Junxi Wang",
+        "Siyu Ren",
+        "Xinying Lin",
+        "Siteng Huang",
+        "Hongli Sun",
+        "Linfeng Zhang",
+        "Honggang Chen"
+      ],
+      "abstract": "Long-term agents accumulate large external memory stores as interactions unfold, increasing the costs of storage, retrieval, and response generation. Efficiency is constrained by two coupled factors: a growing record count increases retrieval overhead, while longer retrieved contexts increase prefill computation and decoding-time attention costs. Existing methods prune or consolidate records, but pruning can discard useful evidence, whereas consolidation may produce fewer yet longer retrieval units. We introduce MemFolder, a structure-guided memory folding framework that sequentially reduces record count and context length. The framework comprises two core components that share memory groups, using cross-record structure to guide both evidence consolidation and compact representation. RecordFolder grounds entity mentions, progressively selects representative yet complementary anchors, and combines semantic and entity affinity with temporal chaining to consolidate compatible records into fewer retrieval units. ContextFolder encodes the original records within these groups into compact text and uses verification feedback to revise encodings when key facts cannot be recovered. Experiments on the three text-based memory benchmarks LoCoMo, PersonaMem, and LongMemEval and the two multimodal benchmarks M3-Bench-web and M3-Bench-robot demonstrate the strong performance of our methods. Notably, on Mem0, RecordFolder retains 99.0% of the original average performance across the three text-based benchmarks with 50% fewer records, exceeding the strongest baseline by 1.9 percentage points in performance retention. Combined with ContextFolder, existing record compression methods further shorten their output records while retaining most of their performance.",
+      "url": "https://arxiv.org/abs/2611.26427",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8845
+    },
+    {
+      "id": "2611.25898",
+      "title": "Verifiable Logic in Medical LLMs: A Critical Review of Agentic Clinical Reasoning Optimization and Neuro-Symbolic Grounding",
+      "authors": [
+        "Youssef ElNahas",
+        "Adel Ammar",
+        "Soumaya Chaffar",
+        "Wadii Boulila"
+      ],
+      "abstract": "Clinical large language models are usually judged by whether the final answer is right. Yet a model can reach a fluent, plausible output through invalid reasoning that static benchmarks do not detect, and confident hallucination, causally invalid inference, and spurious demographic shortcuts can pass conventional evaluation. This critical review covers four paradigms in turn: how clinical hallucination arises and why static metrics miss it; the agentic hallucination cascade, in which multi-agent and tool-augmented systems propagate and amplify early reasoning errors; process reward modeling as step-level supervision; and neuro-symbolic grounding, in which formal logic engines, ontology reasoners, and knowledge graphs place verifiable constraints on neural output. Within their encoded domains, systems with symbolic veto layers offer guarantees that hold relative to their encoded knowledge, and they report large gains on the safety measures they use. These results come from single studies, mostly in simulated or small-sample settings, and are not directly comparable with neural baselines. Process reward models remain bounded by the statistics of their training data. We propose a conceptual framework that maps each agentic failure mode to a symbolic intervention point, and we argue that clinical AI safety depends substantially on system architecture. Because current regulation emphasizes performance and does not require verification of reasoning steps, we argue that responsible certification should also audit reasoning trajectories alongside accuracy on static benchmarks.",
+      "url": "https://arxiv.org/abs/2611.25898",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8842
+    },
+    {
+      "id": "2611.25721",
+      "title": "MemMend: A Selective Revision Framework for Memory Question Answering",
+      "authors": [
+        "Sheng Shi",
+        "Geng Li"
+      ],
+      "abstract": "Revising every answer from a long-term memory can consume substantial inference budget and damage facts that were already correct. We introduce MemMend, a modular selective revision framework that routes potentially incomplete answers to an editor, represents corrections as bounded exact-text replacements, and accepts only edits with resolvable source coordinates and valid edit operations. The editor preserves the current answer when no legal repair is proposed; accepted edits require no additional semantic-verification call. On 1,986 LoCoMo development questions, MemMend achieves 67.17 conversation-macro F1 and 88.35 mean Judge score, improving over a verified revision chain by 0.82 and 1.24 points while using 62.37% fewer revision calls. Routing uses 54.15% fewer revision calls than ungated local review, with similar F1 but a 0.67-point lower Judge score. Applied directly to native PropMem, Mem0, and SimpleMem answers, the editing interface raises F1 by 3.79, 6.44, and 0.42 points. It outperforms same-gate rewriting and saves 49.85-83.72% of editing calls relative to ungated editing, which retains higher F1 in this adaptation. A source-by-editing factorial supports local editing for F1 but leaves an independent quality benefit from source obligations unresolved. Transfer to 451 LongMemEval-V2 Small questions also favors revision efficiency, while an external PerLTQA dialogue subset reveals a completeness gap. These results support selective editing as a reusable quality-cost operating point.",
+      "url": "https://arxiv.org/abs/2611.25721",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8842
+    },
+    {
+      "id": "2611.26157",
+      "title": "NariQ: Sub-3-Bit Quantization for Long-Horizon Agentic Tasks",
+      "authors": [
+        "Doyeob Kim"
+      ],
+      "abstract": "Long-horizon agentic tasks require a model to call tools over many steps at contexts of 100K tokens or more, yet many low-bit quantization methods are calibrated on short web text and judged on perplexity. This mismatch is costly: existing quantizations of Qwen3.8-27B at or below 3 bits per weight match BF16 on shorter tasks like AIME, yet in published results solve at most 72% as many tasks as BF16 on DeepSWE, a long-horizon agentic benchmark. We propose NariQ, a trellis-coded post-training quantization method that calibrates on tokens generated by the BF16 model in agent sessions. On Qwen3.8-27B, NariQ at 3.0 and 2.5 bits per weight stays level with BF16 on two long-horizon agentic benchmarks, DeepSWE and Terminal Bench, as well as on AIME and RealWorldQA. Our checkpoint at 2.0 bits per weight trails this performance. To our knowledge, these are the first quantizations at or below 3 bits per weight shown to match their full-precision version on long-horizon agentic tasks. We release the files as Qwen3.8-27B-NariQ-GGUF (https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF), with inference available through our llama.cpp fork at https://github.com/nari-labs/nari-llama.cpp.",
+      "url": "https://arxiv.org/abs/2611.26157",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-19",
+      "github_url": "https://github.com/nari-labs/nari-llama.cpp.",
+      "score": 0.8836
+    },
+    {
+      "id": "2611.25938",
+      "title": "DTS: Delta-Based Tile Scoring for Efficient Long-Context Sparse Attention",
+      "authors": [
+        "Emre Uğur",
+        "Jiawen Qi",
+        "Qinyu Chen"
+      ],
+      "abstract": "Large language models (LLMs) increasingly need to process long documents and codebases, making long-context attention a major prefill bottleneck. Block sparse attention reduces computation by skipping unimportant blocks of the attention matrix, but scoring blocks accurately can itself be expensive. We propose Delta-Based Tile Scoring (DTS), a training-free, content-adaptive tile scoring method for sparse block attention. DTS selects query and key anchors according to local vector changes, using fewer representatives in redundant regions while retaining more detail in heterogeneous regions. To accelerate anchor selection, parallel delta packing partitions the query and key sequences into tile-aligned chunks and performs bounded local scans over these chunks concurrently. The selected tiles are then computed using the original query, key, and value vectors. On LLaMA-3.1-8B-Instruct, DTS keeps average RULER and LongBench scores within 0.10 percentage points of full attention, with RULER evaluated up to 128K tokens. At 128K tokens, DTS reduces measured scoring-pipeline latency by 38% compared with XAttention. On four NVIDIA H100 GPUs, it achieves a 3.3$\\times$ prefill speedup over a PyTorch full-attention baseline using FlashAttention-2 at 512K tokens.",
+      "url": "https://arxiv.org/abs/2611.25938",
+      "categories": [
+        "cs.LG"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8832
+    },
+    {
+      "id": "2611.26335",
+      "title": "ClosureBench: A Benchmark for Reasoning under Closure Assumptions",
+      "authors": [
+        "Francesco Belardinelli",
+        "Flavio Corradini",
+        "Matteo Leonesi"
+      ],
+      "abstract": "AI agents built on large language models (LLMs) often answer questions from incomplete records. Missing information might be interpreted as unknown or false, depending on the completeness of the source. Current evaluations fail to distinguish these two aspects, as they are usually interwoven with other reasoning demands. We present ClosureBench, a benchmark that tests whether LLMs follow the stated rules for dealing with missing information. Every base scenario is tested under OWA, CWA, and LCWA, and only the treatment of missing information changes between variants. ClosureBench provides a verified base benchmark as well as agent extensions for action choice, source scope, and updates. A model is considered correct on a base scenario only if it provides correct answers in all of its closure variants. Across 960 instances, overall accuracy can mask substantial closure mistakes. Models achieve overall accuracy from 71.18% to 99.86% across replicated runs, but their core switch accuracy, measured on the scenarios whose gold label actually changes with the contract, varies between 18.23% and 99.31%. Large discrepancies emerge under LCWA. For example, some agents choose unknown despite the prompt indicating that missing information should be treated as false. Our findings demonstrate that evaluations of AI agents should not only measure whether agents can reason over existing facts but also whether they use the appropriate assumption when information is absent.",
+      "url": "https://arxiv.org/abs/2611.26335",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8828
+    },
+    {
+      "id": "2611.25926",
+      "title": "ROAM-GRPO: Enforcing Reasoning Diversity in GRPO via Routed Off-mode Approach Mining",
+      "authors": [
+        "Jeff Duan",
+        "Matt Thomson"
+      ],
+      "abstract": "Supervised fine-tuning (SFT) paired with Reinforcement Learning with Verifiable Rewards (RLVR) has become the dominant recipe for post-training LLMs on complex reasoning tasks, but has been shown to collapse the policy into a low-diversity mode. Repeated LLM outputs are nearly identical, and pass@k accuracy converges or degrades as a result. We propose ROAM-GRPO (Routed Off-mode Approach Mining for GRPO), an augmentation to the GRPO algorithm which incentivizes exploration of distinct reasoning strategies and aims to increase output creativity during evaluation. ROAM-GRPO detects well-solved problems during training and transfers them to an \"off-mode\" track. The model is prompted to produce distinct solution strategies to such problems, which are verified for logical validity and distinctness by an LLM judge and subsequently self-distilled into the policy. Training Qwen3.5-2b on a 1,000-problem subset of the MATH lvl5 dataset, ROAM-GRPO implementation increases peak pass@16 by 4.7% and correct embedding cosine distance by approximately 1.5-2x on a difficult evaluation set.",
+      "url": "https://arxiv.org/abs/2611.25926",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-19",
+      "score": 0.8826
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94,
+    "n_topics": 0,
+    "n_topic_slots": 0
+  }
+}
