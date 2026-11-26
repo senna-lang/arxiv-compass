@@ -1,0 +1,561 @@
+{
+  "date": "2026-11-26",
+  "collected_at": "2026-11-26T16:49:26.273539+09:00",
+  "papers": [
+    {
+      "id": "2611.34529",
+      "title": "AliceAI-Foundation-80B-A3B-Base",
+      "authors": [
+        "Nikolay Skachkov",
+        "Ekaterina Redina",
+        "Maksim Konoplev",
+        "Evgenii Uskov",
+        "Veronika Zykova",
+        "Ivan Tsarikov",
+        "Artemii Zakharov",
+        "Mariia Godunova",
+        "Dmitrii Lunin",
+        "Maria Nikiforova",
+        "Valerii Levanov",
+        "Anton Kalsin",
+        "Daniil Panteleev",
+        "Alexey Gerasev",
+        "Ilia Kopytin",
+        "Yermek Kapushev",
+        "Egor Liakhov",
+        "Irina Lialikova",
+        "Tatiana Taekina",
+        "Anastasia Volotova",
+        "Assol Kubaeva",
+        "Kirill Alekseev",
+        "Pavel Otlivanchik",
+        "Mukhammadfirdavs Kosimov",
+        "Vladislav Negodin",
+        "Ivan Vinogradov",
+        "Anton Andriushchenko",
+        "Maksim Nikitin",
+        "Daniil Sukhoi",
+        "Alexander Mazitov",
+        "Maksim Abraham",
+        "Philip Zmushko",
+        "Maksim Ignatov",
+        "Ivan Sapozhkov",
+        "Timofey Byzov",
+        "Edgar Shmavonian"
+      ],
+      "abstract": "We present AliceAI-Foundation-80B-A3B-Base, a mixture-of-experts language model with 80 billion total parameters and approximately 3 billion active parameters per token, trained from scratch at Yandex and released under the Apache 2.0 license. The model combines Kimi Delta Attention with full attention, uses Attention Residuals, and is trained with Muon. Training comprises general pretraining on 17.5 trillion tokens, two context-extension stages, and a dedicated stage for reasoning and agentic interaction. We describe the data collection and augmentation pipelines, evaluation protocols, architectural ablations, and scaling-law experiments. We identify the limitations of held-out training loss as a proxy for downstream performance and introduce an auxiliary loss on mixture-of-experts outputs to stabilize training at the predicted learning rate. Domain-specific data selection and augmentation improve factual knowledge, mathematics, and programming skills, while agent trajectories introduced during pretraining improve performance on agentic benchmarks after supervised fine-tuning. In zero-shot reasoning evaluation, the model achieves leading results among open base models of comparable size, with 88.7% pass@8 on IMO-AnswerBench and 82.9% pass@8 on LiveCodeBench v5-v6. To evaluate Russian-language factual knowledge, we introduce and release two benchmarks with their evaluation protocols: WikiWebFacts, which tests short factual questions drawn from encyclopedic sources and search queries, and HardMultiQA, which tests more demanding factual questions inspired by user interactions. Our model scores 86.5% on WikiWebFacts and 67.9% on HardMultiQA, compared with 83.2% and 65.4% for DeepSeek-V4-Flash-Base (284B total and 13B active parameters) and 72.8% and 54.5% for Nemotron-3-Super-120B-A12B-Base (120B total and 12B active parameters), outperforming both larger models on these benchmarks.",
+      "url": "https://arxiv.org/abs/2611.34529",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.9001
+    },
+    {
+      "id": "2611.34147",
+      "title": "Letting Models Manage Their Own Context: Where We Stand",
+      "authors": [
+        "Alessio Devoto",
+        "Avinash Vem",
+        "Tara Safavi",
+        "Sanjay Kariyappa",
+        "Yu-Hsuan Tseng",
+        "Paul Furgale",
+        "Ricardo Silveira Cabral"
+      ],
+      "abstract": "Agent harnesses today manage context on the model's behalf: when the window fills, the harness triggers a compaction that summarizes the history. We study the alternative, \\emph{model-driven} context management, in which the model itself decides when and what to compact through a context API. We gave models control over their own context in \\nooa, NVIDIA's open source agent harness, and compared the two strategies on document research and machine learning engineering across context budgets from 8K to 512K tokens. Models that use the context API effectively reach higher accuracy, often with fewer input tokens, especially at tight budgets: \\textbf{GPT 6.1 nearly triples its score at a 32K budget} on OfficeQA Pro v2 (21\\%~$\\rightarrow$~56\\%), and \\textbf{Kimi gains with up to 41\\% fewer input tokens}. Models differ widely, however, in how often they use the API, how aggressively they compact, and when they start compacting, and prompt changes shift that timing. Finally, we show that \\textbf{inference engines can make model-driven edits cheaper}: by reusing the KV cache of the unchanged suffix after an edit, \\textbf{we cut prefill compute by up to 15\\% per request with no measurable change in accuracy}. Together, these results point to a new co-design frontier: models trained to manage their own context, served by inference engines that support KV cache editing.",
+      "url": "https://arxiv.org/abs/2611.34147",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8921
+    },
+    {
+      "id": "2611.34762",
+      "title": "TASK Memory: Beyond Text-Only Memory with Activation Steering and Knowledge Editing against Memory Hallucination",
+      "authors": [
+        "Jinkun Zhao",
+        "Wenjun Wu"
+      ],
+      "abstract": "LLM agents increasingly rely on external memory, yet they still hallucinate about what they remember. Often the correct memory is retrieved and placed in the prompt, but the answer contradicts it or the memory is applied to the wrong question. We call these use-time memory hallucinations. Across five open models, we find that they arise from the conflict between parametric knowledge and external memory and take three forms: memory-ignoring, where the model returns to a stale fact in its weights (up to 46% of queries); memory-misapplying, where it attributes the memory to unrelated entities (up to 24%, and 49% when retrieval is combined with weight editing); and version confusion, where 53% of answers about revised facts assert the superseded value when both versions remain stored. We propose TASK memory, which goes beyond text-only memory by combining a Text note with Activation Steering and Knowledge editing that share one in-model address. The text holds the content. A removable knowledge edit supplies the address through its subject key and supports multi-hop composition. A pair of steering vectors decides, query by query, whether the model adopts the memory or keeps its own answer; the vectors store no content and control how the text memory is used. On frozen models under a pre-registered, test-once protocol, TASK reduces memory-ignoring hallucinations to at most 1.5% in all ten model-dataset cells and cuts neighbour misuse from 39.2% to 7.5% (+10.8 pp composite on CounterFact). It improves a 300-memory library over BM25 RAG by 16.4 pp, an advantage that holds at 3,000 memories, resolves fact revisions without fact IDs, and adds 7.5 pp of multi-hop accuracy on MQuAKE. 21 of 23 cross-model comparisons (8B-27B, four families) are significant, and TASK beats three recent context-steering methods in 9 of 10 model-dataset cells.",
+      "url": "https://arxiv.org/abs/2611.34762",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.892
+    },
+    {
+      "id": "2611.33822",
+      "title": "MetaDecomp: Adaptive Task Decomposition via Meta-Learned Procedural Memory",
+      "authors": [
+        "Ziyi Wang",
+        "Yixiao He",
+        "Yichen Wu",
+        "Ruite Lu",
+        "Jiayu Wang",
+        "Ying Wei"
+      ],
+      "abstract": "Reusing past experience in long-horizon tasks requires more than storing successful procedures: Language agents must distinguish which procedures apply and what work remains as execution progresses. We introduce MetaDecomp, an in-context meta-learning framework for adaptive task decomposition that jointly learns a task-relative state space and reusable procedures. Its outer loop builds procedural memory from successful training executions, representing task progress as abstract states and procedures between states as directed acyclic graphs of operations and dependencies. As new progress distinctions are learned, MetaDecomp revisits historical execution evidence to reassess state assignments and reorganize the procedures they support. With memory fixed at test time, the inner loop refines an initial decomposition and revises it from environmental feedback, combining applicable procedure fragments with task-specific steps missing from memory. Evaluated on ALFWorld and ScienceWorld over three seeds, MetaDecomp achieves the highest mean performance among the compared methods in four of five settings, for example, an 86.3% success rate on ALFWorld with Qwen3-4B. Fixing the initial schema or omitting historical reprojection reduces performance in component ablations. MetaDecomp also uses fewer inference tokens than ReAct and AutoRefine in all five settings. Cross-benchmark analysis identifies a low-performance area where partial coverage degrades success relative to hidden memory; high coverage improves success, while low coverage changes little. Code will be released upon acceptance.",
+      "url": "https://arxiv.org/abs/2611.33822",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8901
+    },
+    {
+      "id": "2611.34928",
+      "title": "Diverse Alternative Reasoning Traces for Hard Math Problems",
+      "authors": [
+        "Lukas Aichberger",
+        "Adam Golinski",
+        "Arno Blaas",
+        "Arwen Bradley",
+        "Jacob Springer",
+        "Mehrdad Farajtabar",
+        "Michael Kirchhof",
+        "Sinead Williamson"
+      ],
+      "abstract": "Post-training large language models (LLMs) for mathematical reasoning often relies on accepted traces whose final answers pass a verifier. For hard math problems, however, such traces can be rare under independent Monte Carlo (MC) sampling. To address this, we propose Diverse Alternative Reasoning Traces (DART), a trace-mining method that starts from a rejected trace, decomposes it into reasoning steps, and ranks them by position-weighted uncertainty. It then generates deliberately distinct alternative candidates for highly ranked steps using reference-answer guidance and a meta-thought before completing the resulting traces. On greedy-unsolved DeepMath-103K problems, DART recovers 37% more problems than MC sampling at a matched number of generated traces. Its estimated generation cost per recovered problem is nearly identical, while its cost per accepted trace is 30% lower. Post-training Llama-3.1-8B-Instruct on traces mined by DART achieves the highest point estimate in five of six evaluations across MATH-500 and AIME benchmarks. These results demonstrate that revisiting rejected traces with DART can expand problem coverage and provide effective post-training data.",
+      "url": "https://arxiv.org/abs/2611.34928",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.887
+    },
+    {
+      "id": "2611.33893",
+      "title": "When Are Parallel Subagents Effective for Coding? An Empirical Study on Repository Construction",
+      "authors": [
+        "Zhiheng Lyu",
+        "Chengyu Yin",
+        "Lingming Zhang"
+      ],
+      "abstract": "LLM-based coding agents are increasingly used for long-horizon tasks such as building an entire program from a specification. Products like Codex and Claude Code let an agent delegate work to parallel subagents, multiplying run cost, yet it remains unclear whether and when delegation produces a better program. We compare a single agent with a main agent delegating to subagents on repository-construction tasks from NL2Repo and ProgramBench (which also provides an executable reference program). We compare scores at equal time and equal cost, run intervention experiments, and analyze fine-grained behavior. On randomly drawn tasks, parallel subagents raise hidden-test pass rates by only about 1 to 5 percentage points at up to 3.8x the cost of a single agent. Their gain is larger on hard tasks, where we find evidence of three mechanisms. Self-checking: with GPT-5.6 Sol, one sentence telling a single agent to probe the reference program first recovers most of this gain at a fraction of the cost; from GPT-5.6 Sol to GPT-6.1 Sol, the gain shrinks as single agents check their own work more. Fresh context: in extended runs, a single agent that periodically starts a new session with an empty conversation makes faster early progress in every comparison than one that resumes its conversation. Modularity: multi-agent runs produce more modular code (more files and shorter functions), closer to the upstream source. We observe similar patterns in a smaller replication with Opus 5.5 on Claude Code. Overall, subagents help when (i) a single agent stops checking too early, (ii) a long session keeps editing with little improvement, or (iii) modular code helps on the task; otherwise, they mainly add cost.",
+      "url": "https://arxiv.org/abs/2611.33893",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8869
+    },
+    {
+      "id": "2611.34624",
+      "title": "HoMe: Toward Practical Harness Optimization of Memory Systems for AI Assistants",
+      "authors": [
+        "Yifei Xu",
+        "Li Yu",
+        "Zhaoyang Liu",
+        "Ce Wang",
+        "Sen Huang",
+        "Yanyan Shen",
+        "Yun Lin",
+        "Linpeng Huang",
+        "Hong Mei"
+      ],
+      "abstract": "The behavior of memory systems for long-running AI assistants is governed by a harness, which consists of the code, prompts, and configurations for memory construction, maintenance, retrieval, and answer generation. However, optimizing the harness of a memory system remains largely manual, and unrestricted editing alone does not ensure structural improvements. In this paper, we introduce HoMe, an evaluation-driven framework that iteratively evaluates candidate harnesses and derives each new candidate from any previously evaluated harness by editing any part of it. HoMe combines session-level memory versioning with execution traces to identify shared failure mechanisms across cases and localize them to the responsible sessions and harness components. It encourages early structural exploration through candidate gating and reduces evaluation cost through smoke tests, adaptive sampling, and the reuse of constructed memory. We validate HoMe with the open-source memory system ReMe on two large-scale long-horizon memory benchmarks, LongMemEval-S and BEAM. With six formal candidate evaluations per benchmark, after a full initial evaluation, HoMe discovers harnesses that improve end-task performance over the originally strong harness while consuming far fewer query-time tokens. The code is available at https://github.com/agentscope-ai/ReMe.",
+      "url": "https://arxiv.org/abs/2611.34624",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "github_url": "https://github.com/agentscope-ai/ReMe.",
+      "score": 0.8854
+    },
+    {
+      "id": "2611.34250",
+      "title": "MedSkill-E$^{2}$: Evaluating and Evolving Skills for Medical Agents",
+      "authors": [
+        "Jingjing Hua",
+        "Shaocong Wei",
+        "Jianghan Shen",
+        "Junzhi Ning",
+        "Min Cen",
+        "Cheng Tang",
+        "Ziyan Huang",
+        "Jiepeng Li",
+        "Fengshuo Liu",
+        "Kangkun Mao",
+        "Mouxiao Bian",
+        "Yirong Chen",
+        "Ming Hu",
+        "Jiyao Liu"
+      ],
+      "abstract": "Large language model (LLM) agents increasingly use skills to access domain knowledge and complete real-world tasks. We observe that even when a skill specifies the rules and procedures needed for a task, agents may fail to apply them effectively during autonomous execution, a phenomenon we call skill Enable But Underuse (EBU). This issue is particularly consequential in medical tasks, where overlooking a single critical constraint can yield a plausible but incorrect result. To evaluate and address EBU, we introduce MedSkill-E$^{2}$, a framework for evaluating and evolving skills for medical agents. We construct EBU-Bench, a challenging benchmark covering 12 medically relevant task groups and associated skills, to evaluate agents' ability to use available skills autonomously. We quantify the EBU gap as the difference in skill-use accuracy between autonomous use and explicitly guided reading and application of the same skill. On EBU-Bench, all evaluated model-harness combinations exhibit EBU, with a mean gap of 43.94 percentage points (pp). For the same model, skill-use accuracy under autonomous use differs by up to 38.96 pp across harnesses. Motivated by these observations, we propose EBU-Evolve, which uses execution feedback from autonomous and explicitly guided skill use to distill effective guidance into reusable skill instructions. Relative to their pre-evolution versions, the revised skills improve skill-use accuracy during autonomous execution by 33.33 to 55.17 pp and continue to yield improvements when transferred across multiple models and harnesses. Our results show that autonomous skill-use accuracy varies across harnesses with the model and skill held fixed, and model rankings can change. EBU can persist even after a skill is opened. EBU-Evolve improves autonomous skill-use accuracy on unseen tasks within the same skill, with gains transferring across models and harnesses.",
+      "url": "https://arxiv.org/abs/2611.34250",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8854
+    },
+    {
+      "id": "2611.33962",
+      "title": "DLaR: Dynamic Stochasticity Control for Latent Reasoning in Large Language Models",
+      "authors": [
+        "Xiaocheng Luo",
+        "Peng Xu",
+        "Zaifu Zhan",
+        "Xiangyu Duan"
+      ],
+      "abstract": "Latent reasoning enables LLMs to operate in continuous embedding space, yet existing methods suffer from deterministic inference that precludes exploration of diverse reasoning paths. While recent approaches inject stochasticity to restore exploration, we identify two fundamental limitations: \\textit{uniform stochasticity} across all steps is suboptimal, and unconstrained perturbations disrupt reasoning coherence. We propose Dynamic Stochasticity Control for Latent Reasoning (DLaR), a framework with two complementary mechanisms that operate at different temporal granularities within the GRPO reinforcement learning framework. At the token level, Adaptive Stochasticity Modulation (ASM) dynamically adjusts perturbation intensity at each latent step based on a confidence-entropy fusion signal, increasing exploration when the model is uncertain and preserving stability when confident. At the training level, Training-Aware Stochasticity Tuning (TAST) progressively decays the base stochasticity level following a curriculum schedule. Through this dual-level design, DLaR establishes a hierarchical exploration-exploitation strategy that operates at both token and training levels. Extensive experiments on four in-distribution and three out-of-distribution mathematical reasoning benchmarks demonstrate that DLaR achieves the highest average performance across model scales, reaching 27.9%/50.6% Pass@1/Pass@8 on Llama-3.2-1B and 46.8%/68.2% on Qwen2.5-1.5B. Code: \\href{https://github.com/xiaocen-luo/DLaR}{https://github.com/xiaocen-luo/DLaR}.",
+      "url": "https://arxiv.org/abs/2611.33962",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "submitted": "2026-11-25",
+      "github_url": "https://github.com/xiaocen-luo/DLaR}{https://github.com/xiaocen-luo/DLaR}.",
+      "score": 0.8853
+    },
+    {
+      "id": "2611.33897",
+      "title": "EATS: Scaling Tool-Use Experience for Medical Reasoning Agents",
+      "authors": [
+        "Mingyuan Li",
+        "Tong Jia",
+        "Haoran Wang",
+        "Wenbo Qi",
+        "Ziyuan Yang",
+        "Bowen Ma",
+        "Jie Gui",
+        "Baosheng Yu"
+      ],
+      "abstract": "Medical reasoning agents combine large language model (LLM) reasoning with clinical workflows and specialized neural tools. However, general-purpose LLMs receive limited training exposure to domain-specific medical tools, and the uncertainty and distributional shifts of neural tool outputs make selecting tools from simple descriptions significantly more challenging than in deterministic settings such as calculators or dictionary lookups. In this paper, we propose EATS, an experience-augmented tool selection strategy that leverages accumulated tool-use trajectories to improve tool selection in medical reasoning agents. EATS constructs a memory of past interactions, including queries, tool choices, arguments, and self-evaluated feedback, and retrieves relevant experiences to guide tool selection for new queries. As memory construction does not require ground-truth supervision, EATS scales naturally with test-time experience. We evaluate EATS on tool-augmented medical reasoning tasks, including closed-ended visual question answering and free-form report generation. Experiments on four public datasets, ChestAgentBench, CheXbench, MIMIC-CXR, and SLAKE-VQA, across three multimodal LLMs, Qwen3-VL 2B, Qwen3-VL 32B, and GPT-5.5, show consistent gains in tool selection behavior and downstream medical reasoning performance. Code is available at https://github.com/Limingyuan001/EATS.",
+      "url": "https://arxiv.org/abs/2611.33897",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "github_url": "https://github.com/Limingyuan001/EATS.",
+      "score": 0.8845
+    },
+    {
+      "id": "2611.34635",
+      "title": "ZeroHero: Training Small Language Agents from Scratch",
+      "authors": [
+        "Nikita Sorokin",
+        "Zoya Volovikova",
+        "Alexey Skrynnik",
+        "Aleksandr Panov"
+      ],
+      "abstract": "Large pretrained language models provide capable policies for interactive tasks, but how much model capacity is necessary for a specialized language agent? We introduce ZeroHero, a framework for training small language agents (SLAs) from scratch. In each environment, a large language model acts as the expert, and we collect its successful trajectories. We pretrain each SLA, which has fewer than 50 million parameters, to predict the expert's responses given the interaction history. We then post-train the agent on its own interactions using proximal policy optimization (PPO). During post-training, reasoning alignment supplements environment rewards with expert supervision on the language the agent generates alongside its actions. We evaluate the agents in three multistep environments where acting requires both understanding and generating language. In Crafter, agents interpret textual observations and generate reasoning before acting. In WebShop, they translate shopping instructions into search queries. In Alfworld-Dialogue, they ask clarifying questions and use the answers to guide household actions. The agents approach expert performance on WebShop and surpass their respective demonstration experts on Crafter training rollouts and held-out Alfworld-Dialogue tasks. An interactive demo is available at https://zoyav.github.io/-ZoyaV-zerohero-demo.",
+      "url": "https://arxiv.org/abs/2611.34635",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8838
+    },
+    {
+      "id": "2611.34331",
+      "title": "Puzzling-Bench: Evaluating Language Models on 23,777 Human-Written Puzzles with Community-Verified Answers",
+      "authors": [
+        "Abhinav Sharma",
+        "Li Li",
+        "Chien Van Nguyen",
+        "Sai Karthik Navuluru",
+        "Bo Ni",
+        "Xiangbo Gao",
+        "Xiaolei Huang",
+        "Yue Zhao",
+        "Nesreen K. Ahmed",
+        "Tyler Derr",
+        "Yu Wang",
+        "Hongjie Chen",
+        "Zhengzhong Tu",
+        "Thien Huu Nguyen",
+        "Ryan A. Rossi",
+        "Franck Dernoncourt"
+      ],
+      "abstract": "We introduce Puzzling-Bench, a benchmark of 23,777 puzzles with community-verified answers drawn from the Puzzling Stack Exchange archive (2014-2026): riddles, ciphers, logic grids, lateral-thinking problems, wordplay and recreational mathematics, a third of them with images. Every puzzle carries the answer accepted by its author, a short reference answer taken from it (LLM-extracted for the evaluation sets and checked on a 50-puzzle human review), the author's own hints, community tags and a creation date, so that the benchmark supports hint ablations, category analysis and a rolling post-cutoff slice (254 puzzles posted after the training cutoff of six of the nine models we evaluate, including the best one) as a contamination check. We evaluate nine frontier and open models with a two-tier scorer (normalized exact match, then an LLM judge) and validate the judge with three judges from two model families: they agree on 95-97% of verdicts (kappa 0.82-0.96), move no model by more than 1.6 points, and show no own-family preference. The best model, GPT-6.1, reaches 74.8% on a shared 255-puzzle set; a hard core of 17 puzzles defeats all nine models; model failures are strongly correlated, and the second-best model contributes a single puzzle to a greedy ensemble, yet an oracle over all nine reaches 91%. On a 100-puzzle multimodal pilot, withholding the question's image costs the two best models 24 and 35 points. We release the dataset, the scoring pipeline and all per-row provenance.",
+      "url": "https://arxiv.org/abs/2611.34331",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8835
+    },
+    {
+      "id": "2611.33972",
+      "title": "Fine-Tuning Without Gradients? Closed-Form, LLM-Written Classifiers on a Frozen Encoder",
+      "authors": [
+        "Md Nasir Uddin",
+        "Musa Tur Farazi",
+        "Soumik Bhattacharjee",
+        "Tishna Sabrina",
+        "Chowdhury Mohammad Rakin Haider"
+      ],
+      "abstract": "Can a classifier computed in closed form on a frozen encoder match gradient fine-tuning? We present closed-form weight-space programming (WSP): a large language model (LLM), used as a design assistant, writes programs that read a frozen masked language model through cloze-style prompt templates at several layers, fit closed-form heads (shrinkage discriminant analysis, kernel ridge regression and the encoder's label-word prior) on labelled data, and select among a pool of candidate heads by cross-fitting. No gradient is computed and no encoder weight changes. We instantiate the framework on RoBERTa-large. On 11 development datasets with 512 to 8,192 training labels, WSP is ahead of full fine-tuning (FT) and LoRA at every label budget (by 0.3 to 0.6 points on average; the registered non-inferiority tests pass) and within 0.5 points of prompt-based fine-tuning (PFT); these datasets also shaped the recipe. With fewer labels its lead over FT and LoRA grows: 1.2 to 3.5 points with 64 and 128 labels, and 3.8 to 5.3 points in the few-shot setting of 16 labels per class, where WSP is again within half a point of PFT on the development datasets. On six held-out datasets, WSP stays ahead of LoRA and within half a point of FT on average, although with six datasets no registered test passes, and PFT is ahead, by 1.30 points with 8,192 labels. WSP never collapses and is deterministic, but it needs one encoder pass per template (17 here). We report all eight recipe versions, every decision that saw test results, and 27 ideas that did not help.",
+      "url": "https://arxiv.org/abs/2611.33972",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8833
+    },
+    {
+      "id": "2611.34292",
+      "title": "WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self-Distillation",
+      "authors": [
+        "Tianxiang Jiang",
+        "Sheng Xia",
+        "Yilin Long",
+        "Kanghui Tian",
+        "Linquan Wu",
+        "Yongheng Zhang",
+        "Daixian Liu",
+        "Di Yin",
+        "Yi Wang",
+        "Yu Qiao",
+        "Qinglong Zhang"
+      ],
+      "abstract": "Although multimodal large language models translate single screenshots into static HTML, generating interactive functional websites from design specifications still struggles with multi-page routing and stateful widget transitions. Examining existing training pipelines reveals two bottlenecks: (1) in forward data synthesis (X -> Y), writing the specification X before code execution leaves unimplemented or altered requirements in X as supervision noise; and (2) in reinforcement learning, scalar rewards discard the rich state transitions observed during replay. Based on these findings, we introduce WebVibe and Interactive-SDPO to train InteractiveCoder. WebVibe reverses synthesis into Y -> X by verifying cross-page and in-page interactions in the browser before deriving multimodal inputs from replay-confirmed states to build the 31,542-site WebVibe-32K corpus with reusable execution contracts. Interactive-SDPO then conditions a weight-sharing self-teacher on the replay trace and a 2x2 state-transition montage to provide token-level supervision at zero inference-time overhead. On the public Vision2Web L2, one-shot InteractiveCoder-9B nearly 3x its base model's functional score (20.2 to 55.2 FS) and matches a 1T-parameter coding agent in a single pass with 111x fewer total parameters and 78x fewer tokens. On our WebVibeBench, InteractiveCoder-4B and 9B further outperform all evaluated baselines by over 23 points.",
+      "url": "https://arxiv.org/abs/2611.34292",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8832
+    },
+    {
+      "id": "2611.34366",
+      "title": "ConTra: A Training Framework for Effective Contextual Retrieval via Prefix Generation",
+      "authors": [
+        "Jiajun Hou",
+        "Jingbang Chen"
+      ],
+      "abstract": "Data management systems organize large text collections for tasks such as finding relevant studies and extracting contract clauses. Systems make long documents searchable by splitting them into independently indexed chunks. Chunking can separate text from its identifying details. The indexing challenge is to keep each chunk independently searchable while preserving the context needed to find and rank it. Existing methods either encode that context in chunk vectors or attach it as a text prefix. Context encoded only in vectors is unavailable to text rerankers. Prompted prefixes serve both vector search and reranking, but are costly to generate at indexing time and can underperform contextual encoders. We propose ConTra (Context That Travels), a reinforcement learning framework for training lightweight prefix generators. Its reward combines feedback from frozen embedding and reranking models with factual verification and length control. ConTra generates one prefix per chunk during index construction and stores the augmented text and its embedding for reuse across queries. To evaluate contextual retrieval across workloads and under interference, we introduce RealContextBench, a benchmark with five application collections and three controlled conditions that isolate the effect of distracting text. On ConTEB and RealContextBench, ConTra-2B outperforms the prompted 9B baseline using Anthropic's method and the PPLX-4B contextual encoder, with a margin of up to 3.15 points over their best overall scores, while indexing short documents 7.74 times and 2.15 times as fast as those baselines, respectively. Post-trained only on ConTEB, it leads the standalone methods on RealContextBench after reranking and is less sensitive than the prompted 2B baseline to random and topically similar distractors. Code, datasets, and trained models are available at https://github.com/SStan1/ConTra.",
+      "url": "https://arxiv.org/abs/2611.34366",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "github_url": "https://github.com/SStan1/ConTra.",
+      "score": 0.8831
+    },
+    {
+      "id": "2611.34575",
+      "title": "Sage-Med: Scaling Medical Multimodal Intelligence",
+      "authors": [
+        "Sage-Med Team",
+        " :",
+        "Ming Hu",
+        "Cheng Tang",
+        "Wei Li",
+        "Rongbin Li",
+        "Feilong Tang",
+        "Junru Hu",
+        "Hongze Zhu",
+        "Qiujuan Yan",
+        "Huanze Tang",
+        "Shaocong Wei",
+        "Siyuan Yan",
+        "Min Cen",
+        "Zhongxing Xu",
+        "Zhonghua Wang",
+        "Lie Ju",
+        "Zhen Yu",
+        "Wenjie Li",
+        "Shiyan Su",
+        "Jing Hao",
+        "Jingyong Liang",
+        "Diping Song",
+        "Fang Yan",
+        "Chenglong Ma",
+        "Junzhi Ning",
+        "Haochen Xue",
+        "Zanting Ye",
+        "Chenrun Wang",
+        "Jinjie Wei",
+        "Yi Xin",
+        "Jianghan Shen",
+        "Siqi Luo",
+        "Jiyao Liu",
+        "Huidong Xie",
+        "Jun Zhao",
+        "Rulin Zhou",
+        "Longquan Jiang",
+        "Ziyan Huang",
+        "Ying Chen",
+        "Hanxiao Zhang",
+        "Junyang Wu",
+        "Mouxiao Bian",
+        "Jiashi Lin",
+        "Chenyu Wang",
+        "Qi Qin",
+        "Jie Huang",
+        "Yiling Zhou",
+        "Jiawei Chen",
+        "Kefan Wang",
+        "Jingjing Hua",
+        "Yaoyu Liu",
+        "Huihui Xu",
+        "Tianbin Li",
+        "Jin Ye",
+        "Ziyang Chen",
+        "Shujian Gao",
+        "Zilin Lu",
+        "Jiangtao Yan",
+        "Changkai Ji",
+        "Wenhao Tang",
+        "Xinyi Zeng",
+        "Yuxing Chen",
+        "Hongwei Yang",
+        "Rongzhao Zhang",
+        "Jinru Ding",
+        "Yingcheng Wu",
+        "Zhenfei Yin",
+        "Jinzhe Li",
+        "Lu Lu",
+        "Yun Zhong",
+        "Zhishan Lin",
+        "Bingli Wang",
+        "Xiaohan Ren",
+        "Jianmin Qian",
+        "Penghao Zhao",
+        "Zhongbo Tian",
+        "Zhenbang Zhou",
+        "Peiling Dai",
+        "Mengjing Zhao",
+        "Jingyu Zheng",
+        "Pinan Liu",
+        "Shiwei Li",
+        "Victoria Mar",
+        "Cristina Vico-Alonso",
+        "Qiang Wu",
+        "Xianming Liu",
+        "Lingtong Huang",
+        "Dili Song",
+        "Minghui Zhang",
+        "Wenlong Zhang",
+        "Qipeng Guo",
+        "Yuqiang Li",
+        "Nanqing Dong",
+        "Yun Gu",
+        "Qi Duan",
+        "Hongliang Ren",
+        "Hongming Shan",
+        "Yin Xie",
+        "Xiang An",
+        "Benyou Wang",
+        "Yueming Su",
+        "Yefeng Zheng",
+        "Zongyuan Ge",
+        "Chun-Mei Feng",
+        "Jie Xu",
+        "Yu Qiao",
+        "Junjun He",
+        "Yirong Chen"
+      ],
+      "abstract": "Establishing effective scaling laws for medical multimodal large language models (MLLMs) remains a persistent and fundamental challenge. Our systematic evaluation shows that existing medical MLLMs tend to underperform frontier general-purpose MLLMs across a range of medical tasks, while scaling model size primarily improves text capabilities rather than multimodal perception, and enabling reasoning modes fails to close this visual gap. To investigate how medical multimodal intelligence scales in practice, we introduce Sage-Med-Preview, a 35B-parameter medical multimodal model with 3B activated parameters, built by combining stage-specific curation over 322.7 million candidate records with a progressive training curriculum spanning medical pretraining, staged supervised fine-tuning, and adaptive reinforcement learning. Across this curriculum, progressive supervised refinement and adaptive reinforcement learning yield consistent stage-wise gains, substantially advancing both specialized visual understanding and medical language capabilities. Evaluated against 77 competing models across 238 clinical tasks spanning 61 public and 13 private multi-center benchmarks in more than 40 modalities, Sage-Med-Preview achieves an average score of 58.26% on the 31 public multimodal benchmarks. It outperforms the state-of-the-art open-source medical model Hulu-Med-235B-A22B at 50.99% and the general scientific model Intern-S2-Preview at 52.24%, and approaches the advanced proprietary model GPT-6.2-Sol across multiple tasks such as comprehensive multimodal understanding, report generation, and visual grounding. Although substantial challenges remain in complex medical reasoning and multi-step clinical workflows, this report provides empirical evidence, actionable data and training recipes, and a rigorous benchmark toward scalable clinical multimodal intelligence.",
+      "url": "https://arxiv.org/abs/2611.34575",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8828
+    },
+    {
+      "id": "2611.34112",
+      "title": "Not Every Input Needs Everything: Unifying Expert Gating, Model Cascades, and Agent Orchestration",
+      "authors": [
+        "Dat Tat Mai",
+        "Hung Tran Quy",
+        "Thai Viet Pham",
+        "James Jin Kang"
+      ],
+      "abstract": "Executing monolithic neural weights, frontier foundation models, or entire multi-agent workflows uniformly on every input incurs substantial computational, latency, and monetary overhead. Conditional computation mitigates this cost by deciding dynamically which internal experts, model endpoints, or specialized agents to invoke per request. Yet token-level gating in sparse neural architectures, query-level model cascades, and task-level multi-agent coordination have largely progressed in disconnected research silos, obscuring recurring system failures and transferable fixes. In this systematic review, we synthesize 2,289 studies published between 2017 and September 2026 (selected from 13,884 unique records) across 20 methodological families under a unified two-step inspect-then-allocate framework. Discrete hard selection accounts for 70%, 83%, and 91% of token-, query-, and task-scale literature respectively, and computational overhead appears as a top operational bottleneck across every layer. Engineering safeguards remain sharply asymmetric: intra-layer gating prioritizes load balancing while rarely incorporating uncertainty estimation, whereas model selection and agent orchestration rely on confidence thresholds and budget rules while confronting miscalibration and cascading errors. At the same time, publication volume is accelerating fastest in agentic task delegation, where routing mechanisms are least often isolated experimentally and methodological bias risk is highest.",
+      "url": "https://arxiv.org/abs/2611.34112",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8825
+    },
+    {
+      "id": "2611.33879",
+      "title": "FORK: Co-Evolving Safe Disclosure and Decision Skills Against Attackers Who Read Every Refusal",
+      "authors": [
+        "Hieu Man",
+        "Chao Shang",
+        "Rui Dong",
+        "Devang Kulshreshtha",
+        "Yanjun Qi",
+        "Sandesh Swamy"
+      ],
+      "abstract": "When a guardrail rejects an LLM agent's action, its message reaches any attacker observing the trajectory: a fixed refusal leaves benign users unable to recover, whereas an explanation can tell the attacker what to try next. We study this as safe disclosure: explaining rejections so that authorized tasks recover without increasing adaptive attack success. Safe disclosure depends on both the decision and the message: what the guardrail blocks and what it reveals to the agent and the attacker. Because hand-written rules alone cannot anticipate how adaptive attackers probe decisions or use messages, we introduce FORK, which co-evolves a guardrail's natural-language decision and disclosure skills with an attacker that reads every public message. Each exploited message and permissive decision gives FORK evidence for a gradient-free revision of its natural-language skill library. We evaluate FORK on four benchmarks. Averaged over three agents on FORK-World, FORK cuts attack success rate (ASR) under adaptive attack from 78.4% to 14.1% and keeps utility above 85%, outperforming baselines on both ASR and utility. Notably, on MT-AgentRisk, whose environments and tasks are unseen in training, FORK lowers ASR from 70.6% to 9.1% with 93.1% benign utility.",
+      "url": "https://arxiv.org/abs/2611.33879",
+      "categories": [
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8823
+    },
+    {
+      "id": "2611.34188",
+      "title": "MINE: A Training-Free Defense against Indirect Prompt Injection via Mutual Information and Embedding Variance",
+      "authors": [
+        "Truong Phan",
+        "Ngoc-Quan Pham",
+        "Dat Quoc Nguyen"
+      ],
+      "abstract": "Existing defenses against indirect prompt injection in retrieval-augmented generation (RAG) are inherently reactive: prompt-engineering methods are often overridden by the injected instructions, while supervised detectors must be retrained for each new attack style. We propose a different paradigm: defend by maximizing relevance, not by detecting attacks. Our method, MINE, is training-free and attack-agnostic, and it also serves as a query-conditioned reranker. To evaluate defenses under realistic conditions, we introduce LC-Inj-SQuAD, a long-context benchmark with an average of 4,032 words per context. We evaluate on four datasets spanning short-context QA (Inj-SQuAD, Inj-TriviaQA), long-context QA (LC-Inj-SQuAD), and agent tool-call injection (InjecAgent). Across all four, MINE achieves the best accuracy--security trade-off among training-free defenses. It is also the only defense that stays usable against a fully adaptive attacker, generalizes to agent tool-call injection, and achieves the lowest inference latency on long contexts.",
+      "url": "https://arxiv.org/abs/2611.34188",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8822
+    },
+    {
+      "id": "2611.34183",
+      "title": "Lightweight Reasoning Transfer via Chain-of-Thought Vector Projection",
+      "authors": [
+        "Yulin Qi",
+        "Shuo Xu",
+        "Shuxia Lin",
+        "Qingjian Ni",
+        "Xu Yang",
+        "Xin Geng"
+      ],
+      "abstract": "Transferring reasoning capabilities from large language models to smaller ones often requires extensive teacher supervision or costly student adaptation. We study projected cross-model Chain-of-Thought (CoT) Vector transfer, a two-stage approach that keeps both models frozen. First, we learn a task-level CoT Vector in the teacher using dataset-provided solution traces and final-answer supervision. We then train a lightweight linear projector to map the fixed vector into a smaller student's residual space. Student-side training uses only final-answer cross-entropy on a small subset of task training examples; it requires neither teacher outputs nor intermediate solution traces. We select the student injection layer and intervention scale on a labeled support set and report results on the disjoint remainder of each evaluation split. On GSM8K and MATH, the projected vector improves base students by 10.37-21.98 accuracy points across the evaluated teacher-student settings. On four code-generation benchmarks, the Qwen2.5-7B-Instruct student gains 3.23-4.67 pass@1 points, while the base Qwen2.5-7B student gains up to 9.65 points. These results show that a teacher-side reasoning vector can be reused across smaller students with different residual dimensions through projector-only adaptation.",
+      "url": "https://arxiv.org/abs/2611.34183",
+      "categories": [
+        "cs.CL"
+      ],
+      "submitted": "2026-11-25",
+      "score": 0.8818
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "model": "allenai/specter2_base",
+    "source": "fetch_daily",
+    "n_candidates": 300,
+    "n_ratings": 47,
+    "alpha": 0.94,
+    "n_topics": 0,
+    "n_topic_slots": 0
+  }
+}
