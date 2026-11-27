@@ -17,7 +17,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8817
+      "score": 0.8817,
+      "jev": {
+        "specter_rank": 1,
+        "rank": 7,
+        "rank_delta": -6,
+        "relevance_probability": 0.9674674570560455
+      }
     },
     {
       "id": "2611.34397",
@@ -49,7 +55,13 @@
         "cs.CV"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8784
+      "score": 0.8784,
+      "jev": {
+        "specter_rank": 2,
+        "rank": 10,
+        "rank_delta": -8,
+        "relevance_probability": 0.8909683525562286
+      }
     },
     {
       "id": "2611.34831",
@@ -68,7 +80,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8779
+      "score": 0.8779,
+      "jev": {
+        "specter_rank": 3,
+        "rank": 5,
+        "rank_delta": -2,
+        "relevance_probability": 0.9855134189128876
+      }
     },
     {
       "id": "2611.34841",
@@ -83,7 +101,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8763
+      "score": 0.8763,
+      "jev": {
+        "specter_rank": 4,
+        "rank": 17,
+        "rank_delta": -13,
+        "relevance_probability": 0.22669942677021027
+      }
     },
     {
       "id": "2611.34492",
@@ -100,7 +124,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8763
+      "score": 0.8763,
+      "jev": {
+        "specter_rank": 5,
+        "rank": 16,
+        "rank_delta": -11,
+        "relevance_probability": 0.29399678483605385
+      }
     },
     {
       "id": "2611.34398",
@@ -125,7 +155,13 @@
       ],
       "submitted": "2026-11-25",
       "github_url": "https://github.com/YanLin-Quinne/SkillCompatibility.",
-      "score": 0.8758
+      "score": 0.8758,
+      "jev": {
+        "specter_rank": 6,
+        "rank": 9,
+        "rank_delta": -3,
+        "relevance_probability": 0.8933094143867493
+      }
     },
     {
       "id": "2611.33983",
@@ -139,7 +175,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8756
+      "score": 0.8756,
+      "jev": {
+        "specter_rank": 7,
+        "rank": 8,
+        "rank_delta": -1,
+        "relevance_probability": 0.9525741338729858
+      }
     },
     {
       "id": "2611.34327",
@@ -160,7 +202,13 @@
         "cs.MA"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8752
+      "score": 0.8752,
+      "jev": {
+        "specter_rank": 8,
+        "rank": 2,
+        "rank_delta": 6,
+        "relevance_probability": 0.9917993545532227
+      }
     },
     {
       "id": "2611.34152",
@@ -181,7 +229,13 @@
       ],
       "submitted": "2026-11-25",
       "github_url": "https://github.com/suat-llm/GridProbe.",
-      "score": 0.8746
+      "score": 0.8746,
+      "jev": {
+        "specter_rank": 9,
+        "rank": 11,
+        "rank_delta": -2,
+        "relevance_probability": 0.5895893573760986
+      }
     },
     {
       "id": "2611.34278",
@@ -201,7 +255,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8744
+      "score": 0.8744,
+      "jev": {
+        "specter_rank": 10,
+        "rank": 3,
+        "rank_delta": 7,
+        "relevance_probability": 0.989995539188385
+      }
     },
     {
       "id": "2611.34875",
@@ -218,7 +278,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8743
+      "score": 0.8743,
+      "jev": {
+        "specter_rank": 11,
+        "rank": 1,
+        "rank_delta": 10,
+        "relevance_probability": 0.9935594201087952
+      }
     },
     {
       "id": "2611.33827",
@@ -239,7 +305,13 @@
         "cs.AI"
       ],
       "submitted": "2026-11-25",
-      "score": 0.874
+      "score": 0.874,
+      "jev": {
+        "specter_rank": 12,
+        "rank": 15,
+        "rank_delta": -3,
+        "relevance_probability": 0.44149892032146454
+      }
     },
     {
       "id": "2611.34341",
@@ -265,7 +337,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8739
+      "score": 0.8739,
+      "jev": {
+        "specter_rank": 13,
+        "rank": 12,
+        "rank_delta": 1,
+        "relevance_probability": 0.5895893573760986
+      }
     },
     {
       "id": "2611.33823",
@@ -285,7 +363,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8737
+      "score": 0.8737,
+      "jev": {
+        "specter_rank": 14,
+        "rank": 19,
+        "rank_delta": -5,
+        "relevance_probability": 0.06509493151679635
+      }
     },
     {
       "id": "2611.34511",
@@ -302,7 +386,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8735
+      "score": 0.8735,
+      "jev": {
+        "specter_rank": 15,
+        "rank": 20,
+        "rank_delta": -5,
+        "relevance_probability": 0.01750635710777715
+      }
     },
     {
       "id": "2611.34051",
@@ -330,7 +420,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8733
+      "score": 0.8733,
+      "jev": {
+        "specter_rank": 16,
+        "rank": 13,
+        "rank_delta": 3,
+        "relevance_probability": 0.5463333129882812
+      }
     },
     {
       "id": "2611.34044",
@@ -347,7 +443,13 @@
         "cs.CL"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8732
+      "score": 0.8732,
+      "jev": {
+        "specter_rank": 17,
+        "rank": 14,
+        "rank_delta": 3,
+        "relevance_probability": 0.5154835879802704
+      }
     },
     {
       "id": "2611.34440",
@@ -372,7 +474,13 @@
         "cs.LG"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8729
+      "score": 0.8729,
+      "jev": {
+        "specter_rank": 18,
+        "rank": 4,
+        "rank_delta": 14,
+        "relevance_probability": 0.9896217882633209
+      }
     },
     {
       "id": "2611.34132",
@@ -394,7 +502,13 @@
       ],
       "submitted": "2026-11-25",
       "github_url": "https://github.com/sunyxedu/General-Verifier",
-      "score": 0.8729
+      "score": 0.8729,
+      "jev": {
+        "specter_rank": 19,
+        "rank": 6,
+        "rank_delta": 13,
+        "relevance_probability": 0.9804896414279938
+      }
     },
     {
       "id": "2611.34407",
@@ -413,7 +527,13 @@
         "cs.IR"
       ],
       "submitted": "2026-11-25",
-      "score": 0.8727
+      "score": 0.8727,
+      "jev": {
+        "specter_rank": 20,
+        "rank": 18,
+        "rank_delta": 2,
+        "relevance_probability": 0.0830167019739747
+      }
     }
   ],
   "meta": {
@@ -424,6 +544,21 @@
     "n_ratings": 47,
     "alpha": 0.94,
     "n_topics": 0,
-    "n_topic_slots": 0
+    "n_topic_slots": 0,
+    "jev": {
+      "status": "complete",
+      "model": {
+        "base_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "adapter_id": "e2-lr-1e-4-epoch-3-quarter-3",
+        "adapter_sha256": "c05bbb97c39acd584b37d59287bed8c2cb923f25a9070d0b6e06996b978c4f30",
+        "inference_version": "1"
+      },
+      "predicate": {
+        "id": "arxiv-current-research-usefulness",
+        "version": "2",
+        "context_sha256": "c4a88de8ef1c89ea78c90f0e730d1b655522da82ad3f1c1d7500dac4e7775359"
+      }
+    }
   }
 }
